@@ -507,10 +507,10 @@ export default function Home() {
         </button>
 
         <button
-          onClick={toggleLanguage}
+          onClick={() => router.push('/article')}
           className="fixed top-4 right-4 z-40 px-4 py-2 bg-black/5 hover:bg-black/10 border border-black/20 rounded text-black text-sm transition-all duration-200"
         >
-          {language.toUpperCase()}
+          Scientific Article
         </button>
 
         <button
@@ -655,10 +655,10 @@ export default function Home() {
 
       <div className={`${isPortrait ? "hidden" : "block"}`}>
         <button
-          onClick={toggleLanguage}
+          onClick={() => router.push('/article')}
           className="fixed top-4 right-4 z-40 px-3 py-1 bg-black/5 hover:bg-black/10 border border-black/20 rounded text-sm font-medium transition-all duration-200"
         >
-          {language.toUpperCase()}
+          Scientific Article
         </button>
 
         <div className="container mx-auto px-4" style={{ paddingTop: `calc(4rem + 8vh)`, paddingBottom: "6rem" }}>
