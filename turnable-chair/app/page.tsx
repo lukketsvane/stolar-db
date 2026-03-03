@@ -456,7 +456,6 @@ export default function Home() {
       >
         <div className="absolute top-1 left-1 text-black font-bold text-[10px] sm:text-xs z-10">{item.symbol}</div>
         <div className="absolute top-1 right-1 text-black font-bold text-[10px] sm:text-xs z-10">{item.number}</div>
-        <div className="absolute top-4 sm:top-5 right-1 text-black/60 text-[8px] sm:text-xs z-10">{item.year}</div>
 
         <div className="flex flex-col items-center justify-center h-full p-2">
           <div className="flex-1 flex items-center justify-center w-full max-w-full max-h-full overflow-hidden">
@@ -464,12 +463,12 @@ export default function Home() {
               <img
                 src={item.thumb}
                 alt={item.name}
-                className="max-w-full max-h-full object-contain w-full h-full drop-shadow-sm"
+                className="max-w-full max-h-full object-contain w-full h-full"
               />
             ) : item.thumbVideo ? (
               <video
                 src={item.thumbVideo}
-                className="max-w-full max-h-full object-contain w-full h-full drop-shadow-sm"
+                className="max-w-full max-h-full object-contain w-full h-full"
                 muted
                 loop
                 playsInline
