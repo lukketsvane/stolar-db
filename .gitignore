@@ -9,14 +9,11 @@ build_log.txt
 .gemini/
 Hunyuan3D-2/
 node_modules/
-noreg/
-NM_stolar/
-bilete/
+noreg/node_modules/
 *.glb
 *.jpg
 *.jpeg
 *.tif
 *.tiff
-# Allow charts to be pushed
 !charts/*.png
 !charts/
