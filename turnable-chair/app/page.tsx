@@ -5,27 +5,6 @@ import type React from "react"
 import { useState, useEffect, useCallback } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 
-function useOrientation() {
-  const [isPortrait, setIsPortrait] = useState(false)
-
-  useEffect(() => {
-    const checkOrientation = () => {
-      setIsPortrait(window.innerHeight > window.innerWidth)
-    }
-
-    checkOrientation()
-    window.addEventListener("resize", checkOrientation)
-    window.addEventListener("orientationchange", checkOrientation)
-
-    return () => {
-      window.removeEventListener("resize", checkOrientation)
-      window.removeEventListener("orientationchange", checkOrientation)
-    }
-  }, [])
-
-  return isPortrait
-}
-
 interface ChairItem {
   id: string
   symbol: string
@@ -226,7 +205,6 @@ const formatName = (s: string) => {
 export default function Home() {
   const router = useRouter()
   const searchParams = useSearchParams()
-  const isPortrait = useOrientation()
 
   const [currentView, setCurrentView] = useState<"gallery" | "detail">("gallery")
   const [currentItem, setCurrentItem] = useState<ChairItem | null>(null)
@@ -454,8 +432,8 @@ export default function Home() {
         style={{ borderWidth: "0.5px" }}
         onClick={() => showDetail(item)}
       >
-        <div className="absolute top-1 left-1 text-black font-bold text-[10px] sm:text-xs z-10">{item.symbol}</div>
-        <div className="absolute top-1 right-1 text-black font-bold text-[10px] sm:text-xs z-10">{item.number}</div>
+        <div className="absolute top-1 left-1 text-black font-bold text-[10px] sm:text-xs z-10 font-mono">{item.symbol}</div>
+        <div className="absolute top-1 right-1 text-black font-bold text-[10px] sm:text-xs z-10 font-mono">{item.number}</div>
 
         <div className="flex flex-col items-center justify-center h-full p-2">
           <div className="flex-1 flex items-center justify-center w-full max-w-full max-h-full overflow-hidden">
@@ -490,8 +468,8 @@ export default function Home() {
       <div className="min-h-screen bg-white text-black relative overflow-hidden">
         <div className="fixed top-8 left-8 z-40 pointer-events-none hidden md:block">
           <div className="text-black font-bold" style={{ fontFamily: "Helvetica Neue, Arial, sans-serif" }}>
-            <div className="text-6xl lg:text-8xl leading-none">{currentItem.symbol}</div>
-            <div className="text-3xl lg:text-4xl mt-2">{currentItem.number}</div>
+            <div className="text-6xl lg:text-8xl leading-none font-mono">{currentItem.symbol}</div>
+            <div className="text-3xl lg:text-4xl mt-2 font-mono">{currentItem.number}</div>
             <div className="text-xl lg:text-2xl mt-1 max-w-xs">{formatName(currentItem.name)}</div>
           </div>
         </div>
@@ -556,7 +534,7 @@ export default function Home() {
             <div className="space-y-6">
               <div>
                 <h1 className="text-3xl font-bold mb-2 text-black">{formatName(currentItem.name)}</h1>
-                <div className="text-gray-600 text-sm font-medium">
+                <div className="text-gray-600 text-sm font-medium font-mono">
                   {currentItem.symbol} {currentItem.number} {currentItem.year ? `— ${currentItem.year}` : ''}
                 </div>
                 {currentItem.producer && (
@@ -643,17 +621,7 @@ export default function Home() {
   
   return (
     <div className="min-h-screen bg-white text-black font-sans selection:bg-black selection:text-white">
-      {isPortrait && (
-        <div className="fixed inset-0 bg-white/95 backdrop-blur-sm z-50 flex items-center justify-center p-8 text-black">
-          <div className="text-center bg-gray-100 p-8 rounded-2xl shadow-lg border border-gray-200">
-            <div className="text-4xl mb-4">📱</div>
-            <p className="text-xl font-bold mb-2">Please rotate your device</p>
-            <p className="text-sm text-gray-600">The grid is optimized for landscape orientation</p>
-          </div>
-        </div>
-      )}
-
-      <div className={`${isPortrait ? "hidden" : "block"}`}>
+      <div>
         <button
           onClick={() => router.push('/article')}
           className="fixed top-4 right-4 z-40 text-black text-sm font-bold font-mono transition-opacity hover:opacity-60"

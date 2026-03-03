@@ -99,7 +99,7 @@ if (fs.existsSync(noregDir)) {
       inventoryNr: metaData["Inventarnr."] || "",
       acquisition: metaData.Ervervelse || "",
       photo: metaData.Foto || "",
-      location: metaData["Produksjonssted"] || ""
+      location: joinSafe(metaData["Produksjonssted"])
     });
   }
 }

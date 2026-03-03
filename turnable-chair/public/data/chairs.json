@@ -244,11 +244,7 @@
     "inventoryNr": "NMK.2021.0137",
     "acquisition": "Kjøpt 2021",
     "photo": "Ina Wesenberg",
-    "location": [
-      "Sykkylven",
-      "Møre og Romsdal",
-      "Norge"
-    ]
+    "location": "Sykkylven, Møre og Romsdal, Norge"
   },
   {
     "id": "NMK.INVENTAR.2017.0213",
@@ -542,11 +538,7 @@
     "inventoryNr": "OK-04953",
     "acquisition": "kjøpt 1897",
     "photo": "Andreas Harvik",
-    "location": [
-      "Nord",
-      "Gudbrandsdal",
-      "Norge"
-    ]
+    "location": "Nord, Gudbrandsdal, Norge"
   },
   {
     "id": "OK-05553",
@@ -946,10 +938,7 @@
     "inventoryNr": "OK-08745",
     "acquisition": "Kjøpt 1913",
     "photo": "Nasjonalmuseet",
-    "location": [
-      "Hallingdal",
-      "Norge"
-    ]
+    "location": "Hallingdal, Norge"
   },
   {
     "id": "OK-08803",
@@ -970,10 +959,7 @@
     "inventoryNr": "OK-08803",
     "acquisition": "Kjøpt 1915",
     "photo": "Harvik, Andreas",
-    "location": [
-      "Hallingdal",
-      "Norge"
-    ]
+    "location": "Hallingdal, Norge"
   },
   {
     "id": "OK-09415A",
