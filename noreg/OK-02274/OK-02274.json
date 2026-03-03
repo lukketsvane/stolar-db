@@ -1,0 +1,47 @@
+{
+  "objectId": "OK-02274",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-02274",
+  "title": "Stol",
+  "Datering": "Slutten av 1600-tallet",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Relieffskåret ask og gyldenlær",
+  "Teknikk": [
+    "Tapping",
+    "Plugging",
+    "Polstring"
+  ],
+  "Dekorteknikk": [
+    "Gyllenlærfremstilling",
+    "Gjennombrutt utskjæring",
+    "Relieffskjæring",
+    "Fernissering",
+    "Beising"
+  ],
+  "Materiale": [
+    "Ask",
+    "Strie",
+    "Messing",
+    "Lær",
+    "Kryssfiner"
+  ],
+  "Mål": "H 137 x B 59 x D 63 cm Høyde: 47,5 cm Bredde: 51,5 cm Dybde: 43,5 cm",
+  "Emneord": "Møbel",
+  "Klassifikasjon": [
+    "352.1 - Sittemøbler",
+    "531.33 - Gyldenlærmaker"
+  ],
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "OK-02274",
+  "Registreringsnivå": "Enkeltobjekt",
+  "Ervervelse": "Kjøpt 1884",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Bjørgli, Annar",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94778.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94778.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94778.tif/full/full/0/default.jpg",
+      "filename": "OK-02274_94778.jpg"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "objectId": "OK-08803",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-08803",
+  "title": "Stol",
+  "Datering": "1700-tallet",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Bjørk med skåret og bemalt dekor.",
+  "Teknikk": "Innfelling",
+  "Dekorteknikk": [
+    "Bemaling",
+    "Relieffskjæring",
+    "Gjennombrutt utskjæring"
+  ],
+  "Materiale": [
+    "Bjørk",
+    "Furu"
+  ],
+  "Mål": "H 72,5 x B 60,5 x D 44 cm Høyde: 72,5 cm Dybde: 44 cm Bredde: 60,5 cm",
+  "Emneord": [
+    "Møbel",
+    "Kunstindustri"
+  ],
+  "Klassifikasjon": "352.1 - Sittemøbler",
+  "Produksjonssted": [
+    "Hallingdal",
+    "Norge"
+  ],
+  "Inventarnr.": "OK-08803",
+  "Registreringsnivå": "Enkeltobjekt",
+  "Ervervelse": "Kjøpt 1915",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Harvik, Andreas",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07518.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07518.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07518.tif/full/full/0/default.jpg",
+      "filename": "OK-08803_07518.jpg"
+    }
+  ]
+}

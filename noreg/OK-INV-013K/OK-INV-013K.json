@@ -1,0 +1,39 @@
+{
+  "objectId": "OK-INV-013K",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-INV-013K",
+  "title": "50/03",
+  "Datering": "Slutten av 1930-tallet",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Sammensatt bjørk med polstert ullstoff",
+  "Teknikk": [
+    "Polstring",
+    "Tapping",
+    "Skruing",
+    "Maskinsinking"
+  ],
+  "Dekorteknikk": "Lakkering",
+  "Materiale": [
+    "Ull",
+    "Bjørk"
+  ],
+  "Mål": "H 80 x B 41 x D 48 cm Høyde: 45,5 cm Dybde: 39 cm",
+  "Emneord": "Møbel",
+  "Klassifikasjon": [
+    "352.1 - Sittemøbler",
+    "322.48 - Møbeldesign"
+  ],
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "OK-INV-013K",
+  "Registreringsnivå": "Enkeltobjekt",
+  "Ervervelse": "Innskrevet i samlingene 2009",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Nasjonalmuseet",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/29885.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/29885.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/29885.tif/full/full/0/default.jpg",
+      "filename": "OK-INV-013K_29885.jpg"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "objectId": "NMK.2005.0661",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/NMK.2005.0661",
+  "title": "Mann originaltittel",
+  "Datering": "1999",
+  "Andre titler": "Swing4 (ENG)",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Stol i beiset, fargelakkert og fernissert kryssfiner og ask med dreid dekor, nylontau og sveiset stål.",
+  "Teknikk": "Sveising",
+  "Dekorteknikk": [
+    "Fargelakkering",
+    "Beising",
+    "Fernissering",
+    "Dreiing"
+  ],
+  "Materiale": [
+    "Kryssfiner",
+    "Polyamid",
+    "Stål",
+    "Ask"
+  ],
+  "Mål": "H 121 x B 81 x D 135 cm Dybde: 135 cm Høyde: 121 cm Bredde: 81 cm",
+  "Emneord": [
+    "Møbel",
+    "Design",
+    "Prototyp"
+  ],
+  "Klassifikasjon": "352.1 - Sittemøbler",
+  "Stilperiode": "Postmodernisme",
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "NMK.2005.0661",
+  "Registreringsnivå": "Enkeltobjekt",
+  "Ervervelse": "Ervervet 2005",
+  "Eier og samling": "Nasjonalmuseet for kunst, arkitektur og design, Designsamlingene",
+  "Foto": "Harvik, Andreas",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08753.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08753.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08753.tif/full/full/0/default.jpg",
+      "filename": "NMK.2005.0661_08753.jpg"
+    }
+  ]
+}

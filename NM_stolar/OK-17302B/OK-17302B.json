@@ -1,0 +1,37 @@
+{
+  "objectId": "OK-17302B",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-17302B",
+  "title": "Stol",
+  "Datering": "Antagelig 1810-1820",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Beiset og lakkert mahogni med skåret, dreid og innlagt dekor, stoppet setetrekk i kunstsilke",
+  "Teknikk": "Polstring",
+  "Dekorteknikk": [
+    "Beising",
+    "Intarsia",
+    "Marketeri",
+    "Dreiing",
+    "Lakkering"
+  ],
+  "Materiale": [
+    "Mahogni",
+    "Syntetiske fibre, kunstsilke"
+  ],
+  "Mål": "H 82 x B 47 x D 45 cm Høyde: 46 cm",
+  "Emneord": "Møbel",
+  "Klassifikasjon": "352.1 - Sittemøbler",
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "OK-17302B",
+  "Registreringsnivå": "Enkeltobjekt",
+  "Ervervelse": "Ervervet 1973",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Harvik, A./ Jensen, H.L.",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07493.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07493.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07493.tif/full/full/0/default.jpg",
+      "filename": "OK-17302B_07493.jpg"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "objectId": "OK-17046",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-17046",
+  "title": "Stol",
+  "Datering": "Midten av 1700-tallet",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Beiset og fernissert bjørk med skåret dekor og brodert bomullstrekk.",
+  "Teknikk": "Polstring",
+  "Dekorteknikk": [
+    "Beising",
+    "Fernissering",
+    "Relieffskjæring",
+    "Treskjæring",
+    "Brodering"
+  ],
+  "Materiale": [
+    "Bjørk",
+    "Bomull"
+  ],
+  "Mål": "H 104,5 cm x B 51 x D 48 cm Bredde: 47 cm Dybde: 36,5 cm Høyde: 47,5 cm",
+  "Emneord": "Møbel",
+  "Klassifikasjon": [
+    "322.48 - Møbeldesign",
+    "352.1 - Sittemøbler"
+  ],
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "OK-17046",
+  "Registreringsnivå": "Komplekst objekt",
+  "Del av utstilling": "Kunstaudiens. Nasjonalmuseet i Kunststallen, 2021",
+  "Ervervelse": "Ervervet 1964",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Harvik, A./ Jensen, H.L.",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07462.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07462.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07462.tif/full/full/0/default.jpg",
+      "filename": "OK-17046_07462.jpg"
+    }
+  ]
+}

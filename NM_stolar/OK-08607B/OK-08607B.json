@@ -1,0 +1,35 @@
+{
+  "objectId": "OK-08607B",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-08607B",
+  "title": "Stol",
+  "Datering": "Midten av 1700-tallet",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Beiset bjørk med skåret dekor, stoltrekk av bomullspiqué håndbrodert med ulltråd",
+  "Materiale": [
+    "Bjørk",
+    "Furu",
+    "Bomull",
+    "Ull"
+  ],
+  "Mål": "H 105,5 x B 52 x D 48 cm Dybde: 48 cm Bredde: 52 cm Høyde: 105,5 cm",
+  "Emneord": "Møbel",
+  "Klassifikasjon": [
+    "322.48 - Møbeldesign",
+    "352.1 - Sittemøbler"
+  ],
+  "Stilperiode": "Queen Anne",
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "OK-08607B",
+  "Registreringsnivå": "Komplekst objekt",
+  "Ervervelse": "Gave 1912",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Harvik, A./ Jensen, H.L.",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/OK-08607B.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/OK-08607B.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/OK-08607B.tif/full/full/0/default.jpg",
+      "filename": "OK-08607B_OK-08607B.jpg"
+    }
+  ]
+}

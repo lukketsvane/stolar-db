@@ -1,0 +1,42 @@
+{
+  "objectId": "OK-10330E",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-10330E",
+  "title": "Stol",
+  "Datering": "Ca. 1830",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Fernissert mahognifiner, intarsia i whitewood, hestehårstrekk.",
+  "Teknikk": [
+    "Tapping",
+    "Polstring"
+  ],
+  "Dekorteknikk": [
+    "Lakkering",
+    "Intarsia",
+    "Beising",
+    "Finering"
+  ],
+  "Materiale": [
+    "Mahogni",
+    "Hestetagl",
+    "Furu",
+    "Eik",
+    "Whitewood"
+  ],
+  "Mål": "H 78 x B 45,5 x D 50 cm Høyde: 47,5 cm",
+  "Emneord": "Møbel",
+  "Klassifikasjon": "352.1 - Sittemøbler",
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "OK-10330E",
+  "Registreringsnivå": "Komplekst objekt",
+  "Ervervelse": "Testamentarisk gave, innkommet 1930",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Børre Høstland",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/34636.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/34636.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/34636.tif/full/full/0/default.jpg",
+      "filename": "OK-10330E_34636.jpg"
+    }
+  ]
+}

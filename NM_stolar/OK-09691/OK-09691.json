@@ -1,0 +1,44 @@
+{
+  "objectId": "OK-09691",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-09691",
+  "title": "Armstol",
+  "Datering": "Ca. 1700",
+  "Betegnelse": "Armstol",
+  "Materiale og teknikk": "Høyrygget stol med dreid stolpekonstruksjon og gjennombrutte utskjæringer utført i bøk. Sete og rygg trukket i lær.",
+  "Teknikk": [
+    "Polstring",
+    "Tapping",
+    "Plugging"
+  ],
+  "Dekorteknikk": [
+    "Dreiing",
+    "Relieffskjæring",
+    "Gjennombrutt utskjæring",
+    "Beising",
+    "Fernissering"
+  ],
+  "Materiale": [
+    "Bøk",
+    "Eik",
+    "Skinn/lær/pergament",
+    "Messing"
+  ],
+  "Mål": "H 124,8 x B 63,5 x D 61 cm Bredde: 62 cm Høyde: 44,5 cm Dybde: 44,5 cm",
+  "Emneord": "Møbel",
+  "Klassifikasjon": "352.1 - Sittemøbler",
+  "Stilperiode": "Barokk",
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "OK-09691",
+  "Registreringsnivå": "Enkeltobjekt",
+  "Ervervelse": "Testamentarisk gave, innkommet 1923",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Harvik, Andreas",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/35735.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/35735.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/35735.tif/full/full/0/default.jpg",
+      "filename": "OK-09691_35735.jpg"
+    }
+  ]
+}

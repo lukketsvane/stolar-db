@@ -1,0 +1,50 @@
+{
+  "objectId": "OK-09696A",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-09696A",
+  "title": "Stol",
+  "Datering": "Midten av 1700-tallet",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Beiset bøk med skåret dekor og trekk i brodert ullpique",
+  "Teknikk": [
+    "Tapping",
+    "Polstring"
+  ],
+  "Dekorteknikk": [
+    "Beising",
+    "Relieffskjæring",
+    "Treskjæring",
+    "Brodering"
+  ],
+  "Materiale": [
+    "Bøk",
+    "Tekstil",
+    "Furu"
+  ],
+  "Mål": "H 102,5 x B 51 x D 37,5 cm Høyde: 48 cm Bredde: 47 cm Dybde: 37,5 cm",
+  "Emneord": [
+    "Møbel",
+    "Kunstindustri"
+  ],
+  "Klassifikasjon": [
+    "352.1 - Sittemøbler",
+    "322.41 - Møbelsnekring"
+  ],
+  "Stilperiode": [
+    "Queen Anne",
+    "Rokokko"
+  ],
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "OK-09696A",
+  "Registreringsnivå": "Komplekst objekt",
+  "Ervervelse": "Gave1923",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Larsen, Frode",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/157947.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/157947.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/157947.tif/full/full/0/default.jpg",
+      "filename": "OK-09696A_157947.jpg"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "objectId": "OK-18399",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-18399",
+  "title": "Stol",
+  "Datering": "Ca. 1700",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Skåret og dreiet bøk, dels gjennombrutt dekor, stoppet sete trukket med fløyel",
+  "Teknikk": "Polstring",
+  "Dekorteknikk": [
+    "Beising",
+    "Fernissering",
+    "Dreiing",
+    "Relieffskjæring",
+    "Gjennombrutt utskjæring"
+  ],
+  "Materiale": [
+    "Tekstil, fløyel",
+    "Bøk",
+    "Furu",
+    "Messing"
+  ],
+  "Mål": "H 137 x B 53 x D 53 cm Dybde: 42 cm Bredde: 49,5 cm",
+  "Emneord": "Møbel",
+  "Klassifikasjon": [
+    "352.1 - Sittemøbler",
+    "531.41 - Treskjæring"
+  ],
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "OK-18399",
+  "Registreringsnivå": "Enkeltobjekt",
+  "Ervervelse": "Innkommet før 2009",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Nasjonalmuseet",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/32588.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/32588.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/32588.tif/full/full/0/default.jpg",
+      "filename": "OK-18399_32588.jpg"
+    }
+  ]
+}

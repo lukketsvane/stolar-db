@@ -1,0 +1,45 @@
+{
+  "objectId": "OK-17289D",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-17289D",
+  "title": "Stol",
+  "Datering": "1820-tallet",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Bjørk, beiset og lakkert, dreid dekor, marketeri i buksbom og jakaranda, polstret sete med hestehårstrekk",
+  "Teknikk": [
+    "Polstring",
+    "Tapping"
+  ],
+  "Dekorteknikk": [
+    "Dreiing",
+    "Lakkering",
+    "Marketeri",
+    "Beising"
+  ],
+  "Materiale": [
+    "Bjørk",
+    "Messing",
+    "Buksbom",
+    "Hestetagl",
+    "Jakaranda"
+  ],
+  "Mål": "H 79,8 x B 48 x D 52 cm Høyde: 52 cm Dybde: 48 cm Bredde: 48 cm",
+  "Emneord": "Møbel",
+  "Klassifikasjon": [
+    "352.1 - Sittemøbler",
+    "322.48 - Møbeldesign"
+  ],
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "OK-17289D",
+  "Registreringsnivå": "Enkeltobjekt",
+  "Ervervelse": "Ervervet 1953",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Larsen, Frode",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/92649.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/92649.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/92649.tif/full/full/0/default.jpg",
+      "filename": "OK-17289D_92649.jpg"
+    }
+  ]
+}

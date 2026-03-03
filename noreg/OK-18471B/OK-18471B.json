@@ -1,0 +1,49 @@
+{
+  "objectId": "OK-18471B",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-18471B",
+  "title": "Stol",
+  "Datering": "Mellom 1700 og 1740",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Utskåret tre og skinn",
+  "Teknikk": [
+    "Polstring",
+    "Tapping",
+    "Innfelling, trenagler"
+  ],
+  "Dekorteknikk": [
+    "Relieffskjæring",
+    "Gjennombrutt utskjæring",
+    "Dreiing",
+    "Fernissering"
+  ],
+  "Materiale": [
+    "Bøk",
+    "Skinn/lær/pergament"
+  ],
+  "Mål": "H 117, 5 x B 49,5 x D 50 cm Bredde: 46,2 cm Dybde: 39 cm",
+  "Emneord": [
+    "Møbel",
+    "Kunstindustri"
+  ],
+  "Klassifikasjon": [
+    "322 - Trearbeid",
+    "352.1 - Sittemøbler",
+    "531.41 - Treskjæring",
+    "531.46 - Møbelkunst"
+  ],
+  "Stilperiode": "Barokk",
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "OK-18471B",
+  "Registreringsnivå": "Enkeltobjekt",
+  "Ervervelse": "Tidligere innkommet",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Larsen, Frode",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/101880.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/101880.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/101880.tif/full/full/0/default.jpg",
+      "filename": "OK-18471B_101880.jpg"
+    }
+  ]
+}

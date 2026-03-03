@@ -1,0 +1,41 @@
+{
+  "objectId": "OK-11579",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-11579",
+  "title": "Stol",
+  "Datering": "Ca. 1750",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Beiset bjørk med skåret og dreid dekor og gyllenlærstrekk.",
+  "Teknikk": "Polstring",
+  "Dekorteknikk": [
+    "Beising",
+    "Gyllenlærfremstilling",
+    "Relieffskjæring",
+    "Treskjæring",
+    "Dreiing"
+  ],
+  "Materiale": [
+    "Bjørk",
+    "Lær"
+  ],
+  "Mål": "H 103 x B 46,5 x D 35 cm Høyde: 103 cm Bredde: 46,5 cm Dybde: 35 cm",
+  "Emneord": "Møbel",
+  "Klassifikasjon": [
+    "322.48 - Møbeldesign",
+    "352.1 - Sittemøbler"
+  ],
+  "Stilperiode": "Rokokko",
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "OK-11579",
+  "Registreringsnivå": "Enkeltobjekt",
+  "Ervervelse": "Testamentarisk gave, innkommet 1946",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Andreas Harvik",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07191.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07191.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07191.tif/full/full/0/default.jpg",
+      "filename": "OK-11579_07191.jpg"
+    }
+  ]
+}

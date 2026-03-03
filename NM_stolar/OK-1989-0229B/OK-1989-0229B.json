@@ -1,0 +1,45 @@
+{
+  "objectId": "OK-1989-0229B",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-1989-0229B",
+  "title": "Stol",
+  "Datering": "Ca. 1870",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Svartlakkert tre, profilert, skåret og dreid dekor, polstret, silketrekk, bronselister.",
+  "Dekorteknikk": [
+    "Fargelakkering",
+    "Dreiing",
+    "Gjennombrutt utskjæring",
+    "Relieffskjæring",
+    "Profilering"
+  ],
+  "Materiale": [
+    "Tre",
+    "Messing",
+    "Silke",
+    "Bronse"
+  ],
+  "Mål": "H 92 x B 50 x D 46 cm Bredde: 50 cm Høyde: 92 cm Dybde: 46 cm",
+  "Emneord": [
+    "Møbel",
+    "Kunstindustri"
+  ],
+  "Klassifikasjon": [
+    "322.48 - Møbeldesign",
+    "352.1 - Sittemøbler"
+  ],
+  "Stilperiode": "Louis XVI",
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "OK-1989-0229B",
+  "Registreringsnivå": "Enkeltobjekt",
+  "Ervervelse": "Kjøpt 1989",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Harvik, Andreas",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08309.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08309.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08309.tif/full/full/0/default.jpg",
+      "filename": "OK-1989-0229B_08309.jpg"
+    }
+  ]
+}

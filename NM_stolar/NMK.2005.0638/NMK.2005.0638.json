@@ -1,0 +1,43 @@
+{
+  "objectId": "NMK.2005.0638",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/NMK.2005.0638",
+  "title": "Balans Gravity produsents tittel",
+  "Datering": "1983",
+  "Andre titler": "Balans Gravity (ENG)",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Formbøyd laminert bøk, fernissering, kryssfiner, polstring, lærtrekk",
+  "Teknikk": [
+    "Laminering",
+    "Skruing",
+    "Formbøying",
+    "Polstring"
+  ],
+  "Dekorteknikk": "Oljing",
+  "Materiale": [
+    "Bøk",
+    "Kryssfiner",
+    "Lær"
+  ],
+  "Mål": "H 108 x B 73 x D 127 cm Bredde: 73 cm Dybde: 127 cm Høyde: 108 cm",
+  "Emneord": [
+    "Møbel",
+    "Design"
+  ],
+  "Klassifikasjon": "352.1 - Sittemøbler",
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "NMK.2005.0638",
+  "Registreringsnivå": "Enkeltobjekt",
+  "Ervervelse": "Ervervelsesopplysninger under arbeid",
+  "Eier og samling": "Nasjonalmuseet for kunst, arkitektur og design, Designsamlingene",
+  "Foto": "Harvik, Andreas",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/09013.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/09013.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/09013.tif/full/full/0/default.jpg",
+      "filename": "NMK.2005.0638_09013.jpg",
+      "glb": "NMK.2005.0638_09013.glb"
+    }
+  ],
+  "model3d": "NMK.2005.0638_09013.glb"
+}

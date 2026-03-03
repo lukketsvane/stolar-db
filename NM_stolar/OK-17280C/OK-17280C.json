@@ -1,0 +1,49 @@
+{
+  "objectId": "OK-17280C",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-17280C",
+  "title": "Stol",
+  "Datering": "Ca. 1820",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Fernissert bjørk med dreid dekor, marketeri, intarsia og hestehårstrekk",
+  "Teknikk": [
+    "Polstring",
+    "Innfelling"
+  ],
+  "Dekorteknikk": [
+    "Beising",
+    "Intarsia",
+    "Marketeri",
+    "Dreiing",
+    "Lakkering",
+    "Bemaling"
+  ],
+  "Materiale": [
+    "Bjørk",
+    "Gran",
+    "Hestetagl",
+    "Mahogni",
+    "Buksbom"
+  ],
+  "Mål": "H 81 x B 45 x D 47,5 cm Høyde: 32,5 cm Dybde: 36 cm",
+  "Emneord": "Møbel",
+  "Klassifikasjon": [
+    "322.48 - Møbeldesign",
+    "352.1 - Sittemøbler",
+    "531.45 - Dekupør (intarsia)"
+  ],
+  "Stilperiode": "Empire",
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "OK-17280C",
+  "Registreringsnivå": "Enkeltobjekt",
+  "Ervervelse": "Gave 1916",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Harvik, A./ Jensen, H.L.",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07463.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07463.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07463.tif/full/full/0/default.jpg",
+      "filename": "OK-17280C_07463.jpg"
+    }
+  ]
+}

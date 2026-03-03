@@ -1,0 +1,46 @@
+{
+  "objectId": "OK-07610",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-07610",
+  "title": "Stol",
+  "Datering": "1725-1750",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Bemalt bøk med dreid og skåret dekor, gyllenlærstrekk.",
+  "Teknikk": [
+    "Innfelling",
+    "Polstring"
+  ],
+  "Dekorteknikk": [
+    "Gyllenlærfremstilling",
+    "Dreiing",
+    "Relieffskjæring",
+    "Profilering",
+    "Bemaling"
+  ],
+  "Materiale": [
+    "Bøk",
+    "Bjørk",
+    "Lær",
+    "Lin"
+  ],
+  "Mål": "H 111,5 x B 46 x D 40 cm Høyde: 111,5 cm Dybde: 40 cm Bredde: 46 cm",
+  "Emneord": "Møbel",
+  "Klassifikasjon": [
+    "322.48 - Møbeldesign",
+    "352.1 - Sittemøbler"
+  ],
+  "Stilperiode": "Régence",
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "OK-07610",
+  "Registreringsnivå": "Enkeltobjekt",
+  "Ervervelse": "Kjøpt 1907",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Andreas Harvik",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07266.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07266.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07266.tif/full/full/0/default.jpg",
+      "filename": "OK-07610_07266.jpg"
+    }
+  ]
+}

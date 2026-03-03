@@ -1,0 +1,46 @@
+{
+  "objectId": "OK-2002-0142",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-2002-0142",
+  "title": "Tennis (prototype) produsents tittel",
+  "Datering": "2000",
+  "Andre titler": "Tennis (prototype) (ENG)",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Stell av fargelakkert jern, polstret pute trukket med ullstoff, maskinsydd",
+  "Teknikk": [
+    "Polstring",
+    "Skruing",
+    "Sveising"
+  ],
+  "Dekorteknikk": [
+    "Fargelakkering",
+    "Formbøying"
+  ],
+  "Materiale": [
+    "Jern",
+    "Ull"
+  ],
+  "Mål": "H 58 x B 53 x D 49 cm Dybde: 29 cm Høyde: 45 cm Bredde: 30 cm",
+  "Emneord": [
+    "Design",
+    "Møbel"
+  ],
+  "Klassifikasjon": [
+    "352.1 - Sittemøbler",
+    "322.48 - Møbeldesign"
+  ],
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "OK-2002-0142",
+  "Registreringsnivå": "Enkeltobjekt",
+  "Del av utstilling": "Norway Says 10, 2009",
+  "Ervervelse": "Kjøpt 2002",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Børre Høstland",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07114.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07114.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07114.tif/full/full/0/default.jpg",
+      "filename": "OK-2002-0142_07114.jpg"
+    }
+  ]
+}

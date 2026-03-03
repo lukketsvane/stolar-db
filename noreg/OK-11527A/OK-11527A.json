@@ -1,0 +1,47 @@
+{
+  "objectId": "OK-11527A",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-11527A",
+  "title": "Stol",
+  "Datering": "Ca. 1700",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Eik med relieffskåret dekor, dels gjennombrutt, gyllenlærstrekk, bemalt, metallnagler",
+  "Teknikk": [
+    "Tapping",
+    "Plugging",
+    "Polstring",
+    "Liming"
+  ],
+  "Dekorteknikk": [
+    "Gjennombrutt utskjæring",
+    "Relieffskjæring",
+    "Dreiing",
+    "Fernissering",
+    "Gyllenlærfremstilling",
+    "Beising"
+  ],
+  "Materiale": [
+    "Eik",
+    "Lær"
+  ],
+  "Mål": "H 132 x B 58,5 x D 71 cm Høyde: 47,5 cm Bredde: 49,5 cm Dybde: 39,5 cm",
+  "Emneord": "Møbel",
+  "Klassifikasjon": [
+    "352.1 - Sittemøbler",
+    "322.4 - Møbelfagene",
+    "531.33 - Gyldenlærmaker"
+  ],
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "OK-11527A",
+  "Registreringsnivå": "Enkeltobjekt",
+  "Ervervelse": "Testamentarisk gave, innkommet 1946",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Bjørgli, Annar",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94807.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94807.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94807.tif/full/full/0/default.jpg",
+      "filename": "OK-11527A_94807.jpg"
+    }
+  ]
+}

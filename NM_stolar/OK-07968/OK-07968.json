@@ -1,0 +1,44 @@
+{
+  "objectId": "OK-07968",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-07968",
+  "title": "Stol",
+  "Datering": "begynnelsen av 1700-tallet",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Bøk med skåret og dreid dekor, gyllenlærstrekk.",
+  "Teknikk": [
+    "Tapping",
+    "Plugging"
+  ],
+  "Dekorteknikk": [
+    "Gyllenlærfremstilling",
+    "Dreiing",
+    "Gjennombrutt utskjæring",
+    "Profilering",
+    "Fernissering"
+  ],
+  "Materiale": [
+    "Bøk",
+    "Lær"
+  ],
+  "Mål": "H 125 x B 46 x D 53 cm Dybde: 37,5 cm",
+  "Emneord": "Møbel",
+  "Klassifikasjon": [
+    "322.48 - Møbeldesign",
+    "352.1 - Sittemøbler"
+  ],
+  "Stilperiode": "Barokk",
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "OK-07968",
+  "Registreringsnivå": "Enkeltobjekt",
+  "Ervervelse": "Kjøpt 1908",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Andreas Harvik",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07267.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07267.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07267.tif/full/full/0/default.jpg",
+      "filename": "OK-07968_07267.jpg"
+    }
+  ]
+}
