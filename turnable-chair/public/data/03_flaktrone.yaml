@@ -1,0 +1,18 @@
+id: 3
+symbol: "III"
+number: "03"
+name: "flaktrone"
+video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/03_flaktrone-4HR8LHjvcDzv1u6p0peP731twy0ILl.mp4"
+thumbVideo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/03_flaktrone-4HR8LHjvcDzv1u6p0peP731twy0ILl.mp4"
+specs: |
+  Material: Digital Clay
+  Dimensions: Variable
+  Year: 2025
+  Technique: 3D Sculpting
+i18n:
+  no:
+    name: "flaktrone"
+    text: "Dynamisk skulptur som utforskar bevegelse og flyt i digital form."
+  ja:
+    name: "フラクトロン"
+    text: "デジタル形式での動きと流れを探るダイナミックな彫刻。"
