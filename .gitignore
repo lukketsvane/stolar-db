@@ -1,0 +1,22 @@
+.env
+__pycache__/
+*.pyc
+venv/
+.venv/
+build_log.txt
+*.log
+.claude/
+.gemini/
+Hunyuan3D-2/
+node_modules/
+noreg/
+NM_stolar/
+bilete/
+*.glb
+*.jpg
+*.jpeg
+*.tif
+*.tiff
+# Allow charts to be pushed
+!charts/*.png
+!charts/
