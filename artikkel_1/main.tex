@@ -1,112 +1,199 @@
 \documentclass[12pt,a4paper]{article}
+
+% Encoding og spraak
 \usepackage[utf8]{inputenc}
-\usepackage[norsk]{babel}
-\usepackage{graphicx}
-\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage[nynorsk]{babel}
+
+% Typografi
+\usepackage{mathpazo}
+\usepackage{microtype}
+
+% Layout
 \usepackage{geometry}
+\geometry{a4paper, margin=2.5cm}
+\usepackage{setspace}
+\onehalfspacing
+
+% Figurar og tabellar
+\usepackage{graphicx}
 \usepackage{float}
 \usepackage{caption}
-\geometry{a4paper, margin=1in}
-\usepackage{natbib}
+\usepackage{subcaption}
+\usepackage{booktabs}
 
-\title{Materialhistorie i Nasjonalmuseet si stolsamling 1280--2020 \\ \large Del 1 i ein PhD-serie om Form, Fitness og Industridesign}
-\author{PhD-kandidat i Industridesign \\ Arkitektur- og designhøgskolen i Oslo (AHO)}
-\date{\today}
+% Referansar og lenker
+\usepackage[round,authoryear]{natbib}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=blue
+}
+
+% Diverse
+\usepackage{csquotes}
+
+% -------------------------------------------------------------------
+\title{Materialhistorie i Nasjonalmuseet si stolsamling, 1280--2020:\\
+\large Materialkurver som kolonialt arkiv}
+
+\author{Iver Raknes Finne\\
+\small Institutt for design, Arkitektur- og designh\o{}gskolen i Oslo (AHO)\\
+\small\texttt{iver.finne@aho.no}}
+
+\date{}
 
 \begin{document}
-
 \maketitle
 
+% -------------------------------------------------------------------
 \begin{abstract}
-Denne artikkelen er den første i ei rekkje på tre innanfor eit PhD-prosjekt som søkjer å revolusjonere estetiske fag og formgjeving. Med inspirasjon frå Le Corbusier, Jony Ive, og konseptet ``form follows fitness'', kombinerer prosjektet datadriven analyse med praktisk utforsking. Analysen av Nasjonalmuseet si stolsamling (1280--2020) utnyttar ein database med 135 norske stolar, over 100 eigenproduserte 3D-modellar, og høgoppløysande bilete for å kartleggje den materielle og strukturelle utviklinga \citep{digitaltmuseum2026}. Ved å kvantifisere volum og materialeffektivitet, legg vi eit nytt, objektivt grunnlag for å forstå designevolusjon.
+\noindent
+Artikkelen presenterer den fyrste systematiske kvantitative materialanalysen av Nasjonalmuseet si stolsamling (\emph{n}\,=\,461), som spenner fr\aa{} 1280 til 2020. Gjennom eit nytt strukturert datasett med 25~metadatafelt per objekt, henta fr\aa{} museet sin opne DigitaltMuseum-API og supplert med 128~tredimensjonale modellar av norskproduserte stolar i korrekte dimensjonar, unders\o{}kjer studien korleis materialkurver fungerer som eit kolonialt arkiv. Hovudfunnet er \emph{mahogniens boge}: ein materiell signatur der karibisk tropisk hardved stig fr\aa{} null til 86\,\% av alle registrerte stolar i perioden 1825--1849, for deretter \aa{} kollapse. Kurva f\o{}lgjer den transatlantiske mahognihandelen dokumentert av \citet{anderson2012} og \citet{bowett2012} nesten synkront, og plasserer Nasjonalmuseet sitt magasin som ein perifer node i eit handelsnettverk som knyter jamaicanske regnskogar, tvangsarbeidande t\o{}mmerarbeidarar, britisk tollpolitikk og norske snekkarverkstader saman. Samstundes viser dataa at norskproduserte stolar opprettheld ein materiell dobbeltheit: importert mahogni vert konsekvent kombinert med lokalt tre som furu, bj\o{}rk og gran. Artikkelen argumenterer for at materialkurveanalyse er ein underutnytta metode i designhistoria som kan gjere materiell kultur lesbar som geopolitisk historie.
+
+\medskip
+\noindent\textbf{N\o{}kkelord:} materialhistorie, stoldesign, norsk designhistorie, kolonihandel, mahogni, Nasjonalmuseet, kvantitativ analyse, digitale humaniora
 \end{abstract}
 
-\section{Innleiing: Form Follows Fitness}
-Nasjonalmuseet si samling av stolar spenner over nesten 800 år og fortel ei rik historie om materialbruk, handverk og teknologisk utvikling. Frå dei eldste mellomalderstolane i furu til moderne stål- og plaststolar, speglar materialvalet tilgjengelege ressursar, estetiske ideal og funksjonelle behov. 
+% -------------------------------------------------------------------
+\section{Innleiing}
 
-For å heve den akademiske kvaliteten i industridesignfaget, byggjer denne analysen på eit strengt teoretisk rammeverk inspirert av Le Corbusier sine maskinalder-ideal \citep{corbusier1923} og Jony Ive si søken etter absolutt materiell reduksjon og perfeksjon \citep{ive2014}. Gjennom konseptet \textit{«form follows fitness»} blir design vurdert ut frå korleis materialet er optimalisert for sitt føremål. Ved å bruke dataingeniørmetodar -- spesifikt utrekningar av volum-til-vekt-forhold frå over 100 3D-skanna og modellerte stolar -- kan vi for første gong setje eksakte tal på korleis norsk møbeldesign har utvikla seg mot høgare «fitness».
+I magasinet til Nasjonalmuseet i Oslo st\aa{}r det ein stol registrert som OK-10330A, datert til om lag 1830 og produsert i Noreg. Materiallista er kort: mahogni, hestetagl, furu, eik, whitewood. Teknikkane er tapping og polstring. Stolen er 78\,cm h\o{}g, 45,5\,cm brei og 50\,cm djup, med ei seteh\o{}gd p\aa{} 47,5\,cm. For ein konvensjonell designhistorikar er dette ein anonym empirestol utan tilskriven snikkar, ein av mange i eit museum som tel over 50\,000 objekt. Men materiallista er ikkje anonym. Ho er eit komprimert verdskart.
 
-\section{Mellomalder og renessanse: Treverket som dominerer}
-Dei eldste stolane i samlinga er hovudsakleg laga av furu, gran og bjørk; kortreiste materialar som var lett tilgjengelege. Eit kroneksempel er \textit{Stolpestol frå Baldishol} (ca. 1200). 
+Mahognien kjem fr\aa{} tropiske regnskogar i Karibia eller Mellom-Amerika, felt av tvangsarbeidande menneske under det britiske kolonistyret og frakta over Atlanterhavet som ei vare i eit handelsnettverk som omsette sukker, slavar og t\o{}mmer i same r\o{}rsle \citep{anderson2012}. Hestetaglet, brukt som polstringsmateriale, knyter stolen til europeiske leverandørkjeder for animalske fiber. Furu og eik er norske: dei veks i skogane som omgir snekkarverkstaden. Og whitewood, eit uspesifisert lyst treslag brukt som blindtre under mahognioverflata, er det usynlege fundamentet som held den koloniale fasaden oppe. Fem materialar fr\aa{} minst tre kontinent, samla i \'ein norsk stol.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.4\textwidth]{../bilete/OK-05510.jpg}
-    \caption{Stolpestol frå Baldishol (ca. 1200). Materiale: Bjørk og Gran. Ref: OK-05510.}
-    \label{fig:baldishol}
-\end{figure}
+Denne artikkelen tek utgangspunkt i ein enkel observasjon: Dersom kvar stol i ei museumssamling ber ei slik materialliste, og dersom ein kan strukturere desse listene som kvantitative data, d\aa{} er det mogleg \aa{} lese museumsmagasinet som eit materialkurvediagram der kvar kurve representerer eit materiale si stiging og fall over tid. Metoden eg kallar \emph{materialkurveanalyse} er ikkje ny i prinsippet --- \citet{moretti2005} sin \emph{distant reading} og \citet{manovich2020} sin \emph{cultural analytics} har demonstrert verdien av kvantifisering i humaniora --- men han er, s\aa{} vidt eg kan fastsl\aa{}, ikkje tidlegare systematisk brukt p\aa{} museumssamlingar av brukskunst.
 
-Stolane frå denne epoken var ofte tunge og massive, med utskjeringar som viste status og religiøs tilknyting. Konstruksjonen var prega av tømrarhandverk med tjukke dimensjonar for å kompensere for materialets låge brotstyrke, noko 3D-analysane våre viser gjev eit svært høgt volum i forhold til sitjeflate (låg materiell «fitness»).
+Spesifikt stillar artikkelen tre forskingsp\o{}rsm\aa{}l:
+\begin{enumerate}
+    \item Korleis fordeler materialar seg over tid i Nasjonalmuseet si stolsamling, og kva historiske prosessar gjer desse fordelingane synlege?
+    \item I kva grad fungerer mahogni sin materialkurve som ein proxy for norsk deltaking i den transatlantiske koloniøkonomien?
+    \item Finst det ein systematisk \emph{materiell dobbeltheit} i norskproduserte stolar, der importerte og lokale materialar sameksisterer i same objekt?
+\end{enumerate}
 
-\section{Barokk og rokokko: Eksotiske treslag og handverk}
-Utover på 1600- og 1700-talet ser vi eit skifte mot meir variert materialbruk og forfina snikkararbeid. Import av eksotiske treslag vart vanleg, men mange norske stolar vart framleis laga i bjørk og furu med innslag av jernbeslag.
+% -------------------------------------------------------------------
+\section{Forskingsgjennomgang}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.4\textwidth]{../bilete/OK-04953.jpg}
-    \caption{Typisk stol frå ca. 1600. Materiale: Bjørk, Jern, Furu. Ref: OK-04953.}
-    \label{fig:1600stol}
-\end{figure}
+\subsection{Materialitet og tingteori}
 
-Desse konstruksjonane viser eit tidleg steg mot materiell optimalisering, der formene byrjar å følgje ergonomiske behov meir presist, sjølv om handverket framleis bar preg av solide, handskorne dimensjonar.
+Materialitet som analytisk kategori har gjennomg\aa{}tt ei radikal omvurdering dei siste tre ti\aa{}ra. \citet{appadurai1986} og \citet{kopytoff1986} etablerte at ting har sosiale biografiar som endrar seg n\aa{}r dei flyttar seg mellom kontekstar. \citet{ingold2007} kritiserte det han kalla \emph{materials against materiality} --- tendensen til \aa{} abstrahere materialar til diskursive kategoriar i staden for \aa{} studere dei som aktive, transformerande stoff. \citet{bennett2010} utvida dette til ein \emph{vibrant materialism} der ting har agens uavhengig av menneskeleg intensjon. \citet{pels2002} argumenterte for at objekt medierer sosiale relasjonar gjennom sin materielle konfigurasjon, ikkje berre gjennom sin symbolverdi.
 
-\section{1800-talet: Industrialisering og tidleg masseproduksjon}
-Den industrielle revolusjonen førte med seg nye produksjonsmetodar. Maskinering gjorde det mogleg å lage slankare og meir nøyaktige komponentar i treverk som mahogni.
+For designhistorie har denne vendinga konsekvensar. Dersom materialar er aktive akt\o{}rar, d\aa{} er eit materialval ikkje berre eit estetisk eller \o{}konomisk val, men ein posisjonering i eit nettverk av utvinning, transport, handel og makt. Mahogni i ein norsk stol fr\aa{} 1830 er ikkje berre ein trevariant; det er ein kondensert kolonirelasjon.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.4\textwidth]{../bilete/OK-14846.jpg}
-    \caption{Stol frå 1855 i Mahogni og Bjørk, polstra med ull og stramei. Ref: OK-14846.}
-    \label{fig:1800stol}
-\end{figure}
+\subsection{Kvantitative metodar i kulturhistoria}
 
-Her ser vi at stolane blir vesentleg lettare. Polstring vart utbreidd, og toleransane i samansetjingane vart strammare. Den kvantitative analysen av denne epoken viser eit tydeleg dropp i gjennomsnittsvekt, eit direkte resultat av industrialiseringa sin påverknad på form (auka fitness).
+\citet{moretti2005,moretti2013} demonstrerte at kvantifisering av store tekstkorpus --- det han kalla \emph{distant reading} --- avdekte m\o{}nster som er usynlege p\aa{} niv\aa{}et av enkeltverket. \citet{manovich2020} utvida dette til visuell kultur. \citet{drucker2014} p\aa{}peika at visualiseringsmetodar ikkje er n\o{}ytrale representasjonar, men \emph{generative} --- dei produserer kunnskap gjennom sine visuelle konvensjonar.
 
-\section{Modernismen: Stål, lær og materiell frigjering}
-På 1900-talet eksperimenterte designarar med heilt nye materialar. Stålrøyr vart eit symbol på den moderne tida, og designarar som Finn Bryn skapte stolar der bærekonstruksjon og komfort var separert.
+\subsection{Norsk designhistorie}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{../bilete/OK-1991-0893A.jpg}
-    \caption{Lenestol av Finn Bryn (1928). Tre og Skinn. Ref: OK-1991-0893A.}
-    \label{fig:bryn}
-\end{figure}
+Norsk designhistorie har tradisjonelt vore skriven som ein kvalitativ disiplin fokusert p\aa{} individuelle designarar og ikoniske objekt. \citet{wildhagen1988} si breie oversikt over norsk kunsth\aa{}ndverk og design under industrikulturen, \citet{opstad2005} si jubileumsbok for Kunstindustrimuseet, og \citet{halen2003} og \citet{wickman2006} sine komparative skandinaviske studiar representerer denne tradisjonen. Kvantitative materialtilnærmingar er fråverande i denne litteraturen.
 
-I tråd med Le Corbusier og seinare Jony Ive, ser vi her korleis overflødig materiale vert skrella vekk. Designet er strippa ned til det strengt naudsynte for å oppnå funksjonen, noko som gjev ei ekstremt høg utteljing på fitness-skalaen.
+% -------------------------------------------------------------------
+\section{Metode og datasett}
 
-\section{Samtida: Eksperimentering og nye komposittar}
-Fram mot vår eiga tid har norsk møbeldesign, representert ved Terje Ekstrøm sin ikoniske \textit{Ekstrem}-stol, utfordra konvensjonelle typologiar radikalt. 
+\subsection{Datainnsamling}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{../bilete/NMK.2016.0136.jpg}
-    \caption{Ekstrem Maestro av Terje Ekstrøm (1980). Stål og Kryssfiner (polstra). Ref: NMK.2016.0136.}
-    \label{fig:ekstrem}
-\end{figure}
+Datasettet er bygd i to lag. Det fyrste laget er ei programmatisk uthenting av alle objekt klassifiserte som ``stol'' i Nasjonalmuseet si DigitaltMuseum-samling via KulturIT sitt API \citep{kulturit}. Uthentinga, gjennomf\o{}rt i Python med paginert s\o{}king og automatisk deduplisering, resulterte i 461~unike stol-objekt med metadata inkludert objekt-ID, tittel, datering, produksjonsstad, materialliste, teknikk, dimensjonar og biletelenker.
 
-Sjølv om formene kan verke lekne, kviler dei på ei djup forståing av materialitet (ofte innvendige stålstrukturar bygd inn i skum/tekstil). Form følgjer her ei ny form for ergonomisk fitness, der fridom i sitjestilling dikterer den radikale geometrien.
+Det andre laget er eit handkurert underdatasett p\aa{} 135~norskproduserte stolar (identifisert gjennom feltet \texttt{produksjonsstad}), der kvar stol er supplert med 25~strukturerte metadatafelt og, der tilstrekkeleg referansemateriale finst, ein tredimensjonal modell i GLB-format. Til saman er 128~slike modellar produserte, modellerte i korrekte dimensjonar basert p\aa{} museet sine m\aa{}loppgjevingar.
 
-\section{Kvantitativ analyse: Vekt og evolusjon}
-Eit sentralt bidrag i denne studien er bruken av digitale verktøy for å analysere form og «fitness». Ved å supplere databasen frå Nasjonalmuseet med over 100 eigenproduserte 3D-modellar, har vi kunne gjere detaljerte strukturelle og volumetriske samanlikningar. Dette datadrivne perspektivet demonstrerer korleis materialval har redusert dimensjonering gjennom 800 år.
+\subsection{Materialkurveanalyse}
+
+For kvar stol i datasettet er materiallista parsa til individuelle materialar. Desse er deretter aggregerte i 25-\aa{}rsperiodar basert p\aa{} dateringsinformasjon. For kvar periode er kvar materialtype tald som ein bin\ae{}r variabel (til stades/ikkje til stades) og uttrykt som prosentdel av totalt tal stolar i perioden. Resultatet er \emph{materialkurver}: tidsseriar som viser kvart materiale si relative hyppigheit over tid (Figur~\ref{fig:materialkurver}).
+
+\subsection{Avgrensingar}
+
+Datasettet speglar Nasjonalmuseet sin innkj\o{}pspolitikk, ikkje norsk m\o{}belproduksjon som heilskap. Museet har systematisk prioritert kunstindustrielle objekt og gjenstandar med kjend proveniens. Dateringane er i mange tilfelle estimat. Materiallister i museumskatalogar er heller ikkje standardiserte: same materiale kan f\o{}rekome under ulike namn. Trass i desse avgrensingane er datasettet det st\o{}rste strukturerte materialdatasettet for norsk stoldesign som finst, og m\o{}nstra er robuste nok til \aa{} underbyggje hovudargumentasjonen.
+
+% -------------------------------------------------------------------
+\section{Resultat}
+
+\subsection{Materialkurver: eit oversyn}
+
+Figur~\ref{fig:materialkurver} viser materialkurvene for dei sju mest framtredande materialgruppene i dei 135~norskproduserte stolane. Kurva avdekkjer tre distinkte regime:
+
+\begin{enumerate}
+    \item \textbf{Det lokale regimet} (1200--1700): Furu, bj\o{}rk og eik dominerer. Alle materialar er kortreiste og reflekterer ein lokal handverks\o{}konomi.
+    \item \textbf{Det koloniale regimet} (1700--1875): Mahogni stig dramatisk, n\aa{}r ein topp p\aa{} 93\,\% i perioden 1825--1850, og kollapsar deretter. B\o{}k (eit europeisk importtre) f\o{}lgjer eit liknande, men seinare, m\o{}nster.
+    \item \textbf{Det industrielle regimet} (1875--2005): St\aa{}l, kryssfiner og nye komposittar erstattar dei tradisjonelle materialane. Mangfaldet aukar.
+\end{enumerate}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{../charts/01_weight_over_time.png}
-    \caption{Utvikling i estimert vekt/volum over tid (basert på 135 norske stolar frå \texttt{stolar.db} og 3D-data).}
-    \label{fig:weight}
+    \includegraphics[width=\textwidth]{figurar/fig1_materialkurver.pdf}
+    \caption{Materialkurver for norskproduserte stolar i Nasjonalmuseet (\emph{n}\,=\,135). Kvar kurve viser prosentdelen av stolar i ein 25-\aa{}rsperiode som inneheld det aktuelle materialet. Tre distinkte materielle regime er synlege.}
+    \label{fig:materialkurver}
 \end{figure}
+
+\subsection{Mahogniens boge}
+
+Det mest sl\aa{}ande enkeltfunnet er mahogni sin materialkurve. Figur~\ref{fig:mahogniboge} viser kurva isolert, med tal stolar per periode som referanse. Mahogni er fr\aa{}verande f\o{}r 1700, stig til 93\,\% i perioden 1825--1850, og forsvinn nesten fullstendig etter 1875.
+
+Denne kurva er ikkje eit norsk fenomen. Ho er ein lokal manifestasjon av den transatlantiske mahognihandelen. \citet{anderson2012} dokumenterer korleis karibisk mahogni (prim\ae{}rt \emph{Swietenia mahagoni}) vart den dominerande m\o{}beltreslaget i det britiske imperiet fr\aa{} om lag 1720. \citet{bowett1996,bowett2012} kartlegg handelsrutene og prisutviklinga i detalj: mahogni var billegare enn valn\o{}tt i London fr\aa{} 1730-talet, og tollreduksjonar i 1721 og 1747 akselererte importen. Den norske kurva f\o{}lgjer den britiske med ein forsinkelse p\aa{} om lag 25--50~\aa{}r.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{../charts/03_avg_weight_per_period.png}
-    \caption{Gjennomsnittleg vekt per stilepoke. Merk det markante droppet etter den industrielle revolusjonen.}
-    \label{fig:avgweight}
+    \includegraphics[width=\textwidth]{figurar/fig2_mahogniens_boge.pdf}
+    \caption{Mahogniens boge: Prosentdelen av norskproduserte stolar som inneheld mahogni, per 25-\aa{}rsperiode. Stiplalinja viser tal stolar i perioden. Kurva speglar den transatlantiske mahognihandelen med 25--50~\aa{}rs forsinking.}
+    \label{fig:mahogniboge}
 \end{figure}
 
-\section{Oppsummering}
-Stolsamlinga i Nasjonalmuseet er eit fysisk arkiv over menneska si evne til å forme verda rundt seg. Ved å hente ut kvantitative data frå historiske objekt -- frå den massive furuplanken til den optimaliserte stålstrukturen -- beviser vi at møbelhistoria er ei reise mot auka materiell «fitness». Dette fundamentet peikar fram mot eit skifte i korleis vi kan forstå og undervise i industridesign: Ikkje som rein formgjeving, men som objektiv optimalisering (Jony Ive) forankra i rasjonell konstruksjon (Le Corbusier).
+\subsection{Materiell dobbeltheit}
 
-\bibliographystyle{plainnat}
+Av dei 24~mahogni-stolane i det norskproduserte delsettet er 10 (42\,\%) konstruerte med ein kombinasjon av importert mahogni og lokalt tre (furu, bj\o{}rk, eik eller gran). Figur~\ref{fig:dobbeltheit} visualiserer denne fordelinga. Mahognien fungerer som overflatemateriale --- ryggbrett, armlen, frontben --- medan det lokale treet utgjer blindtre, bakben og berande innvendig struktur.
+
+Denne materielle dobbeltheita skil norske stolar fr\aa{} britiske ekvivalentar, der mahogni typisk vert brukt gjennomg\aa{}ande \citep{bowett2012}. Den norske stolen er \emph{kolonialt finert}: ein materiell strategi der globalt prestisjet\o{}mmer og lokal handverkstradisjon sameksisterer i same objekt.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figurar/fig3_materiell_dobbeltheit.pdf}
+    \caption{Materiell dobbeltheit i mahogni-stolar (\emph{n}\,=\,24). 42\,\% kombinerer importert mahogni med lokalt tre.}
+    \label{fig:dobbeltheit}
+\end{figure}
+
+\subsection{Dimensjonsutvikling}
+
+Figur~\ref{fig:dimensjonar} viser korleis stolane sine fysiske dimensjonar utviklar seg over tid. Andregradstrendlinja indikerer ein konvergens mot standardiserte dimensjonar etter industrialiseringa.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figurar/fig4_dimensjonar.pdf}
+    \caption{Dimensjonsutvikling i norskproduserte stolar. Venstre: h\o{}gde over tid. H\o{}gre: breidde over tid. Trendlinja (andregradspolynom) viser konvergens mot standardiserte m\aa{}l.}
+    \label{fig:dimensjonar}
+\end{figure}
+
+% -------------------------------------------------------------------
+\section{Diskusjon}
+
+\subsection{Museumsmagasinet som kolonialt arkiv}
+
+Mahogniens boge demonstrerer at Nasjonalmuseet sitt magasin, utan intensjon, fungerer som eit kolonialt arkiv. Kvart mahogniobjekt er eit materielt bevis p\aa{} norsk deltaking i den transatlantiske \o{}konomien. At 93\,\% av alle registrerte norskproduserte stolar i perioden 1825--1850 inneheld mahogni, tyder p\aa{} at dette ikkje er eit marginalt fenomen; det er den dominerande materielle realiteten i norsk m\o{}belhandverk i denne \ae{}raen.
+
+\subsection{Materialkurveanalyse som metode}
+
+Materialkurveanalyse --- systematisk kvantifisering av materialfordeling over tid i museumssamlingar --- viser seg \aa{} vere ein produktiv metode. Styrken ligg i evna til \aa{} avdekke m\o{}nster som er usynlege p\aa{} enkeltverkniv\aa{}. Ingen enkelt stol fortel historia om mahogniens boge; ho vert synleg fyrst n\aa{}r 135~objekt vert aggregerte. Dette er ein direkte parallell til \citet{moretti2005} sin observasjon om at \emph{distant reading} avdekkjer strukturar som \emph{close reading} ikkje kan sjå.
+
+\subsection{Den materielle dobbeltheitens geopolitikk}
+
+Den norske strategien med å finere kolonialt t\o{}mmer over lokal furu er ein materiell kompromissposisjon. Noreg var ikkje ein kolonimakt, men ein perifer deltakar i kolonihandelen. Stolen OK-10330A ber dette i sin materialstruktur: mahogni utanp\aa{}, furu inni. Den koloniale relasjonen er bokstavleg innebygd i objektet.
+
+% -------------------------------------------------------------------
+\section{Konklusjon}
+
+Denne artikkelen har presentert tre hovudfunn.
+
+For det fyrste: \emph{Mahogniens boge}, ein materiell signatur i Nasjonalmuseet si stolsamling der karibisk tropisk hardved stig fr\aa{} null til 93\,\% i perioden 1825--1850 og deretter kollapsar, er ein kvantitativ manifestasjon av den transatlantiske kolonihandelen lest gjennom eit norsk museumsmagasin. Kurva plasserer Noreg som perifer, men integrert, deltakar i dei globale materialkrinslopa som dreiv den europeiske m\o{}belindustrien p\aa{} 1700- og 1800-talet.
+
+For det andre: Norskproduserte stolar opprettheld ein \emph{materiell dobbeltheit} som skil dei fr\aa{} britiske ekvivalentar. Importert mahogni fungerer som overflate, medan lokal furu, bj\o{}rk og gran utgjer den berande strukturen. Stolen er kolonialt finert: ein materiell strategi der globalt prestisjet\o{}mmer og lokal handverkstradisjon sameksisterer i same objekt.
+
+For det tredje: Materialkurveanalyse, forst\aa{}tt som systematisk kvantifisering av materialfordeling over tid i museumssamlingar, er ein underutnytta metode i designhistoria. Han tilbyr eit kvantitativt supplement til den kvalitative n\ae{}rlesinga som dominerer feltet, og kan gjere materiell kultur lesbar som geopolitisk historie.
+
+G\aa{}rastolen fr\aa{} om lag 1280 og OK-10330A fr\aa{} om lag 1830 er skilde av 550~\aa{}r. Den fyrste er furu og bj\o{}rk fr\aa{} B\o{} i Telemark. Den andre er mahogni, hestetagl, furu, eik og whitewood: fem materialar fr\aa{} minst tre kontinent. Avstanden mellom dei er ikkje berre tid; det er avstanden mellom ein lokal og ein global material\o{}konomi. \AA{} kvantifisere den avstanden er, slik denne artikkelen har fors\o{}kt, ei gyldig og naudsynt oppg\aa{}ve for designhistoria.
+
+% -------------------------------------------------------------------
+\bibliographystyle{apalike}
 \bibliography{referansar}
 
 \end{document}
