@@ -3,8 +3,6 @@ import glob
 import concurrent.futures
 from pathlib import Path
 from PIL import Image
-import numpy as np
-import cv2
 from dotenv import load_dotenv
 from google import genai
 from google.genai import types
@@ -33,6 +31,12 @@ def generate_orbit_for_image(client, img_path):
     
     frames = []
     
+    # Check if the GIF is already fully generated to allow fast resuming
+    gif_path = out_dir / f"{stem_name}_orbit.gif"
+    if gif_path.exists():
+        print(f"{Fore.CYAN}{Style.DIM}Skipping completed orbit for {stem_name}{Style.RESET_ALL}")
+        return
+
     print(f"\n{Fore.CYAN}{Style.BRIGHT}Starting Orbit Generation (Product Turntable Mode) for: {stem_name}")
     print(f"Goal: 8 frames (45° steps), 512x512px, Black BG")
     print(f"----------------------------------------------------------{Style.RESET_ALL}")
@@ -50,23 +54,22 @@ def generate_orbit_for_image(client, img_path):
         "7. If multiple images are provided, use the original for detail and the black-background version as the 0° starting point."
     )
 
-    current_input_img = None # Will be set to the previous frame image
+    current_input_img = None
 
     for i in range(1, 9):
         frame_path = out_dir / f"{stem_name}_{i:02d}.png"
         
         if frame_path.exists():
-            print(f"{Fore.BLUE}Skipping existing frame {i:02d}{Style.RESET_ALL}")
+            print(f"{Fore.BLUE}Skipping existing frame {i:02d} for {stem_name}{Style.RESET_ALL}")
             current_frame_img = Image.open(frame_path)
             frames.append(current_frame_img)
             current_input_img = current_frame_img
             continue
 
-        print(f"{Fore.YELLOW}Generating frame {i:02d}/08 (Rotating +45°)...{Style.RESET_ALL}")
+        print(f"{Fore.YELLOW}Generating frame {i:02d}/08 for {stem_name} (Rotating +45°)...{Style.RESET_ALL}")
         
         # Build prompt and contents
         if i == 1:
-            # First frame generation: Original + Black BG (0°)
             prompt = (
                 f"{system_instruction}\n\n"
                 "Attached are the original image and the black-background (0° front) reference. "
@@ -76,7 +79,6 @@ def generate_orbit_for_image(client, img_path):
             if black_bg_path.exists():
                 contents.append(Image.open(black_bg_path))
         else:
-            # Subsequent frames: Just the previous frame
             prompt = (
                 f"{system_instruction}\n\n"
                 "The provided image is the previous frame in the sequence. "
@@ -112,56 +114,63 @@ def generate_orbit_for_image(client, img_path):
                         print(f"{Fore.MAGENTA}Model Text: {part.text}{Style.RESET_ALL}")
             
             if not saved:
-                print(f"{Fore.RED}Failed to generate frame {i:02d}{Style.RESET_ALL}")
+                print(f"{Fore.RED}Failed to generate frame {i:02d} for {stem_name}{Style.RESET_ALL}")
                 break
                 
         except Exception as e:
-            print(f"{Fore.RED}Error in frame {i:02d}: {e}{Style.RESET_ALL}")
+            print(f"{Fore.RED}Error in frame {i:02d} for {stem_name}: {e}{Style.RESET_ALL}")
             break
 
     if len(frames) == 8:
-        create_animations(stem_name, frames, out_dir)
+        create_animations(stem_name, frames, out_dir, gif_path)
 
-def create_animations(name, frames, out_dir):
+def create_animations(name, frames, out_dir, gif_path):
     print(f"\n{Fore.CYAN}Compiling orbit animations for {name}...{Style.RESET_ALL}")
     
-    gif_path = out_dir / f"{name}_orbit.gif"
-    processed_frames = [f.convert("P", palette=Image.ADAPTIVE) for f in frames]
-    processed_frames[0].save(
-        gif_path,
-        save_all=True,
-        append_images=processed_frames[1:],
-        duration=125,
-        loop=0,
-        optimize=True
-    )
-    print(f"{Fore.GREEN}GIF: {gif_path}{Style.RESET_ALL}")
-
-    webm_path = out_dir / f"{name}_orbit.webm"
     try:
-        height, width = frames[0].size
-        fourcc = cv2.VideoWriter_fourcc(*'VP80')
-        video = cv2.VideoWriter(str(webm_path), fourcc, 8.0, (width, height))
-        for frame in frames:
-            cv_img = cv2.cvtColor(np.array(frame), cv2.COLOR_RGB2BGR)
-            video.write(cv_img)
-        video.release()
-        print(f"{Fore.GREEN}WebM: {webm_path}{Style.RESET_ALL}")
+        processed_frames = [f.convert("P", palette=Image.ADAPTIVE) for f in frames]
+        processed_frames[0].save(
+            gif_path,
+            save_all=True,
+            append_images=processed_frames[1:],
+            duration=125,
+            loop=0,
+            optimize=True
+        )
+        print(f"{Fore.GREEN}GIF created: {gif_path}{Style.RESET_ALL}")
     except Exception as e:
-        print(f"{Fore.RED}WebM failed: {e}{Style.RESET_ALL}")
+        print(f"{Fore.RED}GIF creation failed: {e}{Style.RESET_ALL}")
 
-def main():
+    # Video compilation skipped as per user request
+    print(f"{Fore.CYAN}Skipping WebM/MP4 compilation (OpenCV bypassed).{Style.RESET_ALL}")
+
+def process_all_images(limit=None):
     if not API_KEY:
-        print(f"{Fore.RED}GEMINI_API_KEY missing.{Style.RESET_ALL}")
+        print(f"{Fore.RED}{Style.BRIGHT}GEMINI_API_KEY missing from .env{Style.RESET_ALL}")
         return
+
     client = genai.Client(api_key=API_KEY)
-    test_image = "NM_stolar/NMK.2005.0638_09013.png"
-    if os.path.exists(test_image):
-        generate_orbit_for_image(client, test_image)
-    else:
-        pngs = glob.glob("bilete/*.png")
-        if pngs:
-            generate_orbit_for_image(client, pngs[0])
+    
+    image_paths = []
+    image_paths.extend(glob.glob("NM_stolar/*.png"))
+    image_paths.extend(glob.glob("bilete/*.png"))
+    image_paths = sorted(image_paths)
+    
+    if limit is not None:
+        image_paths = image_paths[:limit]
+        
+    print(f"\n{Fore.CYAN}{Style.BRIGHT}==========================================")
+    print(f" STARTING FULL ORBIT GENERATION")
+    print(f" Source images: {len(image_paths)}")
+    print(f" Parallel workers: 10")
+    print(f"=========================================={Style.RESET_ALL}\n")
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+        futures = []
+        for img_path in image_paths:
+            futures.append(executor.submit(generate_orbit_for_image, client, img_path))
+        
+        concurrent.futures.wait(futures)
 
 if __name__ == "__main__":
-    main()
+    process_all_images(limit=None)
