@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useMemo, useRef } from "react"
+import { useState, useEffect, useMemo } from "react"
 import { useRouter } from "next/navigation"
 import {
   BarChart,
@@ -92,132 +92,129 @@ export default function ArticlePage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-white flex items-center justify-center font-sans">
-        <div className="text-xl animate-pulse text-gray-400 font-mono tracking-tighter">Lastar kvantitative data...</div>
+      <div className="min-h-screen bg-white flex items-center justify-center font-mono text-[10px] uppercase tracking-widest text-gray-400">
+        Lastar kvantitative data...
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-white text-black font-serif selection:bg-black selection:text-white pb-32 overflow-x-hidden">
+    <div className="min-h-screen bg-white text-black font-serif selection:bg-black selection:text-white pb-40 overflow-x-hidden">
       {/* Navigasjon */}
-      <nav className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md border-b border-gray-100 z-50 px-6 py-4 flex justify-between items-center">
+      <nav className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md border-b border-gray-100 z-50 px-8 py-6 flex justify-between items-center">
         <button
           onClick={() => router.push('/')}
-          className="flex items-center text-[10px] font-mono font-bold uppercase tracking-widest text-gray-400 hover:text-black transition-colors"
+          className="flex items-center text-[10px] font-mono font-black uppercase tracking-widest text-black hover:line-through transition-all"
         >
-          <svg className="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-          </svg>
-          Gå til databasen
+          ← Stol-database
         </button>
-        <div className="text-[10px] font-mono font-bold text-black tracking-[0.2em] uppercase">
+        <div className="text-[10px] font-mono font-black text-black tracking-[0.3em] uppercase">
           Materialhistorie 1280–2020
         </div>
       </nav>
 
       {/* Artikkel-header */}
-      <header className="max-w-4xl mx-auto pt-48 pb-24 px-6 md:px-12">
-        <p className="text-[10px] font-mono font-bold uppercase tracking-[0.4em] text-gray-300 mb-8">Forskingsartikkel</p>
-        <h1 className="text-5xl md:text-8xl font-sans font-bold tracking-tighter leading-[0.9] mb-12">
-          Materialhistorie i Nasjonalmuseet si stolsamling <br/>
-          <span className="text-gray-300">Materialkurver som kolonialt arkiv</span>
+      <header className="max-w-5xl mx-auto pt-48 pb-32 px-8">
+        <p className="text-[10px] font-mono font-black uppercase tracking-[0.5em] text-gray-300 mb-12">Forskingsartikkel</p>
+        <h1 className="text-6xl md:text-[10rem] font-sans font-black tracking-tighter leading-[0.8] mb-16 text-black">
+          Materialhistorie.<br/>
+          <span className="text-gray-200">Kolonialt arkiv.</span>
         </h1>
         
-        <div className="flex flex-col md:flex-row gap-16 border-y border-gray-100 py-12 my-12">
-          <div className="flex-1">
-            <p className="text-[10px] font-mono font-bold uppercase tracking-widest text-gray-400 mb-4">Forfattar</p>
-            <p className="text-2xl font-sans font-bold tracking-tight leading-none">Iver Raknes Finne</p>
-            <p className="text-sm text-gray-500 font-sans mt-2 leading-relaxed">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 border-y border-gray-100 py-16 my-16">
+          <div>
+            <p className="text-[10px] font-mono font-black uppercase tracking-widest text-gray-400 mb-6">Forfattar</p>
+            <p className="text-3xl font-sans font-black tracking-tight leading-none uppercase">Iver Raknes Finne</p>
+            <p className="text-sm text-gray-500 font-sans mt-4 leading-relaxed max-w-xs">
               Institutt for design, Arkitektur- og designhøgskolen i Oslo (AHO)
             </p>
           </div>
-          <div className="flex-1">
-            <p className="text-[10px] font-mono font-bold uppercase tracking-widest text-gray-400 mb-4">Metode</p>
-            <p className="text-2xl font-sans font-bold tracking-tight leading-none font-mono">Materialkurveanalyse</p>
-            <p className="text-sm text-gray-500 font-sans mt-2 leading-relaxed">
-              Systematisk kvantifisering av {data.length} objekt daterte frå 1280 til 2020.
+          <div>
+            <p className="text-[10px] font-mono font-black uppercase tracking-widest text-gray-400 mb-6">Metode</p>
+            <p className="text-3xl font-sans font-black tracking-tight leading-none uppercase">Materialkurveanalyse</p>
+            <p className="text-sm text-gray-500 font-sans mt-4 leading-relaxed">
+              Systematisk kvantifisering av materialfordeling over tid i Nasjonalmuseet si samling.
             </p>
           </div>
         </div>
 
-        <div className="bg-gray-50 p-10 rounded-3xl border border-gray-100 italic text-xl leading-relaxed text-gray-800 font-serif">
+        <div className="max-w-3xl bg-gray-50 p-12 lg:p-20 rounded-[3rem] border border-gray-100 italic text-2xl leading-snug text-gray-800 font-serif">
           <strong>Samandrag:</strong> Artikkelen presenterer den fyrste systematiske kvantitative materialanalysen av Nasjonalmuseet si stolsamling. Gjennom eit nytt strukturert datasett undersøkjer studien korleis materialkurver fungerer som eit kolonialt arkiv. Hovudfunnet er <em>mahogniens boge</em>: ein materiell signatur der karibisk tropisk hardved stig dramatisk for deretter å kollapse, nesten synkront med den transatlantiske mahognihandelen.
         </div>
       </header>
 
-      {/* Hovudtekst */}
-      <article className="max-w-3xl mx-auto px-6 md:px-12 space-y-16 text-xl leading-relaxed text-gray-900">
+      {/* Artikkel-tekst */}
+      <article className="max-w-3xl mx-auto px-8 space-y-24 text-2xl leading-relaxed text-gray-900">
         <section>
-          <h2 className="text-4xl font-sans font-bold text-black mb-8 tracking-tight">Innleiing</h2>
-          <p className="mb-8">
-            I magasinet til Nasjonalmuseet i Oslo står det ein stol registrert som <strong>OK-10330A</strong>, datert til om lag 1830. Materiallista er kort: mahogni, hestetagl, furu, eik, whitewood. For ein konvensjonell designhistorikar er dette ein anonym empirestol. Men materiallista er ikkje anonym. Ho er eit komprimert verdskart.
+          <h2 className="text-5xl font-sans font-black text-black mb-12 tracking-tighter uppercase italic">1. Innleiing</h2>
+          <p className="mb-12">
+            I magasinet til Nasjonalmuseet i Oslo står det ein stol registrert som <strong className="font-mono text-xl">OK-10330A</strong>, datert til om lag 1830. Materiallista er kort: mahogni, hestetagl, furu, eik, whitewood. For ein konvensjonell designhistorikar er dette ein anonym empirestol. Men materiallista er ikkje anonym. Ho er eit komprimert verdskart.
           </p>
           <p>
-            Mahognien kjem frå tropiske regnskogar i Karibia, felt av tvangsarbeidande menneske under det britiske kolonistyret. Hestetaglet knyter stolen til europeiske leverandørkjeder. Furu og eik er norske. Fem materialar frå minst tre kontinent, samla i éin norsk stol. Museumsmagasinet kan lesast som eit materialkurvediagram der kvar kurve representerer eit materiale si stiging og fall over tid.
+            Mahognien kjem frå tropiske regnskogar i Karibia, felt av tvangsarbeidande menneske under det britiske kolonistyret. Furu og eik er norske. Fem materialar frå minst tre kontinent, samla i éin norsk stol. Museumsmagasinet kan lesast som eit materialkurvediagram der kvar kurve representerer eit materiale si stiging og fall over tid.
           </p>
         </section>
 
-        {/* Interaktiv Graf: Produksjonsgeografi */}
-        <section className="py-12 full-bleed md:-mx-12">
-          <div className="bg-white p-8 md:p-12 rounded-[2.5rem] border border-gray-100 shadow-sm overflow-hidden">
-            <h4 className="text-[10px] font-mono font-bold uppercase tracking-[0.3em] text-gray-400 mb-10 text-center">FIGUR 1: Geografisk fordeling av produksjon (topp 10 klynger)</h4>
-            <div className="h-[500px]">
+        {/* Figur 1: Geografi */}
+        <section className="py-12 full-bleed">
+          <div className="bg-white p-12 lg:p-24 rounded-[4rem] border border-gray-100 shadow-sm overflow-hidden">
+            <h4 className="text-[10px] font-mono font-black uppercase tracking-[0.4em] text-gray-300 mb-16 text-center">FIGUR 1: Geografisk fordeling av produksjon</h4>
+            <div className="h-[600px]">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={geoData} layout="vertical" margin={{ left: 20, right: 40 }}>
-                  <CartesianGrid strokeDasharray="2 2" horizontal={false} stroke="#f5f5f5" />
+                  <CartesianGrid strokeDasharray="2 2" horizontal={false} stroke="#f0f0f0" />
                   <XAxis type="number" hide />
                   <YAxis 
                     dataKey="name" 
                     type="category" 
-                    width={140} 
-                    tick={{ fontSize: 11, fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace', fontWeight: 'bold', fill: '#000' }} 
+                    width={160} 
+                    tick={{ fontSize: 12, fontFamily: 'ui-monospace, monospace', fontWeight: '900', fill: '#000' }} 
                     axisLine={false}
                     tickLine={false}
                   />
                   <Tooltip 
-                    cursor={{ fill: '#f9f9f9' }}
-                    contentStyle={{ borderRadius: '12px', border: '1px solid #eee', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', fontFamily: 'ui-monospace, monospace', fontSize: '12px' }}
+                    cursor={{ fill: '#fafafa' }}
+                    contentStyle={{ borderRadius: '0px', border: '1px solid #000', boxShadow: 'none', fontFamily: 'ui-monospace, monospace', fontSize: '12px', fontWeight: '900' }}
                   />
-                  <Bar dataKey="value" fill="#000" radius={[0, 4, 4, 0]} barSize={20} />
+                  <Bar dataKey="value" fill="#000" radius={0} barSize={24} />
                 </BarChart>
               </ResponsiveContainer>
             </div>
-            <p className="mt-8 text-sm text-gray-500 font-sans text-center px-12 italic leading-relaxed">
-              Analysen viser ei kraftig geografisk klynging i Sunnmøre og Oslo-regionen, noko som reflekterer Noreg si industrielle møbelhistorie.
+            <p className="mt-16 text-sm text-gray-400 font-mono font-bold text-center px-12 uppercase tracking-widest leading-relaxed">
+              Analysen viser ei kraftig klynging i Sunnmøre og Oslo-regionen.
             </p>
           </div>
         </section>
 
         <section>
-          <h2 className="text-4xl font-sans font-bold text-black mb-8 tracking-tight">Mahogni som kolonialhistorisk objekt</h2>
-          <p className="mb-8">
-            Naval Stores Act frå 1721 var den utløysande faktoren for mahogni sin dominans i europeisk møbelhandverk. Lova fjerna importtoll på tømmer frå britiske koloniar i Amerika. Noreg mottok mahogni som ein sekundærmarknad gjennom britisk reeksport.
+          <h2 className="text-5xl font-sans font-black text-black mb-12 tracking-tighter uppercase italic">2. Mahogniens boge</h2>
+          <p className="mb-12">
+            Hovudfunnet i denne studien er <strong>mahogniens boge</strong>. Mahogni er fråverande før 1700, stig dramatisk til ein topp på 86 % av alle registrerte stolar i perioden 1825–1849, for deretter å kollapse. Denne kurva er ein materiell biografi om den transatlantiske slaveriøkonomien.
           </p>
           <p>
-            Hovudfunnet i denne studien er <strong>mahogniens boge</strong>. Mahogni er fråverande før 1700, stig dramatisk til ein topp på 86 % av alle registrerte stolar i perioden 1825–1849, for deretter å kollapse. Denne kurva er ein materiell biografi om den transatlantiske slaveriøkonomien innbygd i eit norsk museumsmagasin.
+            Den norske kurva følgjer den britiske med ei forsinking på om lag 25–50 år, og plasserer Nasjonalmuseet sitt magasin som ein perifer node i eit globalt handelsnettverk som knyter jamaicanske regnskogar og norske snekkarverkstader saman.
           </p>
         </section>
 
-        {/* Interaktiv Graf: MaterialTimeline */}
-        <section className="py-12 full-bleed md:-mx-12">
-          <div className="bg-black p-8 md:p-16 rounded-[3rem] shadow-2xl relative">
-            <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px]" />
-            <h4 className="text-[10px] font-mono font-bold uppercase tracking-[0.5em] text-gray-500 mb-12 text-center">FIGUR 2: Materialkurver (Temporal analyse i %)</h4>
-            <div className="h-[550px]">
+        {/* Figur 2: Temporal analyse */}
+        <section className="py-12 full-bleed">
+          <div className="bg-black p-12 lg:p-24 rounded-[4rem] shadow-2xl relative overflow-hidden">
+            <div className="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(#333_1px,transparent_1px)] [background-size:30px_30px]" />
+            <h4 className="text-[10px] font-mono font-black uppercase tracking-[0.6em] text-gray-600 mb-20 text-center">FIGUR 2: Materialkurver 1280–2020 (%)</h4>
+            <div className="h-[600px]">
               <ResponsiveContainer width="100%" height="100%">
-                <AreaChart data={materialTimeline} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
+                <AreaChart data={materialTimeline}>
                   <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#222" />
-                  <XAxis dataKey="name" stroke="#444" tick={{ fontSize: 10, fontFamily: 'ui-monospace, monospace', fill: '#666' }} />
-                  <YAxis stroke="#444" tick={{ fontSize: 10, fontFamily: 'ui-monospace, monospace', fill: '#666' }} unit="%" />
+                  <XAxis dataKey="name" stroke="#444" tick={{ fontSize: 10, fontFamily: 'ui-monospace, monospace', fill: '#666', fontWeight: '900' }} />
+                  <YAxis stroke="#444" tick={{ fontSize: 10, fontFamily: 'ui-monospace, monospace', fill: '#666', fontWeight: '900' }} unit="%" />
                   <Tooltip 
-                    contentStyle={{ backgroundColor: '#000', border: '1px solid #333', color: '#fff', borderRadius: '8px', fontFamily: 'ui-monospace, monospace', fontSize: '12px' }}
+                    contentStyle={{ backgroundColor: '#000', border: '1px solid #333', color: '#fff', borderRadius: '0px', fontFamily: 'ui-monospace, monospace', fontSize: '12px', fontWeight: '900' }}
                   />
-                  <Legend verticalAlign="top" height={50} iconType="circle" wrapperStyle={{ paddingBottom: '30px', fontFamily: 'ui-monospace, monospace', fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.1em' }} />
-                  <Area type="monotone" dataKey="mahogni" stackId="1" stroke="#fff" fill="#fff" fillOpacity={0.9} />
-                  <Area type="monotone" dataKey="furu" stackId="1" stroke="#888" fill="#444" fillOpacity={0.8} />
-                  <Area type="monotone" dataKey="stål" stackId="1" stroke="#666" fill="#222" fillOpacity={0.7} />
-                  <Area type="monotone" dataKey="plast" stackId="1" stroke="#444" fill="#111" fillOpacity={0.6} />
+                  <Legend verticalAlign="top" height={60} iconType="square" wrapperStyle={{ paddingBottom: '40px', fontFamily: 'ui-monospace, monospace', fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.2em', fontWeight: '900' }} />
+                  <Area type="stepAfter" dataKey="mahogni" stackId="1" stroke="#fff" fill="#fff" fillOpacity={1} />
+                  <Area type="stepAfter" dataKey="furu" stackId="1" stroke="#888" fill="#444" fillOpacity={1} />
+                  <Area type="stepAfter" dataKey="stål" stackId="1" stroke="#666" fill="#222" fillOpacity={1} />
+                  <Area type="stepAfter" dataKey="plast" stackId="1" stroke="#444" fill="#111" fillOpacity={1} />
                 </AreaChart>
               </ResponsiveContainer>
             </div>
@@ -225,18 +222,18 @@ export default function ArticlePage() {
         </section>
 
         <section>
-          <h2 className="text-4xl font-sans font-bold text-black mb-8 tracking-tight">Norsk materiell dobbeltheit</h2>
-          <p className="mb-8">
-            Når materialkurvene for norskproduserte stolar vert analyserte separat, framtrer eit distinkt mønster: ein systematisk hybriditet. Norske stolmakarar adopterte koloniale materialar som statusmarkørar på overflata, men opprettheldt lokale materialar som furu og bjørk i den berande strukturen.
+          <h2 className="text-5xl font-sans font-black text-black mb-12 tracking-tighter uppercase italic">3. Materiell dobbeltheit</h2>
+          <p className="mb-12">
+            Norskproduserte stolar opprettheld ein <strong>materiell dobbeltheit</strong>. Importert mahogni fungerer som overflate, medan lokal furu og bjørk utgjer den berande strukturen.
           </p>
           <p>
-            Dette fenomenet, som eg kallar <strong>materiell dobbeltheit</strong>, gjer den norske stolen til eit kompromissposisjon mellom global prestisje og lokal ressursbruk. Stolen er kolonialt finert: eit lokalt møbel med ein importert estetisk hud.
+            Stolen er kolonialt finert: ein materiell strategi der globalt prestisjetømmer og lokal handverkstradisjon sameksisterer i same objekt. Denne hybriditeten reflekterer både økonomiske realitetar og ein spesifikt norsk materialposisjon.
           </p>
         </section>
 
-        <section className="border-t border-gray-100 pt-16">
-          <h2 className="text-4xl font-sans font-bold text-black mb-8 tracking-tight">Konklusjon</h2>
-          <div className="space-y-8 text-gray-600 italic font-serif">
+        <section className="border-t-[10px] border-black pt-24">
+          <h2 className="text-6xl font-sans font-black text-black mb-12 tracking-tighter uppercase italic leading-none">Konklusjon.</h2>
+          <div className="space-y-12 text-gray-600 italic font-serif leading-relaxed">
             <p>
               Materialkurveanalyse gjer designobjekt lesbare som geopolitisk historie. Nasjonalmuseet sitt magasin fungerer som eit kolonialt arkiv der kvar stol ber vitne om globale materialkrinslop.
             </p>
@@ -248,16 +245,17 @@ export default function ArticlePage() {
       </article>
 
       {/* Referansar */}
-      <footer className="max-w-3xl mx-auto py-24 px-6 md:px-12 border-t border-gray-100 mt-24">
-        <p className="text-[10px] font-mono font-bold uppercase tracking-[0.4em] text-gray-400 mb-10">Utvalde referansar</p>
-        <div className="space-y-6 text-sm font-sans text-gray-500 leading-relaxed">
-          <p>Anderson, J. L. (2012). <em>Mahogany: The costs of luxury in early America</em>. Harvard University Press.</p>
-          <p>Bowett, A. (2012). <em>Woods in British furniture-making 1400–1900</em>. Oblong.</p>
-          <p>Ingold, T. (2007). Materials against materiality. <em>Archaeological Dialogues</em>, 14(1), 1–16.</p>
-          <p>Moretti, F. (2005). <em>Graphs, Maps, Trees: Abstract Models for Literary History</em>. Verso.</p>
+      <footer className="max-w-5xl mx-auto py-40 px-8 border-t border-gray-100 mt-40">
+        <p className="text-[10px] font-mono font-black uppercase tracking-[0.5em] text-gray-300 mb-16">Referansar</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-sm font-sans font-bold text-gray-500 leading-relaxed uppercase tracking-tighter">
+          <p>Anderson, J. L. (2012). Mahogany: The costs of luxury in early America. Harvard University Press.</p>
+          <p>Bowett, A. (2012). Woods in British furniture-making 1400–1900. Oblong.</p>
+          <p>Ingold, T. (2007). Materials against materiality. Archaeological Dialogues, 14(1), 1–16.</p>
+          <p>Moretti, F. (2005). Graphs, Maps, Trees: Abstract Models for Literary History. Verso.</p>
         </div>
-        <div className="mt-20 pt-12 border-t border-gray-50 text-center">
-           <p className="text-[9px] font-mono font-bold text-gray-300 uppercase tracking-widest">&copy; 2026 Iver Raknes Finne &bull; AHO</p>
+        <div className="mt-40 pt-16 border-t border-gray-50 flex justify-between items-center text-[10px] font-mono font-black text-gray-200 uppercase tracking-[0.3em]">
+           <p>&copy; 2026 Iver Raknes Finne</p>
+           <p>AHO &bull; Arkitektur- og designhøgskolen i Oslo</p>
         </div>
       </footer>
     </div>
