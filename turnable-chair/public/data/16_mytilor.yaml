@@ -1,0 +1,17 @@
+id: "16"
+symbol: "ⅩⅥ"
+number: "16"
+name: "mytilor"
+video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/16_mytilor-0ghAFmaPi5blgViQdE2b4BnUjN9HvB.mp4"
+thumbVideo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/16_mytilor-0ghAFmaPi5blgViQdE2b4BnUjN9HvB.mp4"
+specs: |
+  Material: Digital Clay
+  Dimensions: Variable
+  Year: 2025
+i18n:
+  no:
+    name: "mytilor"
+    text: "Ein skulptur som blandar mytologiske element med moderne form."
+  ja:
+    name: "ミティロル"
+    text: "神話的要素と現代的な形を融合した彫刻。"

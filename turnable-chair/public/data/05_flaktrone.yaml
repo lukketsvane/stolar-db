@@ -1,0 +1,18 @@
+id: 5
+symbol: "V"
+number: "05"
+name: "flaktrone"
+video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/05_flaktrone-rmomoCuUwu1Qd1dC0Cr9K4dy6MhZA4.mp4"
+thumbVideo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/05_flaktrone-rmomoCuUwu1Qd1dC0Cr9K4dy6MhZA4.mp4"
+specs: |
+  Material: Digital Clay
+  Dimensions: Variable
+  Year: 2025
+  Technique: 3D Sculpting
+i18n:
+  no:
+    name: "flaktrone"
+    text: "Variasjon av flaktrone-temaet med nye dimensjonar og teksturar."
+  ja:
+    name: "フラクトロン"
+    text: "新しい次元とテクスチャを持つフラクトロンテーマのバリエーション。"

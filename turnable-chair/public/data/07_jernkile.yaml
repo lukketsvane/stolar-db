@@ -1,0 +1,18 @@
+id: 7
+symbol: "VII"
+number: "07"
+name: "jernkile"
+video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/07_jernkile-eY4q7fFf9w3KK7CWWAFchb3OzwUiKM.mp4"
+thumbVideo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/07_jernkile-eY4q7fFf9w3KK7CWWAFchb3OzwUiKM.mp4"
+specs: |
+  Material: Digital Clay
+  Dimensions: Variable
+  Year: 2025
+  Technique: 3D Sculpting
+i18n:
+  no:
+    name: "jernkile"
+    text: "Industriell inspirert form som kombinerer hardheit og eleganse."
+  ja:
+    name: "イェルンキレ"
+    text: "硬さと優雅さを組み合わせた工業的にインスパイアされた形。"

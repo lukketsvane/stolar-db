@@ -1,0 +1,18 @@
+id: 1
+symbol: "I"
+number: "01"
+name: "polypexus"
+video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/01_polypexus-kIAno4CxTVsew4PEFmJKmx2TNu9Fkb.mp4"
+thumbVideo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/01_polypexus-kIAno4CxTVsew4PEFmJKmx2TNu9Fkb.mp4"
+specs: |
+  Material: Digital Clay
+  Dimensions: Variable
+  Year: 2025
+  Technique: 3D Sculpting
+i18n:
+  no:
+    name: "polypexus"
+    text: "Ein kompleks organisk form som utforskar forholdet mellom struktur og kaos."
+  ja:
+    name: "ポリペクサス"
+    text: "構造と混沌の関係を探る複雑な有機形態。"

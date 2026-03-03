@@ -1,0 +1,17 @@
+id: "11"
+symbol: "Ⅺ"
+number: "11"
+name: "lotogastra"
+video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/11_lotogastra-SAYyMZLXJHeOEtbUM9GOxLC9fnI7th.mp4"
+thumbVideo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/11_lotogastra-SAYyMZLXJHeOEtbUM9GOxLC9fnI7th.mp4"
+specs: |
+  Material: Digital Clay
+  Dimensions: Variable
+  Year: 2025
+i18n:
+  no:
+    name: "lotogastra"
+    text: "Ein organisk skulptur som utforskar biomorfe former og teksturar."
+  ja:
+    name: "ロトガストラ"
+    text: "有機的な彫刻で、生体形態と質感を探求しています。"

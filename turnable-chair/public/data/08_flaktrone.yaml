@@ -1,0 +1,18 @@
+id: 8
+symbol: "VIII"
+number: "08"
+name: "flaktrone"
+video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/08_flaktrone-e7GbfhT9YfxOSZGaSxgvXzKOfutAUd.mp4"
+thumbVideo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/08_flaktrone-e7GbfhT9YfxOSZGaSxgvXzKOfutAUd.mp4"
+specs: |
+  Material: Digital Clay
+  Dimensions: Variable
+  Year: 2025
+  Technique: 3D Sculpting
+i18n:
+  no:
+    name: "flaktrone"
+    text: "Tredje iterasjon av flaktrone-serien med utvida kompleksitet."
+  ja:
+    name: "フラクトロン"
+    text: "複雑さを拡張したフラクトロンシリーズの第3回反復。"
