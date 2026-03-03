@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: apalike.bst
+Database file #1: referansar.bib
+Warning--empty year in kulturit
+You've used 17 entries,
+            1935 wiz_defined-function locations,
+            561 strings with 5424 characters,
+and the built_in function-call counts, 5187 in all, are:
+= -- 497
+> -- 142
+< -- 17
++ -- 49
+- -- 41
+* -- 353
+:= -- 949
+add.period$ -- 53
+call.type$ -- 17
+change.case$ -- 92
+chr.to.int$ -- 17
+cite$ -- 18
+duplicate$ -- 247
+empty$ -- 413
+format.name$ -- 60
+if$ -- 1021
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 25
+newline$ -- 89
+num.names$ -- 55
+pop$ -- 109
+preamble$ -- 1
+purify$ -- 105
+quote$ -- 0
+skip$ -- 178
+stack$ -- 0
+substring$ -- 268
+swap$ -- 23
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 78
+warning$ -- 1
+while$ -- 42
+width$ -- 0
+write$ -- 225
+(There was 1 warning)
