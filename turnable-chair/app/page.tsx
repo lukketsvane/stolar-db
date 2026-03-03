@@ -639,7 +639,7 @@ export default function Home() {
                 className="text-4xl md:text-5xl lg:text-7xl font-bold text-black tracking-tight"
                 style={{ fontFamily: "Helvetica Neue, Arial, sans-serif" }}
               >
-                Nasjonalmuseet Chairs
+                Noregs stolar
               </h1>
             </div>
           </div>
