@@ -51,13 +51,11 @@ export default function ArticlePage() {
     const counts: Record<string, number> = {}
     data.forEach((item) => {
       let loc = item.location || "Ukjent"
+      // Ensure loc is a string
+      const locStr = typeof loc === 'string' ? loc : String(loc);
       // Clean up location strings a bit for the chart
-      loc = loc.split(",")[0].trim()
-      if (loc.toLowerCase().includes("norge") || loc.toLowerCase().includes("norway")) {
-          // If it's just "Norge", try to find a more specific city/region if possible
-          // but for now let's just use what's there.
-      }
-      counts[loc] = (counts[loc] || 0) + 1
+      const primaryLoc = locStr.split(",")[0].trim()
+      counts[primaryLoc] = (counts[primaryLoc] || 0) + 1
     })
     return Object.entries(counts)
       .map(([name, value]) => ({ name, value }))
