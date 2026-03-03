@@ -69,7 +69,14 @@ if (fs.existsSync(noregDir)) {
     // Prioritize the _bguw.png image for the landing screen preview
     let bguwImage = files.find(f => f.endsWith('_bguw.png'));
     let fallbackImage = files.find(f => f.endsWith('.png') && !f.includes('_bguw'));
-    let imageFile = bguwImage || fallbackImage;
+    
+    // Hide entries that don't have a solid white background version yet
+    if (!bguwImage) {
+        console.log(`Skipping ${folder} (no _bguw version yet)`);
+        continue;
+    }
+    
+    let imageFile = bguwImage;
 
     const destFolder = path.join(publicNoregDir, folder);
     if (!fs.existsSync(destFolder)) fs.mkdirSync(destFolder, { recursive: true });
