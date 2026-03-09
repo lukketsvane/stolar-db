@@ -34,9 +34,14 @@ interface ChairItem {
   modelPath?: string
 }
 
+// Cleaner title logic
 const formatName = (s: string) => {
   if (!s) return ""
-  return s.split(/\s+/).map(w => w ? w[0].toUpperCase() + w.slice(1).toLowerCase() : w).join(" ")
+  // If there's a semicolon, take the part after it (e.g. "Stol; Reflex I" -> "Reflex I")
+  const parts = s.split(";")
+  const name = parts.length > 1 ? parts[1].trim() : parts[0].trim()
+  // Proper capitalization
+  return name.split(/\s+/).map(w => w ? w[0].toUpperCase() + w.slice(1).toLowerCase() : w).join(" ")
 }
 
 const getCentury = (yearStr: string) => {
@@ -59,11 +64,11 @@ function HomeContent() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true)
 
   useEffect(() => {
-    // Load data and image mapping
+    // Load all data files in parallel
     Promise.all([
       fetch("/data/norske_stolar.json").then(res => res.json()),
-      fetch("/data/image_map.json").then(res => res.json()).catch(() => ({})),
-      fetch("/data/model_map.json").then(res => res.json()).catch(() => ({}))
+      fetch("/data/image_map.json").then(res => res.json()),
+      fetch("/data/model_map.json").then(res => res.json())
     ])
     .then(([jsonData, imageMap, modelMap]) => {
       const uniqueMap = new Map();
@@ -73,7 +78,7 @@ function HomeContent() {
             id: item.object_id,
             symbol: item.object_id.split("-")[0],
             number: item.object_id.split("-")[1],
-            name: item.betegnelse || "Stol",
+            name: item.title || (item.betegnelse ? item.betegnelse.split(";").pop().trim() : "Stol"),
             title: item.title,
             text: item.betegnelse,
             specs: item.maal,
@@ -91,7 +96,8 @@ function HomeContent() {
             width: item.breidde_cm,
             depth: item.djupn_cm,
             seatHeight: item.setehoegde_cm,
-            imagePath: imageMap[item.object_id] || "/placeholder.svg",
+            // Prioritize the mapping from GitHub Raw
+            imagePath: imageMap[item.object_id] || `/gallery/${item.object_id}.png`,
             modelPath: modelMap[item.object_id] || null,
             has3d: !!modelMap[item.object_id]
           });
@@ -124,8 +130,7 @@ function HomeContent() {
       result = result.filter(item => 
         item.name.toLowerCase().includes(q) ||
         item.id.toLowerCase().includes(q) ||
-        item.producer?.toLowerCase().includes(q) ||
-        item.title?.toLowerCase().includes(q)
+        item.producer?.toLowerCase().includes(q)
       )
     }
     if (selectedMaterial !== "Alle") {
@@ -176,11 +181,7 @@ function HomeContent() {
       <div className="flex flex-col items-center justify-center h-full p-4">
         <img 
           src={item.imagePath}
-          onError={(e) => {
-            // Try fallback path if mapping fails
-            if (e.currentTarget.src.includes('gallery')) return;
-            e.currentTarget.src = "/placeholder.svg";
-          }}
+          onError={(e) => (e.currentTarget.src = "/placeholder.svg")}
           alt={item.name} 
           className="max-w-full max-h-[85%] object-contain group-hover:scale-110 transition-transform duration-700" 
         />

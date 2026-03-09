@@ -3,42 +3,24 @@
 import { useEffect, useState } from "react";
 
 interface ModelViewerProps {
-  chairId: string;
+  src: string;
 }
 
-export default function ModelViewer({ chairId }: ModelViewerProps) {
-  const [modelUrl, setModelUrl] = useState<string | null>(null);
-  const [hasError, setHasError] = useState(false);
+export default function ModelViewer({ src }: ModelViewerProps) {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // Load the mapping file
-    fetch("/data/model_map.json")
-      .then(res => res.json())
-      .then(map => {
-        if (map[chairId]) {
-          setModelUrl(map[chairId]);
-        } else {
-          setHasError(true);
-        }
-      })
-      .catch(() => setHasError(true));
-
-    // Register model-viewer
-    import("@google/model-viewer").then(() => {
+    // Register model-viewer if not already registered
+    if (!customElements.get("model-viewer")) {
+      import("@google/model-viewer").then(() => {
+        setIsLoaded(true);
+      });
+    } else {
       setIsLoaded(true);
-    });
-  }, [chairId]);
+    }
+  }, []);
 
-  if (hasError) {
-    return (
-      <div className="w-full h-full bg-white flex flex-col items-center justify-center">
-        <div className="text-[10px] font-mono text-gray-300 uppercase tracking-widest">3D-modell ikkje tilgjengeleg</div>
-      </div>
-    );
-  }
-
-  if (!isLoaded || !modelUrl) {
+  if (!isLoaded) {
     return (
       <div className="w-full h-full bg-white flex items-center justify-center">
         <div className="font-mono text-[10px] text-gray-200 animate-pulse">Laster 3D...</div>
@@ -49,8 +31,8 @@ export default function ModelViewer({ chairId }: ModelViewerProps) {
   return (
     <div className="w-full h-full bg-white flex flex-col items-center justify-center relative">
       <model-viewer
-        src={modelUrl}
-        alt={`3D model of chair ${chairId}`}
+        src={src}
+        alt="3D model"
         auto-rotate
         camera-controls
         disable-zoom
@@ -62,7 +44,6 @@ export default function ModelViewer({ chairId }: ModelViewerProps) {
         loading="eager"
         reveal="auto"
         style={{ width: "100%", height: "100%", outline: "none" } as any}
-        onerror={() => setHasError(true)}
       ></model-viewer>
     </div>
   );
