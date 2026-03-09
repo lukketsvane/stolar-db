@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useState, useEffect, useMemo, Suspense } from "react"
+import { useState, useEffect, useMemo, Suspense, useCallback } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import FrameScrubber from "../components/frame-scrubber"
 import ModelViewer from "../components/model-viewer"
@@ -49,18 +49,17 @@ function HomeContent() {
   const [viewMode, setViewMode] = useState<'2d' | '3d'>('3d')
   const [isSidebarOpen, setIsSidebarOpen] = useState(true)
 
+  // Load the full enriched database
   useEffect(() => {
-    // Load the full enriched database
     fetch("/data/norske_stolar.json")
       .then(res => res.json())
       .then(data => {
-        // Map the flat JSON structure to our ChairItem interface
         const mapped: ChairItem[] = data.map((item: any) => ({
           id: item.object_id,
           symbol: item.object_id.split("-")[0],
           number: item.object_id.split("-")[1],
           name: item.title,
-          thumb: `/NM_stolar/${item.object_id}/${item.object_id}.png`, // Tentative path
+          thumb: `/NM_stolar/${item.object_id}/${item.object_id}.png`,
           text: item.betegnelse,
           specs: item.maal,
           producer: item.produsent,
@@ -69,7 +68,7 @@ function HomeContent() {
           techniques: item.teknikk,
           inventoryNr: item.object_id,
           location: item.produksjonsstad,
-          has3d: true // We assume 3D exists if it's in this filtered list
+          has3d: true
         }))
         setAllData(mapped)
         setFilteredData(mapped)
@@ -101,6 +100,50 @@ function HomeContent() {
     setFilteredData(result)
   }, [searchQuery, selectedMaterial, allData])
 
+  // Navigation Logic
+  const navigateTo = useCallback((direction: 'next' | 'prev') => {
+    if (!currentItem) return
+    const currentIndex = filteredData.findIndex(item => item.id === currentItem.id)
+    if (currentIndex === -1) return
+
+    let nextIndex = direction === 'next' ? currentIndex + 1 : currentIndex - 1
+    if (nextIndex >= filteredData.length) nextIndex = 0
+    if (nextIndex < 0) nextIndex = filteredData.length - 1
+
+    const nextItem = filteredData[nextIndex]
+    router.push(`/?item=${nextItem.id}`)
+  }, [currentItem, filteredData, router])
+
+  // Keyboard and Gestures
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!currentItem) return
+      if (e.key === 'ArrowRight') navigateTo('next')
+      if (e.key === 'ArrowLeft') navigateTo('prev')
+      if (e.key === 'Escape') router.push('/')
+    }
+
+    let touchStartX = 0
+    const handleTouchStart = (e: TouchEvent) => { touchStartX = e.touches[0].clientX }
+    const handleTouchEnd = (e: TouchEvent) => {
+      if (!currentItem) return
+      const touchEndX = e.changedTouches[0].clientX
+      const diff = touchStartX - touchEndX
+      if (Math.abs(diff) > 50) { // Threshold
+        navigateTo(diff > 0 ? 'next' : 'prev')
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    window.addEventListener('touchstart', handleTouchStart)
+    window.addEventListener('touchend', handleTouchEnd)
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+      window.removeEventListener('touchstart', handleTouchStart)
+      window.removeEventListener('touchend', handleTouchEnd)
+    }
+  }, [currentItem, navigateTo, router])
+
   const groupedChairs = useMemo(() => {
     const groups: Record<string, ChairItem[]> = {}
     filteredData.forEach(item => {
@@ -118,12 +161,12 @@ function HomeContent() {
         item.materials.split(",").forEach(m => set.add(m.trim()))
       }
     })
-    return Array.from(set).slice(0, 20) // Limit for UI
+    return Array.from(set).slice(0, 20)
   }, [allData])
 
-  const renderGridItem = (item: ChairItem) => (
+  const renderGridItem = (item: ChairItem, index: number) => (
     <div 
-      key={item.id}
+      key={`${item.id}-${index}`} // FIXED: Unique key using ID and Index
       onClick={() => router.push(`/?item=${item.id}`)}
       className="relative aspect-square border-black/10 cursor-pointer bg-white group hover:bg-gray-50 transition-all duration-300 overflow-hidden"
       style={{ borderWidth: "0.5px" }}
@@ -146,7 +189,7 @@ function HomeContent() {
   if (currentItem) {
     return (
       <div className="min-h-screen bg-white text-black flex flex-col lg:flex-row overflow-hidden">
-        {/* Detail View UI (Toggleable Sidebar) */}
+        {/* Detail View UI */}
         <div className="lg:flex-1 flex flex-col relative h-screen">
           <nav className="absolute top-8 left-8 right-8 z-50 flex justify-between items-center pointer-events-none">
             <button onClick={() => router.push("/")} className="pointer-events-auto bg-white/80 backdrop-blur px-4 py-2 rounded-full font-mono font-black uppercase text-[10px] tracking-widest border border-black/5 hover:bg-black hover:text-white transition-all">
@@ -168,6 +211,16 @@ function HomeContent() {
                 </div>
               )}
             </div>
+          </div>
+
+          {/* Desktop Quick Nav */}
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-4 z-50">
+            <button onClick={() => navigateTo('prev')} className="bg-white/80 backdrop-blur p-3 rounded-full border border-black/5 hover:bg-black hover:text-white transition-all">
+              <ChevronLeft size={16} />
+            </button>
+            <button onClick={() => navigateTo('next')} className="bg-white/80 backdrop-blur p-3 rounded-full border border-black/5 hover:bg-black hover:text-white transition-all">
+              <ChevronRight size={16} />
+            </button>
           </div>
         </div>
 
@@ -240,7 +293,7 @@ function HomeContent() {
             <button 
               key={m}
               onClick={() => setSelectedMaterial(m)}
-              className={`whitespace-nowrap px-4 py-1.5 rounded-full font-mono text-[9px] font-black uppercase tracking-widest transition-all ${selectedMaterial === m ? 'bg-black text-white' : 'bg-gray-100 text-gray-400 hover:text-black'}`}
+              className={`whitespace-nowrap px-4 py-1.5 rounded-full font-mono text-[9px] font-black uppercase tracking-widest transition-all ${selectedMaterial === m ? 'bg-black text-white' : 'text-gray-400'}`}
             >
               {m}
             </button>
@@ -255,7 +308,7 @@ function HomeContent() {
                 <span className="font-mono text-xs font-bold text-gray-300 uppercase tracking-widest">{chairs.length} stolar</span>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 border-t border-l border-black/10">
-                {chairs.map(renderGridItem)}
+                {chairs.map((item, index) => renderGridItem(item, index))}
               </div>
             </section>
           ))}
