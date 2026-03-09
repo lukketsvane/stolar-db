@@ -19,7 +19,7 @@ export default function GifScrubber({ src, thumbnail }: GifScrubberProps) {
   const [lastTime, setLastTime] = useState(0)
   const [isLoaded, setIsLoaded] = useState(false)
   const [showThumbnail, setShowThumbnail] = useState(!!thumbnail)
-  const animationRef = useRef<number>()
+  const animationRef = useRef<number>(null)
 
   const extractFrames = useCallback(async () => {
     try {
