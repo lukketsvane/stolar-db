@@ -17,3 +17,8 @@ noreg/node_modules/
 *.tiff
 !charts/*.png
 !charts/
+tectonic.exe
+*.npz
+*.blg
+*.bbl
+*.aux
