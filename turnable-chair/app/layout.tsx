@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
+import Script from "next/script"
 import "../styles/globals.css"
 
 export const metadata: Metadata = {
@@ -23,7 +24,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
-      <body className={GeistSans.className}>{children}</body>
+      <body className={GeistSans.className}>
+        <Script
+          type="module"
+          src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
+          strategy="lazyOnload"
+        />
+        {children}
+      </body>
     </html>
   )
 }
