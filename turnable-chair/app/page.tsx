@@ -54,24 +54,31 @@ function HomeContent() {
     fetch("/data/norske_stolar.json")
       .then(res => res.json())
       .then(data => {
-        const mapped: ChairItem[] = data.map((item: any) => ({
-          id: item.object_id,
-          symbol: item.object_id.split("-")[0],
-          number: item.object_id.split("-")[1],
-          name: item.title,
-          thumb: `/NM_stolar/${item.object_id}/${item.object_id}.png`,
-          text: item.betegnelse,
-          specs: item.maal,
-          producer: item.produsent,
-          year: item.datering,
-          materials: item.materialar,
-          techniques: item.teknikk,
-          inventoryNr: item.object_id,
-          location: item.produksjonsstad,
-          has3d: true
-        }))
-        setAllData(mapped)
-        setFilteredData(mapped)
+        // De-duplicate data by object_id
+        const uniqueMap = new Map();
+        data.forEach((item: any) => {
+          if (!uniqueMap.has(item.object_id)) {
+            uniqueMap.set(item.object_id, {
+              id: item.object_id,
+              symbol: item.object_id.split("-")[0],
+              number: item.object_id.split("-")[1],
+              name: item.title,
+              text: item.betegnelse,
+              specs: item.maal,
+              producer: item.produsent,
+              year: item.datering,
+              materials: item.materialar,
+              techniques: item.teknikk,
+              inventoryNr: item.object_id,
+              location: item.produksjonsstad,
+              has3d: true
+            });
+          }
+        });
+        
+        const mapped: ChairItem[] = Array.from(uniqueMap.values());
+        setAllData(mapped);
+        setFilteredData(mapped);
       })
       .catch(err => console.error("Error loading full database:", err))
   }, [])
@@ -161,12 +168,12 @@ function HomeContent() {
         item.materials.split(",").forEach(m => set.add(m.trim()))
       }
     })
-    return Array.from(set).slice(0, 20)
+    return Array.from(set).sort().slice(0, 30)
   }, [allData])
 
-  const renderGridItem = (item: ChairItem, index: number) => (
+  const renderGridItem = (item: ChairItem) => (
     <div 
-      key={`${item.id}-${index}`} // FIXED: Unique key using ID and Index
+      key={item.id} // NOW UNIQUE because we de-duplicated allData
       onClick={() => router.push(`/?item=${item.id}`)}
       className="relative aspect-square border-black/10 cursor-pointer bg-white group hover:bg-gray-50 transition-all duration-300 overflow-hidden"
       style={{ borderWidth: "0.5px" }}
@@ -174,7 +181,7 @@ function HomeContent() {
       <div className="absolute top-1 left-1 font-mono font-bold text-[7px] text-black/20">{item.id}</div>
       <div className="flex flex-col items-center justify-center h-full p-4">
         <img 
-          src={`/bg-uniform black/${item.id}.png`} 
+          src={`/api/image/${item.id}`} // FIXED: Using API to find correct image
           onError={(e) => (e.currentTarget.src = "/placeholder.svg")}
           alt={item.name} 
           className="max-w-full max-h-[70%] object-contain group-hover:scale-110 transition-transform duration-700" 
@@ -193,7 +200,7 @@ function HomeContent() {
         <div className="lg:flex-1 flex flex-col relative h-screen">
           <nav className="absolute top-8 left-8 right-8 z-50 flex justify-between items-center pointer-events-none">
             <button onClick={() => router.push("/")} className="pointer-events-auto bg-white/80 backdrop-blur px-4 py-2 rounded-full font-mono font-black uppercase text-[10px] tracking-widest border border-black/5 hover:bg-black hover:text-white transition-all">
-              &larr; Lukk
+              &larr; Galleri
             </button>
             <div className="flex gap-2 pointer-events-auto bg-gray-100/80 backdrop-blur p-1 rounded-full">
               <button onClick={() => setViewMode('2d')} className={`px-4 py-1 rounded-full text-[9px] font-mono font-black uppercase transition-all ${viewMode === '2d' ? 'bg-black text-white' : 'text-gray-400'}`}>2D</button>
@@ -207,13 +214,13 @@ function HomeContent() {
                 <ModelViewer chairId={currentItem.id} />
               ) : (
                 <div className="w-full h-full flex items-center justify-center p-12">
-                  <img src={`/bg-uniform black/${currentItem.id}.png`} className="max-w-full max-h-full object-contain" />
+                  <img src={`/api/image/${currentItem.id}`} className="max-w-full max-h-full object-contain" />
                 </div>
               )}
             </div>
           </div>
 
-          {/* Desktop Quick Nav */}
+          {/* Quick Nav UI */}
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-4 z-50">
             <button onClick={() => navigateTo('prev')} className="bg-white/80 backdrop-blur p-3 rounded-full border border-black/5 hover:bg-black hover:text-white transition-all">
               <ChevronLeft size={16} />
@@ -308,7 +315,7 @@ function HomeContent() {
                 <span className="font-mono text-xs font-bold text-gray-300 uppercase tracking-widest">{chairs.length} stolar</span>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 border-t border-l border-black/10">
-                {chairs.map((item, index) => renderGridItem(item, index))}
+                {chairs.map(renderGridItem)}
               </div>
             </section>
           ))}
