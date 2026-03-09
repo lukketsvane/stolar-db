@@ -217,38 +217,38 @@ function HomeContent() {
     <div className="min-h-screen bg-white text-black font-sans selection:bg-black selection:text-white pb-40">
       <nav className="fixed top-8 right-8 z-50 flex gap-6 items-center">
         <div className="flex gap-4">
-          <button onClick={() => router.push('/article')} className="font-mono font-black text-[10px] uppercase tracking-widest hover:line-through">I</button>
-          <button onClick={() => router.push('/article/form')} className="font-mono font-black text-[10px] uppercase tracking-widest hover:line-through">II</button>
-          <button onClick={() => router.push('/article/form-klassifikasjon')} className="font-mono font-black text-[10px] uppercase tracking-widest hover:line-through">III</button>
-          <button onClick={() => router.push('/article/fff-rammeverk')} className="font-mono font-black text-[10px] uppercase tracking-widest hover:line-through">IV</button>
-          <button onClick={() => router.push('/article/kappe')} className="font-mono font-black text-[10px] uppercase tracking-widest hover:line-through">V</button>
+          <button onClick={() => router.push('/article')} className="font-mono font-black text-xs uppercase tracking-widest hover:line-through">I</button>
+          <button onClick={() => router.push('/article/form')} className="font-mono font-black text-xs uppercase tracking-widest hover:line-through">II</button>
+          <button onClick={() => router.push('/article/form-klassifikasjon')} className="font-mono font-black text-xs uppercase tracking-widest hover:line-through">III</button>
+          <button onClick={() => router.push('/article/fff-rammeverk')} className="font-mono font-black text-xs uppercase tracking-widest hover:line-through">IV</button>
+          <button onClick={() => router.push('/article/kappe')} className="font-mono font-black text-xs uppercase tracking-widest hover:line-through">V</button>
         </div>
       </nav>
 
-      <div className="container mx-auto px-6 pt-32 lg:pt-48">
+      <div className="max-w-[1800px] mx-auto px-6 md:px-12 lg:px-24 pt-32 lg:pt-48">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-20 lg:mb-32 gap-8">
-          <h1 className="font-sans font-black text-6xl lg:text-[12rem] leading-[0.8] tracking-tighter">
+          <h1 className="font-sans font-black text-6xl lg:text-[10rem] leading-[0.8] tracking-tighter">
             Norske<br/>stolar.
           </h1>
           <div className="flex flex-col items-start lg:items-end">
             <div className="font-mono font-black text-4xl lg:text-6xl tracking-tighter leading-none">
-              {galleryData.length > 0 ? galleryData.length : "..."}
+              {galleryData.length > 0 ? galleryData.length : ""}
             </div>
-            <div className="font-mono text-[10px] uppercase tracking-widest font-bold text-gray-400 mt-2">Objekt i samlinga</div>
+            <div className="font-mono text-xs uppercase tracking-widest font-bold text-gray-400 mt-2">Objekt i samlinga</div>
           </div>
         </div>
         
         {galleryData.length === 0 ? (
-          <div className="py-20 text-center font-mono text-gray-300 animate-pulse">Lastar samlinga...</div>
+          <div className="py-20 text-center font-mono text-gray-200"></div>
         ) : (
           <div className="space-y-32">
             {Object.entries(groupedChairs).sort(([a], [b]) => a.localeCompare(b)).map(([century, chairs]) => (
               <section key={century}>
                 <div className="flex items-baseline justify-between border-b border-black/10 pb-4 mb-8">
-                  <h2 className="font-mono font-black text-2xl tracking-tighter">{century}</h2>
-                  <span className="font-mono text-xs font-bold text-gray-300 uppercase tracking-widest">{chairs.length} stolar</span>
+                  <h2 className="font-mono font-black text-3xl tracking-tighter">{century}</h2>
+                  <span className="font-mono text-sm font-bold text-gray-300 uppercase tracking-widest">{chairs.length} stolar</span>
                 </div>
-                <div className="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-9 border-t border-l border-black/10">
+                <div className="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 border-t border-l border-black/10">
                   {chairs.map((item, i) => renderGridItem(item, i))}
                 </div>
               </section>
@@ -262,7 +262,7 @@ function HomeContent() {
 
 export default function Home() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-white flex items-center justify-center font-mono">Oppstart...</div>}>
+    <Suspense fallback={<div className="min-h-screen bg-white"></div>}>
       <HomeContent />
     </Suspense>
   )

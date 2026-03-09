@@ -10,8 +10,8 @@ export default function ArticleThreePage() {
     <div className="min-h-screen bg-white text-black font-serif selection:bg-black selection:text-white pb-40 overflow-x-hidden">
       <ArticleNav />
 
-      <header className="max-w-5xl mx-auto pt-48 pb-32 px-8">
-        <p className="text-[10px] font-mono font-black uppercase tracking-[0.5em] text-gray-300 mb-12">Forskingsartikkel III</p>
+      <header className="max-w-7xl mx-auto pt-48 pb-32 px-6 md:px-12 lg:px-24">
+        <p className="text-xs font-mono font-black uppercase tracking-[0.5em] text-gray-300 mb-12">Forskingsartikkel III</p>
         <h1 className="text-6xl md:text-[8rem] font-sans font-black tracking-tighter leading-[0.8] mb-16 text-black">
           Kan form åleine<br/>
           <span className="text-gray-200">fortelje tid?</span>
@@ -22,14 +22,14 @@ export default function ArticleThreePage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 border-y border-gray-100 py-16 my-16">
           <div>
-            <p className="text-[10px] font-mono font-black uppercase tracking-widest text-gray-400 mb-6">Forfattar</p>
+            <p className="text-xs font-mono font-black uppercase tracking-widest text-gray-400 mb-6">Forfattar</p>
             <p className="text-3xl font-sans font-black tracking-tight leading-none uppercase">Iver Raknes Finne</p>
             <p className="text-sm text-gray-500 font-sans mt-4 leading-relaxed max-w-xs">
-              Institutt for design, Arkitektur- og designhøgskolen i Oslo (AHO)
+              Arkitektur- og designhøgskolen i Oslo (AHO)
             </p>
           </div>
           <div>
-            <p className="text-[10px] font-mono font-black uppercase tracking-widest text-gray-400 mb-6">Metode</p>
+            <p className="text-xs font-mono font-black uppercase tracking-widest text-gray-400 mb-6">Metode</p>
             <p className="text-3xl font-sans font-black tracking-tight leading-none uppercase">3D-formanalyse</p>
             <p className="text-sm text-gray-500 font-sans mt-4 leading-relaxed">
               Maskinlæring på tredimensjonale punktskyer frå 401 GLB-modellar.
@@ -37,12 +37,12 @@ export default function ArticleThreePage() {
           </div>
         </div>
 
-        <div className="max-w-3xl bg-gray-50 p-6 md:p-12 lg:p-20 rounded-2xl md:rounded-[3rem] border border-gray-100 italic text-lg md:text-2xl leading-snug text-gray-800 font-serif">
+        <div className="max-w-4xl bg-gray-50 p-8 md:p-16 lg:p-24 rounded-2xl md:rounded-[3rem] border border-gray-100 italic text-xl md:text-3xl leading-snug text-gray-800 font-serif">
           <strong>Samandrag:</strong> Dersom funksjonalismen sitt dogme stemmer, at form fylgjer funksjon, burde stolar frå ulike nasjonar og tidsaldrar ikkje låt seg skilje geometrisk, sidan sitjefunksjonen er universell. Denne artikkelen testar påstanden empirisk gjennom maskinlæring på tredimensjonale punktsskyer frå 401 GLB-modellar i Nasjonalmuseet si samling. Ved å trekkje ut 21 geometriske deskriptorar predikerer me stilperiode med ein makro-F1 på 40,5% ved bruk av rein geometri (mot 10,5% sjanse), og 47,6% med material åleine. Nasjonsprediksjon oppnår 76,0% med form og 83,3% med material. Funna falsifiserer funksjonalismen si nøytrale formlære: form kodar kulturell identitet og historisk tid romleg og geometrisk.
         </div>
       </header>
 
-      <article className="max-w-3xl mx-auto px-8 space-y-24 text-lg md:text-2xl leading-relaxed text-gray-900">
+      <article className="max-w-4xl mx-auto px-6 md:px-12 lg:px-24 space-y-24 text-xl md:text-2xl leading-relaxed text-gray-900">
         <section>
           <h2 className="text-3xl md:text-5xl font-sans font-black text-black mb-12 tracking-tighter uppercase italic">1. Innleiing</h2>
           <p className="mb-12">

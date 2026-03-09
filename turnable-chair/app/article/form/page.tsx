@@ -215,8 +215,8 @@ export default function FormArticlePage() {
       <ArticleNav />
 
       {/* Artikkel-header */}
-      <header className="max-w-5xl mx-auto pt-48 pb-32 px-8">
-        <p className="text-[10px] font-mono font-black uppercase tracking-[0.5em] text-gray-300 mb-12">Forskingsartikkel II</p>
+      <header className="max-w-7xl mx-auto pt-48 pb-32 px-6 md:px-12 lg:px-24">
+        <p className="text-xs font-mono font-black uppercase tracking-[0.5em] text-gray-300 mb-12">Forskingsartikkel II</p>
         <h1 className="text-6xl md:text-[8rem] font-sans font-black tracking-tighter leading-[0.8] mb-16 text-black">
           Form follows<br/>
           <span className="text-gray-200">fitness.</span>
@@ -227,28 +227,28 @@ export default function FormArticlePage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 border-y border-gray-100 py-16 my-16">
           <div>
-            <p className="text-[10px] font-mono font-black uppercase tracking-widest text-gray-400 mb-6">Forfattar</p>
+            <p className="text-xs font-mono font-black uppercase tracking-widest text-gray-400 mb-6">Forfattar</p>
             <p className="text-3xl font-sans font-black tracking-tight leading-none uppercase">Iver Raknes Finne</p>
             <p className="text-sm text-gray-500 font-sans mt-4 leading-relaxed max-w-xs">
-              Institutt for design, Arkitektur- og designhøgskolen i Oslo (AHO)
+              Arkitektur- og designhøgskolen i Oslo (AHO)
             </p>
           </div>
           <div>
-            <p className="text-[10px] font-mono font-black uppercase tracking-widest text-gray-400 mb-6">Metode</p>
+            <p className="text-xs font-mono font-black uppercase tracking-widest text-gray-400 mb-6">Metode</p>
             <p className="text-3xl font-sans font-black tracking-tight leading-none uppercase">Formkurveanalyse</p>
             <p className="text-sm text-gray-500 font-sans mt-4 leading-relaxed">
-              Kvantitativ analyse av dimensjonar, teknikkar og typologi over 740 år med stoldesign.
+              Kvantitativ analyse av dimensjonar over 740 år med stoldesign.
             </p>
           </div>
         </div>
 
-        <div className="max-w-3xl bg-gray-50 p-6 md:p-12 lg:p-20 rounded-2xl md:rounded-[3rem] border border-gray-100 italic text-lg md:text-2xl leading-snug text-gray-800 font-serif">
+        <div className="max-w-4xl bg-gray-50 p-8 md:p-16 lg:p-24 rounded-2xl md:rounded-[3rem] border border-gray-100 italic text-xl md:text-3xl leading-snug text-gray-800 font-serif">
           <strong>Samandrag:</strong> Artikkelen introduserer <em>form follows fitness</em> som eit evolusjonært rammeverk for å analysere formutvikling i industridesign. Gjennom eit datasett på {data.length} norskproduserte stolar &mdash; {totalWithDims} med fulle tredimensjonale mål &mdash; kvantifiserer studien tre formvariablar over {maxYear - minYear} år: omsluttande volum, proporsjonar og teknikk-regime. Hovudfunnet er <em>fitness-konvergensen</em>: ein empirisk demonstrerbar tendens der stolars omsluttande volum konvergerer mot eit felles dimensjonsområde etter industrialiseringa, trass i aukande stilistisk divergens. Mot Le Corbusier sin maskinanalogi og Sullivan sitt «form follows function» argumenterer artikkelen for at form ikkje er determinert av funksjon, men selektert av fitness &mdash; ei tilpassing til samtidige materielle, økonomiske, ergonomiske og kulturelle miljø.
         </div>
       </header>
 
       {/* Artikkel-tekst */}
-      <article className="max-w-3xl mx-auto px-8 space-y-24 text-lg md:text-2xl leading-relaxed text-gray-900">
+      <article className="max-w-4xl mx-auto px-6 md:px-12 lg:px-24 space-y-24 text-xl md:text-2xl leading-relaxed text-gray-900">
 
         {/* 1. INNLEIING */}
         <section>

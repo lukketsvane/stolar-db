@@ -190,8 +190,8 @@ export default function ArticlePage() {
       </nav>
 
       {/* Artikkel-header */}
-      <header className="max-w-5xl mx-auto pt-48 pb-32 px-8">
-        <p className="text-[10px] font-mono font-black uppercase tracking-[0.5em] text-gray-300 mb-12">Forskingsartikkel</p>
+      <header className="max-w-7xl mx-auto pt-48 pb-32 px-6 md:px-12 lg:px-24">
+        <p className="text-xs font-mono font-black uppercase tracking-[0.5em] text-gray-300 mb-12">Forskingsartikkel I</p>
         <h1 className="text-6xl md:text-[10rem] font-sans font-black tracking-tighter leading-[0.8] mb-16 text-black">
           Materialhistorie.<br/>
           <span className="text-gray-200">Kolonialt arkiv.</span>
@@ -199,28 +199,28 @@ export default function ArticlePage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 border-y border-gray-100 py-16 my-16">
           <div>
-            <p className="text-[10px] font-mono font-black uppercase tracking-widest text-gray-400 mb-6">Forfattar</p>
+            <p className="text-xs font-mono font-black uppercase tracking-widest text-gray-400 mb-6">Forfattar</p>
             <p className="text-3xl font-sans font-black tracking-tight leading-none uppercase">Iver Raknes Finne</p>
             <p className="text-sm text-gray-500 font-sans mt-4 leading-relaxed max-w-xs">
-              Institutt for design, Arkitektur- og designhøgskolen i Oslo (AHO)
+              Arkitektur- og designhøgskolen i Oslo (AHO)
             </p>
           </div>
           <div>
-            <p className="text-[10px] font-mono font-black uppercase tracking-widest text-gray-400 mb-6">Metode</p>
+            <p className="text-xs font-mono font-black uppercase tracking-widest text-gray-400 mb-6">Metode</p>
             <p className="text-3xl font-sans font-black tracking-tight leading-none uppercase">Materialkurveanalyse</p>
             <p className="text-sm text-gray-500 font-sans mt-4 leading-relaxed">
-              Systematisk kvantifisering av materialfordeling over tid i Nasjonalmuseet si samling.
+              Systematisk kvantifisering av materialfordeling over tid i samlinga.
             </p>
           </div>
         </div>
 
-        <div className="max-w-3xl bg-gray-50 p-6 md:p-12 lg:p-20 rounded-2xl md:rounded-[3rem] border border-gray-100 italic text-lg md:text-2xl leading-snug text-gray-800 font-serif">
+        <div className="max-w-4xl bg-gray-50 p-8 md:p-16 lg:p-24 rounded-2xl md:rounded-[3rem] border border-gray-100 italic text-xl md:text-3xl leading-snug text-gray-800 font-serif">
           <strong>Samandrag:</strong> Artikkelen presenterer den fyrste systematiske kvantitative materialanalysen av Nasjonalmuseet si stolsamling — {data.length} objekt daterte mellom 1280 og 2020. Gjennom eit nytt strukturert datasett undersøkjer studien korleis materialkurver fungerer som eit kolonialt arkiv. Hovudfunnet er <em>mahogniens boge</em>: ein materiell signatur der karibisk tropisk hardved stig dramatisk for deretter å kollapse, nesten synkront med den transatlantiske mahognihandelen. Studien identifiserer fire distinkte materialregime og demonstrerer korleis ein stol — som fysisk objekt — ber i seg eit komprimert narrativ om global handel, kolonial utvinning og industriell transformasjon.
         </div>
       </header>
 
       {/* Artikkel-tekst */}
-      <article className="max-w-3xl mx-auto px-8 space-y-24 text-lg md:text-2xl leading-relaxed text-gray-900">
+      <article className="max-w-4xl mx-auto px-6 md:px-12 lg:px-24 space-y-24 text-xl md:text-2xl leading-relaxed text-gray-900">
 
         {/* 1. INNLEIING */}
         <section>
