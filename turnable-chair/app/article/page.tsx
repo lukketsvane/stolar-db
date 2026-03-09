@@ -184,71 +184,68 @@ export default function ArticleOnePage() {
         </p>
       </section>
 
-      <section className="not-prose my-32">
-        <div className="bg-white p-8 md:p-12 lg:p-16 rounded-3xl border border-gray-100 shadow-sm">
-          <h4 className="text-[10px] font-mono font-black uppercase tracking-[0.4em] text-gray-300 mb-16 text-center">FIGUR 1: Topp materialfrekvens</h4>
-          <div className="h-[400px]">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={topMaterials} layout="vertical" margin={{ left: 20, right: 40 }}>
-                <CartesianGrid strokeDasharray="2 2" horizontal={false} stroke="#e5e5e5" />
-                <XAxis type="number" hide />
-                <YAxis dataKey="name" type="category" width={120} tick={{ fontSize: 10, fontFamily: 'ui-monospace', fontWeight: '900' }} axisLine={false} tickLine={false} />
-                <Tooltip cursor={{ fill: '#fafafa' }} contentStyle={{ borderRadius: '0px', border: '1px solid #000', fontFamily: 'ui-monospace', fontSize: '10px' }} />
-                <Bar dataKey="value" fill="#000" radius={0} barSize={20} />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
+      <section className="not-prose my-24">
+        <figure className="space-y-6">
+          <img src="/figurar/fig1_materialkurver.png" alt="Figur 1" className="w-full h-auto rounded-xl shadow-sm border border-gray-100" />
+          <figcaption className="text-sm text-gray-500 font-sans italic text-center max-w-2xl mx-auto">
+            FIGUR 1: Materialkurver for norskproduserte stolar i Nasjonalmuseet (n = 135). Kvar kurve viser prosentdelen av stolar i ein 25-årsperiode som inneheld det aktuelle materialet. Tre distinkte materielle regime er synlege.
+          </figcaption>
+        </figure>
       </section>
 
       <section>
         <h2>4. Resultat</h2>
         <h3>4.1 Materialkurver: eit oversyn</h3>
         <p>
-          Figur 2 viser materialkurvene for dei sju mest framtredande materialgruppene i dei 135 norskproduserte stolane. Kurva avdekkjer tre distinkte regime:
+          Kurva avdekkjer tre distinkte regime:
         </p>
-        <ol>
-          <li><strong>Det lokale regimet (1200–1700):</strong> Furu, bjørk og eik dominerer. Alle materialar er kortreiste og reflekterer ein lokal handverksøkonomi.</li>
-          <li><strong>Det koloniale regimet (1700–1875):</strong> Mahogni stig dramatisk, når ein topp på 93 % i perioden 1825–1850, og kollapsar deretter. Bøk (eit europeisk importtre) følgjer eit liknande, men seinare, mønster.</li>
-          <li><strong>Det industrielle regimet (1875–2005):</strong> Stål, kryssfiner og nye komposittar erstattar dei tradisjonelle materialane. Mangfaldet aukar.</li>
-        </ol>
-
+...
         <h3>4.2 Mahogniens boge</h3>
         <p>
-          Det mest slåande enkeltfunnet er mahogni sin materialkurve. Mahogni er fråverande før 1700, stig til 93 % i perioden 1825–1850, og forsvinn nesten fullstendig etter 1875. Denne kurva er ikkje eit norsk fenomen. Ho er ein lokal manifestasjon av den transatlantiske mahognihandelen. Anderson (2012) dokumenterer korleis karibisk mahogni vart den dominerande møbeltreslaget i det britiske imperiet frå om lag 1720. Den norske kurva følgjer den britiske med ein forsinkelse på om lag 25–50 år.
+          Det mest slåande enkeltfunnet er mahogni sin materialkurve. Figur 2 viser kurva isolert, med tal stolar per periode som referanse. Mahogni er fråverande før 1700, stig til 93 % i perioden 1825–1850, og forsvinn nesten fullstendig etter 1875.
         </p>
       </section>
 
-      <section className="not-prose my-32">
-        <div className="bg-black p-8 md:p-12 lg:p-16 rounded-3xl shadow-2xl">
-          <h4 className="text-[10px] font-mono font-black uppercase tracking-[0.6em] text-gray-600 mb-20 text-center">FIGUR 2: Mahogniens boge (% av stolar)</h4>
-          <div className="h-[400px]">
-            <ResponsiveContainer width="100%" height="100%">
-              <AreaChart data={materialTimeline}>
-                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#222" />
-                <XAxis dataKey="name" stroke="#444" tick={{ fontSize: 10, fill: '#666' }} />
-                <YAxis stroke="#444" tick={{ fontSize: 10, fill: '#666' }} unit="%" />
-                <Tooltip contentStyle={{ backgroundColor: '#000', border: '1px solid #333', color: '#fff' }} />
-                <Area type="stepAfter" dataKey="mahogni" stroke="#fff" fill="#fff" fillOpacity={1} />
-              </AreaChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
+      <section className="not-prose my-24">
+        <figure className="space-y-6">
+          <img src="/figurar/fig2_mahogniens_boge.png" alt="Figur 2" className="w-full h-auto rounded-xl shadow-sm border border-gray-100" />
+          <figcaption className="text-sm text-gray-500 font-sans italic text-center max-w-2xl mx-auto">
+            FIGUR 2: Mahogniens boge: Prosentdelen av norskproduserte stolar som inneheld mahogni, per 25-årsperiode. Stiplalinja viser tal stolar i perioden. Kurva speglar den transatlantiske mahognihandelen med 25–50 års forsinking.
+          </figcaption>
+        </figure>
       </section>
 
       <section>
         <h3>4.3 Materiell dobbeltheit</h3>
-        <p>
-          Av dei 24 mahogni-stolane i det norskproduserte delsettet er 10 (42 %) konstruerte med ein kombinasjon av importert mahogni og lokalt tre (furu, bjørk, eik eller gran). Mahognien fungerer som overflatemateriale — ryggbrett, armlen, frontben — medan det lokale treet utgjer blindtre, bakben og berande innvendig struktur.
-        </p>
+...
         <p>
           Denne materielle dobbeltheita skil norske stolar frå britiske ekvivalentar, der mahogni typisk vert brukt gjennomgåande (Bowett, 2012). Den norske stolen er <em>kolonialt finert</em>: ein materiell strategi der globalt prestisjetømmer og lokal handverkstradisjon sameksisterer i same objekt.
         </p>
+      </section>
 
+      <section className="not-prose my-24 text-center">
+        <figure className="space-y-6 inline-block">
+          <img src="/figurar/fig3_materiell_dobbeltheit.png" alt="Figur 3" className="max-w-xl h-auto rounded-xl shadow-sm border border-gray-100" />
+          <figcaption className="text-sm text-gray-500 font-sans italic text-center max-w-2xl mx-auto">
+            FIGUR 3: Materiell dobbeltheit i mahogni-stolar (n = 24). 42 % kombinerer importert mahogni med lokalt tre.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section>
         <h3>4.4 Dimensjonsutvikling</h3>
         <p>
-          Dimensjonsutviklinga i norskproduserte stolar syner ein konvergens mot standardiserte dimensjonar etter industrialiseringa. Dette vert drøfta vidare i Artikkel II.
+          Figur 4 viser korleis stolane sine fysiske dimensjonar utviklar seg over tid. Andregradstrendlinja indikerer ein konvergens mot standardiserte dimensjonar etter industrialiseringa.
         </p>
+      </section>
+
+      <section className="not-prose my-24">
+        <figure className="space-y-6">
+          <img src="/figurar/fig4_dimensjonar.png" alt="Figur 4" className="w-full h-auto rounded-xl shadow-sm border border-gray-100" />
+          <figcaption className="text-sm text-gray-500 font-sans italic text-center max-w-2xl mx-auto">
+            FIGUR 4: Dimensjonsutvikling i norskproduserte stolar. Venstre: høgde over tid. Høgre: breidde over tid. Trendlinja (andregradspolynom) viser konvergens mot standardiserte mål.
+          </figcaption>
+        </figure>
       </section>
 
       <section>
