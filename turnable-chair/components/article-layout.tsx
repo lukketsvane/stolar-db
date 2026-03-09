@@ -15,20 +15,20 @@ export default function ArticleLayout({ children, header }: ArticleLayoutProps) 
 
       {/* Hero Header */}
       <header className="bg-white border-b border-gray-100">
-        <div className="max-w-screen-xl mx-auto pt-48 pb-32 px-6 md:px-12 lg:px-24">
+        <div className="max-w-screen-xl mx-auto pt-32 pb-16 px-6 md:px-12 lg:px-24">
           {header}
         </div>
       </header>
 
       {/* Main Content */}
-      <main className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-24 py-24 md:py-32">
+      <main className="max-w-screen-xl mx-auto px-6 py-12 md:py-16">
         <div className="prose prose-neutral prose-lg lg:prose-xl max-w-none 
           prose-headings:font-sans prose-headings:font-black prose-headings:tracking-tighter prose-headings:uppercase prose-headings:italic
-          prose-p:leading-relaxed prose-p:mb-12 prose-p:text-gray-800
-          prose-li:leading-relaxed prose-li:mb-4
-          prose-blockquote:font-sans prose-blockquote:not-italic prose-blockquote:font-bold prose-blockquote:text-3xl prose-blockquote:tracking-tight prose-blockquote:leading-tight
+          prose-p:leading-relaxed prose-p:mb-8 prose-p:text-gray-800
+          prose-li:leading-relaxed prose-li:mb-2
+          prose-blockquote:font-serif prose-blockquote:not-italic prose-blockquote:border-l-4 prose-blockquote:border-black prose-blockquote:pl-8 prose-blockquote:py-2 prose-blockquote:my-8 prose-blockquote:text-2xl prose-blockquote:text-black
           prose-table:font-mono prose-table:text-sm prose-thead:border-b-2 prose-thead:border-black
-          space-y-12">
+          space-y-8">
           {children}
         </div>
       </main>

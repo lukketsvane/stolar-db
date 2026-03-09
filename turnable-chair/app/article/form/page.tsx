@@ -29,6 +29,13 @@ export default function FormArticlePage() {
       .catch((err) => console.error("Feil ved lasting av data:", err))
   }, [])
 
+  const withDims = useMemo(() => data.filter(d => d.fra_aar && d.hoegde_cm && d.breidde_cm && d.djupn_cm), [data])
+  const volumeScatter = useMemo(() => withDims.map(d => ({ 
+    year: d.fra_aar!, 
+    volume: Math.round((d.hoegde_cm! * d.breidde_cm! * d.djupn_cm!) / 1000),
+    id: d.object_id
+  })), [withDims])
+
   if (loading) return <div className="min-h-screen bg-white flex items-center justify-center font-mono text-xs uppercase tracking-widest text-gray-400">Lastar formdata...</div>
 
   const header = (
@@ -52,16 +59,18 @@ export default function FormArticlePage() {
         </div>
         <div>
           <p className="text-xs font-mono font-black uppercase tracking-widest text-gray-400 mb-6">Metode</p>
-          <p className="text-3xl font-black tracking-tight leading-none uppercase">3D-formanalyse</p>
+          <p className="text-3xl font-black tracking-tight leading-none uppercase">Formkurveanalyse</p>
           <p className="text-sm text-gray-500 mt-4 leading-relaxed">
-            Kvantitativ analyse av dimensjonar, kompleksitet og materialmangfald over 740 år.
+            Kvantitativ analyse av dimensjonar over 740 år med stoldesign.
           </p>
         </div>
       </div>
 
-      <blockquote className="bg-gray-50 p-8 md:p-16 lg:p-20 rounded-2xl md:rounded-[3rem] border border-gray-100">
-        <strong>Samandrag:</strong> Artikkelen introduserer <em>form follows fitness</em> som eit evolusjonært rammeverk for å analysere formutvikling i industridesign. Gjennom eit datasett på 407 stolar, 289 tredimensjonale modellar og dimensjonsdata for 390 objekt, kvantifiserer studien tre formvariablar: omsluttande volum, geometrisk kompleksitet og materialmangfald. Hovudfunnet er <em>fitness-konvergensen</em>: ein empirisk demonstrerbar tendens der stolar konvergerer mot eit felles dimensjonsområde etter industrialiseringa.
-      </blockquote>
+      <div className="mt-16 py-8 border-t border-black">
+        <p className="text-xl font-serif italic leading-relaxed text-black">
+          <strong>Samandrag:</strong> Denne artikkelen introduserer <em>form follows fitness</em> som eit evolusjonært rammeverk for å analysere formutvikling i industridesign, med Nasjonalmuseet si stolsamling som empirisk grunnlag. Mot Le Corbusier sin maskinanalogi og Sullivan sitt "form follows function" set artikkelen ein tredje posisjon: form fylgjer ikkje funksjon som eit logisk resultat, men <em>fitness</em> som eit seleksjonstrykk. Hovudfunnet er <em>fitness-konvergensen</em>: ein empirisk demonstrerbar tendens der stolar frå ulike stilperiodar konvergerer mot eit felles dimensjonsområde etter industrialiseringa.
+        </p>
+      </div>
     </div>
   )
 
@@ -84,7 +93,7 @@ export default function FormArticlePage() {
         <ol>
           <li><strong>Form er ikkje determinert av funksjon.</strong> Same funksjon produserer many formar. Form er underdeterminert.</li>
           <li><strong>Form er selektert av fitness.</strong> Dei formene som overlever — som vert produsert, kjøpt, brukt, samla, kanonisert — er dei som er best tilpassa eit komplekst miljø av materielle, økonomiske, ergonomiske og kulturelle seleksjonstrykk.</li>
-          <li><strong>Fitness er kvantifiserbar.</strong> Gjennom systematisk måling av formvariablar over tid kan ein identifisere konvergensar, divergensar og seleksjonslandskap empirisk.</li>
+          <li><strong>Fitness is kvantifiserbar.</strong> Gjennom systematisk måling av formvariablar over tid kan ein identifisere konvergensar, divergensar og seleksjonslandskap empirisk.</li>
         </ol>
       </section>
 
@@ -108,7 +117,7 @@ export default function FormArticlePage() {
           Sullivan sin formulering og Le Corbusier sin maskinanalogi deler eit premiss: at form er <em>determinert</em> av noko anna. Pye (1968) var mellom dei fyrste som eksplisitt utfordra dette. Hans skilje mellom <em>workmanship of risk</em> og <em>workmanship of certainty</em> viste at form alltid er delvis kontingent.
         </p>
         <p>
-          <em>Form follows fitness</em> byggjer på Pye, men går vidare. Det er ikkje berre kontingensen i produksjonsprosessen som formar gjenstanden; det er heile det selektive miljøet — marknad, estetiske normer, materialtilfang, teknologisk kapasitet, ergonomisk kunnskap — som selekterer kva formar som overlever.
+          <em>Form follows fitness</em> byggjer på Pye, men går vidare. Det er ikkje berre kontingensen i produksjonsprosessen som formar gjenstanden; det er heile det selektive miljøet — marknad, estetiske normer, materialtilfang, teknologisk kapasitet, ergonomisk kunnskap — som selekterer kva formar som overlever. Dei formene me ser i museumssamlinga er survivors.
         </p>
       </section>
 
@@ -131,14 +140,6 @@ export default function FormArticlePage() {
         </p>
       </section>
 
-      <section>
-        <h2>4. Resultat</h2>
-        <h3>4.1 3D-modelldekninga</h3>
-        <p>
-          Figur 1 viser fordelinga av 3D-modellar over 25-årsperiodar. Dekninga er størst for perioden 1900–2000 og reflekterer både museet sin innkjøpspolitikk og tilgjenge av referansemateriale for modellering.
-        </p>
-      </section>
-
       <section className="not-prose my-24">
         <figure className="space-y-6">
           <img src="/figurar/fig1_3d_dekning.png" alt="Figur 1" className="w-full h-auto rounded-xl shadow-sm border border-gray-100" />
@@ -149,6 +150,11 @@ export default function FormArticlePage() {
       </section>
 
       <section>
+        <h2>4. Resultat</h2>
+        <h3>4.1 3D-modelldekninga</h3>
+        <p>
+          Figur 1 viser fordelinga av 3D-modellar over 25-årsperiodar. Dekninga er størst for perioden 1900–2000 og reflekterer både museet sin innkjøpspolitikk og tilgjenge av referansemateriale for modellering.
+        </p>
         <h3>4.2 Geometrisk kompleksitet over tid</h3>
         <p>
           Figur 2 viser GLB-filstorleik som ein proxy for geometrisk kompleksitet. Andregradstrendlinja indikerer ein svak, men positiv korrelasjon mellom år og kompleksitet (r = 0,14). Spreiinga er stor, noko som tyder på at formkompleksitet ikkje er ein eintydig funksjon av tid, men av designstrategi.
