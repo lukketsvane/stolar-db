@@ -4,18 +4,43 @@ import type React from "react"
 import { useEffect, useRef, useState, useCallback } from "react"
 
 interface FrameScrubberProps {
-  src: string
+  frames?: string[]
+  fallback?: string
 }
 
-export default function FrameScrubber({ src }: FrameScrubberProps) {
-  const videoRef = useRef<HTMLVideoElement>(null)
+export default function FrameScrubber({ frames, fallback }: FrameScrubberProps) {
   const containerRef = useRef<HTMLDivElement>(null)
+
   const [isDragging, setIsDragging] = useState(false)
   const [velocity, setVelocity] = useState(0)
   const [lastX, setLastX] = useState(0)
   const [lastTime, setLastTime] = useState(0)
-  const [duration, setDuration] = useState(0)
-  const animationRef = useRef<number>()
+
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isReady, setIsReady] = useState(false)
+
+  const animationRef = useRef<number>(undefined)
+
+  const totalSteps = frames && frames.length > 0 ? frames.length : 0
+
+  // Preload images for instant feel
+  useEffect(() => {
+    if (frames && frames.length > 0) {
+      let loadedCount = 0
+      frames.forEach(f => {
+        const img = new Image()
+        img.src = f
+        img.onload = () => {
+          loadedCount++
+          if (loadedCount === Math.min(frames.length, 5)) {
+             setIsReady(true)
+          }
+        }
+      })
+      const timer = setTimeout(() => setIsReady(true), 500)
+      return () => clearTimeout(timer)
+    }
+  }, [frames])
 
   const handleStart = useCallback((clientX: number) => {
     setIsDragging(true)
@@ -27,9 +52,19 @@ export default function FrameScrubber({ src }: FrameScrubberProps) {
     }
   }, [])
 
+  const updateIndex = useCallback((delta: number) => {
+    if (totalSteps === 0) return
+    setCurrentIndex(prev => {
+      let next = prev + delta
+      while (next < 0) next += totalSteps
+      while (next >= totalSteps) next -= totalSteps
+      return next
+    })
+  }, [totalSteps])
+
   const handleMove = useCallback(
     (clientX: number) => {
-      if (!isDragging || !videoRef.current) return
+      if (!isDragging) return
 
       const deltaX = clientX - lastX
       const deltaTime = Date.now() - lastTime
@@ -43,21 +78,12 @@ export default function FrameScrubber({ src }: FrameScrubberProps) {
       setLastTime(Date.now())
 
       const container = containerRef.current
-      if (container && duration > 0) {
-        const sensitivity = duration / (container.offsetWidth * 0.5) // 2x more sensitive
-        const timeChange = deltaX * sensitivity
-
-        let newTime = videoRef.current.currentTime + timeChange
-        if (newTime < 0) {
-          newTime = duration + newTime // Loop to end
-        } else if (newTime > duration) {
-          newTime = newTime - duration // Loop to start
-        }
-
-        videoRef.current.currentTime = newTime
+      if (container) {
+        const stepChange = (deltaX / container.offsetWidth) * totalSteps * 1.5
+        updateIndex(stepChange)
       }
     },
-    [isDragging, lastX, lastTime, duration],
+    [isDragging, lastX, lastTime, totalSteps, updateIndex],
   )
 
   const handleEnd = useCallback(() => {
@@ -65,26 +91,17 @@ export default function FrameScrubber({ src }: FrameScrubberProps) {
 
     const animate = () => {
       setVelocity((prev) => {
-        const friction = window.innerWidth < 768 ? 0.85 : 0.92 // More friction on mobile
+        const friction = 0.92
         const newVelocity = prev * friction
 
-        if (Math.abs(newVelocity) < 0.1) {
+        if (Math.abs(newVelocity) < 0.05) {
           return 0
         }
 
         const container = containerRef.current
-        if (container && videoRef.current && duration > 0) {
-          const sensitivity = duration / (container.offsetWidth * 0.5)
-          const timeChange = newVelocity * sensitivity * 2
-
-          let newTime = videoRef.current.currentTime + timeChange
-          if (newTime < 0) {
-            newTime = duration + newTime
-          } else if (newTime > duration) {
-            newTime = newTime - duration
-          }
-
-          videoRef.current.currentTime = newTime
+        if (container) {
+          const stepChange = (newVelocity / container.offsetWidth) * totalSteps * 5
+          updateIndex(stepChange)
         }
 
         animationRef.current = requestAnimationFrame(animate)
@@ -92,128 +109,77 @@ export default function FrameScrubber({ src }: FrameScrubberProps) {
       })
     }
 
-    if (Math.abs(velocity) > 0.1) {
+    if (Math.abs(velocity) > 0.05) {
       animate()
     }
-  }, [velocity, duration])
+  }, [velocity, totalSteps, updateIndex])
 
+  // Wheel/Trackpad support
   const handleWheel = useCallback(
     (e: WheelEvent) => {
       e.preventDefault()
-
-      if (!videoRef.current || duration === 0) return
-
-      const sensitivity = 0.02 // 2x more sensitive
-      const timeChange = (e.deltaX + e.deltaY) * sensitivity
-
-      let newTime = videoRef.current.currentTime + timeChange
-      if (newTime < 0) {
-        newTime = duration + newTime
-      } else if (newTime > duration) {
-        newTime = newTime - duration
-      }
-
-      videoRef.current.currentTime = newTime
+      const sensitivity = 0.1
+      const stepChange = (e.deltaX + e.deltaY) * sensitivity
+      updateIndex(stepChange)
     },
-    [duration],
+    [updateIndex],
   )
-
-  // Mouse events
-  const handleMouseDown = (e: React.MouseEvent) => {
-    e.preventDefault()
-    handleStart(e.clientX)
-  }
-
-  // Touch events - Improved for iPhone
-  const handleTouchStart = (e: React.TouchEvent) => {
-    e.preventDefault()
-    if (e.touches.length === 1) {
-      // Only single touch
-      handleStart(e.touches[0].clientX)
-    }
-  }
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    e.preventDefault()
-    if (e.touches.length === 1) {
-      // Only single touch
-      handleMove(e.touches[0].clientX)
-    }
-  }
-
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    e.preventDefault()
-    handleEnd()
-  }
 
   useEffect(() => {
     const container = containerRef.current
     if (!container) return
-
     container.addEventListener("wheel", handleWheel, { passive: false })
     return () => container.removeEventListener("wheel", handleWheel)
   }, [handleWheel])
 
   useEffect(() => {
     if (!isDragging) return
-
-    const handleGlobalMouseMove = (e: MouseEvent) => {
-      handleMove(e.clientX)
-    }
-
-    const handleGlobalMouseUp = () => {
-      handleEnd()
-    }
-
-    document.addEventListener("mousemove", handleGlobalMouseMove)
-    document.addEventListener("mouseup", handleGlobalMouseUp)
-
+    const onMouseMove = (e: MouseEvent) => handleMove(e.clientX)
+    const onMouseUp = () => handleEnd()
+    window.addEventListener("mousemove", onMouseMove)
+    window.addEventListener("mouseup", onMouseUp)
     return () => {
-      document.removeEventListener("mousemove", handleGlobalMouseMove)
-      document.removeEventListener("mouseup", handleGlobalMouseUp)
+      window.removeEventListener("mousemove", onMouseMove)
+      window.removeEventListener("mouseup", onMouseUp)
     }
   }, [isDragging, handleMove, handleEnd])
 
-  const handleLoadedMetadata = () => {
-    if (videoRef.current) {
-      setDuration(videoRef.current.duration)
-    }
+  if (!frames || frames.length === 0) {
+    return (
+      <div className="w-full h-full flex items-center justify-center bg-white">
+        <img src={fallback} alt="Stol" className="w-full h-full object-contain" />
+      </div>
+    )
   }
-
-  // Cleanup
-  useEffect(() => {
-    return () => {
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current)
-      }
-    }
-  }, [])
 
   return (
     <div
       ref={containerRef}
-      className="relative cursor-grab active:cursor-grabbing select-none w-full h-full"
-      onContextMenu={(e) => e.preventDefault()} // Disable right-click
+      className="relative cursor-grab active:cursor-grabbing select-none w-full h-full flex items-center justify-center bg-white overflow-hidden"
+      onMouseDown={(e) => { e.preventDefault(); handleStart(e.clientX); }}
+      onTouchStart={(e) => handleStart(e.touches[0].clientX)}
+      onTouchMove={(e) => handleMove(e.touches[0].clientX)}
+      onTouchEnd={handleEnd}
     >
-      <video
-        ref={videoRef}
-        src={src}
-        className="block touch-none object-cover w-full h-full"
-        muted
-        playsInline
-        preload="auto" // Changed to auto for better preloading
-        onLoadedMetadata={handleLoadedMetadata}
-        onMouseDown={handleMouseDown}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-        draggable={false} // Disable dragging
-        style={{
-          WebkitUserSelect: "none",
-          userSelect: "none",
-          WebkitTouchCallout: "none",
-        }}
-      />
+      <div className="w-full h-full relative">
+        {frames.map((f, i) => (
+          <img
+            key={f}
+            src={f}
+            alt={`Frame ${i}`}
+            className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-75 ${
+              Math.floor(currentIndex) === i ? "opacity-100 z-10" : "opacity-0 z-0"
+            }`}
+            draggable={false}
+          />
+        ))}
+      </div>
+
+      {!isReady && (
+        <div className="absolute inset-0 flex items-center justify-center bg-white z-50">
+          <div className="w-10 h-10 border-2 border-black/5 border-t-black rounded-full animate-spin" />
+        </div>
+      )}
     </div>
   )
 }

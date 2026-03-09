@@ -1,16 +1,17 @@
 "use client"
 
 import type React from "react"
-import { useState, useEffect, useCallback, useRef } from "react"
+import { useState, useEffect, useMemo, Suspense } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
+import FrameScrubber from "../components/frame-scrubber"
+import ModelViewer from "../components/model-viewer"
 
 interface ChairItem {
   id: string
   symbol: string
   number: string
   name: string
-  video: string
-  thumbVideo: string
+  frames?: string[]
   thumb?: string
   source?: string
   text: string
@@ -26,140 +27,33 @@ interface ChairItem {
   location: string
 }
 
-class Turntable {
-  container: HTMLElement
-  video: HTMLVideoElement
-  isDragging = false
-  startX = 0
-  velocity = 0
-  lastX = 0
-  lastTime = 0
-  animationFrameId: number | null = null
-  friction = 0.96
-  targetTime = 0
-  velocityHistory: Array<{ velocity: number; time: number }> = []
-  maxVelocityHistory = 5
-  smoothingFactor = 0.15
-  minVelocity = 0.001
-
-  constructor(container: HTMLElement, video: HTMLVideoElement) {
-    this.container = container
-    this.video = video
-    this.bindEvents()
-    this.animationFrameId = requestAnimationFrame(this.update.bind(this))
-  }
-
-  bindEvents() {
-    this.container.style.userSelect = "none"
-    this.container.style.touchAction = "none" // Prevents scrolling while rotating
-
-    this.container.addEventListener("mousedown", this.handleStart.bind(this))
-    this.container.addEventListener("touchstart", this.handleStart.bind(this), { passive: false })
-    
-    window.addEventListener("mousemove", this.handleMove.bind(this))
-    window.addEventListener("touchmove", this.handleMove.bind(this), { passive: false })
-    
-    window.addEventListener("mouseup", this.handleEnd.bind(this))
-    window.addEventListener("touchend", this.handleEnd.bind(this))
-  }
-
-  destroy() {
-    if (this.animationFrameId) cancelAnimationFrame(this.animationFrameId)
-    // Cleanup window listeners would be good here in a real React effect cleanup
-  }
-
-  handleStart(e: MouseEvent | TouchEvent) {
-    if (!this.video.duration || !isFinite(this.video.duration)) return
-    
-    this.isDragging = true
-    const x = "touches" in e ? e.touches[0].pageX : e.pageX
-    this.startX = x
-    this.lastX = x
-    this.lastTime = performance.now()
-    this.velocity = 0
-    this.velocityHistory = []
-    this.container.style.cursor = "grabbing"
-  }
-
-  handleMove(e: MouseEvent | TouchEvent) {
-    if (!this.isDragging || !this.video.duration) return
-    
-    const currentTime = performance.now()
-    const x = "touches" in e ? e.touches[0].pageX : e.pageX
-    const delta = x - this.lastX
-    const timeDelta = currentTime - this.lastTime
-    
-    if (timeDelta > 0) {
-      const instantVelocity = (delta / timeDelta) * 16.67
-      this.velocityHistory.push({ velocity: instantVelocity, time: currentTime })
-      if (this.velocityHistory.length > this.maxVelocityHistory) this.velocityHistory.shift()
-    }
-    
-    this.lastX = x
-    this.lastTime = currentTime
-    
-    // Smooth 1:1 mapping for 4s video
-    this.targetTime += (delta / this.container.offsetWidth) * this.video.duration * 1.0
-  }
-
-  handleEnd() {
-    if (!this.isDragging) return
-    this.isDragging = false
-    this.container.style.cursor = "grab"
-    
-    if (this.velocityHistory.length > 0) {
-      const recentHistory = this.velocityHistory.slice(-3)
-      const avgVelocity = recentHistory.reduce((s, it) => s + it.velocity, 0) / recentHistory.length
-      this.velocity = avgVelocity * 2
-    }
-  }
-
-  update() {
-    if (!this.video.duration || !isFinite(this.video.duration)) {
-      this.animationFrameId = requestAnimationFrame(this.update.bind(this))
-      return
-    }
-
-    if (!this.isDragging) {
-      if (Math.abs(this.velocity) > this.minVelocity) {
-        this.targetTime += (this.velocity / this.container.offsetWidth) * this.video.duration
-        this.velocity *= this.friction
-      } else {
-        this.velocity = 0
-      }
-    }
-
-    const smoothing = this.isDragging ? 0.4 : this.smoothingFactor
-    let newTime = this.video.currentTime + (this.targetTime - this.video.currentTime) * smoothing
-    
-    // Seamless loop wrap
-    newTime = ((newTime % this.video.duration) + this.video.duration) % this.video.duration
-    
-    if (isFinite(newTime)) {
-      this.video.currentTime = newTime
-      this.targetTime = newTime
-    }
-    
-    this.animationFrameId = requestAnimationFrame(this.update.bind(this))
-  }
-}
-
 const formatName = (s: string) => {
   if (!s) return ""
   return s.split(/\s+/).map(w => w ? w[0].toUpperCase() + w.slice(1).toLowerCase() : w).join(" ")
 }
 
-export default function Home() {
+const getCentury = (yearStr: string) => {
+  if (!yearStr) return "Ukjent"
+  const match = yearStr.match(/\d{4}/)
+  if (!match) return "Ukjent"
+  const year = parseInt(match[0])
+  return `${Math.floor(year / 100) * 100}-talet`
+}
+
+function HomeContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const [galleryData, setGalleryData] = useState<ChairItem[]>([])
   const [currentItem, setCurrentItem] = useState<ChairItem | null>(null)
-  const turntableRef = useRef<Turntable | null>(null)
+  const [viewMode, setViewMode] = useState<'2d' | '3d'>('2d')
 
   useEffect(() => {
     fetch("/data/chairs.json", { cache: "no-store" })
       .then(res => res.json())
-      .then(setGalleryData)
+      .then(data => {
+        console.log("Loaded gallery data:", data.length, "items")
+        setGalleryData(data)
+      })
       .catch(err => console.error("Feil ved lasting av stolar:", err))
   }, [])
 
@@ -167,46 +61,47 @@ export default function Home() {
     const itemId = searchParams.get("item")
     if (itemId) {
       const item = galleryData.find(d => d.id === itemId)
-      if (item) setCurrentItem(item)
+      if (item) {
+        console.log("Selected item:", item.name)
+        setCurrentItem(item)
+      }
     } else {
       setCurrentItem(null)
     }
   }, [searchParams, galleryData])
 
-  useEffect(() => {
-    if (currentItem) {
-      const video = document.getElementById("detail-video") as HTMLVideoElement
-      const container = document.getElementById("turntable-container")
-      if (video && container) {
-        if (turntableRef.current) turntableRef.ref.current.destroy()
-        
-        const handleReady = () => {
-          turntableRef.current = new Turntable(container, video)
-        }
-        video.addEventListener("loadeddata", handleReady, { once: true })
-      }
-    }
-    return () => turntableRef.current?.destroy()
-  }, [currentItem])
+  const groupedChairs = useMemo(() => {
+    const groups: Record<string, ChairItem[]> = {}
+    galleryData.forEach(item => {
+      const c = getCentury(item.year)
+      if (!groups[c]) groups[c] = []
+      groups[c].push(item)
+    })
+    return groups
+  }, [galleryData])
 
   const renderGridItem = (item: ChairItem | null, i: number) => {
-    if (!item) return <div key={`empty-${i}`} className="aspect-square border-black/5" style={{ borderWidth: "0.5px" }} />
+    if (!item) return <div key={`empty-${i}`} className="aspect-square border-black/5 bg-gray-50/30" style={{ borderWidth: "0.5px" }} />
 
     return (
       <div 
         key={item.id}
         onClick={() => router.push(`/?item=${item.id}`)}
-        className="relative aspect-square border-black/40 cursor-pointer bg-white group hover:opacity-70 transition-all duration-300"
+        className="relative aspect-square border-black/20 cursor-pointer bg-white group hover:bg-gray-50 transition-all duration-300"
         style={{ borderWidth: "0.5px" }}
       >
-        <div className="absolute top-1 left-1 font-mono font-bold text-[9px] text-black/80">{item.symbol}</div>
-        <div className="absolute top-1 right-1 font-mono font-bold text-[9px] text-black/80">{item.number}</div>
+        <div className="absolute top-1 left-1 font-mono font-bold text-[7px] lg:text-[9px] text-black/40">{item.symbol}</div>
+        <div className="absolute top-1 right-1 font-mono font-bold text-[7px] lg:text-[9px] text-black/40">{item.number}</div>
         
         <div className="flex flex-col items-center justify-center h-full p-2">
           <div className="flex-1 flex items-center justify-center w-full overflow-hidden">
-            <img src={item.thumb} alt={item.name} className="max-w-full max-h-full object-contain" />
+            {item.thumb ? (
+              <img src={item.thumb} alt={item.name} className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500" />
+            ) : (
+              <div className="w-full h-full bg-gray-100 flex items-center justify-center text-[8px] text-gray-400">Inga bilete</div>
+            )}
           </div>
-          <div className="text-black font-sans font-bold text-[9px] mt-1 truncate w-full text-center uppercase tracking-tighter">
+          <div className="text-black font-sans font-bold text-[7px] lg:text-[9px] mt-1 truncate w-full text-center uppercase tracking-tighter group-hover:text-black">
             {formatName(item.name)}
           </div>
         </div>
@@ -219,8 +114,14 @@ export default function Home() {
       <div className="min-h-screen bg-white text-black flex flex-col lg:flex-row overflow-hidden">
         {/* Mobile Nav */}
         <div className="lg:hidden fixed top-0 left-0 right-0 z-50 p-4 flex justify-between items-center bg-white/80 backdrop-blur-md">
-          <button onClick={() => router.push("/")} className="font-mono font-black uppercase text-xs">← Tilbake</button>
-          <button onClick={() => router.push("/article")} className="font-mono font-black uppercase text-xs">Om forma</button>
+          <button onClick={() => router.push("/")} className="font-mono font-black uppercase text-[10px]">&larr; Tilbake</button>
+          <div className="flex gap-3">
+            <button onClick={() => router.push("/article")} className="font-mono font-black uppercase text-[10px]">I</button>
+            <button onClick={() => router.push("/article/form")} className="font-mono font-black uppercase text-[10px]">II</button>
+            <button onClick={() => router.push("/article/form-klassifikasjon")} className="font-mono font-black uppercase text-[10px]">III</button>
+            <button onClick={() => router.push("/article/fff-rammeverk")} className="font-mono font-black uppercase text-[10px]">IV</button>
+            <button onClick={() => router.push("/article/kappe")} className="font-mono font-black uppercase text-[10px]">V</button>
+          </div>
         </div>
 
         {/* Desktop Sidebar Info */}
@@ -230,35 +131,44 @@ export default function Home() {
           <div className="font-sans font-black text-xl mt-4 max-w-xs uppercase leading-tight">{formatName(currentItem.name)}</div>
         </div>
 
-        <button 
-          onClick={() => router.push("/")}
-          className="hidden lg:flex fixed top-8 right-32 z-50 font-mono font-black uppercase text-xs hover:line-through"
-        >
-          Lukk
-        </button>
+        <div className="hidden lg:flex fixed top-8 right-12 z-50 gap-6 items-center">
+          <div className="flex bg-gray-100 p-1 rounded-full mr-4">
+            <button 
+              onClick={() => setViewMode('2d')}
+              className={`px-3 py-1 text-[9px] font-mono font-black uppercase tracking-widest rounded-full transition-all ${viewMode === '2d' ? 'bg-black text-white shadow-sm' : 'text-gray-400 hover:text-black'}`}
+            >
+              2D
+            </button>
+            <button 
+              onClick={() => setViewMode('3d')}
+              className={`px-3 py-1 text-[9px] font-mono font-black uppercase tracking-widest rounded-full transition-all ${viewMode === '3d' ? 'bg-black text-white shadow-sm' : 'text-gray-400 hover:text-black'}`}
+            >
+              3D
+            </button>
+          </div>
+          <button onClick={() => router.push("/")} className="font-mono font-black uppercase text-[10px] tracking-widest hover:line-through">Lukk</button>
+          <div className="h-4 w-px bg-gray-200" />
+          <button onClick={() => router.push("/article")} className="font-mono font-black uppercase text-[10px] tracking-widest hover:line-through">I</button>
+          <button onClick={() => router.push("/article/form")} className="font-mono font-black uppercase text-[10px] tracking-widest hover:line-through">II</button>
+          <button onClick={() => router.push("/article/form-klassifikasjon")} className="font-mono font-black uppercase text-[10px] tracking-widest hover:line-through">III</button>
+          <button onClick={() => router.push("/article/fff-rammeverk")} className="font-mono font-black uppercase text-[10px] tracking-widest hover:line-through">IV</button>
+          <button onClick={() => router.push("/article/kappe")} className="font-mono font-black uppercase text-[10px] tracking-widest hover:line-through">V</button>
+        </div>
 
-        <button 
-          onClick={() => router.push("/article")}
-          className="hidden lg:flex fixed top-8 right-12 z-50 font-mono font-black uppercase text-xs hover:line-through"
-        >
-          Om forma
-        </button>
-
-        {/* Main 3D View */}
+        {/* Main View (2D or 3D) */}
         <div className="flex-1 flex items-center justify-center bg-white relative">
           <div 
-            id="turntable-container"
-            className="w-full aspect-square max-w-[85vh] cursor-grab active:cursor-grabbing relative"
+            id="main-view-container"
+            className="w-full aspect-square max-w-[85vh] relative"
           >
-            {currentItem.video ? (
-              <video 
-                id="detail-video" 
-                src={currentItem.video} 
-                className="w-full h-full object-contain pointer-events-none" 
-                muted playsInline 
-              />
+            {viewMode === '3d' ? (
+              <ModelViewer chairId={currentItem.id} />
             ) : (
-              <img src={currentItem.thumb} className="w-full h-full object-contain" />
+              currentItem.frames && currentItem.frames.length > 0 ? (
+                <FrameScrubber frames={currentItem.frames} fallback={currentItem.thumb} />
+              ) : (
+                <img src={currentItem.thumb} className="w-full h-full object-contain" />
+              )
             )}
           </div>
         </div>
@@ -305,22 +215,55 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white text-black font-sans selection:bg-black selection:text-white pb-40">
-      <nav className="fixed top-8 right-8 z-50">
-        <button onClick={() => router.push('/article')} className="font-mono font-black text-sm uppercase tracking-widest hover:line-through">
-          Om forma
-        </button>
+      <nav className="fixed top-8 right-8 z-50 flex gap-6 items-center">
+        <div className="flex gap-4">
+          <button onClick={() => router.push('/article')} className="font-mono font-black text-[10px] uppercase tracking-widest hover:line-through">I</button>
+          <button onClick={() => router.push('/article/form')} className="font-mono font-black text-[10px] uppercase tracking-widest hover:line-through">II</button>
+          <button onClick={() => router.push('/article/form-klassifikasjon')} className="font-mono font-black text-[10px] uppercase tracking-widest hover:line-through">III</button>
+          <button onClick={() => router.push('/article/fff-rammeverk')} className="font-mono font-black text-[10px] uppercase tracking-widest hover:line-through">IV</button>
+          <button onClick={() => router.push('/article/kappe')} className="font-mono font-black text-[10px] uppercase tracking-widest hover:line-through">V</button>
+        </div>
       </nav>
 
       <div className="container mx-auto px-6 pt-32 lg:pt-48">
-        <h1 className="font-sans font-black text-6xl lg:text-[12rem] leading-[0.8] tracking-tighter mb-20 lg:mb-32">
-          Norske<br/>stolar.
-        </h1>
-        
-        <div className="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-9 border-t border-l border-black/10">
-          {galleryData.map((item, i) => renderGridItem(item, i))}
-          {Array.from({ length: 18 }).map((_, i) => renderGridItem(null, i))}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-20 lg:mb-32 gap-8">
+          <h1 className="font-sans font-black text-6xl lg:text-[12rem] leading-[0.8] tracking-tighter">
+            Norske<br/>stolar.
+          </h1>
+          <div className="flex flex-col items-start lg:items-end">
+            <div className="font-mono font-black text-4xl lg:text-6xl tracking-tighter leading-none">
+              {galleryData.length > 0 ? galleryData.length : "..."}
+            </div>
+            <div className="font-mono text-[10px] uppercase tracking-widest font-bold text-gray-400 mt-2">Objekt i samlinga</div>
+          </div>
         </div>
+        
+        {galleryData.length === 0 ? (
+          <div className="py-20 text-center font-mono text-gray-300 animate-pulse">Lastar samlinga...</div>
+        ) : (
+          <div className="space-y-32">
+            {Object.entries(groupedChairs).sort(([a], [b]) => a.localeCompare(b)).map(([century, chairs]) => (
+              <section key={century}>
+                <div className="flex items-baseline justify-between border-b border-black/10 pb-4 mb-8">
+                  <h2 className="font-mono font-black text-2xl tracking-tighter">{century}</h2>
+                  <span className="font-mono text-xs font-bold text-gray-300 uppercase tracking-widest">{chairs.length} stolar</span>
+                </div>
+                <div className="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-9 border-t border-l border-black/10">
+                  {chairs.map((item, i) => renderGridItem(item, i))}
+                </div>
+              </section>
+            ))}
+          </div>
+        )}
       </div>
     </div>
+  )
+}
+
+export default function Home() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-white flex items-center justify-center font-mono">Oppstart...</div>}>
+      <HomeContent />
+    </Suspense>
   )
 }
