@@ -10,7 +10,7 @@ export async function GET(
     const { id } = await params;
     
     // Path to images
-    const imageDir = path.join(process.cwd(), '..', 'bg-uniform black');
+    const imageDir = path.join(process.cwd(), '..', 'bg-uniform white');
 
     if (!fs.existsSync(imageDir)) {
       return new NextResponse('Image directory not found', { status: 404 });
