@@ -62,7 +62,7 @@ function HomeContent() {
               id: item.object_id,
               symbol: item.object_id.split("-")[0],
               number: item.object_id.split("-")[1],
-              name: item.title,
+              name: item.betegnelse || item.title || "Stol", // Use designation instead of title
               text: item.betegnelse,
               specs: item.maal,
               producer: item.produsent,
@@ -71,7 +71,7 @@ function HomeContent() {
               techniques: item.teknikk,
               inventoryNr: item.object_id,
               location: item.produksjonsstad,
-              has3d: true
+              has3d: false
             });
           }
         });
@@ -82,6 +82,24 @@ function HomeContent() {
       })
       .catch(err => console.error("Error loading full database:", err))
   }, [])
+
+  // Check if 3D model exists when an item is selected
+  const [has3dModel, setHas3dModel] = useState(false);
+  useEffect(() => {
+    if (currentItem) {
+      fetch(`/api/model/${currentItem.id}`, { method: 'HEAD' })
+        .then(res => {
+          const exists = res.ok;
+          setHas3dModel(exists);
+          if (!exists) setViewMode('2d');
+          else setViewMode('3d');
+        })
+        .catch(() => {
+          setHas3dModel(false);
+          setViewMode('2d');
+        });
+    }
+  }, [currentItem]);
 
   useEffect(() => {
     const itemId = searchParams.get("item")
@@ -202,10 +220,12 @@ function HomeContent() {
             <button onClick={() => router.push("/")} className="pointer-events-auto bg-white/80 backdrop-blur px-4 py-2 rounded-full font-mono font-black uppercase text-[10px] tracking-widest border border-black/5 hover:bg-black hover:text-white transition-all">
               &larr; Galleri
             </button>
-            <div className="flex gap-2 pointer-events-auto bg-gray-100/80 backdrop-blur p-1 rounded-full">
-              <button onClick={() => setViewMode('2d')} className={`px-4 py-1 rounded-full text-[9px] font-mono font-black uppercase transition-all ${viewMode === '2d' ? 'bg-black text-white' : 'text-gray-400'}`}>2D</button>
-              <button onClick={() => setViewMode('3d')} className={`px-4 py-1 rounded-full text-[9px] font-mono font-black uppercase transition-all ${viewMode === '3d' ? 'bg-black text-white' : 'text-gray-400'}`}>3D</button>
-            </div>
+            {has3dModel && (
+              <div className="flex gap-2 pointer-events-auto bg-gray-100/80 backdrop-blur p-1 rounded-full">
+                <button onClick={() => setViewMode('2d')} className={`px-4 py-1 rounded-full text-[9px] font-mono font-black uppercase transition-all ${viewMode === '2d' ? 'bg-black text-white' : 'text-gray-400'}`}>2D</button>
+                <button onClick={() => setViewMode('3d')} className={`px-4 py-1 rounded-full text-[9px] font-mono font-black uppercase transition-all ${viewMode === '3d' ? 'bg-black text-white' : 'text-gray-400'}`}>3D</button>
+              </div>
+            )}
           </nav>
 
           <div className="flex-1 flex items-center justify-center bg-white">
