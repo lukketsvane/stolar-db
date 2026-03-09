@@ -59,6 +59,15 @@ export default function ArticleThreePage() {
         </p>
       </section>
 
+      <section className="not-prose my-24">
+        <figure className="space-y-6">
+          <img src="/figurar/fig1_formrom.png" alt="Figur 1" className="w-full h-auto rounded-xl shadow-sm border border-gray-100" />
+          <figcaption className="text-sm text-gray-500 font-sans italic text-center max-w-2xl mx-auto">
+            FIGUR 1: UMAP-projeksjon av formrommet basert på 21 geometriske variablar. Klynger indikerer systematiske likskapar mellom stilperiodar.
+          </figcaption>
+        </figure>
+      </section>
+
       <section>
         <h2>3. Metode</h2>
         <p>
@@ -69,28 +78,13 @@ export default function ArticleThreePage() {
         </p>
       </section>
 
-      <section className="not-prose my-32">
-        <div className="bg-white p-8 md:p-12 lg:p-16 rounded-3xl border border-gray-100 shadow-sm overflow-hidden">
-          <h4 className="text-[10px] font-mono font-black uppercase tracking-[0.4em] text-gray-300 mb-8 text-center">TABELL 1: Klassefordeling for stilprediksjon (n = 229)</h4>
-          <div className="overflow-x-auto">
-            <table className="w-full text-left font-mono text-xs md:text-sm">
-              <thead className="border-b-2 border-black">
-                <tr>
-                  <th className="py-4 px-2">Stilgruppe</th>
-                  <th className="py-4 px-2 text-right">Antal</th>
-                  <th className="py-4 px-2 text-right">Andel</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-200">
-                <tr><td className="py-4 px-2 uppercase font-black">Nyklassisisme</td><td className="py-4 px-2 text-right">68</td><td className="py-4 px-2 text-right">29,7 %</td></tr>
-                <tr><td className="py-4 px-2 uppercase font-black">Barokk</td><td className="py-4 px-2 text-right">51</td><td className="py-4 px-2 text-right">22,3 %</td></tr>
-                <tr><td className="py-4 px-2 uppercase font-black">Historisme</td><td className="py-4 px-2 text-right">29</td><td className="py-4 px-2 text-right">12,7 %</td></tr>
-                <tr><td className="py-4 px-2 uppercase font-black">Rokokko</td><td className="py-4 px-2 text-right">22</td><td className="py-4 px-2 text-right">9,6 %</td></tr>
-                <tr><td className="py-4 px-2 uppercase font-black">Modernisme</td><td className="py-4 px-2 text-right">21</td><td className="py-4 px-2 text-right">9,2 %</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+      <section className="not-prose my-24">
+        <figure className="space-y-6">
+          <img src="/figurar/fig2_klassefordeling.png" alt="Figur 2" className="w-full h-auto rounded-xl shadow-sm border border-gray-100" />
+          <figcaption className="text-sm text-gray-500 font-sans italic text-center max-w-2xl mx-auto">
+            FIGUR 2: Klassefordeling for stilprediksjon (n = 229).
+          </figcaption>
+        </figure>
       </section>
 
       <section>
@@ -98,30 +92,33 @@ export default function ArticleThreePage() {
         <p>
           Geometri åleine predikerer stil nesten fire gonger betre enn sjansen (40,5 % mot 10,5 %), og nasjon med 76,0 % F1 (mot 46,3 % sjanse). Barokk og Nyklassisisme er lettast å klassifisere geometrisk (F1 = 0,78 og 0,73).
         </p>
-        <p>
-          Eit uventa resultat er at det kombinerte trekksettet (geometri + material) <em>underpresterer</em> material åleine for stilprediksjon (F1 = 0,463 mot 0,476). Paradokset er i seg sjølv eit bevis: redundansen mellom dei to trekksetta <em>er</em> den materiell-formelle koplinga.
-        </p>
       </section>
 
-      <section className="not-prose my-32">
-        <div className="bg-black p-8 md:p-12 lg:p-16 rounded-3xl border border-gray-800 overflow-hidden text-white">
-          <h4 className="text-[10px] font-mono font-black uppercase tracking-[0.4em] text-gray-600 mb-8 text-center">TABELL 2: Klassifikasjonsresultat (makro-F1)</h4>
-          <div className="overflow-x-auto">
-            <table className="w-full text-left font-mono text-xs md:text-sm">
-              <thead className="border-b-2 border-gray-800">
-                <tr>
-                  <th className="py-4 px-2">Oppgåve</th>
-                  <th className="py-4 px-2 text-right">Geometri</th>
-                  <th className="py-4 px-2 text-right">Material</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-900">
-                <tr><td className="py-4 px-2 uppercase font-black">Stil (8 klassar)</td><td className="py-4 px-2 text-right">0,405</td><td className="py-4 px-2 text-right">0,476</td></tr>
-                <tr><td className="py-4 px-2 uppercase font-black">Nasjon (NO/Utland)</td><td className="py-4 px-2 text-right">0,760</td><td className="py-4 px-2 text-right">0,833</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+      <section className="not-prose my-24">
+        <figure className="space-y-6">
+          <img src="/figurar/fig3_klassifikasjon.png" alt="Figur 3" className="w-full h-auto rounded-xl shadow-sm border border-gray-100" />
+          <figcaption className="text-sm text-gray-500 font-sans italic text-center max-w-2xl mx-auto">
+            FIGUR 3: Klassifikasjonsresultat (makro-F1) for ulike trekksett. Geometri åleine presterer signifikant over sjansen.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section className="not-prose my-24">
+        <figure className="space-y-6 text-center">
+          <img src="/figurar/fig4_forvirring.png" alt="Figur 4" className="max-w-3xl h-auto rounded-xl shadow-sm border border-gray-100 inline-block" />
+          <figcaption className="text-sm text-gray-500 font-sans italic text-center max-w-2xl mx-auto">
+            FIGUR 4: Forvirringsmatrise for stilprediksjon. Legg merke til forveksling mellom Historisme og Barokk/Nyklassisisme.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section className="not-prose my-24">
+        <figure className="space-y-6">
+          <img src="/figurar/fig5_perklasse_f1.png" alt="Figur 5" className="w-full h-auto rounded-xl shadow-sm border border-gray-100" />
+          <figcaption className="text-sm text-gray-500 font-sans italic text-center max-w-2xl mx-auto">
+            FIGUR 5: Per-klasse F1-score. Barokk og Nyklassisisme har dei tydelegaste geometriske signaturane.
+          </figcaption>
+        </figure>
       </section>
 
       <section>
@@ -129,9 +126,24 @@ export default function ArticleThreePage() {
         <p>
           Hovudfunnet er at geometrisk form, frigjort frå overflate, farge og material, kodar både historisk stilperiode og nasjonal opphavstad med signifikant presisjon. Dette rokkar tungt ved modernismens teoretiske rammeverk. Om <em>form follows function</em> heldt stikk, skulle ikkje ei norsk punktsky slå annleis inn i geometriske deskriptorar enn ei dansk eller fransk.
         </p>
-        <p>
-          Me kallar dette <em>materiell-formell kopling</em>: forma av eit tre inni ein stol fortel historia tvers igjennom.
-        </p>
+      </section>
+
+      <section className="not-prose my-24">
+        <figure className="space-y-6">
+          <img src="/figurar/fig6_korrelasjon.png" alt="Figur 6" className="w-full h-auto rounded-xl shadow-sm border border-gray-100" />
+          <figcaption className="text-sm text-gray-500 font-sans italic text-center max-w-2xl mx-auto">
+            FIGUR 6: Korrelasjonsmatrise mellom geometriske og materielle trekk. Systematisk kovarians dokumenterer den materiell-formelle koplinga.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section className="not-prose my-24 text-center">
+        <figure className="space-y-6 inline-block">
+          <img src="/figurar/fig7_kopling.png" alt="Figur 7" className="max-w-2xl h-auto rounded-xl shadow-sm border border-gray-100" />
+          <figcaption className="text-sm text-gray-500 font-sans italic text-center max-w-2xl mx-auto">
+            FIGUR 7: Visualisering av materiell-formell kopling. Spesifikke materialar affordar spesifikke geometriske konfigurasjoner.
+          </figcaption>
+        </figure>
       </section>
 
       <section className="border-t-[10px] border-black pt-24">
