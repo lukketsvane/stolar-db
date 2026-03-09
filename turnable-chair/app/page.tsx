@@ -5,15 +5,14 @@ import { useState, useEffect, useMemo, Suspense, useCallback } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import FrameScrubber from "../components/frame-scrubber"
 import ModelViewer from "../components/model-viewer"
-import { Search, Filter, X, ChevronRight, ChevronLeft } from "lucide-react"
+import { Search, Filter, X, ChevronRight, ChevronLeft, ExternalLink, Maximize2 } from "lucide-react"
 
 interface ChairItem {
   id: string
   symbol: string
   number: string
   name: string
-  frames?: string[]
-  thumb?: string
+  title: string
   text: string
   specs: string
   producer: string
@@ -22,6 +21,14 @@ interface ChairItem {
   techniques: string
   inventoryNr: string
   location: string
+  acquisition: string
+  description: string
+  classification: string
+  nmUrl: string
+  height?: number
+  width?: number
+  depth?: number
+  seatHeight?: number
   has3d?: boolean
 }
 
@@ -48,13 +55,12 @@ function HomeContent() {
   const [currentItem, setCurrentItem] = useState<ChairItem | null>(null)
   const [viewMode, setViewMode] = useState<'2d' | '3d'>('3d')
   const [isSidebarOpen, setIsSidebarOpen] = useState(true)
+  const [has3dModel, setHas3dModel] = useState(false)
 
-  // Load the full enriched database
   useEffect(() => {
     fetch("/data/norske_stolar.json")
       .then(res => res.json())
       .then(data => {
-        // De-duplicate data by object_id
         const uniqueMap = new Map();
         data.forEach((item: any) => {
           if (!uniqueMap.has(item.object_id)) {
@@ -62,7 +68,8 @@ function HomeContent() {
               id: item.object_id,
               symbol: item.object_id.split("-")[0],
               number: item.object_id.split("-")[1],
-              name: item.betegnelse || item.title || "Stol", // Use designation instead of title
+              name: item.betegnelse || "Stol",
+              title: item.title,
               text: item.betegnelse,
               specs: item.maal,
               producer: item.produsent,
@@ -71,28 +78,31 @@ function HomeContent() {
               techniques: item.teknikk,
               inventoryNr: item.object_id,
               location: item.produksjonsstad,
+              acquisition: item.erverving,
+              description: item.beskriving,
+              classification: item.klassifikasjon,
+              nmUrl: item.nasjonalmuseet_url,
+              height: item.hoegde_cm,
+              width: item.breidde_cm,
+              depth: item.djupn_cm,
+              seatHeight: item.setehoegde_cm,
               has3d: false
             });
           }
         });
-        
-        const mapped: ChairItem[] = Array.from(uniqueMap.values());
+        const mapped = Array.from(uniqueMap.values());
         setAllData(mapped);
         setFilteredData(mapped);
       })
-      .catch(err => console.error("Error loading full database:", err))
+      .catch(err => console.error("Error loading database:", err))
   }, [])
 
-  // Check if 3D model exists when an item is selected
-  const [has3dModel, setHas3dModel] = useState(false);
   useEffect(() => {
     if (currentItem) {
       fetch(`/api/model/${currentItem.id}`, { method: 'HEAD' })
         .then(res => {
-          const exists = res.ok;
-          setHas3dModel(exists);
-          if (!exists) setViewMode('2d');
-          else setViewMode('3d');
+          setHas3dModel(res.ok);
+          setViewMode(res.ok ? '3d' : '2d');
         })
         .catch(() => {
           setHas3dModel(false);
@@ -114,9 +124,12 @@ function HomeContent() {
   useEffect(() => {
     let result = allData
     if (searchQuery) {
+      const q = searchQuery.toLowerCase()
       result = result.filter(item => 
-        item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.id.toLowerCase().includes(searchQuery.toLowerCase())
+        item.name.toLowerCase().includes(q) ||
+        item.id.toLowerCase().includes(q) ||
+        item.producer?.toLowerCase().includes(q) ||
+        item.title?.toLowerCase().includes(q)
       )
     }
     if (selectedMaterial !== "Alle") {
@@ -125,21 +138,16 @@ function HomeContent() {
     setFilteredData(result)
   }, [searchQuery, selectedMaterial, allData])
 
-  // Navigation Logic
   const navigateTo = useCallback((direction: 'next' | 'prev') => {
     if (!currentItem) return
     const currentIndex = filteredData.findIndex(item => item.id === currentItem.id)
     if (currentIndex === -1) return
-
     let nextIndex = direction === 'next' ? currentIndex + 1 : currentIndex - 1
     if (nextIndex >= filteredData.length) nextIndex = 0
     if (nextIndex < 0) nextIndex = filteredData.length - 1
-
-    const nextItem = filteredData[nextIndex]
-    router.push(`/?item=${nextItem.id}`)
+    router.push(`/?item=${filteredData[nextIndex].id}`)
   }, [currentItem, filteredData, router])
 
-  // Keyboard and Gestures
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!currentItem) return
@@ -147,26 +155,8 @@ function HomeContent() {
       if (e.key === 'ArrowLeft') navigateTo('prev')
       if (e.key === 'Escape') router.push('/')
     }
-
-    let touchStartX = 0
-    const handleTouchStart = (e: TouchEvent) => { touchStartX = e.touches[0].clientX }
-    const handleTouchEnd = (e: TouchEvent) => {
-      if (!currentItem) return
-      const touchEndX = e.changedTouches[0].clientX
-      const diff = touchStartX - touchEndX
-      if (Math.abs(diff) > 50) { // Threshold
-        navigateTo(diff > 0 ? 'next' : 'prev')
-      }
-    }
-
     window.addEventListener('keydown', handleKeyDown)
-    window.addEventListener('touchstart', handleTouchStart)
-    window.addEventListener('touchend', handleTouchEnd)
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown)
-      window.removeEventListener('touchstart', handleTouchStart)
-      window.removeEventListener('touchend', handleTouchEnd)
-    }
+    return () => window.removeEventListener('keydown', handleKeyDown)
   }, [currentItem, navigateTo, router])
 
   const groupedChairs = useMemo(() => {
@@ -179,19 +169,9 @@ function HomeContent() {
     return groups
   }, [filteredData])
 
-  const materials = useMemo(() => {
-    const set = new Set<string>(["Alle"])
-    allData.forEach(item => {
-      if (item.materials) {
-        item.materials.split(",").forEach(m => set.add(m.trim()))
-      }
-    })
-    return Array.from(set).sort().slice(0, 30)
-  }, [allData])
-
   const renderGridItem = (item: ChairItem) => (
     <div 
-      key={item.id} // NOW UNIQUE because we de-duplicated allData
+      key={item.id}
       onClick={() => router.push(`/?item=${item.id}`)}
       className="relative aspect-square border-black/10 cursor-pointer bg-white group hover:bg-gray-50 transition-all duration-300 overflow-hidden"
       style={{ borderWidth: "0.5px" }}
@@ -199,13 +179,18 @@ function HomeContent() {
       <div className="absolute top-1 left-1 font-mono font-bold text-[7px] text-black/20">{item.id}</div>
       <div className="flex flex-col items-center justify-center h-full p-4">
         <img 
-          src={`/api/image/${item.id}`} // FIXED: Using API to find correct image
+          src={`/api/image/${item.id}`}
           onError={(e) => (e.currentTarget.src = "/placeholder.svg")}
           alt={item.name} 
-          className="max-w-full max-h-[70%] object-contain group-hover:scale-110 transition-transform duration-700" 
+          className="max-w-full max-h-[75%] object-contain group-hover:scale-110 transition-transform duration-700" 
         />
-        <div className="text-black font-sans font-black text-[8px] mt-2 uppercase tracking-tighter text-center line-clamp-1">
-          {formatName(item.name)}
+        <div className="mt-2 text-center">
+          <div className="text-black font-sans font-black text-[8px] uppercase tracking-tighter line-clamp-1">
+            {formatName(item.name)}
+          </div>
+          <div className="text-gray-300 font-mono text-[6px] uppercase tracking-widest mt-0.5">
+            {item.year}
+          </div>
         </div>
       </div>
     </div>
@@ -214,89 +199,121 @@ function HomeContent() {
   if (currentItem) {
     return (
       <div className="min-h-screen bg-white text-black flex flex-col lg:flex-row overflow-hidden">
-        {/* Detail View UI */}
-        <div className="lg:flex-1 flex flex-col relative h-screen">
+        <div className="lg:flex-1 flex flex-col relative h-screen bg-white">
           <nav className="absolute top-8 left-8 right-8 z-50 flex justify-between items-center pointer-events-none">
-            <button onClick={() => router.push("/")} className="pointer-events-auto bg-white/80 backdrop-blur px-4 py-2 rounded-full font-mono font-black uppercase text-[10px] tracking-widest border border-black/5 hover:bg-black hover:text-white transition-all">
+            <button onClick={() => router.push("/")} className="pointer-events-auto bg-white/90 backdrop-blur px-5 py-2.5 rounded-full font-mono font-black uppercase text-[10px] tracking-widest border border-black/5 shadow-sm hover:bg-black hover:text-white transition-all">
               &larr; Galleri
             </button>
             {has3dModel && (
-              <div className="flex gap-2 pointer-events-auto bg-gray-100/80 backdrop-blur p-1 rounded-full">
-                <button onClick={() => setViewMode('2d')} className={`px-4 py-1 rounded-full text-[9px] font-mono font-black uppercase transition-all ${viewMode === '2d' ? 'bg-black text-white' : 'text-gray-400'}`}>2D</button>
-                <button onClick={() => setViewMode('3d')} className={`px-4 py-1 rounded-full text-[9px] font-mono font-black uppercase transition-all ${viewMode === '3d' ? 'bg-black text-white' : 'text-gray-400'}`}>3D</button>
+              <div className="flex gap-1 pointer-events-auto bg-gray-100/90 backdrop-blur p-1 rounded-full shadow-inner border border-black/5">
+                <button onClick={() => setViewMode('2d')} className={`px-5 py-1.5 rounded-full text-[9px] font-mono font-black uppercase transition-all ${viewMode === '2d' ? 'bg-white text-black shadow-sm' : 'text-gray-400 hover:text-black'}`}>2D</button>
+                <button onClick={() => setViewMode('3d')} className={`px-5 py-1.5 rounded-full text-[9px] font-mono font-black uppercase transition-all ${viewMode === '3d' ? 'bg-white text-black shadow-sm' : 'text-gray-400 hover:text-black'}`}>3D</button>
               </div>
             )}
           </nav>
 
-          <div className="flex-1 flex items-center justify-center bg-white">
-            <div className="w-full aspect-square max-w-[85vh]">
+          <div className="flex-1 flex items-center justify-center relative">
+            <div className="w-full h-full max-w-[90vh] max-h-[90vh] p-12">
               {viewMode === '3d' ? (
                 <ModelViewer chairId={currentItem.id} />
               ) : (
-                <div className="w-full h-full flex items-center justify-center p-12">
-                  <img src={`/api/image/${currentItem.id}`} className="max-w-full max-h-full object-contain" />
-                </div>
+                <img src={`/api/image/${currentItem.id}`} className="w-full h-full object-contain animate-in fade-in zoom-in-95 duration-700" />
               )}
             </div>
           </div>
 
-          {/* Quick Nav UI */}
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-4 z-50">
-            <button onClick={() => navigateTo('prev')} className="bg-white/80 backdrop-blur p-3 rounded-full border border-black/5 hover:bg-black hover:text-white transition-all">
-              <ChevronLeft size={16} />
+            <button onClick={() => navigateTo('prev')} className="bg-white/90 backdrop-blur p-4 rounded-full border border-black/5 shadow-sm hover:bg-black hover:text-white transition-all">
+              <ChevronLeft size={18} />
             </button>
-            <button onClick={() => navigateTo('next')} className="bg-white/80 backdrop-blur p-3 rounded-full border border-black/5 hover:bg-black hover:text-white transition-all">
-              <ChevronRight size={16} />
+            <button onClick={() => navigateTo('next')} className="bg-white/90 backdrop-blur p-4 rounded-full border border-black/5 shadow-sm hover:bg-black hover:text-white transition-all">
+              <ChevronRight size={18} />
             </button>
           </div>
         </div>
 
-        {/* Info Sidebar */}
-        {isSidebarOpen && (
-          <aside className="lg:w-[450px] border-l border-gray-100 bg-gray-50 p-8 lg:p-16 overflow-y-auto h-screen relative">
-            <button onClick={() => setIsSidebarOpen(false)} className="hidden lg:block absolute top-8 right-8 text-gray-300 hover:text-black transition-colors">
-              <X size={20} />
-            </button>
-            <div className="space-y-12">
-              <section>
-                <div className="font-mono text-[10px] text-gray-400 uppercase tracking-widest mb-4">{currentItem.id}</div>
-                <h1 className="text-4xl font-sans font-black tracking-tighter uppercase leading-none">{formatName(currentItem.name)}</h1>
-                <p className="font-mono text-gray-400 text-xs font-bold uppercase tracking-widest mt-4">{currentItem.year}</p>
-              </section>
-              <div className="grid grid-cols-1 gap-y-8 border-t border-gray-100 pt-12">
-                {[
-                  { label: "Material", val: currentItem.materials },
-                  { label: "Teknikk", val: currentItem.techniques },
-                  { label: "Produsent", val: currentItem.producer },
-                  { label: "Stad", val: currentItem.location }
-                ].map(f => f.val && (
-                  <div key={f.label}>
-                    <h3 className="font-mono font-black text-[9px] uppercase tracking-[0.2em] text-gray-300 mb-2">{f.label}</h3>
-                    <p className="text-sm font-bold text-black">{f.val}</p>
-                  </div>
-                ))}
+        <aside className="lg:w-[500px] border-l border-gray-100 bg-white p-8 lg:p-16 overflow-y-auto h-screen relative scroll-smooth selection:bg-black selection:text-white">
+          <div className="max-w-md mx-auto space-y-16">
+            <section>
+              <div className="font-mono text-[10px] text-gray-300 uppercase tracking-[0.3em] mb-6 flex justify-between items-center">
+                <span>{currentItem.id}</span>
+                {!isSidebarOpen && <button onClick={() => setIsSidebarOpen(true)}><Maximize2 size={14}/></button>}
               </div>
-            </div>
-          </aside>
-        )}
+              <h1 className="text-5xl font-sans font-black tracking-tighter uppercase leading-[0.9] mb-8">{formatName(currentItem.name)}</h1>
+              {currentItem.title && currentItem.title !== currentItem.name && (
+                <p className="text-xl font-serif italic text-gray-500 mb-8 leading-tight">{currentItem.title}</p>
+              )}
+              <div className="flex gap-4">
+                <span className="bg-black text-white font-mono text-[9px] font-black px-3 py-1 uppercase tracking-widest">{currentItem.year}</span>
+                <span className="border border-black/10 font-mono text-[9px] font-black px-3 py-1 uppercase tracking-widest text-gray-400">{currentItem.location?.split(",")[0]}</span>
+              </div>
+            </section>
+
+            {currentItem.description && (
+              <section className="border-t border-gray-50 pt-12">
+                <h3 className="font-mono font-black text-[10px] uppercase tracking-[0.2em] text-gray-300 mb-6">Skildring</h3>
+                <p className="text-base font-serif leading-relaxed text-gray-800">{currentItem.description}</p>
+              </section>
+            )}
+
+            <section className="space-y-10 border-t border-gray-50 pt-12">
+              {[
+                { label: "Designar / Produsent", val: currentItem.producer },
+                { label: "Materialar", val: currentItem.materials },
+                { label: "Teknikk", val: currentItem.techniques },
+                { label: "Klassifikasjon", val: currentItem.classification },
+                { label: "Erverving", val: currentItem.acquisition }
+              ].map(f => f.val && (
+                <div key={f.label}>
+                  <h3 className="font-mono font-black text-[9px] uppercase tracking-[0.2em] text-gray-300 mb-3">{f.label}</h3>
+                  <p className="text-sm font-bold tracking-tight text-black uppercase">{f.val}</p>
+                </div>
+              ))}
+            </section>
+
+            {(currentItem.height || currentItem.width || currentItem.depth) && (
+              <section className="border-t border-gray-50 pt-12">
+                <h3 className="font-mono font-black text-[10px] uppercase tracking-[0.2em] text-gray-300 mb-6">Mål</h3>
+                <div className="grid grid-cols-2 gap-4 font-mono text-[11px]">
+                  {currentItem.height && <div className="flex justify-between border-b border-gray-50 pb-2"><span className="text-gray-400">Høgde</span><span className="font-black">{currentItem.height} cm</span></div>}
+                  {currentItem.width && <div className="flex justify-between border-b border-gray-50 pb-2"><span className="text-gray-400">Breidde</span><span className="font-black">{currentItem.width} cm</span></div>}
+                  {currentItem.depth && <div className="flex justify-between border-b border-gray-50 pb-2"><span className="text-gray-400">Djupn</span><span className="font-black">{currentItem.depth} cm</span></div>}
+                  {currentItem.seatHeight && <div className="flex justify-between border-b border-gray-50 pb-2"><span className="text-gray-400">Setehøgde</span><span className="font-black">{currentItem.seatHeight} cm</span></div>}
+                </div>
+                <p className="text-[9px] text-gray-300 mt-4 italic">{currentItem.specs}</p>
+              </section>
+            )}
+
+            <section className="pt-12">
+              <a 
+                href={currentItem.nmUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-between w-full border border-black p-4 font-mono font-black text-[10px] uppercase tracking-widest hover:bg-black hover:text-white transition-all group"
+              >
+                Sjå hos Nasjonalmuseet
+                <ExternalLink size={14} className="group-hover:translate-x-1 transition-transform" />
+              </a>
+            </section>
+          </div>
+        </aside>
       </div>
     )
   }
 
   return (
     <div className="min-h-screen bg-white text-black font-sans selection:bg-black selection:text-white">
-      {/* Header & Search */}
-      <header className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md z-50 border-b border-black/5 px-6 md:px-12 py-6 flex flex-col md:flex-row justify-between items-center gap-6">
-        <h1 className="font-sans font-black text-2xl tracking-tighter uppercase italic">Stolar.</h1>
+      <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md z-50 border-b border-black/5 px-6 md:px-12 py-6 flex flex-col md:flex-row justify-between items-center gap-6">
+        <h1 className="font-sans font-black text-3xl tracking-tighter uppercase italic">Stolar.</h1>
         <div className="flex items-center gap-4 w-full md:w-auto">
-          <div className="relative flex-1 md:w-64">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-300" size={14} />
+          <div className="relative flex-1 md:w-80">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-300" size={16} />
             <input 
               type="text" 
-              placeholder="Søk i samlinga..." 
+              placeholder="Søk i 3000+ objekt..." 
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-gray-50 border-none rounded-full py-2 pl-10 pr-4 text-xs font-mono focus:ring-1 focus:ring-black outline-none transition-all"
+              className="w-full bg-gray-50 border-none rounded-full py-3 pl-12 pr-6 text-xs font-mono focus:ring-1 focus:ring-black outline-none transition-all"
             />
           </div>
           <div className="flex gap-2">
@@ -304,7 +321,7 @@ function HomeContent() {
               <button 
                 key={n}
                 onClick={() => router.push(i === 0 ? "/article" : i === 1 ? "/article/form" : i === 2 ? "/article/form-klassifikasjon" : i === 3 ? "/article/fff-rammeverk" : "/article/kappe")}
-                className="w-8 h-8 rounded-full border border-black/5 flex items-center justify-center font-mono font-black text-[10px] hover:bg-black hover:text-white transition-all"
+                className="w-10 h-10 rounded-full border border-black/5 flex items-center justify-center font-mono font-black text-xs hover:bg-black hover:text-white transition-all shadow-sm"
               >
                 {n}
               </button>
@@ -313,28 +330,15 @@ function HomeContent() {
         </div>
       </header>
 
-      <div className="max-w-[1800px] mx-auto px-6 md:px-12 pt-40 pb-40">
-        {/* Filters */}
-        <div className="flex overflow-x-auto gap-4 mb-16 no-scrollbar pb-4 border-b border-black/5">
-          {materials.map(m => (
-            <button 
-              key={m}
-              onClick={() => setSelectedMaterial(m)}
-              className={`whitespace-nowrap px-4 py-1.5 rounded-full font-mono text-[9px] font-black uppercase tracking-widest transition-all ${selectedMaterial === m ? 'bg-black text-white' : 'text-gray-400'}`}
-            >
-              {m}
-            </button>
-          ))}
-        </div>
-
-        <div className="space-y-32">
+      <div className="max-w-[2000px] mx-auto px-6 md:px-12 pt-48 pb-40">
+        <div className="space-y-40">
           {Object.entries(groupedChairs).sort(([a], [b]) => a.localeCompare(b)).map(([century, chairs]) => (
             <section key={century}>
-              <div className="flex items-baseline justify-between border-b border-black/10 pb-4 mb-8">
-                <h2 className="font-mono font-black text-3xl tracking-tighter">{century}</h2>
-                <span className="font-mono text-xs font-bold text-gray-300 uppercase tracking-widest">{chairs.length} stolar</span>
+              <div className="flex items-baseline justify-between border-b border-black/10 pb-6 mb-12">
+                <h2 className="font-mono font-black text-4xl tracking-tighter">{century}</h2>
+                <span className="font-mono text-sm font-bold text-gray-300 uppercase tracking-[0.2em]">{chairs.length} objekt</span>
               </div>
-              <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 border-t border-l border-black/10">
+              <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-12 border-t border-l border-black/10">
                 {chairs.map(renderGridItem)}
               </div>
             </section>
