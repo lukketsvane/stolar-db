@@ -30,6 +30,8 @@ interface ChairItem {
   depth?: number
   seatHeight?: number
   has3d?: boolean
+  imagePath?: string
+  modelPath?: string
 }
 
 const formatName = (s: string) => {
@@ -53,73 +55,63 @@ function HomeContent() {
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedMaterial, setSelectedMaterial] = useState<string>("Alle")
   const [currentItem, setCurrentItem] = useState<ChairItem | null>(null)
-  const [viewMode, setViewMode] = useState<'2d' | '3d'>('2d') // Default to 2D to avoid 404s
+  const [viewMode, setViewMode] = useState<'2d' | '3d'>('2d')
   const [isSidebarOpen, setIsSidebarOpen] = useState(true)
-  const [has3dModel, setHas3dModel] = useState(false)
 
-  // Load the full enriched database
   useEffect(() => {
-    fetch("/data/norske_stolar.json")
-      .then(res => res.json())
-      .then(data => {
-        const uniqueMap = new Map();
-        data.forEach((item: any) => {
-          if (!uniqueMap.has(item.object_id)) {
-            uniqueMap.set(item.object_id, {
-              id: item.object_id,
-              symbol: item.object_id.split("-")[0],
-              number: item.object_id.split("-")[1],
-              name: item.betegnelse || "Stol",
-              title: item.title,
-              text: item.betegnelse,
-              specs: item.maal,
-              producer: item.produsent,
-              year: item.datering,
-              materials: item.materialar,
-              techniques: item.teknikk,
-              inventoryNr: item.object_id,
-              location: item.produksjonsstad,
-              acquisition: item.erverving,
-              description: item.beskriving,
-              classification: item.klassifikasjon,
-              nmUrl: item.nasjonalmuseet_url,
-              height: item.hoegde_cm,
-              width: item.breidde_cm,
-              depth: item.djupn_cm,
-              seatHeight: item.setehoegde_cm,
-              has3d: false
-            });
-          }
-        });
-        const mapped = Array.from(uniqueMap.values());
-        setAllData(mapped);
-        setFilteredData(mapped);
-      })
-      .catch(err => console.error("Error loading database:", err))
+    // Load all data files in parallel
+    Promise.all([
+      fetch("/data/norske_stolar.json").then(res => res.json()),
+      fetch("/data/image_map.json").then(res => res.json()),
+      fetch("/data/model_map.json").then(res => res.json())
+    ])
+    .then(([jsonData, imageMap, modelMap]) => {
+      const uniqueMap = new Map();
+      jsonData.forEach((item: any) => {
+        if (!uniqueMap.has(item.object_id)) {
+          uniqueMap.set(item.object_id, {
+            id: item.object_id,
+            symbol: item.object_id.split("-")[0],
+            number: item.object_id.split("-")[1],
+            name: item.betegnelse || "Stol",
+            title: item.title,
+            text: item.betegnelse,
+            specs: item.maal,
+            producer: item.produsent,
+            year: item.datering,
+            materials: item.materialar,
+            techniques: item.teknikk,
+            inventoryNr: item.object_id,
+            location: item.produksjonsstad,
+            acquisition: item.erverving,
+            description: item.beskriving,
+            classification: item.klassifikasjon,
+            nmUrl: item.nasjonalmuseet_url,
+            height: item.hoegde_cm,
+            width: item.breidde_cm,
+            depth: item.djupn_cm,
+            seatHeight: item.setehoegde_cm,
+            imagePath: imageMap[item.object_id] || "/placeholder.svg",
+            modelPath: modelMap[item.object_id] || null,
+            has3d: !!modelMap[item.object_id]
+          });
+        }
+      });
+      const mapped = Array.from(uniqueMap.values());
+      setAllData(mapped);
+      setFilteredData(mapped);
+    })
+    .catch(err => console.error("Error loading database:", err))
   }, [])
-
-  // Check if 3D model exists when an item is selected
-  useEffect(() => {
-    if (currentItem) {
-      fetch(`/api/model/${currentItem.id}`, { method: 'HEAD' })
-        .then(res => {
-          const exists = res.ok;
-          setHas3dModel(exists);
-          if (exists) setViewMode('3d');
-          else setViewMode('2d');
-        })
-        .catch(() => {
-          setHas3dModel(false);
-          setViewMode('2d');
-        });
-    }
-  }, [currentItem]);
 
   useEffect(() => {
     const itemId = searchParams.get("item")
     if (itemId) {
       const item = allData.find(d => d.id === itemId)
-      if (item) setCurrentItem(item)
+      if (item) {
+        setCurrentItem(item)
+        setViewMode(item.has3d ? '3d' : '2d')
+      }
     } else {
       setCurrentItem(null)
     }
@@ -183,7 +175,7 @@ function HomeContent() {
       <div className="absolute top-1 left-1 font-mono font-bold text-[7px] text-black/20">{item.id}</div>
       <div className="flex flex-col items-center justify-center h-full p-4">
         <img 
-          src={`/api/image/${item.id}`}
+          src={item.imagePath}
           onError={(e) => (e.currentTarget.src = "/placeholder.svg")}
           alt={item.name} 
           className="max-w-full max-h-[85%] object-contain group-hover:scale-110 transition-transform duration-700" 
@@ -205,7 +197,7 @@ function HomeContent() {
             <button onClick={() => router.push("/")} className="pointer-events-auto font-mono font-black uppercase text-[10px] tracking-widest hover:line-through transition-all">
               &larr; Galleri
             </button>
-            {has3dModel && (
+            {currentItem.has3d && (
               <div className="flex gap-4 pointer-events-auto bg-white/80 backdrop-blur px-4 py-2">
                 <button onClick={() => setViewMode('2d')} className={`text-[10px] font-mono font-black uppercase tracking-widest transition-all ${viewMode === '2d' ? 'text-black underline' : 'text-gray-300 hover:text-black'}`}>2D</button>
                 <button onClick={() => setViewMode('3d')} className={`text-[10px] font-mono font-black uppercase tracking-widest transition-all ${viewMode === '3d' ? 'text-black underline' : 'text-gray-300 hover:text-black'}`}>3D</button>
@@ -218,7 +210,7 @@ function HomeContent() {
               {viewMode === '3d' ? (
                 <ModelViewer chairId={currentItem.id} />
               ) : (
-                <img src={`/api/image/${currentItem.id}`} className="w-full h-full object-contain animate-in fade-in zoom-in-95 duration-700" />
+                <img src={currentItem.imagePath} className="w-full h-full object-contain animate-in fade-in zoom-in-95 duration-700" />
               )}
             </div>
           </div>
