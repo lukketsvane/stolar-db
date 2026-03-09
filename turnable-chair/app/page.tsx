@@ -59,11 +59,11 @@ function HomeContent() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true)
 
   useEffect(() => {
-    // Load all data files in parallel
+    // Load data and image mapping
     Promise.all([
       fetch("/data/norske_stolar.json").then(res => res.json()),
-      fetch("/data/image_map.json").then(res => res.json()),
-      fetch("/data/model_map.json").then(res => res.json())
+      fetch("/data/image_map.json").then(res => res.json()).catch(() => ({})),
+      fetch("/data/model_map.json").then(res => res.json()).catch(() => ({}))
     ])
     .then(([jsonData, imageMap, modelMap]) => {
       const uniqueMap = new Map();
@@ -176,7 +176,11 @@ function HomeContent() {
       <div className="flex flex-col items-center justify-center h-full p-4">
         <img 
           src={item.imagePath}
-          onError={(e) => (e.currentTarget.src = "/placeholder.svg")}
+          onError={(e) => {
+            // Try fallback path if mapping fails
+            if (e.currentTarget.src.includes('gallery')) return;
+            e.currentTarget.src = "/placeholder.svg";
+          }}
           alt={item.name} 
           className="max-w-full max-h-[85%] object-contain group-hover:scale-110 transition-transform duration-700" 
         />
@@ -207,8 +211,8 @@ function HomeContent() {
 
           <div className="flex-1 flex items-center justify-center relative">
             <div className="w-full h-full max-w-[90vh] max-h-[90vh] p-12">
-              {viewMode === '3d' ? (
-                <ModelViewer chairId={currentItem.id} />
+              {viewMode === '3d' && currentItem.modelPath ? (
+                <ModelViewer src={currentItem.modelPath} />
               ) : (
                 <img src={currentItem.imagePath} className="w-full h-full object-contain animate-in fade-in zoom-in-95 duration-700" />
               )}
@@ -300,7 +304,7 @@ function HomeContent() {
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-300" size={16} />
             <input 
               type="text" 
-              placeholder="Søk i 3000+ objekt..." 
+              placeholder="Søk i samlinga..." 
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full bg-gray-50 border-none rounded-full py-3 pl-12 pr-6 text-xs font-mono focus:ring-1 focus:ring-black outline-none transition-all"

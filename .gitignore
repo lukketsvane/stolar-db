@@ -10,11 +10,29 @@ build_log.txt
 Hunyuan3D-2/
 node_modules/
 noreg/node_modules/
+
+# Large assets
+turnable-chair/public/models/
+turnable-chair/public/bg-uniform white/
+turnable-chair/public/noreg/
+!turnable-chair/public/gallery/*.png
 *.glb
+# *.png  <-- Remove this to allow specific PNGs
 *.jpg
 *.jpeg
 *.tif
 *.tiff
+*.mp4
+
+# Keep specific public assets
+!turnable-chair/public/nasjonalmuseet_logo.jpg
+!turnable-chair/public/placeholder.svg
+!turnable-chair/public/figurar/*.png
+!turnable-chair/public/figurar/*.pdf
+!turnable-chair/public/artiklar/*.pdf
+!turnable-chair/public/data/*.json
+!turnable-chair/public/gallery/
+
 !charts/*.png
 !charts/
 tectonic.exe
@@ -22,3 +40,6 @@ tectonic.exe
 *.blg
 *.bbl
 *.aux
+
+# Next.js
+turnable-chair/.next/

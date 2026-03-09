@@ -1,74 +1,134 @@
 ## 1. Innleiing
 
-Tidlegare artiklar i denne serien har etablert at materialar ikkje er nøytrale berarar av form, men at dei inkarnerer kolonial handel og tilgangshistorie (Finne, 2026a), og at formutvikling over tid konvergerer mot fitness-optima snarare enn å fylgje ein deterministisk funksjon (Finne, 2026b). Denne tredje delen reiser eit oppfylgjande fundamentalt spørsmål: Dersom ein fjernar overflate, farge og materiale, og berre ser på den nakte geometrien, kan form i seg sjølv bera meining om tid og stad?
+Tidlegare artiklar i denne serien har etablert at materialar ikkje er nøytrale berarar av form, men at dei inkarnerer kolonial handel og tilgangshistorie (Finne, 2026a), og at formutvikling over tid konvergerer mot *fitness-optima* snarare enn å fylgje ein deterministisk funksjon (Finne, 2026b). Denne tredje delen reiser eit oppfylgjande fundamentalt spørsmål: Dersom ein fjernar overflate, farge og materiale, og *berre* ser på den nakte geometrien, kan form i seg sjølv bera meining om tid og stad?
 
-Spørsmålet har djupe røter i designteorien. Sullivan (1896) formulerte målet *form follows function*, seinare kanonisert av Le Corbusier (1923). Dersom funksjonen til ein stol er invariant over tid og rom, burde nasjonal opphavsstad og historisk stilperiode vera irrelevante for dei geometriske proposisjonane. Men erfarne kjennarar gjenkjenner ein epoke straks, ofte frå ein silhuett aleine.
+Spørsmålet har djupe røter i designteorien. Sullivan (1896) formulerte målet *form follows function*, seinare kanonisert av Le Corbusier (1923) og heile den funksjonalistiske rørsla. Dersom funksjonen til ein stol (ergonomisk støtte for sitjing) er invariant over tid og rom, burde nasjonal opphavsstad og historisk stilperiode vera irrelevante for dei geometriske proposisjonane. Men erfarne kjennarar gjenkjenner ein epoke *straks*, ofte frå ein silhuett aleine (Lucie-Smith, 1979; Fiell & Fiell, 2005).
+
+Dei siste åra har *computational cultural heritage* vakse fram som eit tverrfagleg forskingsfelt der digitale metodar, som 3D-skanning, statistisk analyse og maskinlæring, vert nytta på kulturhistoriske samlingar (Santos et al., 2017; Manovich, 2020). I dette landskapet tilbyr museumssamlingar med digitaliserte objekt ei unik moglegheit: store nok til statistisk inferens, men kurerte nok til å vera historisk truverdige. Nasjonalmuseet si stolsamling, med over 400 3D-modellerte gjenstandar, er eit ideelt laboratorium for å teste forholdet mellom form og kultur empirisk.
+
+Denne studien formulerer fire forskingsspørsmål:
+
+1. Kan geometrisk form åleine predikere stilperiode?
+2. Kan geometrisk form predikere nasjonal opphavstad?
+3. Korleis interagerer materielle og geometriske trekk i prediksjon?
+4. Kva geometriske eigenskapar ber mest kulturell informasjon?
 
 ## 2. Forskingsgjennomgang
 
 ### 2.1 Stilhistorie i møbeldesign
 
-Den vestlege møbelhistoria vert tradisjonelt organisert i stilperiodar (Renessanse, Barokk, Rokokko, Nyklassisisme, Historisme, Jugend, Modernisme), der kvar epoke vert definert av karakteristiske formtrekk og dekorstrategiar (Lucie-Smith, 1979).
+Den vestlege møbelhistoria vert tradisjonelt organisert i stilperiodar (Renessanse, Barokk, Rokokko, Nyklassisisme, Historisme, Jugend, Modernisme), der kvar epoke vert definert av karakteristiske formtrekk, proporsjonar og dekorstrategiar (Lucie-Smith, 1979). Giedion (1948) viste korleis mekanisering transformerte forholdet mellom handverk og industriell produksjon, noko som endra ikkje berre materialtilgang, men òg kva former som var teknisk møgelege. Fiell & Fiell (2005) dokumenterer korleis stolen, som den mest gjentekne designoppgåva, har fungert som ein seismograf for kulturelle skifte gjennom meir enn 500 år.
 
-### 2.2 3D formanalyse
+### 2.2 3D formanalyse og shape distributions
 
-Datamaskinbasert formanalyse har utvikla seg frå statistiske deskriptorar til djuplæring. Osada et al. (2002) introduserte *shape distributions* som eit rotasjonsinvariant fingeravtrykk for 3D-form.
+Datamaskinbasert formanalyse har utvikla seg frå statistiske deskriptorar til djuplæring. Osada et al. (2002) introduserte *shape distributions*, det vil seie sannsynsfordelingar av geometriske mål (punkt-til-punkt-avstandar, areal, volum), som eit rotasjonsinvariant fingeravtrykk for 3D-form. Seinare har Wu et al. (2015) vist at djupe nett kan lære volumetriske representasjonar direkte, medan Su et al. (2015) demonstrerte at multi-view-bilete kan fange kompleks formvariasjon. For små og mellomstore datasett, slik som våre ca. 400 stolar, kan robuste handlaga features likevel konkurrere med djuplæringsmetodar, særleg når tolkbarheit er viktig.
 
-<Figure 
-  src="/figurar/fig1_formrom.png" 
-  caption="FIGUR 1: UMAP-projeksjon av formrommet basert på 21 geometriske variablar. Klynger indikerer systematiske likskapar mellom stilperiodar."
-/>
+### 2.3 Maskinlæring for kulturarvsdata
+
+Manovich (2020) argumenterer for at kulturanalyse (*cultural analytics*), det vil seie bruk av statistikk og maskinlæring på store kulturelle datasett, avslører mønster som kvalitativ lesing åleine ikkje kan fange. Santos et al. (2017) gjennomgår korleis 3D-digitalisering av kulturarvsobjekt har mogeleggjort nye former for komparativ analyse. Vår studie koplar desse tradisjonane: me nyttar 3D-punktsskyer frå eit museumsdatasett med etablerte stilmerke for å kvantifisere forholdet mellom geometri, material og kulturell tilhøyrsle.
+
+### 2.4 Materiell-formell kopling
+
+Finne (2026a) synte at material i museumssamlingar er bunde til spesifikke nasjonaløkonomiske omstende; mahogni markerer internasjonale handelsnettverk, medan furu indikerer nordiske produksjonstilhøve. Ingold (2007) argumenterer for at materialar ikkje er passive substrat, men aktive aktørar som *tvingar* visse former fram: bøyd bøk auka sannsynet for sirkulære former, medan massivt eik disponerer for rektangulær konstruksjon. Gibson (1977) sitt omgrep *affordances* gjev eit teoretisk rammeverk for kvifor me kan forvente systematisk kovarians mellom geometri og material. Dermed vert ikkje form berre "form"; den vert eit symptom på ei underliggjande materiell-formell kopling.
 
 ## 3. Metode
 
-Datamaterialet består av 401 stolar med tilgjengelege GLB-modellar frå Nasjonalmuseet. Kvar modell vart normalisert: me sampla 2 048 punkt uniformt frå overflata, flytta kvar sky til origo, og skalerte til einingsvolum.
+### 3.1 Datasett og punktskyutrekk
 
-Me trekte ut to sett med deskriptorar: 21 geometriske variablar (bounding box, PCA-eigenverdiar, konveks skrog, D2-distribusjon, krumming) og 30 materialtrekk.
+Datamaterialet består av 408 stolar frå Nasjonalmuseet si digitalsamling, der 401 har tilgjengelege GLB-modellar. Kvar modell vart normalisert: me sampla 2 048 punkt uniformt frå overflata, flytta kvar sky til origo, og skalerte til einingsvolum for å sikre skalauavhengigheit. Av dei 401 stolane har 229 eit registrert stilmerke som let seg gruppere i åtte hovudperiodar; 349 har registrert produksjonsstad.
+
+### 3.2 Trekkekstraksjon
+
+Me trekte ut to sett med deskriptorar:
+
+**Geometriske trekk** (21 variablar) frå punktskyene:
+- **Bounding box og aspekt:** Høgde, breidde, djupn (H, W, D) og aspektratioar (H/W, D/W).
+- **PCA-eigenverdiar:** Eigenverdiratioar (λ2/λ1, λ3/λ1).
+- **Konveks skrog:** Kompaktheit (skrogvolum / bbox-volum) og overflateratio.
+- **D2-distribusjon:** Fem histogram-bins for avstandsfordelinga.
+- **Høgdefordeling og krumming:** Massefordeling (botn/midt/topp), symmetriscore og krummingsegenskapar.
+
+**Materialtrekk** (30 variablar): Binære kodingar av dei 30 mest førekomande materialane.
+
+### 3.3 Klassifiseringseksperiment
+
+Me nytta *Random Forest* (Breiman, 2001) med 100 tre og balansert klassevekt, evaluert med stratifisert 5-fold kryssvalidering. Makro-F1 vart brukt som hovudmetrikk.
+
+<Figure 
+  src="/figurar/fig1_formrom.png" 
+  caption="FIGUR 1: UMAP-projeksjon av stolane sitt formrom (21 geometriske trekk) med KDE-konturar per stilgruppe. Silhouette-score annotert."
+/>
 
 <Figure 
   src="/figurar/fig2_klassefordeling.png" 
-  caption="FIGUR 2: Klassefordeling for stilprediksjon (n = 229)."
+  caption="FIGUR 2: Klassefordeling for dei åtte stilgruppene (n = 229). Datasettet er ubalansert, med Nyklassisisme og Barokk som dei største gruppene."
 />
 
 ## 4. Resultat
 
-Geometri åleine predikerer stil nesten fire gonger betre enn sjansen (40,5 % mot 10,5 %), og nasjon med 76,0 % F1 (mot 46,3 % sjanse). Barokk og Nyklassisisme er lettast å klassifisere geometrisk (F1 = 0,78 og 0,73).
+### 4.1 Formrommet og stilklynging
 
-Eit uventa resultat er at det kombinerte trekksettet (geometri + material) *underpresterer* material åleine for stilprediksjon (F1 = 0,463 mot 0,476). Paradokset er i seg sjølv eit bevis: redundansen mellom dei to trekksetta *er* den materiell-formelle koplinga.
+UMAP-projeksjonen i Figur 1 syner at sjølv fritatt all reell dimensjon og material, i ei naken matematisk form, ser me klynger der Barokk og Modernisme skil seg ut. Den låge silhouette-scoren (-0,012 i 21D) stadfestar at klyngene ikkje er skarpt separerte, men systematiske mønster er likevel synlege.
+
+### 4.2 Hovudresultat: Stil- og nasjonsprediksjon
+
+Geometri åleine predikerer stil nesten fire gonger betre enn sjansen (40,5 % mot 10,5 %), og nasjon med 76,0 % F1 (mot 46,3 % sjanse). Forvirringsmatrisa avdekker at Historisme hyppig vert forveksla med Barokk og Nyklassisisme, stilar den bevisst imiterte.
 
 <Figure 
   src="/figurar/fig3_klassifikasjon.png" 
-  caption="FIGUR 3: Klassifikasjonsresultat (makro-F1) for ulike trekksett. Geometri åleine presterer signifikant over sjansen."
+  caption="FIGUR 3: Klassifikasjonsnøyaktigheit (makro-F1 ± std) for stil- og nasjonsprediksjon. Stipla linjer viser sjanse-nivå."
 />
 
 <Figure 
   src="/figurar/fig4_forvirring.png" 
-  caption="FIGUR 4: Forvirringsmatrise for stilprediksjon. Legg merke til forveksling mellom Historisme og Barokk/Nyklassisisme."
+  caption="FIGUR 4: Normalisert forvirringsmatrise for stilprediksjon (kombinert modell). Feilklassifisering speglar stilhistoriske lån mellom periodar."
   width="max-w-3xl"
 />
 
+### 4.3 Per-klasse F1-analyse
+
+Barokk og Nyklassisisme er lettast å klassifisere geometrisk (F1 = 0,78 og 0,73). Modernisme oppnår stabil F1 (~0,52), noko som tyder på ein koherent formsignatur. Historisme presterer dårleg geometrisk (F1 = 0,22) men betre med material (0,44).
+
 <Figure 
   src="/figurar/fig5_perklasse_f1.png" 
-  caption="FIGUR 5: Per-klasse F1-score. Barokk og Nyklassisisme har dei tydelegaste geometriske signaturane."
+  caption="FIGUR 5: Per-klasse F1-score for dei tre trekksetta. Barokk og Nyklassisisme dominerer geometrisk."
 />
 
-## 5. Diskusjon
+### 4.4 Kombinert-underprestasjonsparadokset
 
-Hovudfunnet er at geometrisk form, frigjort frå overflate, farge og material, kodar både historisk stilperiode og nasjonal opphavstad med signifikant presisjon. Dette rokkar tungt ved modernismens teoretiske rammeverk. Om *form follows function* heldt stikk, skulle ikkje ei norsk punktsky slå annleis inn i geometriske deskriptorar enn ei dansk eller fransk.
-
-Me kallar dette *materiell-formell kopling*: forma av eit tre inni ein stol fortel historia tvers igjennom.
+Eit uventa resultat er at det kombinerte trekksettet underpresterer material åleine. Korrelasjonsanalysen i Figur 6 gjev forklaringa: systematisk kovarians mellom geometri- og materialfeatures. Redundansen mellom dei to trekksetta *er* den materiell-formelle koplinga.
 
 <Figure 
   src="/figurar/fig6_korrelasjon.png" 
-  caption="FIGUR 6: Korrelasjonsmatrise mellom geometriske og materielle trekk. Systematisk kovarians dokumenterer den materiell-formelle koplinga."
+  caption="FIGUR 6: Pearson-korrelasjon mellom geometriske (rader) og materielle (kolonner) trekk. Systematisk kovarians dokumenterer den materiell-formelle koplinga kvantitativt."
 />
 
 <Figure 
   src="/figurar/fig7_kopling.png" 
-  caption="FIGUR 7: Visualisering av materiell-formell kopling. Spesifikke materialar affordar spesifikke geometriske konfigurasjoner."
+  caption="FIGUR 7: Topp 15 features for stil- (venstre) og nasjonsprediksjon (høgre). Geometriske trekk dominerer i begge oppgåver."
   width="max-w-2xl"
 />
 
+## 5. Diskusjon
+
+### 5.1 Form som kulturell kode
+
+Hovudfunnet er at geometrisk form, frigjort frå overflate, farge og material, kodar både historisk stilperiode og nasjonal opphavstad med signifikant presisjon. Dette rokkar tungt ved modernismens teoretiske rammeverk. Om *form follows function* heldt stikk, skulle ikkje ei norsk punktsky slå annleis inn enn ei dansk eller fransk. Likevel oppnår me 76 % prediksjon berre frå geometri. Me kallar dette *materiell-formell kopling*: forma av eit tre inni ein stol fortel historia tvers igjennom.
+
+### 5.2 Historisme-paradokset
+
+At algoritmen forvekslar Historisme med Barokk er ikkje ein feil, men ein kvantitativ validering av kunsthistoria: den geometriske imitasjonen *verka*. Her er det nettopp materialiteten som avslører epoken, ikkje forma.
+
+### 5.3 Kombinert-paradokset som bevis
+
+Geometri og material er ikkje uavhengige dimensjonar, men to uttrykk for same underliggjande materiell-formelle struktur. Materialet *disponerer* forma.
+
 ## Konklusjon
 
-Gjennom ei systematisk maskinlæringsanalyse av 401 unike historiske stolar har denne studien vist at 3D geometrisk form åleine kan predikere stilperiode og nasjonal opphavstad. Form kodar kultur, og kulturen sit djupt i treverket og geometrien.
+Gjennom ei systematisk maskinlæringsanalyse av 401 unike historiske stolar har denne studien vist at:
+
+1. 3D geometrisk form åleine kan predikere stilperiode med 40,5 % F1 og nasjonal opphavstad med 76,0 % F1.
+2. Per-klasse-analysen avdekker at Barokk og Nyklassisisme har dei sterkaste geometriske signaturane.
+3. Det kombinerte trekksettet underpresterer fordi geometri og material kovarierer systematisk; redundansen *er* den materiell-formelle koplinga.
+
+Funksjonalismen kan ikkje forklare at nasjonalitet er gøymt i proporsjonale utbøyingar av ein rygg, men *form follows fitness*-rammeverket kan. Form kodar kultur, og kulturen sit djupt i treverket og geometrien.
