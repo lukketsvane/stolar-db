@@ -21,7 +21,7 @@ export default function ArticleLayout({ children, header }: ArticleLayoutProps) 
       </header>
 
       {/* Main Content */}
-      <main className="max-w-prose mx-auto px-6 py-24 md:py-32">
+      <main className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-24 py-24 md:py-32">
         <div className="prose prose-neutral prose-lg lg:prose-xl max-w-none 
           prose-headings:font-sans prose-headings:font-black prose-headings:tracking-tighter prose-headings:uppercase prose-headings:italic
           prose-p:leading-relaxed prose-p:mb-12 prose-p:text-gray-800
