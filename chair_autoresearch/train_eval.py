@@ -1,7 +1,7 @@
 import os
 import numpy as np
 import pandas as pd
-from sklearn.ensemble import ExtraTreesClassifier
+from sklearn.ensemble import ExtraTreesClassifier, HistGradientBoostingClassifier, VotingClassifier
 from sklearn.model_selection import StratifiedKFold, permutation_test_score, cross_validate
 from sklearn.metrics import f1_score, accuracy_score
 from sklearn.preprocessing import StandardScaler
@@ -123,41 +123,84 @@ def main():
     y_nation = df_nation['is_norway'].values
     
     # --- Model Definition ---
-    # Using a robust pipeline with a powerful classifier and tuned hyperparameters.
-    # ExtraTreesClassifier is often a top performer on heterogeneous tabular data.
-    # The pipeline handles imputation and scaling correctly within each CV fold.
+    # We employ a high-performance soft-voting ensemble of two powerful and diverse models:
+    # 1. HistGradientBoostingClassifier: Fast, handles NaNs natively, and is highly accurate.
+    # 2. ExtraTreesClassifier: A robust random forest variant that explores diverse feature splits.
+    # This combination often yields state-of-the-art performance on heterogeneous tabular data.
+    
+    # Define base estimators for the Style prediction ensemble
+    hgbc_style = HistGradientBoostingClassifier(
+        learning_rate=0.05,
+        max_iter=500,
+        max_leaf_nodes=41,
+        l2_regularization=0.5,
+        class_weight='balanced',
+        early_stopping=True,
+        validation_fraction=0.1,
+        n_iter_no_change=15,
+        random_state=42
+    )
 
-    # Pipeline for Style Prediction (multi-class, likely more complex)
+    etc_style = ExtraTreesClassifier(
+        n_estimators=500,
+        class_weight='balanced',
+        random_state=42,
+        n_jobs=-1,
+        min_samples_leaf=1,
+        min_samples_split=2,
+        max_features='sqrt'
+    )
+
+    style_voter = VotingClassifier(
+        estimators=[('hgbc', hgbc_style), ('etc', etc_style)],
+        voting='soft',
+        weights=[0.6, 0.4], # Give a slight edge to the gradient boosting model
+        n_jobs=-1
+    )
+
     style_clf_pipeline = Pipeline([
         ('imputer', SimpleImputer(strategy='median')),
         ('scaler', StandardScaler()),
-        ('classifier', ExtraTreesClassifier(
-            n_estimators=400,
-            class_weight='balanced',
-            random_state=42,
-            n_jobs=-1,
-            min_samples_leaf=2,
-            max_features='sqrt'
-        ))
+        ('classifier', style_voter)
     ])
 
-    # Pipeline for Nation Prediction (binary, potentially an easier task)
-    # Using a similar strong configuration.
+    # Define base estimators for the Nation prediction ensemble
+    hgbc_nation = HistGradientBoostingClassifier(
+        learning_rate=0.04,
+        max_iter=400,
+        max_leaf_nodes=31,
+        l2_regularization=0.2,
+        class_weight='balanced',
+        early_stopping=True,
+        validation_fraction=0.1,
+        n_iter_no_change=15,
+        random_state=42
+    )
+
+    etc_nation = ExtraTreesClassifier(
+        n_estimators=450,
+        class_weight='balanced',
+        random_state=42,
+        n_jobs=-1,
+        min_samples_leaf=1,
+        min_samples_split=2,
+        max_features=0.7
+    )
+
+    nation_voter = VotingClassifier(
+        estimators=[('hgbc', hgbc_nation), ('etc', etc_nation)],
+        voting='soft',
+        weights=[0.6, 0.4],
+        n_jobs=-1
+    )
+
     nation_clf_pipeline = Pipeline([
         ('imputer', SimpleImputer(strategy='median')),
         ('scaler', StandardScaler()),
-        ('classifier', ExtraTreesClassifier(
-            n_estimators=350,
-            class_weight='balanced',
-            random_state=42,
-            n_jobs=-1,
-            min_samples_leaf=2,
-            max_features=0.8
-        ))
+        ('classifier', nation_voter)
     ])
     
     # Run experiments with the new pipelines
-    # We pass n_permutations=1 to make it faster, as in the original code.
     f1_a3, _ = run_experiment(style_clf_pipeline, X_style_comb, y_style, "A3: Style Prediction (Combined)", n_permutations=1)
     f1_b3, _ = run_experiment(nation_clf_pipeline, X_nation_comb, y_nation, "B3: Nation Prediction (Combined)", n_permutations=1)
     
@@ -166,8 +209,7 @@ def main():
     return final_score
 
 if __name__ == '__main__':
-    # More robust path handling to find the data directory
-    script_dir = os.path.dirname(os.path.abspath(__file__))
+    script_dir = os.path.dirname(os.path.abspath(__file__)) if '__file__' in locals() else '.'
     if 'artikkel_3' in os.listdir(script_dir):
         pass
     elif os.path.basename(script_dir) == 'artikkel_3':
