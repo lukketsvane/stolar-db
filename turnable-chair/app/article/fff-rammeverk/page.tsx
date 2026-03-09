@@ -7,7 +7,7 @@ export default function ArticleFourPage() {
   const router = useRouter()
 
   const header = (
-    <div className="max-w-4xl">
+    <div className="w-full">
       <p className="text-xs font-mono font-black uppercase tracking-[0.5em] text-gray-300 mb-12">Forskingsartikkel IV</p>
       <h1 className="text-6xl md:text-[8rem] font-sans font-black tracking-tighter leading-[0.8] mb-16 text-black">
         Form Follows<br/>
@@ -29,9 +29,11 @@ export default function ArticleFourPage() {
         </div>
       </div>
 
-      <blockquote className="bg-gray-50 p-8 md:p-16 lg:p-20 rounded-2xl md:rounded-[3rem] border border-gray-100">
-        <strong>Samandrag:</strong> Det modernistiske dogmet "form follows function" impliserer at form er deduserbar frå funksjon. Denne artikkelen falsifiserer dette empirisk ved å analysere 93 stolar frå Nasjonalmuseet si samling gjennom 21 geometriske og 30 materielle eigenskapar utrekna frå 3D-modellar. Artikkelen presenterer Form Follows Fitness (FFF) som eit alternativ.
-      </blockquote>
+      <div className="mt-16 py-8 border-t border-black">
+        <p className="text-xl font-serif italic leading-relaxed text-black">
+          <strong>Samandrag:</strong> Det modernistiske dogmet "form follows function" impliserer at form er deduserbar frå funksjon. Denne artikkelen falsifiserer dette empirisk ved å analysere 93 stolar frå Nasjonalmuseet si samling gjennom 21 geometriske og 30 materielle eigenskapar utrekna frå 3D-modellar. Artikkelen presenterer Form Follows Fitness (FFF) som eit alternativ.
+        </p>
+      </div>
     </div>
   )
 
@@ -94,9 +96,9 @@ export default function ArticleFourPage() {
         </p>
       </section>
 
-      <section className="not-prose my-24">
-        <figure className="space-y-6 text-center">
-          <img src="/figurar/fig4_exploration_exploitation.png" alt="Figur 4" className="max-w-3xl h-auto rounded-xl shadow-sm border border-gray-100 inline-block" />
+      <section className="not-prose my-24 text-center">
+        <figure className="space-y-6 inline-block">
+          <img src="/figurar/fig4_exploration_exploitation.png" alt="Figur 4" className="max-w-3xl h-auto rounded-xl shadow-sm border border-gray-100" />
           <figcaption className="text-sm text-gray-500 font-sans italic text-center max-w-2xl mx-auto">
             FIGUR 4: Syklusar av exploration (utforsking) og exploitation (utnytting) over tid.
           </figcaption>
@@ -112,38 +114,11 @@ export default function ArticleFourPage() {
         </figure>
       </section>
 
-      <section className="not-prose my-24">
-        <figure className="space-y-6 text-center">
-          <img src="/figurar/fig6_mutual_information.png" alt="Figur 6" className="max-w-xl h-auto rounded-xl shadow-sm border border-gray-100 inline-block" />
-          <figcaption className="text-sm text-gray-500 font-sans italic text-center max-w-2xl mx-auto">
-            FIGUR 6: Mutual Information (MI) mellom seleksjonstrykk og form. Material ber fem gonger meir informasjon enn geografi.
-          </figcaption>
-        </figure>
-      </section>
-
-      <section className="not-prose my-24">
-        <figure className="space-y-6">
-          <img src="/figurar/fig7_temporal_drift.png" alt="Figur 7" className="w-full h-auto rounded-xl shadow-sm border border-gray-100" />
-          <figcaption className="text-sm text-gray-500 font-sans italic text-center max-w-2xl mx-auto">
-            FIGUR 7: Temporal drift i fitnesslandskapet. Den største drifta skjer rundt mahogniens inntog.
-          </figcaption>
-        </figure>
-      </section>
-
       <section className="not-prose my-24 text-center">
         <figure className="space-y-6 inline-block">
-          <img src="/figurar/fig8_noreg_vs_utland.png" alt="Figur 8" className="max-w-2xl h-auto rounded-xl shadow-sm border border-gray-100" />
+          <img src="/figurar/fig6_mutual_information.png" alt="Figur 6" className="max-w-xl h-auto rounded-xl shadow-sm border border-gray-100" />
           <figcaption className="text-sm text-gray-500 font-sans italic text-center max-w-2xl mx-auto">
-            FIGUR 8: Samanlikning av formrommet for norske mot utanlandske stolar.
-          </figcaption>
-        </figure>
-      </section>
-
-      <section className="not-prose my-24">
-        <figure className="space-y-6">
-          <img src="/figurar/fig9_material_entropy.png" alt="Figur 9" className="w-full h-auto rounded-xl shadow-sm border border-gray-100" />
-          <figcaption className="text-sm text-gray-500 font-sans italic text-center max-w-2xl mx-auto">
-            FIGUR 9: Shannon-entropi i materialbruk. Kollapsen under mahognitoppen indikerer ekstrem exploitation.
+            FIGUR 6: Mutual Information (MI) mellom seleksjonstrykk og form. Material ber fem gonger meir informasjon enn geografi.
           </figcaption>
         </figure>
       </section>
@@ -155,26 +130,14 @@ export default function ArticleFourPage() {
         </p>
       </section>
 
-      <section className="border-t-[10px] border-black pt-24">
-        <h2 className="text-6xl font-sans font-black text-black mb-12 tracking-tighter uppercase italic leading-none">Konklusjon.</h2>
-        <div className="space-y-12 text-gray-600 italic font-serif leading-relaxed">
-          <p>
-            Denne artikkelen har lagt fram empiriske bevis som samla falsifiserer "form follows function" og etablerer <em>Form Follows Fitness</em> som eit fundert alternativ.
-          </p>
-        </div>
-      </section>
-
       <footer className="max-w-5xl mx-auto py-40 px-8 border-t border-gray-100 mt-40">
         <p className="text-[10px] font-mono font-black uppercase tracking-[0.5em] text-gray-300 mb-16">Referansar</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-sm font-sans font-bold text-gray-500 leading-relaxed uppercase tracking-tighter">
           <p>Alexander, C. (1964). <em className="normal-case">Notes on the Synthesis of Form.</em> Harvard University Press.</p>
           <p>Clark, A. (2008). <em className="normal-case">Supersizing the Mind.</em> Oxford University Press.</p>
           <p>Giedion, S. (1948). <em className="normal-case">Mechanization Takes Command.</em> Oxford University Press.</p>
-          <p>Ingold, T. (2007). Materials against materiality. <em className="normal-case">Archaeological Dialogues.</em></p>
           <p>Kauffman, S. A. (1993). <em className="normal-case">The Origins of Order.</em> Oxford University Press.</p>
-          <p>Nakagaki, T. et al. (2000). Intelligence: Maze-solving by an amoeboid organism. <em className="normal-case">Nature.</em></p>
           <p>Sullivan, L. H. (1896). The tall office building artistically considered. <em className="normal-case">Lippincott's Magazine.</em></p>
-          <p>Wright, S. (1932). The roles of mutation, inbreeding, crossbreeding and selection in evolution. <em className="normal-case">Proc. 6th Int. Cong. Genet.</em></p>
         </div>
         <div className="mt-40 pt-16 border-t border-gray-50 flex justify-between items-center text-[10px] font-mono font-black text-gray-200 uppercase tracking-[0.3em]">
           <p>&copy; 2026 Iver Raknes Finne</p>

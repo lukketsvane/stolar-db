@@ -91,7 +91,7 @@ export default function ArticleOnePage() {
   }
 
   const header = (
-    <div className="max-w-4xl">
+    <div className="w-full">
       <p className="text-xs font-mono font-black uppercase tracking-[0.5em] text-gray-300 mb-12">Forskingsartikkel I</p>
       <h1 className="text-6xl md:text-[8rem] font-sans font-black tracking-tighter leading-[0.8] mb-16 text-black">
         Materialhistorie.<br/>

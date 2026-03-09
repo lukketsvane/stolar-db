@@ -7,7 +7,7 @@ export default function ArticleThreePage() {
   const router = useRouter()
 
   const header = (
-    <div className="max-w-4xl">
+    <div className="w-full">
       <p className="text-xs font-mono font-black uppercase tracking-[0.5em] text-gray-300 mb-12">Forskingsartikkel III</p>
       <h1 className="text-6xl md:text-[8rem] font-sans font-black tracking-tighter leading-[0.8] mb-16 text-black">
         Kan form åleine<br/>
@@ -29,9 +29,11 @@ export default function ArticleThreePage() {
         </div>
       </div>
 
-      <blockquote className="bg-gray-50 p-8 md:p-16 lg:p-20 rounded-2xl md:rounded-[3rem] border border-gray-100">
-        <strong>Samandrag:</strong> Dersom funksjonalismen sitt dogme stemmer, at form fylgjer funksjon, burde stolar frå ulike nasjonar og tidsaldrar ikkje låt seg skilje geometrisk, sidan sitjefunksjonen er universell. Denne artikkelen testar påstanden empirisk gjennom maskinlæring på tredimensjonale punktsskyer frå 401 GLB-modellar i Nasjonalmuseet si samling. Funna falsifiserer funksjonalismen si nøytrale formlære: form kodar kulturell identitet og historisk tid romleg og geometrisk.
-      </blockquote>
+      <div className="mt-16 py-8 border-t border-black">
+        <p className="text-xl font-serif italic leading-relaxed text-black">
+          <strong>Samandrag:</strong> Dersom funksjonalismen sitt dogme stemmer, at form fylgjer funksjon, burde stolar frå ulike nasjonar og tidsaldrar ikkje låt seg skilje geometrisk, sidan sitjefunksjonen er universell. Denne artikkelen testar påstanden empirisk gjennom maskinlæring på tredimensjonale punktsskyer frå 401 GLB-modellar i Nasjonalmuseet si samling. Funna falsifiserer funksjonalismen si nøytrale formlære: form kodar kulturell identitet og historisk tid romleg og geometrisk.
+        </p>
+      </div>
     </div>
   )
 
@@ -92,6 +94,9 @@ export default function ArticleThreePage() {
         <p>
           Geometri åleine predikerer stil nesten fire gonger betre enn sjansen (40,5 % mot 10,5 %), og nasjon med 76,0 % F1 (mot 46,3 % sjanse). Barokk og Nyklassisisme er lettast å klassifisere geometrisk (F1 = 0,78 og 0,73).
         </p>
+        <p>
+          Eit uventa resultat er at det kombinerte trekksettet (geometri + material) <em>underpresterer</em> material åleine for stilprediksjon (F1 = 0,463 mot 0,476). Paradokset er i seg sjølv eit bevis: redundansen mellom dei to trekksetta <em>er</em> den materiell-formelle koplinga.
+        </p>
       </section>
 
       <section className="not-prose my-24">
@@ -125,6 +130,9 @@ export default function ArticleThreePage() {
         <h2>5. Diskusjon</h2>
         <p>
           Hovudfunnet er at geometrisk form, frigjort frå overflate, farge og material, kodar både historisk stilperiode og nasjonal opphavstad med signifikant presisjon. Dette rokkar tungt ved modernismens teoretiske rammeverk. Om <em>form follows function</em> heldt stikk, skulle ikkje ei norsk punktsky slå annleis inn i geometriske deskriptorar enn ei dansk eller fransk.
+        </p>
+        <p>
+          Me kallar dette <em>materiell-formell kopling</em>: forma av eit tre inni ein stol fortel historia tvers igjennom.
         </p>
       </section>
 
