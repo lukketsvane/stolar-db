@@ -37,12 +37,12 @@ export default function ArticleFourPage() {
           </div>
         </div>
 
-        <div className="max-w-4xl bg-gray-50 p-8 md:p-16 lg:p-24 rounded-2xl md:rounded-[3rem] border border-gray-100 italic text-xl md:text-3xl leading-snug text-gray-800 font-serif">
+        <div className="max-w-2xl bg-gray-50 p-8 md:p-12 lg:p-16 rounded-2xl md:rounded-[2rem] border border-gray-100 italic text-base md:text-xl leading-snug text-gray-800 font-serif">
           <strong>Samandrag:</strong> Det modernistiske dogmet "form follows function" impliserer at form er deduserbar frå funksjon. Denne artikkelen falsifiserer dette empirisk ved å analysere 93 stolar frå Nasjonalmuseet si samling. Analysen viser at funksjon er konstant, medan form varierer radikalt. Informasjonsteoretisk analyse avdekkjer at material ber fem gonger meir informasjon om geometrisk form enn geografi. Artikkelen presenterer <em>Form Follows Fitness</em> (FFF), eit nytt rammeverk der form vert forstått som selektert av eit fleirdimensjonalt fitnesslandskap av materialaffordanse, teknologi, økonomi, geografi og kultur.
         </div>
       </header>
 
-      <article className="max-w-4xl mx-auto px-6 md:px-12 lg:px-24 space-y-24 text-xl md:text-2xl leading-relaxed text-gray-900">
+      <article className="max-w-2xl mx-auto px-6 md:px-12 lg:px-24 space-y-16 text-base md:text-lg leading-relaxed text-gray-900">
         <section>
           <h2 className="text-3xl md:text-5xl font-sans font-black text-black mb-12 tracking-tighter uppercase italic">1. Innleiing</h2>
           <p className="mb-12">

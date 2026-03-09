@@ -214,17 +214,17 @@ export default function ArticlePage() {
           </div>
         </div>
 
-        <div className="max-w-4xl bg-gray-50 p-8 md:p-16 lg:p-24 rounded-2xl md:rounded-[3rem] border border-gray-100 italic text-xl md:text-3xl leading-snug text-gray-800 font-serif">
+        <div className="max-w-2xl bg-gray-50 p-8 md:p-12 lg:p-16 rounded-2xl md:rounded-[2rem] border border-gray-100 italic text-base md:text-xl leading-snug text-gray-800 font-serif">
           <strong>Samandrag:</strong> Artikkelen presenterer den fyrste systematiske kvantitative materialanalysen av Nasjonalmuseet si stolsamling — {data.length} objekt daterte mellom 1280 og 2020. Gjennom eit nytt strukturert datasett undersøkjer studien korleis materialkurver fungerer som eit kolonialt arkiv. Hovudfunnet er <em>mahogniens boge</em>: ein materiell signatur der karibisk tropisk hardved stig dramatisk for deretter å kollapse, nesten synkront med den transatlantiske mahognihandelen. Studien identifiserer fire distinkte materialregime og demonstrerer korleis ein stol — som fysisk objekt — ber i seg eit komprimert narrativ om global handel, kolonial utvinning og industriell transformasjon.
         </div>
       </header>
 
       {/* Artikkel-tekst */}
-      <article className="max-w-4xl mx-auto px-6 md:px-12 lg:px-24 space-y-24 text-xl md:text-2xl leading-relaxed text-gray-900">
+      <article className="max-w-2xl mx-auto px-6 md:px-12 lg:px-24 space-y-12 text-base md:text-lg leading-relaxed text-gray-900 font-serif">
 
         {/* 1. INNLEIING */}
         <section>
-          <h2 className="text-3xl md:text-5xl font-sans font-black text-black mb-12 tracking-tighter uppercase italic">1. Innleiing</h2>
+          <h2 className="text-2xl md:text-4xl font-sans font-black text-black mb-8 tracking-tighter uppercase italic">1. Innleiing</h2>
           <p className="mb-12">
             I magasinet til Nasjonalmuseet i Oslo står det ein stol registrert som <strong className="font-mono text-xl">OK-10330A</strong>, datert til om lag 1830. Materiallista er kort: mahogni, hestetagl, furu, eik, whitewood. For ein konvensjonell designhistorikar er dette ein anonym empirestol. Men materiallista er ikkje anonym. Ho er eit komprimert verdskart.
           </p>
