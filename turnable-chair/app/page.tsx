@@ -309,7 +309,7 @@ function HomeContent() {
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-300" size={16} />
             <input 
               type="text" 
-              placeholder="Søk i 3000+ objekt..." 
+              placeholder="Søk i objektdata..." 
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full bg-gray-50 border-none rounded-full py-3 pl-12 pr-6 text-xs font-mono focus:ring-1 focus:ring-black outline-none transition-all"
