@@ -45,7 +45,7 @@ function HomeContent() {
   const searchParams = useSearchParams()
   const [galleryData, setGalleryData] = useState<ChairItem[]>([])
   const [currentItem, setCurrentItem] = useState<ChairItem | null>(null)
-  const [viewMode, setViewMode] = useState<'2d' | '3d'>('2d')
+  const [viewMode, setViewMode] = useState<'2d' | '3d'>('3d')
 
   useEffect(() => {
     fetch("/data/chairs.json", { cache: "no-store" })

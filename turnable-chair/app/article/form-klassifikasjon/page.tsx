@@ -37,12 +37,12 @@ export default function ArticleThreePage() {
           </div>
         </div>
 
-        <div className="max-w-4xl bg-gray-50 p-8 md:p-16 lg:p-24 rounded-2xl md:rounded-[3rem] border border-gray-100 italic text-xl md:text-3xl leading-snug text-gray-800 font-serif">
+        <div className="max-w-2xl bg-gray-50 p-8 md:p-12 lg:p-16 rounded-2xl md:rounded-[2rem] border border-gray-100 italic text-base md:text-xl leading-snug text-gray-800 font-serif">
           <strong>Samandrag:</strong> Dersom funksjonalismen sitt dogme stemmer, at form fylgjer funksjon, burde stolar frå ulike nasjonar og tidsaldrar ikkje låt seg skilje geometrisk, sidan sitjefunksjonen er universell. Denne artikkelen testar påstanden empirisk gjennom maskinlæring på tredimensjonale punktsskyer frå 401 GLB-modellar i Nasjonalmuseet si samling. Ved å trekkje ut 21 geometriske deskriptorar predikerer me stilperiode med ein makro-F1 på 40,5% ved bruk av rein geometri (mot 10,5% sjanse), og 47,6% med material åleine. Nasjonsprediksjon oppnår 76,0% med form og 83,3% med material. Funna falsifiserer funksjonalismen si nøytrale formlære: form kodar kulturell identitet og historisk tid romleg og geometrisk.
         </div>
       </header>
 
-      <article className="max-w-4xl mx-auto px-6 md:px-12 lg:px-24 space-y-24 text-xl md:text-2xl leading-relaxed text-gray-900">
+      <article className="max-w-2xl mx-auto px-6 md:px-12 lg:px-24 space-y-16 text-base md:text-lg leading-relaxed text-gray-900">
         <section>
           <h2 className="text-3xl md:text-5xl font-sans font-black text-black mb-12 tracking-tighter uppercase italic">1. Innleiing</h2>
           <p className="mb-12">

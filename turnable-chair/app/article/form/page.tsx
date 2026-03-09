@@ -242,17 +242,17 @@ export default function FormArticlePage() {
           </div>
         </div>
 
-        <div className="max-w-4xl bg-gray-50 p-8 md:p-16 lg:p-24 rounded-2xl md:rounded-[3rem] border border-gray-100 italic text-xl md:text-3xl leading-snug text-gray-800 font-serif">
+        <div className="max-w-2xl bg-gray-50 p-8 md:p-12 lg:p-16 rounded-2xl md:rounded-[2rem] border border-gray-100 italic text-base md:text-xl leading-snug text-gray-800 font-serif">
           <strong>Samandrag:</strong> Artikkelen introduserer <em>form follows fitness</em> som eit evolusjonært rammeverk for å analysere formutvikling i industridesign. Gjennom eit datasett på {data.length} norskproduserte stolar &mdash; {totalWithDims} med fulle tredimensjonale mål &mdash; kvantifiserer studien tre formvariablar over {maxYear - minYear} år: omsluttande volum, proporsjonar og teknikk-regime. Hovudfunnet er <em>fitness-konvergensen</em>: ein empirisk demonstrerbar tendens der stolars omsluttande volum konvergerer mot eit felles dimensjonsområde etter industrialiseringa, trass i aukande stilistisk divergens. Mot Le Corbusier sin maskinanalogi og Sullivan sitt «form follows function» argumenterer artikkelen for at form ikkje er determinert av funksjon, men selektert av fitness &mdash; ei tilpassing til samtidige materielle, økonomiske, ergonomiske og kulturelle miljø.
         </div>
       </header>
 
       {/* Artikkel-tekst */}
-      <article className="max-w-4xl mx-auto px-6 md:px-12 lg:px-24 space-y-24 text-xl md:text-2xl leading-relaxed text-gray-900">
+      <article className="max-w-2xl mx-auto px-6 md:px-12 lg:px-24 space-y-12 text-base md:text-lg leading-relaxed text-gray-900 font-serif">
 
         {/* 1. INNLEIING */}
         <section>
-          <h2 className="text-3xl md:text-5xl font-sans font-black text-black mb-12 tracking-tighter uppercase italic">1. Innleiing: Problemet med &laquo;form follows function&raquo;</h2>
+          <h2 className="text-2xl md:text-4xl font-sans font-black text-black mb-8 tracking-tighter uppercase italic">1. Innleiing: Problemet med &laquo;form follows function&raquo;</h2>
           <p className="mb-12">
             I 1896 skreiv Louis Sullivan at &laquo;form ever follows function&raquo;. Setninga vart eit aksiom. Le Corbusier radikaliserte ho i 1923: huset er <em>une machine a habiter</em> &mdash; ein maskin til a bu i. Maskinen har ingen overflodig form; kvar detalj tener ein funksjon. Designhistoria etter Le Corbusier har oscillert mellom a akseptere dette premisset og a reagere mot det, men sjeldan a erstatte det med eit meir presist alternativ.
           </p>
