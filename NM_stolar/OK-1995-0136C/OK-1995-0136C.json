@@ -1,0 +1,43 @@
+{
+  "objectId": "OK-1995-0136C",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-1995-0136C",
+  "title": "Stol",
+  "Datering": "1905 (møblement), 1899 (vevdesign)",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Mahognistol i stolpekonstruksjon med relieffskåret dekor, trekk av håndvevd billedvev i gobelinteknikk i ull",
+  "Teknikk": [
+    "Veving",
+    "Tapping",
+    "Polstring"
+  ],
+  "Dekorteknikk": [
+    "Relieffskjæring",
+    "Profilering",
+    "Fernissering",
+    "Beising"
+  ],
+  "Materiale": [
+    "Mahogni",
+    "Ull",
+    "Messing",
+    "Animalske fibre, filt"
+  ],
+  "Mål": "H 92,5 cm x B 44,5 cm x D 47 cm Dybde: 42 cm Høyde: 49,5 cm",
+  "Emneord": "Møbel",
+  "Klassifikasjon": "352.1 - Sittemøbler",
+  "Stilperiode": "Dragestil",
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "OK-1995-0136C",
+  "Registreringsnivå": "Enkeltobjekt",
+  "Ervervelse": "Gave 1996",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Harvik, Andreas",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/38120.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/38120.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/38120.tif/full/full/0/default.jpg",
+      "filename": "OK-1995-0136C_38120.jpg"
+    }
+  ]
+}

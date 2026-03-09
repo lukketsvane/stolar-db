@@ -1,0 +1,43 @@
+{
+  "objectId": "OK-17261",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-17261",
+  "title": "Stol",
+  "Datering": "siste halvdel av 1700-tallet",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Fernissert alm med skåret dekor og hestehårstrekk.",
+  "Teknikk": [
+    "Polstring",
+    "Plugging"
+  ],
+  "Dekorteknikk": [
+    "Voksboning",
+    "Gjennombrutt utskjæring",
+    "Profilering",
+    "Relieffskjæring"
+  ],
+  "Materiale": [
+    "Alm",
+    "Hestetagl"
+  ],
+  "Mål": "H 99 x B 49 x D 37 cm Bredde: 49 cm Dybde: 37 cm Høyde: 48 cm",
+  "Emneord": "Møbel",
+  "Klassifikasjon": [
+    "322.48 - Møbeldesign",
+    "352.1 - Sittemøbler"
+  ],
+  "Stilperiode": "Chippendale",
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "OK-17261",
+  "Registreringsnivå": "Enkeltobjekt",
+  "Ervervelse": "Ervervet 1971",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Andreas Harvik",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07202.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07202.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07202.tif/full/full/0/default.jpg",
+      "filename": "OK-17261_07202.jpg"
+    }
+  ]
+}

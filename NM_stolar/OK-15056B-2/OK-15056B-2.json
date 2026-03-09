@@ -1,0 +1,42 @@
+{
+  "objectId": "OK-15056B-2",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-15056B-2",
+  "title": "Stol",
+  "Datering": "1889",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Beiset eikestol med skåret og dreid dekor og flettet rotting.",
+  "Teknikk": [
+    "Fletting",
+    "Tapping",
+    "Innfelling, rammeverk med fylling"
+  ],
+  "Dekorteknikk": [
+    "Beising",
+    "Fernissering",
+    "Kannelyre",
+    "Ornamentskjæring",
+    "Relieffskjæring",
+    "Dreiing"
+  ],
+  "Materiale": [
+    "Eik",
+    "Palme"
+  ],
+  "Mål": "H 102,5 x, B 46,5 x D 59,5 cm Høyde: 48 cm Dybde: 45,5 cm Bredde: 46,5 cm",
+  "Emneord": "Møbel",
+  "Klassifikasjon": "352.1 - Sittemøbler",
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "OK-15056B-2",
+  "Registreringsnivå": "Enkeltobjekt",
+  "Ervervelse": "Gave 1958",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Bjørgli, Annar",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94841.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94841.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94841.tif/full/full/0/default.jpg",
+      "filename": "OK-15056B-2_94841.jpg"
+    }
+  ]
+}

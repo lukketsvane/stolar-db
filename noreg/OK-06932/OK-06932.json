@@ -1,0 +1,53 @@
+{
+  "objectId": "OK-06932",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-06932",
+  "title": "Stol",
+  "Datering": "Slutten av 1600-tallet",
+  "Betegnelse": "Armstol",
+  "Materiale og teknikk": "Dreid stolpekonstruksjon og gjennombrutte figurskjæringer utført i ask, stoppet sete og rygg trukket i preget gyldenlær",
+  "Teknikk": [
+    "Tapping",
+    "Plugging",
+    "Polstring"
+  ],
+  "Dekorteknikk": [
+    "Lasering",
+    "Dreiing",
+    "Relieffskjæring",
+    "Gyllenlærfremstilling",
+    "Gjennombrutt utskjæring"
+  ],
+  "Materiale": [
+    "Ask",
+    "Skinn/lær/pergament",
+    "Eik"
+  ],
+  "Mål": "139 x 70,5 x 70 cm Høyde: 45 cm Bredde: 65,5 cm Dybde: 46,5 cm",
+  "Emneord": [
+    "Møbel",
+    "Kunstindustri"
+  ],
+  "Klassifikasjon": [
+    "322 - Trearbeid",
+    "322.4 - Møbelfagene",
+    "352.1 - Sittemøbler",
+    "531.33 - Gyldenlærmaker"
+  ],
+  "Stilperiode": "Barokk",
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "OK-06932",
+  "Registreringsnivå": "Enkeltobjekt",
+  "Ervervelse": "Kjøpt 1902",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Harvik, Andreas",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/35865.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/35865.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/35865.tif/full/full/0/default.jpg",
+      "filename": "OK-06932_35865.jpg",
+      "glb": "OK-06932_35865.glb"
+    }
+  ],
+  "model3d": "OK-06932_35865.glb"
+}

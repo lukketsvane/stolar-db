@@ -1,0 +1,45 @@
+{
+  "objectId": "OK-03079",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-03079",
+  "title": "Stol",
+  "Datering": "Ca. 1700",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Rødmalt or med skåret dekor, gyllenlærstrekk.",
+  "Teknikk": [
+    "Polstring",
+    "Tapping"
+  ],
+  "Dekorteknikk": [
+    "Gyllenlærfremstilling",
+    "Bemaling",
+    "Figurskjæring",
+    "Gjennombrutt utskjæring",
+    "Relieffskjæring"
+  ],
+  "Materiale": [
+    "Or",
+    "Lær"
+  ],
+  "Mål": "H 120 x B 54 x D 55 cm Høyde: 46 cm Dybde: 36 cm Bredde: 49 cm",
+  "Emneord": "Møbel",
+  "Klassifikasjon": [
+    "322.48 - Møbeldesign",
+    "352.1 - Sittemøbler",
+    "531.33 - Gyldenlærmaker"
+  ],
+  "Stilperiode": "Barokk",
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "OK-03079",
+  "Registreringsnivå": "Enkeltobjekt",
+  "Ervervelse": "Testamentarisk gave, innkommet 1889",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Harvik, A./ Jensen, H.L.",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07410.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07410.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07410.tif/full/full/0/default.jpg",
+      "filename": "OK-03079_07410.jpg"
+    }
+  ]
+}

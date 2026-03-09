@@ -1,0 +1,41 @@
+{
+  "objectId": "NMK.2005.0645",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/NMK.2005.0645",
+  "title": "Motion produsents tittel",
+  "Datering": "2000",
+  "Andre titler": "Motion (ENG)",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Fargelakkert bøk og metall, plast",
+  "Teknikk": [
+    "Skruing",
+    "Laminering",
+    "Formbøying"
+  ],
+  "Dekorteknikk": "Fargelakkering",
+  "Materiale": [
+    "Bøk",
+    "Metall",
+    "Gummi/plast"
+  ],
+  "Mål": "H 89,5 x B 44,5 x D 60 cm Høyde: 89,5 cm Dybde: 60 cm Bredde: 44,5 cm",
+  "Emneord": [
+    "Møbel",
+    "Design"
+  ],
+  "Klassifikasjon": "352.1 - Sittemøbler",
+  "Stilperiode": "Postmodernisme",
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "NMK.2005.0645",
+  "Registreringsnivå": "Enkeltobjekt",
+  "Ervervelse": "Ervervet 2005",
+  "Eier og samling": "Nasjonalmuseet for kunst, arkitektur og design, Designsamlingene",
+  "Foto": "Andersen, Trond",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08733.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08733.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08733.tif/full/full/0/default.jpg",
+      "filename": "NMK.2005.0645_08733.jpg"
+    }
+  ]
+}

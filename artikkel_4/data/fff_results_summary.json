@@ -1,0 +1,442 @@
+{
+  "bevis1": {
+    "n_stolar": 93,
+    "total_varians": 20.999999999999996,
+    "mean_cv": 0.3716726969500163,
+    "max_cv_feature": "d2_bin_5",
+    "max_cv": 1.6562729854829121
+  },
+  "bevis2": {
+    "n_testar": 378,
+    "n_signifikante": "0",
+    "pct_signifikante": 0.0
+  },
+  "bevis3": {
+    "pca_var": [
+      0.14048158394689222,
+      0.11793998260727398,
+      0.07933570915847099,
+      0.06152994502184629,
+      0.05455872912991203
+    ],
+    "cumulative_3": 0.3377572757126372
+  },
+  "bevis4": {
+    "periods": [
+      {
+        "period": 1600,
+        "n": 3,
+        "mean_pairwise_dist": 1.8294206627720084,
+        "std_pairwise_dist": 0.44436165655094123,
+        "pc_spread": 0.0
+      },
+      {
+        "period": 1750,
+        "n": 7,
+        "mean_pairwise_dist": 3.156582952356235,
+        "std_pairwise_dist": 1.3430400056869953,
+        "pc_spread": 4.074970694590214
+      },
+      {
+        "period": 1850,
+        "n": 15,
+        "mean_pairwise_dist": 4.335355156482971,
+        "std_pairwise_dist": 1.8819735099613566,
+        "pc_spread": 174.787425550017
+      },
+      {
+        "period": 1900,
+        "n": 10,
+        "mean_pairwise_dist": 5.602590534260627,
+        "std_pairwise_dist": 2.0482486102479776,
+        "pc_spread": 234.37939569798462
+      },
+      {
+        "period": 1950,
+        "n": 42,
+        "mean_pairwise_dist": 6.972676775777273,
+        "std_pairwise_dist": 2.429533947008423,
+        "pc_spread": 1065.8440152090527
+      },
+      {
+        "period": 2000,
+        "n": 14,
+        "mean_pairwise_dist": 6.455404177220067,
+        "std_pairwise_dist": 1.9380019521163563,
+        "pc_spread": 165.9108071027135
+      }
+    ]
+  },
+  "bevis5": [
+    {
+      "material": "Mahogni",
+      "n": 6,
+      "compactness_mean": 0.3806467624472014,
+      "compactness_std": 0.07888188732785274,
+      "symmetry_score_mean": 0.12898421645011068,
+      "symmetry_score_std": 0.04000645273673073,
+      "curv_mean_mean": 0.10472628378397401,
+      "curv_mean_std": 0.017741546362987932,
+      "bbox_H_mean": 1.8525649030055,
+      "bbox_H_std": 0.04665277584701233,
+      "aspect_H_W_mean": 1.568524640805638,
+      "aspect_H_W_std": 0.10225848056049426
+    },
+    {
+      "material": "Eik",
+      "n": 22,
+      "compactness_mean": 0.4468335254628606,
+      "compactness_std": 0.04719370945469198,
+      "symmetry_score_mean": 0.12289828157079824,
+      "symmetry_score_std": 0.03527778661273749,
+      "curv_mean_mean": 0.10260757024412302,
+      "curv_mean_std": 0.018081268846340565,
+      "bbox_H_mean": 1.7476662042068845,
+      "bbox_H_std": 0.11165382579015916,
+      "aspect_H_W_mean": 1.565252672208073,
+      "aspect_H_W_std": 0.21278002418067063
+    },
+    {
+      "material": "Bøk",
+      "n": 21,
+      "compactness_mean": 0.44482418803350887,
+      "compactness_std": 0.0799350496782653,
+      "symmetry_score_mean": 0.10072042834409305,
+      "symmetry_score_std": 0.031081159983695605,
+      "curv_mean_mean": 0.10142108368305842,
+      "curv_mean_std": 0.022219456397138286,
+      "bbox_H_mean": 1.732761956296519,
+      "bbox_H_std": 0.09462023602043394,
+      "aspect_H_W_mean": 1.6097629331683854,
+      "aspect_H_W_std": 0.29277103089585815
+    },
+    {
+      "material": "Kryssfiner",
+      "n": 27,
+      "compactness_mean": 0.45524019740390137,
+      "compactness_std": 0.08337457165783166,
+      "symmetry_score_mean": 0.10379574351527907,
+      "symmetry_score_std": 0.04493835160913291,
+      "curv_mean_mean": 0.08957452744958623,
+      "curv_mean_std": 0.026792995052791285,
+      "bbox_H_mean": 1.6577553892334562,
+      "bbox_H_std": 0.09243105817340444,
+      "aspect_H_W_mean": 1.5848983147915179,
+      "aspect_H_W_std": 0.3183811863578633
+    },
+    {
+      "material": "Stål",
+      "n": 20,
+      "compactness_mean": 0.4373273929185532,
+      "compactness_std": 0.08172417934946699,
+      "symmetry_score_mean": 0.11755092132563705,
+      "symmetry_score_std": 0.040338523480120576,
+      "curv_mean_mean": 0.07502850338643355,
+      "curv_mean_std": 0.023832124449601803,
+      "bbox_H_mean": 1.6642130237837556,
+      "bbox_H_std": 0.06563301890070633,
+      "aspect_H_W_mean": 1.5235384387701403,
+      "aspect_H_W_std": 0.3115419592646201
+    }
+  ],
+  "bevis6": {
+    "avg_mi": {
+      "Geografi (opphav)": 0.07845553454014585,
+      "Tid (hundreår)": 0.16804383762487976,
+      "Material": 0.3819413402887325
+    },
+    "mi_table": [
+      {
+        "feature": "h_dist_bottom",
+        "MI_origin": 0.1407629213727015,
+        "MI_century": 0.1557009052560635,
+        "MI_material": 0.470446430835445,
+        "MI_total": 0.76691025746421
+      },
+      {
+        "feature": "bbox_H",
+        "MI_origin": 0.06815994022747186,
+        "MI_century": 0.28034861024970353,
+        "MI_material": 0.41764440471299535,
+        "MI_total": 0.7661529551901707
+      },
+      {
+        "feature": "h_dist_mid",
+        "MI_origin": 0.09650990651045714,
+        "MI_century": 0.17291104482117522,
+        "MI_material": 0.49494476003127685,
+        "MI_total": 0.7643657113629092
+      },
+      {
+        "feature": "d2_bin_4",
+        "MI_origin": 0.03942379779219997,
+        "MI_century": 0.26005353661674735,
+        "MI_material": 0.4477486067452158,
+        "MI_total": 0.7472259411541631
+      },
+      {
+        "feature": "d2_bin_3",
+        "MI_origin": 0.11592833409083675,
+        "MI_century": 0.1984307286989057,
+        "MI_material": 0.42101732693512733,
+        "MI_total": 0.7353763897248697
+      },
+      {
+        "feature": "symmetry_score",
+        "MI_origin": 0.16325085691363622,
+        "MI_century": 0.17667623682429803,
+        "MI_material": 0.39511865691688125,
+        "MI_total": 0.7350457506548156
+      },
+      {
+        "feature": "curv_mean",
+        "MI_origin": 0.08733592215737056,
+        "MI_century": 0.1791611116732053,
+        "MI_material": 0.43116105443836694,
+        "MI_total": 0.6976580882689428
+      },
+      {
+        "feature": "curv_skew",
+        "MI_origin": 0.040699452660698576,
+        "MI_century": 0.1755714278825632,
+        "MI_material": 0.45109047810923353,
+        "MI_total": 0.6673613586524954
+      },
+      {
+        "feature": "aspect_H_W",
+        "MI_origin": 0.06750391627647655,
+        "MI_century": 0.16664807040542493,
+        "MI_material": 0.40050506311895495,
+        "MI_total": 0.6346570498008564
+      },
+      {
+        "feature": "h_dist_top",
+        "MI_origin": 0.10259560410207666,
+        "MI_century": 0.14531075109212993,
+        "MI_material": 0.3763042020474232,
+        "MI_total": 0.6242105572416298
+      },
+      {
+        "feature": "bbox_W",
+        "MI_origin": 0.08502874165367717,
+        "MI_century": 0.1396483741396151,
+        "MI_material": 0.3953111845011086,
+        "MI_total": 0.6199883002944009
+      },
+      {
+        "feature": "bbox_D",
+        "MI_origin": 0.08698087176328295,
+        "MI_century": 0.17770969731727107,
+        "MI_material": 0.32669697380134305,
+        "MI_total": 0.5913875428818971
+      },
+      {
+        "feature": "compactness",
+        "MI_origin": 0.07305222781936925,
+        "MI_century": 0.14914563117611454,
+        "MI_material": 0.3682153008126776,
+        "MI_total": 0.5904131598081614
+      },
+      {
+        "feature": "surface_ratio",
+        "MI_origin": 0.06392335735538343,
+        "MI_century": 0.1709400475034299,
+        "MI_material": 0.3516481997959409,
+        "MI_total": 0.5865116046547543
+      },
+      {
+        "feature": "d2_bin_1",
+        "MI_origin": 0.10244650097343436,
+        "MI_century": 0.12102567079566477,
+        "MI_material": 0.35950402567401696,
+        "MI_total": 0.582976197443116
+      },
+      {
+        "feature": "d2_bin_5",
+        "MI_origin": 0.05191883156025602,
+        "MI_century": 0.15930986792523547,
+        "MI_material": 0.35108761947069006,
+        "MI_total": 0.5623163189561815
+      },
+      {
+        "feature": "d2_bin_2",
+        "MI_origin": 0.02860359504785305,
+        "MI_century": 0.1694498296786197,
+        "MI_material": 0.34268000430542245,
+        "MI_total": 0.5407334290318953
+      },
+      {
+        "feature": "curv_std",
+        "MI_origin": 0.10001314521706878,
+        "MI_century": 0.11367439660356579,
+        "MI_material": 0.3208985733807273,
+        "MI_total": 0.5345861152013619
+      },
+      {
+        "feature": "pca_l3_l1",
+        "MI_origin": 0.04885548964948645,
+        "MI_century": 0.15500809053287068,
+        "MI_material": 0.3016673066084315,
+        "MI_total": 0.5055308867907886
+      },
+      {
+        "feature": "aspect_D_W",
+        "MI_origin": 0.03757056017101978,
+        "MI_century": 0.13861684850442027,
+        "MI_material": 0.32361547165186383,
+        "MI_total": 0.4998028803273039
+      },
+      {
+        "feature": "pca_l2_l1",
+        "MI_origin": 0.04700225202830628,
+        "MI_century": 0.12357971242545106,
+        "MI_material": 0.2734625021702394,
+        "MI_total": 0.4440444666239967
+      }
+    ]
+  },
+  "bevis7": [
+    {
+      "feature_set": "Berre material",
+      "f1_mean": 0.33365800865800865,
+      "f1_std": 0.10760182928797744,
+      "n_features": 30
+    },
+    {
+      "feature_set": "Berre hundreår",
+      "f1_mean": 0.4377575757575757,
+      "f1_std": 0.08786227810710077,
+      "n_features": 1
+    },
+    {
+      "feature_set": "Material + hundreår",
+      "f1_mean": 0.4012490842490843,
+      "f1_std": 0.08358540109293763,
+      "n_features": 31
+    },
+    {
+      "feature_set": "Material + hundreår + opphav",
+      "f1_mean": 0.38324058512293807,
+      "f1_std": 0.10330352655235624,
+      "n_features": 33
+    }
+  ],
+  "bevis8": [
+    {
+      "from": 1600,
+      "to": 1750,
+      "drift": 11.655832585371535
+    },
+    {
+      "from": 1750,
+      "to": 1850,
+      "drift": 7.235760081411978
+    },
+    {
+      "from": 1850,
+      "to": 1900,
+      "drift": 3.930373166405862
+    },
+    {
+      "from": 1900,
+      "to": 1950,
+      "drift": 5.132783679725627
+    },
+    {
+      "from": 1950,
+      "to": 2000,
+      "drift": 4.75366119728686
+    }
+  ],
+  "bevis9": [
+    {
+      "material": "Mahogni",
+      "period": "Etter 1900",
+      "n": 5,
+      "intra_variance": 1.0
+    },
+    {
+      "material": "Eik",
+      "period": "Før 1900",
+      "n": 8,
+      "intra_variance": 1.0
+    },
+    {
+      "material": "Eik",
+      "period": "Etter 1900",
+      "n": 14,
+      "intra_variance": 1.0
+    },
+    {
+      "material": "Bøk",
+      "period": "Før 1900",
+      "n": 11,
+      "intra_variance": 1.0
+    },
+    {
+      "material": "Bøk",
+      "period": "Etter 1900",
+      "n": 10,
+      "intra_variance": 1.0
+    },
+    {
+      "material": "Kryssfiner",
+      "period": "Etter 1900",
+      "n": 27,
+      "intra_variance": 1.0
+    },
+    {
+      "material": "Stål",
+      "period": "Etter 1900",
+      "n": 20,
+      "intra_variance": 1.0
+    }
+  ],
+  "bevis10": {
+    "style_to_form_f1": 0.18611111111111112,
+    "mattime_to_form_f1": 0.3043809523809523,
+    "n_styled": 48
+  },
+  "bevis11": {
+    "n_noreg": 27,
+    "n_utanlands": 35
+  },
+  "bevis12": [
+    {
+      "period": 1600,
+      "n": 3,
+      "entropy": 2.503258334775646,
+      "n_materials": 6
+    },
+    {
+      "period": 1750,
+      "n": 7,
+      "entropy": 1.4958242288403438,
+      "n_materials": 3
+    },
+    {
+      "period": 1850,
+      "n": 15,
+      "entropy": 3.325871146123145,
+      "n_materials": 13
+    },
+    {
+      "period": 1900,
+      "n": 10,
+      "entropy": 2.4659573209491747,
+      "n_materials": 7
+    },
+    {
+      "period": 1950,
+      "n": 42,
+      "entropy": 3.4892752112031276,
+      "n_materials": 17
+    },
+    {
+      "period": 2000,
+      "n": 14,
+      "entropy": 3.263603705626787,
+      "n_materials": 12
+    }
+  ]
+}

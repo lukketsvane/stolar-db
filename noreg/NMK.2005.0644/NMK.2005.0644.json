@@ -1,0 +1,45 @@
+{
+  "objectId": "NMK.2005.0644",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/NMK.2005.0644",
+  "title": "Safari produsents tittel",
+  "Datering": "2002",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Fernissert og beiset laminert tre, tekstil",
+  "Teknikk": [
+    "Plugging",
+    "Laminering"
+  ],
+  "Dekorteknikk": [
+    "Beising",
+    "Fernissering"
+  ],
+  "Materiale": [
+    "Tre",
+    "Kryssfiner",
+    "Tekstil"
+  ],
+  "Mål": "H 86 x B 65 x D 60 cm Høyde: 86 cm Dybde: 60 cm Bredde: 65 cm",
+  "Emneord": [
+    "Møbel",
+    "Design"
+  ],
+  "Klassifikasjon": [
+    "322.48 - Møbeldesign",
+    "352.1 - Sittemøbler"
+  ],
+  "Stilperiode": "Postmodernisme",
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "NMK.2005.0644",
+  "Registreringsnivå": "Enkeltobjekt",
+  "Ervervelse": "Gave 2005",
+  "Eier og samling": "Nasjonalmuseet for kunst, arkitektur og design, Designsamlingene",
+  "Foto": "Børre Høstland",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/34871.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/34871.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/34871.tif/full/full/0/default.jpg",
+      "filename": "NMK.2005.0644_34871.jpg"
+    }
+  ]
+}

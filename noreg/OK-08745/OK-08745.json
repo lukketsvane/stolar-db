@@ -1,0 +1,41 @@
+{
+  "objectId": "OK-08745",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-08745",
+  "title": "Stol",
+  "Datering": "Ca. 1700",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Gulmalt bjørk og furu med skåret dekor, tappet",
+  "Teknikk": "Tapping",
+  "Dekorteknikk": [
+    "Bemaling",
+    "Gjennombrutt utskjæring"
+  ],
+  "Materiale": [
+    "Bjørk",
+    "Furu"
+  ],
+  "Mål": "H 76 cm x B 53 cm x D 28 cm Dybde: 28 cm Bredde: 53 cm Høyde: 35 cm",
+  "Emneord": "Møbel",
+  "Klassifikasjon": [
+    "322.48 - Møbeldesign",
+    "352.1 - Sittemøbler",
+    "322 - Trearbeid"
+  ],
+  "Produksjonssted": [
+    "Hallingdal",
+    "Norge"
+  ],
+  "Inventarnr.": "OK-08745",
+  "Registreringsnivå": "Enkeltobjekt",
+  "Ervervelse": "Kjøpt 1913",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Nasjonalmuseet",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07317.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07317.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07317.tif/full/full/0/default.jpg",
+      "filename": "OK-08745_07317.jpg"
+    }
+  ]
+}

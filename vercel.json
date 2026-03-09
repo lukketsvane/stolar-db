@@ -1,0 +1,5 @@
+﻿{
+  "buildCommand": "cd turnable-chair && npm install --legacy-peer-deps && npm run build",
+  "outputDirectory": "turnable-chair/.next",
+  "framework": "nextjs"
+}

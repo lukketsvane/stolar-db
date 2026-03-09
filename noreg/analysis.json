@@ -1,0 +1,1093 @@
+{
+  "files": [
+    {
+      "id": "NMK.2005.0638",
+      "fileSizeMB": 27.8,
+      "vertices": 326621,
+      "faces": 499872,
+      "numTextures": 4,
+      "totalTexMB": 10,
+      "materials": 12
+    },
+    {
+      "id": "NMK.2005.0639",
+      "fileSizeMB": 23.8,
+      "vertices": 302041,
+      "faces": 499996,
+      "numTextures": 4,
+      "totalTexMB": 7.1,
+      "materials": 18
+    },
+    {
+      "id": "NMK.2005.0640",
+      "fileSizeMB": 34.8,
+      "vertices": 383419,
+      "faces": 499682,
+      "numTextures": 4,
+      "totalTexMB": 12,
+      "materials": 4
+    },
+    {
+      "id": "NMK.2005.0641",
+      "fileSizeMB": 31.2,
+      "vertices": 361504,
+      "faces": 499844,
+      "numTextures": 4,
+      "totalTexMB": 9.5,
+      "materials": 5
+    },
+    {
+      "id": "NMK.2005.0644",
+      "fileSizeMB": 27.3,
+      "vertices": 291788,
+      "faces": 499958,
+      "numTextures": 4,
+      "totalTexMB": 11.1,
+      "materials": 21
+    },
+    {
+      "id": "NMK.2005.0645",
+      "fileSizeMB": 20.8,
+      "vertices": 222774,
+      "faces": 296108,
+      "numTextures": 4,
+      "totalTexMB": 8.9,
+      "materials": 8
+    },
+    {
+      "id": "NMK.2005.0646",
+      "fileSizeMB": 30.7,
+      "vertices": 354639,
+      "faces": 482888,
+      "numTextures": 4,
+      "totalTexMB": 10.5,
+      "materials": 9
+    },
+    {
+      "id": "NMK.2005.0661",
+      "fileSizeMB": 27.6,
+      "vertices": 330388,
+      "faces": 499910,
+      "numTextures": 4,
+      "totalTexMB": 8.8,
+      "materials": 11
+    },
+    {
+      "id": "NMK.2016.0135.001",
+      "fileSizeMB": 28.8,
+      "vertices": 312518,
+      "faces": 499920,
+      "numTextures": 4,
+      "totalTexMB": 11.6,
+      "materials": 11
+    },
+    {
+      "id": "NMK.2016.0135.002",
+      "fileSizeMB": 29.2,
+      "vertices": 322371,
+      "faces": 499926,
+      "numTextures": 4,
+      "totalTexMB": 9.3,
+      "materials": 8
+    },
+    {
+      "id": "NMK.2021.0137",
+      "fileSizeMB": 25.6,
+      "vertices": 294713,
+      "faces": 499874,
+      "numTextures": 4,
+      "totalTexMB": 7.3,
+      "materials": 4
+    },
+    {
+      "id": "NMK.INVENTAR.2017.0213",
+      "fileSizeMB": 25.2,
+      "vertices": 298858,
+      "faces": 499889,
+      "numTextures": 4,
+      "totalTexMB": 8.7,
+      "materials": 11
+    },
+    {
+      "id": "OK-01630",
+      "fileSizeMB": 33.1,
+      "vertices": 374202,
+      "faces": 499843,
+      "numTextures": 4,
+      "totalTexMB": 12.4,
+      "materials": 9
+    },
+    {
+      "id": "OK-02256",
+      "fileSizeMB": 30.3,
+      "vertices": 327858,
+      "faces": 499284,
+      "numTextures": 3,
+      "totalTexMB": 9.5,
+      "materials": 1
+    },
+    {
+      "id": "OK-02257",
+      "fileSizeMB": 30.6,
+      "vertices": 374290,
+      "faces": 499767,
+      "numTextures": 4,
+      "totalTexMB": 10.6,
+      "materials": 20
+    },
+    {
+      "id": "OK-02274",
+      "fileSizeMB": 32.3,
+      "vertices": 360939,
+      "faces": 499898,
+      "numTextures": 4,
+      "totalTexMB": 12.1,
+      "materials": 18
+    },
+    {
+      "id": "OK-02781",
+      "fileSizeMB": 33.3,
+      "vertices": 391124,
+      "faces": 499844,
+      "numTextures": 4,
+      "totalTexMB": 11.3,
+      "materials": 17
+    },
+    {
+      "id": "OK-02782",
+      "fileSizeMB": 36.9,
+      "vertices": 444896,
+      "faces": 499708,
+      "numTextures": 4,
+      "totalTexMB": 12,
+      "materials": 10
+    },
+    {
+      "id": "OK-03077",
+      "fileSizeMB": 35.6,
+      "vertices": 426096,
+      "faces": 499862,
+      "numTextures": 4,
+      "totalTexMB": 11.6,
+      "materials": 11
+    },
+    {
+      "id": "OK-03078",
+      "fileSizeMB": 34.9,
+      "vertices": 413330,
+      "faces": 499870,
+      "numTextures": 4,
+      "totalTexMB": 12.2,
+      "materials": 13
+    },
+    {
+      "id": "OK-03079",
+      "fileSizeMB": 34.1,
+      "vertices": 408787,
+      "faces": 499892,
+      "numTextures": 4,
+      "totalTexMB": 11.7,
+      "materials": 10
+    },
+    {
+      "id": "OK-03080",
+      "fileSizeMB": 35.6,
+      "vertices": 428397,
+      "faces": 499910,
+      "numTextures": 4,
+      "totalTexMB": 12,
+      "materials": 14
+    },
+    {
+      "id": "OK-04953",
+      "fileSizeMB": 11.6,
+      "vertices": 20985,
+      "faces": 36764,
+      "numTextures": 4,
+      "totalTexMB": 10.4,
+      "materials": 22
+    },
+    {
+      "id": "OK-05553",
+      "fileSizeMB": 12.5,
+      "vertices": 21181,
+      "faces": 37190,
+      "numTextures": 4,
+      "totalTexMB": 11.3,
+      "materials": 18
+    },
+    {
+      "id": "OK-05554",
+      "fileSizeMB": 11.8,
+      "vertices": 20200,
+      "faces": 36002,
+      "numTextures": 4,
+      "totalTexMB": 10.6,
+      "materials": 18
+    },
+    {
+      "id": "OK-06616",
+      "fileSizeMB": 34.8,
+      "vertices": 450518,
+      "faces": 499613,
+      "numTextures": 4,
+      "totalTexMB": 9.5,
+      "materials": 15
+    },
+    {
+      "id": "OK-06624",
+      "fileSizeMB": 12,
+      "vertices": 21286,
+      "faces": 37934,
+      "numTextures": 4,
+      "totalTexMB": 10.8,
+      "materials": 13
+    },
+    {
+      "id": "OK-06659",
+      "fileSizeMB": 10.6,
+      "vertices": 20854,
+      "faces": 37708,
+      "numTextures": 4,
+      "totalTexMB": 9.5,
+      "materials": 8
+    },
+    {
+      "id": "OK-06661",
+      "fileSizeMB": 11.3,
+      "vertices": 20451,
+      "faces": 37080,
+      "numTextures": 4,
+      "totalTexMB": 10.1,
+      "materials": 8
+    },
+    {
+      "id": "OK-06932",
+      "fileSizeMB": 13.5,
+      "vertices": 21229,
+      "faces": 37468,
+      "numTextures": 4,
+      "totalTexMB": 12.3,
+      "materials": 14
+    },
+    {
+      "id": "OK-07280",
+      "fileSizeMB": 10.8,
+      "vertices": 21575,
+      "faces": 37934,
+      "numTextures": 4,
+      "totalTexMB": 9.6,
+      "materials": 13
+    },
+    {
+      "id": "OK-07281",
+      "fileSizeMB": 10.2,
+      "vertices": 21252,
+      "faces": 37764,
+      "numTextures": 4,
+      "totalTexMB": 9,
+      "materials": 7
+    },
+    {
+      "id": "OK-07282",
+      "fileSizeMB": 34.4,
+      "vertices": 454030,
+      "faces": 499277,
+      "numTextures": 4,
+      "totalTexMB": 9.5,
+      "materials": 15
+    },
+    {
+      "id": "OK-07283",
+      "fileSizeMB": 10.4,
+      "vertices": 22567,
+      "faces": 40040,
+      "numTextures": 4,
+      "totalTexMB": 9.1,
+      "materials": 13
+    },
+    {
+      "id": "OK-07610",
+      "fileSizeMB": 13.3,
+      "vertices": 20817,
+      "faces": 37036,
+      "numTextures": 4,
+      "totalTexMB": 12.1,
+      "materials": 16
+    },
+    {
+      "id": "OK-07611",
+      "fileSizeMB": 13.1,
+      "vertices": 21557,
+      "faces": 38126,
+      "numTextures": 4,
+      "totalTexMB": 11.9,
+      "materials": 18
+    },
+    {
+      "id": "OK-07968",
+      "fileSizeMB": 11.4,
+      "vertices": 23176,
+      "faces": 40510,
+      "numTextures": 4,
+      "totalTexMB": 10.1,
+      "materials": 12
+    },
+    {
+      "id": "OK-08607A",
+      "fileSizeMB": 36.1,
+      "vertices": 397673,
+      "faces": 499695,
+      "numTextures": 4,
+      "totalTexMB": 12.8,
+      "materials": 7
+    },
+    {
+      "id": "OK-08607B",
+      "fileSizeMB": 31.4,
+      "vertices": 352515,
+      "faces": 499828,
+      "numTextures": 4,
+      "totalTexMB": 10.6,
+      "materials": 6
+    },
+    {
+      "id": "OK-08745",
+      "fileSizeMB": 32.2,
+      "vertices": 349213,
+      "faces": 499729,
+      "numTextures": 4,
+      "totalTexMB": 13.4,
+      "materials": 17
+    },
+    {
+      "id": "OK-08803",
+      "fileSizeMB": 29.1,
+      "vertices": 305581,
+      "faces": 499850,
+      "numTextures": 4,
+      "totalTexMB": 12.3,
+      "materials": 13
+    },
+    {
+      "id": "OK-09415A",
+      "fileSizeMB": 11.3,
+      "vertices": 22325,
+      "faces": 39312,
+      "numTextures": 4,
+      "totalTexMB": 10.1,
+      "materials": 13
+    },
+    {
+      "id": "OK-09691",
+      "fileSizeMB": 12.5,
+      "vertices": 22218,
+      "faces": 38348,
+      "numTextures": 4,
+      "totalTexMB": 11.2,
+      "materials": 14
+    },
+    {
+      "id": "OK-09696A",
+      "fileSizeMB": 9.9,
+      "vertices": 19666,
+      "faces": 35250,
+      "numTextures": 4,
+      "totalTexMB": 8.8,
+      "materials": 14
+    },
+    {
+      "id": "OK-09696B",
+      "fileSizeMB": 10.8,
+      "vertices": 21103,
+      "faces": 37746,
+      "numTextures": 4,
+      "totalTexMB": 9.7,
+      "materials": 7
+    },
+    {
+      "id": "OK-10330A",
+      "fileSizeMB": 11,
+      "vertices": 20918,
+      "faces": 37980,
+      "numTextures": 4,
+      "totalTexMB": 9.8,
+      "materials": 10
+    },
+    {
+      "id": "OK-10330B",
+      "fileSizeMB": 26.5,
+      "vertices": 272059,
+      "faces": 403080,
+      "numTextures": 4,
+      "totalTexMB": 10.7,
+      "materials": 10
+    },
+    {
+      "id": "OK-10330C",
+      "fileSizeMB": 8.3,
+      "vertices": 20919,
+      "faces": 38360,
+      "numTextures": 4,
+      "totalTexMB": 7.1,
+      "materials": 7
+    },
+    {
+      "id": "OK-10330D",
+      "fileSizeMB": 8.7,
+      "vertices": 21922,
+      "faces": 39158,
+      "numTextures": 4,
+      "totalTexMB": 7.5,
+      "materials": 14
+    },
+    {
+      "id": "OK-10330E",
+      "fileSizeMB": 11.7,
+      "vertices": 21405,
+      "faces": 39092,
+      "numTextures": 4,
+      "totalTexMB": 10.5,
+      "materials": 10
+    },
+    {
+      "id": "OK-10330F",
+      "fileSizeMB": 11.1,
+      "vertices": 20448,
+      "faces": 37154,
+      "numTextures": 4,
+      "totalTexMB": 9.9,
+      "materials": 7
+    },
+    {
+      "id": "OK-10403",
+      "fileSizeMB": 9.6,
+      "vertices": 21394,
+      "faces": 37752,
+      "numTextures": 4,
+      "totalTexMB": 8.4,
+      "materials": 17
+    },
+    {
+      "id": "OK-10859B",
+      "fileSizeMB": 12.4,
+      "vertices": 20168,
+      "faces": 37208,
+      "numTextures": 4,
+      "totalTexMB": 11.2,
+      "materials": 10
+    },
+    {
+      "id": "OK-10862A",
+      "fileSizeMB": 13,
+      "vertices": 20063,
+      "faces": 36688,
+      "numTextures": 4,
+      "totalTexMB": 11.9,
+      "materials": 11
+    },
+    {
+      "id": "OK-10862B",
+      "fileSizeMB": 13,
+      "vertices": 19704,
+      "faces": 35780,
+      "numTextures": 4,
+      "totalTexMB": 11.8,
+      "materials": 13
+    },
+    {
+      "id": "OK-10862D",
+      "fileSizeMB": 13.3,
+      "vertices": 20802,
+      "faces": 37082,
+      "numTextures": 4,
+      "totalTexMB": 12.1,
+      "materials": 18
+    },
+    {
+      "id": "OK-10862E",
+      "fileSizeMB": 31.9,
+      "vertices": 381850,
+      "faces": 499870,
+      "numTextures": 4,
+      "totalTexMB": 10.5,
+      "materials": 15
+    },
+    {
+      "id": "OK-11527A",
+      "fileSizeMB": 12.7,
+      "vertices": 23221,
+      "faces": 39826,
+      "numTextures": 4,
+      "totalTexMB": 11.4,
+      "materials": 6
+    },
+    {
+      "id": "OK-11527B",
+      "fileSizeMB": 12.6,
+      "vertices": 21479,
+      "faces": 37404,
+      "numTextures": 4,
+      "totalTexMB": 11.4,
+      "materials": 9
+    },
+    {
+      "id": "OK-11528A",
+      "fileSizeMB": 11,
+      "vertices": 23352,
+      "faces": 39010,
+      "numTextures": 4,
+      "totalTexMB": 9.7,
+      "materials": 10
+    },
+    {
+      "id": "OK-11528B",
+      "fileSizeMB": 12.9,
+      "vertices": 22872,
+      "faces": 37835,
+      "numTextures": 4,
+      "totalTexMB": 11.7,
+      "materials": 16
+    },
+    {
+      "id": "OK-11529A",
+      "fileSizeMB": 13.2,
+      "vertices": 24269,
+      "faces": 40874,
+      "numTextures": 4,
+      "totalTexMB": 11.9,
+      "materials": 11
+    },
+    {
+      "id": "OK-11529B",
+      "fileSizeMB": 13,
+      "vertices": 24810,
+      "faces": 41606,
+      "numTextures": 4,
+      "totalTexMB": 11.6,
+      "materials": 9
+    },
+    {
+      "id": "OK-11579",
+      "fileSizeMB": 11.5,
+      "vertices": 21830,
+      "faces": 39308,
+      "numTextures": 4,
+      "totalTexMB": 10.2,
+      "materials": 9
+    },
+    {
+      "id": "OK-11796",
+      "fileSizeMB": 14.2,
+      "vertices": 21717,
+      "faces": 37870,
+      "numTextures": 4,
+      "totalTexMB": 13,
+      "materials": 15
+    },
+    {
+      "id": "OK-11813H",
+      "fileSizeMB": 33.8,
+      "vertices": 349129,
+      "faces": 499966,
+      "numTextures": 4,
+      "totalTexMB": 12.8,
+      "materials": 6
+    },
+    {
+      "id": "OK-11813I",
+      "fileSizeMB": 11.9,
+      "vertices": 19251,
+      "faces": 35256,
+      "numTextures": 4,
+      "totalTexMB": 10.8,
+      "materials": 6
+    },
+    {
+      "id": "OK-11813J",
+      "fileSizeMB": 27.7,
+      "vertices": 293339,
+      "faces": 499939,
+      "numTextures": 4,
+      "totalTexMB": 10.3,
+      "materials": 7
+    },
+    {
+      "id": "OK-11813K",
+      "fileSizeMB": 11.8,
+      "vertices": 20162,
+      "faces": 37164,
+      "numTextures": 4,
+      "totalTexMB": 10.7,
+      "materials": 6
+    },
+    {
+      "id": "OK-14846",
+      "fileSizeMB": 12.5,
+      "vertices": 19301,
+      "faces": 35694,
+      "numTextures": 4,
+      "totalTexMB": 11.4,
+      "materials": 8
+    },
+    {
+      "id": "OK-14883H-1",
+      "fileSizeMB": 26.6,
+      "vertices": 335262,
+      "faces": 499782,
+      "numTextures": 4,
+      "totalTexMB": 8.4,
+      "materials": 9
+    },
+    {
+      "id": "OK-14883H-2",
+      "fileSizeMB": 11.7,
+      "vertices": 21358,
+      "faces": 38878,
+      "numTextures": 4,
+      "totalTexMB": 10.5,
+      "materials": 8
+    },
+    {
+      "id": "OK-14894A",
+      "fileSizeMB": 12.3,
+      "vertices": 22358,
+      "faces": 39352,
+      "numTextures": 4,
+      "totalTexMB": 11,
+      "materials": 13
+    },
+    {
+      "id": "OK-14894B",
+      "fileSizeMB": 10.5,
+      "vertices": 22134,
+      "faces": 39516,
+      "numTextures": 4,
+      "totalTexMB": 9.2,
+      "materials": 12
+    },
+    {
+      "id": "OK-14894C",
+      "fileSizeMB": 12,
+      "vertices": 22171,
+      "faces": 38890,
+      "numTextures": 4,
+      "totalTexMB": 10.8,
+      "materials": 18
+    },
+    {
+      "id": "OK-14894D",
+      "fileSizeMB": 35.3,
+      "vertices": 417931,
+      "faces": 499894,
+      "numTextures": 4,
+      "totalTexMB": 12.1,
+      "materials": 18
+    },
+    {
+      "id": "OK-14894E",
+      "fileSizeMB": 11.9,
+      "vertices": 21947,
+      "faces": 39090,
+      "numTextures": 4,
+      "totalTexMB": 10.6,
+      "materials": 12
+    },
+    {
+      "id": "OK-14894F",
+      "fileSizeMB": 11.3,
+      "vertices": 21373,
+      "faces": 37648,
+      "numTextures": 4,
+      "totalTexMB": 10.1,
+      "materials": 14
+    },
+    {
+      "id": "OK-15056B-1",
+      "fileSizeMB": 37.3,
+      "vertices": 482969,
+      "faces": 499502,
+      "numTextures": 4,
+      "totalTexMB": 10.7,
+      "materials": 8
+    },
+    {
+      "id": "OK-15056B-2",
+      "fileSizeMB": 10.8,
+      "vertices": 22033,
+      "faces": 38492,
+      "numTextures": 4,
+      "totalTexMB": 9.6,
+      "materials": 7
+    },
+    {
+      "id": "OK-15056B-3",
+      "fileSizeMB": 38.2,
+      "vertices": 511874,
+      "faces": 499593,
+      "numTextures": 4,
+      "totalTexMB": 9.5,
+      "materials": 10
+    },
+    {
+      "id": "OK-17046",
+      "fileSizeMB": 11.3,
+      "vertices": 20240,
+      "faces": 37076,
+      "numTextures": 4,
+      "totalTexMB": 10.2,
+      "materials": 4
+    },
+    {
+      "id": "OK-17261",
+      "fileSizeMB": 9.9,
+      "vertices": 22530,
+      "faces": 39870,
+      "numTextures": 4,
+      "totalTexMB": 8.7,
+      "materials": 13
+    },
+    {
+      "id": "OK-17280A",
+      "fileSizeMB": 11.6,
+      "vertices": 20901,
+      "faces": 38424,
+      "numTextures": 4,
+      "totalTexMB": 10.4,
+      "materials": 9
+    },
+    {
+      "id": "OK-17280B",
+      "fileSizeMB": 9.8,
+      "vertices": 22079,
+      "faces": 39672,
+      "numTextures": 4,
+      "totalTexMB": 8.5,
+      "materials": 13
+    },
+    {
+      "id": "OK-17280C",
+      "fileSizeMB": 11.8,
+      "vertices": 19328,
+      "faces": 35284,
+      "numTextures": 4,
+      "totalTexMB": 10.7,
+      "materials": 11
+    },
+    {
+      "id": "OK-17280D",
+      "fileSizeMB": 28.6,
+      "vertices": 348798,
+      "faces": 499748,
+      "numTextures": 4,
+      "totalTexMB": 8.8,
+      "materials": 9
+    },
+    {
+      "id": "OK-17280E",
+      "fileSizeMB": 11.3,
+      "vertices": 21739,
+      "faces": 38912,
+      "numTextures": 4,
+      "totalTexMB": 10,
+      "materials": 12
+    },
+    {
+      "id": "OK-17280F",
+      "fileSizeMB": 12.8,
+      "vertices": 21677,
+      "faces": 39016,
+      "numTextures": 4,
+      "totalTexMB": 11.6,
+      "materials": 13
+    },
+    {
+      "id": "OK-17289A",
+      "fileSizeMB": 11.7,
+      "vertices": 21309,
+      "faces": 38268,
+      "numTextures": 4,
+      "totalTexMB": 10.5,
+      "materials": 8
+    },
+    {
+      "id": "OK-17289B",
+      "fileSizeMB": 9.5,
+      "vertices": 19145,
+      "faces": 35140,
+      "numTextures": 4,
+      "totalTexMB": 8.4,
+      "materials": 8
+    },
+    {
+      "id": "OK-17289C",
+      "fileSizeMB": 28.6,
+      "vertices": 353054,
+      "faces": 499699,
+      "numTextures": 4,
+      "totalTexMB": 8.7,
+      "materials": 8
+    },
+    {
+      "id": "OK-17289D",
+      "fileSizeMB": 11.3,
+      "vertices": 21491,
+      "faces": 38694,
+      "numTextures": 4,
+      "totalTexMB": 10.1,
+      "materials": 11
+    },
+    {
+      "id": "OK-17289E",
+      "fileSizeMB": 10,
+      "vertices": 21864,
+      "faces": 39968,
+      "numTextures": 4,
+      "totalTexMB": 8.8,
+      "materials": 7
+    },
+    {
+      "id": "OK-17289F",
+      "fileSizeMB": 11.5,
+      "vertices": 21094,
+      "faces": 38162,
+      "numTextures": 4,
+      "totalTexMB": 10.3,
+      "materials": 11
+    },
+    {
+      "id": "OK-17290",
+      "fileSizeMB": 10.9,
+      "vertices": 20125,
+      "faces": 36088,
+      "numTextures": 4,
+      "totalTexMB": 9.7,
+      "materials": 10
+    },
+    {
+      "id": "OK-17302B",
+      "fileSizeMB": 10.3,
+      "vertices": 21314,
+      "faces": 38602,
+      "numTextures": 4,
+      "totalTexMB": 9.1,
+      "materials": 8
+    },
+    {
+      "id": "OK-17329A",
+      "fileSizeMB": 11.2,
+      "vertices": 20129,
+      "faces": 36630,
+      "numTextures": 4,
+      "totalTexMB": 10,
+      "materials": 7
+    },
+    {
+      "id": "OK-17329B",
+      "fileSizeMB": 10,
+      "vertices": 20077,
+      "faces": 36932,
+      "numTextures": 4,
+      "totalTexMB": 8.9,
+      "materials": 8
+    },
+    {
+      "id": "OK-18399",
+      "fileSizeMB": 12.8,
+      "vertices": 26194,
+      "faces": 43460,
+      "numTextures": 4,
+      "totalTexMB": 11.3,
+      "materials": 5
+    },
+    {
+      "id": "OK-18471A",
+      "fileSizeMB": 12.1,
+      "vertices": 21652,
+      "faces": 37512,
+      "numTextures": 4,
+      "totalTexMB": 10.9,
+      "materials": 20
+    },
+    {
+      "id": "OK-18471B",
+      "fileSizeMB": 10.5,
+      "vertices": 23445,
+      "faces": 41140,
+      "numTextures": 4,
+      "totalTexMB": 9.2,
+      "materials": 12
+    },
+    {
+      "id": "OK-1966-0114",
+      "fileSizeMB": 34.3,
+      "vertices": 471567,
+      "faces": 499690,
+      "numTextures": 4,
+      "totalTexMB": 8.6,
+      "materials": 17
+    },
+    {
+      "id": "OK-1980-0043",
+      "fileSizeMB": 38.3,
+      "vertices": 431468,
+      "faces": 499672,
+      "numTextures": 4,
+      "totalTexMB": 13.6,
+      "materials": 5
+    },
+    {
+      "id": "OK-1980-0045",
+      "fileSizeMB": 28.5,
+      "vertices": 292985,
+      "faces": 499934,
+      "numTextures": 4,
+      "totalTexMB": 11.5,
+      "materials": 6
+    },
+    {
+      "id": "OK-1984-0149",
+      "fileSizeMB": 34.3,
+      "vertices": 421044,
+      "faces": 499691,
+      "numTextures": 4,
+      "totalTexMB": 11.3,
+      "materials": 14
+    },
+    {
+      "id": "OK-1989-0229A",
+      "fileSizeMB": 36.1,
+      "vertices": 419770,
+      "faces": 499759,
+      "numTextures": 4,
+      "totalTexMB": 11.6,
+      "materials": 5
+    },
+    {
+      "id": "OK-1989-0229B",
+      "fileSizeMB": 33.3,
+      "vertices": 455340,
+      "faces": 499293,
+      "numTextures": 4,
+      "totalTexMB": 8.1,
+      "materials": 14
+    },
+    {
+      "id": "OK-1989-0229C",
+      "fileSizeMB": 34.9,
+      "vertices": 443026,
+      "faces": 499433,
+      "numTextures": 4,
+      "totalTexMB": 10.2,
+      "materials": 12
+    },
+    {
+      "id": "OK-1989-0229D",
+      "fileSizeMB": 33.7,
+      "vertices": 426469,
+      "faces": 499487,
+      "numTextures": 4,
+      "totalTexMB": 9.7,
+      "materials": 7
+    },
+    {
+      "id": "OK-1991-0003",
+      "fileSizeMB": 27.7,
+      "vertices": 360261,
+      "faces": 499748,
+      "numTextures": 4,
+      "totalTexMB": 8.3,
+      "materials": 14
+    },
+    {
+      "id": "OK-1991-0892D",
+      "fileSizeMB": 28.8,
+      "vertices": 339480,
+      "faces": 499742,
+      "numTextures": 4,
+      "totalTexMB": 9.2,
+      "materials": 13
+    },
+    {
+      "id": "OK-1991-0898",
+      "fileSizeMB": 16.5,
+      "vertices": 182557,
+      "faces": 246620,
+      "numTextures": 4,
+      "totalTexMB": 6.7,
+      "materials": 7
+    },
+    {
+      "id": "OK-1994-0038",
+      "fileSizeMB": 31.2,
+      "vertices": 420385,
+      "faces": 499806,
+      "numTextures": 4,
+      "totalTexMB": 8.2,
+      "materials": 11
+    },
+    {
+      "id": "OK-1995-0109",
+      "fileSizeMB": 29.5,
+      "vertices": 338360,
+      "faces": 499493,
+      "numTextures": 4,
+      "totalTexMB": 9.6,
+      "materials": 5
+    },
+    {
+      "id": "OK-1995-0136C",
+      "fileSizeMB": 40.3,
+      "vertices": 529592,
+      "faces": 499005,
+      "numTextures": 4,
+      "totalTexMB": 11.9,
+      "materials": 21
+    },
+    {
+      "id": "OK-1997-0125",
+      "fileSizeMB": 26.6,
+      "vertices": 274148,
+      "faces": 499964,
+      "numTextures": 4,
+      "totalTexMB": 9.8,
+      "materials": 5
+    },
+    {
+      "id": "OK-2002-0142",
+      "fileSizeMB": 25.2,
+      "vertices": 292383,
+      "faces": 499944,
+      "numTextures": 4,
+      "totalTexMB": 7.9,
+      "materials": 6
+    },
+    {
+      "id": "OK-2002-0168",
+      "fileSizeMB": 25.8,
+      "vertices": 313718,
+      "faces": 499954,
+      "numTextures": 4,
+      "totalTexMB": 6.9,
+      "materials": 4
+    },
+    {
+      "id": "OK-dep-01106",
+      "fileSizeMB": 12.2,
+      "vertices": 23163,
+      "faces": 40162,
+      "numTextures": 4,
+      "totalTexMB": 10.9,
+      "materials": 4
+    },
+    {
+      "id": "OK-INV-013K",
+      "fileSizeMB": 35.2,
+      "vertices": 367627,
+      "faces": 499815,
+      "numTextures": 4,
+      "totalTexMB": 13.2,
+      "materials": 7
+    }
+  ]
+}

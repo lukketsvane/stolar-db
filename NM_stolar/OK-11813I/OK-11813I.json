@@ -1,0 +1,43 @@
+{
+  "objectId": "OK-11813I",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-11813I",
+  "title": "Stol",
+  "Datering": "Antagelig 1840-tallet",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Skåret og beiset mahogni, polstret sete trukket med plysj",
+  "Teknikk": [
+    "Polstring",
+    "Tapping"
+  ],
+  "Dekorteknikk": [
+    "Beising",
+    "Fernissering",
+    "Treskjæring",
+    "Profilering"
+  ],
+  "Materiale": [
+    "Mahogni",
+    "Plysj"
+  ],
+  "Mål": "H 92 x B 46 x D 52 cm Dybde: 37 cm Høyde: 52 cm Bredde: 45 cm",
+  "Emneord": "Møbel",
+  "Klassifikasjon": [
+    "352.1 - Sittemøbler",
+    "322.48 - Møbeldesign",
+    "322.4 - Møbelfagene"
+  ],
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "OK-11813I",
+  "Registreringsnivå": "Enkeltobjekt",
+  "Ervervelse": "Gave 1946",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Bjørgli, Annar",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94827.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94827.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94827.tif/full/full/0/default.jpg",
+      "filename": "OK-11813I_94827.jpg"
+    }
+  ]
+}

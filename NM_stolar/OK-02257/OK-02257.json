@@ -1,0 +1,40 @@
+{
+  "objectId": "OK-02257",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-02257",
+  "title": "Stol",
+  "Datering": "1691",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Fernissert ask, utskjæringer i karveskurd",
+  "Teknikk": [
+    "Tapping",
+    "Plugging"
+  ],
+  "Dekorteknikk": [
+    "Treskurd",
+    "Karveskurd",
+    "Profilering",
+    "Fernissering"
+  ],
+  "Materiale": "Ask",
+  "Mål": "H 96 x B 45 x D 41,5 cm Høyde: 51 cm Bredde: 41,8 cm Dybde: 35 cm",
+  "Emneord": "Møbel",
+  "Klassifikasjon": [
+    "322.48 - Møbeldesign",
+    "352.1 - Sittemøbler"
+  ],
+  "Stilperiode": "Barokk",
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "OK-02257",
+  "Registreringsnivå": "Enkeltobjekt",
+  "Ervervelse": "Gave 1885",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Harvik, A./ Jensen, H.L.",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07406.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07406.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07406.tif/full/full/0/default.jpg",
+      "filename": "OK-02257_07406.jpg"
+    }
+  ]
+}

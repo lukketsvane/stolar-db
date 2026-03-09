@@ -1,0 +1,3426 @@
+{
+  "summary": {
+    "count": 118,
+    "min": 4.5,
+    "max": 80,
+    "avg": 20.1,
+    "median": 16.9
+  },
+  "chairs": [
+    {
+      "objectId": "OK-02256",
+      "title": "Stol",
+      "datering": "1632",
+      "stilperiode": "Renessanse",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bøk",
+      "allMaterials": [
+        "Bøk",
+        "Ull",
+        "Messing",
+        "Lin"
+      ],
+      "dimensions": {
+        "H": 95.5,
+        "B": 50.5,
+        "D": 49
+      },
+      "bboxVolume_m3": 0.236315,
+      "meshFillRatio": 0.1487,
+      "effectiveFill": 0.1487,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 23.2,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5229,
+        0.955,
+        0.47
+      ]
+    },
+    {
+      "objectId": "OK-06932",
+      "title": "Stol",
+      "datering": "Slutten av 1600-tallet",
+      "stilperiode": "Barokk",
+      "betegnelse": "Armstol",
+      "primaryMaterial": "Ask",
+      "allMaterials": [
+        "Ask",
+        "Skinn/lær/pergament",
+        "Eik"
+      ],
+      "dimensions": {
+        "H": 139,
+        "B": 70.5,
+        "D": 70
+      },
+      "bboxVolume_m3": 0.685965,
+      "meshFillRatio": 0.0972,
+      "effectiveFill": 0.12,
+      "density_kgm3": 590,
+      "estimatedWeight_kg": 48.6,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.6506,
+        1.39,
+        0.5707
+      ]
+    },
+    {
+      "objectId": "OK-1995-0109",
+      "title": "Stol fra Eventyrværelset",
+      "datering": "Mellom 1896 og 1898",
+      "stilperiode": [
+        "Jugend",
+        "Art Nouveau",
+        "Japonisme"
+      ],
+      "betegnelse": "Karmstol",
+      "primaryMaterial": "Furu",
+      "allMaterials": [
+        "Furu"
+      ],
+      "dimensions": {
+        "H": 108.7,
+        "B": 61,
+        "D": 66.5
+      },
+      "bboxVolume_m3": 0.440942,
+      "meshFillRatio": 0.0896,
+      "effectiveFill": 0.1,
+      "density_kgm3": 450,
+      "estimatedWeight_kg": 19.8,
+      "hasUpholstery": false,
+      "meshBbox": [
+        0.5653,
+        1.087,
+        0.7585
+      ]
+    },
+    {
+      "objectId": "NMK.INVENTAR.2017.0213",
+      "title": "Stol til Nasjonalgalleriet",
+      "datering": "1900",
+      "stilperiode": [
+        "Jugend",
+        "Nasjonalromantikk"
+      ],
+      "betegnelse": "Stol",
+      "primaryMaterial": "Eik",
+      "allMaterials": [
+        "Tekstil",
+        "Eik"
+      ],
+      "dimensions": {
+        "H": 81,
+        "B": 44.7,
+        "D": 48.5
+      },
+      "bboxVolume_m3": 0.175604,
+      "meshFillRatio": 0.1139,
+      "effectiveFill": 0.12,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 13.9,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4364,
+        0.81,
+        0.4688
+      ]
+    },
+    {
+      "objectId": "NMK.2005.0639",
+      "title": "Garden produsents tittel",
+      "datering": "1985",
+      "stilperiode": "Postmodernisme",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bøk",
+      "allMaterials": [
+        "Bøk",
+        "Skumplast",
+        "Kryssfiner",
+        "Ull"
+      ],
+      "dimensions": {
+        "H": 182,
+        "B": 105,
+        "D": 105
+      },
+      "bboxVolume_m3": 2.00655,
+      "meshFillRatio": 0.0763,
+      "effectiveFill": 0.12,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 80,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.9894,
+        1.82,
+        0.9447
+      ]
+    },
+    {
+      "objectId": "OK-1989-0229A",
+      "title": "Stol",
+      "datering": "Ca. 1870",
+      "stilperiode": "Louis XVI",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Tre",
+      "allMaterials": [
+        "Tre",
+        "Messing",
+        "Silke",
+        "Bronse"
+      ],
+      "dimensions": {
+        "H": 92,
+        "B": 50,
+        "D": 46
+      },
+      "bboxVolume_m3": 0.2116,
+      "meshFillRatio": 0.1348,
+      "effectiveFill": 0.1348,
+      "density_kgm3": 550,
+      "estimatedWeight_kg": 15.7,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4672,
+        0.92,
+        0.5457
+      ]
+    },
+    {
+      "objectId": "OK-10330C",
+      "title": "Stol",
+      "datering": "Ca. 1830",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Mahogni",
+      "allMaterials": [
+        "Mahogni",
+        "Hestetagl",
+        "Furu",
+        "Eik",
+        "Whitewood"
+      ],
+      "dimensions": {
+        "H": 78,
+        "B": 45.5,
+        "D": 50
+      },
+      "bboxVolume_m3": 0.17745,
+      "meshFillRatio": 0.1323,
+      "effectiveFill": 0.1323,
+      "density_kgm3": 550,
+      "estimatedWeight_kg": 12.9,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4922,
+        0.78,
+        0.4642
+      ]
+    },
+    {
+      "objectId": "OK-08607A",
+      "title": "Stol",
+      "datering": "Midten av 1700-tallet",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bjørk",
+      "allMaterials": [
+        "Bjørk",
+        "Furu",
+        "Ull",
+        "Bomull"
+      ],
+      "dimensions": {
+        "H": 106.5,
+        "B": 52,
+        "D": 48
+      },
+      "bboxVolume_m3": 0.265824,
+      "meshFillRatio": 0.046,
+      "effectiveFill": 0.12,
+      "density_kgm3": 640,
+      "estimatedWeight_kg": 20.4,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5103,
+        1.065,
+        0.5052
+      ]
+    },
+    {
+      "objectId": "OK-14894C",
+      "title": "Stol",
+      "datering": "Mellom 1735 og 1745",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Alm",
+      "allMaterials": [
+        "Alm",
+        "Bjørk",
+        "Furu",
+        "Tekstil, fløyel",
+        "Ask"
+      ],
+      "dimensions": {
+        "H": 103.5,
+        "B": 50,
+        "D": 51.5
+      },
+      "bboxVolume_m3": 0.266512,
+      "meshFillRatio": 0.0602,
+      "effectiveFill": 0.12,
+      "density_kgm3": 560,
+      "estimatedWeight_kg": 17.9,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5247,
+        1.035,
+        0.4811
+      ]
+    },
+    {
+      "objectId": "OK-14894E",
+      "title": "Stol",
+      "datering": "Mellom 1735 og 1745",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bjørk",
+      "allMaterials": [
+        "Bjørk",
+        "Alm",
+        "Ask",
+        "Furu",
+        "Tekstil, fløyel"
+      ],
+      "dimensions": {
+        "H": 103.5,
+        "B": 50,
+        "D": 51.5
+      },
+      "bboxVolume_m3": 0.266512,
+      "meshFillRatio": 0.0681,
+      "effectiveFill": 0.12,
+      "density_kgm3": 640,
+      "estimatedWeight_kg": 20.5,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5301,
+        1.035,
+        0.4883
+      ]
+    },
+    {
+      "objectId": "OK-17289A",
+      "title": "Stol",
+      "datering": "1820-tallet",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bjørk",
+      "allMaterials": [
+        "Bjørk",
+        "Messing",
+        "Buksbom",
+        "Hestetagl",
+        "Jakaranda"
+      ],
+      "dimensions": {
+        "H": 80.7,
+        "B": 47.5,
+        "D": 52
+      },
+      "bboxVolume_m3": 0.199329,
+      "meshFillRatio": 0.0869,
+      "effectiveFill": 0.12,
+      "density_kgm3": 640,
+      "estimatedWeight_kg": 15.3,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4538,
+        0.807,
+        0.5419
+      ]
+    },
+    {
+      "objectId": "OK-17289E",
+      "title": "Stol",
+      "datering": "1820-tallet",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bjørk",
+      "allMaterials": [
+        "Bjørk",
+        "Jakaranda",
+        "Messing",
+        "Buksbom",
+        "Hestetagl"
+      ],
+      "dimensions": {
+        "H": 81.3,
+        "B": 48,
+        "D": 52
+      },
+      "bboxVolume_m3": 0.202925,
+      "meshFillRatio": 0.13,
+      "effectiveFill": 0.13,
+      "density_kgm3": 640,
+      "estimatedWeight_kg": 16.9,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4456,
+        0.813,
+        0.5623
+      ]
+    },
+    {
+      "objectId": "OK-17289F",
+      "title": "Stol",
+      "datering": "1820-tallet",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bjørk",
+      "allMaterials": [
+        "Bjørk",
+        "Messing",
+        "Jakaranda",
+        "Buksbom",
+        "Hestetagl"
+      ],
+      "dimensions": {
+        "H": 81,
+        "B": 47.8,
+        "D": 50
+      },
+      "bboxVolume_m3": 0.19359,
+      "meshFillRatio": 0.089,
+      "effectiveFill": 0.12,
+      "density_kgm3": 640,
+      "estimatedWeight_kg": 14.9,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.457,
+        0.81,
+        0.4517
+      ]
+    },
+    {
+      "objectId": "OK-17289D",
+      "title": "Stol",
+      "datering": "1820-tallet",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bjørk",
+      "allMaterials": [
+        "Bjørk",
+        "Messing",
+        "Buksbom",
+        "Hestetagl",
+        "Jakaranda"
+      ],
+      "dimensions": {
+        "H": 79.8,
+        "B": 48,
+        "D": 52
+      },
+      "bboxVolume_m3": 0.199181,
+      "meshFillRatio": 0.0871,
+      "effectiveFill": 0.12,
+      "density_kgm3": 640,
+      "estimatedWeight_kg": 15.3,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4484,
+        0.798,
+        0.4977
+      ]
+    },
+    {
+      "objectId": "OK-15056B-1",
+      "title": "Stol",
+      "datering": "1889",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Eik",
+      "allMaterials": [
+        "Eik",
+        "Palme"
+      ],
+      "dimensions": {
+        "H": 102,
+        "B": 46.5,
+        "D": 60.3
+      },
+      "bboxVolume_m3": 0.286003,
+      "meshFillRatio": 0.0428,
+      "effectiveFill": 0.1,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 18.9,
+      "hasUpholstery": false,
+      "meshBbox": [
+        0.4639,
+        1.02,
+        0.5142
+      ]
+    },
+    {
+      "objectId": "OK-15056B-2",
+      "title": "Stol",
+      "datering": "1889",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Eik",
+      "allMaterials": [
+        "Eik",
+        "Palme"
+      ],
+      "dimensions": {
+        "H": 48,
+        "B": 46.5,
+        "D": 45.5
+      },
+      "bboxVolume_m3": 0.101556,
+      "meshFillRatio": 0.0375,
+      "effectiveFill": 0.1,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 6.7,
+      "hasUpholstery": false,
+      "meshBbox": [
+        0.4793,
+        1.025,
+        0.6196
+      ]
+    },
+    {
+      "objectId": "OK-07968",
+      "title": "Stol",
+      "datering": "begynnelsen av 1700-tallet",
+      "stilperiode": "Barokk",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bøk",
+      "allMaterials": [
+        "Bøk",
+        "Lær"
+      ],
+      "dimensions": {
+        "H": 125,
+        "B": 46,
+        "D": 53
+      },
+      "bboxVolume_m3": 0.30475,
+      "meshFillRatio": 0.0615,
+      "effectiveFill": 0.12,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 24.1,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4491,
+        1.25,
+        0.4663
+      ]
+    },
+    {
+      "objectId": "OK-11813I",
+      "title": "Stol",
+      "datering": "Antagelig 1840-tallet",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Mahogni",
+      "allMaterials": [
+        "Mahogni",
+        "Plysj"
+      ],
+      "dimensions": {
+        "H": 92,
+        "B": 46,
+        "D": 52
+      },
+      "bboxVolume_m3": 0.220064,
+      "meshFillRatio": 0.1093,
+      "effectiveFill": 0.12,
+      "density_kgm3": 550,
+      "estimatedWeight_kg": 14.5,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4732,
+        0.92,
+        0.444
+      ]
+    },
+    {
+      "objectId": "OK-02782",
+      "title": "Stol",
+      "datering": "begynnelsen av 1700-tallet",
+      "stilperiode": "Barokk",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Ask",
+      "allMaterials": [
+        "Ask",
+        "Or",
+        "Lær"
+      ],
+      "dimensions": {
+        "H": 126.5,
+        "B": 54.5,
+        "D": 54.5
+      },
+      "bboxVolume_m3": 0.375737,
+      "meshFillRatio": 0.059,
+      "effectiveFill": 0.12,
+      "density_kgm3": 590,
+      "estimatedWeight_kg": 26.6,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.6342,
+        1.265,
+        0.6378
+      ]
+    },
+    {
+      "objectId": "OK-02781",
+      "title": "Stol",
+      "datering": "Begynnelsen av 1700-tallet",
+      "stilperiode": "Barokk",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Ask",
+      "allMaterials": [
+        "Ask",
+        "Or",
+        "Lær",
+        "Lin"
+      ],
+      "dimensions": {
+        "H": 126,
+        "B": 53.5,
+        "D": 53.5
+      },
+      "bboxVolume_m3": 0.360644,
+      "meshFillRatio": 0.0921,
+      "effectiveFill": 0.12,
+      "density_kgm3": 590,
+      "estimatedWeight_kg": 25.5,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5365,
+        1.26,
+        0.4788
+      ]
+    },
+    {
+      "objectId": "OK-1980-0045",
+      "title": "Stol",
+      "datering": "1979",
+      "stilperiode": "Postmodernisme",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bøk",
+      "allMaterials": [
+        "Bøk",
+        "Ull",
+        "Kryssfiner"
+      ],
+      "dimensions": {
+        "H": 51.5,
+        "B": 50.8,
+        "D": 71.8
+      },
+      "bboxVolume_m3": 0.187843,
+      "meshFillRatio": 0.085,
+      "effectiveFill": 0.12,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 14.9,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5109,
+        0.515,
+        0.6749
+      ]
+    },
+    {
+      "objectId": "OK-11528A",
+      "title": "Stol",
+      "datering": "Ca. 1700",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bjørk",
+      "allMaterials": [
+        "Bjørk",
+        "Lær",
+        "Kryssfiner"
+      ],
+      "dimensions": {
+        "H": 127.5,
+        "B": 53.5,
+        "D": 63
+      },
+      "bboxVolume_m3": 0.429739,
+      "meshFillRatio": 0.0596,
+      "effectiveFill": 0.12,
+      "density_kgm3": 640,
+      "estimatedWeight_kg": 33,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5526,
+        1.275,
+        0.5399
+      ]
+    },
+    {
+      "objectId": "NMK.2005.0646",
+      "title": "Reflex 1 produsents tittel",
+      "datering": "1999",
+      "stilperiode": "Postmodernisme",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Kryssfiner",
+      "allMaterials": [
+        "Kryssfiner",
+        "Stål",
+        "Polyamid",
+        "Ask"
+      ],
+      "dimensions": {
+        "H": 120,
+        "B": 81,
+        "D": 80
+      },
+      "bboxVolume_m3": 0.7776,
+      "meshFillRatio": 0.0131,
+      "effectiveFill": 0.1,
+      "density_kgm3": 550,
+      "estimatedWeight_kg": 42.8,
+      "hasUpholstery": false,
+      "meshBbox": [
+        0.8497,
+        1.2,
+        0.755
+      ]
+    },
+    {
+      "objectId": "OK-08607B",
+      "title": "Stol",
+      "datering": "Midten av 1700-tallet",
+      "stilperiode": "Queen Anne",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bjørk",
+      "allMaterials": [
+        "Bjørk",
+        "Furu",
+        "Bomull",
+        "Ull"
+      ],
+      "dimensions": {
+        "H": 105.5,
+        "B": 52,
+        "D": 48
+      },
+      "bboxVolume_m3": 0.263328,
+      "meshFillRatio": 0.056,
+      "effectiveFill": 0.12,
+      "density_kgm3": 640,
+      "estimatedWeight_kg": 20.2,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5286,
+        1.055,
+        0.5103
+      ]
+    },
+    {
+      "objectId": "OK-06659",
+      "title": "Stol",
+      "datering": "1775-1799",
+      "stilperiode": "Nyklassisisme",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bøk",
+      "allMaterials": [
+        "Bøk",
+        "Tekstil"
+      ],
+      "dimensions": {
+        "H": 94,
+        "B": 49,
+        "D": 48
+      },
+      "bboxVolume_m3": 0.221088,
+      "meshFillRatio": 0.0978,
+      "effectiveFill": 0.12,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 17.5,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5434,
+        0.94,
+        0.4351
+      ]
+    },
+    {
+      "objectId": "OK-01630",
+      "title": "Stol",
+      "datering": "Mellom 1660 og 1680",
+      "stilperiode": "Barokk",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Ask",
+      "allMaterials": [
+        "Lær",
+        "Ask",
+        "Messing",
+        "Or",
+        "Lin"
+      ],
+      "dimensions": {
+        "H": 116,
+        "B": 49.5,
+        "D": 50
+      },
+      "bboxVolume_m3": 0.2871,
+      "meshFillRatio": 0.0762,
+      "effectiveFill": 0.12,
+      "density_kgm3": 590,
+      "estimatedWeight_kg": 20.3,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4722,
+        1.16,
+        0.4613
+      ]
+    },
+    {
+      "objectId": "OK-10330E",
+      "title": "Stol",
+      "datering": "Ca. 1830",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Mahogni",
+      "allMaterials": [
+        "Mahogni",
+        "Hestetagl",
+        "Furu",
+        "Eik",
+        "Whitewood"
+      ],
+      "dimensions": {
+        "H": 78,
+        "B": 45.5,
+        "D": 50
+      },
+      "bboxVolume_m3": 0.17745,
+      "meshFillRatio": 0.0964,
+      "effectiveFill": 0.12,
+      "density_kgm3": 550,
+      "estimatedWeight_kg": 11.7,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4256,
+        0.78,
+        0.5127
+      ]
+    },
+    {
+      "objectId": "OK-09415A",
+      "title": "Stol",
+      "datering": "Ca. 1800",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bjørk",
+      "allMaterials": [
+        "Bjørk",
+        "Silke",
+        "Furu",
+        "Bomull"
+      ],
+      "dimensions": {
+        "H": 85.5,
+        "B": 45.5,
+        "D": 45.5
+      },
+      "bboxVolume_m3": 0.177006,
+      "meshFillRatio": 0.0759,
+      "effectiveFill": 0.12,
+      "density_kgm3": 640,
+      "estimatedWeight_kg": 13.6,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4495,
+        0.855,
+        0.4551
+      ]
+    },
+    {
+      "objectId": "OK-17280B",
+      "title": "Stol",
+      "datering": "Ca. 1820",
+      "stilperiode": "Empire",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bjørk",
+      "allMaterials": [
+        "Bjørk",
+        "Buksbom",
+        "Mahogni",
+        "Gran",
+        "Hestetagl"
+      ],
+      "dimensions": {
+        "H": 81,
+        "B": 45,
+        "D": 47.5
+      },
+      "bboxVolume_m3": 0.173138,
+      "meshFillRatio": 0.0845,
+      "effectiveFill": 0.12,
+      "density_kgm3": 640,
+      "estimatedWeight_kg": 13.3,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.413,
+        0.81,
+        0.4539
+      ]
+    },
+    {
+      "objectId": "OK-14894B",
+      "title": "Stol",
+      "datering": "Mellom 1735 og 1745",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Alm",
+      "allMaterials": [
+        "Alm",
+        "Bjørk",
+        "Tekstil, fløyel",
+        "Ask",
+        "Furu"
+      ],
+      "dimensions": {
+        "H": 103.5,
+        "B": 50,
+        "D": 51.5
+      },
+      "bboxVolume_m3": 0.266512,
+      "meshFillRatio": 0.0556,
+      "effectiveFill": 0.12,
+      "density_kgm3": 560,
+      "estimatedWeight_kg": 17.9,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4916,
+        1.035,
+        0.4849
+      ]
+    },
+    {
+      "objectId": "OK-17289C",
+      "title": "Stol",
+      "datering": "1820-tallet",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bjørk",
+      "allMaterials": [
+        "Bjørk",
+        "Messing",
+        "Buksbom",
+        "Hestetagl",
+        "Jakaranda"
+      ],
+      "dimensions": {
+        "H": 80.8,
+        "B": 47.5,
+        "D": 52
+      },
+      "bboxVolume_m3": 0.199576,
+      "meshFillRatio": 0.1428,
+      "effectiveFill": 0.1428,
+      "density_kgm3": 640,
+      "estimatedWeight_kg": 18.2,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4393,
+        0.808,
+        0.4968
+      ]
+    },
+    {
+      "objectId": "OK-17261",
+      "title": "Stol",
+      "datering": "siste halvdel av 1700-tallet",
+      "stilperiode": "Chippendale",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Alm",
+      "allMaterials": [
+        "Alm",
+        "Hestetagl"
+      ],
+      "dimensions": {
+        "H": 99,
+        "B": 49,
+        "D": 37
+      },
+      "bboxVolume_m3": 0.179487,
+      "meshFillRatio": 0.0689,
+      "effectiveFill": 0.12,
+      "density_kgm3": 560,
+      "estimatedWeight_kg": 12.1,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5368,
+        0.99,
+        0.4881
+      ]
+    },
+    {
+      "objectId": "OK-14883H-1",
+      "title": "Stol",
+      "datering": "Mellom 1830 og 1850",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Mahogni",
+      "allMaterials": [
+        "Mahogni",
+        "Bøk",
+        "Silke"
+      ],
+      "dimensions": {
+        "H": 84.8,
+        "B": 48.5,
+        "D": 49
+      },
+      "bboxVolume_m3": 0.201527,
+      "meshFillRatio": 0.0929,
+      "effectiveFill": 0.12,
+      "density_kgm3": 550,
+      "estimatedWeight_kg": 13.3,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4691,
+        0.848,
+        0.4875
+      ]
+    },
+    {
+      "objectId": "OK-03079",
+      "title": "Stol",
+      "datering": "Ca. 1700",
+      "stilperiode": "Barokk",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Or",
+      "allMaterials": [
+        "Or",
+        "Lær"
+      ],
+      "dimensions": {
+        "H": 120,
+        "B": 54,
+        "D": 55
+      },
+      "bboxVolume_m3": 0.3564,
+      "meshFillRatio": 0.06,
+      "effectiveFill": 0.12,
+      "density_kgm3": 530,
+      "estimatedWeight_kg": 22.7,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5326,
+        1.2,
+        0.5712
+      ]
+    },
+    {
+      "objectId": "OK-1991-0003",
+      "title": "Spring produsents tittelSpring produsents tittel",
+      "datering": "1986 (design) / 1991 (dette eksemplar)",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bøk",
+      "allMaterials": [
+        "Bøk",
+        "Gummi/plast"
+      ],
+      "dimensions": {
+        "H": 106,
+        "B": 48,
+        "D": 57
+      },
+      "bboxVolume_m3": 0.290016,
+      "meshFillRatio": 0.0247,
+      "effectiveFill": 0.1,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 19.1,
+      "hasUpholstery": false,
+      "meshBbox": [
+        0.4103,
+        1.06,
+        0.6144
+      ]
+    },
+    {
+      "objectId": "OK-08745",
+      "title": "Stol",
+      "datering": "Ca. 1700",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bjørk",
+      "allMaterials": [
+        "Bjørk",
+        "Furu"
+      ],
+      "dimensions": {
+        "H": 76,
+        "B": 53,
+        "D": 28
+      },
+      "bboxVolume_m3": 0.112784,
+      "meshFillRatio": 0.0862,
+      "effectiveFill": 0.1,
+      "density_kgm3": 640,
+      "estimatedWeight_kg": 7.2,
+      "hasUpholstery": false,
+      "meshBbox": [
+        0.6513,
+        0.76,
+        0.3724
+      ]
+    },
+    {
+      "objectId": "OK-11527B",
+      "title": "Stol",
+      "datering": "Ca. 1700",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Eik",
+      "allMaterials": [
+        "Eik",
+        "Lær"
+      ],
+      "dimensions": {
+        "H": 132.5,
+        "B": 55,
+        "D": 66
+      },
+      "bboxVolume_m3": 0.480975,
+      "meshFillRatio": 0.0848,
+      "effectiveFill": 0.12,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 38.1,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5102,
+        1.325,
+        0.5466
+      ]
+    },
+    {
+      "objectId": "OK-1980-0043",
+      "title": "Balans skulptur produsents tittel",
+      "datering": "1980",
+      "stilperiode": "Postmodernisme",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Stål",
+      "allMaterials": [
+        "Tekstil",
+        "Stål",
+        "Gummi/plast"
+      ],
+      "dimensions": {
+        "H": 40,
+        "B": 51,
+        "D": 55
+      },
+      "bboxVolume_m3": 0.1122,
+      "meshFillRatio": 0.11,
+      "effectiveFill": 0.008,
+      "density_kgm3": 7850,
+      "estimatedWeight_kg": 7,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.1964,
+        0.4,
+        0.1533
+      ]
+    },
+    {
+      "objectId": "OK-2002-0142",
+      "title": "Tennis (prototype) produsents tittel",
+      "datering": "2000",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Jern",
+      "allMaterials": [
+        "Jern",
+        "Ull"
+      ],
+      "dimensions": {
+        "H": 58,
+        "B": 53,
+        "D": 49
+      },
+      "bboxVolume_m3": 0.150626,
+      "meshFillRatio": 0.062,
+      "effectiveFill": 0.008,
+      "density_kgm3": 7870,
+      "estimatedWeight_kg": 9.5,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4652,
+        0.58,
+        0.4152
+      ]
+    },
+    {
+      "objectId": "NMK.2005.0638",
+      "title": "Balans Gravity produsents tittel",
+      "datering": "1983",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bøk",
+      "allMaterials": [
+        "Bøk",
+        "Kryssfiner",
+        "Lær"
+      ],
+      "dimensions": {
+        "H": 108,
+        "B": 73,
+        "D": 127
+      },
+      "bboxVolume_m3": 1.001268,
+      "meshFillRatio": 0.0761,
+      "effectiveFill": 0.12,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 79.3,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.6652,
+        1.08,
+        1.7744
+      ]
+    },
+    {
+      "objectId": "OK-07280",
+      "title": "Stol",
+      "datering": "Første halvdel av 1700-tallet",
+      "stilperiode": "Régence",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Ask",
+      "allMaterials": [
+        "Ask",
+        "Silke",
+        "Bøk"
+      ],
+      "dimensions": {
+        "H": 105,
+        "B": 55,
+        "D": 42
+      },
+      "bboxVolume_m3": 0.24255,
+      "meshFillRatio": 0.0388,
+      "effectiveFill": 0.12,
+      "density_kgm3": 590,
+      "estimatedWeight_kg": 17.2,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5641,
+        1.05,
+        0.5106
+      ]
+    },
+    {
+      "objectId": "OK-05553",
+      "title": "Stol",
+      "datering": "Ca. 1700",
+      "stilperiode": "Barokk",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bjørk",
+      "allMaterials": [
+        "Bjørk",
+        "Furu",
+        "Lær"
+      ],
+      "dimensions": {
+        "H": 125,
+        "B": 47,
+        "D": 40
+      },
+      "bboxVolume_m3": 0.235,
+      "meshFillRatio": 0.0948,
+      "effectiveFill": 0.12,
+      "density_kgm3": 640,
+      "estimatedWeight_kg": 18,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5436,
+        1.25,
+        0.5405
+      ]
+    },
+    {
+      "objectId": "OK-11529B",
+      "title": "Stol",
+      "datering": "Ca. 1700",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bjørk",
+      "allMaterials": [
+        "Lær",
+        "Bjørk",
+        "Eik"
+      ],
+      "dimensions": {
+        "H": 136.5,
+        "B": 55,
+        "D": 57
+      },
+      "bboxVolume_m3": 0.427927,
+      "meshFillRatio": 0.0597,
+      "effectiveFill": 0.12,
+      "density_kgm3": 640,
+      "estimatedWeight_kg": 32.9,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.511,
+        1.365,
+        0.4687
+      ]
+    },
+    {
+      "objectId": "OK-05554",
+      "title": "Stol",
+      "datering": "1650-tallet",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bøk",
+      "allMaterials": [
+        "Bøk",
+        "Lær"
+      ],
+      "dimensions": {
+        "H": 103.5,
+        "B": 48,
+        "D": 49.5
+      },
+      "bboxVolume_m3": 0.245916,
+      "meshFillRatio": 0.1312,
+      "effectiveFill": 0.1312,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 21.3,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4703,
+        1.035,
+        0.4896
+      ]
+    },
+    {
+      "objectId": "OK-17329B",
+      "title": "Stol",
+      "datering": "Mellom 1835 og 1845",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Mahogni",
+      "allMaterials": [
+        "Strie",
+        "Mahogni",
+        "Furu"
+      ],
+      "dimensions": {
+        "H": 83,
+        "B": 47.5,
+        "D": 52.5
+      },
+      "bboxVolume_m3": 0.206981,
+      "meshFillRatio": 0.0976,
+      "effectiveFill": 0.12,
+      "density_kgm3": 550,
+      "estimatedWeight_kg": 13.7,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4281,
+        0.83,
+        0.4672
+      ]
+    },
+    {
+      "objectId": "OK-17280C",
+      "title": "Stol",
+      "datering": "Ca. 1820",
+      "stilperiode": "Empire",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bjørk",
+      "allMaterials": [
+        "Bjørk",
+        "Gran",
+        "Hestetagl",
+        "Mahogni",
+        "Buksbom"
+      ],
+      "dimensions": {
+        "H": 81,
+        "B": 45,
+        "D": 47.5
+      },
+      "bboxVolume_m3": 0.173138,
+      "meshFillRatio": 0.1055,
+      "effectiveFill": 0.12,
+      "density_kgm3": 640,
+      "estimatedWeight_kg": 13.3,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.3715,
+        0.81,
+        0.47
+      ]
+    },
+    {
+      "objectId": "OK-14894A",
+      "title": "Stol",
+      "datering": "mellom 1735 og 1745",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bjørk",
+      "allMaterials": [
+        "Bjørk",
+        "Alm",
+        "Tekstil, fløyel",
+        "Furu",
+        "Ask"
+      ],
+      "dimensions": {
+        "H": 103.5,
+        "B": 50,
+        "D": 51.5
+      },
+      "bboxVolume_m3": 0.266512,
+      "meshFillRatio": 0.0539,
+      "effectiveFill": 0.12,
+      "density_kgm3": 640,
+      "estimatedWeight_kg": 20.5,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5198,
+        1.035,
+        0.4803
+      ]
+    },
+    {
+      "objectId": "OK-17290",
+      "title": "Stol",
+      "datering": "Siste halvdel av 1600-tallet",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Eik",
+      "allMaterials": [
+        "Eik",
+        "Bøk",
+        "Lær"
+      ],
+      "dimensions": {
+        "H": 98.5,
+        "B": 54.5,
+        "D": 44
+      },
+      "bboxVolume_m3": 0.236203,
+      "meshFillRatio": 0.1114,
+      "effectiveFill": 0.12,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 18.7,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5752,
+        0.985,
+        0.4668
+      ]
+    },
+    {
+      "objectId": "OK-1989-0229C",
+      "title": "Stol",
+      "datering": "Ca. 1870",
+      "stilperiode": "Louis XVI",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Tre",
+      "allMaterials": [
+        "Tre",
+        "Messing",
+        "Silke",
+        "Bronse"
+      ],
+      "dimensions": {
+        "H": 92,
+        "B": 50,
+        "D": 46
+      },
+      "bboxVolume_m3": 0.2116,
+      "meshFillRatio": 0.1474,
+      "effectiveFill": 0.1474,
+      "density_kgm3": 550,
+      "estimatedWeight_kg": 17.2,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4923,
+        0.92,
+        0.5359
+      ]
+    },
+    {
+      "objectId": "OK-11529A",
+      "title": "Stol",
+      "datering": "Ca. 1700",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Eik",
+      "allMaterials": [
+        "Lær",
+        "Eik",
+        "Bjørk"
+      ],
+      "dimensions": {
+        "H": 136,
+        "B": 56.5,
+        "D": 57
+      },
+      "bboxVolume_m3": 0.437988,
+      "meshFillRatio": 0.0712,
+      "effectiveFill": 0.12,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 34.7,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5716,
+        1.36,
+        0.5767
+      ]
+    },
+    {
+      "objectId": "OK-11528B",
+      "title": "Stol",
+      "datering": "Ca. 1700",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bjørk",
+      "allMaterials": [
+        "Bjørk",
+        "Kryssfiner",
+        "Lær"
+      ],
+      "dimensions": {
+        "H": 123,
+        "B": 52,
+        "D": 55
+      },
+      "bboxVolume_m3": 0.35178,
+      "meshFillRatio": 0.0591,
+      "effectiveFill": 0.12,
+      "density_kgm3": 640,
+      "estimatedWeight_kg": 27,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5307,
+        1.23,
+        0.5581
+      ]
+    },
+    {
+      "objectId": "OK-1997-0125",
+      "title": "\"Sundastolen\"",
+      "datering": "Ca. 1956",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Stål",
+      "allMaterials": [
+        "Annet, kunstlær",
+        "Stål",
+        "Kryssfiner"
+      ],
+      "dimensions": {
+        "H": 75.5,
+        "B": 46,
+        "D": 51
+      },
+      "bboxVolume_m3": 0.177123,
+      "meshFillRatio": 0.0251,
+      "effectiveFill": 0.008,
+      "density_kgm3": 7850,
+      "estimatedWeight_kg": 11.1,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4515,
+        0.755,
+        0.3913
+      ]
+    },
+    {
+      "objectId": "OK-10403",
+      "title": "Stol",
+      "datering": "Mellom 1645 og 1655",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Eik",
+      "allMaterials": [
+        "Eik",
+        "Lær",
+        "Messing",
+        "Gran",
+        "Bomull",
+        "Voks",
+        "Furu"
+      ],
+      "dimensions": {
+        "H": 98,
+        "B": 44.7,
+        "D": 40.8
+      },
+      "bboxVolume_m3": 0.178728,
+      "meshFillRatio": 0.09,
+      "effectiveFill": 0.12,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 14.2,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4725,
+        0.98,
+        0.4689
+      ]
+    },
+    {
+      "objectId": "OK-07610",
+      "title": "Stol",
+      "datering": "1725-1750",
+      "stilperiode": "Régence",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bøk",
+      "allMaterials": [
+        "Bøk",
+        "Bjørk",
+        "Lær",
+        "Lin"
+      ],
+      "dimensions": {
+        "H": 111.5,
+        "B": 46,
+        "D": 40
+      },
+      "bboxVolume_m3": 0.20516,
+      "meshFillRatio": 0.0753,
+      "effectiveFill": 0.12,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 16.2,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5075,
+        1.115,
+        0.4527
+      ]
+    },
+    {
+      "objectId": "OK-11813K",
+      "title": "Stol",
+      "datering": "Antagelig 1840-tallet",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Mahogni",
+      "allMaterials": [
+        "Mahogni",
+        "Plysj"
+      ],
+      "dimensions": {
+        "H": 92.5,
+        "B": 45.5,
+        "D": 50
+      },
+      "bboxVolume_m3": 0.210438,
+      "meshFillRatio": 0.1056,
+      "effectiveFill": 0.12,
+      "density_kgm3": 550,
+      "estimatedWeight_kg": 13.9,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.485,
+        0.925,
+        0.5094
+      ]
+    },
+    {
+      "objectId": "OK-07283",
+      "title": "Stol",
+      "datering": "Slutten av 1700-tallet",
+      "stilperiode": "Hepplewhite",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bøk",
+      "allMaterials": [
+        "Bøk",
+        "Hestetagl"
+      ],
+      "dimensions": {
+        "H": 98,
+        "B": 51,
+        "D": 40
+      },
+      "bboxVolume_m3": 0.19992,
+      "meshFillRatio": 0.06,
+      "effectiveFill": 0.12,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 15.8,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5059,
+        0.98,
+        0.5222
+      ]
+    },
+    {
+      "objectId": "OK-1984-0149",
+      "title": "Stol",
+      "datering": "Ca. 1900 (stol) / 1899 (vevdesign)",
+      "stilperiode": "Dragestil",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bjørk",
+      "allMaterials": [
+        "Bjørk",
+        "Messing",
+        "Furu",
+        "Ull"
+      ],
+      "dimensions": {
+        "H": 93.5,
+        "B": 43,
+        "D": 48
+      },
+      "bboxVolume_m3": 0.192984,
+      "meshFillRatio": 0.1262,
+      "effectiveFill": 0.1262,
+      "density_kgm3": 640,
+      "estimatedWeight_kg": 15.6,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4296,
+        0.935,
+        0.4575
+      ]
+    },
+    {
+      "objectId": "OK-11579",
+      "title": "Stol",
+      "datering": "Ca. 1750",
+      "stilperiode": "Rokokko",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bjørk",
+      "allMaterials": [
+        "Bjørk",
+        "Lær"
+      ],
+      "dimensions": {
+        "H": 103,
+        "B": 46.5,
+        "D": 35
+      },
+      "bboxVolume_m3": 0.167633,
+      "meshFillRatio": 0.0509,
+      "effectiveFill": 0.12,
+      "density_kgm3": 640,
+      "estimatedWeight_kg": 12.9,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5045,
+        1.03,
+        0.4737
+      ]
+    },
+    {
+      "objectId": "OK-07282",
+      "title": "Stol",
+      "datering": "Slutten av 1700-tallet",
+      "stilperiode": "Hepplewhite",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bjørk",
+      "allMaterials": [
+        "Bjørk",
+        "Alm",
+        "Hestetagl",
+        "Gran"
+      ],
+      "dimensions": {
+        "H": 90,
+        "B": 47.5,
+        "D": 38
+      },
+      "bboxVolume_m3": 0.16245,
+      "meshFillRatio": 0.1051,
+      "effectiveFill": 0.12,
+      "density_kgm3": 640,
+      "estimatedWeight_kg": 12.5,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.451,
+        0.9,
+        0.466
+      ]
+    },
+    {
+      "objectId": "OK-1991-0898",
+      "title": "Stand-in produsents tittel",
+      "datering": "1982",
+      "stilperiode": "Postmodernisme",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Kryssfiner",
+      "allMaterials": [
+        "Kryssfiner",
+        "Tekstil",
+        "Tre",
+        "Gummi"
+      ],
+      "dimensions": {
+        "H": 196,
+        "B": 82,
+        "D": 114
+      },
+      "bboxVolume_m3": 1.832208,
+      "meshFillRatio": 0.1044,
+      "effectiveFill": 0.12,
+      "density_kgm3": 550,
+      "estimatedWeight_kg": 80,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.637,
+        1.96,
+        1.1065
+      ]
+    },
+    {
+      "objectId": "OK-10330B",
+      "title": "Stol",
+      "datering": "Ca. 1830",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Mahogni",
+      "allMaterials": [
+        "Mahogni",
+        "Hestetagl",
+        "Furu",
+        "Eik",
+        "Whitewood"
+      ],
+      "dimensions": {
+        "H": 78,
+        "B": 45.5,
+        "D": 50
+      },
+      "bboxVolume_m3": 0.17745,
+      "meshFillRatio": 0.0856,
+      "effectiveFill": 0.12,
+      "density_kgm3": 550,
+      "estimatedWeight_kg": 11.7,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.426,
+        0.78,
+        0.5198
+      ]
+    },
+    {
+      "objectId": "OK-10330F",
+      "title": "Stol",
+      "datering": "Ca. 1830",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Mahogni",
+      "allMaterials": [
+        "Mahogni",
+        "Hestetagl",
+        "Furu",
+        "Eik",
+        "Whitewood"
+      ],
+      "dimensions": {
+        "H": 78,
+        "B": 45.5,
+        "D": 50
+      },
+      "bboxVolume_m3": 0.17745,
+      "meshFillRatio": 0.1294,
+      "effectiveFill": 0.1294,
+      "density_kgm3": 550,
+      "estimatedWeight_kg": 12.6,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4563,
+        0.78,
+        0.5298
+      ]
+    },
+    {
+      "objectId": "OK-17046",
+      "title": "Stol",
+      "datering": "Midten av 1700-tallet",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bjørk",
+      "allMaterials": [
+        "Bjørk",
+        "Bomull"
+      ],
+      "dimensions": {
+        "H": 47.5,
+        "B": 47,
+        "D": 36.5
+      },
+      "bboxVolume_m3": 0.081486,
+      "meshFillRatio": 0.0808,
+      "effectiveFill": 0.12,
+      "density_kgm3": 640,
+      "estimatedWeight_kg": 6.3,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5035,
+        1.045,
+        0.4316
+      ]
+    },
+    {
+      "objectId": "OK-14846",
+      "title": "Stol",
+      "datering": "1855-1865",
+      "stilperiode": "Nyrokokko",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Mahogni",
+      "allMaterials": [
+        "Mahogni",
+        "Bjørk",
+        "Ull",
+        "Vegetabilske fibre, stramei"
+      ],
+      "dimensions": {
+        "H": 93.5,
+        "B": 48.5,
+        "D": 51
+      },
+      "bboxVolume_m3": 0.231272,
+      "meshFillRatio": 0.1289,
+      "effectiveFill": 0.1289,
+      "density_kgm3": 550,
+      "estimatedWeight_kg": 16.4,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5223,
+        0.935,
+        0.4818
+      ]
+    },
+    {
+      "objectId": "OK-1991-0892D",
+      "title": "Stol",
+      "datering": "Mellom 1930 og 1932",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Furu",
+      "allMaterials": [
+        "Furu",
+        "Hestetagl"
+      ],
+      "dimensions": {
+        "H": 88,
+        "B": 55.5,
+        "D": 43
+      },
+      "bboxVolume_m3": 0.210012,
+      "meshFillRatio": 0.1204,
+      "effectiveFill": 0.1204,
+      "density_kgm3": 450,
+      "estimatedWeight_kg": 11.4,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5218,
+        0.88,
+        0.5606
+      ]
+    },
+    {
+      "objectId": "OK-14894F",
+      "title": "Stol",
+      "datering": "Mellom 1735 og 1745",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Alm",
+      "allMaterials": [
+        "Alm",
+        "Bjørk",
+        "Ask",
+        "Tekstil, fløyel",
+        "Furu"
+      ],
+      "dimensions": {
+        "H": 103.5,
+        "B": 50,
+        "D": 51.5
+      },
+      "bboxVolume_m3": 0.266512,
+      "meshFillRatio": 0.054,
+      "effectiveFill": 0.12,
+      "density_kgm3": 560,
+      "estimatedWeight_kg": 17.9,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5004,
+        1.035,
+        0.4734
+      ]
+    },
+    {
+      "objectId": "OK-17280E",
+      "title": "Stol",
+      "datering": "Ca. 1820",
+      "stilperiode": "Empire",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bjørk",
+      "allMaterials": [
+        "Bjørk",
+        "Hestetagl",
+        "Gran",
+        "Mahogni",
+        "Buksbom"
+      ],
+      "dimensions": {
+        "H": 81,
+        "B": 44.5,
+        "D": 47.5
+      },
+      "bboxVolume_m3": 0.171214,
+      "meshFillRatio": 0.0788,
+      "effectiveFill": 0.12,
+      "density_kgm3": 640,
+      "estimatedWeight_kg": 13.1,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.399,
+        0.81,
+        0.4915
+      ]
+    },
+    {
+      "objectId": "OK-03077",
+      "title": "Stol",
+      "datering": "Ca. 1700",
+      "stilperiode": "Barokk",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bjørk",
+      "allMaterials": [
+        "Bjørk",
+        "Lin",
+        "Lær"
+      ],
+      "dimensions": {
+        "H": 112,
+        "B": 53.5,
+        "D": 52.5
+      },
+      "bboxVolume_m3": 0.31458,
+      "meshFillRatio": 0.0767,
+      "effectiveFill": 0.12,
+      "density_kgm3": 640,
+      "estimatedWeight_kg": 24.2,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5304,
+        1.12,
+        0.4538
+      ]
+    },
+    {
+      "objectId": "OK-17289B",
+      "title": "Stol",
+      "datering": "1820-tallet",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bjørk",
+      "allMaterials": [
+        "Bjørk",
+        "Jakaranda",
+        "Messing",
+        "Hestetagl",
+        "Buksbom"
+      ],
+      "dimensions": {
+        "H": 81,
+        "B": 47.5,
+        "D": 51.8
+      },
+      "bboxVolume_m3": 0.1993,
+      "meshFillRatio": 0.1344,
+      "effectiveFill": 0.1344,
+      "density_kgm3": 640,
+      "estimatedWeight_kg": 17.1,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4483,
+        0.81,
+        0.5055
+      ]
+    },
+    {
+      "objectId": "OK-17302B",
+      "title": "Stol",
+      "datering": "Antagelig 1810-1820",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Mahogni",
+      "allMaterials": [
+        "Mahogni",
+        "Syntetiske fibre, kunstsilke"
+      ],
+      "dimensions": {
+        "H": 82,
+        "B": 47,
+        "D": 45
+      },
+      "bboxVolume_m3": 0.17343,
+      "meshFillRatio": 0.1204,
+      "effectiveFill": 0.1204,
+      "density_kgm3": 550,
+      "estimatedWeight_kg": 11.5,
+      "hasUpholstery": false,
+      "meshBbox": [
+        0.4419,
+        0.82,
+        0.4934
+      ]
+    },
+    {
+      "objectId": "OK-14883H-2",
+      "title": "Stol",
+      "datering": "Mellom 1830 og 1850",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Mahogni",
+      "allMaterials": [
+        "Mahogni",
+        "Bøk",
+        "Silke"
+      ],
+      "dimensions": {
+        "H": 84.5,
+        "B": 48.5,
+        "D": 48
+      },
+      "bboxVolume_m3": 0.196716,
+      "meshFillRatio": 0.08,
+      "effectiveFill": 0.12,
+      "density_kgm3": 550,
+      "estimatedWeight_kg": 13,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4705,
+        0.845,
+        0.4831
+      ]
+    },
+    {
+      "objectId": "OK-1989-0229D",
+      "title": "Stol",
+      "datering": "Ca. 1870",
+      "stilperiode": "Louis XVI",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Tre",
+      "allMaterials": [
+        "Tre",
+        "Silke",
+        "Bronse",
+        "Messing"
+      ],
+      "dimensions": {
+        "H": 92,
+        "B": 50,
+        "D": 46
+      },
+      "bboxVolume_m3": 0.2116,
+      "meshFillRatio": 0.1141,
+      "effectiveFill": 0.12,
+      "density_kgm3": 550,
+      "estimatedWeight_kg": 14,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4905,
+        0.92,
+        0.5644
+      ]
+    },
+    {
+      "objectId": "NMK.2005.0645",
+      "title": "Motion produsents tittel",
+      "datering": "2000",
+      "stilperiode": "Postmodernisme",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bøk",
+      "allMaterials": [
+        "Bøk",
+        "Metall",
+        "Gummi/plast"
+      ],
+      "dimensions": {
+        "H": 89.5,
+        "B": 44.5,
+        "D": 60
+      },
+      "bboxVolume_m3": 0.238965,
+      "meshFillRatio": 0.024,
+      "effectiveFill": 0.1,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 15.8,
+      "hasUpholstery": false,
+      "meshBbox": [
+        0.4728,
+        0.895,
+        0.4473
+      ]
+    },
+    {
+      "objectId": "OK-18471A",
+      "title": "Stol",
+      "datering": "Mellom 1700 og 1740",
+      "stilperiode": "Barokk",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bøk",
+      "allMaterials": [
+        "Bøk",
+        "Skinn/lær/pergament"
+      ],
+      "dimensions": {
+        "H": 49,
+        "B": 46,
+        "D": 38
+      },
+      "bboxVolume_m3": 0.085652,
+      "meshFillRatio": 0.0641,
+      "effectiveFill": 0.12,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 6.8,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5085,
+        1.178,
+        0.5913
+      ]
+    },
+    {
+      "objectId": "OK-14894D",
+      "title": "Stol",
+      "datering": "Mellom 1735 og 1745",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bjørk",
+      "allMaterials": [
+        "Bjørk",
+        "Alm",
+        "Furu",
+        "Tekstil, fløyel",
+        "Ask"
+      ],
+      "dimensions": {
+        "H": 103.5,
+        "B": 50,
+        "D": 51.5
+      },
+      "bboxVolume_m3": 0.266512,
+      "meshFillRatio": 0.0289,
+      "effectiveFill": 0.12,
+      "density_kgm3": 640,
+      "estimatedWeight_kg": 20.5,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.563,
+        1.035,
+        0.4805
+      ]
+    },
+    {
+      "objectId": "OK-INV-013K",
+      "title": "50/03",
+      "datering": "Slutten av 1930-tallet",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bjørk",
+      "allMaterials": [
+        "Ull",
+        "Bjørk"
+      ],
+      "dimensions": {
+        "H": 80,
+        "B": 41,
+        "D": 48
+      },
+      "bboxVolume_m3": 0.15744,
+      "meshFillRatio": 0.0878,
+      "effectiveFill": 0.12,
+      "density_kgm3": 640,
+      "estimatedWeight_kg": 12.1,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4474,
+        0.8,
+        0.4054
+      ]
+    },
+    {
+      "objectId": "NMK.2005.0644",
+      "title": "Safari produsents tittel",
+      "datering": "2002",
+      "stilperiode": "Postmodernisme",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Tre",
+      "allMaterials": [
+        "Tre",
+        "Kryssfiner",
+        "Tekstil"
+      ],
+      "dimensions": {
+        "H": 86,
+        "B": 65,
+        "D": 60
+      },
+      "bboxVolume_m3": 0.3354,
+      "meshFillRatio": 0.022,
+      "effectiveFill": 0.12,
+      "density_kgm3": 550,
+      "estimatedWeight_kg": 22.1,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.6639,
+        0.86,
+        0.5493
+      ]
+    },
+    {
+      "objectId": "OK-10862B",
+      "title": "Stol",
+      "datering": "Første halvdel av 1700-tallet",
+      "stilperiode": "Régence",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bøk",
+      "allMaterials": [
+        "Bøk",
+        "Lær",
+        "Messing"
+      ],
+      "dimensions": {
+        "H": 115,
+        "B": 50,
+        "D": 50
+      },
+      "bboxVolume_m3": 0.2875,
+      "meshFillRatio": 0.0817,
+      "effectiveFill": 0.12,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 22.8,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5266,
+        1.15,
+        0.4655
+      ]
+    },
+    {
+      "objectId": "OK-10862A",
+      "title": "Stol",
+      "datering": "Første halvdel av 1700-tallet",
+      "stilperiode": "Régence",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bøk",
+      "allMaterials": [
+        "Bøk",
+        "Messing",
+        "Lær"
+      ],
+      "dimensions": {
+        "H": 115,
+        "B": 50,
+        "D": 50
+      },
+      "bboxVolume_m3": 0.2875,
+      "meshFillRatio": 0.0844,
+      "effectiveFill": 0.12,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 22.8,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4937,
+        1.15,
+        0.4948
+      ]
+    },
+    {
+      "objectId": "OK-10862D",
+      "title": "Stol",
+      "datering": "Første halvdel av 1700-tallet",
+      "stilperiode": "Régence",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bøk",
+      "allMaterials": [
+        "Bøk",
+        "Messing",
+        "Lær"
+      ],
+      "dimensions": {
+        "H": 115,
+        "B": 50,
+        "D": 50
+      },
+      "bboxVolume_m3": 0.2875,
+      "meshFillRatio": 0.0966,
+      "effectiveFill": 0.12,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 22.8,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5224,
+        1.15,
+        0.5131
+      ]
+    },
+    {
+      "objectId": "OK-02274",
+      "title": "Stol",
+      "datering": "Slutten av 1600-tallet",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Ask",
+      "allMaterials": [
+        "Ask",
+        "Strie",
+        "Messing",
+        "Lær",
+        "Kryssfiner"
+      ],
+      "dimensions": {
+        "H": 137,
+        "B": 59,
+        "D": 63
+      },
+      "bboxVolume_m3": 0.509229,
+      "meshFillRatio": 0.0565,
+      "effectiveFill": 0.12,
+      "density_kgm3": 590,
+      "estimatedWeight_kg": 36.1,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.6418,
+        1.37,
+        0.6654
+      ]
+    },
+    {
+      "objectId": "NMK.2005.0661",
+      "title": "Mann originaltittel",
+      "datering": "1999",
+      "stilperiode": "Postmodernisme",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Kryssfiner",
+      "allMaterials": [
+        "Kryssfiner",
+        "Polyamid",
+        "Stål",
+        "Ask"
+      ],
+      "dimensions": {
+        "H": 121,
+        "B": 81,
+        "D": 135
+      },
+      "bboxVolume_m3": 1.323135,
+      "meshFillRatio": 0.0135,
+      "effectiveFill": 0.1,
+      "density_kgm3": 550,
+      "estimatedWeight_kg": 72.8,
+      "hasUpholstery": false,
+      "meshBbox": [
+        0.8508,
+        1.21,
+        0.5352
+      ]
+    },
+    {
+      "objectId": "OK-09696B",
+      "title": "Stol",
+      "datering": "Midten av 1700-tallet",
+      "stilperiode": [
+        "Queen Anne",
+        "Rokokko"
+      ],
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bøk",
+      "allMaterials": [
+        "Bøk",
+        "Ull"
+      ],
+      "dimensions": {
+        "H": 104,
+        "B": 51,
+        "D": 36.5
+      },
+      "bboxVolume_m3": 0.193596,
+      "meshFillRatio": 0.0807,
+      "effectiveFill": 0.12,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 15.3,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5555,
+        1.04,
+        0.5354
+      ]
+    },
+    {
+      "objectId": "OK-06661",
+      "title": "Stol",
+      "datering": "1775-1799",
+      "stilperiode": "Nyklassisisme",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bøk",
+      "allMaterials": [
+        "Bøk",
+        "Tekstil"
+      ],
+      "dimensions": {
+        "H": 92,
+        "B": 49,
+        "D": 45
+      },
+      "bboxVolume_m3": 0.20286,
+      "meshFillRatio": 0.1148,
+      "effectiveFill": 0.12,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 16.1,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5245,
+        0.92,
+        0.4323
+      ]
+    },
+    {
+      "objectId": "OK-07281",
+      "title": "Stol",
+      "datering": "Ca. 1790",
+      "stilperiode": "Hepplewhite",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bøk",
+      "allMaterials": [
+        "Bøk",
+        "Hestetagl",
+        "Messing"
+      ],
+      "dimensions": {
+        "H": 93.7,
+        "B": 47,
+        "D": 50
+      },
+      "bboxVolume_m3": 0.220195,
+      "meshFillRatio": 0.0696,
+      "effectiveFill": 0.12,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 17.4,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4458,
+        0.937,
+        0.4625
+      ]
+    },
+    {
+      "objectId": "OK-06624",
+      "title": "Stol",
+      "datering": "1720-1740",
+      "stilperiode": "Régence",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Ask",
+      "allMaterials": [
+        "Ask",
+        "Lær",
+        "Bjørk"
+      ],
+      "dimensions": {
+        "H": 129,
+        "B": 51,
+        "D": 40
+      },
+      "bboxVolume_m3": 0.26316,
+      "meshFillRatio": 0.0566,
+      "effectiveFill": 0.12,
+      "density_kgm3": 590,
+      "estimatedWeight_kg": 18.6,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5582,
+        1.29,
+        0.586
+      ]
+    },
+    {
+      "objectId": "OK-06616",
+      "title": "Armstol",
+      "datering": "Siste halvdel av 1700-tallet",
+      "stilperiode": "Louis XVI",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bøk",
+      "allMaterials": [
+        "Bøk",
+        "Hestetagl",
+        "Furu",
+        "Vegetabilske fibre"
+      ],
+      "dimensions": {
+        "H": 95,
+        "B": 55,
+        "D": 51
+      },
+      "bboxVolume_m3": 0.266475,
+      "meshFillRatio": 0.0652,
+      "effectiveFill": 0.12,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 21.1,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5221,
+        0.95,
+        0.5108
+      ]
+    },
+    {
+      "objectId": "OK-10330A",
+      "title": "Stol",
+      "datering": "Ca. 1830",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Mahogni",
+      "allMaterials": [
+        "Mahogni",
+        "Hestetagl",
+        "Eik",
+        "Furu",
+        "Whitewood"
+      ],
+      "dimensions": {
+        "H": 78,
+        "B": 45.5,
+        "D": 50
+      },
+      "bboxVolume_m3": 0.17745,
+      "meshFillRatio": 0.0763,
+      "effectiveFill": 0.12,
+      "density_kgm3": 550,
+      "estimatedWeight_kg": 11.7,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4545,
+        0.78,
+        0.5283
+      ]
+    },
+    {
+      "objectId": "OK-10330D",
+      "title": "Stol",
+      "datering": "Ca. 1830",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Mahogni",
+      "allMaterials": [
+        "Mahogni",
+        "Hestetagl",
+        "Furu",
+        "Eik",
+        "Whitewood"
+      ],
+      "dimensions": {
+        "H": 78,
+        "B": 45.5,
+        "D": 50
+      },
+      "bboxVolume_m3": 0.17745,
+      "meshFillRatio": 0.0536,
+      "effectiveFill": 0.12,
+      "density_kgm3": 550,
+      "estimatedWeight_kg": 11.7,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4825,
+        0.78,
+        1.2775
+      ]
+    },
+    {
+      "objectId": "OK-1966-0114",
+      "title": "Stol",
+      "datering": "1775-1799",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bøk",
+      "allMaterials": [
+        "Bøk",
+        "Tekstil, fløyel"
+      ],
+      "dimensions": {
+        "H": 99,
+        "B": 49,
+        "D": 54
+      },
+      "bboxVolume_m3": 0.261954,
+      "meshFillRatio": 0.0677,
+      "effectiveFill": 0.12,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 20.7,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5352,
+        0.99,
+        0.4936
+      ]
+    },
+    {
+      "objectId": "OK-1989-0229B",
+      "title": "Stol",
+      "datering": "Ca. 1870",
+      "stilperiode": "Louis XVI",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Tre",
+      "allMaterials": [
+        "Tre",
+        "Messing",
+        "Silke",
+        "Bronse"
+      ],
+      "dimensions": {
+        "H": 92,
+        "B": 50,
+        "D": 46
+      },
+      "bboxVolume_m3": 0.2116,
+      "meshFillRatio": 0.1408,
+      "effectiveFill": 0.1408,
+      "density_kgm3": 550,
+      "estimatedWeight_kg": 16.4,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4924,
+        0.92,
+        0.5508
+      ]
+    },
+    {
+      "objectId": "OK-1994-0038",
+      "title": "Discovery 103 produsents tittel",
+      "datering": "1933",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Plast",
+      "allMaterials": [
+        "Plast"
+      ],
+      "dimensions": {
+        "H": 93,
+        "B": 37,
+        "D": 38
+      },
+      "bboxVolume_m3": 0.130758,
+      "meshFillRatio": 0.0558,
+      "effectiveFill": 0.06,
+      "density_kgm3": 1050,
+      "estimatedWeight_kg": 8.2,
+      "hasUpholstery": false,
+      "meshBbox": [
+        0.3973,
+        0.93,
+        0.544
+      ]
+    },
+    {
+      "objectId": "OK-17280F",
+      "title": "Stol",
+      "datering": "Ca. 1820",
+      "stilperiode": "Empire",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bjørk",
+      "allMaterials": [
+        "Bjørk",
+        "Mahogni",
+        "Buksbom",
+        "Hestetagl",
+        "Gran"
+      ],
+      "dimensions": {
+        "H": 81,
+        "B": 45,
+        "D": 47.5
+      },
+      "bboxVolume_m3": 0.173138,
+      "meshFillRatio": 0.084,
+      "effectiveFill": 0.12,
+      "density_kgm3": 640,
+      "estimatedWeight_kg": 13.3,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4205,
+        0.81,
+        0.4447
+      ]
+    },
+    {
+      "objectId": "OK-17280D",
+      "title": "Stol",
+      "datering": "Ca. 1820",
+      "stilperiode": "Empire",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bjørk",
+      "allMaterials": [
+        "Bjørk",
+        "Gran",
+        "Hestetagl",
+        "Mahogni",
+        "Buksbom"
+      ],
+      "dimensions": {
+        "H": 81,
+        "B": 45,
+        "D": 47.5
+      },
+      "bboxVolume_m3": 0.173138,
+      "meshFillRatio": 0.1296,
+      "effectiveFill": 0.1296,
+      "density_kgm3": 640,
+      "estimatedWeight_kg": 14.4,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4175,
+        0.81,
+        0.4636
+      ]
+    },
+    {
+      "objectId": "OK-03080",
+      "title": "Stol",
+      "datering": "Ca. 1700",
+      "stilperiode": "Barokk",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Or",
+      "allMaterials": [
+        "Or",
+        "Lin",
+        "Lær"
+      ],
+      "dimensions": {
+        "H": 120.5,
+        "B": 50,
+        "D": 47
+      },
+      "bboxVolume_m3": 0.283175,
+      "meshFillRatio": 0.07,
+      "effectiveFill": 0.12,
+      "density_kgm3": 530,
+      "estimatedWeight_kg": 18,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5431,
+        1.205,
+        0.5283
+      ]
+    },
+    {
+      "objectId": "OK-03078",
+      "title": "Stol",
+      "datering": "Ca. 1700",
+      "stilperiode": "Barokk",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bjørk",
+      "allMaterials": [
+        "Bjørk",
+        "Lær"
+      ],
+      "dimensions": {
+        "H": 112,
+        "B": 53,
+        "D": 53
+      },
+      "bboxVolume_m3": 0.314608,
+      "meshFillRatio": 0.0661,
+      "effectiveFill": 0.12,
+      "density_kgm3": 640,
+      "estimatedWeight_kg": 24.2,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5449,
+        1.12,
+        0.4575
+      ]
+    },
+    {
+      "objectId": "OK-17329A",
+      "title": "Stol",
+      "datering": "ca. 1840",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Mahogni",
+      "allMaterials": [
+        "Mahogni",
+        "Furu",
+        "Vegetabilske fibre, strie"
+      ],
+      "dimensions": {
+        "H": 84,
+        "B": 47.5,
+        "D": 52
+      },
+      "bboxVolume_m3": 0.20748,
+      "meshFillRatio": 0.0883,
+      "effectiveFill": 0.1,
+      "density_kgm3": 550,
+      "estimatedWeight_kg": 11.4,
+      "hasUpholstery": false,
+      "meshBbox": [
+        0.4545,
+        0.84,
+        0.5092
+      ]
+    },
+    {
+      "objectId": "OK-02257",
+      "title": "Stol",
+      "datering": "1691",
+      "stilperiode": "Barokk",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Ask",
+      "allMaterials": [
+        "Ask"
+      ],
+      "dimensions": {
+        "H": 96,
+        "B": 45,
+        "D": 41.5
+      },
+      "bboxVolume_m3": 0.17928,
+      "meshFillRatio": 0.0496,
+      "effectiveFill": 0.1,
+      "density_kgm3": 590,
+      "estimatedWeight_kg": 10.6,
+      "hasUpholstery": false,
+      "meshBbox": [
+        0.4655,
+        0.96,
+        0.3983
+      ]
+    },
+    {
+      "objectId": "OK-07611",
+      "title": "Stol",
+      "datering": "Første halvdel av 1700-tallet",
+      "stilperiode": "Régence",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bøk",
+      "allMaterials": [
+        "Bøk",
+        "Skinn/lær/pergament, gyllenlær",
+        "Lin"
+      ],
+      "dimensions": {
+        "H": 112.5,
+        "B": 48,
+        "D": 47.5
+      },
+      "bboxVolume_m3": 0.2565,
+      "meshFillRatio": 0.0621,
+      "effectiveFill": 0.12,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 20.3,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5414,
+        1.125,
+        0.531
+      ]
+    },
+    {
+      "objectId": "OK-08803",
+      "title": "Stol",
+      "datering": "1700-tallet",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bjørk",
+      "allMaterials": [
+        "Bjørk",
+        "Furu"
+      ],
+      "dimensions": {
+        "H": 72.5,
+        "B": 60.5,
+        "D": 44
+      },
+      "bboxVolume_m3": 0.192995,
+      "meshFillRatio": 0.0696,
+      "effectiveFill": 0.1,
+      "density_kgm3": 640,
+      "estimatedWeight_kg": 12.4,
+      "hasUpholstery": false,
+      "meshBbox": [
+        0.5883,
+        0.725,
+        0.4818
+      ]
+    },
+    {
+      "objectId": "OK-11813H",
+      "title": "Stol",
+      "datering": "Antagelig 1840-tallet",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Mahogni",
+      "allMaterials": [
+        "Mahogni",
+        "Plysj"
+      ],
+      "dimensions": {
+        "H": 99.2,
+        "B": 45.3,
+        "D": 51
+      },
+      "bboxVolume_m3": 0.229182,
+      "meshFillRatio": 0.1146,
+      "effectiveFill": 0.12,
+      "density_kgm3": 550,
+      "estimatedWeight_kg": 15.1,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5151,
+        0.992,
+        0.5209
+      ]
+    },
+    {
+      "objectId": "OK-11813J",
+      "title": "Stol",
+      "datering": "Antagelig 1840-tallet",
+      "stilperiode": "Nyrokokko",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Mahogni",
+      "allMaterials": [
+        "Mahogni",
+        "Tekstil, plysj"
+      ],
+      "dimensions": {
+        "H": 93,
+        "B": 46,
+        "D": 50
+      },
+      "bboxVolume_m3": 0.2139,
+      "meshFillRatio": 0.1199,
+      "effectiveFill": 0.12,
+      "density_kgm3": 550,
+      "estimatedWeight_kg": 14.1,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4927,
+        0.93,
+        0.4413
+      ]
+    },
+    {
+      "objectId": "OK-15056B-3",
+      "title": "Stol",
+      "datering": "1889",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Eik",
+      "allMaterials": [
+        "Eik",
+        "Palme"
+      ],
+      "dimensions": {
+        "H": 101,
+        "B": 46.5,
+        "D": 45.5
+      },
+      "bboxVolume_m3": 0.213691,
+      "meshFillRatio": 0.0428,
+      "effectiveFill": 0.1,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 14.1,
+      "hasUpholstery": false,
+      "meshBbox": [
+        0.4645,
+        1.01,
+        0.5644
+      ]
+    },
+    {
+      "objectId": "OK-11527A",
+      "title": "Stol",
+      "datering": "Ca. 1700",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Eik",
+      "allMaterials": [
+        "Eik",
+        "Lær"
+      ],
+      "dimensions": {
+        "H": 132,
+        "B": 58.5,
+        "D": 71
+      },
+      "bboxVolume_m3": 0.548262,
+      "meshFillRatio": 0.0655,
+      "effectiveFill": 0.12,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 43.4,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4855,
+        1.32,
+        0.619
+      ]
+    },
+    {
+      "objectId": "OK-10862E",
+      "title": "Stol",
+      "datering": "Første halvdel av 1700-tallet",
+      "stilperiode": "Régence",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bøk",
+      "allMaterials": [
+        "Bøk",
+        "Messing",
+        "Lær"
+      ],
+      "dimensions": {
+        "H": 115,
+        "B": 50,
+        "D": 50
+      },
+      "bboxVolume_m3": 0.2875,
+      "meshFillRatio": 0.0869,
+      "effectiveFill": 0.12,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 22.8,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5434,
+        1.15,
+        0.4699
+      ]
+    },
+    {
+      "objectId": "OK-2002-0168",
+      "title": "Gazelle 3357/1 produsents tittel",
+      "datering": "1962",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Stål",
+      "allMaterials": [
+        "Stål",
+        "Gummi/plast",
+        "Kryssfiner",
+        "Lær"
+      ],
+      "dimensions": {
+        "H": 98.5,
+        "B": 52,
+        "D": 60
+      },
+      "bboxVolume_m3": 0.30732,
+      "meshFillRatio": 0.1301,
+      "effectiveFill": 0.008,
+      "density_kgm3": 7850,
+      "estimatedWeight_kg": 19.3,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5144,
+        0.985,
+        0.5014
+      ]
+    },
+    {
+      "objectId": "NMK.2016.0135.001",
+      "title": "Ekstrem originaltittel",
+      "datering": "1972 (design) / Mellom 1989 og 2006 (produksjon)",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Stålrør",
+      "allMaterials": [
+        "Stålrør"
+      ],
+      "dimensions": {
+        "H": 74.5,
+        "B": 63,
+        "D": 61
+      },
+      "bboxVolume_m3": 0.286303,
+      "meshFillRatio": 0.0099,
+      "effectiveFill": 0.002,
+      "density_kgm3": 7850,
+      "estimatedWeight_kg": 4.5,
+      "hasUpholstery": false,
+      "meshBbox": [
+        0.5986,
+        0.745,
+        0.4929
+      ]
+    },
+    {
+      "objectId": "NMK.2016.0135.002",
+      "title": "Ekstrem originaltittel",
+      "datering": "1972 (design) / Mellom 1989 og 2006 (produksjon)",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Polyuretan",
+      "allMaterials": [
+        "Polyuretan",
+        "Stål"
+      ],
+      "dimensions": {
+        "H": 42,
+        "B": 67,
+        "D": 89
+      },
+      "bboxVolume_m3": 0.250446,
+      "meshFillRatio": 0.1711,
+      "effectiveFill": 0.06,
+      "density_kgm3": 1200,
+      "estimatedWeight_kg": 18,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5008,
+        0.42,
+        0.7177
+      ]
+    },
+    {
+      "objectId": "OK-17280A",
+      "title": "Stol",
+      "datering": "Ca. 1820",
+      "stilperiode": "Empire",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bjørk",
+      "allMaterials": [
+        "Bjørk",
+        "Syntetiske fibre, kunstsilke",
+        "Mahogni",
+        "Buksbom",
+        "Silke"
+      ],
+      "dimensions": {
+        "H": 81,
+        "B": 45,
+        "D": 47.5
+      },
+      "bboxVolume_m3": 0.173138,
+      "meshFillRatio": 0.1204,
+      "effectiveFill": 0.1204,
+      "density_kgm3": 640,
+      "estimatedWeight_kg": 13.3,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4372,
+        0.81,
+        0.4517
+      ]
+    },
+    {
+      "objectId": "OK-10859B",
+      "title": "Stol",
+      "datering": "1750-1799",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bøk",
+      "allMaterials": [
+        "Bøk",
+        "Ull"
+      ],
+      "dimensions": {
+        "H": 85,
+        "B": 63,
+        "D": 55
+      },
+      "bboxVolume_m3": 0.294525,
+      "meshFillRatio": 0.1194,
+      "effectiveFill": 0.12,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 23.3,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.6206,
+        0.85,
+        0.5973
+      ]
+    },
+    {
+      "objectId": "NMK.2021.0137",
+      "title": "Ecco 01 produsents tittelEcco 01 produsents tittel",
+      "datering": "1970 (design) 1971 (produksjon)",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Stålrør",
+      "allMaterials": [
+        "Stålrør",
+        "Tekstil",
+        "Skumplast"
+      ],
+      "dimensions": {
+        "H": 68,
+        "B": 78,
+        "D": 101
+      },
+      "bboxVolume_m3": 0.535704,
+      "meshFillRatio": 0.2051,
+      "effectiveFill": 0.002,
+      "density_kgm3": 7850,
+      "estimatedWeight_kg": 8.4,
+      "hasUpholstery": true,
+      "meshBbox": [
+        1.1773,
+        0.68,
+        0.6702
+      ]
+    },
+    {
+      "objectId": "OK-09696A",
+      "title": "Stol",
+      "datering": "Midten av 1700-tallet",
+      "stilperiode": [
+        "Queen Anne",
+        "Rokokko"
+      ],
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bøk",
+      "allMaterials": [
+        "Bøk",
+        "Tekstil",
+        "Furu"
+      ],
+      "dimensions": {
+        "H": 102.5,
+        "B": 51,
+        "D": 37.5
+      },
+      "bboxVolume_m3": 0.196031,
+      "meshFillRatio": 0.0994,
+      "effectiveFill": 0.12,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 15.5,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5069,
+        1.025,
+        0.4942
+      ]
+    },
+    {
+      "objectId": "OK-1995-0136C",
+      "title": "Stol",
+      "datering": "1905 (møblement), 1899 (vevdesign)",
+      "stilperiode": "Dragestil",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Mahogni",
+      "allMaterials": [
+        "Mahogni",
+        "Ull",
+        "Messing",
+        "Animalske fibre, filt"
+      ],
+      "dimensions": {
+        "H": 92.5,
+        "B": 44.5,
+        "D": 47
+      },
+      "bboxVolume_m3": 0.193464,
+      "meshFillRatio": 0.158,
+      "effectiveFill": 0.158,
+      "density_kgm3": 550,
+      "estimatedWeight_kg": 16.8,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.4221,
+        0.925,
+        0.5121
+      ]
+    },
+    {
+      "objectId": "OK-18399",
+      "title": "Stol",
+      "datering": "Ca. 1700",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bøk",
+      "allMaterials": [
+        "Tekstil, fløyel",
+        "Bøk",
+        "Furu",
+        "Messing"
+      ],
+      "dimensions": {
+        "H": 137,
+        "B": 53,
+        "D": 53
+      },
+      "bboxVolume_m3": 0.384833,
+      "meshFillRatio": 0.0863,
+      "effectiveFill": 0.12,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 30.5,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5171,
+        1.37,
+        0.5014
+      ]
+    },
+    {
+      "objectId": "OK-dep-01106",
+      "title": "Stol",
+      "datering": "Mellom 1680 og 1700",
+      "stilperiode": "Régence",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Ask",
+      "allMaterials": [
+        "Ask",
+        "Lær"
+      ],
+      "dimensions": {
+        "H": 134.5,
+        "B": 55,
+        "D": 59
+      },
+      "bboxVolume_m3": 0.436452,
+      "meshFillRatio": 0.0634,
+      "effectiveFill": 0.12,
+      "density_kgm3": 590,
+      "estimatedWeight_kg": 30.9,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5725,
+        1.345,
+        0.6144
+      ]
+    },
+    {
+      "objectId": "OK-04953",
+      "title": "Stol",
+      "datering": "Mellom 1600-1750",
+      "stilperiode": "Renessanse",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bjørk",
+      "allMaterials": [
+        "Bjørk",
+        "Jern",
+        "Furu"
+      ],
+      "dimensions": {
+        "H": 93,
+        "B": 47,
+        "D": 44.5
+      },
+      "bboxVolume_m3": 0.19451,
+      "meshFillRatio": 0.0769,
+      "effectiveFill": 0.1,
+      "density_kgm3": 640,
+      "estimatedWeight_kg": 12.4,
+      "hasUpholstery": false,
+      "meshBbox": [
+        0.469,
+        0.93,
+        0.4873
+      ]
+    },
+    {
+      "objectId": "OK-11796",
+      "title": "Stol",
+      "datering": "Ca. 1700",
+      "stilperiode": "Régence",
+      "betegnelse": "Stol",
+      "primaryMaterial": "Bøk",
+      "allMaterials": [
+        "Ull",
+        "Bøk",
+        "Bomull",
+        "Furu"
+      ],
+      "dimensions": {
+        "H": 104.5,
+        "B": 50,
+        "D": 47
+      },
+      "bboxVolume_m3": 0.245575,
+      "meshFillRatio": 0.0846,
+      "effectiveFill": 0.12,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 19.4,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.5305,
+        1.045,
+        0.4992
+      ]
+    },
+    {
+      "objectId": "OK-09691",
+      "title": "Armstol",
+      "datering": "Ca. 1700",
+      "stilperiode": "Barokk",
+      "betegnelse": "Armstol",
+      "primaryMaterial": "Bøk",
+      "allMaterials": [
+        "Bøk",
+        "Eik",
+        "Skinn/lær/pergament",
+        "Messing"
+      ],
+      "dimensions": {
+        "H": 124.8,
+        "B": 63.5,
+        "D": 61
+      },
+      "bboxVolume_m3": 0.483413,
+      "meshFillRatio": 0.0813,
+      "effectiveFill": 0.12,
+      "density_kgm3": 660,
+      "estimatedWeight_kg": 38.3,
+      "hasUpholstery": true,
+      "meshBbox": [
+        0.6123,
+        1.248,
+        0.6456
+      ]
+    }
+  ]
+}

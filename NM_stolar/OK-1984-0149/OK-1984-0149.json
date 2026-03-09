@@ -1,0 +1,54 @@
+{
+  "objectId": "OK-1984-0149",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-1984-0149",
+  "title": "Stol",
+  "Datering": "Ca. 1900 (stol) / 1899 (vevdesign)",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Sortbeiset bjerk med relieffskjæringer, polstret rygg og sete trukket i håndvevd ull i gobelinteknikk",
+  "Teknikk": [
+    "Veving",
+    "Tapping",
+    "Polstring"
+  ],
+  "Dekorteknikk": [
+    "Beising",
+    "Fernissering",
+    "Relieffskjæring",
+    "Gjennombrutt utskjæring",
+    "Profilering",
+    "Punsling"
+  ],
+  "Materiale": [
+    "Bjørk",
+    "Messing",
+    "Furu",
+    "Ull"
+  ],
+  "Mål": "H 93,5 x B 43 x D 48 cm Bredde: 43 cm Dybde: 43 cm Høyde: 52 cm",
+  "Emneord": [
+    "Møbel",
+    "Kunsthåndverk"
+  ],
+  "Klassifikasjon": [
+    "352.1 - Sittemøbler",
+    "322 - Trearbeid",
+    "322.4 - Møbelfagene",
+    "286.3 - Veving",
+    "531.1 - Formgiving"
+  ],
+  "Stilperiode": "Dragestil",
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "OK-1984-0149",
+  "Registreringsnivå": "Enkeltobjekt",
+  "Ervervelse": "Kjøpt 1984",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Annar Bjørgli/Harvik, Andreas",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/OK-1984-0149+20250325.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/OK-1984-0149+20250325.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/OK-1984-0149+20250325.tif/full/full/0/default.jpg",
+      "filename": "OK-1984-0149_OK-1984-0149+20250325.jpg"
+    }
+  ]
+}

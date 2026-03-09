@@ -1,0 +1,35 @@
+{
+  "objectId": "OK-10859B",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-10859B",
+  "title": "Stol",
+  "Datering": "1750-1799",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Skåret bøk, stoppet sete og rygg trukket med silkedamask",
+  "Teknikk": "Polstring",
+  "Dekorteknikk": [
+    "Treskjæring",
+    "Profilering",
+    "Forgylling"
+  ],
+  "Materiale": [
+    "Bøk",
+    "Ull"
+  ],
+  "Mål": "H 85 cm x B 63 cm x D 55 cm",
+  "Emneord": "Møbel",
+  "Klassifikasjon": "352.1 - Sittemøbler",
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "OK-10859B",
+  "Registreringsnivå": "Enkeltobjekt",
+  "Ervervelse": "Testamentarisk gave, innkommet 1937",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Annar Bjørgli",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/OK-10859B+20241023.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/OK-10859B+20241023.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/OK-10859B+20241023.tif/full/full/0/default.jpg",
+      "filename": "OK-10859B_OK-10859B+20241023.jpg"
+    }
+  ]
+}

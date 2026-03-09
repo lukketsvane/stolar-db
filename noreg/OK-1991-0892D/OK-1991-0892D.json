@@ -1,0 +1,43 @@
+{
+  "objectId": "OK-1991-0892D",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-1991-0892D",
+  "title": "Stol",
+  "Datering": "Mellom 1930 og 1932",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Fargelakkert furu med relieff dekor, hestehårstrekk",
+  "Teknikk": [
+    "Polstring",
+    "Tapping",
+    "Spikring"
+  ],
+  "Dekorteknikk": [
+    "Bemaling",
+    "Fargelakkering",
+    "Høyt relieff"
+  ],
+  "Materiale": [
+    "Furu",
+    "Hestetagl"
+  ],
+  "Mål": "H 88 x B 55,5 x D 43 cm Dybde: 41 cm Høyde: 45,3 cm Bredde: 55,5 cm",
+  "Emneord": [
+    "Møbel",
+    "Kunsthåndverk"
+  ],
+  "Klassifikasjon": "352.1 - Sittemøbler",
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "OK-1991-0892D",
+  "Registreringsnivå": "Komplekst objekt",
+  "Ervervelse": "Gave 1991",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Frode Larsen/Larsen, Frode",
+  "Opphavsrett": "© Kristiansen, Kristian Adolf",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/125935.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/125935.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/125935.tif/full/full/0/default.jpg",
+      "filename": "OK-1991-0892D_125935.jpg"
+    }
+  ]
+}

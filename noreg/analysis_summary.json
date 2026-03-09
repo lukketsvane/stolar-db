@@ -1,0 +1,221 @@
+{
+  "totalChairs": 118,
+  "yearRange": [
+    1632,
+    2020
+  ],
+  "weight": {
+    "min": 4.5,
+    "max": 80,
+    "median": 16.9,
+    "mean": 20.1
+  },
+  "materialGroups": [
+    {
+      "group": "Tre",
+      "count": 110,
+      "avgWeight": 20.8
+    },
+    {
+      "group": "Metall",
+      "count": 6,
+      "avgWeight": 10
+    },
+    {
+      "group": "Plast",
+      "count": 2,
+      "avgWeight": 13.1
+    }
+  ],
+  "periodWeights": [
+    {
+      "period": "1600–1649",
+      "avgWeight": 18.7,
+      "count": 2
+    },
+    {
+      "period": "1650–1699",
+      "avgWeight": 25.4,
+      "count": 7
+    },
+    {
+      "period": "1700–1749",
+      "avgWeight": 23.8,
+      "count": 28
+    },
+    {
+      "period": "1750–1799",
+      "avgWeight": 17.6,
+      "count": 22
+    },
+    {
+      "period": "1800–1849",
+      "avgWeight": 12.8,
+      "count": 18
+    },
+    {
+      "period": "1850–1899",
+      "avgWeight": 15.5,
+      "count": 19
+    },
+    {
+      "period": "1900–1949",
+      "avgWeight": 13.2,
+      "count": 5
+    },
+    {
+      "period": "1950–1999",
+      "avgWeight": 35.2,
+      "count": 13
+    },
+    {
+      "period": "2000–2049",
+      "avgWeight": 14.9,
+      "count": 4
+    }
+  ],
+  "topHeaviest": [
+    {
+      "objectId": "NMK.2005.0639",
+      "title": "Garden produsents tittel",
+      "weight": 80,
+      "material": "Bøk",
+      "year": 1985
+    },
+    {
+      "objectId": "OK-1991-0898",
+      "title": "Stand-in produsents tittel",
+      "weight": 80,
+      "material": "Kryssfiner",
+      "year": 1982
+    },
+    {
+      "objectId": "NMK.2005.0638",
+      "title": "Balans Gravity produsents tittel",
+      "weight": 79.3,
+      "material": "Bøk",
+      "year": 1983
+    },
+    {
+      "objectId": "NMK.2005.0661",
+      "title": "Mann originaltittel",
+      "weight": 72.8,
+      "material": "Kryssfiner",
+      "year": 1999
+    },
+    {
+      "objectId": "OK-06932",
+      "title": "Stol",
+      "weight": 48.6,
+      "material": "Ask",
+      "year": 1690
+    },
+    {
+      "objectId": "OK-11527A",
+      "title": "Stol",
+      "weight": 43.4,
+      "material": "Eik",
+      "year": 1700
+    },
+    {
+      "objectId": "NMK.2005.0646",
+      "title": "Reflex 1 produsents tittel",
+      "weight": 42.8,
+      "material": "Kryssfiner",
+      "year": 1999
+    },
+    {
+      "objectId": "OK-09691",
+      "title": "Armstol",
+      "weight": 38.3,
+      "material": "Bøk",
+      "year": 1700
+    },
+    {
+      "objectId": "OK-11527B",
+      "title": "Stol",
+      "weight": 38.1,
+      "material": "Eik",
+      "year": 1700
+    },
+    {
+      "objectId": "OK-02274",
+      "title": "Stol",
+      "weight": 36.1,
+      "material": "Ask",
+      "year": 1690
+    }
+  ],
+  "topLightest": [
+    {
+      "objectId": "NMK.2016.0135.001",
+      "title": "Ekstrem originaltittel",
+      "weight": 4.5,
+      "material": "Stålrør",
+      "year": 1972
+    },
+    {
+      "objectId": "OK-17046",
+      "title": "Stol",
+      "weight": 6.3,
+      "material": "Bjørk",
+      "year": 1750
+    },
+    {
+      "objectId": "OK-15056B-2",
+      "title": "Stol",
+      "weight": 6.7,
+      "material": "Eik",
+      "year": 1889
+    },
+    {
+      "objectId": "OK-18471A",
+      "title": "Stol",
+      "weight": 6.8,
+      "material": "Bøk",
+      "year": 1700
+    },
+    {
+      "objectId": "OK-1980-0043",
+      "title": "Balans skulptur produsents tittel",
+      "weight": 7,
+      "material": "Stål",
+      "year": 1980
+    },
+    {
+      "objectId": "OK-08745",
+      "title": "Stol",
+      "weight": 7.2,
+      "material": "Bjørk",
+      "year": 1700
+    },
+    {
+      "objectId": "OK-1994-0038",
+      "title": "Discovery 103 produsents tittel",
+      "weight": 8.2,
+      "material": "Plast",
+      "year": 1933
+    },
+    {
+      "objectId": "NMK.2021.0137",
+      "title": "Ecco 01 produsents tittelEcco 01 produsents tittel",
+      "weight": 8.4,
+      "material": "Stålrør",
+      "year": 1970
+    },
+    {
+      "objectId": "OK-2002-0142",
+      "title": "Tennis (prototype) produsents tittel",
+      "weight": 9.5,
+      "material": "Jern",
+      "year": 2000
+    },
+    {
+      "objectId": "OK-02257",
+      "title": "Stol",
+      "weight": 10.6,
+      "material": "Ask",
+      "year": 1691
+    }
+  ]
+}

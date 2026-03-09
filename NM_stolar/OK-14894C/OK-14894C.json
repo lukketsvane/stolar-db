@@ -1,0 +1,44 @@
+{
+  "objectId": "OK-14894C",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-14894C",
+  "title": "Stol",
+  "Datering": "Mellom 1735 og 1745",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Fernissert bjørk eller alm med skåret dekor og fløyelstrekk.",
+  "Teknikk": [
+    "Polstring",
+    "Plugging",
+    "Tapping"
+  ],
+  "Dekorteknikk": [
+    "Fernissering",
+    "Relieffskjæring",
+    "Treskjæring",
+    "Dreiing"
+  ],
+  "Materiale": [
+    "Alm",
+    "Bjørk",
+    "Furu",
+    "Tekstil, fløyel",
+    "Ask"
+  ],
+  "Mål": "H 103,5 x B 50 x D 51,5 cm Høyde: 48 cm Dybde: 38 cm Bredde: 46 cm",
+  "Emneord": "Møbel",
+  "Klassifikasjon": "352.1 - Sittemøbler",
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "OK-14894C",
+  "Registreringsnivå": "Enkeltobjekt",
+  "Del av utstilling": "Design og mote. Norge 1814, 2014",
+  "Ervervelse": "Testamentarisk gave, innkommet 1954",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Harvik, Andreas",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08306.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08306.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08306.tif/full/full/0/default.jpg",
+      "filename": "OK-14894C_08306.jpg"
+    }
+  ]
+}

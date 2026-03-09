@@ -1,0 +1,48 @@
+{
+  "objectId": "OK-11528A",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-11528A",
+  "title": "Stol",
+  "Datering": "Ca. 1700",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Bjørk, relieffskåret, dels gjennombrutt dekor, bemalt gyllenlærstrekk (sekundært), metallstifter",
+  "Teknikk": [
+    "Tapping",
+    "Plugging",
+    "Polstring"
+  ],
+  "Dekorteknikk": [
+    "Gjennombrutt utskjæring",
+    "Relieffskjæring",
+    "Dreiing",
+    "Profilering",
+    "Voksboning",
+    "Beising",
+    "Gyllenlærfremstilling"
+  ],
+  "Materiale": [
+    "Bjørk",
+    "Lær",
+    "Kryssfiner"
+  ],
+  "Mål": "H 127,5 cm x B 53,5 cm x D 63 cm Høyde: 46,5 cm Dybde: 40,5 cm Bredde: 49 cm",
+  "Emneord": "Møbel",
+  "Klassifikasjon": [
+    "352.1 - Sittemøbler",
+    "322.4 - Møbelfagene",
+    "531.33 - Gyldenlærmaker"
+  ],
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "OK-11528A",
+  "Registreringsnivå": "Enkeltobjekt",
+  "Ervervelse": "Testamentarisk gave, innkommet 1946",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Bjørgli, Annar",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94811.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94811.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94811.tif/full/full/0/default.jpg",
+      "filename": "OK-11528A_94811.jpg"
+    }
+  ]
+}

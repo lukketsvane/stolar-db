@@ -1,0 +1,37 @@
+import type React from "react"
+import type { Metadata } from "next"
+import { GeistSans } from "geist/font/sans"
+import { GeistMono } from "geist/font/mono"
+import Script from "next/script"
+import "../styles/globals.css"
+
+export const metadata: Metadata = {
+  title: "TURNABLE - 3D Sculpting Portfolio",
+  description: "Interactive 3D sculpture gallery by Iver Finne",
+  generator: "v0.app",
+}
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+}
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
+  return (
+    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
+      <body className={GeistSans.className}>
+        <Script
+          type="module"
+          src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
+          strategy="lazyOnload"
+        />
+        {children}
+      </body>
+    </html>
+  )
+}

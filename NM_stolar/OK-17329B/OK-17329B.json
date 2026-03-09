@@ -1,0 +1,41 @@
+{
+  "objectId": "OK-17329B",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-17329B",
+  "title": "Stol",
+  "Datering": "Mellom 1835 og 1845",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Beiset og fernissert mahogni med dreid og skåret dekor, strietrekk.",
+  "Teknikk": [
+    "Polstring",
+    "Tapping"
+  ],
+  "Dekorteknikk": [
+    "Beising",
+    "Fernissering",
+    "Kannelyre",
+    "Relieffskjæring",
+    "Dreiing"
+  ],
+  "Materiale": [
+    "Strie",
+    "Mahogni",
+    "Furu"
+  ],
+  "Mål": "H 83 x B 47,5 x D 52,5 cm Høyde: 39,8 cm Bredde: 47,5 cm Dybde: 37,3 cm",
+  "Emneord": "Møbel",
+  "Klassifikasjon": "352.1 - Sittemøbler",
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "OK-17329B",
+  "Registreringsnivå": "Komplekst objekt",
+  "Ervervelse": "Ervervet 1974",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Larsen, Frode",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/93135.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/93135.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/93135.tif/full/full/0/default.jpg",
+      "filename": "OK-17329B_93135.jpg"
+    }
+  ]
+}

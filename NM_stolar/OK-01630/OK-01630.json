@@ -1,0 +1,49 @@
+{
+  "objectId": "OK-01630",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-01630",
+  "title": "Stol",
+  "Datering": "Mellom 1660 og 1680",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Ask med skåret og dreid dekor, lærtrekk",
+  "Teknikk": [
+    "Polstring",
+    "Tapping",
+    "Plugging"
+  ],
+  "Dekorteknikk": [
+    "Dreiing",
+    "Gjennombrutt utskjæring",
+    "Relieffskjæring",
+    "Profilering",
+    "Lasering"
+  ],
+  "Materiale": [
+    "Lær",
+    "Ask",
+    "Messing",
+    "Or",
+    "Lin"
+  ],
+  "Mål": "H 116 x B 49,5 x D 50 cm Bredde: 49,5 cm Høyde: 68 cm Dybde: 37,5 cm",
+  "Emneord": "Møbel",
+  "Klassifikasjon": [
+    "322.48 - Møbeldesign",
+    "352.1 - Sittemøbler"
+  ],
+  "Stilperiode": "Barokk",
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "OK-01630",
+  "Registreringsnivå": "Enkeltobjekt",
+  "Ervervelse": "Kjøpt 1879",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Andreas Harvik",
+  "Opphavsrett": "© Ukjent",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07140.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07140.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07140.tif/full/full/0/default.jpg",
+      "filename": "OK-01630_07140.jpg"
+    }
+  ]
+}

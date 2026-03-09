@@ -1,0 +1,47 @@
+{
+  "objectId": "OK-02782",
+  "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-02782",
+  "title": "Stol",
+  "Datering": "begynnelsen av 1700-tallet",
+  "Betegnelse": "Stol",
+  "Materiale og teknikk": "Ask og or med dreid og skåret dekor, gyllenlærstrekk",
+  "Teknikk": [
+    "Polstring",
+    "Tapping",
+    "Plugging"
+  ],
+  "Dekorteknikk": [
+    "Gyllenlærfremstilling",
+    "Dreiing",
+    "Gjennombrutt utskjæring",
+    "Figurskjæring",
+    "Relieffskjæring",
+    "Lasering"
+  ],
+  "Materiale": [
+    "Ask",
+    "Or",
+    "Lær"
+  ],
+  "Mål": "H 126,5 x B 54,5 x D 54,5 cm Dybde: 39 cm Bredde: 47 cm Høyde: 44 cm",
+  "Emneord": "Møbel",
+  "Klassifikasjon": [
+    "322.48 - Møbeldesign",
+    "352.1 - Sittemøbler"
+  ],
+  "Stilperiode": "Barokk",
+  "Produksjonssted": "Norge",
+  "Inventarnr.": "OK-02782",
+  "Registreringsnivå": "Enkeltobjekt",
+  "Ervervelse": "kjøpt 1886",
+  "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
+  "Foto": "Harvik, A./ Jensen, H.L.",
+  "images": [
+    {
+      "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07407.tif/full/512,/0/default.jpg",
+      "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07407.tif/full/1600,/0/default.jpg",
+      "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07407.tif/full/full/0/default.jpg",
+      "filename": "OK-02782_07407.jpg"
+    }
+  ]
+}
