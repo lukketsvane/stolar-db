@@ -24,9 +24,9 @@ export default function ArticleLayout({ children, header }: ArticleLayoutProps) 
       <main className="max-w-screen-xl mx-auto px-6 py-12 md:py-16">
         <div className="prose prose-neutral prose-lg lg:prose-xl max-w-none 
           prose-headings:font-sans prose-headings:font-black prose-headings:tracking-tighter prose-headings:uppercase prose-headings:italic
-          prose-p:leading-relaxed prose-p:mb-8 prose-p:text-gray-800
-          prose-li:leading-relaxed prose-li:mb-2
-          prose-blockquote:font-serif prose-blockquote:not-italic prose-blockquote:border-l-4 prose-blockquote:border-black prose-blockquote:pl-8 prose-blockquote:py-2 prose-blockquote:my-8 prose-blockquote:text-2xl prose-blockquote:text-black
+          prose-p:leading-relaxed prose-p:mb-8 prose-p:text-gray-800 prose-p:text-xl md:prose-p:text-2xl
+          prose-li:leading-relaxed prose-li:mb-2 prose-li:text-lg md:prose-li:text-xl
+          prose-blockquote:font-serif prose-blockquote:not-italic prose-blockquote:border-l-4 prose-blockquote:border-black prose-blockquote:pl-8 prose-blockquote:py-2 prose-blockquote:my-8 prose-blockquote:text-3xl prose-blockquote:text-black
           prose-table:font-mono prose-table:text-sm prose-thead:border-b-2 prose-thead:border-black
           space-y-8">
           {children}
