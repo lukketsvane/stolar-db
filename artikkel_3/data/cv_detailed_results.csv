@@ -1,0 +1,7 @@
+Eksperiment,F1_mean,F1_std,Acc_mean,Acc_std,Chance_F1,P_value
+Stil/Geometri,0.4046,0.0614,0.5939,0.0375,0.1046,0.0196
+Stil/Material,0.4757,0.0264,0.5632,0.0324,0.1168,0.0196
+Stil/Kombinert,0.4627,0.0243,0.6332,0.0148,0.1026,0.0196
+Nasjon/Geometri,0.7602,0.0573,0.8137,0.0394,0.463,0.0196
+Nasjon/Material,0.8333,0.0304,0.8567,0.0256,0.5025,0.0196
+Nasjon/Kombinert,0.781,0.0558,0.8337,0.0349,0.4556,0.0196
