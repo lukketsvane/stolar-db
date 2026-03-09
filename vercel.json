@@ -1,5 +1,11 @@
 ﻿{
+<<<<<<< HEAD
     "version":  2,
     "framework":  "nextjs",
     "rootDirectory":  "turnable-chair"
+=======
+  "buildCommand": "cd turnable-chair && npm install --legacy-peer-deps && npm run build",
+  "outputDirectory": "turnable-chair/.next",
+  "framework": "nextjs"
+>>>>>>> badf2ed9ee146fa19fcd77b9e01215819a390a08
 }

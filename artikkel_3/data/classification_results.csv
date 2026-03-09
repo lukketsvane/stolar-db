@@ -1,7 +1,16 @@
 Task,Feature,F1
+<<<<<<< HEAD
 Style,Geometry,0.44873969756406823
 Style,Material,0.4629619430697017
 Style,Combined,0.5240963723864939
 Nation,Geometry,0.7750215407479539
 Nation,Material,0.8168210479858476
 Nation,Combined,0.8249356918378166
+=======
+Style,Geometry,0.40461014881007473
+Style,Material,0.47566956496850005
+Style,Combined,0.46269748344364503
+Nation,Geometry,0.7601549381355771
+Nation,Material,0.8333276491910363
+Nation,Combined,0.7810067993893205
+>>>>>>> badf2ed9ee146fa19fcd77b9e01215819a390a08
