@@ -1,7 +1,7 @@
 import os
 import numpy as np
 import pandas as pd
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import HistGradientBoostingClassifier
 from sklearn.model_selection import StratifiedKFold, permutation_test_score, cross_validate
 from sklearn.metrics import make_scorer, f1_score, accuracy_score
 import warnings
@@ -61,7 +61,7 @@ def run_experiment(X, y, name="Experiment", n_permutations=100):
     print(f"\n--- {name} ---")
     print(f"Dataset shape: X={X.shape}, y={y.shape}")
     
-    clf = RandomForestClassifier(n_estimators=100, random_state=42, class_weight='balanced')
+    clf = HistGradientBoostingClassifier(random_state=42, class_weight='balanced')
     cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
     
     scoring = {'f1_macro': 'f1_macro',
@@ -105,9 +105,9 @@ def main():
     X_style_comb = df_style[geo_cols + mat_cols].values
     y_style = df_style['style_group'].values
     
-    f1_a1, _ = run_experiment(X_style_geo, y_style, "A1: Style Prediction (Geometry Only)", n_permutations=50)
-    f1_a2, _ = run_experiment(X_style_mat, y_style, "A2: Style Prediction (Material Only)", n_permutations=50)
-    f1_a3, _ = run_experiment(X_style_comb, y_style, "A3: Style Prediction (Combined)", n_permutations=50)
+    f1_a1, _ = run_experiment(X_style_geo, y_style, "A1: Style Prediction (Geometry Only)", n_permutations=1)
+    f1_a2, _ = run_experiment(X_style_mat, y_style, "A2: Style Prediction (Material Only)", n_permutations=1)
+    f1_a3, _ = run_experiment(X_style_comb, y_style, "A3: Style Prediction (Combined)", n_permutations=1)
     
     # --- Experiment B: Nation Prediction (Norway vs Others) ---
     df_nation = df.copy()
@@ -125,9 +125,9 @@ def main():
     X_nation_comb = df_nation[geo_cols + mat_cols].values
     y_nation = df_nation['is_norway'].values
     
-    f1_b1, _ = run_experiment(X_nation_geo, y_nation, "B1: Nation Prediction (Geometry Only)", n_permutations=50)
-    f1_b2, _ = run_experiment(X_nation_mat, y_nation, "B2: Nation Prediction (Material Only)", n_permutations=50)
-    f1_b3, _ = run_experiment(X_nation_comb, y_nation, "B3: Nation Prediction (Combined)", n_permutations=50)
+    f1_b1, _ = run_experiment(X_nation_geo, y_nation, "B1: Nation Prediction (Geometry Only)", n_permutations=1)
+    f1_b2, _ = run_experiment(X_nation_mat, y_nation, "B2: Nation Prediction (Material Only)", n_permutations=1)
+    f1_b3, _ = run_experiment(X_nation_comb, y_nation, "B3: Nation Prediction (Combined)", n_permutations=1)
     
     # Save results summary for plotting
     results_summary = pd.DataFrame([
