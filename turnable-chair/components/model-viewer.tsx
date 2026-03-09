@@ -25,6 +25,8 @@ export default function ModelViewer({ chairId }: ModelViewerProps) {
           alt={`3D model of chair ${chairId}`}
           auto-rotate
           camera-controls
+          disable-zoom
+          disable-pan
           shadow-intensity="1"
           environment-image="neutral"
           exposure="1"
