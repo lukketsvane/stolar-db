@@ -10,7 +10,7 @@ interface ArticleLayoutProps {
 
 export default function ArticleLayout({ children, header }: ArticleLayoutProps) {
   return (
-    <div className="min-h-screen bg-[#fafafa] text-gray-900 font-serif selection:bg-black selection:text-white pb-40 overflow-x-hidden">
+    <div className="min-h-screen bg-white text-gray-900 font-serif selection:bg-black selection:text-white pb-40 overflow-x-hidden">
       <ArticleNav />
 
       {/* Hero Header */}
@@ -21,7 +21,7 @@ export default function ArticleLayout({ children, header }: ArticleLayoutProps) 
       </header>
 
       {/* Main Content */}
-      <main className="max-w-screen-xl mx-auto px-6 py-12 md:py-16">
+      <main className="max-w-screen-xl mx-auto px-6 py-12 md:py-16 lg:px-24">
         <div className="prose prose-neutral prose-lg lg:prose-xl max-w-none 
           prose-headings:font-sans prose-headings:font-black prose-headings:tracking-tighter prose-headings:uppercase prose-headings:italic
           prose-p:leading-relaxed prose-p:mb-8 prose-p:text-gray-800 prose-p:text-xl md:prose-p:text-2xl
