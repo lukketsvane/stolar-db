@@ -115,9 +115,11 @@ export default function ArticleOnePage() {
         </div>
       </div>
 
-      <blockquote className="bg-gray-50 p-8 md:p-16 lg:p-20 rounded-2xl md:rounded-[3rem] border border-gray-100">
-        <strong>Samandrag:</strong> Artikkelen presenterer den fyrste systematiske kvantitative materialanalysen av Nasjonalmuseet si stolsamling (n = 461), som spenner frå 1280 til 2020. Gjennom eit nytt strukturert datasett undersøkjer studien korleis materialkurver fungerer som eit kolonialt arkiv. Hovudfunnet er <em>mahogniens boge</em>: ein materiell signatur der karibisk tropisk hardved stig frå null til 86 % av alle registrerte stolar i perioden 1825–1849, for deretter å kollapse.
-      </blockquote>
+      <div className="mt-16 py-8 border-t border-black">
+        <p className="text-xl font-serif italic leading-relaxed text-black">
+          <strong>Samandrag:</strong> Artikkelen presenterer den fyrste systematiske kvantitative materialanalysen av Nasjonalmuseet si stolsamling (n = 461), som spenner frå 1280 til 2020. Gjennom eit nytt strukturert datasett undersøkjer studien korleis materialkurver fungerer som eit kolonialt arkiv. Hovudfunnet er <em>mahogniens boge</em>: ein materiell signatur der karibisk tropisk hardved stig frå null til 86 % av alle registrerte stolar i perioden 1825–1849, for deretter å kollapse.
+        </p>
+      </div>
     </div>
   )
 
