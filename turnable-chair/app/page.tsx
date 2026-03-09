@@ -289,10 +289,9 @@ function HomeContent() {
                 href={currentItem.nmUrl} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center justify-between w-full border border-black p-4 font-mono font-black text-[10px] uppercase tracking-widest hover:bg-black hover:text-white transition-all group"
+                className="flex items-center justify-center w-full border border-black/5 p-6 hover:bg-gray-50 transition-all group"
               >
-                Sjå hos Nasjonalmuseet
-                <ExternalLink size={14} className="group-hover:translate-x-1 transition-transform" />
+                <img src="/nasjonalmuseet_logo.jpg" alt="Nasjonalmuseet" className="h-8 w-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity" />
               </a>
             </section>
           </div>
