@@ -448,34 +448,6 @@
     "model3d": "NMK.2015.0285_111460.glb"
   },
   {
-    "objectId": "NG.K_H.1985.0079-029",
-    "url": "https://www.nasjonalmuseet.no/samlingen/objekt/NG.K_H.1985.0079-029",
-    "title": "Stol",
-    "Datering": "(1933)",
-    "Betegnelse": "Tegning",
-    "Materiale og teknikk": "Blyant på papir",
-    "Teknikk": "Blyant",
-    "Materiale": "Papir",
-    "Mål": "167 x 220 mm",
-    "Emneord": "Bildende kunst",
-    "Klassifikasjon": "532 - Bildende kunst",
-    "Motiv": "Møbel",
-    "Inventarnr.": "NG.K&H.1985.0079-029",
-    "Registreringsnivå": "Enkeltobjekt",
-    "Ervervelse": "Kjøpt 1985",
-    "Eier og samling": "Nasjonalmuseet for kunst, arkitektur og design, Billedkunstsamlingene",
-    "Foto": "Husby, Therese",
-    "Opphavsrett": "BONO",
-    "images": [
-      {
-        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/101570.tif/full/512,/0/default.jpg",
-        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/101570.tif/full/1600,/0/default.jpg",
-        "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/101570.tif/full/full/0/default.jpg",
-        "filename": "NG.K_H.1985.0079-029_101570.jpg"
-      }
-    ]
-  },
-  {
     "objectId": "NMK.2011.0001",
     "url": "https://www.nasjonalmuseet.no/samlingen/objekt/NMK.2011.0001",
     "title": "Stol",
@@ -1280,36 +1252,6 @@
     "model3d": "NMK.2018.0056_157540.glb"
   },
   {
-    "objectId": "NG.K_H.B.06036-001VERSO",
-    "url": "https://www.nasjonalmuseet.no/samlingen/objekt/NG.K_H.B.06036-001VERSO",
-    "title": "Figurscene; stol",
-    "Datering": "Mellom desember 1882 og 1884",
-    "Betegnelse": "Tegning",
-    "Materiale og teknikk": "Blyant og fargestift på papir",
-    "Teknikk": [
-      "Blyant",
-      "Fargestift"
-    ],
-    "Materiale": "Papir",
-    "Mål": "205 x 124 mm",
-    "Emneord": "Bildende kunst",
-    "Klassifikasjon": "532 - Bildende kunst",
-    "Motivtype": "Komposisjonsstudie",
-    "Inventarnr.": "NG.K&H.B.06036-001VERSO",
-    "Registreringsnivå": "Enkeltobjekt",
-    "Ervervelse": "Ervervet fra Eilif Peterssens dødsbo 1929",
-    "Eier og samling": "Nasjonalmuseet for kunst, arkitektur og design, Billedkunstsamlingene",
-    "Foto": "Husby, Therese",
-    "images": [
-      {
-        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/100965.tif/full/512,/0/default.jpg",
-        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/100965.tif/full/1600,/0/default.jpg",
-        "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/100965.tif/full/full/0/default.jpg",
-        "filename": "NG.K_H.B.06036-001VERSO_100965.jpg"
-      }
-    ]
-  },
-  {
     "objectId": "NMK.2018.0061",
     "url": "https://www.nasjonalmuseet.no/samlingen/objekt/NMK.2018.0061",
     "title": "Stol, utkast",
@@ -1367,9 +1309,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/157552.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/157552.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/157552.tif/full/full/0/default.jpg",
-        "filename": "NMK.2018.0060_157552.jpg"
+        "filename": "NMK.2018.0060_157552.jpg",
+        "glb": "NMK.2018.0060_157552.glb"
       }
-    ]
+    ],
+    "model3d": "NMK.2018.0060_157552.glb"
   },
   {
     "objectId": "NMK.2009.0087",
@@ -1417,112 +1361,6 @@
       }
     ],
     "model3d": "NMK.2009.0087_23010.glb"
-  },
-  {
-    "objectId": "MS-03609-1993",
-    "url": "https://www.nasjonalmuseet.no/samlingen/objekt/MS-03609-1993",
-    "title": "En stol",
-    "Datering": "(1992)",
-    "Betegnelse": "Maleri",
-    "Materiale og teknikk": "olje på lerret",
-    "Teknikk": "Olje",
-    "Materiale": "Lerret",
-    "Mål": "50 x 45 cm",
-    "Emneord": "Bildende kunst",
-    "Klassifikasjon": "532 - Bildende kunst",
-    "Inventarnr.": "MS-03609-1993",
-    "Registreringsnivå": "Enkeltobjekt",
-    "Ervervelse": "Kjøpt 1993",
-    "Eier og samling": "Nasjonalmuseet for kunst, arkitektur og design, Billedkunstsamlingene",
-    "Foto": "Morten Thorkildsen",
-    "Opphavsrett": "BONO",
-    "images": [
-      {
-        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/147409.tif/full/512,/0/default.jpg",
-        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/147409.tif/full/1600,/0/default.jpg",
-        "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/147409.tif/full/full/0/default.jpg",
-        "filename": "MS-03609-1993_147409.jpg"
-      }
-    ]
-  },
-  {
-    "objectId": "NAMT.ako041.001.010",
-    "url": "https://www.nasjonalmuseet.no/samlingen/objekt/NAMT.ako041.001.010",
-    "title": "Studie av stol",
-    "Datering": "Antagelig 1950-tallet",
-    "Betegnelse": "Skisse",
-    "Materiale og teknikk": "Penn på gult transparentpapir",
-    "Materiale": "Transparentpapir",
-    "Mål": "42,0 x 29,6 cm",
-    "Emneord": "Arkitektonisk tegning",
-    "Klassifikasjon": "341 - Arkitektur",
-    "Inventarnr.": "NAMT.ako041.001.010",
-    "Registreringsnivå": "Enkeltobjekt",
-    "Ervervelse": "Ervervelsesopplysninger under arbeid.",
-    "Eier og samling": "Stiftelsen Arkitekturmuseet, Arkitektursamlingene",
-    "Foto": "Nasjonalmuseet",
-    "Opphavsrett": "© Korsmo, Arne",
-    "images": [
-      {
-        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/10047.tif/full/512,/0/default.jpg",
-        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/10047.tif/full/1600,/0/default.jpg",
-        "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/10047.tif/full/full/0/default.jpg",
-        "filename": "NAMT.ako041.001.010_10047.jpg"
-      }
-    ]
-  },
-  {
-    "objectId": "NG.K_H.B.06033-028",
-    "url": "https://www.nasjonalmuseet.no/samlingen/objekt/NG.K_H.B.06033-028",
-    "title": "Mannsportrett, Åkre; stol",
-    "Datering": "Juni eller juli 1873",
-    "Betegnelse": "Tegning",
-    "Materiale og teknikk": "Blyant på papir",
-    "Teknikk": "Blyant",
-    "Materiale": "Papir",
-    "Mål": "165 x 94 mm",
-    "Emneord": "Bildende kunst",
-    "Klassifikasjon": "532 - Bildende kunst",
-    "Motivtype": "Portrett",
-    "Inventarnr.": "NG.K&H.B.06033-028",
-    "Registreringsnivå": "Enkeltobjekt",
-    "Ervervelse": "Ervervet fra Eilif Peterssens dødsbo 1929",
-    "Eier og samling": "Nasjonalmuseet for kunst, arkitektur og design, Billedkunstsamlingene",
-    "Foto": "Therese Husby",
-    "images": [
-      {
-        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/99717.tif/full/512,/0/default.jpg",
-        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/99717.tif/full/1600,/0/default.jpg",
-        "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/99717.tif/full/full/0/default.jpg",
-        "filename": "NG.K_H.B.06033-028_99717.jpg"
-      }
-    ]
-  },
-  {
-    "objectId": "NG.K_H.B.04570-018",
-    "url": "https://www.nasjonalmuseet.no/samlingen/objekt/NG.K_H.B.04570-018",
-    "title": "Stol, Gulsvik",
-    "Datering": "5. juli 1848",
-    "Betegnelse": "Tegning",
-    "Materiale og teknikk": "Blyant på papir",
-    "Teknikk": "Blyant",
-    "Materiale": "Papir",
-    "Mål": "134 x 104 mm",
-    "Emneord": "Bildende kunst",
-    "Klassifikasjon": "532 - Bildende kunst",
-    "Inventarnr.": "NG.K&H.B.04570-018",
-    "Registreringsnivå": "Enkeltobjekt",
-    "Ervervelse": "Testamentarisk gave fra Adolph Tidemand, innkommet 1887",
-    "Eier og samling": "Nasjonalmuseet for kunst, arkitektur og design, Billedkunstsamlingene",
-    "Foto": "Jeanette Veiby",
-    "images": [
-      {
-        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/73527.tif/full/512,/0/default.jpg",
-        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/73527.tif/full/1600,/0/default.jpg",
-        "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/73527.tif/full/full/0/default.jpg",
-        "filename": "NG.K_H.B.04570-018_73527.jpg"
-      }
-    ]
   },
   {
     "objectId": "NMK.2018.0059",
@@ -1886,7 +1724,15 @@
     "Registreringsnivå": "Enkeltobjekt",
     "Ervervelse": "2020-2020, Kjøp, Tron Meyer, 1983",
     "Eier og samling": "Nasjonalmuseet for kunst, arkitektur og design, Designsamlingene",
-    "images": []
+    "images": [
+      {
+        "filename": "NMK.2020.0273_07196.jpg",
+        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07196.tif/full/1600,/0/default.jpg",
+        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07196.tif/full/512,/0/default.jpg",
+        "glb": "NMK.2020.0273_07196.glb"
+      }
+    ],
+    "model3d": "NMK.2020.0273_07196.glb"
   },
   {
     "objectId": "OK-1989-0002C",
@@ -3330,7 +3176,15 @@
     "Registreringsnivå": "Komplekst objekt",
     "Ervervelse": "Kjøpt 1994",
     "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
-    "images": []
+    "images": [
+      {
+        "filename": "OK-1994-0081_32455.jpg",
+        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/32455.tif/full/1600,/0/default.jpg",
+        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/32455.tif/full/512,/0/default.jpg",
+        "glb": "OK-1994-0081_32455.glb"
+      }
+    ],
+    "model3d": "OK-1994-0081_32455.glb"
   },
   {
     "objectId": "OK-2001-0017",
@@ -3355,33 +3209,15 @@
     "Registreringsnivå": "Enkeltobjekt",
     "Ervervelse": "Kjøpt 2001",
     "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
-    "images": []
-  },
-  {
-    "objectId": "NAMT.ako041.001.011",
-    "url": "https://www.nasjonalmuseet.no/samlingen/objekt/NAMT.ako041.001.011",
-    "title": "Studie av stol",
-    "Datering": "Antagelig 1950-tallet",
-    "Betegnelse": "Skisse",
-    "Materiale og teknikk": "Blyant og fargeblyant på gult transparentpapir",
-    "Materiale": "Transparentpapir",
-    "Mål": "42,0 x 29,6 cm",
-    "Emneord": "Arkitektonisk tegning",
-    "Klassifikasjon": "341 - Arkitektur",
-    "Inventarnr.": "NAMT.ako041.001.011",
-    "Registreringsnivå": "Enkeltobjekt",
-    "Ervervelse": "Ervervelsesopplysninger under arbeid.",
-    "Eier og samling": "Stiftelsen Arkitekturmuseet, Arkitektursamlingene",
-    "Foto": "Nasjonalmuseet",
-    "Opphavsrett": "© Korsmo, Arne",
     "images": [
       {
-        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/10048.tif/full/512,/0/default.jpg",
-        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/10048.tif/full/1600,/0/default.jpg",
-        "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/10048.tif/full/full/0/default.jpg",
-        "filename": "NAMT.ako041.001.011_10048.jpg"
+        "filename": "OK-2001-0017_111628.jpg",
+        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/111628.tif/full/1600,/0/default.jpg",
+        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/111628.tif/full/512,/0/default.jpg",
+        "glb": "OK-2001-0017_111628.glb"
       }
-    ]
+    ],
+    "model3d": "OK-2001-0017_111628.glb"
   },
   {
     "objectId": "NMK.DEP.2018.0030.046",
@@ -3407,9 +3243,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/NMK.DEP.2018.0030.046.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/NMK.DEP.2018.0030.046.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/NMK.DEP.2018.0030.046.tif/full/full/0/default.jpg",
-        "filename": "NMK.DEP.2018.0030.046_NMK.DEP.2018.0030.046.jpg"
+        "filename": "NMK.DEP.2018.0030.046_NMK.DEP.2018.0030.046.jpg",
+        "glb": "NMK.DEP.2018.0030.046_NMK.DEP.2018.0030.046.glb"
       }
-    ]
+    ],
+    "model3d": "NMK.DEP.2018.0030.046_NMK.DEP.2018.0030.046.glb"
   },
   {
     "objectId": "NMK.2016.0144",
@@ -5069,7 +4907,15 @@
     "Registreringsnivå": "Enkeltobjekt",
     "Ervervelse": "Gave 1978",
     "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
-    "images": []
+    "images": [
+      {
+        "filename": "OK-1978-0220A_104406.jpg",
+        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/104406.tif/full/1600,/0/default.jpg",
+        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/104406.tif/full/512,/0/default.jpg",
+        "glb": "OK-1978-0220A_104406.glb"
+      }
+    ],
+    "model3d": "OK-1978-0220A_104406.glb"
   },
   {
     "objectId": "NMK.2016.0137.002",
@@ -5305,7 +5151,15 @@
     "Registreringsnivå": "Enkeltobjekt",
     "Ervervelse": "Testamentarisk gave, innkommet 1961",
     "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
-    "images": []
+    "images": [
+      {
+        "filename": "OK-18543_134450.jpg",
+        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/134450.tif/full/1600,/0/default.jpg",
+        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/134450.tif/full/512,/0/default.jpg",
+        "glb": "OK-18543_134450.glb"
+      }
+    ],
+    "model3d": "OK-18543_134450.glb"
   },
   {
     "objectId": "OK-05234",
@@ -6001,7 +5855,15 @@
     "Registreringsnivå": "Enkeltobjekt",
     "Ervervelse": "Kjøp, Tron Meyer, 1983",
     "Eier og samling": "Nasjonalmuseet for kunst, arkitektur og design, Designsamlingene",
-    "images": []
+    "images": [
+      {
+        "filename": "NMK.2020.0271_94861.jpg",
+        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94861.tif/full/1600,/0/default.jpg",
+        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94861.tif/full/512,/0/default.jpg",
+        "glb": "NMK.2020.0271_94861.glb"
+      }
+    ],
+    "model3d": "NMK.2020.0271_94861.glb"
   },
   {
     "objectId": "OK-18534",
@@ -7979,7 +7841,15 @@
     "Registreringsnivå": "Enkeltobjekt",
     "Ervervelse": "Kjøpt 2001",
     "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
-    "images": []
+    "images": [
+      {
+        "filename": "OK-2001-0150_104384.jpg",
+        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/104384.tif/full/1600,/0/default.jpg",
+        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/104384.tif/full/512,/0/default.jpg",
+        "glb": "OK-2001-0150_104384.glb"
+      }
+    ],
+    "model3d": "OK-2001-0150_104384.glb"
   },
   {
     "objectId": "NAMF.04260.062",
@@ -8002,7 +7872,15 @@
     "Ervervelse": "Innkommet til Norsk Arkitekturmuseum",
     "Eier og samling": "Stiftelsen Arkitekturmuseet, Arkitektursamlingene",
     "Opphavsrett": "© Ukjent",
-    "images": []
+    "images": [
+      {
+        "filename": "NAMF.04260.062_55083.jpg",
+        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/55083.tif/full/1600,/0/default.jpg",
+        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/55083.tif/full/512,/0/default.jpg",
+        "glb": "NAMF.04260.062_55083.glb"
+      }
+    ],
+    "model3d": "NAMF.04260.062_55083.glb"
   },
   {
     "objectId": "NMK.2009.0164",
@@ -8253,7 +8131,15 @@
     "Registreringsnivå": "Enkeltobjekt",
     "Ervervelse": "2020-2020, Kjøp, Tron Meyer, 1983",
     "Eier og samling": "Nasjonalmuseet for kunst, arkitektur og design, Designsamlingene",
-    "images": []
+    "images": [
+      {
+        "filename": "NMK.2020.0270_111615.jpg",
+        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/111615.tif/full/1600,/0/default.jpg",
+        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/111615.tif/full/512,/0/default.jpg",
+        "glb": "NMK.2020.0270_111615.glb"
+      }
+    ],
+    "model3d": "NMK.2020.0270_111615.glb"
   },
   {
     "objectId": "NMK.2020.0272",
@@ -8282,7 +8168,15 @@
     "Registreringsnivå": "Enkeltobjekt",
     "Ervervelse": "2020-2020, Kjøp, Tron Meyer, 1983",
     "Eier og samling": "Nasjonalmuseet for kunst, arkitektur og design, Designsamlingene",
-    "images": []
+    "images": [
+      {
+        "filename": "NMK.2020.0272_07162.jpg",
+        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07162.tif/full/1600,/0/default.jpg",
+        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07162.tif/full/512,/0/default.jpg",
+        "glb": "NMK.2020.0272_07162.glb"
+      }
+    ],
+    "model3d": "NMK.2020.0272_07162.glb"
   },
   {
     "objectId": "OK-11531D",
@@ -9259,7 +9153,15 @@
     "Registreringsnivå": "Enkeltobjekt",
     "Ervervelse": "Gave 1958",
     "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
-    "images": []
+    "images": [
+      {
+        "filename": "OK-15059C_104384.jpg",
+        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/104384.tif/full/1600,/0/default.jpg",
+        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/104384.tif/full/512,/0/default.jpg",
+        "glb": "OK-15059C_104384.glb"
+      }
+    ],
+    "model3d": "OK-15059C_104384.glb"
   },
   {
     "objectId": "OK-1985-0031A",
@@ -10401,7 +10303,15 @@
     "Registreringsnivå": "Enkeltobjekt",
     "Ervervelse": "Kjøpt 1997",
     "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
-    "images": []
+    "images": [
+      {
+        "filename": "OK-1997-0127_93089.jpg",
+        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/93089.tif/full/1600,/0/default.jpg",
+        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/93089.tif/full/512,/0/default.jpg",
+        "glb": "OK-1997-0127_93089.glb"
+      }
+    ],
+    "model3d": "OK-1997-0127_93089.glb"
   },
   {
     "objectId": "OK-1999-0054",
@@ -10426,7 +10336,15 @@
     "Registreringsnivå": "Enkeltobjekt",
     "Ervervelse": "Ervervet 1999",
     "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
-    "images": []
+    "images": [
+      {
+        "filename": "OK-1999-0054_111626.jpg",
+        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/111626.tif/full/1600,/0/default.jpg",
+        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/111626.tif/full/512,/0/default.jpg",
+        "glb": "OK-1999-0054_111626.glb"
+      }
+    ],
+    "model3d": "OK-1999-0054_111626.glb"
   },
   {
     "objectId": "OK-2002-0175A",
@@ -10465,7 +10383,15 @@
     "Registreringsnivå": "Enkeltobjekt",
     "Ervervelse": "Kjøpt 2002",
     "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
-    "images": []
+    "images": [
+      {
+        "filename": "OK-2002-0175A_120544.jpg",
+        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/120544.tif/full/1600,/0/default.jpg",
+        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/120544.tif/full/512,/0/default.jpg",
+        "glb": "OK-2002-0175A_120544.glb"
+      }
+    ],
+    "model3d": "OK-2002-0175A_120544.glb"
   },
   {
     "objectId": "NMK.2023.0091",
@@ -10874,7 +10800,15 @@
     "Registreringsnivå": "Del av objekt",
     "Ervervelse": "Kjøpt 1895",
     "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
-    "images": []
+    "images": [
+      {
+        "filename": "OK-05441B-1_37584.jpg",
+        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/37584.tif/full/1600,/0/default.jpg",
+        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/37584.tif/full/512,/0/default.jpg",
+        "glb": "OK-05441B-1_37584.glb"
+      }
+    ],
+    "model3d": "OK-05441B-1_37584.glb"
   },
   {
     "objectId": "OK-1989-0002B",
@@ -12827,9 +12761,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/NMK.2018.0221.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/NMK.2018.0221.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/NMK.2018.0221.tif/full/full/0/default.jpg",
-        "filename": "NMK.2018.0221_NMK.2018.0221.jpg"
+        "filename": "NMK.2018.0221_NMK.2018.0221.jpg",
+        "glb": "NMK.2018.0221_NMK.2018.0221.glb"
       }
-    ]
+    ],
+    "model3d": "NMK.2018.0221_NMK.2018.0221.glb"
   },
   {
     "objectId": "OK-1990-0061",
@@ -12855,7 +12791,15 @@
     "Registreringsnivå": "Enkeltobjekt",
     "Ervervelse": "Gave 1990",
     "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
-    "images": []
+    "images": [
+      {
+        "filename": "OK-1990-0061_146576.jpg",
+        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/146576.tif/full/1600,/0/default.jpg",
+        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/146576.tif/full/512,/0/default.jpg",
+        "glb": "OK-1990-0061_146576.glb"
+      }
+    ],
+    "model3d": "OK-1990-0061_146576.glb"
   },
   {
     "objectId": "OK-1993-0159",
@@ -12889,34 +12833,15 @@
     "Registreringsnivå": "Enkeltobjekt",
     "Ervervelse": "Kjøpt 1993",
     "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
-    "images": []
-  },
-  {
-    "objectId": "NAMT.evi078.005",
-    "url": "https://www.nasjonalmuseet.no/samlingen/objekt/NAMT.evi078.005",
-    "title": "Regjeringsbygningen. Stol til møteromRegjeringsbygget. Stol til møterom originaltittel",
-    "Datering": "31. mars 1958",
-    "Betegnelse": "Oppriss",
-    "Mål": "29,7 x 41,6 cm",
-    "Emneord": "Arkitektonisk tegning",
-    "Klassifikasjon": "341 - Arkitektur",
-    "Motivtype": "Arkitektonisk",
-    "Stilperiode": "Modernisme",
-    "Motiv - sted": "Oslo",
-    "Inventarnr.": "NAMT.evi078.005",
-    "Registreringsnivå": "Enkeltobjekt",
-    "Ervervelse": "Gave til Norsk Arkitekturmuseum 1999",
-    "Eier og samling": "Stiftelsen Arkitekturmuseet, Arkitektursamlingene",
-    "Foto": "Harvik, Andreas",
-    "Opphavsrett": "© Viksjø, Erling, Richardsen, Kjell",
     "images": [
       {
-        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/64580.tif/full/512,/0/default.jpg",
-        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/64580.tif/full/1600,/0/default.jpg",
-        "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/64580.tif/full/full/0/default.jpg",
-        "filename": "NAMT.evi078.005_64580.jpg"
+        "filename": "OK-1993-0159_92597.jpg",
+        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/92597.tif/full/1600,/0/default.jpg",
+        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/92597.tif/full/512,/0/default.jpg",
+        "glb": "OK-1993-0159_92597.glb"
       }
-    ]
+    ],
+    "model3d": "OK-1993-0159_92597.glb"
   },
   {
     "objectId": "NMK.2007.0006",
@@ -12958,61 +12883,6 @@
     "model3d": "NMK.2007.0006_32202.glb"
   },
   {
-    "objectId": "NG.M.01843",
-    "url": "https://www.nasjonalmuseet.no/samlingen/objekt/NG.M.01843",
-    "title": "Modell i grønn stol",
-    "Datering": "1928",
-    "Andre titler": "Model in a Green Chair (ENG)",
-    "Betegnelse": "Maleri",
-    "Materiale og teknikk": "Olje på lerret",
-    "Teknikk": "Olje",
-    "Materiale": "Lerret",
-    "Mål": "92 x 73 cm",
-    "Emneord": "Bildende kunst",
-    "Klassifikasjon": "532 - Bildende kunst",
-    "Motivtype": "Akt",
-    "Inventarnr.": "NG.M.01843",
-    "Registreringsnivå": "Enkeltobjekt",
-    "Del av utstilling": "Fornuft og Følelser. Nordisk maleri og skulptur fra samlingene, 2009",
-    "Ervervelse": "Kjøpt 1936",
-    "Eier og samling": "Nasjonalmuseet for kunst, arkitektur og design, Billedkunstsamlingene",
-    "Foto": "Børre Høstland",
-    "images": [
-      {
-        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/92763.tif/full/512,/0/default.jpg",
-        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/92763.tif/full/1600,/0/default.jpg",
-        "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/92763.tif/full/full/0/default.jpg",
-        "filename": "NG.M.01843_92763.jpg"
-      }
-    ]
-  },
-  {
-    "objectId": "NG.K_H.B.04205",
-    "url": "https://www.nasjonalmuseet.no/samlingen/objekt/NG.K_H.B.04205",
-    "title": "Sovende pike i stol",
-    "Datering": "Uten år",
-    "Betegnelse": "Tegning",
-    "Materiale og teknikk": "Blyant på papir",
-    "Teknikk": "Blyant",
-    "Materiale": "Papir",
-    "Mål": "283 x 219 mm",
-    "Emneord": "Bildende kunst",
-    "Klassifikasjon": "532 - Bildende kunst",
-    "Inventarnr.": "NG.K&H.B.04205",
-    "Registreringsnivå": "Enkeltobjekt",
-    "Ervervelse": "Ervervelsesopplysninger under arbeid",
-    "Eier og samling": "Nasjonalmuseet for kunst, arkitektur og design, Billedkunstsamlingene",
-    "Foto": "Ivarsøy, Dag Andre",
-    "images": [
-      {
-        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/58589.tif/full/512,/0/default.jpg",
-        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/58589.tif/full/1600,/0/default.jpg",
-        "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/58589.tif/full/full/0/default.jpg",
-        "filename": "NG.K_H.B.04205_58589.jpg"
-      }
-    ]
-  },
-  {
     "objectId": "OK-08045",
     "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-08045",
     "title": "Egyptian chair",
@@ -13048,33 +12918,6 @@
       }
     ],
     "model3d": "OK-08045_105919.glb"
-  },
-  {
-    "objectId": "NAMT.evi078.004",
-    "url": "https://www.nasjonalmuseet.no/samlingen/objekt/NAMT.evi078.004",
-    "title": "Regjeringsbygningen. Stol til kantine og møtesalRegjeringsbygget. Stol til kantine og mötesal originaltittel",
-    "Datering": "30. oktober 1959",
-    "Betegnelse": "Oppriss",
-    "Mål": "22,9 x 44,9 cm",
-    "Emneord": "Arkitektonisk tegning",
-    "Klassifikasjon": "341 - Arkitektur",
-    "Motivtype": "Arkitektonisk",
-    "Stilperiode": "Modernisme",
-    "Motiv - sted": "Oslo",
-    "Inventarnr.": "NAMT.evi078.004",
-    "Registreringsnivå": "Enkeltobjekt",
-    "Ervervelse": "Gave til Norsk Arkitekturmuseum 1999",
-    "Eier og samling": "Stiftelsen Arkitekturmuseet, Arkitektursamlingene",
-    "Foto": "Harvik, Andreas",
-    "Opphavsrett": "© Viksjø, Erling",
-    "images": [
-      {
-        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/64579.tif/full/512,/0/default.jpg",
-        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/64579.tif/full/1600,/0/default.jpg",
-        "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/64579.tif/full/full/0/default.jpg",
-        "filename": "NAMT.evi078.004_64579.jpg"
-      }
-    ]
   },
   {
     "objectId": "OK-1978-0217B",
@@ -13116,198 +12959,15 @@
     "Registreringsnivå": "Enkeltobjekt",
     "Ervervelse": "Gave 1976",
     "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
-    "images": []
-  },
-  {
-    "objectId": "MS-04666-2003",
-    "url": "https://www.nasjonalmuseet.no/samlingen/objekt/MS-04666-2003",
-    "title": "Relikvie-Dådyr",
-    "Datering": "2002",
-    "Betegnelse": "Installasjon",
-    "Materiale og teknikk": "keramisk skulptur på blomsterbord og stol",
-    "Mål": "variable mål",
-    "Emneord": "Bildende kunst",
-    "Klassifikasjon": "532 - Bildende kunst",
-    "Inventarnr.": "MS-04666-2003",
-    "Registreringsnivå": "Komplekst objekt",
-    "Del av utstilling": "Museumsfeber: Verk fra samlingene. Inkludert: Louise Lawler, 2005 - 2006",
-    "Ervervelse": "Kjøpt 2003",
-    "Eier og samling": "Nasjonalmuseet for kunst, arkitektur og design, Billedkunstsamlingene",
-    "Foto": "Børre Høstland",
-    "Opphavsrett": "BONO",
     "images": [
       {
-        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/MS-04666-2003.tif/full/512,/0/default.jpg",
-        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/MS-04666-2003.tif/full/1600,/0/default.jpg",
-        "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/MS-04666-2003.tif/full/full/0/default.jpg",
-        "filename": "MS-04666-2003_MS-04666-2003.jpg"
+        "filename": "OK-1978-0217B_157774.jpg",
+        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/157774.tif/full/1600,/0/default.jpg",
+        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/157774.tif/full/512,/0/default.jpg",
+        "glb": "OK-1978-0217B_157774.glb"
       }
-    ]
-  },
-  {
-    "objectId": "NAMT.evi158.021",
-    "url": "https://www.nasjonalmuseet.no/samlingen/objekt/NAMT.evi158.021",
-    "title": "Tre figurer og en stol",
-    "Datering": "(1950-tallet)",
-    "Betegnelse": "Tegning",
-    "Materiale og teknikk": "Penn på papir",
-    "Teknikk": "Penn",
-    "Materiale": "Papir",
-    "Mål": "21 x 27 cm",
-    "Emneord": "Bildende kunst",
-    "Klassifikasjon": "532 - Bildende kunst",
-    "Inventarnr.": "NAMT.evi158.021",
-    "Registreringsnivå": "Enkeltobjekt",
-    "Ervervelse": "Gave til Norsk Arkitekturmuseum 1999",
-    "Eier og samling": "Stiftelsen Arkitekturmuseet, Arkitektursamlingene",
-    "Foto": "Børre Høstland",
-    "Opphavsrett": "BONO",
-    "images": [
-      {
-        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/70720.tif/full/512,/0/default.jpg",
-        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/70720.tif/full/1600,/0/default.jpg",
-        "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/70720.tif/full/full/0/default.jpg",
-        "filename": "NAMT.evi158.021_70720.jpg"
-      }
-    ]
-  },
-  {
-    "objectId": "NG.K_H.B.09880",
-    "url": "https://www.nasjonalmuseet.no/samlingen/objekt/NG.K_H.B.09880",
-    "title": "Riss av barn på stol",
-    "Datering": "Antagelig 1846 eller 1847",
-    "Betegnelse": "Tegning",
-    "Materiale og teknikk": "Blyant på papir",
-    "Teknikk": "Blyant",
-    "Materiale": "Papir",
-    "Mål": "113 x 184 mm",
-    "Emneord": "Bildende kunst",
-    "Klassifikasjon": "532 - Bildende kunst",
-    "Motiv - person": "Tidemand, Adolph jr. (avbildet person)",
-    "Inventarnr.": "NG.K&H.B.09880",
-    "Registreringsnivå": "Enkeltobjekt",
-    "Ervervelse": "Testamentarisk gave fra Adolph Tidemand, innkommet 1887",
-    "Eier og samling": "Nasjonalmuseet for kunst, arkitektur og design, Billedkunstsamlingene",
-    "images": [
-      {
-        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/73700.tif/full/512,/0/default.jpg",
-        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/73700.tif/full/1600,/0/default.jpg",
-        "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/73700.tif/full/full/0/default.jpg",
-        "filename": "NG.K_H.B.09880_73700.jpg"
-      }
-    ]
-  },
-  {
-    "objectId": "NG.K_H.B.04446",
-    "url": "https://www.nasjonalmuseet.no/samlingen/objekt/NG.K_H.B.04446",
-    "title": "Liten pike i en stol",
-    "Datering": "Uten år",
-    "Betegnelse": "Tegning",
-    "Materiale og teknikk": "Blyant på papir",
-    "Teknikk": "Blyant",
-    "Materiale": "Papir",
-    "Mål": "203 x 163 mm",
-    "Emneord": "Bildende kunst",
-    "Klassifikasjon": "532 - Bildende kunst",
-    "Inventarnr.": "NG.K&H.B.04446",
-    "Registreringsnivå": "Enkeltobjekt",
-    "Ervervelse": "Ervervelsesopplysninger under arbeid",
-    "Eier og samling": "Nasjonalmuseet for kunst, arkitektur og design, Billedkunstsamlingene",
-    "Foto": "Ivarsøy, Dag Andre",
-    "images": [
-      {
-        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/58645.tif/full/512,/0/default.jpg",
-        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/58645.tif/full/1600,/0/default.jpg",
-        "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/58645.tif/full/full/0/default.jpg",
-        "filename": "NG.K_H.B.04446_58645.jpg"
-      }
-    ]
-  },
-  {
-    "objectId": "MS-03678-1994",
-    "url": "https://www.nasjonalmuseet.no/samlingen/objekt/MS-03678-1994",
-    "title": "Merker i vegg etter stolAsylum Serietittel",
-    "Datering": "1987/1994",
-    "Andre titler": "Marks on the wall after a chair (ENG)",
-    "Betegnelse": "Fotografi",
-    "Materiale og teknikk": "sølvgelatin",
-    "Teknikk": "Sølvgelatin",
-    "Materiale": "Baryttpapir",
-    "Mål": "448 x 440 mm",
-    "Opplag": "3/5",
-    "Emneord": "Bildende kunst",
-    "Klassifikasjon": "532 - Bildende kunst",
-    "Motivtype": "Interiør",
-    "Inventarnr.": "MS-03678-1994",
-    "Registreringsnivå": "Enkeltobjekt",
-    "Del av utstilling": "Kunst 2, 2005 - 2007",
-    "Ervervelse": "Gave fra kunstneren 1994",
-    "Eier og samling": "Nasjonalmuseet for kunst, arkitektur og design, Billedkunstsamlingene",
-    "Foto": "Dag Alveng/Alveng, Dag",
-    "Opphavsrett": "BONO",
-    "images": [
-      {
-        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/MS-03678-1994.tif/full/512,/0/default.jpg",
-        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/MS-03678-1994.tif/full/1600,/0/default.jpg",
-        "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/MS-03678-1994.tif/full/full/0/default.jpg",
-        "filename": "MS-03678-1994_MS-03678-1994.jpg"
-      }
-    ]
-  },
-  {
-    "objectId": "NG.K_H.B.00581-024",
-    "url": "https://www.nasjonalmuseet.no/samlingen/objekt/NG.K_H.B.00581-024",
-    "title": "Figur sittende på en stol",
-    "Datering": "Mellom 1875 og 1879",
-    "Betegnelse": "Tegning",
-    "Materiale og teknikk": "Penn over utvisket kull på papir",
-    "Teknikk": [
-      "Penn",
-      "Kull"
     ],
-    "Materiale": "Papir",
-    "Mål": "456 x 295 mm",
-    "Emneord": "Bildende kunst",
-    "Klassifikasjon": "532 - Bildende kunst",
-    "Inventarnr.": "NG.K&H.B.00581-024",
-    "Registreringsnivå": "Enkeltobjekt",
-    "Ervervelse": "Ervervelsesopplysninger under arbeid",
-    "Eier og samling": "Nasjonalmuseet for kunst, arkitektur og design, Billedkunstsamlingene",
-    "Foto": "Ivarsøy, Dag Andre",
-    "images": [
-      {
-        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/53023.tif/full/512,/0/default.jpg",
-        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/53023.tif/full/1600,/0/default.jpg",
-        "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/53023.tif/full/full/0/default.jpg",
-        "filename": "NG.K_H.B.00581-024_53023.jpg"
-      }
-    ]
-  },
-  {
-    "objectId": "NG.K_H.B.04552-024",
-    "url": "https://www.nasjonalmuseet.no/samlingen/objekt/NG.K_H.B.04552-024",
-    "title": "Kvinne som sitter på en stol",
-    "Datering": "Antagelig mellom 1845 og 1852",
-    "Betegnelse": "Tegning",
-    "Materiale og teknikk": "Blyant på papir",
-    "Teknikk": "Blyant",
-    "Materiale": "Papir",
-    "Mål": "254 x 340 mm",
-    "Emneord": "Bildende kunst",
-    "Klassifikasjon": "532 - Bildende kunst",
-    "Inventarnr.": "NG.K&H.B.04552-024",
-    "Registreringsnivå": "Enkeltobjekt",
-    "Ervervelse": "Testamentarisk gave fra Adolph Tidemand, innkommet 1887",
-    "Eier og samling": "Nasjonalmuseet for kunst, arkitektur og design, Billedkunstsamlingene",
-    "Foto": "Jeanette Veiby",
-    "images": [
-      {
-        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/70642.tif/full/512,/0/default.jpg",
-        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/70642.tif/full/1600,/0/default.jpg",
-        "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/70642.tif/full/full/0/default.jpg",
-        "filename": "NG.K_H.B.04552-024_70642.jpg"
-      }
-    ]
+    "model3d": "OK-1978-0217B_157774.glb"
   },
   {
     "objectId": "OK-2002-0191",
@@ -13393,35 +13053,6 @@
     "model3d": "NMK.2011.0004_37575.glb"
   },
   {
-    "objectId": "NG.K_H.1982.0147",
-    "url": "https://www.nasjonalmuseet.no/samlingen/objekt/NG.K_H.1982.0147",
-    "title": "Drømmende kvinne i stol, med hodet i hånden",
-    "Datering": "9. mars 1934 (plate) / (1939) (trykk)",
-    "Andre titler": "Femme au fauteuil songeuse, la joue sur la main (FRE)Suite Vollard (FRE)",
-    "Betegnelse": "Grafikk",
-    "Materiale og teknikk": "Streketsning på papir",
-    "Teknikk": "Streketsning",
-    "Materiale": "Papir",
-    "Mål": "278 x 199 mm",
-    "Emneord": "Bildende kunst",
-    "Klassifikasjon": "532 - Bildende kunst",
-    "Motivtype": "Portrett",
-    "Inventarnr.": "NG.K&H.1982.0147",
-    "Registreringsnivå": "Enkeltobjekt",
-    "Ervervelse": "Erleggelse for arveavgift, innkommet 1982",
-    "Eier og samling": "Nasjonalmuseet for kunst, arkitektur og design, Billedkunstsamlingene",
-    "Foto": "Therese Husby",
-    "Opphavsrett": "BONO",
-    "images": [
-      {
-        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/107052.tif/full/512,/0/default.jpg",
-        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/107052.tif/full/1600,/0/default.jpg",
-        "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/107052.tif/full/full/0/default.jpg",
-        "filename": "NG.K_H.1982.0147_107052.jpg"
-      }
-    ]
-  },
-  {
     "objectId": "OK-16037",
     "url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-16037",
     "title": "Figur",
@@ -13487,32 +13118,6 @@
       }
     ],
     "model3d": "NMK.DEP.2010.0009_141358.glb"
-  },
-  {
-    "objectId": "NG.K_H.1960.0002-007",
-    "url": "https://www.nasjonalmuseet.no/samlingen/objekt/NG.K_H.1960.0002-007",
-    "title": "Riss av ansikt; jente sittende på en stol",
-    "Datering": "Mellom 1897 og 1898",
-    "Betegnelse": "Tegning",
-    "Materiale og teknikk": "Blyant på papir",
-    "Teknikk": "Blyant",
-    "Materiale": "Papir",
-    "Mål": "177 x 270 mm",
-    "Emneord": "Bildende kunst",
-    "Klassifikasjon": "532 - Bildende kunst",
-    "Inventarnr.": "NG.K&H.1960.0002-007",
-    "Registreringsnivå": "Enkeltobjekt",
-    "Ervervelse": "Gave fra Universitetsbiblioteket 1958",
-    "Eier og samling": "Nasjonalmuseet for kunst, arkitektur og design, Billedkunstsamlingene",
-    "Foto": "Jeanette Veiby",
-    "images": [
-      {
-        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/93683.tif/full/512,/0/default.jpg",
-        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/93683.tif/full/1600,/0/default.jpg",
-        "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/93683.tif/full/full/0/default.jpg",
-        "filename": "NG.K_H.1960.0002-007_93683.jpg"
-      }
-    ]
   },
   {
     "objectId": "NMK.2016.0063.046.001",
@@ -13679,40 +13284,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/66572.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/66572.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/66572.tif/full/full/0/default.jpg",
-        "filename": "NMK.2008.0734.034.001_66572.jpg"
+        "filename": "NMK.2008.0734.034.001_66572.jpg",
+        "glb": "NMK.2008.0734.034.001_66572.glb"
       }
-    ]
-  },
-  {
-    "objectId": "NAMT.ako007.003",
-    "url": "https://www.nasjonalmuseet.no/samlingen/objekt/NAMT.ako007.003",
-    "title": "Stol, utkast til MoMAs konkurranse om design for moderne møbler",
-    "Datering": "(1948)",
-    "Andre titler": "Chair, Project for the MoMA competition Designs for Modern Furniture (ENG)",
-    "Betegnelse": "Oppriss",
-    "Materiale og teknikk": "Tusj og akvarell på kartong",
-    "Teknikk": [
-      "Tusj",
-      "Akvarell"
     ],
-    "Materiale": "Papp/kartong",
-    "Mål": "24,9 x 25 cm",
-    "Emneord": "Arkitektonisk tegning",
-    "Klassifikasjon": "341 - Arkitektur",
-    "Inventarnr.": "NAMT.ako007.003",
-    "Registreringsnivå": "Enkeltobjekt",
-    "Ervervelse": "Ervervelsesopplysninger under arbeid",
-    "Eier og samling": "Stiftelsen Arkitekturmuseet, Arkitektursamlingene",
-    "Foto": "Jarre, Anne Hansteen",
-    "Opphavsrett": "© Korsmo, Arne, Utzon, Jørn",
-    "images": [
-      {
-        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/29950.tif/full/512,/0/default.jpg",
-        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/29950.tif/full/1600,/0/default.jpg",
-        "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/29950.tif/full/full/0/default.jpg",
-        "filename": "NAMT.ako007.003_29950.jpg"
-      }
-    ]
+    "model3d": "NMK.2008.0734.034.001_66572.glb"
   },
   {
     "objectId": "OK-12553B",
@@ -13972,159 +13548,15 @@
     "Registreringsnivå": "Enkeltobjekt",
     "Ervervelse": "Ervervelsesopplysninger under arbeid",
     "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
-    "images": []
-  },
-  {
-    "objectId": "NG.K_H.1982.0505",
-    "url": "https://www.nasjonalmuseet.no/samlingen/objekt/NG.K_H.1982.0505",
-    "title": "Rafael og La Fornarina XIII: Paven sitter i sin stol med tungen ut av munnenSuite 347",
-    "Datering": "3. september 1968 (plate) / (1969) (trykk)",
-    "Andre titler": "Raphaël et la Fornarina. XIII: Dans son fauteuil, le pape en tire la langue (FRE)",
-    "Betegnelse": "Grafikk",
-    "Materiale og teknikk": "Streketsning på papir",
-    "Teknikk": "Streketsning",
-    "Materiale": "Papir",
-    "Mål": "147 x 209 mm",
-    "Opplag": "41/50",
-    "Emneord": "Bildende kunst",
-    "Klassifikasjon": "532 - Bildende kunst",
-    "Motiv": "Erotisk scene",
-    "Inventarnr.": "NG.K&H.1982.0505",
-    "Registreringsnivå": "Enkeltobjekt",
-    "Ervervelse": "Erleggelse for arveavgift fra Arild Wahlstrøm, innkommet 1982",
-    "Eier og samling": "Nasjonalmuseet for kunst, arkitektur og design, Billedkunstsamlingene",
-    "Foto": "Børre Høstland",
-    "Opphavsrett": "BONO",
     "images": [
       {
-        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/NG.K_H.1982.0505.tif/full/512,/0/default.jpg",
-        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/NG.K_H.1982.0505.tif/full/1600,/0/default.jpg",
-        "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/NG.K_H.1982.0505.tif/full/full/0/default.jpg",
-        "filename": "NG.K_H.1982.0505_NG.K_H.1982.0505.jpg"
+        "filename": "OK-17299_66321.jpg",
+        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/66321.tif/full/1600,/0/default.jpg",
+        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/66321.tif/full/512,/0/default.jpg",
+        "glb": "OK-17299_66321.glb"
       }
-    ]
-  },
-  {
-    "objectId": "NAMT.ako007.002",
-    "url": "https://www.nasjonalmuseet.no/samlingen/objekt/NAMT.ako007.002",
-    "title": "Chair, Project for the MoMA competition Designs for Modern Furniture",
-    "Datering": "(1948)",
-    "Andre titler": "Chair, Project for the MoMA competition Designs for Modern Furniture (ENG)Stol, utkast til MoMAs konkurranse om design for moderne møbler (NOB)",
-    "Betegnelse": "Oppriss",
-    "Materiale og teknikk": "Tusj og akvarell på kartong",
-    "Teknikk": [
-      "Tusj",
-      "Akvarell"
     ],
-    "Materiale": "Papp/kartong",
-    "Mål": "25,2 x 24,9 cm",
-    "Emneord": "Arkitektonisk tegning",
-    "Klassifikasjon": "341 - Arkitektur",
-    "Inventarnr.": "NAMT.ako007.002",
-    "Registreringsnivå": "Enkeltobjekt",
-    "Ervervelse": "Ervervelsesopplysninger under arbeid",
-    "Eier og samling": "Stiftelsen Arkitekturmuseet, Arkitektursamlingene",
-    "Foto": "Jarre, Anne Hansteen",
-    "Opphavsrett": "© Korsmo, Arne, Utzon, Jørn",
-    "images": [
-      {
-        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/29949.tif/full/512,/0/default.jpg",
-        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/29949.tif/full/1600,/0/default.jpg",
-        "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/29949.tif/full/full/0/default.jpg",
-        "filename": "NAMT.ako007.002_29949.jpg"
-      }
-    ]
-  },
-  {
-    "objectId": "MS-02213-1990",
-    "url": "https://www.nasjonalmuseet.no/samlingen/objekt/MS-02213-1990",
-    "title": "Interiør med imperativt mandat",
-    "Datering": "1983–1984",
-    "Andre titler": "Interior With Imperative Mandate (ENG)",
-    "Betegnelse": "Installasjon",
-    "Materiale og teknikk": "vegg, gulv, persienne, målebånd, brett med kniv, kokeapparat, fat med fugl, bord med stol, lærreimer, brødboks, patentbånd, elefantfot, beltedyr, trefjøler, taburett, bearbeidet vekt, og lodd",
-    "Mål": "275,2 x 252,3 x 249,8 cm",
-    "Emneord": "Bildende kunst",
-    "Klassifikasjon": "532 - Bildende kunst",
-    "Inventarnr.": "MS-02213-1990",
-    "Registreringsnivå": "Komplekst objekt",
-    "Ervervelse": "Kjøpt 1990",
-    "Eier og samling": "Nasjonalmuseet for kunst, arkitektur og design, Billedkunstsamlingene",
-    "Foto": "Morten Thorkildsen",
-    "Opphavsrett": "BONO",
-    "images": [
-      {
-        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/131218.tif/full/512,/0/default.jpg",
-        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/131218.tif/full/1600,/0/default.jpg",
-        "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/131218.tif/full/full/0/default.jpg",
-        "filename": "MS-02213-1990_131218.jpg"
-      }
-    ]
-  },
-  {
-    "objectId": "NAMT.ako007.001",
-    "url": "https://www.nasjonalmuseet.no/samlingen/objekt/NAMT.ako007.001",
-    "title": "Chair, Project for the MoMA competition Designs for Modern Furniture",
-    "Datering": "(1948)",
-    "Andre titler": "Chair, Project for the MoMA competition Designs for Modern Furniture (ENG)Stol, utkast til MoMAs konkurranse om design for moderne møbler (NOB)",
-    "Betegnelse": "Oppriss",
-    "Materiale og teknikk": "Tusj på kartong",
-    "Teknikk": "Tusj",
-    "Materiale": "Kartong/papp",
-    "Mål": "H 25,1 cm x B 24,9 cm",
-    "Emneord": "Arkitektonisk tegning",
-    "Klassifikasjon": [
-      "341 - Arkitektur",
-      "352.1 - Sittemøbler"
-    ],
-    "Stilperiode": "Modernisme",
-    "Inventarnr.": "NAMT.ako007.001",
-    "Registreringsnivå": "Enkeltobjekt",
-    "Ervervelse": "Ervervelsesopplysninger under arbeid",
-    "Eier og samling": "Stiftelsen Arkitekturmuseet, Arkitektursamlingene",
-    "Foto": "Jarre, Anne Hansteen",
-    "Opphavsrett": "© Korsmo, Arne, Utzon, Jørn",
-    "images": [
-      {
-        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/29948.tif/full/512,/0/default.jpg",
-        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/29948.tif/full/1600,/0/default.jpg",
-        "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/29948.tif/full/full/0/default.jpg",
-        "filename": "NAMT.ako007.001_29948.jpg"
-      }
-    ]
-  },
-  {
-    "objectId": "NG.K_H.1982.0425",
-    "url": "https://www.nasjonalmuseet.no/samlingen/objekt/NG.K_H.1982.0425",
-    "title": "Mann som støtter seg på albuen og sitter halvveis knelende på en stol foran (eller tenkende på) en kvinneSuite 347",
-    "Datering": "1. august 1968 (plate) / (1969) (trykk)",
-    "Betegnelse": "Grafikk",
-    "Materiale og teknikk": "Streketsning, skrapejern og koldnål på papir",
-    "Teknikk": [
-      "Streketsning",
-      "Skrape",
-      "Koldnål"
-    ],
-    "Materiale": "Papir",
-    "Mål": "223 x 179 mm",
-    "Opplag": "41/50",
-    "Emneord": "Bildende kunst",
-    "Klassifikasjon": "532 - Bildende kunst",
-    "Motiv": "Kunstnerisk fabulering",
-    "Inventarnr.": "NG.K&H.1982.0425",
-    "Registreringsnivå": "Enkeltobjekt",
-    "Ervervelse": "Erleggelse for arveavgift fra Arild Wahlstrøm, innkommet 1982",
-    "Eier og samling": "Nasjonalmuseet for kunst, arkitektur og design, Billedkunstsamlingene",
-    "Foto": "Morten Thorkildsen",
-    "Opphavsrett": "BONO",
-    "images": [
-      {
-        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/139778.tif/full/512,/0/default.jpg",
-        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/139778.tif/full/1600,/0/default.jpg",
-        "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/139778.tif/full/full/0/default.jpg",
-        "filename": "NG.K_H.1982.0425_139778.jpg"
-      }
-    ]
+    "model3d": "OK-17299_66321.glb"
   },
   {
     "objectId": "OK-02256",
@@ -14412,9 +13844,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07614.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07614.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07614.tif/full/full/0/default.jpg",
-        "filename": "OK-1989-0229A_07614.jpg"
+        "filename": "OK-1989-0229A_07614.jpg",
+        "glb": "OK-1989-0229A_07614.glb"
       }
-    ]
+    ],
+    "model3d": "OK-1989-0229A_07614.glb"
   },
   {
     "objectId": "OK-10330C",
@@ -14497,9 +13931,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/93138.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/93138.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/93138.tif/full/full/0/default.jpg",
-        "filename": "OK-08607A_93138.jpg"
+        "filename": "OK-08607A_93138.jpg",
+        "glb": "OK-08607A_93138.glb"
       }
-    ]
+    ],
+    "model3d": "OK-08607A_93138.glb"
   },
   {
     "objectId": "OK-09415B",
@@ -14541,7 +13977,15 @@
     "Registreringsnivå": "Komplekst objekt",
     "Ervervelse": "Testamentarisk gave, innkommet 1919",
     "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
-    "images": []
+    "images": [
+      {
+        "filename": "OK-09415B_93076.jpg",
+        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/93076.tif/full/1600,/0/default.jpg",
+        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/93076.tif/full/512,/0/default.jpg",
+        "glb": "OK-09415B_93076.glb"
+      }
+    ],
+    "model3d": "OK-09415B_93076.glb"
   },
   {
     "objectId": "OK-14894C",
@@ -14583,9 +14027,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08306.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08306.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08306.tif/full/full/0/default.jpg",
-        "filename": "OK-14894C_08306.jpg"
+        "filename": "OK-14894C_08306.jpg",
+        "glb": "OK-14894C_08306.glb"
       }
-    ]
+    ],
+    "model3d": "OK-14894C_08306.glb"
   },
   {
     "objectId": "OK-14894E",
@@ -14627,9 +14073,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/09100.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/09100.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/09100.tif/full/full/0/default.jpg",
-        "filename": "OK-14894E_09100.jpg"
+        "filename": "OK-14894E_09100.jpg",
+        "glb": "OK-14894E_09100.glb"
       }
-    ]
+    ],
+    "model3d": "OK-14894E_09100.glb"
   },
   {
     "objectId": "OK-17289A",
@@ -14672,9 +14120,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94844.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94844.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94844.tif/full/full/0/default.jpg",
-        "filename": "OK-17289A_94844.jpg"
+        "filename": "OK-17289A_94844.jpg",
+        "glb": "OK-17289A_94844.glb"
       }
-    ]
+    ],
+    "model3d": "OK-17289A_94844.glb"
   },
   {
     "objectId": "OK-17289E",
@@ -14716,9 +14166,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/92652.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/92652.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/92652.tif/full/full/0/default.jpg",
-        "filename": "OK-17289E_92652.jpg"
+        "filename": "OK-17289E_92652.jpg",
+        "glb": "OK-17289E_92652.glb"
       }
-    ]
+    ],
+    "model3d": "OK-17289E_92652.glb"
   },
   {
     "objectId": "OK-17289F",
@@ -14760,9 +14212,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/92648.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/92648.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/92648.tif/full/full/0/default.jpg",
-        "filename": "OK-17289F_92648.jpg"
+        "filename": "OK-17289F_92648.jpg",
+        "glb": "OK-17289F_92648.glb"
       }
-    ]
+    ],
+    "model3d": "OK-17289F_92648.glb"
   },
   {
     "objectId": "OK-17289D",
@@ -14805,9 +14259,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/92649.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/92649.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/92649.tif/full/full/0/default.jpg",
-        "filename": "OK-17289D_92649.jpg"
+        "filename": "OK-17289D_92649.jpg",
+        "glb": "OK-17289D_92649.glb"
       }
-    ]
+    ],
+    "model3d": "OK-17289D_92649.glb"
   },
   {
     "objectId": "OK-15056B-1",
@@ -14847,9 +14303,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94840.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94840.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94840.tif/full/full/0/default.jpg",
-        "filename": "OK-15056B-1_94840.jpg"
+        "filename": "OK-15056B-1_94840.jpg",
+        "glb": "OK-15056B-1_94840.glb"
       }
-    ]
+    ],
+    "model3d": "OK-15056B-1_94840.glb"
   },
   {
     "objectId": "OK-15056B-2",
@@ -14889,9 +14347,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94841.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94841.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94841.tif/full/full/0/default.jpg",
-        "filename": "OK-15056B-2_94841.jpg"
+        "filename": "OK-15056B-2_94841.jpg",
+        "glb": "OK-15056B-2_94841.glb"
       }
-    ]
+    ],
+    "model3d": "OK-15056B-2_94841.glb"
   },
   {
     "objectId": "OK-07968",
@@ -14933,9 +14393,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07267.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07267.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07267.tif/full/full/0/default.jpg",
-        "filename": "OK-07968_07267.jpg"
+        "filename": "OK-07968_07267.jpg",
+        "glb": "OK-07968_07267.glb"
       }
-    ]
+    ],
+    "model3d": "OK-07968_07267.glb"
   },
   {
     "objectId": "OK-11813I",
@@ -14976,9 +14438,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94827.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94827.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94827.tif/full/full/0/default.jpg",
-        "filename": "OK-11813I_94827.jpg"
+        "filename": "OK-11813I_94827.jpg",
+        "glb": "OK-11813I_94827.glb"
       }
-    ]
+    ],
+    "model3d": "OK-11813I_94827.glb"
   },
   {
     "objectId": "OK-02782",
@@ -15023,9 +14487,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07407.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07407.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07407.tif/full/full/0/default.jpg",
-        "filename": "OK-02782_07407.jpg"
+        "filename": "OK-02782_07407.jpg",
+        "glb": "OK-02782_07407.glb"
       }
-    ]
+    ],
+    "model3d": "OK-02782_07407.glb"
   },
   {
     "objectId": "OK-02781",
@@ -15072,9 +14538,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07303.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07303.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07303.tif/full/full/0/default.jpg",
-        "filename": "OK-02781_07303.jpg"
+        "filename": "OK-02781_07303.jpg",
+        "glb": "OK-02781_07303.glb"
       }
-    ]
+    ],
+    "model3d": "OK-02781_07303.glb"
   },
   {
     "objectId": "OK-1980-0045",
@@ -15113,9 +14581,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/92588.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/92588.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/92588.tif/full/full/0/default.jpg",
-        "filename": "OK-1980-0045_92588.jpg"
+        "filename": "OK-1980-0045_92588.jpg",
+        "glb": "OK-1980-0045_92588.glb"
       }
-    ]
+    ],
+    "model3d": "OK-1980-0045_92588.glb"
   },
   {
     "objectId": "OK-11528A",
@@ -15161,9 +14631,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94811.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94811.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94811.tif/full/full/0/default.jpg",
-        "filename": "OK-11528A_94811.jpg"
+        "filename": "OK-11528A_94811.jpg",
+        "glb": "OK-11528A_94811.glb"
       }
-    ]
+    ],
+    "model3d": "OK-11528A_94811.glb"
   },
   {
     "objectId": "NMK.2005.0646",
@@ -15204,9 +14676,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08736.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08736.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08736.tif/full/full/0/default.jpg",
-        "filename": "NMK.2005.0646_08736.jpg"
+        "filename": "NMK.2005.0646_08736.jpg",
+        "glb": "NMK.2005.0646_08736.glb"
       }
-    ]
+    ],
+    "model3d": "NMK.2005.0646_08736.glb"
   },
   {
     "objectId": "OK-08607B",
@@ -15239,9 +14713,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/OK-08607B.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/OK-08607B.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/OK-08607B.tif/full/full/0/default.jpg",
-        "filename": "OK-08607B_OK-08607B.jpg"
+        "filename": "OK-08607B_OK-08607B.jpg",
+        "glb": "OK-08607B_OK-08607B.glb"
       }
-    ]
+    ],
+    "model3d": "OK-08607B_OK-08607B.glb"
   },
   {
     "objectId": "OK-06666",
@@ -15277,7 +14753,15 @@
     "Registreringsnivå": "Komplekst objekt",
     "Ervervelse": "Kjøpt 1902",
     "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
-    "images": []
+    "images": [
+      {
+        "filename": "OK-06666_66321.jpg",
+        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/66321.tif/full/1600,/0/default.jpg",
+        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/66321.tif/full/512,/0/default.jpg",
+        "glb": "OK-06666_66321.glb"
+      }
+    ],
+    "model3d": "OK-06666_66321.glb"
   },
   {
     "objectId": "OK-06659",
@@ -15320,9 +14804,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/OK-06659.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/OK-06659.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/OK-06659.tif/full/full/0/default.jpg",
-        "filename": "OK-06659_OK-06659.jpg"
+        "filename": "OK-06659_OK-06659.jpg",
+        "glb": "OK-06659_OK-06659.glb"
       }
-    ]
+    ],
+    "model3d": "OK-06659_OK-06659.glb"
   },
   {
     "objectId": "OK-01630",
@@ -15369,9 +14855,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07140.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07140.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07140.tif/full/full/0/default.jpg",
-        "filename": "OK-01630_07140.jpg"
+        "filename": "OK-01630_07140.jpg",
+        "glb": "OK-01630_07140.glb"
       }
-    ]
+    ],
+    "model3d": "OK-01630_07140.glb"
   },
   {
     "objectId": "OK-10330E",
@@ -15411,9 +14899,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/34636.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/34636.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/34636.tif/full/full/0/default.jpg",
-        "filename": "OK-10330E_34636.jpg"
+        "filename": "OK-10330E_34636.jpg",
+        "glb": "OK-10330E_34636.glb"
       }
-    ]
+    ],
+    "model3d": "OK-10330E_34636.glb"
   },
   {
     "objectId": "OK-05548",
@@ -15452,7 +14942,15 @@
     "Registreringsnivå": "Komplekst objekt",
     "Ervervelse": "Kjøpt 1897",
     "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
-    "images": []
+    "images": [
+      {
+        "filename": "OK-05548_66321.jpg",
+        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/66321.tif/full/1600,/0/default.jpg",
+        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/66321.tif/full/512,/0/default.jpg",
+        "glb": "OK-05548_66321.glb"
+      }
+    ],
+    "model3d": "OK-05548_66321.glb"
   },
   {
     "objectId": "OK-09415A",
@@ -15500,9 +14998,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/93076.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/93076.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/93076.tif/full/full/0/default.jpg",
-        "filename": "OK-09415A_93076.jpg"
+        "filename": "OK-09415A_93076.jpg",
+        "glb": "OK-09415A_93076.glb"
       }
-    ]
+    ],
+    "model3d": "OK-09415A_93076.glb"
   },
   {
     "objectId": "OK-17280B",
@@ -15593,9 +15093,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07199.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07199.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07199.tif/full/full/0/default.jpg",
-        "filename": "OK-14894B_07199.jpg"
+        "filename": "OK-14894B_07199.jpg",
+        "glb": "OK-14894B_07199.glb"
       }
-    ]
+    ],
+    "model3d": "OK-14894B_07199.glb"
   },
   {
     "objectId": "OK-17289C",
@@ -15638,9 +15140,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/92653.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/92653.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/92653.tif/full/full/0/default.jpg",
-        "filename": "OK-17289C_92653.jpg"
+        "filename": "OK-17289C_92653.jpg",
+        "glb": "OK-17289C_92653.glb"
       }
-    ]
+    ],
+    "model3d": "OK-17289C_92653.glb"
   },
   {
     "objectId": "OK-17261",
@@ -15725,9 +15229,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94839.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94839.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94839.tif/full/full/0/default.jpg",
-        "filename": "OK-14883H-1_94839.jpg"
+        "filename": "OK-14883H-1_94839.jpg",
+        "glb": "OK-14883H-1_94839.glb"
       }
-    ]
+    ],
+    "model3d": "OK-14883H-1_94839.glb"
   },
   {
     "objectId": "OK-03079",
@@ -15770,9 +15276,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07410.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07410.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07410.tif/full/full/0/default.jpg",
-        "filename": "OK-03079_07410.jpg"
+        "filename": "OK-03079_07410.jpg",
+        "glb": "OK-03079_07410.glb"
       }
-    ]
+    ],
+    "model3d": "OK-03079_07410.glb"
   },
   {
     "objectId": "OK-18471B",
@@ -15819,9 +15327,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/101880.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/101880.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/101880.tif/full/full/0/default.jpg",
-        "filename": "OK-18471B_101880.jpg"
+        "filename": "OK-18471B_101880.jpg",
+        "glb": "OK-18471B_101880.glb"
       }
-    ]
+    ],
+    "model3d": "OK-18471B_101880.glb"
   },
   {
     "objectId": "OK-1991-0003",
@@ -15860,9 +15370,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/104382.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/104382.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/104382.tif/full/full/0/default.jpg",
-        "filename": "OK-1991-0003_104382.jpg"
+        "filename": "OK-1991-0003_104382.jpg",
+        "glb": "OK-1991-0003_104382.glb"
       }
-    ]
+    ],
+    "model3d": "OK-1991-0003_104382.glb"
   },
   {
     "objectId": "OK-08745",
@@ -15901,9 +15413,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07317.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07317.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07317.tif/full/full/0/default.jpg",
-        "filename": "OK-08745_07317.jpg"
+        "filename": "OK-08745_07317.jpg",
+        "glb": "OK-08745_07317.glb"
       }
-    ]
+    ],
+    "model3d": "OK-08745_07317.glb"
   },
   {
     "objectId": "OK-11527B",
@@ -15948,9 +15462,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94809.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94809.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94809.tif/full/full/0/default.jpg",
-        "filename": "OK-11527B_94809.jpg"
+        "filename": "OK-11527B_94809.jpg",
+        "glb": "OK-11527B_94809.glb"
       }
-    ]
+    ],
+    "model3d": "OK-11527B_94809.glb"
   },
   {
     "objectId": "OK-1980-0043",
@@ -15986,9 +15502,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07085.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07085.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07085.tif/full/full/0/default.jpg",
-        "filename": "OK-1980-0043_07085.jpg"
+        "filename": "OK-1980-0043_07085.jpg",
+        "glb": "OK-1980-0043_07085.glb"
       }
-    ]
+    ],
+    "model3d": "OK-1980-0043_07085.glb"
   },
   {
     "objectId": "NMK.2005.0640",
@@ -16084,9 +15602,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07114.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07114.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07114.tif/full/full/0/default.jpg",
-        "filename": "OK-2002-0142_07114.jpg"
+        "filename": "OK-2002-0142_07114.jpg",
+        "glb": "OK-2002-0142_07114.glb"
       }
-    ]
+    ],
+    "model3d": "OK-2002-0142_07114.glb"
   },
   {
     "objectId": "NMK.2005.0638",
@@ -16169,9 +15689,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07261.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07261.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07261.tif/full/full/0/default.jpg",
-        "filename": "OK-07280_07261.jpg"
+        "filename": "OK-07280_07261.jpg",
+        "glb": "OK-07280_07261.glb"
       }
-    ]
+    ],
+    "model3d": "OK-07280_07261.glb"
   },
   {
     "objectId": "OK-05553",
@@ -16213,9 +15735,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07152.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07152.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07152.tif/full/full/0/default.jpg",
-        "filename": "OK-05553_07152.jpg"
+        "filename": "OK-05553_07152.jpg",
+        "glb": "OK-05553_07152.glb"
       }
-    ]
+    ],
+    "model3d": "OK-05553_07152.glb"
   },
   {
     "objectId": "OK-06660",
@@ -16252,7 +15776,15 @@
     "Registreringsnivå": "Enkeltobjekt",
     "Ervervelse": "Kjøpt 1902",
     "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
-    "images": []
+    "images": [
+      {
+        "filename": "OK-06660_66321.jpg",
+        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/66321.tif/full/1600,/0/default.jpg",
+        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/66321.tif/full/512,/0/default.jpg",
+        "glb": "OK-06660_66321.glb"
+      }
+    ],
+    "model3d": "OK-06660_66321.glb"
   },
   {
     "objectId": "OK-11529B",
@@ -16295,9 +15827,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94817.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94817.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94817.tif/full/full/0/default.jpg",
-        "filename": "OK-11529B_94817.jpg"
+        "filename": "OK-11529B_94817.jpg",
+        "glb": "OK-11529B_94817.glb"
       }
-    ]
+    ],
+    "model3d": "OK-11529B_94817.glb"
   },
   {
     "objectId": "OK-05554",
@@ -16338,9 +15872,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/09086.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/09086.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/09086.tif/full/full/0/default.jpg",
-        "filename": "OK-05554_09086.jpg"
+        "filename": "OK-05554_09086.jpg",
+        "glb": "OK-05554_09086.glb"
       }
-    ]
+    ],
+    "model3d": "OK-05554_09086.glb"
   },
   {
     "objectId": "OK-17329B",
@@ -16379,9 +15915,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/93135.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/93135.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/93135.tif/full/full/0/default.jpg",
-        "filename": "OK-17329B_93135.jpg"
+        "filename": "OK-17329B_93135.jpg",
+        "glb": "OK-17329B_93135.glb"
       }
-    ]
+    ],
+    "model3d": "OK-17329B_93135.glb"
   },
   {
     "objectId": "OK-09415C",
@@ -16423,7 +15961,15 @@
     "Registreringsnivå": "Komplekst objekt",
     "Ervervelse": "Testamentarisk gave, innkommet 1919",
     "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
-    "images": []
+    "images": [
+      {
+        "filename": "OK-09415C_93076.jpg",
+        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/93076.tif/full/1600,/0/default.jpg",
+        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/93076.tif/full/512,/0/default.jpg",
+        "glb": "OK-09415C_93076.glb"
+      }
+    ],
+    "model3d": "OK-09415C_93076.glb"
   },
   {
     "objectId": "OK-17280C",
@@ -16470,9 +16016,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07463.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07463.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07463.tif/full/full/0/default.jpg",
-        "filename": "OK-17280C_07463.jpg"
+        "filename": "OK-17280C_07463.jpg",
+        "glb": "OK-17280C_07463.glb"
       }
-    ]
+    ],
+    "model3d": "OK-17280C_07463.glb"
   },
   {
     "objectId": "OK-14894A",
@@ -16514,9 +16062,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07622.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07622.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07622.tif/full/full/0/default.jpg",
-        "filename": "OK-14894A_07622.jpg"
+        "filename": "OK-14894A_07622.jpg",
+        "glb": "OK-14894A_07622.glb"
       }
-    ]
+    ],
+    "model3d": "OK-14894A_07622.glb"
   },
   {
     "objectId": "OK-17290",
@@ -16549,9 +16099,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07464.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07464.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07464.tif/full/full/0/default.jpg",
-        "filename": "OK-17290_07464.jpg"
+        "filename": "OK-17290_07464.jpg",
+        "glb": "OK-17290_07464.glb"
       }
-    ]
+    ],
+    "model3d": "OK-17290_07464.glb"
   },
   {
     "objectId": "OK-1989-0229C",
@@ -16593,9 +16145,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08310.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08310.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08310.tif/full/full/0/default.jpg",
-        "filename": "OK-1989-0229C_08310.jpg"
+        "filename": "OK-1989-0229C_08310.jpg",
+        "glb": "OK-1989-0229C_08310.glb"
       }
-    ]
+    ],
+    "model3d": "OK-1989-0229C_08310.glb"
   },
   {
     "objectId": "OK-11529A",
@@ -16638,9 +16192,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94815.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94815.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94815.tif/full/full/0/default.jpg",
-        "filename": "OK-11529A_94815.jpg"
+        "filename": "OK-11529A_94815.jpg",
+        "glb": "OK-11529A_94815.glb"
       }
-    ]
+    ],
+    "model3d": "OK-11529A_94815.glb"
   },
   {
     "objectId": "OK-11528B",
@@ -16688,9 +16244,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94813.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94813.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94813.tif/full/full/0/default.jpg",
-        "filename": "OK-11528B_94813.jpg"
+        "filename": "OK-11528B_94813.jpg",
+        "glb": "OK-11528B_94813.glb"
       }
-    ]
+    ],
+    "model3d": "OK-11528B_94813.glb"
   },
   {
     "objectId": "OK-1997-0125",
@@ -16733,9 +16291,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07100.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07100.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07100.tif/full/full/0/default.jpg",
-        "filename": "OK-1997-0125_07100.jpg"
+        "filename": "OK-1997-0125_07100.jpg",
+        "glb": "OK-1997-0125_07100.glb"
       }
-    ]
+    ],
+    "model3d": "OK-1997-0125_07100.glb"
   },
   {
     "objectId": "OK-10403",
@@ -16818,9 +16378,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08732.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08732.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08732.tif/full/full/0/default.jpg",
-        "filename": "NMK.2005.0641_08732.jpg"
+        "filename": "NMK.2005.0641_08732.jpg",
+        "glb": "NMK.2005.0641_08732.glb"
       }
-    ]
+    ],
+    "model3d": "NMK.2005.0641_08732.glb"
   },
   {
     "objectId": "OK-07610",
@@ -16864,9 +16426,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07266.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07266.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07266.tif/full/full/0/default.jpg",
-        "filename": "OK-07610_07266.jpg"
+        "filename": "OK-07610_07266.jpg",
+        "glb": "OK-07610_07266.glb"
       }
-    ]
+    ],
+    "model3d": "OK-07610_07266.glb"
   },
   {
     "objectId": "OK-11813K",
@@ -16907,9 +16471,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94828.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94828.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94828.tif/full/full/0/default.jpg",
-        "filename": "OK-11813K_94828.jpg"
+        "filename": "OK-11813K_94828.jpg",
+        "glb": "OK-11813K_94828.glb"
       }
-    ]
+    ],
+    "model3d": "OK-11813K_94828.glb"
   },
   {
     "objectId": "OK-07283",
@@ -16951,9 +16517,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07262.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07262.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07262.tif/full/full/0/default.jpg",
-        "filename": "OK-07283_07262.jpg"
+        "filename": "OK-07283_07262.jpg",
+        "glb": "OK-07283_07262.glb"
       }
-    ]
+    ],
+    "model3d": "OK-07283_07262.glb"
   },
   {
     "objectId": "OK-1984-0149",
@@ -17005,9 +16573,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/OK-1984-0149+20250325.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/OK-1984-0149+20250325.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/OK-1984-0149+20250325.tif/full/full/0/default.jpg",
-        "filename": "OK-1984-0149_OK-1984-0149+20250325.jpg"
+        "filename": "OK-1984-0149_OK-1984-0149+20250325.jpg",
+        "glb": "OK-1984-0149_OK-1984-0149+20250325.glb"
       }
-    ]
+    ],
+    "model3d": "OK-1984-0149_OK-1984-0149+20250325.glb"
   },
   {
     "objectId": "OK-11579",
@@ -17046,9 +16616,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07191.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07191.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07191.tif/full/full/0/default.jpg",
-        "filename": "OK-11579_07191.jpg"
+        "filename": "OK-11579_07191.jpg",
+        "glb": "OK-11579_07191.glb"
       }
-    ]
+    ],
+    "model3d": "OK-11579_07191.glb"
   },
   {
     "objectId": "OK-07282",
@@ -17093,9 +16665,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07160.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07160.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07160.tif/full/full/0/default.jpg",
-        "filename": "OK-07282_07160.jpg"
+        "filename": "OK-07282_07160.jpg",
+        "glb": "OK-07282_07160.glb"
       }
-    ]
+    ],
+    "model3d": "OK-07282_07160.glb"
   },
   {
     "objectId": "OK-1991-0898",
@@ -17135,9 +16709,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/111619.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/111619.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/111619.tif/full/full/0/default.jpg",
-        "filename": "OK-1991-0898_111619.jpg"
+        "filename": "OK-1991-0898_111619.jpg",
+        "glb": "OK-1991-0898_111619.glb"
       }
-    ]
+    ],
+    "model3d": "OK-1991-0898_111619.glb"
   },
   {
     "objectId": "OK-10330B",
@@ -17177,9 +16753,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/34633.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/34633.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/34633.tif/full/full/0/default.jpg",
-        "filename": "OK-10330B_34633.jpg"
+        "filename": "OK-10330B_34633.jpg",
+        "glb": "OK-10330B_34633.glb"
       }
-    ]
+    ],
+    "model3d": "OK-10330B_34633.glb"
   },
   {
     "objectId": "OK-10330F",
@@ -17219,9 +16797,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/34637.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/34637.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/34637.tif/full/full/0/default.jpg",
-        "filename": "OK-10330F_34637.jpg"
+        "filename": "OK-10330F_34637.jpg",
+        "glb": "OK-10330F_34637.glb"
       }
-    ]
+    ],
+    "model3d": "OK-10330F_34637.glb"
   },
   {
     "objectId": "OK-17046",
@@ -17260,9 +16840,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07462.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07462.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07462.tif/full/full/0/default.jpg",
-        "filename": "OK-17046_07462.jpg"
+        "filename": "OK-17046_07462.jpg",
+        "glb": "OK-17046_07462.glb"
       }
-    ]
+    ],
+    "model3d": "OK-17046_07462.glb"
   },
   {
     "objectId": "OK-14846",
@@ -17304,9 +16886,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07196.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07196.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07196.tif/full/full/0/default.jpg",
-        "filename": "OK-14846_07196.jpg"
+        "filename": "OK-14846_07196.jpg",
+        "glb": "OK-14846_07196.glb"
       }
-    ]
+    ],
+    "model3d": "OK-14846_07196.glb"
   },
   {
     "objectId": "OK-1991-0892D",
@@ -17347,9 +16931,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/125935.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/125935.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/125935.tif/full/full/0/default.jpg",
-        "filename": "OK-1991-0892D_125935.jpg"
+        "filename": "OK-1991-0892D_125935.jpg",
+        "glb": "OK-1991-0892D_125935.glb"
       }
-    ]
+    ],
+    "model3d": "OK-1991-0892D_125935.glb"
   },
   {
     "objectId": "OK-09415D",
@@ -17391,7 +16977,15 @@
     "Registreringsnivå": "Komplekst objekt",
     "Ervervelse": "Testamentarisk gave, innkommet 1919",
     "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
-    "images": []
+    "images": [
+      {
+        "filename": "OK-09415D_93076.jpg",
+        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/93076.tif/full/1600,/0/default.jpg",
+        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/93076.tif/full/512,/0/default.jpg",
+        "glb": "OK-09415D_93076.glb"
+      }
+    ],
+    "model3d": "OK-09415D_93076.glb"
   },
   {
     "objectId": "OK-14894F",
@@ -17433,9 +17027,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/59792.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/59792.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/59792.tif/full/full/0/default.jpg",
-        "filename": "OK-14894F_59792.jpg"
+        "filename": "OK-14894F_59792.jpg",
+        "glb": "OK-14894F_59792.glb"
       }
-    ]
+    ],
+    "model3d": "OK-14894F_59792.glb"
   },
   {
     "objectId": "OK-17280E",
@@ -17482,9 +17078,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/92659.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/92659.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/92659.tif/full/full/0/default.jpg",
-        "filename": "OK-17280E_92659.jpg"
+        "filename": "OK-17280E_92659.jpg",
+        "glb": "OK-17280E_92659.glb"
       }
-    ]
+    ],
+    "model3d": "OK-17280E_92659.glb"
   },
   {
     "objectId": "OK-03077",
@@ -17528,9 +17126,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07142.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07142.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07142.tif/full/full/0/default.jpg",
-        "filename": "OK-03077_07142.jpg"
+        "filename": "OK-03077_07142.jpg",
+        "glb": "OK-03077_07142.glb"
       }
-    ]
+    ],
+    "model3d": "OK-03077_07142.glb"
   },
   {
     "objectId": "OK-17289B",
@@ -17610,9 +17210,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07493.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07493.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07493.tif/full/full/0/default.jpg",
-        "filename": "OK-17302B_07493.jpg"
+        "filename": "OK-17302B_07493.jpg",
+        "glb": "OK-17302B_07493.glb"
       }
-    ]
+    ],
+    "model3d": "OK-17302B_07493.glb"
   },
   {
     "objectId": "OK-14883H-2",
@@ -17654,9 +17256,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94916.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94916.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94916.tif/full/full/0/default.jpg",
-        "filename": "OK-14883H-2_94916.jpg"
+        "filename": "OK-14883H-2_94916.jpg",
+        "glb": "OK-14883H-2_94916.glb"
       }
-    ]
+    ],
+    "model3d": "OK-14883H-2_94916.glb"
   },
   {
     "objectId": "OK-1989-0229D",
@@ -17699,9 +17303,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08308.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08308.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08308.tif/full/full/0/default.jpg",
-        "filename": "OK-1989-0229D_08308.jpg"
+        "filename": "OK-1989-0229D_08308.jpg",
+        "glb": "OK-1989-0229D_08308.glb"
       }
-    ]
+    ],
+    "model3d": "OK-1989-0229D_08308.glb"
   },
   {
     "objectId": "NMK.2005.0645",
@@ -17740,9 +17346,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08733.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08733.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08733.tif/full/full/0/default.jpg",
-        "filename": "NMK.2005.0645_08733.jpg"
+        "filename": "NMK.2005.0645_08733.jpg",
+        "glb": "NMK.2005.0645_08733.glb"
       }
-    ]
+    ],
+    "model3d": "NMK.2005.0645_08733.glb"
   },
   {
     "objectId": "OK-18471A",
@@ -17790,9 +17398,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/101878.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/101878.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/101878.tif/full/full/0/default.jpg",
-        "filename": "OK-18471A_101878.jpg"
+        "filename": "OK-18471A_101878.jpg",
+        "glb": "OK-18471A_101878.glb"
       }
-    ]
+    ],
+    "model3d": "OK-18471A_101878.glb"
   },
   {
     "objectId": "OK-14894D",
@@ -17834,9 +17444,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07459.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07459.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07459.tif/full/full/0/default.jpg",
-        "filename": "OK-14894D_07459.jpg"
+        "filename": "OK-14894D_07459.jpg",
+        "glb": "OK-14894D_07459.glb"
       }
-    ]
+    ],
+    "model3d": "OK-14894D_07459.glb"
   },
   {
     "objectId": "OK-INV-013K",
@@ -17873,9 +17485,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/29885.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/29885.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/29885.tif/full/full/0/default.jpg",
-        "filename": "OK-INV-013K_29885.jpg"
+        "filename": "OK-INV-013K_29885.jpg",
+        "glb": "OK-INV-013K_29885.glb"
       }
-    ]
+    ],
+    "model3d": "OK-INV-013K_29885.glb"
   },
   {
     "objectId": "NMK.2005.0644",
@@ -17918,9 +17532,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/34871.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/34871.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/34871.tif/full/full/0/default.jpg",
-        "filename": "NMK.2005.0644_34871.jpg"
+        "filename": "NMK.2005.0644_34871.jpg",
+        "glb": "NMK.2005.0644_34871.glb"
       }
-    ]
+    ],
+    "model3d": "NMK.2005.0644_34871.glb"
   },
   {
     "objectId": "OK-10862B",
@@ -17962,9 +17578,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07186.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07186.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07186.tif/full/full/0/default.jpg",
-        "filename": "OK-10862B_07186.jpg"
+        "filename": "OK-10862B_07186.jpg",
+        "glb": "OK-10862B_07186.glb"
       }
-    ]
+    ],
+    "model3d": "OK-10862B_07186.glb"
   },
   {
     "objectId": "OK-10862A",
@@ -18006,9 +17624,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07185.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07185.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07185.tif/full/full/0/default.jpg",
-        "filename": "OK-10862A_07185.jpg"
+        "filename": "OK-10862A_07185.jpg",
+        "glb": "OK-10862A_07185.glb"
       }
-    ]
+    ],
+    "model3d": "OK-10862A_07185.glb"
   },
   {
     "objectId": "OK-10862D",
@@ -18050,9 +17670,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08303.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08303.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08303.tif/full/full/0/default.jpg",
-        "filename": "OK-10862D_08303.jpg"
+        "filename": "OK-10862D_08303.jpg",
+        "glb": "OK-10862D_08303.glb"
       }
-    ]
+    ],
+    "model3d": "OK-10862D_08303.glb"
   },
   {
     "objectId": "OK-02274",
@@ -18097,9 +17719,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94778.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94778.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94778.tif/full/full/0/default.jpg",
-        "filename": "OK-02274_94778.jpg"
+        "filename": "OK-02274_94778.jpg",
+        "glb": "OK-02274_94778.glb"
       }
-    ]
+    ],
+    "model3d": "OK-02274_94778.glb"
   },
   {
     "objectId": "NMK.2005.0661",
@@ -18141,9 +17765,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08753.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08753.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08753.tif/full/full/0/default.jpg",
-        "filename": "NMK.2005.0661_08753.jpg"
+        "filename": "NMK.2005.0661_08753.jpg",
+        "glb": "NMK.2005.0661_08753.glb"
       }
-    ]
+    ],
+    "model3d": "NMK.2005.0661_08753.glb"
   },
   {
     "objectId": "OK-09696B",
@@ -18187,9 +17813,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07177.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07177.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07177.tif/full/full/0/default.jpg",
-        "filename": "OK-09696B_07177.jpg"
+        "filename": "OK-09696B_07177.jpg",
+        "glb": "OK-09696B_07177.glb"
       }
-    ]
+    ],
+    "model3d": "OK-09696B_07177.glb"
   },
   {
     "objectId": "OK-06661",
@@ -18231,9 +17859,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/OK-06661.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/OK-06661.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/OK-06661.tif/full/full/0/default.jpg",
-        "filename": "OK-06661_OK-06661.jpg"
+        "filename": "OK-06661_OK-06661.jpg",
+        "glb": "OK-06661_OK-06661.glb"
       }
-    ]
+    ],
+    "model3d": "OK-06661_OK-06661.glb"
   },
   {
     "objectId": "OK-07281",
@@ -18272,9 +17902,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94793.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94793.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94793.tif/full/full/0/default.jpg",
-        "filename": "OK-07281_94793.jpg"
+        "filename": "OK-07281_94793.jpg",
+        "glb": "OK-07281_94793.glb"
       }
-    ]
+    ],
+    "model3d": "OK-07281_94793.glb"
   },
   {
     "objectId": "OK-06624",
@@ -18315,9 +17947,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07255.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07255.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07255.tif/full/full/0/default.jpg",
-        "filename": "OK-06624_07255.jpg"
+        "filename": "OK-06624_07255.jpg",
+        "glb": "OK-06624_07255.glb"
       }
-    ]
+    ],
+    "model3d": "OK-06624_07255.glb"
   },
   {
     "objectId": "OK-06616",
@@ -18367,9 +18001,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/93136.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/93136.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/93136.tif/full/full/0/default.jpg",
-        "filename": "OK-06616_93136.jpg"
+        "filename": "OK-06616_93136.jpg",
+        "glb": "OK-06616_93136.glb"
       }
-    ]
+    ],
+    "model3d": "OK-06616_93136.glb"
   },
   {
     "objectId": "OK-10330A",
@@ -18409,9 +18045,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/34632.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/34632.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/34632.tif/full/full/0/default.jpg",
-        "filename": "OK-10330A_34632.jpg"
+        "filename": "OK-10330A_34632.jpg",
+        "glb": "OK-10330A_34632.glb"
       }
-    ]
+    ],
+    "model3d": "OK-10330A_34632.glb"
   },
   {
     "objectId": "OK-10330D",
@@ -18489,9 +18127,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/OK-1966-0114+20240516.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/OK-1966-0114+20240516.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/OK-1966-0114+20240516.tif/full/full/0/default.jpg",
-        "filename": "OK-1966-0114_OK-1966-0114+20240516.jpg"
+        "filename": "OK-1966-0114_OK-1966-0114+20240516.jpg",
+        "glb": "OK-1966-0114_OK-1966-0114+20240516.glb"
       }
-    ]
+    ],
+    "model3d": "OK-1966-0114_OK-1966-0114+20240516.glb"
   },
   {
     "objectId": "OK-1989-0229B",
@@ -18534,9 +18174,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08309.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08309.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08309.tif/full/full/0/default.jpg",
-        "filename": "OK-1989-0229B_08309.jpg"
+        "filename": "OK-1989-0229B_08309.jpg",
+        "glb": "OK-1989-0229B_08309.glb"
       }
-    ]
+    ],
+    "model3d": "OK-1989-0229B_08309.glb"
   },
   {
     "objectId": "OK-1994-0038",
@@ -18571,9 +18213,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/93125.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/93125.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/93125.tif/full/full/0/default.jpg",
-        "filename": "OK-1994-0038_93125.jpg"
+        "filename": "OK-1994-0038_93125.jpg",
+        "glb": "OK-1994-0038_93125.glb"
       }
-    ]
+    ],
+    "model3d": "OK-1994-0038_93125.glb"
   },
   {
     "objectId": "OK-17280F",
@@ -18620,9 +18264,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07569.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07569.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07569.tif/full/full/0/default.jpg",
-        "filename": "OK-17280F_07569.jpg"
+        "filename": "OK-17280F_07569.jpg",
+        "glb": "OK-17280F_07569.glb"
       }
-    ]
+    ],
+    "model3d": "OK-17280F_07569.glb"
   },
   {
     "objectId": "OK-17280D",
@@ -18669,9 +18315,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07206.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07206.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07206.tif/full/full/0/default.jpg",
-        "filename": "OK-17280D_07206.jpg"
+        "filename": "OK-17280D_07206.jpg",
+        "glb": "OK-17280D_07206.glb"
       }
-    ]
+    ],
+    "model3d": "OK-17280D_07206.glb"
   },
   {
     "objectId": "OK-03080",
@@ -18715,9 +18363,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07411.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07411.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07411.tif/full/full/0/default.jpg",
-        "filename": "OK-03080_07411.jpg"
+        "filename": "OK-03080_07411.jpg",
+        "glb": "OK-03080_07411.glb"
       }
-    ]
+    ],
+    "model3d": "OK-03080_07411.glb"
   },
   {
     "objectId": "OK-03078",
@@ -18759,9 +18409,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/09102.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/09102.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/09102.tif/full/full/0/default.jpg",
-        "filename": "OK-03078_09102.jpg"
+        "filename": "OK-03078_09102.jpg",
+        "glb": "OK-03078_09102.glb"
       }
-    ]
+    ],
+    "model3d": "OK-03078_09102.glb"
   },
   {
     "objectId": "OK-17329A",
@@ -18803,9 +18455,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07466.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07466.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07466.tif/full/full/0/default.jpg",
-        "filename": "OK-17329A_07466.jpg"
+        "filename": "OK-17329A_07466.jpg",
+        "glb": "OK-17329A_07466.glb"
       }
-    ]
+    ],
+    "model3d": "OK-17329A_07466.glb"
   },
   {
     "objectId": "OK-02257",
@@ -18843,9 +18497,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07406.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07406.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07406.tif/full/full/0/default.jpg",
-        "filename": "OK-02257_07406.jpg"
+        "filename": "OK-02257_07406.jpg",
+        "glb": "OK-02257_07406.glb"
       }
-    ]
+    ],
+    "model3d": "OK-02257_07406.glb"
   },
   {
     "objectId": "OK-07611",
@@ -18887,9 +18543,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/35918.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/35918.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/35918.tif/full/full/0/default.jpg",
-        "filename": "OK-07611_35918.jpg"
+        "filename": "OK-07611_35918.jpg",
+        "glb": "OK-07611_35918.glb"
       }
-    ]
+    ],
+    "model3d": "OK-07611_35918.glb"
   },
   {
     "objectId": "OK-08803",
@@ -18928,9 +18586,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07518.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07518.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07518.tif/full/full/0/default.jpg",
-        "filename": "OK-08803_07518.jpg"
+        "filename": "OK-08803_07518.jpg",
+        "glb": "OK-08803_07518.glb"
       }
-    ]
+    ],
+    "model3d": "OK-08803_07518.glb"
   },
   {
     "objectId": "OK-11813H",
@@ -18971,9 +18631,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94826.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94826.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94826.tif/full/full/0/default.jpg",
-        "filename": "OK-11813H_94826.jpg"
+        "filename": "OK-11813H_94826.jpg",
+        "glb": "OK-11813H_94826.glb"
       }
-    ]
+    ],
+    "model3d": "OK-11813H_94826.glb"
   },
   {
     "objectId": "OK-11813J",
@@ -19012,9 +18674,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07452.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07452.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07452.tif/full/full/0/default.jpg",
-        "filename": "OK-11813J_07452.jpg"
+        "filename": "OK-11813J_07452.jpg",
+        "glb": "OK-11813J_07452.glb"
       }
-    ]
+    ],
+    "model3d": "OK-11813J_07452.glb"
   },
   {
     "objectId": "OK-15056B-3",
@@ -19053,9 +18717,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07461.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07461.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07461.tif/full/full/0/default.jpg",
-        "filename": "OK-15056B-3_07461.jpg"
+        "filename": "OK-15056B-3_07461.jpg",
+        "glb": "OK-15056B-3_07461.glb"
       }
-    ]
+    ],
+    "model3d": "OK-15056B-3_07461.glb"
   },
   {
     "objectId": "OK-11527A",
@@ -19100,9 +18766,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94807.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94807.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94807.tif/full/full/0/default.jpg",
-        "filename": "OK-11527A_94807.jpg"
+        "filename": "OK-11527A_94807.jpg",
+        "glb": "OK-11527A_94807.glb"
       }
-    ]
+    ],
+    "model3d": "OK-11527A_94807.glb"
   },
   {
     "objectId": "OK-10862E",
@@ -19144,9 +18812,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08304.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08304.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08304.tif/full/full/0/default.jpg",
-        "filename": "OK-10862E_08304.jpg"
+        "filename": "OK-10862E_08304.jpg",
+        "glb": "OK-10862E_08304.glb"
       }
-    ]
+    ],
+    "model3d": "OK-10862E_08304.glb"
   },
   {
     "objectId": "OK-2002-0168",
@@ -19188,9 +18858,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07115.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07115.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07115.tif/full/full/0/default.jpg",
-        "filename": "OK-2002-0168_07115.jpg"
+        "filename": "OK-2002-0168_07115.jpg",
+        "glb": "OK-2002-0168_07115.glb"
       }
-    ]
+    ],
+    "model3d": "OK-2002-0168_07115.glb"
   },
   {
     "objectId": "NMK.2016.0135.001",
@@ -19221,9 +18893,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/142188.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/142188.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/142188.tif/full/full/0/default.jpg",
-        "filename": "NMK.2016.0135.001_142188.jpg"
+        "filename": "NMK.2016.0135.001_142188.jpg",
+        "glb": "NMK.2016.0135.001_142188.glb"
       }
-    ]
+    ],
+    "model3d": "NMK.2016.0135.001_142188.glb"
   },
   {
     "objectId": "NMK.2016.0135.002",
@@ -19257,9 +18931,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/143736.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/143736.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/143736.tif/full/full/0/default.jpg",
-        "filename": "NMK.2016.0135.002_143736.jpg"
+        "filename": "NMK.2016.0135.002_143736.jpg",
+        "glb": "NMK.2016.0135.002_143736.glb"
       }
-    ]
+    ],
+    "model3d": "NMK.2016.0135.002_143736.glb"
   },
   {
     "objectId": "OK-17280A",
@@ -19307,9 +18983,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07204.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07204.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07204.tif/full/full/0/default.jpg",
-        "filename": "OK-17280A_07204.jpg"
+        "filename": "OK-17280A_07204.jpg",
+        "glb": "OK-17280A_07204.glb"
       }
-    ]
+    ],
+    "model3d": "OK-17280A_07204.glb"
   },
   {
     "objectId": "OK-10859B",
@@ -19342,9 +19020,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/OK-10859B+20241023.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/OK-10859B+20241023.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/OK-10859B+20241023.tif/full/full/0/default.jpg",
-        "filename": "OK-10859B_OK-10859B+20241023.jpg"
+        "filename": "OK-10859B_OK-10859B+20241023.jpg",
+        "glb": "OK-10859B_OK-10859B+20241023.glb"
       }
-    ]
+    ],
+    "model3d": "OK-10859B_OK-10859B+20241023.glb"
   },
   {
     "objectId": "NMK.2021.0137",
@@ -19389,9 +19069,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/NMK.2021.0137.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/NMK.2021.0137.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/NMK.2021.0137.tif/full/full/0/default.jpg",
-        "filename": "NMK.2021.0137_NMK.2021.0137.jpg"
+        "filename": "NMK.2021.0137_NMK.2021.0137.jpg",
+        "glb": "NMK.2021.0137_NMK.2021.0137.glb"
       }
-    ]
+    ],
+    "model3d": "NMK.2021.0137_NMK.2021.0137.glb"
   },
   {
     "objectId": "OK-09696A",
@@ -19482,9 +19164,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/38120.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/38120.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/38120.tif/full/full/0/default.jpg",
-        "filename": "OK-1995-0136C_38120.jpg"
+        "filename": "OK-1995-0136C_38120.jpg",
+        "glb": "OK-1995-0136C_38120.glb"
       }
-    ]
+    ],
+    "model3d": "OK-1995-0136C_38120.glb"
   },
   {
     "objectId": "OK-18399",
@@ -19524,9 +19208,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/32588.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/32588.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/32588.tif/full/full/0/default.jpg",
-        "filename": "OK-18399_32588.jpg"
+        "filename": "OK-18399_32588.jpg",
+        "glb": "OK-18399_32588.glb"
       }
-    ]
+    ],
+    "model3d": "OK-18399_32588.glb"
   },
   {
     "objectId": "OK-dep-01106",
@@ -19567,9 +19253,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/72718.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/72718.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/72718.tif/full/full/0/default.jpg",
-        "filename": "OK-dep-01106_72718.jpg"
+        "filename": "OK-dep-01106_72718.jpg",
+        "glb": "OK-dep-01106_72718.glb"
       }
-    ]
+    ],
+    "model3d": "OK-dep-01106_72718.glb"
   },
   {
     "objectId": "OK-04953",
@@ -19613,9 +19301,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07306.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07306.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/07306.tif/full/full/0/default.jpg",
-        "filename": "OK-04953_07306.jpg"
+        "filename": "OK-04953_07306.jpg",
+        "glb": "OK-04953_07306.glb"
       }
-    ]
+    ],
+    "model3d": "OK-04953_07306.glb"
   },
   {
     "objectId": "OK-11796",
@@ -19664,9 +19354,11 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94818.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94818.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/94818.tif/full/full/0/default.jpg",
-        "filename": "OK-11796_94818.jpg"
+        "filename": "OK-11796_94818.jpg",
+        "glb": "OK-11796_94818.glb"
       }
-    ]
+    ],
+    "model3d": "OK-11796_94818.glb"
   },
   {
     "objectId": "OK-2003-0239A",
@@ -19697,7 +19389,15 @@
     "Registreringsnivå": "Komplekst objekt",
     "Ervervelse": "Gave 1965",
     "Eier og samling": "Stiftelsen Kunstindustrimuseet, Designsamlingene",
-    "images": []
+    "images": [
+      {
+        "filename": "OK-2003-0239A_08742.jpg",
+        "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08742.tif/full/1600,/0/default.jpg",
+        "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/08742.tif/full/512,/0/default.jpg",
+        "glb": "OK-2003-0239A_08742.glb"
+      }
+    ],
+    "model3d": "OK-2003-0239A_08742.glb"
   },
   {
     "objectId": "OK-09691",
@@ -19739,8 +19439,10 @@
         "thumbnail": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/35735.tif/full/512,/0/default.jpg",
         "highRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/35735.tif/full/1600,/0/default.jpg",
         "fullRes": "https://ms01.nasjonalmuseet.no/iip/?iiif=/tif/35735.tif/full/full/0/default.jpg",
-        "filename": "OK-09691_35735.jpg"
+        "filename": "OK-09691_35735.jpg",
+        "glb": "OK-09691_35735.glb"
       }
-    ]
+    ],
+    "model3d": "OK-09691_35735.glb"
   }
 ]
