@@ -192,7 +192,7 @@ def main():
     print(f"  Heights loaded: {len(heights)} objects")
 
     # Inventory all images
-    all_jpgs = sorted(NM_DIR.glob("*.jpg"))
+    all_jpgs = sorted(list(NM_DIR.glob("*.png")) + list(NM_DIR.glob("*.jpg")))
     print(f"  Images in NM_stolar/: {len(all_jpgs)}")
 
     # ── Phase 1: Copy from noreg where GLBs already exist ────────────────────

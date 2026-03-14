@@ -37,21 +37,21 @@
 \usepackage{csquotes}
 \usepackage{amsmath}
 
-% -------------------------------------------------------------------
+% ---------------------------------------------
 \title{Kan form \aa{}leine fortelje kva tid ein stol er fr\aa{}?\\
 \large Materiell-formell kopling i Nasjonalmuseet si stolsamling\\[0.5em]
 \normalsize Del~III i ein PhD-serie om form, materialitet og industridesign}
 
 \author{Iver Raknes Finne\\
 \small Institutt for design, Arkitektur- og designh\o{}gskolen i Oslo (AHO)\\
-\small\texttt{iver.finne@aho.no}}
+\small\texttt{iver.raknes.finne@aho.stud.no}}
 
 \date{Mars 2026}
 
 \begin{document}
 \maketitle
 
-% -------------------------------------------------------------------
+% ---------------------------------------------
 \begin{abstract}
 \noindent
 Dersom funksjonalismen sitt dogme stemmer, at form f\o{}lgjer funksjon, burde stolar fr\aa{} ulike nasjonar og tidsaldrar ikkje l\aa{}t seg skilje geometrisk, sidan sitjefunksjonen er universell. Denne artikkelen testar p\aa{}standen empirisk gjennom maskinl\ae{}ring p\aa{} tredimensjonale punktsskyer fr\aa{} 401 GLB-modellar i Nasjonalmuseet si samling. Ved \aa{} trekkje ut 21 handlaga geometriske deskriptorar (bounding box, krumming, D2 shape distributions) og 30 bin\ae{}re materialkodar, predikerer me stilperiode med ein makro-F1 p\aa{} $40{,}5 \pm 6{,}1$\,\% ved bruk av rein geometri (mot $10{,}5$\,\% sjanse, $p < 0{,}02$), og $47{,}6 \pm 2{,}6$\,\% med material \aa{}leine. Nasjonsprediksjon (Noreg mot utlandet) oppn\aa{}r $76{,}0 \pm 5{,}7$\,\% med form og $83{,}3 \pm 3{,}0$\,\% med material. Eit uventa funn er at kombinerte trekksett underpresterer material \aa{}leine for stilprediksjon ($46{,}3$\,\% mot $47{,}6$\,\%). Korrelasjonsanalysen avsl\o{}rer systematisk kovarians mellom geometri og material (gjennomsnittleg $|r| = 0{,}24$, maks $|r| = 0{,}33$); dei to trekksetta overlappar fordi materiell-formell kopling \emph{er} den underliggjande strukturen. Per-klasse-analyse syner at Barokk og Nyklassisisme er lettast \aa{} klassifisere geometrisk (F1 $> 0{,}72$), medan Historisme og Jugend forvirrar modellen, nett fordi desse stilane bevisst imiterte tidlegare formuttrykk. Funna falsifiserer funksjonalismen si n\o{}ytrale forml\ae{}re: form kodar kulturell identitet og historisk tid romleg og geometrisk.
@@ -60,7 +60,7 @@ Dersom funksjonalismen sitt dogme stemmer, at form f\o{}lgjer funksjon, burde st
 \noindent\textbf{N\o{}kkelord:} 3D-formanalyse, shape distributions, Random Forest, UMAP, computational design history, materiell-formell kopling, Nasjonalmuseet
 \end{abstract}
 
-% -------------------------------------------------------------------
+% ---------------------------------------------
 \section{Innleiing}
 
 Tidlegare artiklar i denne serien har etablert at materialar ikkje er n\o{}ytrale berarar av form, men at dei inkarnerer kolonial handel og tilgangshistorie \citep{finne2026a}, og at formutvikling over tid konvergerer mot \emph{fitness-optima} snarare enn \aa{} f\o{}lgje ein deterministisk funksjon \citep{finne2026b}. Denne tredje delen reiser eit oppf\o{}lgande fundamentalt sp\o{}rsm\aa{}l: Dersom ein fjernar overflate, farge og materiale, og \emph{berre} ser p\aa{} den nakte geometrien, kan form i seg sj\o{}lv bera meining om tid og stad?
@@ -77,7 +77,7 @@ Denne studien formulerer fire forskingssp\o{}rsm\aa{}l:
     \item Kva geometriske eigenskapar ber mest kulturell informasjon?
 \end{enumerate}
 
-% -------------------------------------------------------------------
+% ---------------------------------------------
 \section{Forskingsgjennomgang}
 
 \subsection{Stilhistorie i m\o{}beldesign}
@@ -94,9 +94,9 @@ Datamaskinbasert formanalyse har utvikla seg fr\aa{} statistiske deskriptorar ti
 
 \subsection{Materiell-formell kopling}
 
-\citet{finne2026a} synte at material i museumssamlingar er bunde til spesifikke nasjonal\o{}konomiske omstende; mahogni markerer internasjonale handelsnettverk, medan furu indikerer nordiske produksjonstilh\o{}ve. \citet{ingold2007} argumenterer for at materialar ikkje er passive substrat, men aktive akt\o{}rar som \emph{tvingar} visse former fram: b\o{}yd b\o{}k auka sannsynet for sirkul\ae{}re former, medan massivt eik disponerer for rektangul\ae{}r konstruksjon. \citet{miller2005} utvidar dette perspektivet til ein generell teori om materialitet der objekt og material konstituerer kvarandre gjensidig. \citet{gibson1977} sitt omgrep \emph{affordances}, altso dei handlingsm\o{}gelegheitene eit material tilbyr, gjev eit teoretisk rammeverk for kvifor me kan forvente systematisk kovarians mellom geometri og material. Dermed vert ikkje form berre ``form''; den vert eit symptom p\aa{} ei underliggjande materiell-formell kopling, der \citet{alexander1964} sine id\`{e}ar om samanheng mellom form og kontekst f\aa{}r empirisk grunnlag.
+\citet{finne2026a} synte at material in museumssamlingar er bunde til spesifikke nasjonal\o{}konomiske omstende; mahogni markerer internasjonale handelsnettverk, medan furu indikerer nordiske produksjonstilh\o{}ve. \citet{ingold2007} argumenterer for at materialar ikkje er passive substrat, men aktive akt\o{}rar som \emph{tvingar} visse former fram: b\o{}yd b\o{}k auka sannsynet for sirkul\ae{}re former, medan massivt eik disponerer for rektangul\ae{}r konstruksjon. \citet{miller2005} utvidar dette perspektivet til ein generell teori om materialitet der objekt og material konstituerer kvarandre gjensidig. \citet{gibson1977} sitt omgrep \emph{affordances}, altso dei handlingsm\o{}gelegheitene eit material tilbyr, gjev eit teoretisk rammeverk for kvifor me kan forvente systematisk kovarians mellom geometri og material. Dermed vert ikkje form berre ``form''; den vert eit symptom p\aa{} ei underliggjande materiell-formell kopling, der \citet{alexander1964} sine id\`{e}ar om samanheng mellom form og kontekst f\aa{}r empirisk grunnlag.
 
-% -------------------------------------------------------------------
+% ---------------------------------------------
 \section{Metode}
 
 \subsection{Datasett og punktskyutrekk}
@@ -105,7 +105,7 @@ Datamaterialet best\aa{}r av 408 stolar fr\aa{} Nasjonalmuseet si digitalsamling
 
 \subsection{Trekkekstraksjon}
 
-Me trekte ut to sett med deskriptorar:
+Me trekte ut eit sett med deskriptorar:
 
 \textbf{Geometriske trekk} (21 variablar) fr\aa{} punktskyene:
 \begin{itemize}
@@ -130,7 +130,7 @@ Me nytta \emph{Random Forest} \citep{breiman2001} med 100 tre og balansert klass
 
 UMAP-projeksjon \citep{mcinnes2018} med $k=15$ naboar og $d_\text{min}=0{,}1$ vart brukt for visuell inspeksjon av formrommet. Klyngevalidering vart kvantifisert med silhouette-score \citep{rousseeuw1987} i b\aa{}de originalt 21-dimensjonalt rom og UMAP-2D. Pearson-korrelasjon mellom geometri- og materialfeatures avdekte strukturell kovarians. Pearsons $\chi^2$-test avdekte konfoundering mellom nasjon og stil.
 
-% -------------------------------------------------------------------
+% ---------------------------------------------
 \begin{table}[H]
 \centering
 \caption{Klassefordeling for stilprediksjon ($n = 229$).}
@@ -153,7 +153,7 @@ Jugend          & 10 &  4{,}4\,\% \\
 \end{tabular}
 \end{table}
 
-% -------------------------------------------------------------------
+% ---------------------------------------------
 \section{Resultat}
 
 \subsection{Formrommet og stilklynging}
@@ -162,14 +162,14 @@ Figur~\ref{fig:formrom} syner ein UMAP-projeksjon av dei 229 stilmerka stolane l
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\textwidth]{figurar/fig1_formrom.pdf}
+    \includegraphics[width=0.85\textwidth]{figurar/fig1_formrom.png}
     \caption{UMAP-projeksjon av stolane sitt formrom (21 geometriske trekk) med KDE-konturar per stilgruppe. Silhouette-score annotert.}
     \label{fig:formrom}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\textwidth]{figurar/fig2_klassefordeling.pdf}
+    \includegraphics[width=0.85\textwidth]{figurar/fig2_klassefordeling.png}
     \caption{Klassefordeling for dei \aa{}tte stilgruppene ($n = 229$). Datasettet er ubalansert, med Nyklassisisme og Barokk som dei st\o{}rste gruppene.}
     \label{fig:klassefordeling}
 \end{figure}
@@ -203,7 +203,7 @@ Geometri \aa{}leine predikerer stil nesten fire gonger betre enn sjansen ($40{,}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{figurar/fig3_klassifikasjon.pdf}
+    \includegraphics[width=0.95\textwidth]{figurar/fig3_klassifikasjon.png}
     \caption{Klassifikasjonsn\o{}yaktigheit (makro-F1 $\pm$ std) for stil- og nasjonsprediksjon. Stipla linjer viser sjanse-niv\aa{}.}
     \label{fig:klass}
 \end{figure}
@@ -212,7 +212,7 @@ Forvirringsmatrisa (Figur~\ref{fig:forvirring}) avdekker at Historisme hyppig ve
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\textwidth]{figurar/fig4_forvirring.pdf}
+    \includegraphics[width=0.85\textwidth]{figurar/fig4_forvirring.png}
     \caption{Normalisert forvirringsmatrise for stilprediksjon (kombinert modell). Feilklassifisering speglar stilhistoriske l\aa{}n mellom periodar.}
     \label{fig:forvirring}
 \end{figure}
@@ -250,7 +250,7 @@ Jugend          & 10 & 0{,}00 & 0{,}31 & 0{,}00 \\
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{figurar/fig5_perklasse_f1.pdf}
+    \includegraphics[width=0.95\textwidth]{figurar/fig5_perklasse_f1.png}
     \caption{Per-klasse F1-score for dei tre trekksetta. Barokk og Nyklassisisme dominerer geometrisk; Historisme og Jugend presterer d\aa{}rlegast.}
     \label{fig:perklasse}
 \end{figure}
@@ -259,11 +259,11 @@ Jugend          & 10 & 0{,}00 & 0{,}31 & 0{,}00 \\
 
 Eit uventa resultat er at det kombinerte trekksettet (geometri + material) \emph{underpresterer} material \aa{}leine for stilprediksjon (F1 = $0{,}463$ mot $0{,}476$). Same m\o{}nster opptrer for nasjon ($0{,}781$ mot $0{,}833$). Korrelasjonsanalysen (Figur~\ref{fig:korrelasjon}) gjev forklaringa: systematisk Pearson-kovarians mellom geometri- og materialfeatures (gjennomsnittleg maks $|r| = 0{,}24$; h\o{}gaste $|r| = 0{,}33$ mellom aspektratio $H/W$ og l\ae{}r-indikator). N\aa{}r features fr\aa{} begge sett vert slegne saman utan seleksjon, f\o{}rer den redundante informasjonen til auka dimensjonalitet utan proporsjonalt auka prediktiv kraft, noko som forvirrar modellen.
 
-Feature-seleksjonsanalysen (mutual information, top-$K$) stadfestar dette: dei 10 mest informative featurane er alle geometriske, og \aa{} leggje til materialfeatures gjev berre marginal forbetring (F1 = $0{,}418 \rightarrow 0{,}454$ fr\aa{} $K=10$ til $K=51$). Paradokset er i seg sj\o{}lv eit bevis: redundansen mellom dei to trekksetta \emph{er} den materiell-formelle koplinga.
+Feature-seleksjonsanalysen (mutual information, top-$K$) stadfestar dette: dei 10 mest informative featurane er alle geometriske, og \aa{} leggje til materialfeatures gjev berre marginal forbetring (F1 = $0{,}418 \rightarrow 0{,}454$ fr\aa{} $K=10$ til $K=51$). Paradokset er i seg sj\o{}lv eit bevis: redundansen mellom dei to trekksetta \emph{er} den materiell-formell koplinga.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{figurar/fig6_korrelasjon.pdf}
+    \includegraphics[width=0.95\textwidth]{figurar/fig6_korrelasjon.png}
     \caption{Pearson-korrelasjon mellom geometriske (rader) og materielle (kolonner) trekk. Systematisk kovarians dokumenterer den materiell-formelle koplinga kvantitativt.}
     \label{fig:korrelasjon}
 \end{figure}
@@ -274,19 +274,19 @@ Figur~\ref{fig:kopling} syner dei 15 viktigaste trekka for h\o{}vesvis stil- og 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{figurar/fig7_kopling.pdf}
+    \includegraphics[width=0.95\textwidth]{figurar/fig7_kopling.png}
     \caption{Topp 15 features for stil- (venstre) og nasjonsprediksjon (h\o{}gre). Bl\aa{}tt = geometri, gr\o{}nt = material. Geometriske trekk dominerer i begge oppg\aa{}ver.}
     \label{fig:kopling}
 \end{figure}
 
-% -------------------------------------------------------------------
+% ---------------------------------------------
 \section{Diskusjon}
 
 \subsection{Form som kulturell kode}
 
 Hovudfunnet er at geometrisk form, frigjort fr\aa{} overflate, farge og material, kodar b\aa{}de historisk stilperiode og nasjonal opphavstad med signifikant presisjon. At ein Random Forest kan predikere stilperiode nesten fire gonger betre enn slump fr\aa{} 21 enkle geometriske m\aa{}l, tyder p\aa{} at kulturelle konvensjonar er djupt innskrivne i dei rommelege proposisjonane til ein stol. \citet{ingold2007} argumenterer for at materialar ``fortel'' gjennom sine affordances \citep{gibson1977}; v\aa{}re resultat utvidar dette: ogs\aa{} den reine geometrien fortel, uavhengig av kva tre eller metall som ber den.
 
-Dette rokkar tungt ved modernismens teoretiske rammeverk. Om \emph{form follows function} \citep{sullivan1896, corbusier1923} heldt stikk, skulle ikkje ei norsk punktsky sl\aa{} annleis inn i D2-bins enn ei dansk eller fransk. Likevel oppn\aa{}r me $76$\,\% prediksjon berre fr\aa{} geometri. Nasjonale ergonomiske trendar, teknologiske avgrensingar og lokale produksjonsmaskineri tvingar seg igjennom og vert synlege i den geometriske signaturen. Me kallar dette \emph{materiell-formell kopling}: forma av eit tre inni ein stol fortel historia tvers igjennom.
+Dette rokkar tungt ved modernismens teoretiske rammeverk. Om \emph{form follows function} \citep{sullivan1896, corbusier1923} heldt stikk, skulle ikkje ei norsk punktsky sl\aa{} annleis inn i D2-bins enn ei dansk eller fransk. Likevel oppn\aa{}r me $76$\,\% prediksjon berre fr\aa{} geometri. Nasjonale ergonomiske trendar, teknologiske avgrensingar og lokale produksjonmaskineri tvingar seg igjennom og vert synlege i den geometriske signaturen. Me kallar dette \emph{materiell-formell kopling}: forma av eit tre inni ein stol fortel historia tvers igjennom.
 
 \subsection{Historisme-paradokset}
 
@@ -306,9 +306,9 @@ Studien har fleire avgrensingar: (a)~Berre 229 av 401 stolar har stilmerke, noko
 
 \subsection{Framtidig forsking}
 
-Tre retningar peikar seg ut: (1)~Djupl\ae{}ring (PointNet, DGCNN) p\aa{} r\aa{} punktsskyer med augmentering for \aa{} kompensere for lite datasett. (2)~Kryssmuseum-validering med samlingar fr\aa{} Victoria \& Albert Museum og Vitra Design Museum. (3)~Temporell regresjon, det vil seie prediksjon av produksjons\aa{}r som kontinuerleg variabel, for \aa{} teste om form endrar seg gradvis eller i spr\aa{}ng mellom stilperiodar.
+Tre retningar peikar seg ut: (1)~Djupl\ae{}ring (PointNet, DGCNN) p\aa{} r\aa{} punktsskyer med augmentering for \aa{} kompensere for lite datasett. (2)~Kryssmuseum-validering med samlingar fr\aa{} Victoria \& Albert Museum og Vitra Design Museum. (3)~Temporell regresjon, det vil seie prediksjon av produksjon\aa{}r som kontinuerleg variabel, for \aa{} teste om form endrar seg gradvis eller i spr\aa{}ng mellom stilperiodar.
 
-% -------------------------------------------------------------------
+% ---------------------------------------------
 \section{Konklusjon}
 
 Gjennom ei systematisk maskinl\ae{}ringsanalyse av 401 unike historiske stolar fr\aa{} Nasjonalmuseet si samling har denne studien vist at:
@@ -322,7 +322,7 @@ Gjennom ei systematisk maskinl\ae{}ringsanalyse av 401 unike historiske stolar f
 
 Funksjonalismen kan ikkje forklare at nasjonalitet er g\o{}ymt i proporsjonale utb\o{}yingar av ein rygg, men \emph{form follows fitness}-rammeverket \citep{finne2026b} kan. Form kodar kultur, og kulturen sit djupt i treverket og geometrien.
 
-% -------------------------------------------------------------------
+% ---------------------------------------------
 \bibliographystyle{apacite}
 \bibliography{referansar}
 

@@ -24,7 +24,7 @@ import traceback
 from pathlib import Path
 
 # ---- Paths ------------------------------------------------------------------
-BASE        = Path("C:/Users/Shadow/Desktop/stolar-db")
+BASE        = Path(__file__).parent
 NM_STOLAR   = BASE / "NM_stolar"
 NOREG       = BASE / "noreg"
 HY3D_ROOT   = BASE / "Hunyuan3D-2"
@@ -124,7 +124,7 @@ def main():
     heights = build_height_map()
     print(f"  Local heights: {len(heights)} objects")
 
-    images = sorted(f for f in os.listdir(NM_STOLAR) if f.lower().endswith(".jpg"))
+    images = sorted(f for f in os.listdir(NM_STOLAR) if f.lower().endswith((".jpg", ".png")))
     print(f"  Images: {len(images)}")
 
     # API fallback for missing heights

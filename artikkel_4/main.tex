@@ -24,6 +24,7 @@
 \usepackage{tabularx}
 
 % Referansar (APA 7)
+
 \usepackage[natbibapa]{apacite}
 \usepackage{hyperref}
 \hypersetup{
@@ -38,21 +39,21 @@
 \usepackage{amsmath}
 \usepackage{enumitem}
 
-% -------------------------------------------------------------------
+% ---------------------------------------------
 \title{Form Follows Fitness:\\
 \large Empirisk grunnlag for eit evolusjon\ae{}rt rammeverk i estetiske fag\\[0.5em]
 \normalsize Del IV i ein PhD-serie om form, materialitet og industridesign}
 
 \author{Iver Raknes Finne\\
 \small Institutt for design, Arkitektur- og designh\o{}gskolen i Oslo (AHO)\\
-\small\texttt{iver.finne@aho.no}}
+\small\texttt{iver.raknes.finne@aho.stud.no}}
 
 \date{Mars 2026}
 
 \begin{document}
 \maketitle
 
-% -------------------------------------------------------------------
+% ---------------------------------------------
 \begin{abstract}
 \noindent
 Det modernistiske dogmet \enquote{form follows function} impliserer at form er deduserbar fr\aa{} funksjon. Denne artikkelen falsifiserer dette empirisk ved \aa{} analysere 93 stolar fr\aa{} Nasjonalmuseet si samling (1632--2018) gjennom 21~geometriske og 30~materielle eigenskapar utrekna fr\aa{} 3D-modellar. Analysen viser at funksjon er \emph{konstant}, alle objekta er stolar, medan form varierer radikalt: symmetri spenner 15~gonger, djupn 3~gonger, og kompaktheit 2.6~gonger. Informasjonsteoretisk analyse (mutual information) avdekkjer at \emph{material} ber fem gonger meir informasjon om geometrisk form enn geografi ($\mathrm{MI_{material}} = 0.382$, $\mathrm{MI_{geografi}} = 0.079$), og at stilperiode predikerer formklynger d\aa{}rlegast av alle alternativ ($F_1 = 0.19$ mot tid: $F_1 = 0.44$). Artikkelen presenterer \emph{Form Follows Fitness} (FFF), eit nytt rammeverk der form vert forst\aa{}tt som selektert av eit fleirdimensjonalt fitnesslandskap av materialaffordanse, teknologi, \o{}konomi, geografi og kultur. Temporale driftanalysar p\aa{} 50-\aa{}rsintervall avdekkjer at fitnesslandskapet skiftar bratt etter makro\o{}konomiske sjokk: st\o{}rst drift ($11.7$ standardeiningar) fell saman med innf\o{}rsla av koloniale materiale p\aa{} 1700-talet, medan Shannonentropi i materialfordelinga kollapsar fr\aa{} 2.5 til 1.5~bit i same perioden. FFF gjer estetisk teori testbar: kvar p\aa{}stand er forankra i kvantitativ analyse, ikkje i stilhistorisk synsing.
@@ -61,7 +62,7 @@ Det modernistiske dogmet \enquote{form follows function} impliserer at form er d
 \noindent\textbf{N\o{}kkelord:} form follows fitness, fitnesslandskap, seleksjonstrykk, mutual information, materialaffordanse, exploration/exploitation, Nasjonalmuseet, 3D-geometri
 \end{abstract}
 
-% -------------------------------------------------------------------
+% ---------------------------------------------
 \section{Innleiing}
 \label{sec:innleiing}
 
@@ -86,7 +87,7 @@ Artikkelen stiller fem sp\o{}rsm\aa{}l:
     \item Kan me formulere eit koherent alternativ til \enquote{form follows function} som er empirisk testbart?
 \end{enumerate}
 
-% -------------------------------------------------------------------
+% ---------------------------------------------
 \section{Teoretisk rammeverk: Fem pilarar for FFF}
 \label{sec:teori}
 
@@ -112,7 +113,7 @@ Fr\aa{} reinforcement learning kjenner me den fundamentale avveginga mellom \emp
 
 \citet{raup1966} innf\o{}rte \emph{morphospace} i paleobiologien: det teoretiske rommet av alle moglege skalformer, der faktiske artar okkuperer berre ein br\o{}kdel. UMAP-projek\-sjonen i Art.~III \citep{finne2026c} er nett dette, eit empirisk morphospace for stolar, der 401~punktskyer kartlegg kva regionar av formrommet som faktisk er busett. I maskinl\ae{}ring er det analoge omgrepet \emph{latent space} \citep{mcinnes2018}. FFF foreiner desse: fitnesslandskapet \emph{er} det evaluerte morphospace.
 
-% --- Omgrepsapparattabell ---
+%, Omgrepsapparattabell --
 \begin{table}[H]
 \centering
 \caption{Omgrepsapparat: Fr\aa{} funksjonalisme til Form Follows Fitness}
@@ -135,7 +136,7 @@ Smak & Kulturell seleksjon & Cultural evolution & M\aa{}lbart seleksjonstrykk \\
 \end{tabularx}
 \end{table}
 
-% -------------------------------------------------------------------
+% ---------------------------------------------
 \section{Metode}
 \label{sec:metode}
 
@@ -151,13 +152,13 @@ Kvar stol er skildra av 21~geometriske features (bounding box-dimensjonar, kompa
 
 Me nyttar \emph{mutual information} (MI) for \aa{} kvantifisere kor mykje kvart seleksjonstrykk fortel om geometrisk form \citep{cover2006}. Mann--Whitney $U$-test med Bonferroni-korreksjon og Cohens $d$ m\aa{}ler effektstorleiken for material--geometri-koplingar. Random Forest \citep{breiman2001} med stratifisert 5-fold kryssvalidering og makro-$F_1$ evaluerer prediksjonskraft. Shannon-entropi m\aa{}ler materialdiversitet per periode. PCA reduserer det 51-dimensjonale featurerommet til hovudkomponentar. Euklidisk avstand mellom periodesentroidar i standardisert rom kvantifiserer temporal drift.
 
-% -------------------------------------------------------------------
+% ---------------------------------------------
 \section{Resultat: \AA{}tte empiriske bevis}
 \label{sec:resultat}
 
 Kvart bevis er ein sj\o{}lvstendig test. Saman dannar dei ei kumulativ beviskjede som falsifiserer funksjonsdeterminismen og etablerer FFF.
 
-% ---- Bevis I ----
+% --- Bevis I ---
 \subsection{Bevis I: Funksjon er konstant, form varierer radikalt}
 \label{sec:bevis1}
 
@@ -190,7 +191,7 @@ Den totale variansen i det 21-dimensjonale standardiserte geometrirommet er 21.0
 \label{fig:formvariasjon}
 \end{figure}
 
-% ---- Bevis II ----
+% --- Bevis II ---
 \subsection{Bevis II: Material predikerer form}
 \label{sec:bevis2}
 
@@ -228,7 +229,7 @@ Effektstorleikane er sv\ae{}rt store ($d > 1.0$). At ull, skumplast og gummi dom
 \label{fig:heatmap}
 \end{figure}
 
-% ---- Bevis III ----
+% --- Bevis III ---
 \subsection{Bevis III: Materialaffordanse som geometrisk signatur}
 \label{sec:bevis3}
 
@@ -261,7 +262,7 @@ Mahognistolar er minst kompakte (0.381): materialet sin h\o{}ge brotstyrke let f
 \label{fig:affordance}
 \end{figure}
 
-% ---- Bevis IV ----
+% --- Bevis IV ---
 \subsection{Bevis IV: Fitnesslandskapet i informasjonsteoretisk dekomponering}
 \label{sec:bevis4}
 
@@ -301,7 +302,7 @@ PCA p\aa{} det kombinerte 51-dimensjonale featurerommet viser at dei tre f\o{}rs
 \label{fig:pca}
 \end{figure}
 
-% ---- Bevis V ----
+% --- Bevis V ---
 \subsection{Bevis V: Stil er emergent, ikkje kausal}
 \label{sec:bevis5}
 
@@ -327,7 +328,7 @@ Material + tid + opphav & 0.383 & 0.103 \\
 \noindent
 \textbf{Stilperiode ($F_1 = 0.19$) predikerer form d\aa{}rlegast av alle alternativ.} Tid ($F_1 = 0.44$) og material ($F_1 = 0.33$) sl\aa{}r stilmerkelappen kvar for seg. Stilkategoriane er s\aa{}leis ikkje kausale mekanismar, men emergente merkelappar \citep{boyd1985}. Stil er eit \emph{symptom}, ikkje ein \emph{\aa{}rsak}.
 
-% ---- Bevis VI ----
+% --- Bevis VI ---
 \subsection{Bevis VI: Exploration- og exploitation-syklusar}
 \label{sec:bevis6}
 
@@ -361,7 +362,7 @@ Formdiversiteten aukar monotont fr\aa{} 1.83 (1600-talet) til 6.97 (1950--1999).
 \label{fig:expexpl}
 \end{figure}
 
-% ---- Bevis VII ----
+% --- Bevis VII ---
 \subsection{Bevis VII: Temporal drift i fitnesslandskapet}
 \label{sec:bevis7}
 
@@ -394,7 +395,7 @@ Den desidert st\o{}rste drifta (11.66) fell mellom 1600-talet og 1750, \emph{net
 \label{fig:drift}
 \end{figure}
 
-% ---- Bevis VIII ----
+% --- Bevis VIII ---
 \subsection{Bevis VIII: Materialentropi og politiske sjokk}
 \label{sec:bevis8}
 
@@ -428,7 +429,7 @@ Entropien kollapsar fr\aa{} 2.50 til 1.50~bit mellom 1600 og 1750. Dette er \emp
 \label{fig:entropy}
 \end{figure}
 
-% -------------------------------------------------------------------
+% ---------------------------------------------
 \section{Syntese: Dei tre f\o{}rste artiklane i lys av fitnesskartet}
 \label{sec:syntese}
 
@@ -446,7 +447,7 @@ Det empiriske grunnlaget i seksjonane ovanfor let oss refortolke funna fr\aa{} d
 
 \citet{finne2026c} viste at 3D-geometri ber informasjon om b\aa{}de nasjonalitet og tidsalder. Bevis~IV stadfester dette: den kumulative PCA-variansen (33.8\,\% i tre komponentar) og den monotont aukande formdiversiteten demonstrerer at geometrien kodar eit rikt informasjonslager. Formrommet er eit fitnesskart i 21~dimensjonar.
 
-% -------------------------------------------------------------------
+% ---------------------------------------------
 \section{Diskusjon}
 \label{sec:diskusjon}
 
@@ -487,7 +488,14 @@ Innsikta fr\aa{} \citet{levin2019} og \citet{clark2008} om distribuert kognisjon
 
 Studien er avgrensa til \'{e}in museumssamling ($n = 93$ med komplett data, av 408 totalt). Samlingssk\ae{}vheit kan p\aa{}verke resultata: museet overrepresenterer prestisje\-objekt. Materialkategoriane er henta fr\aa{} katalogdata og er ikkje standardiserte. Me nyttar handlaga features (ikkje end-to-end deep learning), noko som avgrensar kva geometriske m\o{}nster modellen kan fange. Framtidige studiar b\o{}r utvide til fleire objekttypar, fleire museum, og djupare l\ae{}ringsarkitekturar.
 
-% -------------------------------------------------------------------
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figurar/fig10_samanlikning_paradigme.png}
+    \caption{Samanlikning av paradigme: Funksjonalisme mot Form Follows Fitness (FFF). FFF generaliserer funksjonalismen ved \aa{} inkludere materialaffordanse, tid og geografi som aktive seleksjonstrykk i eit m\aa{}lbart fitnesslandskap.}
+    \label{fig:paradigme_samanlikning}
+\end{figure}
+
+% ---------------------------------------------
 \section{Konklusjon}
 \label{sec:konklusjon}
 
@@ -504,7 +512,7 @@ Hovudfunna:
 
 \emph{Form Follows Fitness} gjer estetisk teori det den aldri har vore: \textbf{testbar}. Rammeverket er ikkje ein filosofisk posisjon, men ein empirisk modell, open for falsifisering, utvidbar til nye datasett, og operativ for designpraksis. Fitnesskartet erstattar det modernistiske aksiomet med eit verkt\o{}y.
 
-% -------------------------------------------------------------------
+% ---------------------------------------------
 \bibliographystyle{apacite}
 \bibliography{referansar}
 
