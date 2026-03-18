@@ -1,0 +1,19 @@
+# Chair (Palagi, Filippo Pelagio)
+
+Bilete-URL: https://framemark.vam.ac.uk/collections/2006AX3679/full/full/0/default.jpg
+Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/VA_3d/O59211/O59211_bguw.png
+Breidde (cm): 53.5
+Datering: 1838-1840
+Djupn (cm): 48.8
+Estimert vekt (kg): 0
+Frå år: 1838
+Hundreår: 1800-talet
+Høgde (cm): 99
+Materialar: Lønn, Mahogni
+Materialkommentar: Lønn- og mahognifiner på ein mahognikorpus
+Nasjonalitet: Italia
+Nasjonalmuseet: https://collections.vam.ac.uk/item/O59211/
+Objekt-ID: O59211
+Produksjonsstad: Turin
+Produsent: Palagi, Filippo Pelagio
+Til år: 1840
