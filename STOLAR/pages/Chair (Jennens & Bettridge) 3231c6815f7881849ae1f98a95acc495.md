@@ -1,0 +1,20 @@
+# Chair (Jennens & Bettridge)
+
+3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/VA_3d/O372301/O372301.glb
+Bilete-URL: https://framemark.vam.ac.uk/collections/2017JU5257/full/full/0/default.jpg
+Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/VA_3d/O372301/O372301_bguw.png
+Breidde (cm): 51
+Datering: 1864-1866
+Djupn (cm): 66
+Estimert vekt (kg): 0
+Frå år: 1864
+Hundreår: 1800-talet
+Høgde (cm): 96
+Materialar: Bøk, Maling, Tekstil
+Materialkommentar: [AI] Malt bøk med skåret dekor, polstret sete og rygg trukket med brodert tekstil på stramei.
+Nasjonalitet: Storbritannia
+Nasjonalmuseet: https://collections.vam.ac.uk/item/O372301/
+Objekt-ID: O372301
+Produksjonsstad: England
+Produsent: Jennens & Bettridge
+Til år: 1866

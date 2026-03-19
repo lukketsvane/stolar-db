@@ -1,0 +1,18 @@
+# Armchair (Rampendahl, H. F. C.)
+
+Bilete-URL: https://framemark.vam.ac.uk/collections/2006BF8531/full/full/0/default.jpg
+Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/VA_3d/O62293/O62293_bguw.png
+Breidde (cm): 74
+Datering: ca. 1860
+Djupn (cm): 82
+Estimert vekt (kg): 0
+Frå år: 1860
+Hundreår: 1800-talet
+Høgde (cm): 128
+Materialar: Tekstil, Tre
+Materialkommentar: Gevir, horn og støyttenner på ei treramme, med polstra sete og rygg trekte i grøn plysj
+Nasjonalmuseet: https://collections.vam.ac.uk/item/O62293/
+Objekt-ID: O62293
+Produksjonsstad: Hamburg
+Produsent: Rampendahl, H. F. C.
+Til år: 0

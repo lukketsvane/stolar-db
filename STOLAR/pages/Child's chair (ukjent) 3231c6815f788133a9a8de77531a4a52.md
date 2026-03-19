@@ -1,0 +1,20 @@
+# Child's chair (ukjent)
+
+3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/VA_3d/O1391587/O1391587.glb
+Bilete-URL: https://framemark.vam.ac.uk/collections/2017JY3266/full/!800,800/0/default.jpg
+Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/VA_3d/O1391587/O1391587_bguw.png
+Breidde (cm): 33
+Datering: ca. 1855
+Djupn (cm): 36
+Estimert vekt (kg): 0
+Frå år: 1855
+Hundreår: 1800-talet
+Høgde (cm): 68
+Materialar: Perlemor, Rotting, Tre
+Materialkommentar: Tre (truleg bøk), skore, dreidd, japannert og innlagt med perlemor, med spanskrøyrsete
+Nasjonalitet: Frankrike
+Nasjonalmuseet: https://collections.vam.ac.uk/item/O1391587/
+Objekt-ID: O1391587
+Produksjonsstad: France
+Produsent: ukjent
+Til år: 0

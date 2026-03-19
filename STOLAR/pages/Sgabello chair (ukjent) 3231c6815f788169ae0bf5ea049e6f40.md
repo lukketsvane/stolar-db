@@ -1,0 +1,21 @@
+# Sgabello chair (ukjent)
+
+3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/VA_3d/O120510/O120510.glb
+Bilete-URL: https://framemark.vam.ac.uk/collections/2014HB8348/full/!800,800/0/default.jpg
+Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/VA_3d/O120510/O120510_bguw.png
+Breidde (cm): 38
+Datering: 1590-1600
+Djupn (cm): 46
+Estimert vekt (kg): 0
+Frå år: 1590
+Hundreår: 1600-talet
+Høgde (cm): 104
+Materialar: Nøttetre
+Materialkommentar: Nøttetre, skoren
+Nasjonalitet: Italia
+Nasjonalmuseet: https://collections.vam.ac.uk/item/O120510/
+Objekt-ID: O120510
+Produksjonsstad: Venice
+Produsent: ukjent
+Teknikk: Skjæring
+Til år: 1600
