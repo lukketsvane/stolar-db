@@ -180,7 +180,7 @@ def main():
     from hy3dgen.texgen import Hunyuan3DPaintPipeline
 
     print(f"\n  {B}{C}PBR Chair Pipeline{RST}  {D}gen_pbr_glb.py{RST}")
-    print(f"  {D}steps={SHAPE_STEPS} guidance={GUIDANCE} faces≤{MAX_FACES//1000}K{RST}\n")
+    print(f"  {D}steps={SHAPE_STEPS} guidance={GUIDANCE} faces<={MAX_FACES//1000}K{RST}\n")
 
     assert torch.cuda.is_available(), "No CUDA!"
 
@@ -214,7 +214,7 @@ def main():
     paint = Hunyuan3DPaintPipeline.from_pretrained("tencent/Hunyuan3D-2")
 
     vram = torch.cuda.memory_allocated() / 1024**3
-    total_vram = torch.cuda.get_device_properties(0).total_mem / 1024**3
+    total_vram = torch.cuda.get_device_properties(0).total_memory / 1024**3
     print(f"\r  {G}✓{RST} pipelines loaded  {D}({vram:.1f}/{total_vram:.0f}GB VRAM){RST}\n")
     logging.disable(old_level)
 
