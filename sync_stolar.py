@@ -3,9 +3,10 @@
 sync_stolar.py — Keep Notion and git repo in sync for the STOLAR database.
 
 Usage:
-  python sync_stolar.py --status          # Show sync status report
-  python sync_stolar.py --sync            # Full sync (fix mismatches)
-  python sync_stolar.py --sync --loop 120 # Continuous sync every 2 min
+  python sync_stolar.py --status              # Show sync status report
+  python sync_stolar.py --sync                # Full sync (fix mismatches)
+  python sync_stolar.py --sync --loop 120     # Continuous sync every 2 min
+  python sync_stolar.py --migrate-urls        # Rewrite old VA_3d Notion URLs to STOLAR paths
 """
 
 import argparse
@@ -19,7 +20,8 @@ import requests
 
 # -- Config --
 BASE = Path(__file__).parent
-VA_3D = BASE / "VA_3d"
+GLB_DIR = BASE / "STOLAR" / "glb"
+BGUW_DIR = BASE / "STOLAR" / "bguw"
 
 NOTION_TOKEN = ""
 GH_TOKEN = ""
@@ -35,7 +37,8 @@ DATABASE_ID = "405e0f64-6b77-4aab-88b8-73281e58c4f0"
 GH_OWNER = "lukketsvane"
 GH_REPO = "stolar-db"
 GH_BRANCH = "main"
-GITHUB_RAW = f"https://raw.githubusercontent.com/{GH_OWNER}/{GH_REPO}/{GH_BRANCH}/VA_3d"
+GITHUB_RAW_GLB = f"https://raw.githubusercontent.com/{GH_OWNER}/{GH_REPO}/{GH_BRANCH}/STOLAR/glb"
+GITHUB_RAW_BGUW = f"https://raw.githubusercontent.com/{GH_OWNER}/{GH_REPO}/{GH_BRANCH}/STOLAR/bguw"
 
 NOTION_HDR = {
     "Authorization": f"Bearer {NOTION_TOKEN}",
@@ -97,26 +100,36 @@ def query_notion():
 
 
 def scan_local():
-    """Scan VA_3d/ for local files. Return dict {oid: {bguw, glb, textured}}."""
+    """Scan STOLAR/glb/ and STOLAR/bguw/ for local files. Return dict {oid: {bguw, glb, textured}}."""
     local = {}
-    if not VA_3D.exists():
-        return local
-    for d in VA_3D.iterdir():
-        if not d.is_dir():
-            continue
-        oid = d.name
-        local[oid] = {
-            "bguw": (d / f"{oid}_bguw.png").exists(),
-            "glb": (d / f"{oid}.glb").exists(),
-            "textured": (d / f"{oid}_textured.glb").exists(),
-        }
+    # Scan GLBs
+    if GLB_DIR.exists():
+        for f in GLB_DIR.iterdir():
+            if f.suffix != ".glb":
+                continue
+            name = f.stem
+            if name.endswith("_textured"):
+                oid = name.removesuffix("_textured")
+                local.setdefault(oid, {"bguw": False, "glb": False, "textured": False})
+                local[oid]["textured"] = True
+            else:
+                oid = name
+                local.setdefault(oid, {"bguw": False, "glb": False, "textured": False})
+                local[oid]["glb"] = True
+    # Scan bguw
+    if BGUW_DIR.exists():
+        for f in BGUW_DIR.iterdir():
+            if f.name.endswith("_bguw.png"):
+                oid = f.stem.removesuffix("_bguw")
+                local.setdefault(oid, {"bguw": False, "glb": False, "textured": False})
+                local[oid]["bguw"] = True
     return local
 
 
 def scan_untracked():
-    """Find untracked files in VA_3d/ that need git add."""
+    """Find untracked files in STOLAR/ that need git add."""
     result = subprocess.run(
-        ["git", "ls-files", "--others", "--exclude-standard", "VA_3d/"],
+        ["git", "ls-files", "--others", "--exclude-standard", "STOLAR/"],
         cwd=str(BASE), capture_output=True, text=True,
     )
     if result.returncode != 0:
@@ -127,7 +140,7 @@ def scan_untracked():
 
 # -- Notion updates --
 def set_bguw(pid, oid):
-    url = f"{GITHUB_RAW}/{oid}/{oid}_bguw.png"
+    url = f"{GITHUB_RAW_BGUW}/{oid}_bguw.png"
     for attempt in range(3):
         try:
             r = requests.patch(
@@ -153,11 +166,11 @@ def set_bguw(pid, oid):
 
 def set_3d(pid, oid):
     # Prefer textured, fall back to untextured
-    if (VA_3D / oid / f"{oid}_textured.glb").exists():
+    if (GLB_DIR / f"{oid}_textured.glb").exists():
         fname = f"{oid}_textured.glb"
     else:
         fname = f"{oid}.glb"
-    url = f"{GITHUB_RAW}/{oid}/{fname}"
+    url = f"{GITHUB_RAW_GLB}/{fname}"
     for attempt in range(3):
         try:
             r = requests.patch(
@@ -312,20 +325,87 @@ def run_sync(do_fix=False):
     print("\nDone!")
 
 
+OLD_VA3D_BASE = f"https://raw.githubusercontent.com/{GH_OWNER}/{GH_REPO}/{GH_BRANCH}/VA_3d"
+
+
+def migrate_urls():
+    """Rewrite all old VA_3d URLs in Notion to new STOLAR paths."""
+    print("Querying Notion for URL migration...")
+    notion = query_notion()
+
+    migrate_bguw = []
+    migrate_3d = []
+
+    for oid, info in notion.items():
+        if info["bguw_url"] and "/VA_3d/" in info["bguw_url"]:
+            migrate_bguw.append((oid, info["pid"]))
+        if info["model_url"] and "/VA_3d/" in info["model_url"]:
+            migrate_3d.append((oid, info["pid"]))
+
+    print(f"\n{'='*50}")
+    print(f" URL Migration")
+    print(f"{'='*50}")
+    print(f" Bguw URLs to migrate (VA_3d -> STOLAR/bguw):  {len(migrate_bguw)}")
+    print(f" 3D URLs to migrate (VA_3d -> STOLAR/glb):     {len(migrate_3d)}")
+    print(f"{'='*50}")
+
+    if not migrate_bguw and not migrate_3d:
+        print("\nAll URLs already on new paths!")
+        return
+
+    if migrate_bguw:
+        print(f"\n  Migrating {len(migrate_bguw)} Bilete-bguw URLs...")
+        ok = fail = 0
+        with ThreadPoolExecutor(max_workers=WORKERS) as ex:
+            futures = {ex.submit(set_bguw, pid, oid): oid for oid, pid in migrate_bguw}
+            for f in as_completed(futures):
+                if f.result():
+                    ok += 1
+                else:
+                    fail += 1
+        print(f"  Updated: {ok}, Failed: {fail}")
+
+    if migrate_3d:
+        print(f"\n  Migrating {len(migrate_3d)} 3D-modell URLs...")
+        ok = fail = 0
+        with ThreadPoolExecutor(max_workers=WORKERS) as ex:
+            futures = {ex.submit(set_3d, pid, oid): oid for oid, pid in migrate_3d}
+            for f in as_completed(futures):
+                if f.result():
+                    ok += 1
+                else:
+                    fail += 1
+        print(f"  Updated: {ok}, Failed: {fail}")
+
+    print("\nMigration done!")
+
+
 def main():
     parser = argparse.ArgumentParser(description="Sync STOLAR Notion database with git repo")
     parser.add_argument("--status", action="store_true", help="Show sync status (no changes)")
     parser.add_argument("--sync", action="store_true", help="Fix all mismatches")
+    parser.add_argument("--migrate-urls", action="store_true", help="Rewrite old VA_3d URLs to STOLAR paths")
+    parser.add_argument("--build-api", action="store_true", help="Rebuild STOLAR/api.json from CSV")
     parser.add_argument("--loop", type=int, default=0, help="Poll interval in seconds (0 = once)")
     args = parser.parse_args()
 
-    if not args.status and not args.sync:
+    if not args.status and not args.sync and not args.migrate_urls and not args.build_api:
         parser.print_help()
         sys.exit(1)
 
     if not NOTION_TOKEN:
         print("ERROR: NOTION_API_KEY not in .env")
         sys.exit(1)
+
+    if args.migrate_urls:
+        migrate_urls()
+        return
+
+    if args.build_api:
+        print("Rebuilding STOLAR/api.json...")
+        subprocess.run([sys.executable, str(BASE / "build_api.py"), "--from-csv"],
+                       cwd=str(BASE))
+        return
 
     if args.loop > 0 and args.sync:
         print(f"Syncing every {args.loop}s (Ctrl+C to stop)")

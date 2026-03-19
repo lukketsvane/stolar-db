@@ -11,7 +11,6 @@ import gc
 import json
 import os
 import re
-import shutil
 import struct
 import subprocess
 import sys
@@ -28,8 +27,8 @@ from PIL import Image
 
 # ── Config ──
 BASE = Path(__file__).parent
-SRC_DIR = BASE / "VA_bguw"
-OUT_DIR = BASE / "VA_3d"
+SRC_DIR = BASE / "STOLAR" / "bguw"
+OUT_DIR = BASE / "STOLAR" / "glb"
 LOG_FILE = BASE / "generate_and_upload.log"
 BATCH_SIZE = 10  # push + update Notion every N new meshes
 
@@ -42,7 +41,7 @@ if env_file.exists():
             NOTION_TOKEN = line.split("=", 1)[1].strip().strip('"')
 
 DATABASE_ID = "405e0f64-6b77-4aab-88b8-73281e58c4f0"
-GITHUB_RAW = "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/VA_3d"
+GITHUB_RAW_GLB = "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb"
 NOTION_HDR = {
     "Authorization": f"Bearer {NOTION_TOKEN}",
     "Notion-Version": "2022-06-28",
@@ -138,7 +137,7 @@ def load_notion_pages():
 
 
 def update_notion_page(page_id, oid):
-    url = f"{GITHUB_RAW}/{oid}/{oid}.glb"
+    url = f"{GITHUB_RAW_GLB}/{oid}.glb"
     payload = {
         "properties": {
             "3D-modell": {"files": [{"type": "external", "name": f"{oid}.glb", "external": {"url": url}}]},
@@ -173,7 +172,7 @@ def git_push_and_notify(oids):
 
             # Find untracked GLBs
             result = subprocess.run(
-                ["git", "ls-files", "--others", "--exclude-standard", "VA_3d/"],
+                ["git", "ls-files", "--others", "--exclude-standard", "STOLAR/"],
                 cwd=str(BASE), capture_output=True, text=True,
             )
             untracked = [
@@ -337,8 +336,7 @@ def main():
     t_start = time.time()
 
     for i, (oid, img_path) in enumerate(entries):
-        obj_dir = OUT_DIR / oid
-        glb_path = obj_dir / f"{oid}.glb"
+        glb_path = OUT_DIR / f"{oid}.glb"
         tag = f"[{i+1:03d}/{total}] {oid}"
 
         if glb_path.exists():
@@ -349,12 +347,7 @@ def main():
         t0 = time.time()
 
         try:
-            obj_dir.mkdir(parents=True, exist_ok=True)
-
-            # Copy bguw image
-            dst_img = obj_dir / img_path.name
-            if not dst_img.exists():
-                shutil.copy2(img_path, dst_img)
+            OUT_DIR.mkdir(parents=True, exist_ok=True)
 
             # Generate mesh
             image = rembg(Image.open(img_path).convert("RGB"))
