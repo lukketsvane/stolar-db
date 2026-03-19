@@ -1,54 +1,52 @@
-# STOLAR — 3D Chair Database
+# STOLAR — 3D-database for stolar
 
-A research database of **2,048 chairs** from the [Nasjonalmuseet](https://www.nasjonalmuseet.no/) (Norway) and the [Victoria and Albert Museum](https://www.vam.ac.uk/) (UK), with AI-generated 3D models, background-removed images, and rich metadata.
+Ein forskingsdatabase med **2 048 stolar** frå [Nasjonalmuseet](https://www.nasjonalmuseet.no/) (Noreg) og [Victoria and Albert Museum](https://www.vam.ac.uk/) (Storbritannia), med AI-genererte 3D-modellar, bakgrunnsfjerna bilete og rik metadata.
 
-Built as part of PhD research at [AHO – Oslo School of Architecture and Design](https://aho.no).
+Utvikla som del av PhD-forsking ved [AHO – Arkitektur- og designhøgskolen i Oslo](https://aho.no).
 
 ## Data
 
-All structured data is available as a single JSON file:
+All strukturert data er tilgjengeleg som ei einskild JSON-fil:
 
 ```
 https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/api.json
 ```
 
-### Schema
+### Skjema
 
-Each entry in `api.json` contains:
+Kvar oppføring i `api.json` inneheld:
 
-| Field | Type | Description |
+| Felt | Type | Skildring |
 |---|---|---|
-| `id` | string | Object ID (e.g., `OK-02274`, `NMK.2006.0076`, `O80363`) |
-| `name` | string | Chair name/title |
-| `type` | string | Object type (Stol, Lenestol, Krakk, etc.) |
-| `dating` | string | Date or period description |
-| `year_from` | number | Earliest year |
-| `year_to` | number | Latest year |
-| `century` | string | Century (e.g., `1800-talet`) |
-| `style` | string | Style period (Barokk, Rokoko, Nyklassisisme, Etterkrigsmodernisme, etc.) |
-| `designer` | string | Designer/producer name |
-| `origin` | string | Place of production |
-| `nationality` | string | Country of origin |
-| `materials` | string | Materials list |
-| `materials_desc` | string | Detailed material description |
-| `technique` | string | Construction and decoration techniques |
-| `keywords` | string | Subject keywords |
-| `height_cm` | number | Height in cm |
-| `width_cm` | number | Width in cm |
-| `depth_cm` | number | Depth in cm |
-| `seat_height_cm` | number | Seat height in cm |
-| `weight_kg` | number | Estimated weight in kg |
-| `acquisition` | string | Acquisition history |
-| `museum_url` | string | Link to museum collection page |
-| `source_image_url` | string | Original high-resolution photo URL |
-| `glb_url` | string | 3D model (GLB) direct download URL |
-| `bguw_url` | string | Background-removed preview image URL |
+| `id` | tekst | Objekt-ID (t.d. `OK-02274`, `NMK.2006.0076`, `O80363`) |
+| `name` | tekst | Namn på stolen |
+| `type` | tekst | Objekttype (Stol, Lenestol, Krakk, osb.) |
+| `dating` | tekst | Datering eller periodeskildring |
+| `year_from` | tal | Tidlegaste år |
+| `year_to` | tal | Seinaste år |
+| `century` | tekst | Hundreår (t.d. `1800-talet`) |
+| `style` | tekst | Stilperiode (sjå tabell under) |
+| `designer` | tekst | Designar/produsent |
+| `origin` | tekst | Produksjonsstad |
+| `nationality` | tekst | Nasjonalitet |
+| `materials` | tekst | Materialar |
+| `materials_desc` | tekst | Detaljert materialskildring |
+| `technique` | tekst | Konstruksjons- og dekorasjonsteknikkar |
+| `keywords` | tekst | Emneord |
+| `height_cm` | tal | Høgde i cm |
+| `width_cm` | tal | Breidde i cm |
+| `depth_cm` | tal | Djupn i cm |
+| `seat_height_cm` | tal | Setehøgde i cm |
+| `weight_kg` | tal | Estimert vekt i kg |
+| `acquisition` | tekst | Ervervingshistorikk |
+| `museum_url` | tekst | Lenkje til museumsside |
+| `source_image_url` | tekst | Original høgoppløyseleg foto-URL |
+| `glb_url` | tekst | 3D-modell (GLB) direkte nedlastings-URL |
+| `bguw_url` | tekst | Bakgrunnsfjerna førehandsvisingsbilete-URL |
 
-All textual metadata is in **Nynorsk** (Norwegian).
+### Stilperiodar
 
-### Style Periods
-
-| Nynorsk | English | Period |
+| Stilperiode | Engelsk | Periode |
 |---|---|---|
 | Renessanse | Renaissance | ~1400–1600 |
 | Barokk | Baroque | ~1600–1720 |
@@ -66,47 +64,47 @@ All textual metadata is in **Nynorsk** (Norwegian).
 | Postmodernisme | Postmodernism | ~1975–2000 |
 | Samtidsdesign | Contemporary Design | 2000+ |
 
-## Repository Structure
+## Mappestruktur
 
 ```
 STOLAR/
-├── glb/          # 3D models (GLB format), flat directory
-├── bguw/         # Background-removed preview images (PNG)
-├── images/       # Original source photographs (JPG)
-├── pages/        # Notion page exports (Markdown)
-├── api.json      # Full JSON API with all metadata
-├── STOLAR.csv    # Database CSV export
+├── glb/          # 3D-modellar (GLB-format), flat mappe
+├── bguw/         # Bakgrunnsfjerna førehandsvisingsbilete (PNG)
+├── images/       # Originale kjeldefotografi (JPG)
+├── pages/        # Notion-sideeksportar (Markdown)
+├── api.json      # Fullstendig JSON-API med all metadata
+├── STOLAR.csv    # Database CSV-eksport
 └── STOLAR_all.csv
 ```
 
-## Pipeline Scripts
+## Pipeline-skript
 
-| Script | Purpose |
+| Skript | Formål |
 |---|---|
-| `generate_and_upload.py` | Generate 3D meshes from bguw images (Hunyuan3D-2 GPU) |
-| `gen_pbr_glb.py` | Generate PBR-textured 3D models (GPU) |
-| `generate_bguw.py` | Generate background-removed images (Gemini Vision AI) |
-| `sync_stolar.py` | Sync Notion database with GitHub repo |
-| `build_api.py` | Build `STOLAR/api.json` from Notion or CSV |
-| `push_enrichment.py` | Push enrichment data to Notion with Nynorsk translation |
+| `generate_and_upload.py` | Generer 3D-mesh frå bguw-bilete (Hunyuan3D-2 GPU) |
+| `gen_pbr_glb.py` | Generer PBR-teksturerte 3D-modellar (GPU) |
+| `generate_bguw.py` | Generer bakgrunnsfjerna bilete (Gemini Vision AI) |
+| `sync_stolar.py` | Synkroniser Notion-database med GitHub-repo |
+| `build_api.py` | Bygg `STOLAR/api.json` frå Notion eller CSV |
+| `push_enrichment.py` | Push berikingsdata til Notion med nynorsk-omsetjing |
 
-## Sync Architecture
+## Synkroniseringsarkitektur
 
 ```
-Notion (STOLAR database)
+Notion (STOLAR-database)
     ↕  sync_stolar.py
-GitHub (this repo)
+GitHub (dette repoet)
     ↕  build_api.py
-STOLAR/api.json → Website / Research tools
+STOLAR/api.json → Nettstad / Forskingsverktøy
 ```
 
-GitHub Actions runs every 6 hours to keep everything in sync.
+GitHub Actions køyrer kvar 6. time for å halde alt synkronisert.
 
-## Data Sources
+## Datakjelder
 
-- **Nasjonalmuseet** — Norwegian National Museum of Art, Architecture and Design
+- **Nasjonalmuseet** — Nasjonalmuseet for kunst, arkitektur og design
 - **V&A** — Victoria and Albert Museum, London
 
-## License
+## Lisens
 
-The 3D models are AI-generated research outputs. Original photographs and metadata are sourced from museum open-access APIs. See individual museum terms for image reuse.
+3D-modellane er AI-genererte forskingsresultat. Originale fotografi og metadata kjem frå opne museum-API-ar. Sjå vilkåra til kvart museum for gjenbruk av bilete.
