@@ -1,0 +1,19 @@
+# Consumers Rest
+
+Bilete-URL: https://dms01.dimu.org/image/019EGKi4CNvWP?dimension=4000x4000
+Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/VA_3d/OK-1999-0053/OK-1999-0053_bguw.png
+Breidde (cm): 71
+Datering: 1990
+Djupn (cm): 67
+Emneord: Design, Møbel
+Erverving: Overført 1999
+Frå år: 1990
+Hundreår: 1900-talet
+Høgde (cm): 102.5
+Materialar: Stål
+Materialkommentar: Sveiset og formbøyd galvanisert stål
+Nasjonalmuseet: https://www.nasjonalmuseet.no/samlingen/objekt/OK-1999-0053
+Objekt-ID: OK-1999-0053
+Produksjonsstad: Tyskland
+Teknikk: Formbøying, Sveising
+Til år: 1990

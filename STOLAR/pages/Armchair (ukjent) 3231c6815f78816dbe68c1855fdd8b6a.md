@@ -1,0 +1,19 @@
+# Armchair (ukjent)
+
+3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/VA_3d/O131716/O131716.glb
+Bilete-URL: https://framemark.vam.ac.uk/collections/2017KJ7030/full/!800,800/0/default.jpg
+Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/VA_3d/O131716/O131716_bguw.png
+Breidde (cm): 62.5
+Datering: 1680
+Djupn (cm): 61
+Frå år: 1680
+Hundreår: 1600-talet
+Høgde (cm): 40.5
+Materialar: Eik, Jern, Lær, Metall
+Materialkommentar: [AI] Dreid og beiset eik, polstret sete, rygg og vinger trukket med lær. Dekorative nagler av metall langs kantene. Regulerbar ryggstøtte med stenger av jern.
+Nasjonalitet: Storbritannia
+Nasjonalmuseet: https://collections.vam.ac.uk/item/O131716/
+Objekt-ID: O131716
+Produksjonsstad: England
+Produsent: ukjent
+Til år: 1680

@@ -1,0 +1,19 @@
+# Noir sur Noir (Black on Black)
+
+3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/VA_3d/O1749965/O1749965.glb
+Bilete-URL: https://framemark.vam.ac.uk/collections/2023NM3480/full/full/0/default.jpg
+Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/VA_3d/O1749965/O1749965_bguw.png
+Breidde (cm): 45
+Datering: 2022-2023
+Djupn (cm): 42
+Estimert vekt (kg): 0
+Frå år: 2022
+Hundreår: 2000-talet
+Høgde (cm): 75
+Materialar: Tre
+Materialkommentar: Wood is sourced by networks of people and families in the bush after fires or storms.
+Nasjonalmuseet: https://collections.vam.ac.uk/item/O1749965/
+Objekt-ID: O1749965
+Produksjonsstad: Senegal
+Produsent: Niang, Balla
+Til år: 2023
