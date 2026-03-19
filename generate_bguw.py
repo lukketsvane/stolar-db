@@ -5,7 +5,7 @@ generate_bguw.py — Generate Bilete-bguw images and upload to GitHub + Notion.
 1. Query Notion for entries missing Bilete-bguw
 2. Download source images from Bilete-URL if not local
 3. Generate white-background (bguw) images via Gemini
-4. Copy bguw into VA_3d/{oid}/, push to GitHub, update Notion
+4. Upload bguw to GitHub (STOLAR/bguw/), update Notion
 
 Single script — run it and walk away.
 """
@@ -14,7 +14,6 @@ import argparse
 import base64
 import json
 import os
-import shutil
 import sys
 import time
 import traceback
@@ -28,9 +27,8 @@ from PIL import Image
 
 # ── Config ──
 BASE = Path(__file__).parent
-VA_DIR = BASE / "VA"
-BGUW_DIR = BASE / "VA_bguw"
-VA_3D = BASE / "VA_3d"
+VA_DIR = BASE / "STOLAR" / "images"
+BGUW_DIR = BASE / "STOLAR" / "bguw"
 
 NOTION_TOKEN = ""
 GEMINI_API_KEY = ""
@@ -52,7 +50,7 @@ DATABASE_ID = "405e0f64-6b77-4aab-88b8-73281e58c4f0"
 GH_OWNER = "lukketsvane"
 GH_REPO = "stolar-db"
 GH_BRANCH = "main"
-GITHUB_RAW = f"https://raw.githubusercontent.com/{GH_OWNER}/{GH_REPO}/{GH_BRANCH}/VA_3d"
+GITHUB_RAW_BGUW = f"https://raw.githubusercontent.com/{GH_OWNER}/{GH_REPO}/{GH_BRANCH}/STOLAR/bguw"
 PROP_NAME = "Bilete-bguw"
 UA = "stolar-db/1.0 (PhD research; AHO)"
 
@@ -260,7 +258,7 @@ def phase2_generate(entries, client):
 
 # ── Phase 3: Upload to GitHub + Notion ──
 def gh_upload(local_path, oid):
-    gh_path = f"VA_3d/{oid}/{oid}_bguw.png"
+    gh_path = f"STOLAR/bguw/{oid}_bguw.png"
     content_b64 = base64.b64encode(local_path.read_bytes()).decode()
 
     sha = None
@@ -294,7 +292,7 @@ def gh_upload(local_path, oid):
 
 
 def notion_set_bguw(pid, oid):
-    url = f"{GITHUB_RAW}/{oid}/{oid}_bguw.png"
+    url = f"{GITHUB_RAW_BGUW}/{oid}_bguw.png"
     for attempt in range(3):
         try:
             r = requests.patch(
@@ -338,14 +336,7 @@ def phase3_upload(entries):
     print(f"[Phase 3] Uploading {len(targets)} bguw to GitHub + Notion ({UPLOAD_WORKERS} workers)...")
 
     def handle(oid, local_path, pid):
-        # Copy to VA_3d
-        obj_dir = VA_3D / oid
-        obj_dir.mkdir(exist_ok=True)
-        dest = obj_dir / f"{oid}_bguw.png"
-        if not dest.exists():
-            shutil.copy2(local_path, dest)
-
-        ok_gh = gh_upload(dest, oid)
+        ok_gh = gh_upload(local_path, oid)
         if not ok_gh:
             return oid, False, "github_fail"
 
@@ -395,9 +386,8 @@ def main():
         print("ERROR: PERSONAL_ACCESS_TOKEN not in .env")
         sys.exit(1)
 
-    VA_DIR.mkdir(exist_ok=True)
-    BGUW_DIR.mkdir(exist_ok=True)
-    VA_3D.mkdir(exist_ok=True)
+    VA_DIR.mkdir(parents=True, exist_ok=True)
+    BGUW_DIR.mkdir(parents=True, exist_ok=True)
 
     print("=" * 60)
     print(" Bilete-bguw Pipeline")

@@ -27,6 +27,7 @@ tectonic.exe
 STOLAR_db.zip
 broken_images_audit.json
 *.npz
+*_prescale.glb
 *.blg
 *.bbl
 *.aux

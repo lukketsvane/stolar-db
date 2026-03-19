@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """gen_pbr_glb.py — PBR 3D chair pipeline. Run 24/7, restart anytime."""
 
-import gc, json, os, re, shutil, subprocess, sys, threading, time, traceback, warnings, logging
+import gc, json, os, re, subprocess, sys, threading, time, traceback, warnings, logging
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from queue import Queue
 
@@ -21,7 +21,7 @@ cb = r"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.1\bin"
 if os.path.isdir(cb): os.add_dll_directory(cb)
 
 BASE = __import__('pathlib').Path(__file__).parent
-SRC, OUT = BASE / "VA_bguw", BASE / "VA_3d"
+SRC, OUT = BASE / "STOLAR" / "bguw", BASE / "STOLAR" / "glb"
 LOG = BASE / "gen_pbr_glb.log"
 BATCH, MAX_FACES = 10, 100_000
 SHAPE_STEPS, GUIDANCE = 50, 5.0  # 50 steps = full quality geometry
@@ -34,7 +34,7 @@ if ef.exists():
             NOTION_TOKEN = line.split("=", 1)[1].strip().strip('"')
 
 DB_ID = "405e0f64-6b77-4aab-88b8-73281e58c4f0"
-GH_RAW = "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/VA_3d"
+GH_RAW = "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb"
 N_HDR = {"Authorization": f"Bearer {NOTION_TOKEN}", "Notion-Version": "2022-06-28", "Content-Type": "application/json"}
 G, R, Y, C, D, B, RST = Fore.GREEN, Fore.RED, Fore.YELLOW, Fore.CYAN, Style.DIM, Style.BRIGHT, Style.RESET_ALL
 
@@ -93,7 +93,7 @@ def load_notion():
     ncache = pages; nloaded.set()
 
 def notion_update(pid, oid):
-    url = f"{GH_RAW}/{oid}/{oid}.glb"
+    url = f"{GH_RAW}/{oid}.glb"
     pl = {"properties": {"3D-modell": {"files": [{"type": "external", "name": f"{oid}.glb", "external": {"url": url}}]}}}
     for a in range(3):
         try:
@@ -110,7 +110,7 @@ def git_push(oids):
             if lk.exists():
                 try: lk.unlink()
                 except: pass
-            res = subprocess.run(["git", "ls-files", "--others", "--exclude-standard", "VA_3d/"], cwd=str(BASE), capture_output=True, text=True)
+            res = subprocess.run(["git", "ls-files", "--others", "--exclude-standard", "STOLAR/"], cwd=str(BASE), capture_output=True, text=True)
             unt = [f for f in res.stdout.strip().split("\n") if f.endswith(".glb") and "_prescale" not in f and f.strip()]
             if not unt: return
             for _ in range(3):
@@ -194,7 +194,7 @@ def main():
     entries, skipped = [], 0
     for p in sorted(SRC.glob("*_bguw.png")):
         oid = p.stem.replace("_bguw", "")
-        if (OUT / oid / f"{oid}.glb").exists(): skipped += 1; continue
+        if (OUT / f"{oid}.glb").exists(): skipped += 1; continue
         entries.append((oid, p))
 
     total = len(entries)
@@ -230,7 +230,7 @@ def main():
         preprocess_image(oid0, path0, rembg)
 
     for i, (oid, img_path) in enumerate(entries):
-        glb = OUT / oid / f"{oid}.glb"
+        glb = OUT / f"{oid}.glb"
         if glb.exists(): continue
 
         # Kick off pre-processing of NEXT image in background
@@ -242,9 +242,7 @@ def main():
 
         t0 = time.time()
         try:
-            glb.parent.mkdir(parents=True, exist_ok=True)
-            dst = glb.parent / img_path.name
-            if not dst.exists(): shutil.copy2(img_path, dst)
+            OUT.mkdir(parents=True, exist_ok=True)
 
             # Get pre-processed image (or process now if not ready)
             with preprocess_lock:
