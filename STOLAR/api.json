@@ -1,8 +1,8 @@
 {
-  "generated": "2026-03-19T05:33:32Z",
+  "generated": "2026-03-19T12:29:42Z",
   "total": 2300,
-  "with_3d": 1946,
-  "with_bguw": 2255,
+  "with_3d": 2033,
+  "with_bguw": 2288,
   "base_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main",
   "chairs": [
     {
@@ -59,6 +59,7 @@
       "acquisition": "Ervervelsesopplysninger under arbeid",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/NMK.2005.0638",
       "source_image_url": "https://ms01.nasjonalmuseet.no/api/objects/download?filename=09013.tif&size=full",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/NMK.2005.0638.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/NMK.2005.0638_bguw.png"
     },
     {
@@ -685,6 +686,7 @@
       "acquisition": "Kjøp 2009",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/NMK.2009.0117",
       "source_image_url": "https://ms01.nasjonalmuseet.no/api/objects/download?filename=09015.tif&size=full",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/NMK.2009.0117.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/NMK.2009.0117_bguw.png"
     },
     {
@@ -945,6 +947,7 @@
       "acquisition": "Gave 2011",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/NMK.2011.0140",
       "source_image_url": "https://ms01.nasjonalmuseet.no/api/objects/download?filename=36001.tif&size=full",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/NMK.2011.0140.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/NMK.2011.0140_bguw.png"
     },
     {
@@ -1085,6 +1088,7 @@
       "acquisition": "Gave 2013",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/NMK.2013.0359",
       "source_image_url": "https://ms01.nasjonalmuseet.no/api/objects/download?filename=82632.tif&size=full",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/NMK.2013.0359.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/NMK.2013.0359_bguw.png"
     },
     {
@@ -1148,6 +1152,7 @@
       "acquisition": "Kjøpt 2014",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/NMK.2014.0118",
       "source_image_url": "https://ms01.nasjonalmuseet.no/api/objects/download?filename=95737.tif&size=full",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/NMK.2014.0118.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/NMK.2014.0118_bguw.png"
     },
     {
@@ -1168,6 +1173,7 @@
       "acquisition": "Kjøpt 2014",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/NMK.2014.0144",
       "source_image_url": "https://ms01.nasjonalmuseet.no/api/objects/download?filename=99454.tif&size=full",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/NMK.2014.0144.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/NMK.2014.0144_bguw.png"
     },
     {
@@ -1209,6 +1215,7 @@
       "acquisition": "Kjøpt 2015",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/NMK.2015.0284",
       "source_image_url": "https://ms01.nasjonalmuseet.no/api/objects/download?filename=111486.tif&size=full",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/NMK.2015.0284.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/NMK.2015.0284_bguw.png"
     },
     {
@@ -1398,6 +1405,7 @@
       "acquisition": "Gave 2016",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/NMK.2016.0135.002",
       "source_image_url": "https://ms01.nasjonalmuseet.no/api/objects/download?filename=143736.tif&size=full",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/NMK.2016.0135.002.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/NMK.2016.0135.002_bguw.png"
     },
     {
@@ -1719,6 +1727,7 @@
       "acquisition": "Gave 2017",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/NMK.2017.0169",
       "source_image_url": "https://ms01.nasjonalmuseet.no/api/objects/download?filename=163950.tif&size=full",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/NMK.2017.0169.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/NMK.2017.0169_bguw.png"
     },
     {
@@ -1737,6 +1746,7 @@
       "acquisition": "Kjøp 2018",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/NMK.2018.0110",
       "source_image_url": "https://dms01.dimu.org/image/019EGKhGbY249?dimension=1200x1200",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/NMK.2018.0110.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/NMK.2018.0110_bguw.png"
     },
     {
@@ -1791,6 +1801,7 @@
       "acquisition": "Gave 2018",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/NMK.2018.0382",
       "source_image_url": "https://dms01.dimu.org/image/019EGKhGbW1AX?dimension=1200x1200",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/NMK.2018.0382.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/NMK.2018.0382_bguw.png"
     },
     {
@@ -1848,6 +1859,7 @@
       "acquisition": "Kjøpt 2018",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/NMK.2018.0423",
       "source_image_url": "https://dms01.dimu.org/image/019EGKhGbY2D6?dimension=1200x1200",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/NMK.2018.0423.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/NMK.2018.0423_bguw.png"
     },
     {
@@ -1940,6 +1952,7 @@
       "acquisition": "2018-2018, Gave",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/NMK.2018.0486",
       "source_image_url": "https://ms01.nasjonalmuseet.no/api/objects/download?filename=NMK.2018.0486.tif&size=full",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/NMK.2018.0486.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/NMK.2018.0486_bguw.png"
     },
     {
@@ -1993,6 +2006,7 @@
       "acquisition": "Kjøp, Tron Meyer, 1983",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/NMK.2020.0271",
       "source_image_url": "https://ms01.nasjonalmuseet.no/api/objects/download?filename=94861.tif&size=full",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/NMK.2020.0271.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/NMK.2020.0271_bguw.png"
     },
     {
@@ -2046,6 +2060,7 @@
       "acquisition": "2020-2020, Kjøp, Tron Meyer, 1983",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/NMK.2020.0273",
       "source_image_url": "https://ms01.nasjonalmuseet.no/api/objects/download?filename=07196.tif&size=full",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/NMK.2020.0273.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/NMK.2020.0273_bguw.png"
     },
     {
@@ -2281,6 +2296,7 @@
       "acquisition": "Tidligere innkommet, antagelig 1900",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/NMK.INVENTAR.2017.0213",
       "source_image_url": "https://ms01.nasjonalmuseet.no/api/objects/download?filename=146734.tif&size=full",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/NMK.INVENTAR.2017.0213.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/NMK.INVENTAR.2017.0213_bguw.png"
     },
     {
@@ -29413,7 +29429,9 @@
       "depth_cm": 71.0,
       "weight_kg": 0.0,
       "museum_url": "https://collections.vam.ac.uk/item/O61431/",
-      "source_image_url": "https://framemark.vam.ac.uk/collections/2006AT1711/full/full/0/default.jpg"
+      "source_image_url": "https://framemark.vam.ac.uk/collections/2006AT1711/full/full/0/default.jpg",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O61431.glb",
+      "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O61431_bguw.png"
     },
     {
       "id": "O61432",
@@ -29431,7 +29449,9 @@
       "depth_cm": 0.0,
       "weight_kg": 0.0,
       "museum_url": "https://collections.vam.ac.uk/item/O61432/",
-      "source_image_url": "https://framemark.vam.ac.uk/collections/2016JA8987/full/full/0/default.jpg"
+      "source_image_url": "https://framemark.vam.ac.uk/collections/2016JA8987/full/full/0/default.jpg",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O61432.glb",
+      "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O61432_bguw.png"
     },
     {
       "id": "O61433",
@@ -29843,7 +29863,9 @@
       "width_cm": 50.0,
       "depth_cm": 105.3,
       "museum_url": "https://collections.vam.ac.uk/item/O62433/",
-      "source_image_url": "https://framemark.vam.ac.uk/collections/2006AX7614/full/full/0/default.jpg"
+      "source_image_url": "https://framemark.vam.ac.uk/collections/2006AX7614/full/full/0/default.jpg",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O62433.glb",
+      "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O62433_bguw.png"
     },
     {
       "id": "O62435",
@@ -29878,7 +29900,9 @@
       "width_cm": 88.1,
       "depth_cm": 43.2,
       "museum_url": "https://collections.vam.ac.uk/item/O62436/",
-      "source_image_url": "https://framemark.vam.ac.uk/collections/2006AY4343/full/full/0/default.jpg"
+      "source_image_url": "https://framemark.vam.ac.uk/collections/2006AY4343/full/full/0/default.jpg",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O62436.glb",
+      "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O62436_bguw.png"
     },
     {
       "id": "O62438",
@@ -30009,7 +30033,9 @@
       "depth_cm": 72.0,
       "weight_kg": 0.0,
       "museum_url": "https://collections.vam.ac.uk/item/O63049/",
-      "source_image_url": "https://framemark.vam.ac.uk/collections/2006AT7754/full/full/0/default.jpg"
+      "source_image_url": "https://framemark.vam.ac.uk/collections/2006AT7754/full/full/0/default.jpg",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O63049.glb",
+      "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O63049_bguw.png"
     },
     {
       "id": "O63050",
@@ -30105,7 +30131,9 @@
       "depth_cm": 0.0,
       "weight_kg": 0.0,
       "museum_url": "https://collections.vam.ac.uk/item/O63945/",
-      "source_image_url": "https://framemark.vam.ac.uk/collections/2006AR9982/full/full/0/default.jpg"
+      "source_image_url": "https://framemark.vam.ac.uk/collections/2006AR9982/full/full/0/default.jpg",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O63945.glb",
+      "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O63945_bguw.png"
     },
     {
       "id": "O65772",
@@ -30181,7 +30209,9 @@
       "depth_cm": 56.5,
       "weight_kg": 0.0,
       "museum_url": "https://collections.vam.ac.uk/item/O66413/",
-      "source_image_url": "https://framemark.vam.ac.uk/collections/2006AY3170/full/full/0/default.jpg"
+      "source_image_url": "https://framemark.vam.ac.uk/collections/2006AY3170/full/full/0/default.jpg",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O66413.glb",
+      "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O66413_bguw.png"
     },
     {
       "id": "O66992",
@@ -30401,7 +30431,9 @@
       "depth_cm": 56.5,
       "weight_kg": 0.0,
       "museum_url": "https://collections.vam.ac.uk/item/O70665/",
-      "source_image_url": "https://framemark.vam.ac.uk/collections/2013GP9557/full/full/0/default.jpg"
+      "source_image_url": "https://framemark.vam.ac.uk/collections/2013GP9557/full/full/0/default.jpg",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O70665.glb",
+      "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O70665_bguw.png"
     },
     {
       "id": "O70668",
@@ -30776,7 +30808,9 @@
       "depth_cm": 0.0,
       "weight_kg": 0.0,
       "museum_url": "https://collections.vam.ac.uk/item/O71485/",
-      "source_image_url": "https://framemark.vam.ac.uk/collections/2006AV0942/full/full/0/default.jpg"
+      "source_image_url": "https://framemark.vam.ac.uk/collections/2006AV0942/full/full/0/default.jpg",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O71485.glb",
+      "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O71485_bguw.png"
     },
     {
       "id": "O71487",
@@ -31358,7 +31392,9 @@
       "width_cm": 45.0,
       "depth_cm": 42.4,
       "museum_url": "https://collections.vam.ac.uk/item/O76033/",
-      "source_image_url": "https://framemark.vam.ac.uk/collections/2016JJ3247/full/full/0/default.jpg"
+      "source_image_url": "https://framemark.vam.ac.uk/collections/2016JJ3247/full/full/0/default.jpg",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O76033.glb",
+      "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O76033_bguw.png"
     },
     {
       "id": "O76171",
@@ -31394,7 +31430,9 @@
       "width_cm": 97.7,
       "depth_cm": 66.0,
       "museum_url": "https://collections.vam.ac.uk/item/O76201/",
-      "source_image_url": "https://framemark.vam.ac.uk/collections/2006AL2236/full/full/0/default.jpg"
+      "source_image_url": "https://framemark.vam.ac.uk/collections/2006AL2236/full/full/0/default.jpg",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O76201.glb",
+      "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O76201_bguw.png"
     },
     {
       "id": "O76209",
@@ -31813,7 +31851,9 @@
       "depth_cm": 48.0,
       "weight_kg": 0.0,
       "museum_url": "https://collections.vam.ac.uk/item/O78383/",
-      "source_image_url": "https://framemark.vam.ac.uk/collections/2013GL4528/full/full/0/default.jpg"
+      "source_image_url": "https://framemark.vam.ac.uk/collections/2013GL4528/full/full/0/default.jpg",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O78383.glb",
+      "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O78383_bguw.png"
     },
     {
       "id": "O78408",
@@ -32234,7 +32274,9 @@
       "depth_cm": 38.0,
       "weight_kg": 0.0,
       "museum_url": "https://collections.vam.ac.uk/item/O79015/",
-      "source_image_url": "https://framemark.vam.ac.uk/collections/2006AM8416/full/full/0/default.jpg"
+      "source_image_url": "https://framemark.vam.ac.uk/collections/2006AM8416/full/full/0/default.jpg",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O79015.glb",
+      "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O79015_bguw.png"
     },
     {
       "id": "O79037",
@@ -32456,7 +32498,9 @@
       "depth_cm": 66.0,
       "weight_kg": 0.0,
       "museum_url": "https://collections.vam.ac.uk/item/O7969/",
-      "source_image_url": "https://framemark.vam.ac.uk/collections/2006AL4047/full/full/0/default.jpg"
+      "source_image_url": "https://framemark.vam.ac.uk/collections/2006AL4047/full/full/0/default.jpg",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O7969.glb",
+      "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O7969_bguw.png"
     },
     {
       "id": "O7975",
@@ -32536,7 +32580,9 @@
       "depth_cm": 66.0,
       "weight_kg": 0.0,
       "museum_url": "https://collections.vam.ac.uk/item/O80327/",
-      "source_image_url": "https://framemark.vam.ac.uk/collections/2018KX5605/full/full/0/default.jpg"
+      "source_image_url": "https://framemark.vam.ac.uk/collections/2018KX5605/full/full/0/default.jpg",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O80327.glb",
+      "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O80327_bguw.png"
     },
     {
       "id": "O80328",
@@ -32555,7 +32601,9 @@
       "depth_cm": 74.5,
       "weight_kg": 0.0,
       "museum_url": "https://collections.vam.ac.uk/item/O80328/",
-      "source_image_url": "https://framemark.vam.ac.uk/collections/2018KX5623/full/full/0/default.jpg"
+      "source_image_url": "https://framemark.vam.ac.uk/collections/2018KX5623/full/full/0/default.jpg",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O80328.glb",
+      "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O80328_bguw.png"
     },
     {
       "id": "O80329",
@@ -32717,7 +32765,9 @@
       "depth_cm": 0.0,
       "weight_kg": 0.0,
       "museum_url": "https://collections.vam.ac.uk/item/O80336/",
-      "source_image_url": "https://framemark.vam.ac.uk/collections/2016JA8052/full/full/0/default.jpg"
+      "source_image_url": "https://framemark.vam.ac.uk/collections/2016JA8052/full/full/0/default.jpg",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O80336.glb",
+      "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O80336_bguw.png"
     },
     {
       "id": "O80337",
@@ -32735,7 +32785,9 @@
       "depth_cm": 0.0,
       "weight_kg": 0.0,
       "museum_url": "https://collections.vam.ac.uk/item/O80337/",
-      "source_image_url": "https://framemark.vam.ac.uk/collections/2016JA8057/full/full/0/default.jpg"
+      "source_image_url": "https://framemark.vam.ac.uk/collections/2016JA8057/full/full/0/default.jpg",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O80337.glb",
+      "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O80337_bguw.png"
     },
     {
       "id": "O80338",
@@ -32753,7 +32805,9 @@
       "depth_cm": 65.7,
       "weight_kg": 0.0,
       "museum_url": "https://collections.vam.ac.uk/item/O80338/",
-      "source_image_url": "https://framemark.vam.ac.uk/collections/2018KX5639/full/full/0/default.jpg"
+      "source_image_url": "https://framemark.vam.ac.uk/collections/2018KX5639/full/full/0/default.jpg",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O80338.glb",
+      "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O80338_bguw.png"
     },
     {
       "id": "O80339",
@@ -32772,7 +32826,9 @@
       "depth_cm": 0.0,
       "weight_kg": 0.0,
       "museum_url": "https://collections.vam.ac.uk/item/O80339/",
-      "source_image_url": "https://framemark.vam.ac.uk/collections/2016JA8060/full/full/0/default.jpg"
+      "source_image_url": "https://framemark.vam.ac.uk/collections/2016JA8060/full/full/0/default.jpg",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O80339.glb",
+      "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O80339_bguw.png"
     },
     {
       "id": "O80340",
@@ -32974,7 +33030,9 @@
       "depth_cm": 0.0,
       "weight_kg": 0.0,
       "museum_url": "https://collections.vam.ac.uk/item/O80351/",
-      "source_image_url": "https://framemark.vam.ac.uk/collections/2018KX4135/full/full/0/default.jpg"
+      "source_image_url": "https://framemark.vam.ac.uk/collections/2018KX4135/full/full/0/default.jpg",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O80351.glb",
+      "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O80351_bguw.png"
     },
     {
       "id": "O80353",
@@ -33013,7 +33071,9 @@
       "depth_cm": 0.0,
       "weight_kg": 0.0,
       "museum_url": "https://collections.vam.ac.uk/item/O80354/",
-      "source_image_url": "https://framemark.vam.ac.uk/collections/2018KX5654/full/full/0/default.jpg"
+      "source_image_url": "https://framemark.vam.ac.uk/collections/2018KX5654/full/full/0/default.jpg",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O80354.glb",
+      "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O80354_bguw.png"
     },
     {
       "id": "O80355",
@@ -33212,7 +33272,9 @@
       "depth_cm": 0.0,
       "weight_kg": 0.0,
       "museum_url": "https://collections.vam.ac.uk/item/O80364/",
-      "source_image_url": "https://framemark.vam.ac.uk/collections/2018KX4148/full/full/0/default.jpg"
+      "source_image_url": "https://framemark.vam.ac.uk/collections/2018KX4148/full/full/0/default.jpg",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O80364.glb",
+      "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O80364_bguw.png"
     },
     {
       "id": "O80365",
@@ -33578,7 +33640,9 @@
       "depth_cm": 0.0,
       "weight_kg": 0.0,
       "museum_url": "https://collections.vam.ac.uk/item/O81300/",
-      "source_image_url": "https://framemark.vam.ac.uk/collections/2018KX3696/full/full/0/default.jpg"
+      "source_image_url": "https://framemark.vam.ac.uk/collections/2018KX3696/full/full/0/default.jpg",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O81300.glb",
+      "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O81300_bguw.png"
     },
     {
       "id": "O81304",
@@ -33658,7 +33722,9 @@
       "depth_cm": 0.0,
       "weight_kg": 0.0,
       "museum_url": "https://collections.vam.ac.uk/item/O8188/",
-      "source_image_url": "https://framemark.vam.ac.uk/collections/2014HD2230/full/full/0/default.jpg"
+      "source_image_url": "https://framemark.vam.ac.uk/collections/2014HD2230/full/full/0/default.jpg",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O8188.glb",
+      "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O8188_bguw.png"
     },
     {
       "id": "O8247",
@@ -33736,7 +33802,9 @@
       "depth_cm": 72.0,
       "weight_kg": 0.0,
       "museum_url": "https://collections.vam.ac.uk/item/O83923/",
-      "source_image_url": "https://framemark.vam.ac.uk/collections/2008BT7496/full/full/0/default.jpg"
+      "source_image_url": "https://framemark.vam.ac.uk/collections/2008BT7496/full/full/0/default.jpg",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O83923.glb",
+      "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O83923_bguw.png"
     },
     {
       "id": "O83925",
@@ -33811,7 +33879,9 @@
       "depth_cm": 55.0,
       "weight_kg": 0.0,
       "museum_url": "https://collections.vam.ac.uk/item/O84500/",
-      "source_image_url": "https://framemark.vam.ac.uk/collections/2017JU5334/full/full/0/default.jpg"
+      "source_image_url": "https://framemark.vam.ac.uk/collections/2017JU5334/full/full/0/default.jpg",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O84500.glb",
+      "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O84500_bguw.png"
     },
     {
       "id": "O84526",
@@ -33868,7 +33938,9 @@
       "depth_cm": 58.5,
       "weight_kg": 0.0,
       "museum_url": "https://collections.vam.ac.uk/item/O8464/",
-      "source_image_url": "https://framemark.vam.ac.uk/collections/2006AM8508/full/full/0/default.jpg"
+      "source_image_url": "https://framemark.vam.ac.uk/collections/2006AM8508/full/full/0/default.jpg",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O8464.glb",
+      "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O8464_bguw.png"
     },
     {
       "id": "O84641",
@@ -34081,7 +34153,9 @@
       "width_cm": 61.0,
       "depth_cm": 52.0,
       "museum_url": "https://collections.vam.ac.uk/item/O9031/",
-      "source_image_url": "https://framemark.vam.ac.uk/collections/2010EL7088/full/full/0/default.jpg"
+      "source_image_url": "https://framemark.vam.ac.uk/collections/2010EL7088/full/full/0/default.jpg",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O9031.glb",
+      "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O9031_bguw.png"
     },
     {
       "id": "O90868",
@@ -34140,7 +34214,9 @@
       "depth_cm": 51.0,
       "weight_kg": 0.0,
       "museum_url": "https://collections.vam.ac.uk/item/O93711/",
-      "source_image_url": "https://framemark.vam.ac.uk/collections/2006AL1370/full/full/0/default.jpg"
+      "source_image_url": "https://framemark.vam.ac.uk/collections/2006AL1370/full/full/0/default.jpg",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O93711.glb",
+      "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O93711_bguw.png"
     },
     {
       "id": "O93805",
@@ -34362,7 +34438,9 @@
       "depth_cm": 50.0,
       "weight_kg": 0.0,
       "museum_url": "https://collections.vam.ac.uk/item/O94225/",
-      "source_image_url": "https://framemark.vam.ac.uk/collections/2015HW6747/full/full/0/default.jpg"
+      "source_image_url": "https://framemark.vam.ac.uk/collections/2015HW6747/full/full/0/default.jpg",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O94225.glb",
+      "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O94225_bguw.png"
     },
     {
       "id": "O98656",
@@ -35086,6 +35164,7 @@
       "acquisition": "Testamentarisk gave, innkommet 1889",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-03079",
       "source_image_url": "https://ms01.nasjonalmuseet.no/api/objects/download?filename=07410.tif&size=full",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-03079.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-03079_bguw.png"
     },
     {
@@ -35356,6 +35435,7 @@
       "acquisition": "Kjøpt 1896",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-05229",
       "source_image_url": "https://ms01.nasjonalmuseet.no/api/objects/download?filename=07483.tif&size=full",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-05229.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-05229_bguw.png"
     },
     {
@@ -35399,6 +35479,7 @@
       "acquisition": "kjøpt 1896",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-05234",
       "source_image_url": "https://ms01.nasjonalmuseet.no/api/objects/download?filename=07311.tif&size=full",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-05234.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-05234_bguw.png"
     },
     {
@@ -35508,6 +35589,7 @@
       "acquisition": "Kjøpt 1897",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-05399",
       "source_image_url": "https://ms01.nasjonalmuseet.no/api/objects/download?filename=07248.tif&size=full",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-05399.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-05399_bguw.png"
     },
     {
@@ -35794,6 +35876,7 @@
       "acquisition": "Kjøpt 1895",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-05441A",
       "source_image_url": "https://ms01.nasjonalmuseet.no/api/objects/download?filename=07496.tif&size=full",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-05441A.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-05441A_bguw.png"
     },
     {
@@ -35815,6 +35898,7 @@
       "acquisition": "Kjøpt 1895",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-05441B",
       "source_image_url": "https://ms01.nasjonalmuseet.no/api/objects/download?filename=37584.tif&size=full",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-05441B.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-05441B_bguw.png"
     },
     {
@@ -35879,6 +35963,7 @@
       "acquisition": "Kjøpt 1895",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-05441C",
       "source_image_url": "https://ms01.nasjonalmuseet.no/api/objects/download?filename=07150.tif&size=full",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-05441C.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-05441C_bguw.png"
     },
     {
@@ -35923,6 +36008,7 @@
       "acquisition": "Kjøpt 1895",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-05441E",
       "source_image_url": "https://ms01.nasjonalmuseet.no/api/objects/download?filename=61846.tif&size=full",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-05441E.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-05441E_bguw.png"
     },
     {
@@ -35966,6 +36052,7 @@
       "acquisition": "Kjøpt 1895",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-05441F",
       "source_image_url": "https://ms01.nasjonalmuseet.no/api/objects/download?filename=07498.tif&size=full",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-05441F.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-05441F_bguw.png"
     },
     {
@@ -36874,6 +36961,7 @@
       "acquisition": "Gave 1909",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-06596",
       "source_image_url": "https://ms01.nasjonalmuseet.no/api/objects/download?filename=07241.tif&size=full",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-06596.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-06596_bguw.png"
     },
     {
@@ -37207,6 +37295,7 @@
       "acquisition": "Kjøpt 1902",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-06661",
       "source_image_url": "https://ms01.nasjonalmuseet.no/api/objects/download?filename=OK-06661.tif&size=full",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-06661.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-06661_bguw.png"
     },
     {
@@ -37668,6 +37757,7 @@
       "acquisition": "Kjøpt 1903",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-07063",
       "source_image_url": "https://dms01.dimu.org/image/019EGKhwgM5rx?dimension=1200x1200",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-07063.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-07063_bguw.png"
     },
     {
@@ -38004,6 +38094,7 @@
       "acquisition": "Testamentarisk gave, innkommet 1904",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-07355",
       "source_image_url": "https://dms01.dimu.org/image/019EGKhwerS5N?dimension=1200x1200",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-07355.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-07355_bguw.png"
     },
     {
@@ -38561,6 +38652,7 @@
       "acquisition": "Kjøpt 1912",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-08608A",
       "source_image_url": "https://dms01.dimu.org/image/019EGKhwgM5rw?dimension=4000x4000",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-08608A.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-08608A_bguw.png"
     },
     {
@@ -38625,6 +38717,7 @@
       "acquisition": "Kjøpt 1912",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-08662",
       "source_image_url": "https://dms01.dimu.org/image/019EGKhwknikw?dimension=4000x4000",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-08662.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-08662_bguw.png"
     },
     {
@@ -39196,6 +39289,7 @@
       "acquisition": "Testamentarisk gave, innkommet 1919",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-09415A",
       "source_image_url": "https://dms01.dimu.org/image/019EGKhwnEghH?dimension=4000x4000",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-09415A.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-09415A_bguw.png"
     },
     {
@@ -39251,6 +39345,7 @@
       "seat_height_cm": 7.0,
       "acquisition": "Testamentarisk gave, innkommet 1919",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-09415C",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-09415C.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-09415C_bguw.png"
     },
     {
@@ -39270,6 +39365,7 @@
       "seat_height_cm": 7.0,
       "acquisition": "Testamentarisk gave, innkommet 1919",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-09415C",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-09415C.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-09415C_bguw.png"
     },
     {
@@ -39289,6 +39385,7 @@
       "depth_cm": 45.5,
       "acquisition": "Testamentarisk gave, innkommet 1919",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-09415D",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-09415D.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-09415D_bguw.png"
     },
     {
@@ -39309,6 +39406,7 @@
       "seat_height_cm": 7.5,
       "acquisition": "Testamentarisk gave, innkommet 1919",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-09415D",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-09415D.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-09415D_bguw.png"
     },
     {
@@ -39505,6 +39603,7 @@
       "acquisition": "Testamentarisk gave, innkommet 1923",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-09689",
       "source_image_url": "https://dms01.dimu.org/image/019EGKhqHiXW1?dimension=4000x4000",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-09689.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-09689_bguw.png"
     },
     {
@@ -39551,6 +39650,7 @@
       "acquisition": "Testamentarisk gave, innkommet 1923",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-09692",
       "source_image_url": "https://dms01.dimu.org/image/019EGKhwkkhwo?dimension=4000x4000",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-09692.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-09692_bguw.png"
     },
     {
@@ -39572,6 +39672,7 @@
       "acquisition": "Testamentarisk gave, innkommet 1923",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-09693",
       "source_image_url": "https://dms01.dimu.org/image/019EGKhwnFMjW?dimension=4000x4000",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-09693.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-09693_bguw.png"
     },
     {
@@ -39637,6 +39738,7 @@
       "acquisition": "Testamentarisk gave, innkommet 1923",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-09694A",
       "source_image_url": "https://dms01.dimu.org/image/019EGKhwhojbf?dimension=4000x4000",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-09694A.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-09694A_bguw.png"
     },
     {
@@ -39863,6 +39965,7 @@
       "acquisition": "Testamentarisk gave, innkommet 1930",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-10330A",
       "source_image_url": "https://dms01.dimu.org/image/019EGKhwjKPuc?dimension=4000x4000",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-10330A.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-10330A_bguw.png"
     },
     {
@@ -39979,6 +40082,7 @@
       "acquisition": "Testamentarisk gave, innkommet 1930",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-10330D",
       "source_image_url": "https://dms01.dimu.org/image/019EGKhwjJ4My?dimension=4000x4000",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-10330D.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-10330D_bguw.png"
     },
     {
@@ -40137,6 +40241,7 @@
       "acquisition": "Gave 1935",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-10648",
       "source_image_url": "https://dms01.dimu.org/image/019EGKhwhpjtg?dimension=4000x4000",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-10648.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-10648_bguw.png"
     },
     {
@@ -40158,6 +40263,7 @@
       "acquisition": "Gave 1936",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-10700",
       "source_image_url": "https://dms01.dimu.org/image/019EGKhwjK4W7?dimension=4000x4000",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-10700.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-10700_bguw.png"
     },
     {
@@ -40455,6 +40561,7 @@
       "acquisition": "Gave 1938",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-10888A",
       "source_image_url": "https://dms01.dimu.org/image/019EGKhwkn3o9?dimension=4000x4000",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-10888A.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-10888A_bguw.png"
     },
     {
@@ -40542,6 +40649,7 @@
       "acquisition": "Gave 1938",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-10888E",
       "source_image_url": "https://dms01.dimu.org/image/019EGKhwhqQrb?dimension=4000x4000",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-10888E.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-10888E_bguw.png"
     },
     {
@@ -40563,6 +40671,7 @@
       "acquisition": "Gave 1938",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-10888F",
       "source_image_url": "https://dms01.dimu.org/image/019EGKhwjK4tA?dimension=4000x4000",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-10888F.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-10888F_bguw.png"
     },
     {
@@ -40606,6 +40715,7 @@
       "acquisition": "Gave 1938",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-10888H",
       "source_image_url": "https://dms01.dimu.org/image/019EGKhwhpk3Y?dimension=4000x4000",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-10888H.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-10888H_bguw.png"
     },
     {
@@ -40627,6 +40737,7 @@
       "acquisition": "Gave 1938",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-10888I",
       "source_image_url": "https://dms01.dimu.org/image/019EGKhwnGNL7?dimension=4000x4000",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-10888I.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-10888I_bguw.png"
     },
     {
@@ -40716,6 +40827,7 @@
       "acquisition": "Gave 1939",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-11049",
       "source_image_url": "https://dms01.dimu.org/image/019EGKhwknPMZ?dimension=4000x4000",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-11049.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-11049_bguw.png"
     },
     {
@@ -40978,6 +41090,7 @@
       "acquisition": "Testamentarisk gave, innkommet 1946",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-11527A",
       "source_image_url": "https://dms01.dimu.org/image/019EGKhwkmNTF?dimension=4000x4000",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-11527A.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-11527A_bguw.png"
     },
     {
@@ -41001,6 +41114,7 @@
       "acquisition": "Testamentarisk gave, innkommet 1946",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-11527B",
       "source_image_url": "https://dms01.dimu.org/image/019EGKhwjJj6d?dimension=4000x4000",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-11527B.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-11527B_bguw.png"
     },
     {
@@ -41024,6 +41138,7 @@
       "acquisition": "Testamentarisk gave, innkommet 1946",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-11528A",
       "source_image_url": "https://dms01.dimu.org/image/019EGKhwnEhJd?dimension=4000x4000",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-11528A.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-11528A_bguw.png"
     },
     {
@@ -41047,6 +41162,7 @@
       "acquisition": "Testamentarisk gave, innkommet 1946",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-11528B",
       "source_image_url": "https://dms01.dimu.org/image/019EGKhwjJjUk?dimension=4000x4000",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-11528B.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-11528B_bguw.png"
     },
     {
@@ -41071,6 +41187,7 @@
       "acquisition": "Gave 1946",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-11529A",
       "source_image_url": "https://dms01.dimu.org/image/019EGKhqGCBrD?dimension=4000x4000",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-11529A.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-11529A_bguw.png"
     },
     {
@@ -41094,6 +41211,7 @@
       "acquisition": "Gave 1946",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-11529B",
       "source_image_url": "https://dms01.dimu.org/image/019EGKhqGDBux?dimension=4000x4000",
+      "glb_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-11529B.glb",
       "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-11529B_bguw.png"
     },
     {
@@ -41915,7 +42033,8 @@
       "weight_kg": 18.9,
       "acquisition": "Gave 1958",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-15056B-1",
-      "source_image_url": "https://dms01.dimu.org/image/019EGKhwqCL5j?dimension=4000x4000"
+      "source_image_url": "https://dms01.dimu.org/image/019EGKhwqCL5j?dimension=4000x4000",
+      "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-15056B-1_bguw.png"
     },
     {
       "id": "OK-15056B-2",
@@ -45494,7 +45613,8 @@
       "weight_kg": 16.8,
       "acquisition": "Gave 1996",
       "museum_url": "https://www.nasjonalmuseet.no/samlingen/objekt/OK-1995-0136C",
-      "source_image_url": "https://dms01.dimu.org/image/019EGKi4CNvp3?dimension=4000x4000"
+      "source_image_url": "https://dms01.dimu.org/image/019EGKi4CNvp3?dimension=4000x4000",
+      "bguw_url": "https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/OK-1995-0136C_bguw.png"
     },
     {
       "id": "OK-1996-0001",
