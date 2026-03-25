@@ -21,7 +21,7 @@
 \usepackage{float}
 \usepackage{enumitem}
 
-\geometry{margin=1.5cm, top=1.8cm, bottom=1.8cm, columnsep=0.6cm}
+\geometry{left=1.0cm, right=1.0cm, top=1.8cm, bottom=1.8cm, columnsep=0.6cm}
 \setstretch{1.05}
 \usepackage{pdfpages}
 \graphicspath{{fig/}}
@@ -125,21 +125,7 @@ I FFF er forma ein posisjon i eit $n$-dimensjonalt landskap der kvar akse repres
 
 Konsekvensen er at formhistoria ikkje er ein jamn progresjon mot eit funksjonelt optimum, men ein serie navigeringar i stadig skiftande terreng (figur~\ref{fig:fitnesslandskap}). \citet{frazer1995} var den fyrste designteoretikaren som eksplisitt kopla evolusjonær modellering til arkitektur, men utan eit empirisk datasett. STOLAR-prosjektet gjev det empiriske grunnlaget.
 
-\begin{figure}[!ht]
-  \centering
-  \includegraphics[width=\columnwidth]{ill03_fitnesslandskap.png}
-  \caption{Det multidimensjonale fitnesslandskapet. Kvar topp representerer ein stilperiode (lokalt optimum). Barrokk er hoegast (mest materielt intensiv); postmodernisme er flatast (mest materiellt egalitaer). Materialdimensjonen og kulturdimensjonen definerer terrenget.}
-  \label{fig:fitnesslandskap}
-\end{figure}
-
 \subsection{Distribuert kognisjon}
-
-\begin{figure}[!ht]
-  \centering
-  \includegraphics[width=\columnwidth]{ill04_distribuert.png}
-  \caption{Formgjeving som distribuert intelligent prosess. Materialet (MI=0,382), verktoyeet (MI=0,382), designaren, marknaden og kulturen utover alle agentur. Forma er emergent, ikkje dedusert. Physarum-analogi nedst til venstre.}
-  \label{fig:distribuert}
-\end{figure}
 
 \citet{hutchins1995} viste i \textit{Cognition in the Wild} at navigasjonen av eit marinefartøy ikkje er lokalisert i hovudet til éin navigatør, men distribuert over eit nettverk av menneske, instrument, kartverk og rutinar. \citet{clark2008} formulerte den utvida kognisjonshypotesen: kognitive prosessar strekkjer seg utover hjernen og inn i kroppen og miljøet. \citet{levin2019} utvida dette til ein generell teori om kognisjon på alle skalaer, frå einskildceller til organismar, med omgrepet ``kognitiv lyskjegle'' (\textit{cognitive lightcone}): det rommet av framtidige tilstandar eit system kan modellere og navigere mot.
 
@@ -635,15 +621,63 @@ Dersom FFF er korrekt, bør designutdanninga restrukturerast. Materialkunnskap b
 
 \subsection{Vidare forsking}
 
-Fem retningar peikar seg ut:
+STOLAR-prosjektet har bygd ein beviskjede frå fire lineære dimensjonar og to europeiske museum. Men rammeverket FFF opnar forskingsretningar som strekkjer seg langt utover det noverande datasettet, både i representasjon, skala, visualisering og anvending. Dei følgjande ni retningane er ordna frå det mest datanære til det mest spekulative.
 
-\begin{enumerate}
-  \item \textbf{3D-geometri.} STOLAR-datasettet nyttar fire lineære dimensjonar. Ein utviding til fullstendig 3D-geometri gjennom fotogrammetri eller strukturert lys-skanning ville gje eit mykje rikare formrom og tillate analyse av kurvatur, skulpturell kvalitet og detaljerikdom som dei noverande variablane ikkje fangar.
-  \item \textbf{Andre objektkategoriar.} FFF er substratuavhengig og bør testast på andre domene: bestikk, bygningar, køyretøy, musikkinstrument, typografi. Kvart domene har ein invariant funksjon og variabel form; FFF predikerer at same dynamikk gjeld.
-  \item \textbf{Bereknelege tilpassingsfunksjonar.} Formalisering av tilpassingsfunksjonen som ein bereknelleg modell ville tillate bruk av FFF i parametrisk og generativ design. Ein designar kunne spesifisere seleksjonstrykka (materiale, produksjonsteknikk, marknadssegment, regulatoriske krav) og la ein optimeringsalgoritme navigere landskapet.
-  \item \textbf{Ikkje-europeiske samlingar.} STOLAR-datasettet er avgrensa til to europeiske museum. Inkludering av asiatiske, afrikanske og amerikanske samlingar ville teste om dei same regimeskifta og affordansemønstra gjeld globalt, eller om dei er spesifikke for den europeiske tradisjonen.
-  \item \textbf{Tidslege modellar.} Dynamiske modellar som eksplisitt modellerer landskapsskifte over tid, til dømes med tidsserieanalyse eller agentbasert simulering, ville gjere det mogleg å predikere framtidige formtrendar basert på forventa teknologiske og materielle endringar.
-\end{enumerate}
+\subsubsection{Frå tabelldata til 3D-formrom}
+
+STOLAR-datasettet reduserer kvar stol til fire skalarverdiar. Denne kompresjonen er analytisk kraftfull, men ho ignorerer alt det auga ser fyrst: kurvatur, ornamentikk, skulpturell rytme, overflatestruktur. Ein naturleg utviding er systematisk 3D-skanning gjennom fotogrammetri eller strukturert lys-skanning, som genererer punktskyer med hundretusenvis av koordinatar per objekt.
+
+Med 3D-data kan ein berekne \textbf{Gauss-kurvatur} (lokal krumming), \textbf{overflaterugleik} (teksturkompleksitet), \textbf{volum-til-overflate-ratio} (materialeffektivitet), og \textbf{symmetriindeksar} (bilateralt, rotasjonsmessig). Formrommet ekspanderer frå $\mathbb{R}^4$ til ein høgdimensjonal manifold, og fitnesslandskapet får finare oppløysing. Konkret ville dette gjere det mogleg å skilje mellom stolar som har identisk $H/W$-ratio men radikalt ulik skulpturell karakter: ein Panton S-stol (glatt, kontinuerleg kurvatur) og ein utskoren barokkstol (fraktalliknande detaljrikdom) ville ligge nær kvarandre i det noverande formrommet, men langt frå kvarandre i 3D-formrommet.
+
+\textit{Visualisering:} UMAP- eller t-SNE-projeksjonar av 3D-formrom, der kvar stol er ein punkt farga etter stilperiode, ville avsløre klyngestrukturar som er usynlege i fire dimensjonar. Ein interaktiv 3D-visualisering der brukaren kan rotere, zoome og filtrere etter tid, materiale eller geografi ville gjere fitnesslandskapet direkte opplevbart.
+
+\subsubsection{Bildebasert djuplæring}
+
+Parallelt med 3D-skanning finst det ein rikare og allereie tilgjengeleg datakjelde: museumsbilete. Både NMK og V\&A har digitaliserte fotografi av tusenvis av stolar. Konvolusjonelle nevrale nettverk (CNN) eller vision transformers (ViT) trena på desse bileta kan ekstrahere visuelle trekk (feature vectors) direkte frå pikseldata, utan manuell dimensjonsregistrering. Denne tilnærminga ville dramatisk auke datamengda (frå 2\,284 stolar med fire mål til potensielt titals tusen stolar med tusenvis av visuelle trekk), og gjere det mogleg å teste FFF på eit datagrunnlag som er ordenar større enn det noverande.
+
+\textit{Visualisering:} Gradvis aktivering av CNN-lag (Grad-CAM) viser kva delar av biletet nettverket ``ser'' når det klassifiserer stilperiode. Dersom nettverket fokuserer på bein, rygg og setekant snarare enn ornamentikk, støttar det FFF sin påstand om at dimensjonar er viktigare enn dekor. Ein atlas av slike aktiveringskart, organisert kronologisk, ville visualisere korleis den visuelle signaturen til kvar stilperiode er konstruert.
+
+\subsubsection{Fylogenetiske tre for stolevolusjon}
+
+Biologisk systematikk brukar fylogenetiske tre for å rekonstruere evolusjonære slektskap. Same metode kan brukast på stolar. Ved å definere ``karakterar'' (materiale, teknikk, proporsjon, ornamentikk) og bruke parsimoni- eller likelihood-baserte algoritmar, kan ein byggje eit stamtre for stoldesign. Treet ville vise kva ``artsdanningar'' (stilskifte) som er gradvise og kva som er abrupte, kva ``artar'' (stilperiodar) som er monofyletiske (oppstått ein gong) og kva som er polyfyletiske (oppstått fleire gonger uavhengig).
+
+\textit{Visualisering:} Eit sirkulært fylogenetisk tre med greiner farga etter materiale og bladnoder merka med stilperiode ville gje eit intuitivt bilete av korleis stoldesign har divergert og konvergert over tid. Overlapping med eit geografisk kart (fylogeografi) ville vise spreiingsruter for formidear.
+
+\subsubsection{Nettverksanalyse av påverknad}
+
+Fitnesslandskapet impliserer at stolar ikkje evolvererer i isolasjon, men i eit nettverk av påverknad. Ein nettverksmodell der kvar stol (eller kvar stilperiode, eller kvar designar) er ein node, og kantane representerer formell likskap (Jaccard-avstand mellom materiallister, euklidisk avstand i dimensjonsrommet), ville avdekke klyngestrukturar, sentrale noder (``nøkkelstolar'' som har påverka mange etterfølgjarar) og bruer mellom klynger (stilar som knyter saman elles separate tradisjonar).
+
+\textit{Visualisering:} Force-directed grafar der nodestorleikar reflekterer grad (antal liknande stolar) og kantfargar reflekterer tidsavstand. Thonet sin Stol nr.~14 ville truleg vere ein av dei mest sentrale nodane i det industrielle nettverket. Slike grafar kan gjerast interaktive med D3.js eller tilsvarande, slik at brukaren kan utforske nettverket filtrert etter museum, materiale eller tidsperiode.
+
+\subsubsection{Krysskulturell og global validering}
+
+NMK og V\&A representerer det europeiske formregimet. FFF hevdar universalitet, men denne påstanden er uprøvd utanfor Europa. Ein global studie som inkluderer kinesiske ming-stolar (Palace Museum, Beijing), japanske zaisu og tanaisu (Tokyo National Museum), vestafrikanske asipim-tronestolar (British Museum), og latinamerikanske equipal-stolar (Museo Nacional de Antropologia, Mexico City) ville teste om entropikurva, affordansekanaliseringa og det ruglete landskapet er universelle eigenskapar ved formhistoria, eller spesifikke for den europeiske moderniseringshistoria. Kvar tradisjon har distinkte materialsystem: bambus, lakkert tre, rotting, lær, palmefiber, stein. FFF predikerer at kvar materialpallett kanaliserer sine eigne proporsjonar og geometriar, og at globaliseringseffekten (konvergens av materialar og former) bør vere målbar som fallande Jaccard-avstand mellom tradisjonar over tid.
+
+\textit{Visualisering:} Eit verdskar med Voronoi-celler rundt kvar museumslokasjon, der cellefargen representerer lokal materialentropi og cellestrukturen viser dei dominerande materialgruppene. Animert over tid ville kartet vise korleis globaliseringa gradvis homogeniserer materiallandskapet.
+
+\subsubsection{Bereknelege tilpassingsfunksjonar og generativ design}
+
+FFF beskriv landskapet kvalitativt og måler det statistisk, men formaliserer ikkje tilpassingsfunksjonen som ein bereknelleg modell. Ein eksplisitt fitnessfunksjon $f(\mathbf{x}) = \sum_i w_i \cdot s_i(\mathbf{x})$, der $\mathbf{x}$ er ein formvektor, $s_i$ er seleksjonstrykk og $w_i$ er vektingar, ville opne for direkte bruk i parametrisk og generativ design. Ein designar kunne spesifisere seleksjonskriteria (materiale, produksjonsteknikk, marknadssegment, regulatoriske krav, berekraftsmål) og la ein evolusjonær algoritme navigere landskapet. Resultatet ville ikkje vere ein einskild ``optimal'' stol, men ein populasjon av Pareto-optimale løysingar langs avvegingsfronten mellom motstridande seleksjonstrykk. Dette knyter FFF til det veksande feltet av AI-assistert design og gjev rammeverket direkte praktisk relevans.
+
+\textit{Visualisering:} Pareto-frontar i 2D- og 3D-projeksjonar, der kvar akse er eit seleksjonstrykk (til dømes materialeffektivitet mot skulpturell kompleksitet mot produksjonskostnad). Kjende historiske stolar plotta inn i same rom ville vise korleis designarar gjennom historia implisitt har navigert denne fronten.
+
+\subsubsection{Dynamiske landskapsmodellar og prediksjon}
+
+Dei noverande analysane behandlar tid som ein diskret variabel (hundreårsgrupper) og landskapet som statisk innanfor kvar gruppe. Ein meir sofistikert tilnærming ville modellere landskapsskifta som kontinuerlege dynamiske prosessar. Bayesianske endringspunktmodellar kan identifisere eksakte tidspunkt for regimeskifte. Agentbaserte simuleringar der kvar ``agent'' er eit verkstad eller ein designar som navigerer landskapet under lokale seleksjonstrykk, kan teste kontrafaktiske scenario: kva om plast aldri var oppfunne? Kva om mahognihandelen kollapsa femti år tidlegare? Slike modellar ville ikkje berre forklare fortida, men generere testbare prediksjonar: kva gjer biokompositt, mycelium-baserte materialar og additiv produksjon med fitnesslandskapet i dei komande tiåra?
+
+\textit{Visualisering:} Animerte fitnesslandskap der topografien endrar seg over tid, med historiske stolar som partiklar som bevegar seg over terrenget. Landskapet riser og fell; nye toppunkt oppstår når materialar vert tilgjengelege; gamle toppunkt kollapsar når teknikkar vert utdaterte. Ein slik visualisering ville gjere det abstrakte omgrepet ``landskapsskifte'' direkte synleg.
+
+\subsubsection{Produksjonsøkologi og berekraft}
+
+STOLAR-datasettet registrerer det ferdige objektet, men ikkje produksjonsprosessen. Ei utviding med produksjonsdata (tid per eining, materialsvinn, energiforbruk, karbonfotavtrykk, komponenttal) ville opne ein heilt ny akse i fitnesslandskapet: den økologiske. Thonet sin Stol nr.~14 var ein formrevolusjon, men fyrst og fremst ein produksjonsrevolusjon: frå 36 komponentar til 6, frå handverk til masseproduksjon. I samtida oppstår berekraft som eit stadig sterkare seleksjonstrykk. Karbonfotavtrykk, resirkulerbarheit, livssyklusanalyse og sirkulærøkonomiske krav endrar landskapet like radikalt som industrialiseringa i si tid. FFF predikerer at berekraftsseleksjon vil kanalisere forma i spesifikke retningar, predikerbare frå affordansane til berekraftige materialar (biokompositt, resirkulert aluminium, mycelium). Ein longitudinell studie av stolar produsert under eksplisitte berekraftskriterium ville teste denne prediksjonen kvantitativt.
+
+\textit{Visualisering:} Sankey-diagram som viser materialflyt frå råvare til ferdig stol, med breidda på kvar straum proporsjonal med karbonfotavtrykk. Samanlikning av slike diagram mellom epokar (1800-tal: kolonialtømmer, 1950-tal: petrokjemi, 2020-tal: biokompositt) ville gjere den materielle økologien direkte avlesbar.
+
+\subsubsection{Andre objektdomene}
+
+FFF er formulert substratuavhengig. Stolen er testbeddet, men rammeverket genererer prediksjonar for alle domene med invariant funksjon og variabel form: bestikk (funksjon: skjere/stikke/ause), bygningar (funksjon: ly og aktivitet), musikkinstrument (funksjon: lyd), køyretøy (funksjon: transport), typografi (funksjon: lesbarheit). Kvart domene har sin eigen entropikurve, sine eigne materialregime og sine eigne affordansekanalar. Ein parallell studie av til dømes bestikk frå same museum og same tidsperiode ville gje ein direkte krysskalibrering: dersom entropikurva og affordansemønstra er strukturelt like trass i radikalt ulik funksjon og geometri, er det sterk evidens for at FFF fangar ein generell mekanisme i formgjeving snarare enn ein spesifikk eigenskap ved stolar.
+
+\textit{Visualisering:} Overlappande entropikurver for ulike objektdomene, plotta i same diagram med tid på $x$-aksen. Dersom kurvene viser same faseskifte (kolonialhandel, industrialisering, syntetisk revolusjon), er det visuelt overbevisande evidens for universalitet.
 
 \subsection{Avsluttande merknad}
 
@@ -670,6 +704,7 @@ Form følgjer ikkje funksjon. Form følgjer tilpassing. Fitnesskartet erstattar 
 
 
 % ================================================================
+\newpage
 \onecolumn
 \bibliographystyle{plainnat}
 \bibliography{references}
