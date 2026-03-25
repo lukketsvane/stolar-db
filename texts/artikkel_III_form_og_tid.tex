@@ -724,6 +724,25 @@ Desse reseptane er ikkje vilkaarlege; dei er determinerte av tilgangen til mater
 
 Kvar stilperiode har ikkje berre ein materialresept, men ogso ein \textbf{teknikksignatur}: empire er dominert av polstring (43\,\%), noko som reflekterer den koloniale komforttradisjonen (mahogni + hestetagl). Barokk er dominert av tapping (33\,\%) og plugging (24\,\%): massive stolpekonstruksjonar. Postmodernisme er dominert av skruing (21\,\%) og formboyging (17\,\%): industrielle, reversible samanfoying. Teknikken kodar stil like sterkt som materialet.
 
+\subsection{Per-klasse prediksjonspresisjon}
+
+Full klassifikasjonsrapport avdekkjer dramatiske skilnader i kor godt kvar stil let seg predikere:
+
+\begin{itemize}
+  \item \textbf{Empire}: $F1 = 0{,}97$ (nesten perfekt). Empire-stolar er dimensjonelt nesten identiske ($\text{CV}_H = 0{,}013$): dei er ein attraktor i formrommet.
+  \item \textbf{Louis XVI}: $F1 = 0{,}97$. Tilsvarande stram dimensjonsprofil.
+  \item \textbf{Jugend}: $F1 = 0{,}95$. Sterk materialsignatur (eik + silke + furu).
+  \item \textbf{Modernisme}: $F1 = 0{,}46$ (daarllegast). Modernismen er dimensjonelt overlappande med funksjonalisme: dei to stilane okkuperer same region i formrommet.
+\end{itemize}
+
+\subsection{Forvekslingsmoenster: kva stilar er dimensjonelt uatskiljelege?}
+
+Dei mest forveksla stilpara avslerer designhistorisk innsikt: \textbf{modernisme forvekslast med funksjonalisme} ($n = 8$), noko som stadfestar at skiljet mellom dei er meir ideologisk enn geometrisk. \textbf{Regence forvekslast med barokk} ($n = 7$): temporalt naere stilar deler dimensjonsprofil. \textbf{Postmodernisme forvekslast med funksjonalisme} ($n = 4$): postmodernismen er ikkje dimensjonelt ``anti-modernistisk'' men heller ein ekspansjon av same formrom.
+
+\subsection{MI per feature: hogde er den viktigaste variabelen}
+
+Sklearn sin \texttt{mutual\_info\_classif} rangerer featurane presist: hogde ($\text{MI} = 1{,}27$), $H/W$-ratio ($\text{MI} = 1{,}09$), volum ($\text{MI} = 0{,}81$), djupn ($\text{MI} = 0{,}78$), breidde ($\text{MI} = 0{,}73$), setehogde ($\text{MI} = 0{,}64$). Blant materiala er mahogni hogast ($\text{MI} = 0{,}27$), deretter hestetagl ($\text{MI} = 0{,}22$) og buksbom ($\text{MI} = 0{,}19$). Dimensjonar ber 3--5 gonger meir stilinformasjon enn materialar. Hogde ber meir informasjon enn alle 30 materialvariablar til saman.
+
 \subsection{Morphospace-topologi: klynger, korridorar, tomrom}
 
 Dei realiserte stilane okkuperer ikkje morphospace uniformt. Dei dannar tre moenstertypar: \textbf{klynger} (stilar som barokk, funksjonalisme: tette samlingar av dimensjonelt like stolar), \textbf{korridorar} (overgangsstilar som historisme, som dannar ei bru mellom to klynger), og \textbf{tomrom} (regionar i morphospace utan nokon realisert stol). Tomroma er like informative som klyngene: dei fortel kva former seleksjonstrykka har avvist. Det finst ingen stolar i databasen som kombinerer plast med tradisjonell tapping, fordi materialet ikkje tillet det. Det finst nesten ingen stolar under 50 cm hogde (med unnatak av barnestolar), fordi ergonomien set ei nedre grense. Desse fraavera er ikkje tilfeldige; dei er systematiske refleksjonar av affordansar og seleksjonstrykk.
