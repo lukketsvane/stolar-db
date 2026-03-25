@@ -107,6 +107,13 @@ $N$ & 2\,036 \\
 \end{tabular}
 \end{table}
 
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\columnwidth]{fig29_modulor_per_stil.png}
+  \caption{Modulor-avvik per stilperiode. Berre regence (+1 cm) matchar. Funksjonalisme avvik $-35$ cm.}
+  \label{fig:modulor_stil}
+\end{figure}
+
 Den gjennomsnittlege stolen er 28 cm kortare enn Modulor predikerer. Avviket er negativt i \emph{kvart einaste hundreaar}:
 
 \begin{table}[!ht]
@@ -135,6 +142,20 @@ Avviket aukar fraa $-17$\,\% (1500-talet) til $-35$\,\% (2000-talet). Stolen ver
 Modulor predikerer $H/W = 2{,}132$. Den empiriske medianen er $H/W = 1{,}59$. Avviket er 25\,\% ($p < 10^{-70}$).
 
 $H/W$-ratioen driftar \emph{nedover} over tid: fraa 1,71 (1500-talet) til 1,27 (2000-talet). Gullsnittet ($\varphi = 1{,}618$) vert passert undervegs, men ikkje stabilisert rundt. Det er ein stasjon toget passerer, ikkje ein destinasjon.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\columnwidth]{fig30_hw_phi_tiaar.png}
+  \caption{H/W-ratio per tiaar. Gullsnittet ($\varphi$, gull linje) vert passert 6 gonger utan aa stabiliserast. Modulor H/W (raud stipla) ligg over alt empirisk.}
+  \label{fig:hw_phi}
+\end{figure}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\columnwidth]{fig31_hw_histogram.png}
+  \caption{H/W-fordeling for 1\,984 stolar. Multimodal, med topp ved $\sim$1,75, ikkje ved $\varphi = 1{,}618$. Gullsnittet er ikkje ein attraktor.}
+  \label{fig:hw_hist}
+\end{figure}
 
 \textbf{Er gullsnittet ein attraktor?} Berre 12,1\,\% av stolane har $H/W$ innanfor $\pm 5$\,\% av $\varphi$. 23,5\,\% er innanfor $\pm 10$\,\%. Fordelinga er multimodal med topp ved $H/W \approx 1{,}75$ (ikkje ved $\varphi = 1{,}618$). Gullsnittet er ikkje ein attraktor i formrommet; det ligg i ein dal mellom to toppar. Modulor sin proporsjonsteori er ikkje berre falsifisert kvantitativt (avvik 25\,\%); han er falsifisert \emph{topologisk} (fordelinga har feil form).
 
@@ -182,9 +203,55 @@ Modulor predikerer 53 cm breidde. Empirisk median er 52 cm, avvik berre $-2$\,\%
 % ================================================================
 \section{Konklusjon}
 
-Modulor er falsifisert langs alle testbare aksar. Hogda avvik 25\,\% ($p < 10^{-60}$). $H/W$-ratioen avvik 25\,\% ($p < 10^{-70}$). Avvika er systematisk negative og aukar over tid. Modulor ignorerer djupn, den mest funksjonsdeterminerte dimensjonen. Gullsnittet er ikkje ein attraktor i formrommet; det er ein stasjon toget passerer.
+\subsection{Modulor per designar: Le Corbusier falsifiserer seg sjolv}
 
-Modulor er eit degenerert spesialtilfelle av Form Follows Fitness: ei eindimensjonal linje i eit $n$-dimensjonalt formrom. Formverda er rikare, meir kompleks og meir motstandsdyktig mot universelle proporsjonssystem enn Le Corbusier forestilte seg.
+Den kanskje mest slaaande observasjonen er at \textbf{Le Corbusier sine eigne stolar} i databasen har ein gjennomsnittleg hogde paa berre 56 cm: eit avvik paa $-57$ cm fraa sin eigen Modulor. Ingen designar i databasen matchar Modulor:
+
+\begin{table}[!ht]
+\centering
+\caption{Modulor-avvik per designar. Ingen matchar.}
+\label{tab:modulor_designer}
+\begin{tabular}{lrrl}
+\toprule
+\textbf{Designar} & $n$ & $\bar{H}$ (cm) & \textbf{Avvik} \\
+\midrule
+Chippendale & 11 & 100 & $-$13 cm \\
+Thonet & 10 & 73 & $-$40 cm \\
+Breuer & 11 & 73 & $-$40 cm \\
+Wright & 13 & 65 & $-$48 cm \\
+Aalto & 11 & 60 & $-$53 cm \\
+\textbf{Le Corbusier} & \textbf{5} & \textbf{56} & $\mathbf{-57}$ \textbf{cm} \\
+Eames & 14 & 52 & $-$61 cm \\
+Jacobsen & 4 & 61 & $-$52 cm \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Ironien er fullkommen: opphavsmannen til det universelle proporsjonssystemet produserer stolar som avvik meir fraa sin eigen prediksjon enn dei fleste andre designarar. Modulor er ikkje berre ein feilaktig teori; han er ein teori som ikkje eingong hans eigen skapar foljer.
+
+\subsection{Modulor per nasjonalitet}
+
+Avviket varierer dramatisk mellom nasjonar: Noreg ($-15$ cm, $p < 10^{-12}$), Storbritannia ($-33$ cm, $p < 10^{-148}$), Finland ($-51$ cm, $p < 10^{-9}$). Finland avvik mest fordi Aalto-tradisjonen dominerer: laage, breie bjorkekonstruksjonar. Noreg avvik minst fordi den norske barokk-arven med hoege stolryggar (110 cm for barokk, 114 for regence) ligg naermast Modulor. Men sjolv Noreg avvik signifikant ($t = -7{,}9$).
+
+\subsection{Modulor per materiale}
+
+Materialet predikerer Modulor-avviket: \textbf{plast} avvik $-46$ cm ($t = -16{,}3$, $p < 10^{-25}$), \textbf{staal} $-41$ cm ($t = -24{,}3$). Tradisjonelle treslag (furu: $-23$ cm) avvik minst. Materialet determinerer kor langt stolen hamnar fraa Modulor, noko som stadfestar at det er \emph{materialet}, ikkje funksjonen, som driv dimensjonane.
+
+\subsection{Volumratio: 3\,761 gonger}
+
+Det omsluttande volumet varierer med ein faktor paa \textbf{3\,761} under konstant funksjon ($\text{CV} = 0{,}745$). Modulor predikerer $113 \times 53 \times 43 = 257\,527$ cm$^3$; den empiriske medianen er 225\,351 cm$^3$ (avvik $-12$\,\%). Men spennvidda (548--2\,061\,832 cm$^3$) spregner alle Modulor-prediksjonar. Det finst ikkje eitt korrekt volum; det finst eit fitnesslandskap med tusenvis av lokale optimum.
+
+
+% ================================================================
+\section{Konklusjon}
+
+Modulor er falsifisert langs alle testbare aksar. Hogda avvik 27\,\% ($t = -51{,}1$, $p \approx 0$). $H/W$-ratioen avvik 26\,\% ($t = -33{,}2$, $p < 10^{-193}$). Gullsnittet er ikkje ein attraktor: fordelinga er multimodal, og $\varphi$ vert passert 6 gonger mellom 1730 og 1870 utan aa stabiliserast. Le Corbusier sine eigne stolar avvik $-57$ cm.
+
+Berre ein stilperiode matchar Modulor: regence ($+1$ cm), ein foer-modernistisk stil fraa 1710-talet. Dei modernistiske stilane som Modulor var meint aa tene, avvik mest: funksjonalisme ($-35$ cm), etterkrigsmodernisme ($-35$ cm).
+
+Modulor ignorerer djupn, den mest funksjonsdeterminerte dimensjonen ($\text{CV}_D = 0{,}256$, ANOVA $p = 0{,}087$). Systemet fokuserer paa det kulturelt variable og ignorerer det funksjonelt stabile.
+
+Modulor er eit degenerert spesialtilfelle av FFF: ei 1D-linje i eit $n$-dimensjonalt formrom. Volumratioen 3\,761:1 syner at formverda er ordenar rikare enn Le Corbusier forestilte seg.
 
 \bibliographystyle{plainnat}
 \bibliography{references}
