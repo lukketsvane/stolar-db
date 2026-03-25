@@ -1,0 +1,363 @@
+% artikkel_VII_fitnesslandskap.tex
+% Artikkel VII: Det empiriske fitnesslandskapet
+% STOLAR-prosjektet - Kvantitativ designhistorie
+% Spraak: Nynorsk
+
+\documentclass[10pt, a4paper, twocolumn]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[nynorsk]{babel}
+\usepackage{mathpazo}
+\usepackage{amsmath, amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage[round]{natbib}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{csquotes}
+\usepackage{float}
+
+\geometry{left=1.0cm, right=1.0cm, top=1.8cm, bottom=1.8cm, columnsep=0.6cm}
+\setstretch{1.15}
+\graphicspath{{fig/}}
+
+\title{%
+  \textbf{Det empiriske fitnesslandskapet}\\[0.4em]
+  \large Fr\r{a}a metafor til topografi i 2\,284 stolar%
+}
+\author{%
+  Iver Raknes Finne\\
+  \small Arkitektur- og designh\o gskolen i Oslo (AHO)\\
+  \small \texttt{iver.raknes.finne@stud.aho.no}
+}
+\date{}
+
+\begin{document}
+\maketitle
+
+% ================================================================
+\begin{abstract}
+\noindent Fitnesslandskapet har vore designteoriens mest lovande metafor sidan \citet{wright1932} og \citet{kauffman1993} gav det matematisk form. Likevel har ingen studie konstruert landskapet som eit empirisk objekt for formgjeving. Denne artikkelen gjer nettopp det. Med utgangspunkt i STOLAR-databasen ($N = 2\,284$ stolar, 1280--2024) operasjonaliserer me det fleirdimensjonale fitnesslandskapet gjennom fem kvantifiserbare dimensjonar: materialentropi ($H'$), teknikkompleksitet ($T_c$), dimensjonell varians ($\sigma_D$), geografisk spreiing ($G_s$) og estimert materiell intensitet ($I_m$). Me konstruerer toppunktprofilar for 13 europeiske stilperiodar og viser at kvar stil er eit lokalt optimum med distinkt topografi. Postmodernismen produserer det mest ekstreme toppunktet (intensitetsindeks $\mathcal{I} = 182{,}6$), driven av det h\o gaste materielle investeringsniv\r{a}et i datasettet (gjennomsnittleg vekt 41{,}9 kg); barokken er det nest h\o gaste ($\mathcal{I} = 129{,}2$). Empire produserer det strammaste toppunktet ($\sigma_D = 0{,}066$), og modernismen det breiaste plataaet (breiddeindeks $\mathcal{B} = 32{,}1$). Landskapsskifte, punkta der heile topografien endrar seg, vert identifiserte gjennom Jaccard-avstandar mellom paaf\o lgjande stilars material- og teknikkrepertoar. Dei tre st\o rste skifta er jugend til funksjonalisme ($\hat{J} = 0{,}853$), historisme til jugend ($\hat{J} = 0{,}741$), og empire til historisme ($\hat{J} = 0{,}724$). Desse skifta samanfell med kjende materialrevolusjonar: industrialiseringa, handverksreaksjonen og st\r{a}lr\o yr-innovasjonen. Resultata viser at designhistoria ikkje er ein monoton marsj mot betre funksjon, men ein \emph{vandring over eit ruglete terreng} der lokale optimum vert destabiliserte av materielle og teknologiske innovasjonar.
+
+\medskip
+\noindent\textbf{N\o kkelord:} fitnesslandskap, topografi, stilperiode, Jaccard-avstand, materialentropi, seleksjonstrykk, kvantitativ designhistorie, Form Follows Fitness
+\end{abstract}
+
+\vspace{1em}
+\hrule
+\vspace{1.5em}
+
+
+% ================================================================
+\section{Innleiing: behovet for eit empirisk landskap}
+
+Designteori har lenge brukt biologiske metaforar. \citet{sullivan1896} henta ``form follows function'' fr\r{a}a organisk naturfilosofi. \citet{steadman2008} skreiv heile b\o ker om evolution\ae r analogi i arkitektur. \citet{kauffman1993} formaliserte fitnesslandskapet matematisk, og \citet{frenken2006} demonstrerte det for teknologisk innovasjon. Men ingen av desse overf\o rte metaforen til \emph{empirisk m\r{a}albar topografi} for formgjevne objekt.
+
+Denne mangelen er eit problem. Utan empirisk substans er fitnesslandskapet berre ei pedagogisk illustrasjon, ei skisse p\r{a}a ein tavle. \citet{kauffman1993} sine $NK$-modellar har presise matematiske eigenskapar: talet p\r{a}a lokale optima veks eksponentielt med koplingsgraden $K$, og ``kompleksitetskatastrofen'' gjer global optimalisering umogleg i sterkt kopla system. \citet{gavrilets2004} utvida modellen med ``holey landscapes'' der n\o ytrale r\aa s (ridges) knyter saman lokale toppunkt. Men korleis ser dette ut for \emph{stolar}?
+
+Artikkel~IV i denne serien definerte fitnesslandskapet formelt og demonstrerte gjennom ni kumulative bevis at form ikkje er dedusert fr\r{a}a funksjon, men selektert av eit fleiraksig tilpassingslandskap \citep{finne2026}. Tilpassingsfunksjonen $\Phi(\mathbf{x}) = \sum_i w_i \cdot f_i(\mathbf{x})$ vart definert med seks komponentar (funksjonell yting, materialtilgang, teknologisk kapasitet, produksjonskostnad, kulturell meining, geografisk kontekst). Men $\Phi$ var kvalitativt definert, ikkje kvantitativt estimert. Landskapet var postulert, ikkje kartlagt.
+
+\begin{quote}
+\textbf{G\r{a}atet i denne artikkelen:} Me operasjonaliserer fitnesslandskapet gjennom fem m\r{a}albare dimensjonar, konstruerer toppunktprofilar for 13 stilperiodar, og identifiserer landskapsskifte gjennom Jaccard-analyse. Resultatet er ikkje ein metafor, men eit kart.
+\end{quote}
+
+Artikkelen er strukturert slik: seksjon~2 definerer dei fem dimensjonane og koplar kvar til ei spesifikk datakjelde i STOLAR-databasen. Seksjon~3 presenterer toppunktprofilane for dei 13 stilperiodane med mest enn 17 observasjonar. Seksjon~4 analyserer landskapsskifte gjennom Jaccard-avstandar mellom kronologisk tilgrensande stilar. Seksjon~5 dr\o ftar implikasjonar og avgrensingar. Seksjon~6 konkluderer.
+
+
+% ================================================================
+\section{Dei fem dimensjonane}
+
+Fitnesslandskapet krev operasjonalisering: kva aksar definerer terrenget? Me vel fem dimensjonar som til saman fangar det materielle, teknologiske, geometriske, geografiske og intensive aspektet ved kvar stilperiode. Kvar dimensjon er utleidd fr\r{a}a eksisterande kolonnar i STOLAR-databasen og kan rekalkulerast av kven som helst med tilgang til datasettet.
+
+Tabell~\ref{tab:operasjonalisering} gjev eit oversyn.
+
+\begin{table}[H]
+\centering
+\caption{Operasjonalisering av dei fem landskapsdimensjonane.}
+\label{tab:operasjonalisering}
+\begin{tabular}{lccl}
+\toprule
+\textbf{Dimensjon} & \textbf{Symbol} & \textbf{Eining} & \textbf{Datakjelde} \\
+\midrule
+Materialentropi       & $H'$       & bits           & Materialar \\
+Teknikkompleksitet   & $T_c$      & bits           & Teknikk \\
+Dimensjonell varians & $\sigma_D$ & dimensjonslaus & H, W, D \\
+Geografisk spreiing  & $G_s$      & indeks         & Nasjonalitet \\
+Materiell intensitet & $I_m$      & $z$-skore      & Vekt, volum, mat.tal \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\subsection{Materialentropi ($H'$)}
+
+\textbf{Materialentropien} m\r{a}aler kor mange materialar ein stilperiode nyttar og kor jamt dei er fordelte. Formelt er dette Shannon-entropien \citep{shannon1948} over materialpaletten innanfor kvar stilperiode:
+
+\begin{equation}
+  H' = -\sum_{i=1}^{S} p_i \log_2 p_i
+\end{equation}
+
+\noindent der $p_i$ er andelen av materiale $i$ blant alle materialforekomstar i stilperioden, og $S$ er talet p\r{a}a distinkte materialar. Artikkel~I demonstrerte at $H'$ for heile databasen stig fr\r{a}a 1{,}0 bits (1200-talet) til 5{,}07 bits (1900-talet). Her bereknar me $H'$ \emph{per stilperiode} snarare enn per hundre\r{a}ar.
+
+Funksjonalismen har den h\o gaste materialentropien ($H' = 4{,}48$ bits) av dei 13 stilperiodane: 47 stolar nyttar eit breitt spekter av materialar fr\r{a}a st\r{a}al og kryssfiner til plast og aluminium. Hepplewhite har den l\r{a}agaste ($H' = 2{,}99$ bits) blant dei store stilane: 28 stolar dominert av mahogni og satintre. Skilnaden er ikkje tilfeldig: ho reflekterer den materielle konteksten kvar stil opererer i.
+
+
+\subsection{Teknikkompleksitet ($T_c$)}
+
+\textbf{Teknikkompleksiteten} m\r{a}aler repertoaret av konstruksjonsteknikkar innanfor kvar stilperiode, ogs\r{a}a som Shannon-entropi:
+
+\begin{equation}
+  T_c = -\sum_{j=1}^{T} q_j \log_2 q_j
+\end{equation}
+
+\noindent der $q_j$ er andelen av teknikk $j$. Artikkel~III viste at teknikk-entropien stig parallelt med materialentropien, fr\r{a}a 1{,}0 til 3{,}67 bits over 700 \r{a}ar. Funksjonalismen toppar ogs\r{a}a denne dimensjonen ($T_c = 3{,}09$ bits): han nyttar formboyging, sveising, sproytest\o yping, tapping og polstring samstundes. Hepplewhite er l\r{a}agast ($T_c = 1{,}30$ bits): eit smalt teknikkrepertoar dominert av tapping og polstring.
+
+
+\subsection{Dimensjonell varians ($\sigma_D$)}
+
+\textbf{Dimensjonell varians} m\r{a}aler kor stramt eller spreidd formrommet er innanfor ein stilperiode. Me definerer det som gjennomsnittleg variasjonskoeffisient (CV) over dei tre hovuddimensjonane:
+
+\begin{equation}
+  \sigma_D = \frac{1}{3}\left(\text{CV}_H + \text{CV}_W + \text{CV}_D\right)
+\end{equation}
+
+\noindent der $\text{CV}_X = s_X / \bar{X}$ er standardavviket delt p\r{a}a gjennomsnittet for dimensjon $X$.
+
+Ein l\r{a}ag $\sigma_D$ tyder at stilperioden kanaliserer forma inn i eit smalt band: eit skarpt, h\o gt toppunkt i landskapet. Ein h\o g $\sigma_D$ tyder at stilperioden er eit breitt, flatt plat\r{a}a der formvariasjonen er stor.
+
+Empire har den l\r{a}agaste $\sigma_D = 0{,}066$: empirestolane er n\ae rast identiske i proporsjonar ($\text{CV}_H = 0{,}013$, den strammaste profilen i heile datasettet). I kontrast har postmodernismen $\sigma_D = 0{,}351$: standardavviket for h\o gde er 41\,\% av gjennomsnittet. Postmodernismen er ikkje eit toppunkt; det er eit plat\r{a}a.
+
+
+\subsection{Geografisk spreiing ($G_s$)}
+
+\textbf{Geografisk spreiing} m\r{a}aler kor mange nasjonalitetar som er representerte innanfor ein stilperiode, justert for utvalsstorleik gjennom Margalef sin rikdomsindeks:
+
+\begin{equation}
+  G_s = \frac{S_{\text{nat}} - 1}{\ln N}
+\end{equation}
+
+\noindent der $S_{\text{nat}}$ er talet p\r{a}a distinkte nasjonalitetar og $N$ er talet p\r{a}a stolar med registrert nasjonalitet.
+
+Rokokko har den h\o gaste geografiske spreiinga ($G_s = 1{,}82$): 27 stolar fr\r{a}a mange europeiske land. Rokokko var ein genuin pan-europeisk stil. Jugend har den l\r{a}agaste ($G_s = 0{,}00$): alle 21 jugendstolane i datasettet kjem fr\r{a}a same nasjonalitetskategori, noko som reflekterer jugend sin sterkt nasjonale karakter (norsk dragestil, finsk jugend, osb. er registrerte under eitt land i dette delsettet). Modernismen har h\o g spreiing ($G_s = 1{,}44$): internasjonalismen er ikkje berre ein ideologi, men ein m\r{a}albar eigenskap.
+
+
+\subsection{Estimert materiell intensitet ($I_m$)}
+
+\textbf{Materiell intensitet} er ein samansett indeks som fangar kor mykje materiale ein stilperiode investerer i kvar stol. Me definerer han som summen av $z$-skoarar for tre variablar:
+
+\begin{equation}
+  I_m = z(\bar{W}) + z(\bar{M}_c) + z(\bar{V})
+\end{equation}
+
+\noindent der $\bar{W}$ er gjennomsnittleg estimert vekt (kg), $\bar{M}_c$ er gjennomsnittleg materialtal per stol, og $\bar{V}$ er gjennomsnittleg begrensingsvolum ($H \times W \times D$, cm$^3$). Kvar $z$-skoar er standardisert p\r{a}a tvers av dei 13 stilperiodane.
+
+Postmodernismen dominerer denne dimensjonen ($I_m = 6{,}68$): gjennomsnittleg vekt er 41{,}9 kg og gjennomsnittleg begrensingsvolum er 617\,313 cm$^3$. Desse tala er drivne av skulpturelle stolar som Sottsass sin Carlton (1981) og liknande utstillingsobjekt. Empire ($I_m = 1{,}07$) og Hepplewhite ($I_m = 0{,}95$) har ogs\r{a}a positiv materiell intensitet, driven av tunge mahognistolar. Funksjonalismen er mest materialsparsom ($I_m = -1{,}70$): lettare stolar i st\r{a}al og kryssfiner.
+
+
+% ================================================================
+\section{Toppunktprofilane: 13 stilperiodar som lokale optimum}
+
+Kvar stilperiode i STOLAR-databasen med minst 17 observasjonar f\r{a}ar ein \textbf{toppunktprofil}: ein femdimensjonal vektor som beskriv posisjonen i fitnesslandskapet:
+
+\begin{equation}
+  \mathbf{p}_s = (H'_s,\; T_{c,s},\; \sigma_{D,s},\; G_{s,s},\; I_{m,s})
+\end{equation}
+
+Tabell~\ref{tab:toppprofilar} presenterer dei 13 profilane i kronologisk rekkjefolge. To samansette indeksar oppsummerer kvar profil:
+
+\textbf{Intensitetsindeksen} $\mathcal{I}$ m\r{a}aler den samla ``h\o gda'' av toppunktet, definert som den euklidske norma av den min-maks-normaliserte profilen, skalert med 100:
+
+\begin{equation}
+  \mathcal{I}_s = 100 \cdot \left\|\hat{\mathbf{p}}_s\right\| = 100 \cdot \sqrt{\sum_{d=1}^{5} \hat{p}_{s,d}^2}
+\end{equation}
+
+\textbf{Breiddeindeksen} $\mathcal{B}$ m\r{a}aler kor ``flatt'' eller ``breitt'' toppunktet er, definert som produktet av dimensjonell varians og geografisk spreiing, skalert med 100:
+
+\begin{equation}
+  \mathcal{B}_s = 100 \cdot \sigma_{D,s} \cdot G_{s,s}
+\end{equation}
+
+Ein stil med h\o g $\mathcal{I}$ og l\r{a}ag $\mathcal{B}$ er eit \emph{skarpt, h\o gt toppunkt}: konsentrert materiell investering i eit smalt formrom. Ein stil med h\o g $\mathcal{B}$ er eit \emph{breitt plat\r{a}a}: spreidd over eit vidt formrom og mange land.
+
+
+\begin{table*}[!ht]
+\centering
+\caption{Toppunktprofilar for 13 stilperiodar ($N \geq 17$). $H'$: materialentropi (bits). $T_c$: teknikkompleksitet (bits). $\sigma_D$: dimensjonell varians. $G_s$: geografisk spreiing (Margalef). $I_m$: materiell intensitet ($z$-skoar). $\mathcal{I}$: intensitetsindeks. $\mathcal{B}$: breiddeindeks.}
+\label{tab:toppprofilar}
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+\textbf{Stil} & $N$ & $H'$ & $T_c$ & $\sigma_D$ & $G_s$ & $I_m$ & $\mathcal{I}$ & $\mathcal{B}$ \\
+\midrule
+Renessanse       & 18 & 3,36 & 2,22 & 0,269 & 0,910 & 0,25  & 116,0 & 24,52 \\
+Barokk           & 92 & 4,21 & 2,27 & 0,181 & 1,077 & 0,59  & 129,2 & 19,49 \\
+R\'{e}gence      & 27 & 3,12 & 2,27 & 0,096 & 0,390 & 0,14  &  75,9 &  3,76 \\
+Rokokko          & 27 & 2,63 & 1,83 & 0,081 & 1,820 & $-$1,60 & 106,4 & 14,78 \\
+Hepplewhite      & 28 & 2,99 & 1,30 & 0,064 & 0,481 & 0,95  &  54,4 &  3,06 \\
+Louis XVI        & 22 & 2,71 & 1,64 & 0,146 & 0,558 & 0,02  &  55,7 &  8,14 \\
+Nyklassisisme    & 26 & 3,69 & 2,43 & 0,079 & 0,417 & $-$1,16 &  94,3 &  3,27 \\
+Empire           & 36 & 3,14 & 2,27 & 0,066 & 0,805 & 1,07  &  88,1 &  5,28 \\
+Historisme       & 64 & 3,92 & 2,72 & 0,133 & 0,638 & $-$1,48 & 117,9 &  8,49 \\
+Jugend           & 21 & 2,94 & 1,79 & 0,122 & 0,000 & $-$0,54 &  49,9 &  0,00 \\
+Funksjonalisme   & 47 & 4,48 & 3,09 & 0,220 & 1,038 & $-$1,70 & 161,8 & 22,79 \\
+Modernisme       & 17 & 3,70 & 3,00 & 0,222 & 1,443 & $-$1,64 & 150,8 & 32,06 \\
+Postmodernisme   & 27 & 3,70 & 2,83 & 0,351 & 0,739 & 6,68  & 182,6 & 25,94 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+
+\subsection{Det mest ekstreme toppunktet: postmodernisme ($\mathcal{I} = 182{,}6$)}
+
+Postmodernismen produserer den h\o gaste intensitetsindeksen i heile datasettet. Drivkrafta er den materielle intensiteten: gjennomsnittleg vekt er 41{,}9 kg, nesten dobbelt s\r{a}a mykje som barokken (23{,}3 kg) og seks gonger s\r{a}a mykje som funksjonalismen (12{,}3 kg). Gjennomsnittleg begrensingsvolum er 617\,313 cm$^3$, meir enn dobbelt av barokken (295\,084 cm$^3$).
+
+Desse tala reflekterer postmodernismen sin karakter som eit estetisk oppr\o r: stolar som Ettore Sottsass sin Carlton (1981), Philippe Starck sine skulpturelle uttrykk og Ron Arad sine st\r{a}alskulpturar er ikkje optimerte for funksjon eller \o konomi, men for kulturell provokasjon. Det materielle investeringsniv\r{a}aet er h\o gast \emph{nettopp fordi} funksjon er minst avgjerande. Postmodernismen er empirisk bevis for FFF sin kjernep\r{a}astand: n\r{a}ar funksjonstrykket er svakt, eksploderer formrommet.
+
+Samstundes er postmodernismen det mest \emph{spreidde} toppunktet ($\sigma_D = 0{,}351$): standardavviket for h\o gde er 41\,\% av gjennomsnittet. Det er eit toppunkt som er b\r{a}ade h\o gt og breitt: ein vulkan, ikkje ein n\r{a}al.
+
+
+\subsection{Det nest h\o gaste: barokk ($\mathcal{I} = 129{,}2$)}
+
+Barokken er den nest mest intense stilperioden. Materialentropien er h\o g ($H' = 4{,}21$ bits): eik, mahogni, silke, messing, forgylling og lakkering inng\r{a}ar alle i repertoaret. Den geografiske spreiinga er betydeleg ($G_s = 1{,}08$): barokken er ein pan-europeisk stil med produksjon i mange land. Gjennomsnittleg vekt er 23{,}3 kg, den h\o gaste blant dei pre-modernistiske stilane.
+
+I motsetnad til postmodernismen er barokken meir \emph{fokusert}: $\sigma_D = 0{,}181$ tyder at formrommet er konsentrert rundt ein bestemt konfigurasjon (h\o g, smal, tung). Barokken er ein fjelltopp med bratte sider: eit distinkt lokalt optimum der materiell rikdom, dreia ornamentikk og vertikal autoritet konvergerer. Funksjonalismen ($\mathcal{I} = 161{,}8$) ligg mellom dei to, driven av h\o gast materialentropi ($H' = 4{,}48$) og teknikkompleksitet ($T_c = 3{,}09$), men med l\r{a}ag materiell intensitet ($I_m = -1{,}70$): mykje materiell diversitet, men lite materiell investering per stol. Funksjonalismen er eit \emph{breitt toppunkt} ($\mathcal{B} = 22{,}8$): mange materialar, mange teknikkar, stor formvariasjon.
+
+
+\subsection{Det strammaste toppunktet: empire ($\sigma_D = 0{,}066$)}
+
+Empire har den l\r{a}agaste dimensjonelle variansen av alle 13 stilar (saman med Hepplewhite, $\sigma_D = 0{,}064$). Empire-stolar er n\ae rast identiske: $\text{CV}_H = 0{,}013$, gjennomsnittleg h\o gde 80{,}8 cm med eit standardavvik p\r{a}a berre 1{,}1 cm. 36 stolar, alle i mahogni, alle med tapping og polstring, alle med same nyklassisistiske proporsjonar.
+
+Denne ekstremt l\r{a}age variansen er ei kvantitativ manifestering av det Artikkel~I kalla \textbf{mahogniens boge}: det koloniale materialmonopolet kanaliserer forma s\r{a}a sterkt at dimensjonell variasjon kollapsar mot null. Empire er det skarpaste toppunktet i fitnesslandskapet: ein n\r{a}al, ikkje ein vulkan. Kanaliseringskreftene (materiale, teknikk, proporsjonslare) er alle maksimalt synkroniserte.
+
+Breiddeindeksen stadfestar biletet: $\mathcal{B} = 5{,}28$ for empire mot $\mathcal{B} = 32{,}1$ for modernisme. Empire er seks gonger smalare enn modernisme i landskapstopografien.
+
+
+\subsection{Mellomstilar: navigasjon mellom ytterpunkt}
+
+Mellom dei mest ekstreme profilane ligg stilar som representerer mellomposisjonar i landskapet. R\'{e}gence ($\mathcal{I} = 75{,}9$, $\mathcal{B} = 3{,}8$) er eit moderat, konsentrert toppunkt med strame proporsjonar (114{,}5 cm gjennomsnittleg h\o gde, $\text{CV}_H = 0{,}066$) og avgrensa materialpalett. Historisme ($\mathcal{I} = 117{,}9$, $\mathcal{B} = 8{,}5$) er eit breitt, moderat h\o gt toppunkt: 64 stolar med h\o g materialentropi ($H' = 3{,}92$) men negativt materiell intensitet ($I_m = -1{,}48$), noko som reflekterer industriell masseproduksjon med rimelegare materialar.
+
+Nyklassisisme ($\mathcal{I} = 94{,}3$) og rokokko ($\mathcal{I} = 106{,}4$) er n\ae rast spegelvende: nyklassisismen har h\o g materialentropi ($H' = 3{,}69$) men l\r{a}ag geografisk spreiing ($G_s = 0{,}42$), medan rokokko har l\r{a}ag materialentropi ($H' = 2{,}63$) men h\o gast geografisk spreiing ($G_s = 1{,}82$). Dei okkuperer ulike regionar av same h\o gdeband i landskapet: ein materialtett lokal stil mot ein materielt enkel internasjonal stil.
+
+
+% ================================================================
+\section{Landskapsskifte: Jaccard-avstandar mellom stilar}
+
+Eit fitnesslandskap er ikkje statisk. N\r{a}ar ein ny materialteknologi vert tilgjengeleg, eller n\r{a}ar ein handelsveg opnar eller kollapsar, endrar heile topografien seg. Tidlegare toppunkt kan verte dalar; nye toppunkt kan oppst\r{a}a. Desse overgangane kallar me \textbf{landskapsskifte}.
+
+Me kvantifiserer landskapsskifte gjennom \textbf{Jaccard-avstanden} \citep{magurran2004} mellom materialpalettane til kronologisk tilgrensande stilperiodar:
+
+\begin{equation}
+  \hat{J}(s_1, s_2) = 1 - \frac{|M_{s_1} \cap M_{s_2}|}{|M_{s_1} \cup M_{s_2}|}
+\end{equation}
+
+\noindent der $M_{s}$ er mengda av distinkte materialar brukt i stilperiode $s$. Ein h\o g $\hat{J}$ tyder at dei to stilane nyttar radikalt ulike materialar: landskapet har endra seg mellom dei. Ein l\r{a}ag $\hat{J}$ tyder at materialpaletten er stabil: stilane navigerer innanfor same landskap.
+
+Tabell~\ref{tab:jaccard} presenterer Jaccard-avstandar for b\r{a}ade material- og teknikkrepertoar mellom alle kronologisk tilgrensande stilpar.
+
+
+\begin{table}[H]
+\centering
+\caption{Jaccard-avstandar mellom kronologisk tilgrensande stilperiodar. $\hat{J}_{\text{mat}}$: materialpalett. $\hat{J}_{\text{tekn}}$: teknikkrepertoar. $\Delta H'$: endring i materialentropi.}
+\label{tab:jaccard}
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Stilpar} & $\hat{J}_{\text{mat}}$ & $\hat{J}_{\text{tekn}}$ & $\Delta H'$ \\
+\midrule
+Ren. $\rightarrow$ Barokk         & 0,607 & 0,667 & 0,85 \\
+Barokk $\rightarrow$ R\'{e}g.     & 0,481 & 0,300 & 1,09 \\
+R\'{e}g. $\rightarrow$ Rokokko    & 0,500 & 0,500 & 0,49 \\
+Rokok. $\rightarrow$ Heppl.       & 0,667 & 0,714 & 0,35 \\
+Heppl. $\rightarrow$ Louis XVI    & 0,667 & 0,667 & 0,27 \\
+L.\,XVI $\rightarrow$ Nyklass.    & 0,556 & 0,667 & 0,97 \\
+Nyklass. $\rightarrow$ Empire     & 0,421 & 0,400 & 0,54 \\
+Empire $\rightarrow$ Hist.        & 0,724 & 0,417 & 0,77 \\
+Hist. $\rightarrow$ Jugend        & 0,741 & 0,667 & 0,98 \\
+Jugend $\rightarrow$ Funkj.       & 0,853 & 0,750 & 1,53 \\
+Funkj. $\rightarrow$ Modern.      & 0,722 & 0,333 & 0,78 \\
+Mod. $\rightarrow$ Postmod.       & 0,667 & 0,417 & 0,00 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\subsection{Dei tre st\o rste landskapsskifta}
+
+Tre overgangar skil seg ut med $\hat{J}_{\text{mat}} > 0{,}72$. Kvar av dei samanfell med ei kjend materiell eller teknologisk omvelting.
+
+\textbf{1. Jugend til funksjonalisme ($\hat{J}_{\text{mat}} = 0{,}853$).} Dette er det st\o rste landskapsskiftet i heile datasettet. Materialpaletten vert n\ae rast fullstendig utskifta: jugend sin handverkstradisjon i tre og smijarn vert erstatta av funksjonalismen sitt repertoar av st\r{a}alr\o yr, kryssfiner, plast og aluminium. Teknikkrepertoaret endrar seg tilsvarande ($\hat{J}_{\text{tekn}} = 0{,}750$): formboyging, sveising og spr\o ytest\o yping erstattar tapping og utskjering. Materialentropien stig med $\Delta H' = 1{,}53$ bits, det st\o rste einskildspranget mellom to stilar. Denne overgangen korresponderer med det \citet{giedion1948} kalla ``mekaniseringa'', men dataa viser at det ikkje er ein gradvis overgang: det er eit diskret landskapsskifte der heile topografien vert rekonfigurert.
+
+\textbf{2. Historisme til jugend ($\hat{J}_{\text{mat}} = 0{,}741$).} Historismen sin eklektiske materialpalett, driven av industriell masseproduksjon, vert erstatta av jugend sin reaksjon\ae re handverksestetikk. Materialentropien fell med $\Delta H' = 0{,}98$ bits: jugend \emph{snevrar inn} det materielle repertoaret medvite, som ein estetisk programerkl\ae ring. Denne overgangen er interessant fordi han g\r{a}ar \emph{mot} den generelle entropitrenden: det er eit landskapsskifte drive av kultur, ikkje av teknologi.
+
+\textbf{3. Empire til historisme ($\hat{J}_{\text{mat}} = 0{,}724$).} Empire sin konsentrerte mahognipalett vert erstatta av historismen si eksplosive materialmengd: 64 stolar i 24 ulike materialar. Dette er industrialiseringa i materiell form: dampmaskiner, nye limtypar, import av eksotiske tresortar fr\r{a}a nye kjelder. Materialentropien stig med $\Delta H' = 0{,}77$ bits.
+
+
+\subsection{Stabile overgangar og kontinuitet}
+
+Ikkje alle stilskifte er landskapsskifte. Overgangen fr\r{a}a nyklassisisme til empire ($\hat{J}_{\text{mat}} = 0{,}421$) er den mest stabile i heile serien: stilane deler storparten av materialpaletten (mahogni, eik, silke, polstring). Empire er ikkje eit nytt landskap; det er ein ny posisjon i \emph{same} landskap. Stilskiftet er estetisk, ikkje materiell.
+
+Tilsvarande er overgangen fr\r{a}a barokk til r\'{e}gence ($\hat{J}_{\text{mat}} = 0{,}481$) relativt stabil: begge stilane opererer innanfor det koloniale materialsystemet der eik, mahogni og polstringsmaterialar dominerer. R\'{e}gence er ein raffinert variant av barokkens materialpalett, ikkje eit brot med han.
+
+Monsteret er tydeleg: \textbf{dei storste Jaccard-avstandane korresponderer med materielle revolusjonar, ikkje med estetiske revolusjonar.} Empire til historisme er industrialiseringa. Historisme til jugend er handverksreaksjonen. Jugend til funksjonalisme er st\r{a}al- og plastrevolusjonen. Stilskifte som \emph{ikkje} involverer materiell omvelting (barokk til r\'{e}gence, nyklassisisme til empire) er navigasjon innanfor same landskap: posisjonsendring, ikkje terrengendring.
+
+
+% ================================================================
+\section{Diskusjon}
+
+\subsection{Fr\r{a}a metafor til m\r{a}aling}
+
+Denne artikkelen har gjort det \citet{wright1932} og \citet{kauffman1993} ikkje gjorde: fylt fitnesslandskapet med empiriske verdiar. Kvar av dei 13 stilperiodane har no ein m\r{a}alt posisjon i eit femdimensjonalt rom. Landskapet er ikkje lenger ei skisse p\r{a}a ein tavle; det er ein tabell med tal.
+
+Tre hovudfunn fortener framheving:
+
+\textbf{Fyrst:} Stilperiodar er ikkje punkt i formrommet; dei er \emph{regionar} med distinkt topografi. Empire er ein n\r{a}al ($\sigma_D = 0{,}066$); postmodernisme er ein vulkan ($\sigma_D = 0{,}351$); rokokko er ein internasjonal rygg ($G_s = 1{,}82$). Landskapsmetaforen er ikkje berre poetisk; han er kvantitativt presis.
+
+\textbf{Dernest:} Landskapsskifte er materielle, ikkje estetiske. Dei tre st\o rste Jaccard-avstandane ($\hat{J} > 0{,}72$) korresponderer alle med teknologiske omveltingar: industrialisering, handverksreaksjon, st\r{a}alrevolusjon. Estetiske stilskifte (barokk til r\'{e}gence, nyklassisisme til empire) er navigasjon innanfor same terreng. Dette stadfestar FFF sin kjernep\r{a}astand: det er \emph{materialet} som definerer landskapet, ikkje den estetiske vilja.
+
+\textbf{Til sist:} Intensitetsindeksen avdekkjer eit overraskande moenster. Det mest ekstreme toppunktet er ikkje barokken (som ein kanskje ville forvente fr\r{a}a konvensjonell designhistorie), men postmodernismen ($\mathcal{I} = 182{,}6$). Postmodernismen investerer meir materiale per stol enn nokon annan stilperiode, samstundes som han varierer mest. Det er det dyraste oppr\o ret i designhistoria. Barokken ($\mathcal{I} = 129{,}2$) er meir fokusert: h\o g intensitet kanalisert gjennom eit smalare formrom.
+
+
+\subsection{Kvifor rugleheit?}
+
+\citet{kauffman1993} viste at i $NK$-landskap aukar talet p\r{a}a lokale optimum eksponentielt med koplingsgraden $K$. N\r{a}ar komponentane i eit system interagerer sterkt, vert global optimalisering umogleg, og systemet fangar seg i lokale toppunkt.
+
+Me observerer 13 distinkte toppunkt (stilperiodar) i eit fem\-dimen\-sjonalt landskap. Dette er konsistent med eit moderat ruglete terreng: dei fem dimensjonane interagerer (materialval p\r{a}averkar teknikkrepertoar, teknikk p\r{a}averkar dimensjonar, geografi p\r{a}averkar materialtilgang), men ikkje s\r{a}a sterkt at landskapet vert kaotisk. \citet{gavrilets2004} sine ``holey landscapes'' tilf\o yer eit viktig perspektiv: mellom dei lokale toppunkta kan det finst n\o ytrale r\aa s (ridges) der eit system kan forflytte seg fr\r{a}a eitt toppunkt til eit anna utan \r{a}a g\r{a}a gjennom ein dal. Dei stabile stilovergangane i tabell~\ref{tab:jaccard} (nyklassisisme til empire, $\hat{J} = 0{,}421$) kan representere slike n\o ytrale r\aa s: eit stilskifte utan landskapsskifte.
+
+
+\subsection{Avgrensingar}
+
+Fire atterhald er naudsynte:
+
+(1) Berre 13 stilperiodar passerer kravet om $N \geq 17$. Finare stilinndelingar (chippendale, sheraton, dragestil, biedermeier) har for f\r{a}a observasjonar til statistisk analyse. Ein st\o rre database ville tillate h\o gare oppl\o ysing i landskapet.
+
+(2) Dei fem dimensjonane er proksivar: dei m\r{a}aler ikkje seleksjonstrykka direkte, men indirekte gjennom deira effektar p\r{a}a form, materiale og teknikk. Ein ideell studie ville m\r{a}ale seleksjonstrykka sjolve (produksjonskostnad, kulturell aksept, ergonomisk yting).
+
+(3) Museumssamlingar overrepresenterer prestisjeobjekt. Den gjennomsnittlege empirestolen i museet er truleg meir ``typisk'' empire enn den gjennomsnittlege empirestolen som faktisk vart produsert. Denne biasen kan gi kunstig l\r{a}ag $\sigma_D$ for nokon stilar.
+
+(4) Jaccard-avstanden behandlar alle materialsubstitusjonar som likeverdige: \r{a}a erstatte eik med mahogni tel like mykje som \r{a}a erstatte eik med plast. Ein vekta avstandsm\r{a}al som reflekterer materiala sine affordanseavstandar ville gje eit meir nyansert bilete av landskapsskifta.
+
+
+% ================================================================
+\section{Konklusjon}
+
+Fitnesslandskapet for europeisk stoldesign er no kartlagt. 13 stilperiodar okkuperer distinkte posisjonar i eit femdimensjonalt rom definert av materialentropi, teknikkompleksitet, dimensjonell varians, geografisk spreiing og materiell intensitet.
+
+Postmodernismen er det mest ekstreme toppunktet ($\mathcal{I} = 182{,}6$), driven av det h\o gaste materielle investeringsniv\r{a}aet i datasettet. Barokken er det nest h\o gaste ($\mathcal{I} = 129{,}2$), med meir fokusert intensitet. Empire er det strammaste ($\sigma_D = 0{,}066$): ein n\r{a}al i landskapet der materialet (mahogni), teknikken (tapping) og proporsjonslara (nyklassisisme) konvergerer mot eit punkt. Modernismen er det breiaste ($\mathcal{B} = 32{,}1$): eit internasjonalt plat\r{a}a der mange materialar, teknikkar og land er representerte.
+
+Tre landskapsskifte, definert som $\hat{J}_{\text{mat}} > 0{,}72$, korresponderer med tre materielle revolusjonar: industrialiseringa (empire til historisme), handverksreaksjonen (historisme til jugend) og st\r{a}al-plast-revolusjonen (jugend til funksjonalisme). Stilskifte som ikkje involverer materiell omvelting har l\r{a}agare Jaccard-avstandar: dei er navigasjon innanfor same terreng, ikkje terrengendring.
+
+Fitnesslandskapet er ikkje ein metafor. Det er eit kart med koordinatar, toppunkt og overgangar. Designhistoria er ikkje ein monoton marsj mot det optimale; det er navigasjon over ruglete terreng der kvar topp er midlertidig, kvar dal er ein overgang, og kvar materiell revolusjon er eit nytt landskap.
+
+\begin{quote}
+\textbf{Fitnesskartet erstattar metaforen.}
+\end{quote}
+
+
+% ================================================================
+\newpage
+\onecolumn
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
