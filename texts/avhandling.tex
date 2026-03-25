@@ -3,7 +3,7 @@
 % Kappa-tekst for artikkelbasert avhandling
 % Spraak: Nynorsk
 
-\documentclass[10pt, a4paper]{article}
+\documentclass[10pt, a4paper, twocolumn]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -21,8 +21,9 @@
 \usepackage{float}
 \usepackage{enumitem}
 
-\geometry{margin=1.8cm, top=1.8cm, bottom=1.8cm}
-\setstretch{1.15}
+\geometry{margin=1.5cm, top=1.8cm, bottom=1.8cm, columnsep=0.6cm}
+\setstretch{1.05}
+\usepackage{pdfpages}
 \graphicspath{{fig/}}
 
 \title{%
@@ -124,18 +125,18 @@ I FFF er forma ein posisjon i eit $n$-dimensjonalt landskap der kvar akse repres
 
 Konsekvensen er at formhistoria ikkje er ein jamn progresjon mot eit funksjonelt optimum, men ein serie navigeringar i stadig skiftande terreng (figur~\ref{fig:fitnesslandskap}). \citet{frazer1995} var den fyrste designteoretikaren som eksplisitt kopla evolusjonær modellering til arkitektur, men utan eit empirisk datasett. STOLAR-prosjektet gjev det empiriske grunnlaget.
 
-\begin{figure}[H]
+\begin{figure}[!ht]
   \centering
-  \includegraphics[width=0.9\textwidth]{ill03_fitnesslandskap.png}
+  \includegraphics[width=\columnwidth]{ill03_fitnesslandskap.png}
   \caption{Det multidimensjonale fitnesslandskapet. Kvar topp representerer ein stilperiode (lokalt optimum). Barrokk er hoegast (mest materielt intensiv); postmodernisme er flatast (mest materiellt egalitaer). Materialdimensjonen og kulturdimensjonen definerer terrenget.}
   \label{fig:fitnesslandskap}
 \end{figure}
 
 \subsection{Distribuert kognisjon}
 
-\begin{figure}[H]
+\begin{figure}[!ht]
   \centering
-  \includegraphics[width=0.85\textwidth]{ill04_distribuert.png}
+  \includegraphics[width=\columnwidth]{ill04_distribuert.png}
   \caption{Formgjeving som distribuert intelligent prosess. Materialet (MI=0,382), verktoyeet (MI=0,382), designaren, marknaden og kulturen utover alle agentur. Forma er emergent, ikkje dedusert. Physarum-analogi nedst til venstre.}
   \label{fig:distribuert}
 \end{figure}
@@ -160,9 +161,9 @@ Designhistoria vekslar mellom desse to fasane: lange periodar med utnytting der 
 
 \textbf{Entropimønsteret.} Det overordna mønsteret er ein monotont stigande entropikurve (figur~\ref{fig:entropi}), men med fleire faseskifte: ein trappetrinnsauke rundt 1600 (kolonialhandel), eit platå på 1700-talet (utnytting av det koloniale repertoaret), ein ny trappetrinnsauke rundt 1850 (industrialisering), og ein jamn vekst gjennom 1900-talet (syntetiske materialar). Kvar fase svarar til eit skifte mellom utforsking og utnytting, og kvar overgang svarar til eit landskapsskifte.
 
-\begin{figure}[H]
+\begin{figure}[!ht]
   \centering
-  \includegraphics[width=\textwidth]{07_material_entropy.png}
+  \includegraphics[width=\columnwidth]{07_material_entropy.png}
   \caption{Shannon-entropi for materialar over tid ($H'$, bits). Monotont stigande, med tre tydelege faseskifte som svarar til kolonialhandel, industrialisering og syntetisk revolusjon.}
   \label{fig:entropi}
 \end{figure}
@@ -171,9 +172,9 @@ Designhistoria vekslar mellom desse to fasane: lange periodar med utnytting der 
 
 \citet{gibson1977} definerte \textbf{affordanse} som dei handlingsmoglegheitene eit miljø tilbyr ein organisme. \citet{pye1968} skilde mellom ``the workmanship of risk'' og ``the workmanship of certainty''. \citet{ingold2013} utvida affordanseomgrepet til materialar: eit materiale tilbyr ikkje berre moglegheiter, det motsetter seg og kanaliserer. I FFF yter kvart materiale ei distinkt form for tilbod og motstand, ein affordanse som fysisk kanaliserer bestemte geometriar og stengjer andre ute.
 
-\begin{figure}[H]
+\begin{figure}[!ht]
   \centering
-  \includegraphics[width=0.6\textwidth]{teikn_funksjoner.png}
+  \includegraphics[width=\columnwidth]{teikn_funksjoner.png}
   \caption{Kreftene bak ein stol: materialet (M), funksjonen (F) og geografien (G) utover alle seleksjonstrykk paa den endelege forma. Pilane viser korleis kreftene kanaliserer konstruksjonen.}
   \label{fig:funksjoner}
 \end{figure}
@@ -189,9 +190,9 @@ STOLAR-dataa gjev den fyrste kvantitative dokumentasjonen av denne kanaliserings
 
 Skilnaden mellom ytterpunkta (stål 1,29 mot bjørk 1,81) gjev Cohen's $d = 0{,}51$, ein medels effektstorleik. Materialet er altså ikkje berre ein overflate som dekkjer ein funksjonelt diktert struktur; det er ein aktiv formgjevande kraft som systematisk kanaliserer geometrien. $\chi^2$-testen for assosiasjon mellom materialgruppe og proporsjonsklasse gjev $\chi^2 = 633{,}8$ ($p < 0{,}001$), noko som inneber at nullhypotesen om uavhengigheit mellom materiale og form kan avvisast med overveldande konfidens.
 
-\begin{figure}[H]
+\begin{figure}[!ht]
   \centering
-  \includegraphics[width=\textwidth]{fig11_hw_per_material.pdf}
+  \includegraphics[width=\columnwidth]{fig11_hw_per_material.pdf}
   \caption{$H/W$-ratio per materialgruppe. Kvart materiale kanaliserer ein distinkt proporsjonsregion.}
   \label{fig:hwmaterial}
 \end{figure}
@@ -214,16 +215,16 @@ Det kanskje mest interessante funnet er dei diakrone skifta i okkupert formrom. 
 
 Meir presist: i eit system der alle stolar deler same funksjon (å bere ein sitjande kropp), er funksjonen ein konstant. Ein konstant variabel har null entropi og kan per definisjon ikkje bere informasjon om nokon annan variabel. Sullivan sitt aksiom kollapsar ikkje fordi det er feil i ein abstrakt, logisk forstand, men fordi det er empirisk tomt. Det predikerer ein tilstand (funksjonell konvergens) som aldri er observert i datamaterialet. Aksiomet er ikkje falskt; det er degenerert, gyldig berre i eit vakuum av seleksjonstrykk som aldri har eksistert i den reelle verda.
 
-\begin{figure}[H]
+\begin{figure}[!ht]
   \centering
-  \includegraphics[width=0.9\textwidth]{ill05_paradigme.png}
+  \includegraphics[width=\columnwidth]{ill05_paradigme.png}
   \caption{Paradigmeskiftet: fraa deterministisk funksjonalisme (ein aksial, ein form) til Form Follows Fitness (fleirdimensjonalt fitnesslandskap med fleire lokale optimum). Sullivan sitt aksiom er eit 1D-spesialtilfelle av eit $n$-dimensjonalt rammeverk.}
   \label{fig:paradigme}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[!ht]
   \centering
-  \includegraphics[width=0.9\textwidth]{ill01_seleksjonstrykk.png}
+  \includegraphics[width=\columnwidth]{ill01_seleksjonstrykk.png}
   \caption{Seleksjonstrykk-flyten: materiale, tid, geografi, kultur og funksjon bidreg alle med ulike MI-verdiar til den endelege forma. Funksjon (MI=0) er den svakaste inngangen.}
   \label{fig:seleksjon}
 \end{figure}
@@ -296,9 +297,9 @@ Analysen avdekkjer tre materialregime:
 
 Artikkelen innfører omgrepet \textbf{materiell dobbeltheit}: konstruksjonar der berande kjernar er lokalt tre, medan fasaden er importert edelt materiale. Fenomenet toppar med 23,5\,\% av stolane på 1800-talet, noko som demonstrerer at materialet har ein dobbel funksjon: strukturell (å bere last) og semiotisk (å kommunisere status og tilhøyrsle).
 
-\begin{figure}[H]
+\begin{figure}[!ht]
   \centering
-  \includegraphics[width=\textwidth]{fig4_jaccard.pdf}
+  \includegraphics[width=\columnwidth]{fig4_jaccard.pdf}
   \caption{Jaccard-avstand mellom NMK og V\&A over tid. Samlingane konvergerer i materialsamansetnad under det koloniale regimet.}
   \label{fig:jaccard}
 \end{figure}
@@ -311,9 +312,9 @@ Gjennomsnittleg høgde fell frå 94,7 cm (1200-talet) til 73,1 cm (2000-talet), 
 
 $H/W$-ratioen driftar frå 1,68 (1200-talet) til 1,37 (2000-talet), vekk frå gullsnittet ($\varphi = 1{,}618$) og mot meir kompakte proporsjonar. Denne drifta reflekterer overgangen frå tronliknande, vertikale stolar (der høgda kommuniserer status) til låge, horisontale sitjemøbel (der komfort og materiell effektivitet er viktigare seleksjonskriterium).
 
-\begin{figure}[H]
+\begin{figure}[!ht]
   \centering
-  \includegraphics[width=\textwidth]{fig9_nmk_va_hogde.pdf}
+  \includegraphics[width=\columnwidth]{fig9_nmk_va_hogde.pdf}
   \caption{Gjennomsnittleg høgde i NMK vs.\ V\&A over tid. NMK-stolar er systematisk høgare i tidlege periodar, men konvergerer med V\&A etter industrialiseringa.}
   \label{fig:nmk_va}
 \end{figure}
@@ -328,7 +329,7 @@ Den tredje artikkelen brukar maskinlæring for å teste kva variablar som kodar 
 
 Ein Random Forest-modell \citep{breiman2001} oppnår:
 
-\begin{table}[H]
+\begin{table}[!ht]
 \centering
 \begin{tabular}{@{}llc@{}}
 \toprule
@@ -349,9 +350,9 @@ Høgde er den viktigaste enkeltvariabelen (19,7\,\% feature importance), følgd 
 
 Teknikk-entropien stig parallelt med materialentropien, frå 1,0 til 3,67 bits (figur~\ref{fig:teknikk}). Denne parallelliteten er venta under FFF: nye materialar opnar nye teknikkar, og nye teknikkar opnar nye regionar av formrommet.
 
-\begin{figure}[H]
+\begin{figure}[!ht]
   \centering
-  \includegraphics[width=\textwidth]{fig8_teknikk_entropi.pdf}
+  \includegraphics[width=\columnwidth]{fig8_teknikk_entropi.pdf}
   \caption{Shannon-entropi for teknikkar over tid. Parallelt forlaup med materialentropien.}
   \label{fig:teknikk}
 \end{figure}
@@ -385,9 +386,9 @@ Artikkelen konkluderer med at funksjonalismen er eit degenerert spesialtilfelle,
 
 Figur~\ref{fig:bevis} syner dei fire pilarane i beviskjeda.
 
-\begin{figure}[H]
+\begin{figure}[!ht]
   \centering
-  \includegraphics[width=\textwidth]{fig16_beviskjede.pdf}
+  \includegraphics[width=\columnwidth]{fig16_beviskjede.pdf}
   \caption{Konvergent bevis: (a) materialentropi stig monotont, (b) Modulor-avviket er systematisk negativt, (c) Jaccard-avstanden mellom NMK og V\&A konvergerer, (d) funksjon ber null informasjon om stil.}
   \label{fig:bevis}
 \end{figure}
@@ -669,7 +670,18 @@ Form følgjer ikkje funksjon. Form følgjer tilpassing. Fitnesskartet erstattar 
 
 
 % ================================================================
+\onecolumn
 \bibliographystyle{plainnat}
 \bibliography{references}
+
+\newpage
+\part*{Vedlegg: Artiklane}
+
+\includepdf[pages=-,pagecommand={}]{artikkel_I_materialar.pdf}
+\includepdf[pages=-,pagecommand={}]{artikkel_II_geografi.pdf}
+\includepdf[pages=-,pagecommand={}]{artikkel_III_form_og_tid.pdf}
+\includepdf[pages=-,pagecommand={}]{artikkel_IV_fff.pdf}
+\includepdf[pages=-,pagecommand={}]{artikkel_V_modulor.pdf}
+\includepdf[pages=-,pagecommand={}]{form_tractatus.pdf}
 
 \end{document}
