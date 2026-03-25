@@ -354,9 +354,28 @@ At fire metriske variablar åleine gjev $F1 = 0{,}777$ er eit sterkt funn. Det t
 
 Teknikk-entropien si parallelle stigning med materialentropien (begge frå $\sim$1 bit til $\sim$3,7 bits) er ikkje tilfeldig. Nye materialar krev nye teknikkar, og nye teknikkar mogeleggjer nye former. \emph{Formbøying} var umogleg før Thonet si dampbøying av bøk (1850-talet); \emph{sprøytestøyping} var umogleg før polymerindustrien (1960-talet). Kvar teknikk opnar ein ny region i formrommet, og det er desse regionane Random Forest-modellen navigerer når han predikerer stil.
 
+\subsection{Stilar som dimensjonelle klynger: intern konsistens}
+
+Ikkje alle stilar er like internt konsistente. Me kan måle den \emph{dimensjonelle reinleiken} til ein stilperiode gjennom variasjonskoeffisienten (CV) for høgde. Funna er slåande:
+
+\begin{itemize}
+  \item \textbf{Empire} har den strammaste profilen: $\text{CV}_H = 0{,}013$. Empirestolane er nesten identiske i høgde (80,8 $\pm$ 1,1 cm). Stilen fungerer som ein dimensjonell standard.
+  \item \textbf{Hepplewhite} er nesten like uniform: $\text{CV}_H = 0{,}016$ (93,2 $\pm$ 1,5 cm).
+  \item \textbf{Postmodernisme} er den mest spreidde: $\text{CV}_H = 0{,}409$ (99,8 $\pm$ 40,9 cm). Postmodernismen sprenger ikkje berre det estetiske rammeverket, men det dimensjonelle.
+  \item \textbf{Barokk} ligg mellom: $\text{CV}_H = 0{,}207$ (110,2 $\pm$ 22,8 cm). Barokken har ein klar dimensjonell preferanse (høge stolar), men med variasjon.
+\end{itemize}
+
+Denne rangeringa fortel oss noko viktig: stilperiodar er ikkje like ``reelle'' som dimensjonelle kategoriar. Nokre stilar (empire, hepplewhite) er nesten deterministiske i sine dimensjonar; andre (postmodernisme) er knapt meir enn eit namn på eit diffust område i formrommet.
+
+\subsection{Namngjevne designarar i databasen}
+
+STOLAR-databasen inneheld stolar av fleire kanoniske designarar: \textbf{Thomas Chippendale} (21 stolar), \textbf{Alvar Aalto} (18), \textbf{Charles og Ray Eames} (18), \textbf{Marcel Breuer} (15), \textbf{Michael Thonet} (12), \textbf{Arne Jacobsen} (7) og \textbf{Hans J. Wegner} (4). Desse designarane representerer ulike posisjonar i formrommet og ulike material-teknikk-kombinasjonar: Chippendale sin mahogni og skjering; Aalto sin bøygde bjørk; Eames sin glasfiber og kryssfiner; Breuer sitt sveisa stålrøyr; Thonet sin dampbøygde bøk.
+
+Kvar designar er, i denne forstand, ein \emph{navigator} som har funne ein distinkt posisjon i tilpassingslandskapet. Det at Random Forest kan predikere stilperiode med $F1 = 0{,}823$ utan å vite kven designaren er, tyder at desse posisjonane er systematiske: dei er drivne av materiale og teknikk, ikkje av individuelt geni.
+
 \subsection{Avgrensingar}
 
-Stilmerke er berre tilgjengelege for 22,9\,\% av utvalet ($n = 524$), noko som avgrensar den statistiske krafta. Klassifikasjonen er avhengig av kuratorens tildeling av stilmerke, som ikkje er standardisert. Feature importance frå Random Forest er eit relativt mål, ikkje eit kausalt mål. Modellen fangar korrelasjonar, ikkje årsakssamanhengar.
+Stilmerke er berre tilgjengelege for 22,9\,\% av utvalet ($n = 524$), noko som avgrensar den statistiske krafta. Klassifikasjonen er avhengig av kuratorens tildeling av stilmerke, som ikkje er standardisert. Feature importance frå Random Forest er eit relativt mål, ikkje eit kausalt mål. Modellen fangar korrelasjonar, ikkje årsakssamanhengar. Dei 21 Chippendale-stolane og 18 Aalto-stolane er for små utval til individuelle designaranalysar; me presenterer dei som illustrative eksempel, ikkje som statistisk robuste funn.
 
 
 % ================================================================
