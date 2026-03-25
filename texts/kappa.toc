@@ -1,0 +1,33 @@
+\babel@toc {nynorsk}{}\relax 
+\contentsline {section}{\numberline {1}Innleiing: ein revolusjon i fire akter}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Bakgrunn og motivasjon}{4}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Datamaterialet}{4}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Forskingsspørsmål}{4}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Avhandlingsstruktur}{5}{subsection.1.4}%
+\contentsline {section}{\numberline {2}Teoretisk rammeverk: fem pilarar}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Fitnesslandskapet}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Distribuert kognisjon}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Utforsking og utnytting}{5}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Affordanse}{5}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Morforom}{6}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Sullivan som degenerert spesialtilfelle}{6}{subsection.2.6}%
+\contentsline {section}{\numberline {3}Metode og datamateriale}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Datainnsamling}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Variablar}{7}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Statistiske metodar}{7}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Avgrensingar}{7}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Dei fire artiklane}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Artikkel I: Materialar som geopolitisk historie}{7}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Artikkel II: Produksjonsgeografi og formkonvergens}{8}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Artikkel III: Form og tid}{8}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Artikkel IV: Form Follows Fitness}{9}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Syntese: frå fire artiklar til ein konklusjon}{9}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Beviskjeda}{9}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Paradigmeskifte}{10}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Generalisering}{10}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Traktat for form}{10}{section.6}%
+\contentsline {section}{\numberline {7}Konklusjon}{12}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Hovudfunn}{12}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Implikasjonar for praksis}{12}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Vidare forsking}{12}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Avsluttande merknad}{12}{subsection.7.4}%
