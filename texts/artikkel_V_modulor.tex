@@ -1,0 +1,178 @@
+% artikkel_V_modulor.tex
+% Artikkel V: Modulor - rekonstruksjon og falsifisering
+% STOLAR-prosjektet
+% Spraak: Nynorsk
+
+\documentclass[10pt, a4paper, twocolumn]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[nynorsk]{babel}
+\usepackage{mathpazo}
+\usepackage{amsmath, amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage[round]{natbib}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{csquotes}
+\usepackage{float}
+
+\geometry{margin=1.5cm, top=1.8cm, bottom=1.8cm, columnsep=0.6cm}
+\setstretch{1.05}
+\graphicspath{{fig/}}
+
+\title{%
+  \textbf{Modulor som degenerert spesialtilfelle}\\[0.3em]
+  \large Rekonstruksjon og empirisk falsifisering av Le Corbusier sin proporsjonslare%
+}
+\author{%
+  Iver Raknes Finne\\
+  \small Arkitektur- og designhogskolen i Oslo (AHO)\\
+  \small \texttt{iver.raknes.finne@stud.aho.no}
+}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent Le Corbusier sin \textbf{Modulor} (1950) postulerer at menneskekroppen og gullsnittet ($\varphi = 1{,}618$) saman genererer eit universelt proporsjonssystem for arkitektur og design. For ein stol predikerer Modulor ei totalhogde paa 113 cm, ei setehogde paa 43 cm, og ein $H/W$-ratio paa 2,13. Denne artikkelen testar desse prediksjonane mot STOLAR-databasen ($N = 2\,036$ stolar med gyldige hogdemaal, 1280--2024). Einsidig $t$-test viser at den empiriske medianhogda (87 cm) avvik 23\,\% fraa Modulor ($p < 10^{-60}$). $H/W$-medianen (1,59) avvik 25\,\% fraa den predikerte ratioen ($p < 10^{-70}$). Avviket er \emph{negativt i kvart einaste hundreaar} og \emph{aukar over tid}. Modulor er ikkje berre falsifisert; han er eit \textbf{degenerert spesialtilfelle}: ei eindimensjonal linje i eit $n$-dimensjonalt formrom. Formrommet for 2\,284 stolar fyller heile flata; Modulor reduserer det til eitt punkt.
+
+\medskip
+\noindent\textbf{Nokkelord:} Modulor, Le Corbusier, falsifisering, proporsjon, gullsnitt, formrom, stoldesign
+\end{abstract}
+
+
+% ================================================================
+\section{Innleiing: eit universelt proporsjonssystem?}
+
+I 1950 publiserte Le Corbusier \emph{Le Modulor} \citep{lecorbusier1950}, eit proporsjonssystem basert paa menneskekroppen og gullsnittet. Modulor genererer to uendelege, samankopla seriar av harmoniske maal:
+
+\begin{quote}
+\textbf{Raud serie} (cm): \ldots 27, 43, 70, 113, 183, 296 \ldots\\
+\textbf{Blaa serie} (cm): \ldots 33, 53, 86, 140, 226, 366 \ldots
+\end{quote}
+
+For ein stol predikerer Modulor:
+\begin{itemize}
+  \item \textbf{Totalhogde}: 113 cm (den raude serien)
+  \item \textbf{Setehogde}: 43 cm (den raude serien)
+  \item \textbf{Breidde}: 53 cm (den blaae serien)
+  \item \textbf{$H/W$-ratio}: $113/53 = 2{,}132$
+\end{itemize}
+
+Desse verdiane er ikkje vilkaarlege; dei er \emph{deduserte} fraa kroppen via gullsnittet. Modulor postulerer at det finst eitt korrekt svar paa sporsmaalet ``kor stor skal ein stol vere?'' --- og at dette svaret er determinert av funksjon (aa bere ein sitjande kropp) og proporsjon ($\varphi$).
+
+Denne artikkelen testar prediksjonane empirisk.
+
+
+% ================================================================
+\section{Metode}
+
+Me brukar STOLAR-databasen \citep{finne2026}: 2\,036 stolar med gyldige hogdemaal (20--250 cm, ekskludert uteliggjarar), 1\,988 med breiddemaal, og 1\,924 med djupnmaal.
+
+For kvar Modulor-prediksjon reknar me:
+\begin{enumerate}
+  \item \textbf{Gjennomsnittleg avvik} ($\Delta_M = \bar{X}_{\text{emp}} - X_{\text{Modulor}}$)
+  \item \textbf{Prosentavvik} ($\Delta\% = 100 \cdot \Delta_M / X_{\text{Modulor}}$)
+  \item \textbf{Einsidig $t$-test}: $H_0: \mu = X_{\text{Modulor}}$
+  \item \textbf{Avvik per hundreaar}: stadfestar at avviket er systematisk, ikkje tilfeldig
+\end{enumerate}
+
+
+% ================================================================
+\section{Resultat}
+
+\subsection{Hogde: systematisk underpredikert}
+
+\begin{table}[!ht]
+\centering
+\caption{Modulor-prediksjon vs. empiriske data for stolhogde.}
+\label{tab:modulor_h}
+\begin{tabular}{lr}
+\toprule
+\textbf{Variabel} & \textbf{Verdi} \\
+\midrule
+Modulor-prediksjon & 113,0 cm \\
+Empirisk gjennomsnitt & 84,8 cm \\
+Empirisk median & 87,0 cm \\
+Avvik (gjennomsnitt) & $-$28,2 cm \\
+Prosentavvik & $-$25,0\,\% \\
+$p$ (einsidig $t$-test) & $< 10^{-60}$ \\
+$N$ & 2\,036 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Den gjennomsnittlege stolen er 28 cm kortare enn Modulor predikerer. Avviket er negativt i \emph{kvart einaste hundreaar}:
+
+\begin{table}[!ht]
+\centering
+\caption{Modulor-avvik per hundreaar. Avviket \emph{aukar} over tid.}
+\label{tab:modulor_century}
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Hundreaar} & $\bar{H}$ (cm) & $\Delta_M$ (cm) & $\Delta\%$ \\
+\midrule
+1500-talet & 93,3 & $-$19,7 & $-$17\,\% \\
+1600-talet & 88,0 & $-$25,0 & $-$22\,\% \\
+1700-talet & 87,8 & $-$25,2 & $-$22\,\% \\
+1800-talet & 86,2 & $-$26,8 & $-$24\,\% \\
+1900-talet & 74,1 & $-$38,9 & $-$34\,\% \\
+2000-talet & 74,0 & $-$39,0 & $-$35\,\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Avviket aukar fraa $-17$\,\% (1500-talet) til $-35$\,\% (2000-talet). Stolen vert lågare over tid, men Modulor er statisk. Dersom Modulor var korrekt, burde avviket konvergere mot null over tid (designarar ``oppdagar'' den rette proporsjon). I staden divergerer det.
+
+
+\subsection{H/W-ratio: gullsnittet er ikkje ein attraktor}
+
+Modulor predikerer $H/W = 2{,}132$. Den empiriske medianen er $H/W = 1{,}59$. Avviket er 25\,\% ($p < 10^{-70}$).
+
+H/W-ratioen driftar \emph{nedover} over tid: fraa 1,71 (1500-talet) til 1,27 (2000-talet). Gullsnittet ($\varphi = 1{,}618$) vert passert undervegs, men ikkje stabilisert rundt. Det er ein stasjon toget passerer, ikkje ein destinasjon.
+
+
+\subsection{Setehogde: den einaste rimeleg prediksjonen}
+
+Modulor predikerer setehogde = 43 cm. Empirisk median for stolar med setehogdedata: 47--48 cm (avhengig av hundreaar). Avviket er ca. $-10$\,\%, det minste av alle Modulor-prediksjonar. Setehogda er den mest funksjonsdeterminerte dimensjonen (ANOVA $p = 0{,}087$), noko som forklarer kvifor Modulor treffer \emph{noko} betre her enn for totalhogde.
+
+Men sjolv for setehogde er Modulor for laag. Den empiriske medianen ligg konsekvent over 43 cm. Og paa 2000-talet, der SH/H-ratioen naar 98\,\%, er setehogda nesten lik totalhogda: stolen har vorte ein krakk, og Modulor sin distinksjon mellom sete og rygg er irrelevant.
+
+
+\subsection{Djupn: det Modulor ignorerer}
+
+Modulor gjev \emph{ingen} prediksjon for djupn. Men djupn er den mest funksjonsdeterminerte dimensjonen (lågast CV, ANOVA $p = 0{,}087$). Modulor fokuserer paa den minst relevante dimensjonen (hogde, CV = 0,32) og ignorerer den mest relevante (djupn, CV = 0,18). Systemet er invertert.
+
+
+% ================================================================
+\section{Diskusjon}
+
+\subsection{Kvifor Modulor feilar}
+
+Modulor feilar ikkje fordi Le Corbusier misrekna kroppsdimensjonar. Han feilar fordi han antok at kroppen sin geometri \emph{aloeine} bestemmer stolen sin geometri. Empirisk er hogde, breidde og H/W-ratio determinerte av materiale (staal $-13$ cm, plast $-14$ cm vs. mahogni $+6$ cm), teknikk (tapping H/W = 1,91, sveising 1,40), geografi (Noreg H/W = 1,91, Finland 1,10) og kulturell epoke (barokk 110 cm, funksjonalisme 78 cm). Kroppen er berre ein av mange seleksjonstrykk, og empirisk den svakaste ($\text{MI}_{\text{funksjon}} = 0{,}000$ bits).
+
+\subsection{Modulor som degenerert spesialtilfelle}
+
+Modulor er ikkje feil i ein absolutt forstand. Han er eit \textbf{degenerert spesialtilfelle} av Form Follows Fitness: han er gyldig berre dersom alle seleksjonstrykk utanom kroppsproporsjon er null. I det tilfellet kollapsar det $n$-dimensjonale fitnesslandskapet til ei eindimensjonal linje (kroppen sin proporsjonsserie), og Modulor sin prediksjon er korrekt. Men dette vilkaaret er aldri oppfylt. Formrommet for 2\,284 stolar fyller heile flata; Modulor reduserer det til eitt punkt.
+
+\subsection{Djupn som motbevis}
+
+Det sterkaste motbeviset mot Modulor er ikkje hogde-avviket (som kan bortforklarast med kulturell variasjon), men \emph{djupn sin stabilitet}. Djupn er den dimensjonen som er mest styrt av funksjon ($p = 0{,}087$), og Modulor gjev ingen prediksjon for den. Systemet fokuserer paa det kulturelt variable (hogde) og ignorerer det funksjonelt stabile (djupn). Dersom Modulor var ein funksjonell teori, burde han ha predikert djupn best av alle dimensjonar. At han ikkje gjer det, stadfestar at Modulor er ein \emph{estetisk} teori, ikkje ein funksjonell.
+
+
+% ================================================================
+\section{Konklusjon}
+
+Modulor er falsifisert langs alle testbare aksar. Hogda avvik 25\,\% ($p < 10^{-60}$). $H/W$-ratioen avvik 25\,\% ($p < 10^{-70}$). Avvika er systematisk negative og aukar over tid. Modulor ignorerer djupn, den mest funksjonsdeterminerte dimensjonen. Gullsnittet er ikkje ein attraktor i formrommet; det er ein stasjon toget passerer.
+
+Modulor er eit degenerert spesialtilfelle av Form Follows Fitness: ei eindimensjonal linje i eit $n$-dimensjonalt formrom. Formverda er rikare, meir kompleks og meir motstandsdyktig mot universelle proporsjonssystem enn Le Corbusier forestilte seg.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

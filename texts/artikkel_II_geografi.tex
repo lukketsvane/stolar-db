@@ -3,7 +3,7 @@
 % STOLAR-prosjektet - Kvantitativ designhistorie
 % Spraak: Nynorsk
 
-\documentclass[12pt, a4paper]{article}
+\documentclass[10pt, a4paper, twocolumn]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -20,8 +20,9 @@
 \usepackage{csquotes}
 \usepackage{float}
 
-\geometry{margin=2.5cm}
-\onehalfspacing
+
+\geometry{margin=1.5cm, top=1.8cm, bottom=1.8cm, columnsep=0.6cm}
+\setstretch{1.15}
 \graphicspath{{fig/}}
 
 \title{%
@@ -111,7 +112,7 @@ Figur~\ref{fig:hogde_modulor} og tabell~\ref{tab:dimensions} syner dei sentrale 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{fig5_hogde_modulor.pdf}
+  \includegraphics[width=\columnwidth]{04_dimensional_evolution.png}
   \caption{Gjennomsnittleg stolhogde ($\pm$ SD) per hundreaar. Le Corbusier sin Modulor-prediksjon (113 cm, stipla raud linje) ligg systematisk over empiriske data i kvar epoke.}
   \label{fig:hogde_modulor}
 \end{figure}
@@ -192,7 +193,7 @@ Modulor-avviket er konsekvent \emph{negativt} i kvar einaste epoke. Empiriske st
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\textwidth]{fig6_hw_ratio.pdf}
+  \includegraphics[width=\columnwidth]{01_squatness_index.png}
   \caption{Proporsjonsdrift: $H/W$-ratio per hundreaar. Gullsnittet ($\varphi = 1{,}618$) er markert. Modernismen bryt drastisk med tradisjonen.}
   \label{fig:hw_ratio}
 \end{figure}
@@ -221,7 +222,7 @@ $H/W$-ratioen driftar nedover frå 1,68 (1600-talet) til 1,37 (2000-talet). Gull
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{fig9_nmk_va_hogde.pdf}
+  \includegraphics[width=\columnwidth]{fig9_nmk_va_hogde.pdf}
   \caption{Norske vs. britiske stolar: gjennomsnittleg hogde per hundreaar. NMK-stolar er systematisk hogare i tidlege periodar.}
   \label{fig:nmk_va}
 \end{figure}
@@ -264,6 +265,13 @@ Medianvekta fell frå 20,4 kg (1700-talet) til 6,8 kg (2000-talet): ein reduksjo
 \textbf{Materialeffektivitet:} Dersom me definerer materialeffektivitet som forholdet mellom funksjonelt overflatareal og masse, aukar denne effektiviteten dramatisk over tid. Ein barokkstol frå 1700-talet brukar 20 kg for å halde eitt menneske; ein plastkrakk frå 2020 brukar 3 kg for same funksjon. Materiala har vorte \emph{smartare}: dei ber meir med mindre.
 \end{quote}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\columnwidth]{01_weight_over_time.png}
+  \caption{Vektreduksjon over tid: medianvekt per hundreaar. Fraa massive barokkstolar til minimale plastkrakkar.}
+  \label{fig:weight}
+\end{figure}
+
 Ekstremverdiane illustrerer spennvidda: den lettaste stolen i databasen er ein plastkrakk av Giorgio Decurso frå 1972 (0,4 kg, polypropylen); den tyngste er ein sofa av John Henry Belter frå 1856 (103 kg, eik og palisander). Ein faktor på 257 i vekt under same funksjon. Denne eine statistikken falsifiserer funksjonsdeterminismen meir effektivt enn noko anna funn: dersom form (og vekt) følgde funksjon, ville denne ratioen vere nær 1,0.
 
 \subsubsection{Vekt per materiale}
@@ -297,14 +305,7 @@ Plastkrakken er lettast (median 8,2 kg), medan kryssfiner er overraskande tung (
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{fig12_chi2_residualar.pdf}
-  \caption{Nasjonale materialfingeravtrykk: standardiserte $\chi^2$-residualar. Raude celler syner overrepresentasjon, blaae underrepresentasjon. Noreg er sterkt assosiert med bjork ($+10{,}8$) og furu ($+8{,}2$); Storbritannia med mahogni ($+4{,}3$).}
-  \label{fig:chi2}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.9\textwidth]{fig14_dimensjonsdrift.pdf}
+  \includegraphics[width=\columnwidth]{fig14_dimensjonsdrift.pdf}
   \caption{Dimensjonsdrift: gjennomsnittleg hogde fell, medan breidde oscillerer. Hogda fell mest mellom 1800- og 1900-talet.}
   \label{fig:drift}
 \end{figure}
@@ -315,7 +316,7 @@ Ein $\chi^2$-test på materialdistribusjon per nasjonalitet gjev $\chi^2 = 633{,
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{fig12_chi2_residualar.pdf}
+  \includegraphics[width=\columnwidth]{fig9_chi2_residualar.png}
   \caption{Nasjonale materialfingeravtrykk. Standardiserte $\chi^2$-residualar. Raude celler = overrepresentasjon; blaae = underrepresentasjon. Noreg: bjork $+10{,}8\sigma$, furu $+8{,}2\sigma$. Storbritannia: mahogni $+4{,}3\sigma$.}
   \label{fig:chi2}
 \end{figure}
@@ -330,6 +331,10 @@ Dei sterkaste assosiasjonane er:
 \end{itemize}
 
 Desse fingeravtrykka er ikkje tilfeldige; dei reflekterer djupe materialøkologiar. Noreg har bjørkeskog; Storbritannia har koloniar med mahogni; Italia har nøttetrekultur; Danmark og Tyskland har industriell infrastruktur for stål og kryssfiner.
+
+Nasjonale \textbf{H/W-profilar} kvantifiserer denne dimensjonen: Noreg har $H/W = 1{,}91$ (hogast og smalast), Finland $H/W = 1{,}10$ (flatast og breiast), Storbritannia 1,32, Frankrike 1,23. Noreg og Finland er ytterpunkta i det nordiske formrommet: Noreg si barokk-arv gjev hoege ryggar; Finland si Aalto-arv gjev flate, breie profil. Materialøkologien (bjørk vs. bjørk!) er den same, men designkulturen er diametralt ulik. Dette stadfestar at materiale ikkje \emph{determinerer} form; det \emph{avgrensar} formrommet, men innanfor det rommet er det kulturelle val som vel posisjon.
+
+\textbf{Materiell entropi per nasjon} stadfestar dette mønsteret. Storbritannia har den høgaste materialentropien ($H' = 4{,}72$ bits, $S = 66$ materialar), noko som reflekterer imperiet sin tilgang til globale ressursar. Finland har den lågaste ($H' = 3{,}33$ bits, $S = 18$): Aalto-effekten har skapt eit nasjonalt bjørkemonopol som minner om mahogni-monopolet i NMK, men drive av lokal materialideologi snarare enn kolonial import.
 
 \subsection{Stilmigrasjon: retensjon og assimilering}
 
@@ -346,12 +351,16 @@ Retensjon korrelerer med materialøkologi: barokk i Noreg er assosiert med lokal
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\textwidth]{fig14_dimensjonsdrift.pdf}
+  \includegraphics[width=\columnwidth]{fig14_dimensjonsdrift.pdf}
   \caption{Dimensjonsdrift: gjennomsnittleg hogde fell, medan breidde er meir stabil. Den storste drifta fell saman med industrialiseringa (1800--1900).}
   \label{fig:drift}
 \end{figure}
 
 Den dimensjonelle drifta mellom hundreår er ikkje jamn. Me reknar ein forenkla avstandsmetrikk i standardavvik-einingar: den storste drifta fell mellom 1800- og 1900-talet (0,314 SD), som korresponderer med industrialiseringa. Stolen vert lågare ($\Delta H = -10$ cm) og breiare ($\Delta W = +9$ cm) i dette intervallet. Industrialiseringa er det sterkaste geometriske sjokket i heile tidsserien.
+
+\subsection{Affordanse-matrisa: materialet avgjer teknikken}
+
+Kryssanalyse av materiale og teknikk avdekkjer ein tydeleg \textbf{affordanse-matrise}: kvart materiale ``tillèt'' berre visse teknikkar, og stengjer andre ute. Mahogni og eik tillèt tapping (22\,\% og 21\,\%) og skjering (14\,\% og 17\,\%), men ikkje sveising. Stål tillèt sveising (11\,\%) og formbøying (23\,\%), men ikkje tapping eller skjering. Plast er det mest fleksible: skruing (32\,\%), formbøying (25\,\%) og polstring (32\,\%). Kvart materiale opnar visse regionar av formrommet og stengjer andre. Materialet er ikkje ein nøytral berar av form; det er ein \emph{aktiv formgjevande kraft}.
 
 \subsection{Stilperiodar: emergente merkelappar}
 
@@ -367,9 +376,88 @@ Stilperiodane er ujamt fordelte og overlappande i tid. Dei er ikkje diskrete kat
 
 Funksjonalismen predikerer konvergens: dersom form følgjer funksjon, og funksjonen er konstant, burde formvariasjonen minke over tid. Variasjonskoeffisienten burde falle monotont. Data syner det motsette: CV oscillerer og viser ikkje ein klar nedovertrend. Formvariasjonen er ikkje driven primært av funksjonell optimering, men av skiftande seleksjonstrykk: nye materialar, nye produksjonsteknologiar, nye kulturelle preferansar.
 
+\subsection{Norske stolar er signifikant hogare}
+
+Ein Mann-Whitney U-test stadfestar at norske stolar (median = 95 cm, $n = 153$) er signifikant hogare enn britiske (median = 89 cm, $n = 766$): $p = 3{,}3 \times 10^{-10}$, Cohen's $d = 0{,}70$ (stor effektstorleik). Skilnaden på 17,7 cm er ikkje tilfeldig; han reflekterer ulike materialøkologiar.
+
+\subsection{Materialet predikerer dimensjonar}
+
+Mann-Whitney U-testar syner at materialet har ein direkte, statistisk signifikant effekt på hogde: stål-stolar er 13 cm lågare enn andre ($p < 10^{-10}$), plast-stolar 14 cm lågare ($p < 10^{-7}$), medan mahogni-stolar er 6 cm \emph{hogare} ($p = 0{,}002$). ANOVA stadfestar dette: treslag predikerer hogde signifikant ($F = 4{,}5$, $p = 0{,}002$) og breidde ($F = 3{,}3$, $p = 0{,}015$). Interessant nok er effekten på \emph{djupn} ikkje-signifikant ($F = 2{,}1$, $p = 0{,}087$), noko som tyder at djupn er den mest funksjonsdeterminerte dimensjonen: uansett materiale treng stolen ein viss djupn for å romme ein sitjande kropp.
+
+\subsection{Korrelasjonsstruktur: hogde er uavhengig av breidde}
+
+Pearson-korrelasjonsmatrisa avdekkjer ein overraskande struktur: $r(H,W) = 0{,}04$ ($p = 0{,}08$), altso \emph{ikkje signifikant}. Hogde og breidde er statistisk uavhengige. Derimot er $r(W,D) = 0{,}52$ ($p < 10^{-128}$): breidde og djupn er sterkt korrelerte. Setet (W og D) er ein sameint konstruksjon; ryggen (H) er ein uavhengig variabel. Stolen er \emph{ikkje} eitt samla objekt; han er to objekt: eit sete og ein rygg, med ulike determinantar.
+
+\subsection{Djupn: den funksjonsdeterminerte dimensjonen}
+
+Eit nøkkelfunn er at \textbf{djupn} har konsekvent lågast variasjonskoeffisient av dei tre hovuddimensjonane: $\text{CV}_D = 0{,}18$--$0{,}31$ mot $\text{CV}_H = 0{,}26$--$0{,}38$ og $\text{CV}_W = 0{,}14$--$0{,}47$. ANOVA stadfestar dette: materialeffekten på djupn er ikkje-signifikant ($F = 2{,}1$, $p = 0{,}087$), i motsetnad til hogde ($p = 0{,}002$) og breidde ($p = 0{,}015$). Djupn er den einaste dimensjonen som faktisk vert avgrensa av kroppen: eit sete treng ein viss djupn for å romme lara, uansett materiale. Dette er det narmaste me kjem ``form follows function'' i heile datasettet: eitt spor av funksjonell determinisme i eit hav av materiell og kulturell variasjon.
+
+Samstundes konvergerer $W/D$-ratioen mot 1,0 over tid: fraa 1,27 (1500-talet) til 1,01 (2000-talet). Setet vert perfekt kvadratisk. Modernismens stol har eit sete som er like breitt som det er djupt.
+
+\subsection{Kompaktheit: materialeffektivitet kvantifisert}
+
+Me definerer \textbf{kompaktheit} som omsluttande volum per kilogram ($V/W$, i cm$^3$/kg). Denne ratioen stig fraa 14\,757 cm$^3$/kg (1700-talet) til 38\,445 cm$^3$/kg (2000-talet): ein auke paa 2,6 gonger. Moderne materialar gjev meir form per kilo. Ein plastkrakk okkuperer same rom som ein barokkstol, men veg ein fjerdedel. Materialeffektiviteten er den kvantitative manifestasjonen av overgangen fraa ``tunge'' til ``smarte'' materialar.
+
+\subsection{Hogdekurva: fraa rygg til krakk og tilbake}
+
+Høgda per tiaar avdekkjer ein dramatisk narrativ. Fraa 95 cm (1700-talet) fell gjennomsnittleg hogde monotont til eit botnpunkt paa \textbf{64 cm i 1970}: modernismen har redusert stolen til nesten ein krakk. Men sa kjem ein braa reversering: paa 1980-talet stig hogda tilbake til \textbf{85 cm} (+19 cm paa eitt tiaar). Postmodernismen henta ryggen tilbake. Denne oscillasjonen er eit direkte eksempel paa exploration/exploitation-dynamikken: modernismen utforskar den rygglause stolen; postmodernismen returnerer til ryggen som eit estetisk og funksjonelt val.
+
+Forholdet mellom setehøgde og totalhøgde (SH/H) stadfestar dette: frå 52\,\% på 1600-talet til 72\,\% på 1900-talet og 98\,\% på 2000-talet. Stolen er bokstavleg talt i ferd med å miste ryggen. Barokkstolen har ein rygg som utgjer nesten halvparten av den totale høgda; den moderne stolen er nesten berre sete. Denne overgangen reflekterer ikkje ergonomisk optimering (ryggar er framleis nyttige), men ein \emph{materiell og kulturell} endring: nye materialar mogeleggjer sjølvberande konstruksjonar, og modernismens estetikk favoriserer minimale profil.
+
+\subsection{Designarprofil: kvar navigator si posisjon}
+
+Databasen inneheld stolar av kanoniske designarar som okkuperer radikalt ulike posisjonar i formrommet:
+
+\begin{table}[H]
+\centering
+\caption{Designarprofil: dimensjonar og materialar for namngjevne designarar.}
+\label{tab:designers}
+\begin{tabular}{@{}lrrrlll@{}}
+\toprule
+\textbf{Designar} & \textbf{$n$} & \textbf{$\bar{H}$} & \textbf{$H/W$} & \textbf{Hovudmateriale} & \textbf{Periode} \\
+\midrule
+Chippendale & 11 & 99,7 & 1,53 & Mahogni (73\,\%) & 1755--1850 \\
+Thonet & 12 & 73,2 & 1,58 & Bøk, rotting & 1836--1925 \\
+Aalto & 18 & 60,5 & 1,37 & Bjørk (100\,\%) & 1929--1954 \\
+Jacobsen & 7 & 60,8 & 1,22 & Kryssfiner, stål & 1955--1967 \\
+Eames & 18 & 51,6 & \textbf{0,93} & Stål, glasfiber & 1945--2007 \\
+Wegner & 4 & 49,2 & \textbf{0,83} & Bøk, lær & 1944--1970 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+To observasjonar er slåande. For det fyrste: \textbf{Eames og Wegner har $H/W < 1{,}0$}: stolane deira er \emph{breiare enn dei er høge}. Stolen har vorte eit horisontalt objekt. For det andre: Chippendale sin $H/W = 1{,}53$ og Thonet sin $H/W = 1{,}58$ er nær gullsnittet ($\varphi = 1{,}618$), medan Eames og Wegner har brote fullstendig med denne tradisjonen. Materialvalet forklarer overgangen: mahogni og bøk (vertikale, stolpebaserte konstruksjonar) gjev høge proporsjonar; stål og glasfiber (sjølvberande skjel) gjev låge, breie profil.
+
+Kvar designar er ein \emph{navigator} som har funne ein distinkt posisjon i tilpassingslandskapet. Posisjonene er ikkje tilfeldige; dei er determinerte av materialet sin affordanse.
+
 \subsection{Kvifor Modulor sviktar}
 
 Le Corbusier sin prediksjon feilar ikkje fordi han misrekna kroppsdimensjonar, men fordi han antok at kroppen sin geometri åleine bestemmer stolen sin geometri. Empirisk er den gjennomsnittlege stolen 25--40 cm kortare enn prediksjonen i kvar epoke. Denne systematiske skilnaden reflekterer det \citet{pye1968} kalla \textbf{arbeidets natur}: den materielle praksisen der handverkar og materiale forhandlar om den endelege forma. Treverk dikterer andre proporsjonar enn stål; skjering dikterer andre enn sveising. Modulor ignorerer materialet sin stemme.
+
+\subsection{Formrom-trajektorie: stolens vandring gjennom 500 aar}
+
+Me kan følgje stolens vandring gjennom formrommet ved å plotte sentroiden (gjennomsnittleg $H$, $W$, $D$) per hundreaar. Trajektoria avdekkjer ein systematisk drift:
+
+\begin{itemize}
+  \item 1500-talet: $H = 92{,}8$ cm, $W = 54{,}4$ cm, $H/W = 1{,}71$. Høg, smal. Renessansestolen.
+  \item 1700-talet: $H = 88{,}1$ cm, $W = 59{,}6$ cm, $H/W = 1{,}48$. Litt breiare, litt lågare.
+  \item 1900-talet: $H = 78{,}2$ cm, $W = 62{,}5$ cm, $H/W = 1{,}25$. Dramatisk lågare og breiare.
+  \item 2000-talet: $H = 79{,}5$ cm, $W = 62{,}6$ cm, $H/W = 1{,}27$. Stabilisert.
+\end{itemize}
+
+Sentroiden driftar frå det øvre venstre hjørnet av $H/W$-rommet (høg, smal) mot det nedre høgre (låg, brei). Denne drifta er den geometriske manifestasjonen av det me har observert i materialdata: overgangen frå massive stolperammer i lokalt tre til slanke industrielle konstruksjonar.
+
+\subsection{Signaturstolar: den mest typiske stolen per epoke}
+
+For kvar epoke kan me identifisere den \emph{signaturstolen}: stolen som ligg nærmast sentroiden i det tredimensjonale formrommet ($H \times W \times D$). Desse stolane er ikkje nødvendigvis dei mest berømte, men dei mest \emph{representative}:
+
+\begin{itemize}
+  \item \textbf{1700-talet}: ein anonym armstol i mahogni, messing og tekstil ($H = 88$, $W = 58$, $D = 52$ cm). Avstand frå sentroiden: berre 2,2 cm. Kolonialtida sin generiske stol.
+  \item \textbf{1900-talet}: OK-2002-0155, ein stol i metall, plast og stål ($H = 79$, $W = 63$, $D = 62$ cm). Avstand: 1,1 cm. Industrialderen sin generiske stol.
+  \item \textbf{2000-talet}: 360 Chair i aluminium, polyuretan og stål ($H = 78$, $W = 63$, $D = 63$ cm). Avstand: 2,9 cm.
+\end{itemize}
+
+Signaturstolen har gått frå mahogni til plast, frå handverk til industri, frå kolonialt tre til petrokjemisk polymer. Men dimensjonane har konvergert: signaturstolen frå 1900 og 2000 er nesten identiske i storleik. Det som har endra seg, er \emph{materialet}, ikkje forma.
 
 \subsection{Geografi som formkraft}
 
@@ -392,12 +480,6 @@ Tre atterhald er naudsynte. For det fyrste er dimensjonsdata heterogene i kvalit
 Produksjonsgeografien skriv seg inn i stolen sin form på tre vis. For det fyrste er den gjennomsnittlege stolen vorte lågare og djupare over tid, ikkje fordi kroppen har endra seg, men fordi materialteknologien og den kulturelle konteksten har det. For det andre er høgdeskilnaden mellom nordiske og britiske stolar eit direkte mål på geografien sin formkraft, ein kraft som oscillerer mellom konvergens og divergens. For det tredje syner den systematiske underprediksjonen av Modulor at stolens geometri ikkje kan deduserast frå kroppen åleine.
 
 Form følgjer ikkje funksjon. Form driftar i eit landskap der geografi, materiale, teknologi og tid alle utøver seleksjonstrykk. Den neste artikkelen vil demonstrere at dimensjonar og materialkombinasjonar kan \emph{predikere} stilperiode med høg presisjon, samstundes som stilmerket sjølv er den svakaste prediktoren for faktisk geometri.
-
-
-% ================================================================
-\section*{Takk}
-
-Takk til Nasjonalmuseet for kunst, arkitektur og design og Victoria and Albert Museum for open tilgang til samlingsdata.
 
 
 % ================================================================

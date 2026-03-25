@@ -3,7 +3,7 @@
 % STOLAR-prosjektet - Kvantitativ designhistorie
 % Spraak: Nynorsk
 
-\documentclass[12pt, a4paper]{article}
+\documentclass[10pt, a4paper, twocolumn]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -20,8 +20,9 @@
 \usepackage{csquotes}
 \usepackage{float}
 
-\geometry{margin=2.5cm}
-\onehalfspacing
+
+\geometry{margin=1.5cm, top=1.8cm, bottom=1.8cm, columnsep=0.6cm}
+\setstretch{1.15}
 \graphicspath{{fig/}}
 
 \title{%
@@ -84,11 +85,25 @@ Alle 2\,284 stolane i STOLAR-databasen deler same invariante funksjon: å bere e
 
 Varianskoeffisienten (CV) for estimert volum er over 70\,\%, noko som tyder at standardavviket er meir enn 70\,\% av gjennomsnittet. Til samanlikning er CV for menneskekroppen sin sitjehøgde om lag 4\,\% \citep{lecorbusier1950}. Dersom stolen var ein funksjon av kroppen, ville me forvente at stolen sin CV var i same storleiksorden som kroppen sin. I staden er stolen sin formvariasjon nesten 18 gonger større enn variabiliteten i det kroppslege substratet han skal tene.
 
-Denne observasjonen åleine er tilstrekkeleg til å falsifisere den sterke versjonen av funksjonsdeterminismen. Men ho er ikkje tilstrekkeleg til å forklare \emph{kva} som driv variasjonen. For det treng me dei neste åtte bevisa.
+Denne observasjonen åleine er tilstrekkeleg til å falsifisere den sterke versjonen av funksjonsdeterminismen (figur~\ref{fig:falsifisering}). Men ho er ikkje tilstrekkeleg til å forklare \emph{kva} som driv variasjonen. For det treng me dei neste åtte bevisa.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\columnwidth]{ill_falsifisering.png}
+  \caption{Falsifisering av funksjonsdeterminisme. Venstre: formrommet (morphospace) for 2\,284 stolar med identisk funksjon. Hoegre: fitnesslandskapet med fleire lokale optimum. Form er ikkje dedusert fraa funksjon, men selektert av landskapet.}
+  \label{fig:falsifisering}
+\end{figure}
 
 Det er verdt å presisere kva ``massiv'' tyder kvantitativt. I den lågaste enden av formrommet finn me stolar som Decurso (1972) av Vico Magistretti: 0,4 kg polykarbonatskal, 47 cm setebreidde, 72 cm totalhøgde. I den høgaste enden finn me John Henry Belter sine laminerte rosentrestolar frå 1850-talet, med gjennombrotet rygg i utskore palisander, polstra sete i silkebrokade, og ein totalvekt på over 100 kg. Begge er stolar. Begge fyller same funksjon. Avstanden mellom dei i formrommet er enorm, og funksjonen kan ikkje forklare han.
 
 \subsection{Bevis 2: Materialet formar}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\columnwidth]{teikn_material_affordanse.png}
+  \caption{Kvart materiale har ei distinkt formverd: geometrisk profil, strukturell logikk og kompaktheit varierer systematisk fraa mahogni (slanke lemer, spreidd masse) til staal (tynn profil, rette liner, minimal masse). Materialet tvingar formgjevaren paa visse vegar i fitnesslandskapet.}
+  \label{fig:affordanse_teikn}
+\end{figure}
 
 Kvart materiale okkuperer eit distinkt dimensjonsrom (figur~\ref{fig:hw_mat}). Tabell~\ref{tab:hw_mat} syner gjennomsnittleg $H/W$-ratio for dei mest frekvente materiala i databasen.
 
@@ -121,7 +136,7 @@ Cohen's $d$ mellom materialgrupper når opp til 0,51 (messing vs. rotting), noko
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{fig11_hw_per_material.pdf}
+  \includegraphics[width=\columnwidth]{fig11_hw_per_material.pdf}
   \caption{Kvart materiale dikterer sine proporsjonar: $H/W$-ratio per hovudmateriale. Lokale treslag (bjork, furu) gjev hogare proporsjonar enn industrielle materialar (staal, plast).}
   \label{fig:hw_mat}
 \end{figure}
@@ -153,13 +168,6 @@ Funksjonen krev ikkje denne ekspansjonen, og funksjonen krev ikkje kollapsen. St
 \subsection{Bevis 4: Dimensjonar kodar stil og nasjonalitet}
 
 Artikkel~III synte at ein Random Forest-modell \citep{breiman2001} predikerer stilperiode med $F1 = 0{,}823$ og nasjonalitet med $F1 = 0{,}721$, berre basert på fire dimensjonar og 30 materialkategoriar. \textbf{Fellesinformasjonsanalyse} (MI) stadfestar rangeringa: proporsjonar ber 2,072 bits informasjon om stil, tid 1,546 bits, materiale 1,456 bits, geografi 0,797 bits, og funksjon \emph{eksakt null} (figur~\ref{fig:mi_art4}). Proporsjonar åleine forklarer 51,9\,\% av all stilinformasjon. Form er ikkje tilfeldig variert; ho er systematisk strukturert av krefter som er \emph{uavhengige av funksjon}.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{fig15_mi_stil.pdf}
-  \caption{Fellesinformasjon med stilperiode. Funksjon ber null informasjon; proporsjonar ber mest.}
-  \label{fig:mi_art4}
-\end{figure}
 
 Det mest slåande funnet er variasjonskoeffisienten (CV) for høgde \emph{innanfor} kvar stilperiode. Tabell~\ref{tab:cv_stil} rangerer dei stilperiodane som har nok observasjonar til statistisk analyse.
 
@@ -260,6 +268,28 @@ Dei ni bevisa peikar mot same konklusjon: form er ikkje \emph{dedusert} frå fun
 \end{quote}
 
 
+Tabell~\ref{tab:attraktorar} syner dei empiriske sentroidane for kvar stilperiode. Kvar stil okkuperer ein distinkt posisjon i det tredimensjonale formrommet ($H \times W \times D$). Regence-attraktoraren ($H/W = 2{,}31$) og funksjonalisme-attraktoraren ($H/W = 1{,}34$) ligg i diametralt motsette regionar. Postmodernisme har det storste volumet (473\,309 cm$^3$): stolen har vorte ein skulptur.
+
+\begin{table}[!ht]
+\centering
+\caption{Stilar som attraktorar: dimensjonelt sentroid per stilperiode.}
+\label{tab:attraktorar}
+\begin{tabular}{lrrrrc}
+\toprule
+\textbf{Stil} & $n$ & $\bar{H}$ & $\bar{W}$ & $\bar{D}$ & $H/W$ \\
+\midrule
+Regence & 27 & 114 & 49 & 48 & 2,31 \\
+Barokk & 91 & 110 & 52 & 50 & 2,14 \\
+Queen Anne & 12 & 106 & 50 & 46 & 2,12 \\
+Rokokko & 27 & 98 & 49 & 50 & 1,99 \\
+Postmodernisme & 24 & 102 & 64 & 72 & 1,61 \\
+Empire & 36 & 81 & 46 & 48 & 1,74 \\
+Modernisme & 17 & 84 & 53 & 55 & 1,57 \\
+Funksjonalisme & 46 & 78 & 58 & 60 & 1,34 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \subsection{Formell definisjon av fitnesslandskapet}
 
 Etter \citet{wright1932} og \citet{kauffman1993} definerer me eit \textbf{fitnesslandskap} for formgjeving. Formelt: la $\mathcal{C}$ vere konfigurasjonsrommet for ein gjenstandstype (t.d. stolar). Kvart punkt $\mathbf{x} \in \mathcal{C}$ er ein vektor av formattributt:
@@ -355,7 +385,14 @@ Denne oscillasjonen svarar til \citet{eldredge1972} sitt \textbf{punctuated equi
 
 Oscillasjonen er ikkje tilfeldig; ho er driven av endringar i tilpassingslandskapet. Når ein ny materialteknologi oppstår (t.d. stålrøyr på 1920-talet), opnar det seg ein ny region i formrommet som tidlegare var utilgjengeleg. Formgjevarar utforskar denne regionen (utforsking). Etter kvart konsoliderer marknaden og utdanningssystemet seg rundt dei mest vellukka konfigurasjonane, og entropi fell (utnytting). Syklusen repeterer seg.
 
-Formhistoria er ikkje eit lineært framsteg, men ein serie av utforskingar og konsolideringar i eit skiftande landskap. \citet{giedion1948} sin teleologiske narrativ (mekanisering som framsteg mot funksjonell form) er eit spesialtilfelle av denne meir generelle dynamikken: modernismen var ei utforskingsfase, ikkje eit endepunkt.
+Formhistoria er ikkje eit lineært framsteg, men ein serie av utforskingar og konsolideringar i eit skiftande landskap (figur~\ref{fig:expl_expl}). \citet{giedion1948} sin teleologiske narrativ (mekanisering som framsteg mot funksjonell form) er eit spesialtilfelle av denne meir generelle dynamikken: modernismen var ei utforskingsfase, ikkje eit endepunkt.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\columnwidth]{ill_exploration.png}
+  \caption{Exploration/exploitation-dynamikken i designhistoria. Tre store utforskingsfasar (materialsjokket 1700, industrialiseringa 1850, plastrevolusjon 1960) avbryt lange utnyttingsperiodar der dominerande stilarter konsoliderer seg rundt lokale optimum.}
+  \label{fig:expl_expl}
+\end{figure}
 
 
 % ================================================================
@@ -468,12 +505,6 @@ Det er ikkje funksjonen som bestemmer korleis me sit; det er heile den materiell
 \begin{quote}
 \textbf{Form follows fitness.} Fitnesskartet erstattar aksiomet.
 \end{quote}
-
-
-% ================================================================
-\section*{Takk}
-
-Takk til Nasjonalmuseet og Victoria and Albert Museum for open tilgang til samlingsdata. Takk til rettleiaren min for presise spørsmål og tolmod.
 
 
 % ================================================================
