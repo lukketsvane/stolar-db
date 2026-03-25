@@ -1,0 +1,62 @@
+STOLAR-DB: NYNORSK LANGUAGE REQUIREMENT
+========================================
+
+ALL enrichment data (_va_enrichment.json, _nm_enrichment.json, _style_enrichment.json)
+MUST be written in Nynorsk (Norwegian). Do NOT use English terms for any values.
+
+Designer names must be kept in their original form (e.g. "Charles Eames", "Arne Jacobsen").
+Only descriptions and metadata terms should be in Nynorsk.
+
+IMPORTANT: Always use proper Unicode characters (ø, æ, å) -- never ASCII substitutes
+like "oe", "ae", "aa". For example: "Stål" not "Staal", "Lær" not "Laer".
+
+
+APPROVED NYNORSK TERMS
+========================================
+
+NASJONALITETAR (Nationalities):
+  Noreg, Storbritannia, USA, Frankrike, Italia, Tyskland, Danmark, Sverige,
+  Finland, Japan, Austerrike, Sveits, Nederland, Belgia, Spania, Tsjekkia,
+  Polen, Ungarn, Brasil, Kina, India
+
+MATERIAL (Materials):
+  Stål, Tre, Lær, Tekstil, Plast, Metall, Kryssfiner, Bøk, Eik, Mahogni,
+  Aluminium, Glasfiber, Rotting, Furu, Bjørk, Valnøtt, Teaktre, Palissander,
+  Messing, Kopar, Krom, Jarn, Bronse, Skinn, Ull, Lin, Bomull, Polyester,
+  Nylon, Polypropylen, Polyuretan, Akryl, Betong, Keramikk, Porselen, Glas,
+  Gummi, Kork, Bambus, Filt
+
+TEKNIKKAR (Techniques):
+  Sveising, Polstring, Laminering, Lakkering, Formbøying, Plugging, Tapping,
+  Dreiing, Spikring, Fresing, Sliping, Beising, Oljebehandling, Pressing,
+  Støyping, Ekstrudering, Sprøytestøyping, Blåsing, Fletting, Veving,
+  Kaldpressing, Varmpressing, CNC-fresing, Handskjering, Finering
+
+STILPERIODAR (Style periods):
+  Renessanse, Barokk, Rokoko, Nyklassisisme, Empire, Biedermeier, Historisme,
+  Jugend, Arts and Crafts, Art Deco, Funksjonalisme, Skandinavisk modernisme,
+  Etterkrigsmodernisme, Postmodernisme, Samtidsdesign, Brutalisme,
+  Minimalisme, Organisk modernisme, Pop-design, Memphis, Dekonstruktivisme
+
+NØKKELORD (Keywords):
+  Møbel, Design, Stol, Krakk, Lenestol, Gyngestol, Benkestol, Barnestol,
+  Kontorstol, Spisestol, Hagestol, Klappstol, Stabbestol, Pinnestol,
+  Sjøfarstol, Kyrkjestol, Skolestol, Teaterstol, Barkrakk, Pianokrakk,
+  Fotskammel, Puff, Sitjemøbel, Skammel
+
+MØBELDELAR (Furniture parts):
+  Sete, Rygg, Armlen, Bein, Understell, Ramme, Spross, Sarg, Bakbein,
+  Frambein, Toppstykke, Fotstykke, Setetrekk, Pute, Fjøring, Sving,
+  Glidar, Hjul, Meiar
+
+PRODUSENTTYPAR (Producer types):
+  Møbelverkstad, Fabrikk, Snikkeri, Handverkar, Designstudio, Verkstad
+
+
+NOTES FOR AGENTS
+========================================
+- When writing enrichment JSON, use these Nynorsk terms, not English equivalents.
+- Designer names stay in original language (do not translate personal names).
+- Descriptions of designers, styles, and objects should be written in Nynorsk prose.
+- If a term is missing from this list, use standard Nynorsk vocabulary.
+- ALWAYS use proper Unicode: ø, æ, å -- never ASCII approximations (oe, ae, aa).
