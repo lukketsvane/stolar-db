@@ -1,0 +1,281 @@
+% artikkel_VI_seleksjonstrykk.tex
+% Artikkel VI: Seleksjonstrykk og gradientfolging
+% STOLAR-prosjektet - Kvantitativ designhistorie
+% Spraak: Nynorsk
+
+\documentclass[10pt, a4paper, twocolumn]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[nynorsk]{babel}
+\usepackage{mathpazo}
+\usepackage{amsmath, amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage[round]{natbib}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{csquotes}
+\usepackage{float}
+
+\geometry{left=1.0cm, right=1.0cm, top=1.8cm, bottom=1.8cm, columnsep=0.6cm}
+\setstretch{1.15}
+\graphicspath{{fig/}}
+
+\title{%
+  \textbf{Seleksjonstrykk og gradientf\o lging}\\[0.4em]
+  \large Kva krefter driv formendring i 700 \r{a}ar med stoldesign?%
+}
+\author{%
+  Iver Raknes Finne\\
+  \small Arkitektur- og designh\o gskolen i Oslo (AHO)\\
+  \small \texttt{iver.raknes.finne@stud.aho.no}
+}
+\date{}
+
+\begin{document}
+\maketitle
+
+% ================================================================
+\begin{abstract}
+\noindent Artikkel~IV i denne serien formulerte \textbf{Form Follows Fitness} (FFF) og definerte seks seleksjonstrykk som saman formar ein stol. Men kva trykk dominerer kvar overgang? Denne artikkelen operasjonaliserer fem seleksjonstrykk (materiale, teknologi, dimensjon, geografi, \o konomi) og m\r{a}aler deira relative styrke i kvar av dei tolv overgangane mellom 13 stilperiodar ($N = 2\,284$ stolar, 1280--2024). Samstundes testar me om stilperiodar er \emph{genuine lokale optimum} eller berre statistiske klynger, gjennom ein attraktorstyrkeanalyse som samanliknar intra-stil-variasjon med global variasjon. Resultata avdekkjer tre historiske regime: (1) f\o r-industrielle overgangar dominerte av \textbf{geografi} (39--60\,\% av endringa), (2) 1700--1900-talsovergangar dominerte av \textbf{materiale} (32--60\,\%), og (3) ein sein-moderne overgang dominert av \textbf{\o konomi} (78\,\%). Fem av dei 13 stilperiodane er \textbf{sterke attraktorar} (intra-stil CV under halvparten av global CV): r\'{e}gence, rokokko, hepplewhite, empire og jugend. Fire er \textbf{svake attraktorar}: renessanse, funksjonalisme, modernisme og postmodernisme. Empire er den sterkaste attraktoren i heile datasettet ($\text{CV}_H / \text{CV}_{\text{global}} = 0{,}063$). Seteh\o gdeanalyse viser at ergonomi er den svakaste gradienten: berre empire ligg n\ae r det ergonomiske optimumet ($\Delta = +2{,}1$ cm), medan postmodernisme avvik med $+30{,}9$ cm. Funksjon er ikkje berre den svakaste seleksjonskrafta; han er den mest ignorerte.
+
+\medskip
+\noindent\textbf{N\o kkelord:} seleksjonstrykk, gradientf\o lging, attraktorstyrke, stilperiode, ergonomi, materialaffordanse, kvantitativ designhistorie, Form Follows Fitness
+\end{abstract}
+
+\vspace{1em}
+\hrule
+\vspace{1.5em}
+
+
+% ================================================================
+\section{Innleiing: fr\r{a}a falsifisering til navigasjon}
+
+Artikkel~V demonstrerte at Le Corbusier sin Modulor er eit degenerert spesialtilfelle: ei eindimensjonal linje i eit $n$-dimensjonalt formrom \citep{finne2026}. Modulor-avviket er negativt i kvart einaste hundre\r{a}ar og aukar over tid. Konklusjonen var destruktiv: \emph{form kan ikkje deduserast fr\r{a}a ein einskild prinsipp}. Men destruksjon er ikkje konstruksjon. \r{A}a vite at Modulor feilar er ikkje det same som \r{a}a vite kva som \emph{lukkast}.
+
+Artikkel~IV formulerte FFF og definerte tilpassingsfunksjonen $\Phi(\mathbf{x}) = \sum_i w_i \cdot f_i(\mathbf{x})$ med seks seleksjonstrykk. Men vektene $w_i$ var kvalitativt postulerte, ikkje kvantitativt estimerte. Denne artikkelen fyller det g\r{a}apet. Me stiller to sp\o rsm\r{a}al:
+
+\begin{enumerate}
+  \item \textbf{Kva seleksjonstrykk dominerer kvar stilovergang?} Dersom me kan m\r{a}ale den relative styrken til kvart trykk i kvar overgang, kan me skilje mellom materialdrivne revolusjonar, geografidrivne spreiingar og \o konomidrivne transformasjonar.
+  \item \textbf{Er stilperiodar genuine lokale optimum?} Ein stilperiode kan vere eit statistisk artefakt (ein vilk\r{a}arleg klynge i formrommet) eller eit genuint lokalt optimum (ein attraktor som konsentrerer form tettare enn tilfeldig variasjon ville gjort). Berre i det andre tilfellet er fitnesslandskapet reelt.
+\end{enumerate}
+
+Seksjon~2 operasjonaliserer dei fem seleksjonstrykka. Seksjon~3 testar attraktorhypotesen. Seksjon~4 m\r{a}aler trykka i kvar overgang. Seksjon~5 analyserer ergonomi som den svakaste gradienten. Seksjon~6 dr\o ftar implikasjonar.
+
+
+% ================================================================
+\section{Fem seleksjonstrykk, operasjonaliserte}
+
+\citet{kauffman1993} sitt fitnesslandskap krev at seleksjonstrykka er identifiserbare og m\r{a}albare. Me definerer fem trykk, kvart utleidd fr\r{a}a tilgjengelege variablar i STOLAR-databasen \citep{finne2026}. Dei svarar til fire av dei seks komponentane i Artikkel~IV sin tilpassingsfunksjon (funksjonell yting vert analysert separat i seksjon~5; kulturell meining er ikkje direkte m\r{a}albar fr\r{a}a dataa):
+
+\begin{enumerate}
+  \item \textbf{Materialtrykk} ($P_{\text{mat}}$): Endring i materialentropi ($\Delta H'$) og talet p\r{a}a distinkte materialar mellom to stilperiodar. H\o g $P_{\text{mat}}$ tyder at materialpaletten er radikalt endra: nye materialar er tilgjengelege, eller gamle har forsvunne.
+
+  \item \textbf{Teknologitrykk} ($P_{\text{tek}}$): Endring i teknikkompleksitet ($\Delta T_c$) og talet p\r{a}a distinkte teknikkar. H\o g $P_{\text{tek}}$ tyder at nye produksjonsmetodar har opna nye regionar i formrommet.
+
+  \item \textbf{Dimensjonstrykk} ($P_{\text{dim}}$): Endring i gjennomsnittleg h\o gde, breidde og djupn mellom stilperiodar. H\o g $P_{\text{dim}}$ tyder at stolen sin geometri har endra seg vesentleg.
+
+  \item \textbf{Geografitrykk} ($P_{\text{geo}}$): Endring i talet p\r{a}a nasjonalitetar representerte i kvar stilperiode. H\o g $P_{\text{geo}}$ tyder at stilen har spreidd seg til (eller trekt seg tilbake fr\r{a}a) fleire land.
+
+  \item \textbf{\O konomitrykk} ($P_{\text{ekon}}$): Endring i gjennomsnittleg estimert vekt, som ein proksi for materialkostnad og produksjonsintensitet. Ein stol som vert 10 kg lettare har gjennomg\r{a}att ein \o konomisk transformasjon; ein stol som vert 30 kg tyngre har gjennomg\r{a}att ein materiell inversjon.
+\end{enumerate}
+
+For kvar overgang mellom kronologisk tilgrensande stilpar bereknar me alle fem trykka, normaliserer dei til prosentdelar av total endring, og identifiserer det \textbf{dominante trykket}: det trykket som forklarer st\o rst del av overgangen.
+
+
+% ================================================================
+\section{Stilperiodar som attraktorar}
+
+Eit lokalt optimum i fitnesslandskapet er ein konfigurasjon som er meir stabil enn omgjevnadene. I biologien er dette ein art som reproduserer seg stabilt; i designhistoria er det ein stilperiode som kanaliserer form inn i eit smalt band. Testen er enkel: dersom ein stilperiode er eit genuint lokalt optimum (ein \textbf{attraktor}), b\o r den interne formvariasjonen vere \emph{l\r{a}agare} enn den globale formvariasjonen. Dersom stilen berre er eit tilfeldig utsnitt av formrommet, b\o r den interne variasjonen vere \emph{lik} den globale.
+
+\subsection{Metode}
+
+Me samanliknar variasjonskoeffisienten (CV) for h\o gde og breidde \emph{innanfor} kvar stilperiode med den globale CV for alle stolar med stilmerke. Den globale $\text{CV}_H = 0{,}209$ og $\text{CV}_W = 0{,}244$. For kvar stil bereknar me \textbf{attraktorstyrkeratioen}:
+
+\begin{equation}
+  R_s = \frac{1}{2}\left(\frac{\text{CV}_{H,s}}{\text{CV}_{H,\text{global}}} + \frac{\text{CV}_{W,s}}{\text{CV}_{W,\text{global}}}\right)
+\end{equation}
+
+Ein $R_s < 0{,}5$ tyder at stilperioden konsentrerer forma meir enn dobbelt s\r{a}a stramt som tilfeldig variasjon: ein \textbf{sterk attraktor}. $0{,}5 \leq R_s < 0{,}8$ er ein \textbf{moderat attraktor}. $R_s \geq 0{,}8$ er ein \textbf{svak attraktor} som ikkje konsentrerer form signifikant utover global variasjon.
+
+
+\subsection{Resultat}
+
+Tabell~\ref{tab:attraktor} presenterer attraktorstyrken for alle 13 stilperiodar.
+
+\begin{table}[H]
+\centering
+\caption{Attraktorstyrke per stilperiode. $R_s$: attraktorstyrkeratio (l\r{a}agare = sterkare attraktor). Sterk: $R_s < 0{,}5$. Moderat: $0{,}5 \leq R_s < 0{,}8$. Svak: $R_s \geq 0{,}8$.}
+\label{tab:attraktor}
+\begin{tabular}{lrrrrl}
+\toprule
+\textbf{Stil} & $\text{CV}_H$ & $\text{CV}_W$ & $R_H$ & $R_W$ & \textbf{Styrke} \\
+\midrule
+Empire         & 0,013 & 0,033 & 0,063 & 0,136 & Sterk \\
+Hepplewhite    & 0,016 & 0,060 & 0,077 & 0,245 & Sterk \\
+Rokokko        & 0,047 & 0,079 & 0,224 & 0,323 & Sterk \\
+R\'{e}gence    & 0,066 & 0,071 & 0,316 & 0,292 & Sterk \\
+Nyklassisisme  & 0,092 & 0,034 & 0,442 & 0,138 & Sterk \\
+Jugend         & 0,079 & 0,128 & 0,375 & 0,523 & Sterk \\
+Historisme     & 0,122 & 0,153 & 0,584 & 0,625 & Moderat \\
+Barokk         & 0,207 & 0,135 & 0,987 & 0,551 & Moderat \\
+Louis XVI      & 0,024 & 0,268 & 0,117 & 1,098 & Moderat \\
+Funksjonalisme & 0,150 & 0,260 & 0,717 & 1,063 & Svak \\
+Modernisme     & 0,150 & 0,242 & 0,714 & 0,990 & Svak \\
+Renessanse     & 0,176 & 0,559 & 0,840 & 2,289 & Svak \\
+Postmodernisme & 0,409 & 0,320 & 1,956 & 1,310 & Svak \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\subsection{Tolking}
+
+Seks stilperiodar er \textbf{sterke attraktorar}: empire, hepplewhite, rokokko, r\'{e}gence, nyklassisisme og jugend. Desse er genuine lokale optimum i fitnesslandskapet: dei kanaliserer form inn i eit band som er meir enn dobbelt s\r{a}a smalt som den globale variasjonen. Empire er ekstrem: $R_H = 0{,}063$, som tyder at h\o gdevariasjonen innanfor empire er berre 6{,}3\,\% av den globale variasjonen. Empire-stolar er nesten identiske. Hepplewhite f\o lgjer tett ($R_H = 0{,}077$).
+
+Fire stilperiodar er \textbf{svake attraktorar}: funksjonalisme, modernisme, renessanse og postmodernisme. Desse konsentrerer ikkje form vesentleg utover global variasjon. Postmodernismen ($R_H = 1{,}956$) har h\o gdevariasjon som er n\ae rast dobbelt s\r{a}a stor som den globale. Han er ikkje ein attraktor; han er ein \emph{eksplosjon} i formrommet.
+
+\begin{quote}
+\textbf{Tolkingskonsekvens:} Ikkje alle stilperiodar er lokale optimum. Dei f\o r-modernistiske stilane (empire, hepplewhite, rokokko, r\'{e}gence) er genuine toppunkt i fitnesslandskapet: skarpe, konsentrerte, definerte av stramme materialaffordansar og kulturelle konvensjonar. Dei modernistiske og post\-modernistiske stilane (funksjonalisme, modernisme, postmodernisme) er plat\r{a}a eller eksplosjonssonar: regionar der seleksjonstrykka er spreidde og fleire konfigurasjonsrom er samstundes tilgjengelege.
+\end{quote}
+
+Monsteret har ein klar historisk logikk. F\o r industrialiseringa var materialpaletten smal og teknikkrepertoaret avgrensa: affordansane kanaliserte form effektivt. Etter industrialiseringa vart b\r{a}ade materialpaletten og teknikkrepertoaret s\r{a}a store at kanaliseringa vart svakare. Fleire vegar gjennom formrommet var opne samstundes, og resultatet var diffuse stilar med h\o g intern variasjon. \textbf{Attraktorstyrken er ein funksjon av affordanseavgrensinga}: jo f\ae rre materialar og teknikkar, jo sterkare attraktor.
+
+
+% ================================================================
+\section{Kva driv kvar overgang?}
+
+Tabell~\ref{tab:trykk} presenterer den relative styrken til kvart seleksjonstrykk i dei tolv overgangane mellom dei 13 stilperiodane.
+
+\begin{table*}[!ht]
+\centering
+\caption{Seleksjonstrykk-dominans per stilovergang (\% av total endring). Dominant trykk i feite typar.}
+\label{tab:trykk}
+\begin{tabular}{lrrrrrl}
+\toprule
+\textbf{Overgang} & $P_{\text{mat}}$ & $P_{\text{tek}}$ & $P_{\text{dim}}$ & $P_{\text{geo}}$ & $P_{\text{ekon}}$ & \textbf{Dominant} \\
+\midrule
+Ren. $\rightarrow$ Barokk          & 31 & 6  & 10 & \textbf{39} & 14 & Geografi \\
+Barokk $\rightarrow$ R\'{e}g.      & 38 & 5  & 4  & \textbf{47} & 6  & Geografi \\
+R\'{e}g. $\rightarrow$ Rokokko     & 17 & 11 & 10 & \textbf{51} & 11 & Geografi \\
+Rokok. $\rightarrow$ Heppl.        & 11 & 13 & 5  & \textbf{60} & 11 & Geografi \\
+Heppl. $\rightarrow$ L.\,XVI       & \textbf{30} & 22 & 27 & 0  & 21 & Material \\
+L.\,XVI $\rightarrow$ Nyklass.     & \textbf{46} & 31 & 20 & 0  & 4  & Material \\
+Nyklass. $\rightarrow$ Empire      & 32 & 6  & 9  & \textbf{34} & 19 & Geografi \\
+Empire $\rightarrow$ Hist.         & \textbf{60} & 24 & 12 & 0  & 3  & Material \\
+Hist. $\rightarrow$ Jugend         & \textbf{32} & 20 & 3  & 27 & 18 & Material \\
+Jugend $\rightarrow$ Funkj.        & \textbf{31} & 16 & 11 & 27 & 14 & Material \\
+Funkj. $\rightarrow$ Modern.       & \textbf{49} & 2  & 12 & 25 & 12 & Material \\
+Mod. $\rightarrow$ Postmod.        & 2  & 3  & 17 & 0  & \textbf{78} & \O konomi \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+
+\subsection{Tre historiske regime}
+
+Tabellen avdekkjer tre distinkte regime:
+
+\textbf{Regime I: Geografidominans (1400--1750).} Dei fire fyrste overgangane (renessanse til rokokko, deretter rokokko til hepplewhite) er alle dominerte av geografi (39--60\,\%). Stilendring i denne perioden er primert ei \emph{spreiingshistorie}: former reiser fr\r{a}a land til land, fr\r{a}a Italia via Frankrike til England og Skandinavia. Materiala endrar seg lite (eik og n\o ttetre dominerer), teknikkane er stabile (dreiing, skjering, tapping), men den geografiske rekkjevidda ekspanderer. Barokken spreidde seg fr\r{a}a Italia til heile Europa; rokokko reiste fr\r{a}a Frankrike til Skandinavia. \citet{braudel1979} sin ``longue dur\'{e}e'' er den relevante tidsmodellen: trege geopolitiske str\o ymer som gradvis endrar kva former som er tilgjengelege kvar.
+
+\textbf{Regime II: Materialdominans (1750--1970).} Overgangane fr\r{a}a hepplewhite til Louis XVI og vidare til empire, historisme, jugend, funksjonalisme og modernisme er alle dominerte av materiale (30--60\,\%). Stilendring i denne perioden er primert ei \emph{materialrevolusjon}: nye materialar (mahogni, st\r{a}al, kryssfiner, plast) opnar nye regionar i formrommet. Overgangen fr\r{a}a empire til historisme ($P_{\text{mat}} = 60$\,\%) er den mest materialdominerte i heile serien: industrialiseringa sprengjer materialpaletten fr\r{a}a mahognimonopolet til ei eksplosjonsarta mangfald. \citet{giedion1948} sin ``mekanisering'' er ikkje ein gradvis overgang; det er eit diskret materialsjokk.
+
+\textbf{Regime III: \O konomidominans (1970--).} Overgangen fr\r{a}a modernisme til postmodernisme er den einaste som er dominert av \o konomi (78\,\%). Her er det ikkje materialpaletten eller teknikkrepertoaret som endrar seg mest, men \emph{materialinvesteringa per stol}: postmodernismen sin gjennomsnittlege vekt (41{,}9 kg) er meir enn fire gonger funksjonalismen si (12{,}3 kg). Postmodernismen er eit \o konomisk oppr\o r: ein medviten inversjon av modernismen sin materialeffektivitet. I fitnesslandskapet tyder dette at det \o konomiske seleksjonstrykket har snudd forteikn: der modernismen optimerte for l\r{a}ag vekt og l\r{a}ag kostnad, optimerer postmodernismen for \emph{maksimal materiell investering} som kulturelt signal.
+
+
+\subsection{Geografi viker for materiale}
+
+Det mest sl\r{a}aande monsteret i tabell~\ref{tab:trykk} er \textbf{regimeskiftet rundt 1750}: f\o r dette tidspunktet dominerer geografi; etter dominerer materiale. Overgangen fr\r{a}a geografidominans til materialdominans samsvarar presist med den industrielle revolusjonen og framveksten av eit globalt materialmarknad. F\o r industrialiseringa var tilgangen til materialar geografisk avgrensa: ein norsk snikkarmeistar hadde tilgang til bj\o rk og furu, ein britisk til eik og mahogni. Etter industrialiseringa var materialpaletten global, og det var \emph{kva} material ein valde (ikkje \emph{kvar} ein var) som forma stolen.
+
+Denne overgangen er ein empirisk demonstrasjon av \citet{wallerstein2004} sin verdsystemteori: i den f\o r-industrielle verda var formgjeving lokal og geografisk avgrensa; i den industrielle verda er formgjeving global og materialdeterminert.
+
+
+% ================================================================
+\section{Ergonomi: den svakaste gradienten}
+
+FFF hevdar at funksjon er det svakaste seleksjonstrykket. Me kan teste dette direkte gjennom \textbf{seteh\o gda}, den mest funksjonsdeterminerte dimensjonen i ein stol. Ergonomisk forsking definerer eit optimum for seteh\o gde p\r{a}a om lag 43--47 cm (basert p\r{a}a gjennomsnittleg knesvinkelgeometri). Dersom funksjon var ein sterk gradient, burde alle stilar konvergere mot dette optimumet.
+
+Tabell~\ref{tab:ergo} viser avviket fr\r{a}a det ergonomiske optimumet (45 cm) for kvar stilperiode.
+
+\begin{table}[H]
+\centering
+\caption{Avvik fr\r{a}a ergonomisk optimum for seteh\o gde (45 cm). Berre stolar med registrert seteh\o gde.}
+\label{tab:ergo}
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Stil} & $N_{\text{SH}}$ & $\overline{\text{SH}}$ (cm) & $\Delta$ (cm) \\
+\midrule
+Empire            & 34 & 47,1 & $+$2,1 \\
+Rokokko           & 25 & 41,4 & $-$3,6 \\
+Historisme        & 52 & 50,5 & $+$5,5 \\
+Jugend            & 17 & 50,4 & $+$5,4 \\
+Hepplewhite       & 25 & 52,6 & $+$7,6 \\
+R\'{e}gence       & 23 & 52,0 & $+$7,0 \\
+Renessanse        & 15 & 53,2 & $+$8,2 \\
+Barokk            & 87 & 55,8 & $+$10,8 \\
+Nyklassisisme     & 15 & 57,7 & $+$12,7 \\
+Funksjonalisme    & 15 & 62,5 & $+$17,5 \\
+Louis XVI         & 17 & 65,1 & $+$20,1 \\
+Modernisme        &  7 & 70,1 & $+$25,1 \\
+Postmodernisme    & 14 & 75,9 & $+$30,9 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Tolking}
+
+\textbf{Berre empire ligg n\ae r det ergonomiske optimumet} ($\Delta = +2{,}1$ cm). Alle andre stilar avvik systematisk, og avviket \emph{aukar over tid}: fr\r{a}a $+8{,}2$ cm i renessansen til $+30{,}9$ cm i postmodernismen. Dersom funksjon var ein sterk gradient, burde avviket \emph{minke} over tid etter kvart som designarar l\ae rer meir om ergonomi. I staden observerer me det motsette.
+
+Rokokko er den einaste stilen som ligg \emph{under} optimumet ($-3{,}6$ cm). Rokoko-stolar har l\r{a}age, breie sete med kabriole-bein: ein konfigurasjon som er ergonomisk snarare enn estetisk motivert.
+
+Postmodernismen sitt avvik p\r{a}a $+30{,}9$ cm er ekstremt. Det tyder at gjennomsnittleg seteh\o gde er 75{,}9 cm, n\ae rast dobbelt s\r{a}a h\o gt som det ergonomiske optimumet. Mange postmodernistiske stolar er ikkje designa for komfortabel sitting; dei er \emph{skulpturar} som tilfeldigvis har ein sitjeflate. Det ergonomiske seleksjonstrykket er her n\ae r null.
+
+\begin{quote}
+\textbf{Funksjon er ikkje ein attraktor; funksjon er eit golv.} Stolen m\r{a}a bere ein kropp (det funksjonelle minimumskravet), men korleis og kor h\o gt han ber kroppen er bestemt av materiale, teknologi, geografi og kultur, ikkje av ergonomi.
+\end{quote}
+
+
+% ================================================================
+\section{Diskusjon}
+
+\subsection{Seleksjonstrykk som historisk periodisering}
+
+Dei tre regima (geografi $\rightarrow$ materiale $\rightarrow$ \o konomi) tilbyr ein alternativ periodisering av designhistoria som ikkje er basert p\r{a}a stilmerke, men p\r{a}a kva seleksjonstrykk som dominerer. Denne periodiseringa har tre fordelar over den konvensjonelle.
+
+\textbf{Fyrst} er ho empirisk grunngjeven: tala i tabell~\ref{tab:trykk} er utrekna fr\r{a}a data, ikkje kvalitativt postulerte. \textbf{Dernest} forklarer ho kvifor stilskifte skjer: ikkje fordi designarar ``vel'' ein ny stil, men fordi det dominerande seleksjonstrykket endrar seg. \textbf{Til sist} predikerer ho kva slags stilskifte me kan forvente i framtida: dersom eit nytt seleksjonstrykk (til d\o mes berekraft) vert dominant, vil det produsere eit nytt regimeskifte med same struktur som dei tre tidlegare.
+
+\subsection{Attraktorar og plat\r{a}a}
+
+Skiljet mellom sterke attraktorar (empire, hepplewhite, rokokko) og svake attraktorar (funksjonalisme, postmodernisme) har ein viktig implikasjon for fitnesslandskapet: \textbf{ikkje alle stilperiodar er toppunkt}. Nokon er plataa. I landskapsterminologi: empire er ein fjelltopp (smal, bratt, definert); postmodernisme er ei slette (flat, vid, uavgrensa). Fitnesslandskapet er ikkje eit jamnt terreng med like toppunkt; det har b\r{a}ade alpar og savanner.
+
+Denne topografiske variasjonen korrelerer med den historiske utviklinga: f\o r-industrielle stilar er toppunkt; industrielle og post-industrielle stilar er plataa. Dette er ikkje tilfeldig. Toppunkt oppst\r{a}ar n\r{a}ar affordansane er tronge (f\r{a}a materialar, f\r{a}a teknikkar, sterk kulturell norm); plataa oppst\r{a}ar n\r{a}ar affordansane er breie (mange materialar, mange teknikkar, svak kulturell norm). Industrialiseringa vidga affordansane og flata ut landskapet.
+
+\subsection{Avgrensingar}
+
+(1) Seleksjonstrykka er proksivar, ikkje direkte m\r{a}al: materialentropi er ein proksi for materialtrykk, ikkje eit direkte m\r{a}al p\r{a}a kor sterkt materialet p\r{a}averkar form. (2) Kulturelt trykk er ikkje operasjonalisert: estetiske preferansar, statusmarkering og ideologisk motivasjon er ikkje fanga i dei fem m\r{a}ala. (3) Attraktorstyrkeanalysen nyttar berre h\o gde og breidde, ikkje fullstendig formrom. (4) Prosentfordelinga mellom trykk er sensitiv for normaliseringsmetoden. (5) Det \o konomiske trykket brukar vekt som proksi, men lettare stolar er ikkje alltid billegare (karbonfiber er lettare og dyrare enn st\r{a}al).
+
+
+% ================================================================
+\section{Konklusjon}
+
+Formendring i 700 \r{a}ar med europeisk stoldesign er driven av tre regime av seleksjonstrykk: geografi (1400--1750), materiale (1750--1970) og \o konomi (1970--). Kvar overgang mellom stilperiodar har eit identifiserbart dominant trykk: dei f\o r-industrielle er geografidrivne, dei industrielle er materialdrivne, og den seinmoderne er \o konomidrive.
+
+Seks av 13 stilperiodar er genuine attraktorar: dei kanaliserer form meir enn dobbelt s\r{a}a stramt som global variasjon. Fire er svake attraktorar der forma spreidde seg like vidt som i datamaterialet som heilskap. Attraktorstyrken minkar over tid: industrialiseringa vidgar affordansane og flatar ut landskapet.
+
+Ergonomi er den svakaste gradienten. Berre empire ligg n\ae r det ergonomiske optimumet for seteh\o gde; postmodernisme avvik med over 30 cm. Funksjon er ikkje ein attraktor i fitnesslandskapet; funksjon er eit golv. Det definerer kva som er \emph{mogleg} (stolen m\r{a}a bere ein kropp), men ikkje kva som er \emph{realisert}.
+
+\begin{quote}
+\textbf{Form f\o lgjer ikkje funksjon. Form f\o lgjer den sterkaste gradienten, og gradienten skiftar med tid, stad og teknologi.}
+\end{quote}
+
+
+% ================================================================
+\newpage
+\onecolumn
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
