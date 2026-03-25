@@ -3,7 +3,7 @@
 % Kappa-tekst for artikkelbasert avhandling
 % Spraak: Nynorsk
 
-\documentclass[12pt, a4paper]{article}
+\documentclass[10pt, a4paper]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -21,8 +21,8 @@
 \usepackage{float}
 \usepackage{enumitem}
 
-\geometry{margin=2.5cm}
-\onehalfspacing
+\geometry{margin=1.8cm, top=1.8cm, bottom=1.8cm}
+\setstretch{1.15}
 \graphicspath{{fig/}}
 
 \title{%
@@ -122,9 +122,23 @@ I FFF er forma ein posisjon i eit $n$-dimensjonalt landskap der kvar akse repres
 
 \textbf{Landskapsskifte er materialrevolusjonar.} Når eit nytt materiale vert tilgjengeleg, endrar heile landskapstopografien seg. Dei gamle toppunkta kan verte dalar, og nye toppunkt oppstår. STOLAR-dataa dokumenterer tre slike landskapsskifte: (1) Overgangen frå det lokale treregimet til det koloniale handelsregimet rundt 1600, då mahogni frå Karibia endra affordanserommet radikalt. (2) Industrialiseringa frå 1850, då stål, dampbøying og mekanisert produksjon opna heilt nye regionar av formrommet. (3) Den syntetiske revolusjonen etter 1945, då plast, glasfiber og skumpolstring gjorde det mogleg å forme stolar utan tradisjonell ramme-og-panel-konstruksjon. Shannon-entropien dokumenterer desse skifta kvantitativt: $H' < 2$ bits i det fyrste regimet, $H' \approx 3{,}5$ bits i det andre, og $H' = 5{,}07$ bits i det tredje.
 
-Konsekvensen er at formhistoria ikkje er ein jamn progresjon mot eit funksjonelt optimum, men ein serie navigeringar i stadig skiftande terreng. \citet{frazer1995} var den fyrste designteoretikaren som eksplisitt kopla evolusjonær modellering til arkitektur, men utan eit empirisk datasett. STOLAR-prosjektet gjev det empiriske grunnlaget.
+Konsekvensen er at formhistoria ikkje er ein jamn progresjon mot eit funksjonelt optimum, men ein serie navigeringar i stadig skiftande terreng (figur~\ref{fig:fitnesslandskap}). \citet{frazer1995} var den fyrste designteoretikaren som eksplisitt kopla evolusjonær modellering til arkitektur, men utan eit empirisk datasett. STOLAR-prosjektet gjev det empiriske grunnlaget.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{ill03_fitnesslandskap.png}
+  \caption{Det multidimensjonale fitnesslandskapet. Kvar topp representerer ein stilperiode (lokalt optimum). Barrokk er hoegast (mest materielt intensiv); postmodernisme er flatast (mest materiellt egalitaer). Materialdimensjonen og kulturdimensjonen definerer terrenget.}
+  \label{fig:fitnesslandskap}
+\end{figure}
 
 \subsection{Distribuert kognisjon}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{ill04_distribuert.png}
+  \caption{Formgjeving som distribuert intelligent prosess. Materialet (MI=0,382), verktoyeet (MI=0,382), designaren, marknaden og kulturen utover alle agentur. Forma er emergent, ikkje dedusert. Physarum-analogi nedst til venstre.}
+  \label{fig:distribuert}
+\end{figure}
 
 \citet{hutchins1995} viste i \textit{Cognition in the Wild} at navigasjonen av eit marinefartøy ikkje er lokalisert i hovudet til éin navigatør, men distribuert over eit nettverk av menneske, instrument, kartverk og rutinar. \citet{clark2008} formulerte den utvida kognisjonshypotesen: kognitive prosessar strekkjer seg utover hjernen og inn i kroppen og miljøet. \citet{levin2019} utvida dette til ein generell teori om kognisjon på alle skalaer, frå einskildceller til organismar, med omgrepet ``kognitiv lyskjegle'' (\textit{cognitive lightcone}): det rommet av framtidige tilstandar eit system kan modellere og navigere mot.
 
@@ -148,7 +162,7 @@ Designhistoria vekslar mellom desse to fasane: lange periodar med utnytting der 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{fig2_entropi.pdf}
+  \includegraphics[width=\textwidth]{07_material_entropy.png}
   \caption{Shannon-entropi for materialar over tid ($H'$, bits). Monotont stigande, med tre tydelege faseskifte som svarar til kolonialhandel, industrialisering og syntetisk revolusjon.}
   \label{fig:entropi}
 \end{figure}
@@ -156,6 +170,13 @@ Designhistoria vekslar mellom desse to fasane: lange periodar med utnytting der 
 \subsection{Affordanse}
 
 \citet{gibson1977} definerte \textbf{affordanse} som dei handlingsmoglegheitene eit miljø tilbyr ein organisme. \citet{pye1968} skilde mellom ``the workmanship of risk'' og ``the workmanship of certainty''. \citet{ingold2013} utvida affordanseomgrepet til materialar: eit materiale tilbyr ikkje berre moglegheiter, det motsetter seg og kanaliserer. I FFF yter kvart materiale ei distinkt form for tilbod og motstand, ein affordanse som fysisk kanaliserer bestemte geometriar og stengjer andre ute.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\textwidth]{teikn_funksjoner.png}
+  \caption{Kreftene bak ein stol: materialet (M), funksjonen (F) og geografien (G) utover alle seleksjonstrykk paa den endelege forma. Pilane viser korleis kreftene kanaliserer konstruksjonen.}
+  \label{fig:funksjoner}
+\end{figure}
 
 STOLAR-dataa gjev den fyrste kvantitative dokumentasjonen av denne kanaliseringseffekten. $H/W$-ratioen (høgde delt på breidde) varierer systematisk mellom materialgrupper:
 
@@ -195,9 +216,16 @@ Meir presist: i eit system der alle stolar deler same funksjon (å bere ein sitj
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{fig15_mi_stil.pdf}
-  \caption{Fellesinformasjon med stilperiode. Proporsjonar ber 51,9\,\% av all stilinformasjon (MI = 2,072 bits). Funksjon ber null.}
-  \label{fig:mi}
+  \includegraphics[width=0.9\textwidth]{ill05_paradigme.png}
+  \caption{Paradigmeskiftet: fraa deterministisk funksjonalisme (ein aksial, ein form) til Form Follows Fitness (fleirdimensjonalt fitnesslandskap med fleire lokale optimum). Sullivan sitt aksiom er eit 1D-spesialtilfelle av eit $n$-dimensjonalt rammeverk.}
+  \label{fig:paradigme}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{ill01_seleksjonstrykk.png}
+  \caption{Seleksjonstrykk-flyten: materiale, tid, geografi, kultur og funksjon bidreg alle med ulike MI-verdiar til den endelege forma. Funksjon (MI=0) er den svakaste inngangen.}
+  \label{fig:seleksjon}
 \end{figure}
 
 
