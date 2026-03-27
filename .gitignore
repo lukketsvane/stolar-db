@@ -37,3 +37,4 @@ turnable-chair/.next/
 .vercel
 .env*.local
 claude-prism/
+.prism
