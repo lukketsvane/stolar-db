@@ -36,3 +36,4 @@ broken_images_audit.json
 turnable-chair/.next/
 .vercel
 .env*.local
+claude-prism/
