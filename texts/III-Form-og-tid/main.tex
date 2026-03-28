@@ -25,6 +25,17 @@
 \setstretch{1.15}
 \graphicspath{{fig/}}
 
+% --- Stilisering for kvit bakgrunn ---
+\hypersetup{
+  colorlinks=true,
+  linkcolor={blue!60!black},
+  citecolor={green!40!black},
+  urlcolor={blue!50!black},
+  bookmarks=true,
+  pdftitle={Form og tid},
+  pdfauthor={Iver Raknes Finne},
+}
+
 \title{%
   \textbf{Form og tid}\\[0.4em]
   \large Maskinl\ae ring, teknikk-entropi og det emergente stilomgrepet%
@@ -153,7 +164,7 @@ Dimensjonar + materialar (34 var.) & 0,823 & 0,036 \\
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\columnwidth]{fig7_feature_importance.pdf}
+  \includegraphics[width=\columnwidth]{fig7_feature_importance.png}
   \caption{Feature importance for stilklassifisering (Random Forest). Dimensjonar (mork) dominerer med 56,7\,\% samla importance.}
   \label{fig:importance}
 \end{figure}
@@ -388,7 +399,7 @@ Parallelt med material- og dimensjonsanalysen undersøkjer me korleis \textbf{ko
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\columnwidth]{fig8_teknikk_entropi.pdf}
+  \includegraphics[width=\columnwidth]{fig8_teknikk_entropi.png}
   \caption{Parallell stigning: material- og teknikk-entropi over tid. Begge kurver stig fraa $\sim$1 bit til $\sim$4--5 bits.}
   \label{fig:teknikk}
 \end{figure}
@@ -397,7 +408,7 @@ Teknikk-entropien stig frå 1,0 bits til 3,67 bits, ein parallell til materialen
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\columnwidth]{fig13_teknikk_evolusjon.pdf}
+  \includegraphics[width=\columnwidth]{fig13_teknikk_evolusjon.png}
   \caption{Teknikk-evolusjon over fem hundreaar. Raude boksar markerer teknikkar som forsvinn (skjering, dreiing); gronne markerer teknikkar som oppstaar (formboyging, laminering, sveising).}
   \label{fig:teknikk_evo}
 \end{figure} Nye teknikkar kumulerer: \emph{dreiing} kjem på 1500-talet, \emph{formbøying} og \emph{laminering} på 1800-talet, \emph{sveising} og \emph{sprøytestøyping} på 1900/2000-talet. Kvar ny teknikk opnar nye regionar i formrommet.
