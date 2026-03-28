@@ -10,6 +10,7 @@
 \usepackage[nynorsk]{babel}
 \usepackage{mathpazo}
 \usepackage{amsmath, amssymb, amsthm}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{hyperref}
 \usepackage{setspace}
 \usepackage{geometry}
@@ -19,6 +20,8 @@
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{longtable}
+\usepackage{graphicx}
+\graphicspath{{fig/}}
 
 \geometry{margin=2.5cm, top=2.5cm, bottom=2.5cm}
 \setstretch{1.15}
@@ -139,6 +142,13 @@ $\x \in B$ og ikkje ei anna $\y \in B$.
 Forklaringa av dette er emnet for alt som f\o lgjer.
 \end{prop}
 
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.85\textwidth]{fig1_formrom.pdf}
+  \caption{Formrommet $\MC$ med tre regionar: den busette regionen $B$ (gr\o ne punkt og tettleiksskuggar), den opne regionen $O$ (lys sand), og den forbodne regionen $F$ (gr\aa{} bakgrunn utanfor $\partial\MC$). Pila $\tau\!\uparrow$ viser korleis grensa utvidar seg med ny teknologi.}
+  \label{fig:formrom}
+\end{figure}
+
 
 % ============================================================
 % II  KREFTER
@@ -254,6 +264,20 @@ Skilnaden mellom to former under same funksjon er ikkje ein feil, men eit uttryk
 at kreftene kan balanserast p\aa{} meir enn \'ein m\aa te.
 \end{teorem}
 
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\textwidth]{fig2_seleksjonstrykk.pdf}
+  \caption{Motstridande seleksjonstrykk. Venstre: materiell affordanse $s_1$ (trekkjer mot opphav). Midten: kulturell aksept $s_2$ (trekkjer mot \o vre h\o gre). H\o gre: samansett felt med skravert konfliktregion der $\nabla s_1 \cdot \nabla s_2 < 0$. Kompromiss-punktet er markert.}
+  \label{fig:seleksjonstrykk}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.85\textwidth]{fig4_kompromiss.pdf}
+  \caption{Kompromiss og Pareto-front. Kvart bl\aa tt punkt er ei realisert form $\x \in B$. Den raude kurva viser Pareto-fronten: mengda av optimale kompromiss der ein ikkje kan forbetre eitt trykk utan \aa{} forverre det andre. Tre arketypar er markerte.}
+  \label{fig:kompromiss}
+\end{figure}
+
 
 % ============================================================
 % III  LANDSKAP
@@ -341,6 +365,13 @@ der kvart steg er lokalt: $\|\gamma(t+\mathrm{d}t) - \gamma(t)\| < \varepsilon$ 
 Stigen er stiavhengig: den tilgjengelege regionen ved tid $t$ avheng av $\gamma([0, t])$.
 \end{defn}
 
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.85\textwidth]{fig3_landskap.pdf}
+  \caption{Tilpassingslandskapet $L$ som 3D-overflate. Fire lokale maksimum (haugar) $S_1$--$S_4$ representerer stilar: attraksjonsbasseng der former samlar seg. Dalane mellom dei er barrierar som krev energi \aa{} krysse.}
+  \label{fig:landskap}
+\end{figure}
+
 
 % ============================================================
 % IV  DYNAMIKK
@@ -405,6 +436,13 @@ seleksjonstrykka for neste form:
 der $\eta_i$ er ein ``impaktfunksjon'' som uttrykkjer korleis den realiserte forma $\x$
 endrar det $i$-te trykket for framtidige former $\y$. Landskapet har minne.
 \end{defn}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\textwidth]{fig5_punktert.pdf}
+  \caption{Punktert likevekt i materialentropi. Shannon-entropien $H'(t)$ over materialkategoriar i STOLAR-datasettet (1280--2024) viser plat\aa{} avbrotne av br\aa{} stigingar ved teknologiske omveltingar. Empiriske verdiar: $H' = 2{,}67$ (1600-talet), $H' = 3{,}51$ (1900-talet).}
+  \label{fig:punktert}
+\end{figure}
 
 
 % ============================================================
@@ -549,6 +587,20 @@ minima i konformasjonsrom, for ein handverkar som omg\ae r ein umogleg geometri 
 alternativ konstruksjonsmetode, og for ein sivilisasjon som investerer i infrastruktur
 (kortsiktig kostnad) for langsiktig vinst.
 \end{merknad}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.85\textwidth]{fig6_navigator.pdf}
+  \caption{Navigator-trippelet $N = (G, \mu, \alpha)$. M\aa lregionen $G$ (gr\o n sirkel), noverande posisjon $\x$ (raud), avstandsfunksjonen $\mu(\x) = d(\x, G)$ (stipla linje), og justeringsfeltet $\alpha(\x)$ (pilar langs vandringa). Vilk\aa ret $\langle \alpha, -\nabla\mu \rangle > 0$ sikrar at systemet n\ae rmar seg m\aa let.}
+  \label{fig:navigator}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\textwidth]{fig7_grenseflate.pdf}
+  \caption{Grenseflate-hierarkiet: nestede navigatorskalaer fr\aa{} ionkanal ($\mu$m, ms) til biosystem (globalt, tusen\aa r). Kvar ellipse representerer grenseflata $\partial N_i$ til ein navigator p\aa{} eit gitt niv\aa. St\o rre grenseflate gjev tilgang til fleire tilstandar og lengre tidshorisontar.}
+  \label{fig:grenseflate}
+\end{figure}
 
 
 % ============================================================
@@ -734,5 +786,261 @@ kontinuumet avgjer kva slags interaksjon som er optimal.
 Kontinuumet er sj\o lv ein dimensjon i eit \emph{metaformrom}: rommet av moglege
 navigatorar. \formlaere{} er ein modell som opererer i dette metarommet.
 \end{merknad}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\textwidth]{fig10_overtalbarheit.pdf}
+  \caption{Overtalbarheitskontinuumet. Fire klassar av navigatorar ordna etter korleis dei best kan styrast: fr\aa{} maskinvare-modifikasjon (klasse A) til kommunikasjon av grunnar (klasse D). Gradientpila viser overgangen fr\aa{} ``meir kunnskap om systemets indre'' til ``meir kommunikasjon med systemet som heilskap''.}
+  \label{fig:overtalbarheit}
+\end{figure}
+
+
+% ============================================================
+% VIII  DISTRIBUSJON
+% ============================================================
+\section{Distribusjon}
+\label{sec:distribusjon}
+
+\begin{quote}
+\itshape Korresponderer med \formlaere{} 8.1--8.52
+\end{quote}
+
+\begin{teorem}[Distribuert navigasjon]
+\label{teo:distribuert}
+Av postulat~\ref{post:fleiretrykk} (fleire trykk), postulat~\ref{post:substrat}
+(substrat-uavhengigheit), og definisjon~\ref{def:grenseflate} (grenseflate) f\o lgjer
+det at forma oppst\aa r mellom navigatorar, ikkje innanfor ein av dei.
+\end{teorem}
+
+\begin{proof}
+Etter postulat~\ref{post:fleiretrykk} verkar fleire uavhengige seleksjonstrykk p\aa{}
+ulike skalaer. Etter postulat~\ref{post:substrat} kan navigasjon finst p\aa{} kvar av
+desse skalaene. Kvar skala har sin eigen navigator med si eiga grenseflate.
+Sidan navigatorane er uavhengige (opererer p\aa{} ulike trykk), kontrollerer ingen
+einskild av dei den samla tilpassingsverdien.
+\end{proof}
+
+\begin{defn}[Fleirskala-kompetansearkitektur]
+\label{def:fleirskala}
+Lat $\{N_1, N_2, \ldots, N_m\}$ vere ei mengd navigatorar ordna etter
+grenseflate-storleik: $|\partial N_1| < |\partial N_2| < \cdots < |\partial N_m|$.
+Systemet har ein fleirskala-kompetansearkitektur om:
+\begin{enumerate}[label=(\roman*)]
+  \item Kvar $N_i$ er sj\o lv ein kompetent probleml\o ysar i sitt eige rom
+  \item $N_{i+1}$ deformerer tilpassingslandskapet for $N_i$:
+    \[
+      f_i(\x) = f_0(\x) + \sum_{j > i} g_j(\x, N_j)
+    \]
+  \item $N_i$ f\o lgjer lokale gradientar i $f_i$ og bidreg likevel til m\aa l den ikkje
+        kan representere
+\end{enumerate}
+\end{defn}
+
+\begin{merknad}
+Om ein zoomar inn langt nok, ser ein alltid berre mekanisme ($N_i$ f\o lgjer sin lokale
+gradient). Om ein zoomar ut, ser ein intelligent kompromiss (det aggregerte systemet
+navigerer mot eit globalt m\aa l). Begge skildringane er sanne og refererer til ulike
+niv\aa{} i hierarkiet.
+\end{merknad}
+
+\begin{defn}[Binding og oppl\o ysing]
+\label{def:binding}
+Graden av binding mellom navigatorar $N_i, N_j$ er proporsjonal med den gjensidige
+informasjonen mellom deira indre tilstandar:
+\[
+  B(N_i, N_j) = I(X_i;\, X_j)
+\]
+N\aa r $B$ aukar, viskar informasjonsgrensene ut, og det oppst\aa r eit ``st\o rre sj\o lv''
+med vidare grenseflate. N\aa r $B$ minkar (samanbindinga bryt saman), krympar systemet.
+Biologisk: kreft. Formhistorisk: dekadanse.
+\end{defn}
+
+\begin{teorem}[Stilar er avleidde]
+\label{teo:stilar-avleidde}
+Av definisjon~\ref{def:stil} og~\ref{def:tilpassingsfunksjon} f\o lgjer det at ein
+stil er fullt ut bestemt av seleksjonstrykka og vektinga. Stilen har ingen eigne
+friheitsgrader; han er ein attraksjonsbasseng i eit landskap som er bygd av krefter.
+\end{teorem}
+
+
+% ============================================================
+% IX  STASJON\AE R VERKNAD
+% ============================================================
+\section{Stasjon\ae r verknad}
+\label{sec:verknad}
+
+\begin{quote}
+\itshape Korresponderer med \formlaere{} 9.1--9.52
+\end{quote}
+
+\begin{postulat}[Stiavhengig tilpassingsverdi]
+\label{post:stiavhengig}
+Tilpassingsfunksjonen opererer ikkje berre p\aa{} posisjonar, men p\aa{} vegar gjennom
+formrommet. Lat $\gamma : [0, T] \to \MC$ vere ein stig. Tilpassingsverdien er eit
+funksjonale:
+\[
+  S[\gamma] = \int_0^T \mathcal{L}\bigl(\gamma(t),\, \gamma'(t),\, t\bigr)\,\mathrm{d}t
+\]
+der $\mathcal{L}$ er ein Lagrangian som avheng av posisjonen $\gamma(t)$,
+farten $\gamma'(t)$, og tida $t$.
+\end{postulat}
+
+\begin{falsifisering}
+Postulatet fell om to identiske former med ulik produksjonshistorie konsekvent har same
+overlevings- og reproduksjonsrate.
+\end{falsifisering}
+
+\begin{teorem}[Stasjon\ae r verknad]
+\label{teo:stasjonaer}
+Blant alle moglege vegar $\gamma$ fr\aa{} $\x_0$ til $\x_T$ realiserer seg den som gjer
+$S[\gamma]$ stasjon\ae r:
+\[
+  \delta S[\gamma] = 0
+\]
+der $\delta$ er den funksjonelle variasjonen.
+Same prinsipp styrer lys (Fermats prinsipp), mekanikk (Hamiltons prinsipp),
+og elektriske krinsar (Kirchhoffs lover).
+\end{teorem}
+
+\begin{teorem}
+\label{teo:veg}
+Av postulat~\ref{post:stiavhengig} f\o lgjer det at \aa{} gi form ikkje er \aa{} finne
+den beste posisjonen, men den beste \emph{vegen}.
+\end{teorem}
+
+\begin{teorem}[Spreiingsrelasjonen]
+\label{teo:spreiing}
+Lat $\sigma^2[\gamma]$ vere variansen i formfordelinga rundt den stasjon\ae re vegen.
+Lat $\|\svec\|$ vere styrken til det samla seleksjonstrykket. D\aa:
+\[
+  \sigma^2[\gamma] \propto \frac{1}{\|\svec\|}
+\]
+Jo sterkare seleksjon, jo smalare spreiing.
+Jo svakare seleksjon, jo breiare spreiing.
+\end{teorem}
+
+\begin{prediksjon}
+I STOLAR-datasettet skal materialkategoriar med sterke seleksjonstrykk
+(t.d.\ milit\ae r- eller industriutstyr) vise l\aa gare geometrisk varians enn
+kategoriar med svake trykk (t.d.\ dekorative m\o blar).
+\end{prediksjon}
+
+\begin{defn}[Substrat-avhengig fordeling]
+\label{def:substrat-fordeling}
+Sannsynlegheitsfordelinga over formrommet er substrat-avhengig:
+\[
+  P(\x \mid \text{substrat}) \neq P(\x \mid \text{substrat}')
+\]
+Kvar tradisjon, kvart verkt\o y, kvart materiale genererer ein annan fordeling.
+Substratskifte endrar ikkje berre korleis form vert laga; det endrar kva former
+som vert oppdaga. Dei fanst alltid i formrommet, men var utilgjengelege fr\aa{}
+tidlegare substrat.
+\end{defn}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.85\textwidth]{fig8_stasjonaer_veg.pdf}
+  \caption{Stasjon\ae r veg gjennom formrommet. Den raude kurva $\gamma^*$ er den realiserte vandringa fr\aa{} $\x_0$ (firkant) til $\x_T$ (stjerne) som gjer verknadsfunksjonalet $S[\gamma]$ stasjon\ae rt ($\delta S = 0$). Stipla linjer viser alternative, ikkje-realiserte vegar. Bakgrunnen er tilpassingslandskapet i konturform.}
+  \label{fig:stasjonaer}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\textwidth]{fig9_spreiing.pdf}
+  \caption{Spreiingsrelasjonen $\sigma^2[\gamma] \propto 1/\|\svec\|$. Venstre: hyperbolsk samanheng mellom seleksjonsstyrke og formvarians, med tre kategoriar markerte. H\o gre: dei tilsvarande formfordelingane -- sterkt trykk gjev ei smal fordeling, svakt trykk gjev brei spreiing.}
+  \label{fig:spreiing}
+\end{figure}
+
+
+% ============================================================
+% X  PROVISORISK KOMPROMISS
+% ============================================================
+\section{Provisorisk kompromiss}
+\label{sec:provisorisk}
+
+\begin{quote}
+\itshape Korresponderer med \formlaere{} 10.1--10.5
+\end{quote}
+
+\begin{teorem}
+\label{teo:provisorisk}
+Av postulat~\ref{post:dynamisk} (dynamisk landskap) og postulat~\ref{post:stiavhengig}
+(stiavhengig verknad) f\o lgjer det at kvart objekt er eit provisorisk kompromiss mellom
+krefter som allereie er i endring.
+\end{teorem}
+
+\begin{teorem}
+\label{teo:varige}
+Av definisjon~\ref{def:fleirskala} (fleirskala-kompetansearkitektur) f\o lgjer det at
+dei mest varige tradisjonane er dei med flest kompetente delniv\aa: fleire uavhengige
+tilpassingsmekanismar gjev raskare respons n\aa r landskapet endrar seg.
+\end{teorem}
+
+\begin{teorem}[Sj\o lvreferanse og falsifiserbarheit]
+\label{teo:sjoelvreferanse}
+Denne teksten er sj\o lv ein posisjon i eit intellektuelt formrom. Om nokon viser at
+\'eitt einaste seleksjonstrykk er tilstrekkeleg til \aa{} forklare all formvariasjon for
+ein funksjonell klasse, fell postulat~\ref{post:fleiretrykk}, og med det fell
+teorem~\ref{teo:variasjon}, \ref{teo:kompromiss}, \ref{teo:fleire-kompromiss},
+\ref{teo:fleirehaugar}, \ref{teo:stilar}, \ref{teo:punktert}, \ref{teo:distribuert},
+\ref{teo:stilar-avleidde}, og~\ref{teo:spreiing}.
+At teksten kan fellast, er grunnen til at ho er gyldig.
+\end{teorem}
+
+
+% ============================================================
+% ORDLISTE
+% ============================================================
+\section*{Ordliste}
+\label{sec:ordliste}
+\addcontentsline{toc}{section}{Ordliste}
+
+\begin{center}
+\begin{longtable}{@{}lll@{}}
+\toprule
+\textbf{Symbol} & \textbf{Tyding} & \textbf{Innf\o rt} \\
+\midrule
+\endhead
+$\x$                    & Attributtvektor til ein gjenstand
+                        & Def.~\ref{def:attributtvektor} \\[3pt]
+$\MC$                   & Formrom for klasse $C$
+                        & Def.~\ref{def:formrom} \\[3pt]
+$B,\; O,\; F$           & Busett, open, forboden region
+                        & Def.~\ref{def:regiontypologi} \\[3pt]
+$s_i$                   & Seleksjonstrykk
+                        & Def.~\ref{def:seleksjonstrykk} \\[3pt]
+$\svec$                 & Seleksjonstrykkvektoren
+                        & Def.~\ref{def:seleksjonsvektor} \\[3pt]
+$f$                     & Tilpassingsfunksjonen
+                        & Def.~\ref{def:tilpassingsfunksjon} \\[3pt]
+$L$                     & Tilpassingslandskapet
+                        & Def.~\ref{def:landskap} \\[3pt]
+$S$                     & Stil (attraksjonsbasseng)
+                        & Def.~\ref{def:stil} \\[3pt]
+$\gamma$                & Stig (vandring) i formrommet
+                        & Def.~\ref{def:vandring} \\[3pt]
+$N = (G, \mu, \alpha)$  & Navigator (trippel)
+                        & Def.~\ref{def:navigator} \\[3pt]
+$\partial N$            & Grenseflate (kognitiv lyskjegle)
+                        & Def.~\ref{def:grenseflate} \\[3pt]
+$I(N)$                  & Intelligens (evne til \aa{} unng\aa{} lokale opt.)
+                        & Def.~\ref{def:intelligens} \\[3pt]
+$S[\gamma]$             & Verknadsfunksjonalet
+                        & Post.~\ref{post:stiavhengig} \\[3pt]
+$P(N)$                  & Optimal styrestrategi
+                        & Def.~\ref{def:overtalbarheit} \\[3pt]
+$B(N_i, N_j)$           & Bindingsgrad mellom navigatorar
+                        & Def.~\ref{def:binding} \\
+\bottomrule
+\end{longtable}
+\end{center}
+
+\bigskip
+\begin{center}
+\textit{Cygnus (Iver Raknes Finne), AHO, 2026}
+\end{center}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
 
 \end{document}
