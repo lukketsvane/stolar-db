@@ -164,7 +164,7 @@ Dimensjonar + materialar (34 var.) & 0,823 & 0,036 \\
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\columnwidth]{fig7_feature_importance.png}
+  \includegraphics[width=\columnwidth]{fig7_feature_importance.pdf}
   \caption{Feature importance for stilklassifisering (Random Forest). Dimensjonar (mork) dominerer med 56,7\,\% samla importance.}
   \label{fig:importance}
 \end{figure}
@@ -231,8 +231,8 @@ Tabell~\ref{tab:style_dims} syner gjennomsnittlege dimensjonar for dei mest repr
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\columnwidth]{10_style_dimension_strips.png}
-  \caption{Den kronologiske hogdegradienten: kvar stilperiode har ein distinkt hogdeprofil. Tidlege stilar er hogast.}
+  \includegraphics[width=\columnwidth]{10_style_dimension_strips.pdf}
+  \caption{Den kronologiske høgdegradienten: kvar stilperiode har ein distinkt høgdeprofil. Tidlege stilar er høgast.}
   \label{fig:gradient}
 \end{figure}
 
@@ -296,7 +296,7 @@ Mønsteret er eintydig: $\text{SH}/H$ stig frå 52\,\% på 1600-talet til 72\,\%
 
   \item \textbf{Teknikktransisjon:} Tradisjonell tapping og dreiing produserer vertikale stolpar som naturleg strekk seg oppover. Formbøying, sveising og sprøytestøyping produserer former som kurvar seg horisontalt. Teknikken endrar stolens vertikale logikk.
 
-  \item \textbf{Kulturell endring:} Den høge stolryggen har historisk vore eit statussymbol: tronstolen, bispesstolen, høgsetet. Modernismens demokratisering av design reduserer ryggen til ein ergonomisk funksjon, og i den mest radikale forma (2000-talet) forsvinn han heilt.
+  \item \textbf{Kulturell endring:} Den høge stolryggen har historisk vore eit statussymbol: tronstolen, bispestolen, høgsetet. Modernismens demokratisering av design reduserer ryggen til ein ergonomisk funksjon, og i den mest radikale forma (2000-talet) forsvinn han heilt.
 \end{enumerate}
 
 At $\text{SH}/H$ nærmar seg 1,0 på 2000-talet tyder at stolen konvergerer mot ein \emph{sitjeplattform}: eit objekt der heile den vertikale profilen er sete. Dette er ikkje berre ein dimensjonell endring: det er ein fundamental endring i kva ein stol \emph{er}. Den sekulære stiginga i $\text{SH}/H$ er kanskje det sterkaste enkelttalet i heile STOLAR-databasen for å illustrere at ``form follows function'' er ein forenkling: forma følgjer ikkje funksjonen (å sitje), men materialet, teknikken og den kulturelle konteksten som bestemmer \emph{korleis} ein sit.
@@ -399,8 +399,8 @@ Parallelt med material- og dimensjonsanalysen undersøkjer me korleis \textbf{ko
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\columnwidth]{fig8_teknikk_entropi.png}
-  \caption{Parallell stigning: material- og teknikk-entropi over tid. Begge kurver stig fraa $\sim$1 bit til $\sim$4--5 bits.}
+  \includegraphics[width=\columnwidth]{fig8_teknikk_entropi.pdf}
+  \caption{Parallell stigning: material- og teknikk-entropi over tid. Begge kurver stig frå $\sim$1 bit til $\sim$4--5 bits.}
   \label{fig:teknikk}
 \end{figure}
 
@@ -408,8 +408,8 @@ Teknikk-entropien stig frå 1,0 bits til 3,67 bits, ein parallell til materialen
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\columnwidth]{fig13_teknikk_evolusjon.png}
-  \caption{Teknikk-evolusjon over fem hundreaar. Raude boksar markerer teknikkar som forsvinn (skjering, dreiing); gronne markerer teknikkar som oppstaar (formboyging, laminering, sveising).}
+  \includegraphics[width=\columnwidth]{fig13_teknikk_evolusjon.pdf}
+  \caption{Teknikk-evolusjon over fem hundreår. Raude boksar markerer teknikkar som forsvinn (skjering, dreiing); grøne markerer teknikkar som oppstår (formbøying, laminering, sveising).}
   \label{fig:teknikk_evo}
 \end{figure} Nye teknikkar kumulerer: \emph{dreiing} kjem på 1500-talet, \emph{formbøying} og \emph{laminering} på 1800-talet, \emph{sveising} og \emph{sprøytestøyping} på 1900/2000-talet. Kvar ny teknikk opnar nye regionar i formrommet.
 
@@ -534,15 +534,13 @@ Kvar nasjon har ein distinkt dimensjonsprofil. Norske stolar (98,2 cm) er i snit
 
 \subsection{Stilperiodar som emergente kategoriar}
 
-Hovudfunnet er at dimensjonar og materialar predikerer stilperiode med $F1 = 0{,}823$: ein maskinlæringsmodell kan klassifisere ein stol sin stilperiode med over 82\,\% presisjon berre basert på fire mål og 30 materialkategoriar. Men dette tyder \emph{ikkje} at stil er ei årsak. Det tyder at stil er eit \emph{emergent mønster}: ein klynge i formrommet som menneskelege observatørar har gjeve eit namn.
+Hovudfunnet er at dimensjonar og materialar predikerer stilperiode med $F1 = 0{,}823$: ein maskinlæringsmodell kan klassifisere ein stol sin stilperiode med over 82\,\% presisjon berre basert på fire mål og 30 materialkategoriar. Ein uavhengig validering med \emph{mutual information} stadfestar rangeringa: høgde ($\text{MI} = 1{,}27$) ber meir stilinformasjon enn alle 30 materialvariablar til saman (høgaste material: mahogni, $\text{MI} = 0{,}27$). Dimensjonar ber 3--5 gonger meir stilinformasjon enn materialar. Men dette tyder \emph{ikkje} at stil er ei årsak. Det tyder at stil er eit \emph{emergent mønster}: ein klynge i formrommet som menneskelege observatørar har gjeve eit namn.
 
-Analogen til biologien er instruktiv. Ein paleontolog kan klassifisere ein fossil etter art basert på dimensjonar og beinsstruktur med høg presisjon. Men det er ikkje \emph{artsnamnet} som skapar beina: det er dei underliggjande evolusjonære kreftene (seleksjon, drift, migrasjon) som skapar både forma og den klyngestrukturen me kallar ``art''. På same vis er det ikkje ``barokk'' som skapar høge stolryggar: det er materialøkologien (nøttetre, eik), produksjonsteknologien (skjering, dreiing) og den kulturelle konteksten (maktdemonstrasjon, komfort) som saman skaper den geometrien me etterpå kallar ``barokk''.
+Analogen til biologien er instruktiv. Ein paleontolog kan klassifisere ein fossil etter art basert på dimensjonar og beinstruktur med høg presisjon. Men det er ikkje \emph{artsnamnet} som skapar beina: det er dei underliggjande evolusjonære kreftene (seleksjon, drift, migrasjon) som skapar både forma og den klyngestrukturen me kallar ``art''. På same vis er det ikkje ``barokk'' som skapar høge stolryggar: det er materialøkologien (nøttetre, eik), produksjonsteknologien (skjering, dreiing) og den kulturelle konteksten (maktdemonstrasjon, komfort) som saman skaper den geometrien me etterpå kallar ``barokk''.
 
 \subsection{Den kronologiske dimensjonsgradienten}
 
-Tabell~\ref{tab:style_dims} avdekkjer ein slåande kronologisk gradient: stilperiodar som tilhøyrer tidlegare hundreår har konsekvent høgare stolar. Régence-stolar (114,5 cm) er 37 cm høgare enn funksjonalisme-stolar (77,7 cm). Denne gradienten er ikkje ornamental: han reflekterer ein strukturell endring i korleis stolen held kroppen. Barokkstolen med sin høge rygg og stolperamme er fundamentalt ein annan fysisk gjenstand enn funksjonalismestolen med sin låge, ergonomisk tilpassa profil.
-
-Det er denne gradienten Random Forest-modellen fangar opp. Stilklassifisering er, i essens, høgdeklassifisering: ein maskin som kan gjette høgda, kan gjette stilen. Men dette betyr \emph{ikkje} at stilen forklarer høgda: det betyr at begge er uttrykk for same underliggjande krefter (materiale, teknikk, kulturell kontekst).
+Den monotone høgdegradienten frå régence (114,5 cm) til funksjonalisme (77,7 cm) er ikkje ornamental: han reflekterer ein strukturell endring i korleis stolen held kroppen. Det er denne gradienten Random Forest-modellen fangar opp. Stilklassifisering er, i essens, høgdeklassifisering: ein maskin som kan gjette høgda, kan gjette stilen. Men dette betyr \emph{ikkje} at stilen forklarer høgda: det betyr at begge er uttrykk for same underliggjande krefter (materiale, teknikk, kulturell kontekst).
 
 \subsection{Forvekslingsbare stilar og det uskarpe stilrommet}
 
@@ -550,25 +548,25 @@ Forvekslingsanalysen (tabell~\ref{tab:confusion}) avdekkjer at stilrommet i dime
 
 Denne konvergensen er ikkje tilfeldig. Begge stilane representerer ei estetisk preferanse for eleganse og slankleik som forkasta den massiviteten som prega barokken og renessansen. Hepplewhite sin nyklassisisme og jugendens organiske liner er ulike estetiske uttrykk for same dimensjonelle ideale: ein moderat høg, smalt, lettbeint stol. Dimensjonsrommet er blindt for ornament; det ser berre dei fysiske hovuddimensjonane. Og i desse dimensjonane er hepplewhite og jugend tvillingpar.
 
-I den andre enden av skalaen illustrerer funksjonalisme vs. régence (39,6 cm avstand) at den kronologiske dimensjonsgradienten er det sterkaste skiljemerket. Tidlege stilar er høge; seine stilar er låge. Dermed er dei stilane som er lengst frå kvarandre i tid også dei som er lengst frå kvarandre i dimensjonsrommet. Tid og dimensjon er, i STOLAR-databasen, nesten synonyme.
+I den andre enden av skalaen illustrerer funksjonalisme vs. régence (39,6 cm avstand) at den kronologiske dimensjonsgradienten er det sterkaste skiljemerket. Tid og dimensjon er, i STOLAR-databasen, nesten synonyme.
+
+Cohen's $d$ stadfester desse mønstra med større presisjon. Jugend og Louis XVI er dimensjonelt \emph{identiske} ($d = 0{,}03$) trass i 130 års tidsskilnad og ulike estetiske program; dei er ``same stad'' i morphospace, men ``ulike kart'' over den staden. Dei mest forveksla stilpara i klassifikatoren avslører designhistorisk innsikt: \textbf{modernisme forvekslast med funksjonalisme} ($n = 8$), noko som stadfestar at skiljet mellom dei er meir ideologisk enn geometrisk. Régence forvekslast med barokk ($n = 7$): temporalt nære stilar deler dimensjonsprofil. Postmodernisme forvekslast med funksjonalisme ($n = 4$): postmodernismen er ikkje dimensjonelt ``anti-modernistisk'' men heller ein ekspansjon av same formrom.
 
 
 \subsection{Materialreseptar som historiske fingeravtrykk}
 
 Materialreseptane i tabell~\ref{tab:recipes} tilfører ein ny dimensjon til den kronologiske analysen. Kvar resept er eit historisk fingeravtrykk: mahogni+tekstil ($n = 103$) markerer den britiske 1700-tals-stoltradisjonen; stål+lær ($n = 42$) markerer Bauhaus-tradisjonen. Desse para er ikkje tilfeldige kombinasjonar: dei reflekterer spesifikke forsyningskjeder, handverkskompetansar og estetiske idealar.
 
-At berre eitt materialpar (tekstil+tre) kryssar fem hundreår er eit slåande funn. Det tyder at dei fleste materialreseptane er like epokebudne som stilmerkja dei vert assosierte med. Mahogni+tekstil er, i ein viss forstand, det materialet sin definisjon av ``chippendale'' eller ``hepplewhite'': ein polstra stol i importert hardtre. Når denne resepten forsvinn (fordi mahognien vert erstatta av andre materialar), forsvinn òg den stilistiske profilen den korresponderer med. Stilen døyr ikkje fordi smaken endrar seg, men fordi materialresepten vert utilgjengeleg.
+At berre eitt materialpar (tekstil+tre) kryssar fem hundreår er eit slåande funn. Dei fleste materialreseptane er like epokebudne som stilmerkja dei vert assosierte med. Kvar stil har sin eigen resept: empire er dominert av mahogni (23\,\%), hestetagl (17\,\%) og buksbom (16\,\%) -- ein kolonialt prega samansetting; rokokko av bøk (28\,\%), hestetagl (24\,\%) og silke (17\,\%) -- europeisk luksus; funksjonalisme av kryssfiner (11\,\%), stål (10\,\%) og bjørk (9\,\%) -- industrielt og egalitært. Desse reseptane er ikkje vilkårlege; dei er determinerte av tilgangen til materialar i den aktuelle epoken.
+
+Mahogni+tekstil er, i ein viss forstand, det materialet sin definisjon av ``chippendale'' eller ``hepplewhite'': ein polstra stol i importert hardtre. Når denne resepten forsvinn (fordi mahognien vert erstatta av andre materialar), forsvinn òg den stilistiske profilen den korresponderer med. Stilen døyr ikkje fordi smaken endrar seg, men fordi materialresepten vert utilgjengeleg.
+
+Kvar stilperiode har dessutan ein karakteristisk \textbf{teknikksignatur} som forsterkar materialresepten: empire er dominert av polstring (43\,\%), noko som reflekterer den koloniale komforttradisjonen (mahogni + hestetagl). Barokk er dominert av tapping (33\,\%) og plugging (24\,\%): massive stolpekonstruksjonar. Postmodernisme er dominert av skruing (21\,\%) og formbøying (17\,\%): industrielle, reversible samanføyingar. Teknikken kodar stil like sterkt som materialet.
 
 
 \subsection{Nasjonale dimensjonssignaturar og materialkoding}
 
-Tabell~\ref{tab:nat_dims} syner at kvar nasjon har ein distinkt dimensjonsprofil. Norske stolar (98,2 cm) er 36 cm høgare enn finske (62,1 cm). Denne skilnaden reflekterer ikkje ulike menneskekroppar: nordmenn og finnar er tilnærma like høge. Han reflekterer ulike \emph{materialøkologiar} og \emph{designkulturar}.
-
-Den finske lavmæla profilen er dominert av Alvar Aalto og etterfølgjarane hans: dampbøygd bjørk i slanke, låge konstruksjonar. Den norske høge profilen reflekterer ein barokk- og empiretradisjon med massive stolperammer i eik og mahogni. Materialet dikterer ikkje berre proporsjonen ($H/W$), men òg den absolutte dimensjonen: massive treslag krev massive konstruksjonar.
-
-\subsection{Dimensjonane si forklaringskraft}
-
-At fire metriske variablar åleine gjev $F1 = 0{,}777$ er eit sterkt funn. Det tyder at mesteparten av stilinformasjonen er koda i den fysiske geometrien, ikkje i materialvalet. Høgde er den viktigaste enkeltvariabelen (19,7\,\% importance). Dette svarar til funnet i Artikkel~II om den monotone høgdereduksjonen over tid: kvar epoke har sitt karakteristiske høgdeband, og dette bandet er den sterkaste prediktoren for stilperiode.
+At norske stolar er 36 cm høgare enn finske reflekterer ikkje ulike menneskekroppar, men ulike \emph{materialøkologiar}. Den finske lågmælte profilen er dominert av Aalto sin dampbøygde bjørk; den norske høge profilen reflekterer ein barokk- og empiretradisjon med massive stolperammer i eik og mahogni. Materialet dikterer ikkje berre proporsjonen ($H/W$), men òg den absolutte dimensjonen: massive treslag krev massive konstruksjonar.
 
 \subsection{Teknikk-entropi og formrommet}
 
@@ -577,6 +575,8 @@ Teknikk-entropien si parallelle stigning med materialentropien (begge frå $\sim
 Dei historiske koplingane mellom teknikkinnovasjon og formendring er tydelege: dreiing si forsvinning etter 1902 korresponderer med industrialiseringa si fullstendige mekanisering; formbøying si oppfinning i 1810 korresponderer med Thonet si dampbøyingspatent; sveising si fyrste opptrednad i 1929 korresponderer med Bauhaus-røyrstolane til Breuer og Mies van der Rohe; sprøytestøyping si opptrednad på 1960-talet korresponderer med Panton-stolen. Kvar av desse koplingane illustrerer det same prinsippet: teknikken er ikkje eit middel til å realisere ein form som allereie er tenkt; teknikken \emph{opnar} formrom som tidlegare ikkje eksisterte. Designaren tenkjer ikkje ein form og finn deretter ein teknikk; han konfronterer eit teknikkrepertoar og oppdagar kva former det tillèt.
 
 Denne innsikta utfordrar den tradisjonelle designhistoriske narrativen, der teknologi vert handsama som ein nøytral fasilitator for kreativ intensjon. I det kvantitative perspektivet me presenterer her, er teknologien ein \emph{formgjevande kraft} på linje med materialet og den kulturelle konteksten. Teknikk-entropien si stigning er ikkje berre eit mål på teknologisk diversifisering: ho er eit mål på kor mange regionar i formrommet som er opne for utforsking.
+
+Kvar teknikk produserer dessutan ein distinkt dimensjonsprofil. \textbf{Tapping} gjev dei høgaste stolane (96 cm, $H/W = 1{,}91$): mortis-og-tenon-samanføying krev massive tverrsnitt og favoriserer vertikale konstruksjonar. \textbf{Formbøying} gjev den høgaste $H/W$-ratioen ($2{,}18$): dampbøygd tre kan formast til slanke, vertikale kurver. \textbf{Sveising} gjev flatast profil ($H/W = 1{,}40$): stålrøyr tillèt horisontale konstruksjonar med minimalt tverrsnitt. \textbf{Laminering} gjev dei lågaste stolane (79 cm): laminerte skjel krev ikkje tradisjonell ramme. Å velje ein teknikk er å velje ein region i formrommet.
 
 \subsection{Stilar som dimensjonelle klynger: intern konsistens}
 
@@ -623,7 +623,7 @@ Rangeringa avdekkjer eit interessant mønster: dei mest dimensjonelt homogene st
 
 I den andre enden av skalaen finn me postmodernisme ($\text{CV}_H = 0{,}409$), barokk ($\text{CV}_H = 0{,}207$) og renessanse ($\text{CV}_H = 0{,}176$). Postmodernismen er den stilperioden som er mest dimensjonelt spreidd: standardavviket ($\sigma_H = 40{,}9$ cm) er større enn dei fleste andre stilars gjennomsnittshøgde-variasjon. Dette reflekterer postmodernismen sin programmatiske motstand mot standardisering: stilen er definert \emph{negativt}, som ei avvising av modernistiske normer, snarare enn \emph{positivt}, som eit sett dimensjonelle preferansar.
 
-Implikasjonen for stilklassifisering er direkte: Random Forest-modellen sin $F1$-score for kvar stil vil vere korrelert med stilens $\text{CV}_H$. Stilar med låg $\text{CV}_H$ (empire, hepplewhite) er lette å klassifisere; stilar med høg $\text{CV}_H$ (postmodernisme, barokk) er vanskelegare. Stilmerkja er ikkje like ``reelle'': nokre er stramme dimensjonelle standardar; andre er lause kulturelle etikettar.
+Implikasjonen for stilklassifisering er direkte, og per-klasse $F1$-scorar stadfestar det: empire ($F1 = 0{,}97$) og Louis XVI ($F1 = 0{,}97$) er nesten perfekt predikerbare, medan modernisme ($F1 = 0{,}46$) -- dimensjonelt overlappande med funksjonalisme -- er nesten uklassifiserbar. Stilmerkja er ikkje like ``reelle'': nokre er stramme dimensjonelle standardar; andre er lause kulturelle etikettar.
 
 
 \subsection{Affordansar og den kausale kjeda}
@@ -686,17 +686,17 @@ Kvar designar er, i denne forstand, ein \emph{navigator} som har funne ein disti
 Ikkje alle stilar er like langvarige. Den tidsmessige spreiinga varierer enormt:
 
 \begin{itemize}
-  \item \textbf{Empire}: span = berre 20 aar (1800--1820). Den strammast definerte stilen, baade tidsmessig og dimensjonelt ($\text{CV}_H = 0{,}013$). Empire er nesten eit punkt i tids-form-rommet.
-  \item \textbf{Jugend}: span = 13 aar (1896--1909). Kort, intens utforskingsfase med sterk nasjonal karakter (Noreg: furu, eik).
-  \item \textbf{Barokk}: span = 532 aar (1368--1900). Den mest diffuse stilen. Kuratorane brukar ``barokk'' som sekkepost for enormt ulike gjenstandar over eit halvt millennium.
-  \item \textbf{Funksjonalisme}: span = 78 aar (1930--2008). Eit moderne, framleis levande paradigme.
+  \item \textbf{Empire}: span = berre 20 år (1800--1820). Den strammast definerte stilen, både tidsmessig og dimensjonelt ($\text{CV}_H = 0{,}013$). Empire er nesten eit punkt i tids-form-rommet.
+  \item \textbf{Jugend}: span = 13 år (1896--1909). Kort, intens utforskingsfase med sterk nasjonal karakter (Noreg: furu, eik).
+  \item \textbf{Barokk}: span = 532 år (1368--1900). Den mest diffuse stilen. Kuratorane brukar ``barokk'' som sekkepost for enormt ulike gjenstandar over eit halvt millennium.
+  \item \textbf{Funksjonalisme}: span = 78 år (1930--2008). Eit moderne, framleis levande paradigme.
 \end{itemize}
 
-Stilperiodar er saaledes ikkje samanliknbare einingar: nokre (empire, jugend) er presise koordinatar i tids-form-rommet; andre (barokk, historisme) er diffuse skyer. Random Forest sin hoege $F1$ stadfestar at sjolv dei diffuse kategoriane har ein dimensjonell signatur, men kvaliteten varierer enormt.
+Stilperiodar er såleis ikkje samanliknbare einingar: nokre (empire, jugend) er presise koordinatar i tids-form-rommet; andre (barokk, historisme) er diffuse skyer. Random Forest sin høge $F1$ stadfestar at sjølv dei diffuse kategoriane har ein dimensjonell signatur, men kvaliteten varierer enormt.
 
 \subsection{Avgrensingar}
 
-Fleire avgrensingar maa nemnast:
+Fleire avgrensingar må nemnast:
 
 \begin{enumerate}
   \item \textbf{Utvalsavgrensing.} Stilmerke er berre tilgjengelege for 22,9\,\% av utvalet ($n = 524$), noko som avgrensar den statistiske krafta. Klassifikasjonen er avhengig av kuratorens tildeling av stilmerke, som ikkje er standardisert. Ulike museum kan klassifisere same stol i ulike stilperiodar.
@@ -713,62 +713,17 @@ Fleire avgrensingar maa nemnast:
 \end{enumerate}
 
 
-\subsection{Teknikkens dimensjonelle konsekvens}
-
-Kvar teknikk produserer ein distinkt dimensjonsprofil. \textbf{Tapping} gjev dei hogaste stolane (96 cm, $H/W = 1{,}91$): mortis-og-tenon-samanfoying krev massive tverrsnitt og favoriserer vertikale konstruksjonar. \textbf{Formboyging} gjev den hogaste $H/W$-ratioen ($2{,}18$): dampboygd tre kan formast til slanke, vertikale kurver. \textbf{Sveising} gjev flatast profil ($H/W = 1{,}40$): stalroyr tillater horisontale konstruksjonar med minimalt tverrsnitt. \textbf{Laminering} gjev dei lågaste stolane (79 cm): laminerte skjel krev ikkje tradisjonell ramme.
-
-Teknikken er saaledes ikkje ei implementeringsdetalj; ho er ein dimensjonsdeterminant. Å velje ein teknikk er å velje ein region i formrommet.
-
-\subsection{Stilens materialresept}
-
-Kvar stilperiode har ein karakteristisk materialresept:
-\begin{itemize}
-  \item \textbf{Empire}: mahogni 23\,\%, hestetagl 17\,\%, buksbom 16\,\%. Ein kolonialt dominert resept.
-  \item \textbf{Rokokko}: bok 28\,\%, hestetagl 24\,\%, silke 17\,\%. Europeisk luksus.
-  \item \textbf{Funksjonalisme}: kryssfiner 11\,\%, staal 10\,\%, bjork 9\,\%. Industrielt og egalitaert.
-  \item \textbf{Barokk}: lar 11\,\%, nottetre 10\,\%, bjork 10\,\%. Mest mangfaldig ($S = 27$ materialar).
-\end{itemize}
-
-Desse reseptane er ikkje vilkaarlege; dei er determinerte av tilgangen til materialar i den aktuelle epoken. Empire-resepten er eit kolonialt fingeravtrykk; funksjonalisme-resepten er eit industrielt.
-
-\subsection{Teknikksignatur per stil}
-
-Kvar stilperiode har ikkje berre ein materialresept, men ogso ein \textbf{teknikksignatur}: empire er dominert av polstring (43\,\%), noko som reflekterer den koloniale komforttradisjonen (mahogni + hestetagl). Barokk er dominert av tapping (33\,\%) og plugging (24\,\%): massive stolpekonstruksjonar. Postmodernisme er dominert av skruing (21\,\%) og formboyging (17\,\%): industrielle, reversible samanfoying. Teknikken kodar stil like sterkt som materialet.
-
-\subsection{Per-klasse prediksjonspresisjon}
-
-Full klassifikasjonsrapport avdekkjer dramatiske skilnader i kor godt kvar stil let seg predikere:
-
-\begin{itemize}
-  \item \textbf{Empire}: $F1 = 0{,}97$ (nesten perfekt). Empire-stolar er dimensjonelt nesten identiske ($\text{CV}_H = 0{,}013$): dei er ein attraktor i formrommet.
-  \item \textbf{Louis XVI}: $F1 = 0{,}97$. Tilsvarande stram dimensjonsprofil.
-  \item \textbf{Jugend}: $F1 = 0{,}95$. Sterk materialsignatur (eik + silke + furu).
-  \item \textbf{Modernisme}: $F1 = 0{,}46$ (daarllegast). Modernismen er dimensjonelt overlappande med funksjonalisme: dei to stilane okkuperer same region i formrommet.
-\end{itemize}
-
-\subsection{Cohen's d: dimensjonell avstand mellom stilar}
-
-Cohen's $d$ mellom alle stilpar med $n \geq 10$ avdekkjer ekstreme skilnader. Dei mest ulike: \textbf{Empire vs Queen Anne} ($d = 10{,}05$, 25 cm skilnad) og \textbf{Empire vs Regence} ($d = 6{,}24$, 34 cm). Dei mest like: \textbf{Jugend vs Louis XVI} ($d = 0{,}03$, 0 cm skilnad) og \textbf{Postmodernisme vs Rokokko} ($d = 0{,}06$, 2 cm). At Jugend og Louis XVI er dimensjonelt \emph{identiske} trass i 130 aars tidsskilnad og heilt ulike estetiske program, stadfestar at stilmerket kodar noko anna enn geometrien. Dei to stilane er ``same stad'' i morphospace, men ``ulike kart'' over den staden.
-
-\subsection{Forvekslingsmoenster: kva stilar er dimensjonelt uatskiljelege?}
-
-Dei mest forveksla stilpara avslerer designhistorisk innsikt: \textbf{modernisme forvekslast med funksjonalisme} ($n = 8$), noko som stadfestar at skiljet mellom dei er meir ideologisk enn geometrisk. \textbf{Regence forvekslast med barokk} ($n = 7$): temporalt naere stilar deler dimensjonsprofil. \textbf{Postmodernisme forvekslast med funksjonalisme} ($n = 4$): postmodernismen er ikkje dimensjonelt ``anti-modernistisk'' men heller ein ekspansjon av same formrom.
-
-\subsection{MI per feature: hogde er den viktigaste variabelen}
-
-Sklearn sin \texttt{mutual\_info\_classif} rangerer featurane presist: hogde ($\text{MI} = 1{,}27$), $H/W$-ratio ($\text{MI} = 1{,}09$), volum ($\text{MI} = 0{,}81$), djupn ($\text{MI} = 0{,}78$), breidde ($\text{MI} = 0{,}73$), setehogde ($\text{MI} = 0{,}64$). Blant materiala er mahogni hogast ($\text{MI} = 0{,}27$), deretter hestetagl ($\text{MI} = 0{,}22$) og buksbom ($\text{MI} = 0{,}19$). Dimensjonar ber 3--5 gonger meir stilinformasjon enn materialar. Hogde ber meir informasjon enn alle 30 materialvariablar til saman.
-
 \subsection{Morphospace-topologi: klynger, korridorar, tomrom}
 
-Dei realiserte stilane okkuperer ikkje morphospace uniformt. Dei dannar tre moenstertypar: \textbf{klynger} (stilar som barokk, funksjonalisme: tette samlingar av dimensjonelt like stolar), \textbf{korridorar} (overgangsstilar som historisme, som dannar ei bru mellom to klynger), og \textbf{tomrom} (regionar i morphospace utan nokon realisert stol). Tomroma er like informative som klyngene: dei fortel kva former seleksjonstrykka har avvist. Det finst ingen stolar i databasen som kombinerer plast med tradisjonell tapping, fordi materialet ikkje tillet det. Det finst nesten ingen stolar under 50 cm hogde (med unnatak av barnestolar), fordi ergonomien set ei nedre grense. Desse fraavera er ikkje tilfeldige; dei er systematiske refleksjonar av affordansar og seleksjonstrykk.
+Dei realiserte stilane okkuperer ikkje morphospace uniformt. Dei dannar tre mønstertypar: \textbf{klynger} (stilar som barokk, funksjonalisme: tette samlingar av dimensjonelt like stolar), \textbf{korridorar} (overgangsstilar som historisme, som dannar ei bru mellom to klynger), og \textbf{tomrom} (regionar i morphospace utan nokon realisert stol). Tomroma er like informative som klyngene: dei fortel kva former seleksjonstrykka har avvist. Det finst ingen stolar i databasen som kombinerer plast med tradisjonell tapping, fordi materialet ikkje tillèt det. Det finst nesten ingen stolar under 50 cm høgde (med unnatak av barnestolar), fordi ergonomien set ei nedre grense. Desse fråvera er ikkje tilfeldige; dei er systematiske refleksjonar av affordansar og seleksjonstrykk.
 
 \subsection{Redundansbeviset}
 
-Eit noekkelfunn er at materialet si prediktive kraft for stil nesten fullstendig overlapper med dimensjonane si. Dimensjonar aloeine gjev $F1 = 0{,}777$; materialar aloeine $F1 = 0{,}678$. Men kombinasjonen gjev berre $F1 = 0{,}823$: ein forbetring paa 4,6 prosentpoeng. Dersom material og dimensjonar bar \emph{uavhengig} informasjon, ville kombinasjonen gjeve ein mykje hogare $F1$. At forbetringa er minimal tyder at 94\,\% av materialets stilinformasjon er \textbf{redundant} med dimensjonane. Geometri og material kodar same underliggjande kraft. Denne observasjonen, som me kallar \textbf{redundansbeviset}, stadfestar proposisjon 3.22 i Tractatus: ``Geometri er materialets ibuande logikk projisert i tre dimensjonar.''
+Eit nøkkelfunn er at materialet si prediktive kraft for stil nesten fullstendig overlapper med dimensjonane si. Dimensjonar åleine gjev $F1 = 0{,}777$; materialar åleine $F1 = 0{,}678$. Men kombinasjonen gjev berre $F1 = 0{,}823$: ein forbetring på 4,6 prosentpoeng. Dersom material og dimensjonar bar \emph{uavhengig} informasjon, ville kombinasjonen gjeve ein mykje høgare $F1$. At forbetringa er minimal tyder at 94\,\% av materialets stilinformasjon er \textbf{redundant} med dimensjonane. Geometri og material kodar same underliggjande kraft. Denne observasjonen, som me kallar \textbf{redundansbeviset}, stadfestar proposisjon 3.22 i Tractatus: ``Geometri er materialets ibuande logikk projisert i tre dimensjonar.''
 
 \subsection{Skaleringseffekten}
 
-Eit metodologisk viktig funn er at \emph{utvalet sin storleik endrar konklusjonen}. I ein tidleg analyse med $n = 229$ stilmerka stolar var material viktigare enn dimensjonar for stilprediksjon. Når utvalet vart utvida til $n = 509$ (ved inkludering av V\&A-stolar), snudde resultatet: dimensjonar ($F1 = 0{,}793$) slo material ($F1 = 0{,}641$). Denne \textbf{skaleringseffekten} er ei viktig advarsel: analytiske resultat er ikkje naudsynleg skala-invariante. Konklusjonar basert paa smaa utval kan verte reverserte av storleik enn utval. I STOLAR-konteksten stadfestar det at dimensjonane si prediktive kraft er meir robust enn materiala si.
+Eit metodologisk viktig funn er at \emph{utvalet sin storleik endrar konklusjonen}. I ein tidleg analyse med $n = 229$ stilmerka stolar var material viktigare enn dimensjonar for stilprediksjon. Når utvalet vart utvida til $n = 509$ (ved inkludering av V\&A-stolar), snudde resultatet: dimensjonar ($F1 = 0{,}793$) slo material ($F1 = 0{,}641$). Denne \textbf{skaleringseffekten} er ei viktig advarsel: analytiske resultat er ikkje naudsynleg skala-invariante. Konklusjonar basert på små utval kan verte reverserte av større utval. I STOLAR-konteksten stadfestar det at dimensjonane si prediktive kraft er meir robust enn materiala si.
 
 % ================================================================
 \section{Konklusjon}
