@@ -1,0 +1,738 @@
+% FORMLÆRE: MATHEMATICA — Ei formell grunnlegging
+% Iver Raknes Finne, AHO 2026
+% Søstertekst til FORMLÆRE (traktatform i prosa)
+% Spraak: Nynorsk
+
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[nynorsk]{babel}
+\usepackage{mathpazo}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage[round]{natbib}
+\usepackage{csquotes}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+
+\geometry{margin=2.5cm, top=2.5cm, bottom=2.5cm}
+\setstretch{1.15}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!60!black,
+  citecolor=green!50!black,
+  urlcolor=blue!70!black
+}
+
+% --- Theorem environments ---
+\theoremstyle{definition}
+\newtheorem{defn}{Definisjon}[section]
+\newtheorem{postulat}[defn]{Postulat}
+
+\theoremstyle{plain}
+\newtheorem{teorem}[defn]{Teorem}
+\newtheorem{prop}[defn]{Proposisjon}
+
+\theoremstyle{remark}
+\newtheorem*{merknad}{Merknad}
+\newtheorem*{doeme}{D\o me}
+\newtheorem*{falsifisering}{Falsifiseringsvilk\aa r}
+\newtheorem*{prediksjon}{Prediksjon}
+
+% --- Custom commands ---
+\newcommand{\MC}{\mathbf{M}_C}
+\newcommand{\x}{\mathbf{x}}
+\newcommand{\y}{\mathbf{y}}
+\newcommand{\svec}{\mathbf{s}}
+\newcommand{\Reals}{\mathbb{R}}
+\newcommand{\formlaere}{\textsc{Forml\ae re}}
+
+\title{%
+  \vspace{-1cm}
+  {\huge\textbf{FORML\AE RE: MATHEMATICA}}\\[0.5em]
+  {\large\textit{Ei formell grunnlegging}}
+}
+\author{
+  Iver Raknes Finne\\
+  \texttt{iver.raknes.finne@stud.aho.no}\\
+  Arkitektur- og designh\o gskolen i Oslo\\
+  2026
+}
+\date{}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\begin{quote}
+\itshape
+Denne teksten er s\o sterteksten til \formlaere. Der \formlaere{} legg ut rammeverket i prosa, byggjer \textsc{Mathematica} opp det same rammeverket i formell notasjon, fr\aa{} punkt til vektor til funksjonale. Kvar definisjon korresponderer med ein proposisjon i hovudteksten; krysstilvisingane er eksplisitte.
+\end{quote}
+
+\newpage
+\tableofcontents
+\newpage
+
+% ============================================================
+% I  ROM
+% ============================================================
+\section{Rom}
+\label{sec:rom}
+
+\begin{quote}
+\itshape Korresponderer med \formlaere{} 1.1, 1.2, 1.21--1.23
+\end{quote}
+
+\begin{defn}[Attributtvektor]
+\label{def:attributtvektor}
+Lat ein gjenstand $x$ vere skildra av $n$ m\aa lbare fysiske eigenskapar.
+Attributtvektoren til $x$ er
+\[
+  \x = (x_1, x_2, \ldots, x_n) \in \Reals^n
+\]
+der kvar komponent $x_i$ svarar til ein eigenskap: h\o gd, breidd, djupn, masse, hardheit, overflateruheit, fargeb\o lgjelengd, osb. Mengda av eigenskapar er ikkje gjeven a priori; ho vert bestemt av analyseform\aa let og kan utvidast.
+\end{defn}
+
+\begin{merknad}
+Val av eigenskapar definerer ein \emph{representasjon}. Ulike representasjonar gjev ulike rom. Modellen krev berre at representasjonen er konsistent innanfor ein analyse, ikkje at det finst \'ein kanonisk representasjon.
+\end{merknad}
+
+\begin{defn}[Formrom]
+\label{def:formrom}
+Lat $C$ vere ein funksjonell klasse (t.d.\ ``stolar,'' ``kniver,'' ``bustadhus'').
+Formrommet til $C$ er
+\[
+  \MC \subseteq \Reals^n
+\]
+mengda av alle logisk moglege attributtvektorar for klassen. $\MC$ er ikkje heile $\Reals^n$; han er avgrensa av fysiske lovar og funksjonskrav.
+\end{defn}
+
+\begin{defn}[Regiontypologi]
+\label{def:regiontypologi}
+Formrommet $\MC$ har tre typar regionar:
+\begin{enumerate}[label=(\roman*)]
+  \item \textbf{Busett region} $B = \{\,\x \in \MC : \x \text{ er realisert i minst \'ein faktisk gjenstand}\,\}$
+  \item \textbf{Open region} $O = \{\,\x \in \MC : \x \text{ er fysisk mogleg men urealisert}\,\}$
+  \item \textbf{Forboden region} $F = \Reals^n \setminus \MC$ \quad (fysisk umoglege former)
+\end{enumerate}
+slik at $\MC = B \cup O$ og $B \cap O = \varnothing$.
+\end{defn}
+
+\begin{merknad}
+Grensa $\partial\MC$ mellom $O$ og $F$ er ein funksjon av tilgjengeleg teknologi $\tau$.
+Me skriv $\mathbf{M}_C(\tau)$ n\aa r me vil gjere teknologiavhenget eksplisitt.
+Formrommet \emph{veks} med teknologien: om $\tau_1 \subset \tau_2$, s\aa{}
+$\mathbf{M}_C(\tau_1) \subseteq \mathbf{M}_C(\tau_2)$.
+\end{merknad}
+
+\begin{prop}
+\label{prop:forklaringskrevjande}
+Sidan $|B| > 1$ for kvar ikkje-triviell klasse $C$ (\formlaere{} 1.3),
+er det eit forklaringskrevjande faktum at ein gjenstand okkuperer \'ein posisjon
+$\x \in B$ og ikkje ei anna $\y \in B$.
+Forklaringa av dette er emnet for alt som f\o lgjer.
+\end{prop}
+
+
+% ============================================================
+% II  KREFTER
+% ============================================================
+\section{Krefter}
+\label{sec:krefter}
+
+\begin{quote}
+\itshape Korresponderer med \formlaere{} 2.1--2.43
+\end{quote}
+
+\begin{defn}[Seleksjonstrykk]
+\label{def:seleksjonstrykk}
+Eit seleksjonstrykk er ein funksjon
+\[
+  s_i : \MC \to \Reals
+\]
+som tilordnar kvar posisjon $\x$ ein reell verdi $s_i(\x)$ som uttrykkjer kor godt $\x$ tilfredsstiller det $i$-te vilk\aa ret. H\o gare verdi er betre.
+\end{defn}
+
+\begin{doeme}
+For ein stol med funksjonell klasse $C$ = ``sittem\o bel'':
+\begin{itemize}
+  \item $s_1(\x)$ = materialtilgang: kor lett tilgjengeleg materialkombinasjonen er
+  \item $s_2(\x)$ = produksjonskostnad (negativt forteikn, sidan l\aa gare er betre)
+  \item $s_3(\x)$ = brukskrav: kor godt stolen st\o r kroppen
+  \item $s_4(\x)$ = kulturell aksept: kor godt forma samsvarar med omgjevnadens forventningar
+  \item $s_5(\x)$ = materiell affordanse: kor lett forma let seg realisere i det gjevne materialet
+  \item[] \ldots{} opp til $s_k(\x)$ for $k$ samtidige seleksjonstrykk
+\end{itemize}
+\end{doeme}
+
+\begin{defn}[Seleksjonstrykkvektoren]
+\label{def:seleksjonsvektor}
+Settet av alle samtidige seleksjonstrykk definerer ein vektorfunksjon
+\[
+  \svec : \MC \to \Reals^k, \qquad
+  \svec(\x) = \bigl(s_1(\x),\, s_2(\x),\, \ldots,\, s_k(\x)\bigr)
+\]
+\end{defn}
+
+\begin{postulat}[Fleire uavhengige trykk]
+\label{post:fleiretrykk}
+For kvar funksjonell klasse $C$ gjeld $k \ge 2$, og det finst minst to trykk
+$s_i, s_j$ som er statistisk uavhengige over $\MC$:
+\[
+  \operatorname{Cov}(s_i, s_j) \neq 0
+  \quad\text{i minst \'ein region, men } s_i \text{ er ikkje ein funksjon av } s_j.
+\]
+\end{postulat}
+
+\begin{falsifisering}
+Postulatet fell om det finst ein klasse $C$ der \'eitt einaste $s_i$ er tilstrekkeleg til \aa{} forklare all observert variasjon i $B$.
+\end{falsifisering}
+
+\begin{teorem}[Variasjon under konstant funksjon]
+\label{teo:variasjon}
+Lat $s_1$ representere funksjonskravet. Innanfor ein funksjonell klasse $C$ er $s_1$
+per definisjon konstant: $s_1(\x) = s_1(\y)$ for alle $\x, \y \in \MC$.
+Sidan $k \ge 2$ (postulat~\ref{post:fleiretrykk}), finst det minst eitt anna trykk
+$s_2$ som varierer over $\MC$. Difor bestemmer ikkje $s_1$ posisjonen aaleine,
+og formvariasjon under konstant funksjon er det forventa resultatet.
+\end{teorem}
+
+\begin{proof}
+Lat $\x, \y \in B$ med $s_1(\x) = s_1(\y)$. Sidan $s_2$ er uavhengig av $s_1$,
+kan $s_2(\x) \neq s_2(\y)$. Difor $\x \neq \y$ sj\o lv om funksjonen er den same.
+\end{proof}
+
+\begin{defn}[Funksjonell avgrensing]
+\label{def:funksjonell-avgrensing}
+Funksjonen definerer klassen og dermed formrommet. Lat $F : \Reals^n \to \{0, 1\}$
+vere indikatorfunksjonen for funksjonskravet. D\aa{} er
+\[
+  \MC = \bigl\{\,\x \in \Reals^n : F(\x) = 1\,\bigr\}
+\]
+Funksjonen avgrensar $\MC$. Innanfor $\MC$ er ho taus.
+\end{defn}
+
+\begin{postulat}[Motstridande retningar]
+\label{post:motstridande}
+For minst eitt par $(s_i, s_j)$ finst det ein region $R \subseteq \MC$ der
+\[
+  \nabla s_i(\x) \cdot \nabla s_j(\x) < 0
+  \qquad \text{for } \x \in R
+\]
+det vil seie: gradientane peikar i motstridande retningar.
+\AA{} forbetre \'ein eigenskap forverrar den andre.
+\end{postulat}
+
+\begin{falsifisering}
+Postulatet fell om alle gradientpar samsvarar overalt i $\MC$.
+\end{falsifisering}
+
+\begin{teorem}[Kompromiss]
+\label{teo:kompromiss}
+Av postulata~\ref{post:fleiretrykk} og~\ref{post:motstridande} f\o lgjer det at
+kvar realisert form $\x \in B$ er eit kompromiss: ein posisjon der dei motstridande
+trykka er balanserte, ikkje eliminerte.
+\end{teorem}
+
+\begin{proof}
+Sidan $\nabla s_i \cdot \nabla s_j < 0$ i minst \'ein region, finst det ingen posisjon
+$\x \in \MC$ der alle trykk samstundes er maksimerte.
+Kvar realisert $\x \in B$ representerer difor ein avveging.
+\end{proof}
+
+\begin{teorem}[Fleire gyldige kompromiss]
+\label{teo:fleire-kompromiss}
+Sidan $|B| > 1$ (proposisjon~\ref{prop:forklaringskrevjande}) og kvar $\x \in B$ er
+eit kompromiss (teorem~\ref{teo:kompromiss}), finst det fleire gyldige kompromiss.
+Skilnaden mellom to former under same funksjon er ikkje ein feil, men eit uttrykk for
+at kreftene kan balanserast p\aa{} meir enn \'ein m\aa te.
+\end{teorem}
+
+
+% ============================================================
+% III  LANDSKAP
+% ============================================================
+\section{Landskap}
+\label{sec:landskap}
+
+\begin{quote}
+\itshape Korresponderer med \formlaere{} 3.1--3.42
+\end{quote}
+
+\begin{defn}[Tilpassingsfunksjon]
+\label{def:tilpassingsfunksjon}
+Tilpassingsfunksjonen er ein aggregering av seleksjonstrykka:
+\[
+  f : \MC \to \Reals, \qquad
+  f(\x) = \Phi\bigl(s_1(\x),\, s_2(\x),\, \ldots,\, s_k(\x)\bigr)
+\]
+der $\Phi : \Reals^k \to \Reals$ er ein aggregeringsfunksjon som vektar dei ulike trykka.
+Valet av $\Phi$ er ikkje unikt; ulike vektingar gjev ulike landskap.
+\end{defn}
+
+\begin{merknad}
+I den enklaste modellen er $\Phi$ line\ae r: $f(\x) = \sum_i w_i\, s_i(\x)$ der
+$w_i \ge 0$ er vekter. Men $\Phi$ kan vere ikkje-line\ae r, t.d.\ om to trykk interagerer.
+\end{merknad}
+
+\begin{defn}[Tilpassingslandskap]
+\label{def:landskap}
+Tilpassingslandskapet er grafen til $f$ over $\MC$:
+\[
+  L = \bigl\{\,(\x,\, f(\x)) : \x \in \MC\,\bigr\} \subset \Reals^{n+1}
+\]
+Lokale maksimum av $f$ er \textbf{haugar}. Lokale minimum er \textbf{dalar}.
+Salar mellom haugar er \textbf{ryggar}.
+\end{defn}
+
+\begin{teorem}[Fleire haugar]
+\label{teo:fleirehaugar}
+Sidan $k \ge 2$ uavhengige trykk verkar (postulat~\ref{post:fleiretrykk}), og sidan
+minst eitt par har motstridande gradientar (postulat~\ref{post:motstridande}),
+har tilpassingsfunksjonen $f$ generisk fleire lokale maksimum.
+\end{teorem}
+
+\begin{proof}
+Lat $s_i$ ha eit lokalt maksimum ved $\mathbf{a}$ og $s_j$ ha eit lokalt maksimum
+ved $\mathbf{b} \neq \mathbf{a}$, og lat $\nabla s_i \cdot \nabla s_j < 0$ i regionen
+mellom dei. For vektinga $w$ der $w_i \gg w_j$ er det eit lokalt maksimum n\ae r
+$\mathbf{a}$; for vektinga $w'$ der $w_j \gg w_i$ er det eit lokalt maksimum n\ae r
+$\mathbf{b}$. Sidan vektingane varierer kontinuerleg, har landskapet minst to haugar.
+\end{proof}
+
+\begin{merknad}
+I NK-landskapsteori \citep{kauffman1993} aukar talet lokale maksimum med epistasen $K$.
+I formrommet svarar $K$ til graden av interaksjon mellom seleksjonstrykka.
+\end{merknad}
+
+\begin{defn}[Stil]
+\label{def:stil}
+Ein stil $S$ er ei samanhengande delmengd av $B$ rundt eit lokalt maksimum $\x^*$ av $f$:
+\[
+  S = \bigl\{\,\x \in B : \|\x - \x^*\| < \varepsilon
+  \;\text{og}\; f(\x) > f(\x^*) - \delta\,\bigr\}
+\]
+for eigna $\varepsilon, \delta > 0$.
+Ein stil er ein attraksjonsbasseng i tilpassingslandskapet.
+\end{defn}
+
+\begin{teorem}
+\label{teo:stilar}
+Av teorem~\ref{teo:fleirehaugar} f\o lgjer det at det finst fleire stilar.
+Av definisjon~\ref{def:tilpassingsfunksjon} og~\ref{def:stil} f\o lgjer det at kvar stil
+er fullt ut bestemt av seleksjonstrykka og vektinga; stilen har ingen eigne friheitsgrader.
+\end{teorem}
+
+\begin{defn}[Vandring]
+\label{def:vandring}
+Ei formgjevingshistorie er ein stig i formrommet:
+\[
+  \gamma : [0, T] \to \MC, \qquad
+  \gamma(0) = \x_0, \qquad
+  \gamma(T) = \x_T
+\]
+der kvart steg er lokalt: $\|\gamma(t+\mathrm{d}t) - \gamma(t)\| < \varepsilon$ for alle $t$.
+Stigen er stiavhengig: den tilgjengelege regionen ved tid $t$ avheng av $\gamma([0, t])$.
+\end{defn}
+
+
+% ============================================================
+% IV  DYNAMIKK
+% ============================================================
+\section{Dynamikk}
+\label{sec:dynamikk}
+
+\begin{quote}
+\itshape Korresponderer med \formlaere{} 4.1--4.6
+\end{quote}
+
+\begin{postulat}[Dynamisk landskap]
+\label{post:dynamisk}
+Seleksjonstrykka er tidavhengige:
+\[
+  s_i(\x, t) : \MC \times \Reals \to \Reals
+\]
+og difor er tilpassingslandskapet eit tidavhengig funksjonale:
+\[
+  f(\x, t) = \Phi\bigl(s_1(\x, t),\, \ldots,\, s_k(\x, t)\bigr)
+\]
+\end{postulat}
+
+\begin{falsifisering}
+Postulatet fell om tilpassingslandskapet for ein klasse kan visast \aa{} vere topologisk
+uendra over ein periode der den observerte fordelinga av former endrar seg p\aa{} ein m\aa te
+som ikkje kan forklarast av stokastisk drift.
+\end{falsifisering}
+
+\begin{teorem}[Punktert likevekt]
+\label{teo:punktert}
+Av teorem~\ref{teo:fleirehaugar} og postulat~\ref{post:dynamisk} f\o lgjer det at
+formhistoria viser punktert likevekt.
+\end{teorem}
+
+\begin{proof}
+Former samlar seg rundt haugar (teorem~\ref{teo:fleirehaugar}).
+Haugane flyttar seg med landskapet (postulat~\ref{post:dynamisk}).
+Lat $\x^*(t)$ vere posisjonen til eit lokalt maksimum ved tid $t$.
+S\aa{} lenge $\partial\x^*/\partial t$ er liten, f\o lgjer formene gradvis med (stabilitet).
+N\aa r $\partial f/\partial t$ er stort nok til at haugen forsvinn
+(d.v.s.\ $\partial^2 f/\partial\x^2$ skiftar forteikn), kollapsar klyngja,
+og formene m\aa{} finne nye haugar (omvelting).
+\end{proof}
+
+\begin{prediksjon}
+Shannon-entropien $H'(t) = -\sum p_i \ln p_i$ over materialkategoriar i eit datasett
+b\o r vise plat\aa{} avbrotne av br\aa{} stigingar.
+STOLAR-datasettet ($n \approx 2\,300$, 1280--2024) gjev:
+$H' = 2{,}67$ p\aa{} 1600-talet; $H' = 3{,}51$ p\aa{} 1900-talet.
+Diskontinuitetane svarar til teknologiske omveltingar
+(kolonial import ca.\ 1600, industrialisering ca.\ 1875).
+\end{prediksjon}
+
+\begin{defn}[Landskapsminne]
+\label{def:landskapsminne}
+Kvar realisert form $\x \in B$ etterlet seg eit spor som modifiserer
+seleksjonstrykka for neste form:
+\[
+  s_i(\y, t+\mathrm{d}t) = s_i(\y, t) + \eta_i(\y, \x)
+\]
+der $\eta_i$ er ein ``impaktfunksjon'' som uttrykkjer korleis den realiserte forma $\x$
+endrar det $i$-te trykket for framtidige former $\y$. Landskapet har minne.
+\end{defn}
+
+
+% ============================================================
+% V  MATERIALE
+% ============================================================
+\section{Materiale}
+\label{sec:materiale}
+
+\begin{quote}
+\itshape Korresponderer med \formlaere{} 5.1--5.52
+\end{quote}
+
+\begin{postulat}[Geometrisk signatur]
+\label{post:signatur}
+Kvart materiale $m$ induserer ei ikkje-uniform sannsynlegheitsfordeling over
+underrommet av geometriar $G \subset \Reals^n$:
+\[
+  P(\x \mid m) \neq \mathrm{Uniform}(G)
+  \qquad \text{for alle } m
+\]
+Materialet trekkjer forma mot visse konfigurasjonar og motset seg andre.
+\end{postulat}
+
+\begin{falsifisering}
+Postulatet fell om same geometriske distribusjon kan observerast uavhengig av materiale,
+innanfor same funksjonelle klasse og same sett av \o vrige seleksjonstrykk.
+\end{falsifisering}
+
+\noindent\textbf{Formelt:}
+Lat $m_1, m_2$ vere to ulike materialar.
+Postulat~\ref{post:signatur} hevdar at
+$P(\x \mid m_1, C, \svec_{-m}) \neq P(\x \mid m_2, C, \svec_{-m})$
+der $\svec_{-m}$ er alle seleksjonstrykk utanom materialet.
+
+\begin{teorem}[Informasjonsteoremet]
+\label{teo:informasjon}
+Innanfor ein funksjonell klasse $C$ ber materialet meir gjensidig informasjon med
+realisert geometri enn funksjonen gjer:
+\[
+  I(G;\, M) > I(G;\, \mathrm{Func}) = 0
+\]
+\end{teorem}
+
+\begin{proof}
+Funksjonen er per definisjon konstant innanfor $C$.
+Ein konstant variabel har null entropi: $H(\mathrm{Func} \mid C) = 0$.
+Difor $I(G;\, \mathrm{Func}) = H(G) - H(G \mid \mathrm{Func}) = 0$.
+Etter postulat~\ref{post:signatur} er $P(G \mid M)$ ikkje-uniform,
+s\aa{} $H(G \mid M) < H(G)$, og difor
+$I(G;\, M) = H(G) - H(G \mid M) > 0 > I(G;\, \mathrm{Func})$.
+\end{proof}
+
+\begin{prediksjon}
+I STOLAR-datasettet skal $I(\text{geometri};\, \text{materiale}) > 0$ innanfor
+stolklassen. Dette kan estimerast med $k$-n\ae raste-nabo-estimatorar for gjensidig
+informasjon \citep{kraskov2004}.
+\end{prediksjon}
+
+
+% ============================================================
+% VI  NAVIGASJON
+% ============================================================
+\section{Navigasjon}
+\label{sec:navigasjon}
+
+\begin{quote}
+\itshape Korresponderer med \formlaere{} 6.1--6.6
+\end{quote}
+
+\begin{defn}[Navigator]
+\label{def:navigator}
+Ein navigator er eit trippel $N = (G, \mu, \alpha)$ der:
+\begin{enumerate}[label=(\alph*)]
+  \item $G \subseteq \MC$ er ei mengd av m\aa ltilstandar (ein region navigatoren styrer mot)
+  \item $\mu : \MC \to \Reals_{\ge 0}$ er ein avstandsfunksjon:
+        $\mu(\x) = d(\x, G)$ for ein eigna metrikk $d$
+  \item $\alpha : \MC \to T\MC$ er eit justeringsfelt: ein vektorfunksjon som dreg
+        systemet mot $G$, slik at
+        \[
+          \langle \alpha(\x),\, -\nabla\mu(\x) \rangle > 0
+          \qquad \text{for } \mu(\x) > 0
+        \]
+\end{enumerate}
+Det vil seie: $\alpha$ peikar i retning av avtakande avstand til $G$.
+Navigatoren justerer seg mot m\aa let.
+\end{defn}
+
+\begin{merknad}
+Definisjonen krev korkje medvit, intensjon eller nervesystem.
+Ho krev berre at tre vilk\aa r er oppfylte.
+Ein termostat er ein navigator.
+Ein gradient-descent-algoritme er ein navigator.
+Ein kvar kjemisk reaksjon som driv mot likevekt er ein navigator.
+\end{merknad}
+
+\begin{defn}[Grenseflate]
+\label{def:grenseflate}
+Grenseflata til ein navigator $N$ er den maksimale regionen i rom-tid der $N$
+kan ha m\aa l:
+\[
+  \partial N = \bigl\{\,(r, t) \in \Reals^3 \times \Reals :
+  N \text{ kan representere og arbeide mot tilstandar i } (r, t)\,\bigr\}
+\]
+Dette er \textbf{den kognitive lyskjegla} til $N$ (jf.\ Levin, 2019).
+Storleiken p\aa{} $\partial N$ avgjer kva problem $N$ kan handsame.
+\end{defn}
+
+\medskip
+\begin{center}
+\begin{tabular}{@{}llll@{}}
+\toprule
+\textbf{Grenseflate} & \textbf{Romsleg skala} & \textbf{Tidsskala} & \textbf{Eksempel} \\
+\midrule
+$\mu$m, ms      & Intracellul\ae r & Augeblikkeleg & Ionekanalregulering \\
+mm, minutt       & Cellul\ae r      & Kort          & Kjemotaksis \\
+cm, timar        & Vev              & Medium        & S\aa rtilheling \\
+m, \aa r         & Organisme        & Lang          & Anatomisk homeostase \\
+km, ti\aa r      & Samfunn          & Generasjonell & Handverkstradisjon \\
+Kontinent, hundre\aa r & Sivilisasjon & Historisk  & Arkitektonisk stil \\
+Globalt, tusen\aa r    & Biosystemet  & Evolusjon\ae r & Artsmorfologi \\
+\bottomrule
+\end{tabular}
+\end{center}
+\medskip
+
+\begin{defn}[Intelligens]
+\label{def:intelligens}
+Graden av intelligens til ein navigator $N$ er proporsjonal med hans evne til
+\aa{} unng\aa{} lokale optimum i tilpassingslandskapet:
+\[
+  I(N) \propto \max\bigl\{\,d\bigl(\gamma_N(t),\, \x_{\mathrm{lokal}}\bigr) :
+  \gamma_N \text{ konvergerer mot } \x_{\mathrm{global}}\,\bigr\}
+\]
+der $\x_{\mathrm{lokal}}$ er eit lokalt maksimum og $\x_{\mathrm{global}}$ er eit betre
+globalt alternativ. Intelligens er evna til \aa{} f\o lgje omvegar som endar betre enn
+den rette linja. Formelt er det evna til \aa{} krysse energibarrierar i landskapet.
+\end{defn}
+
+\begin{merknad}
+Denne definisjonen er skala-uavhengig. Ho gjeld for eit enzym som unng\aa r ein lokal
+minima i konformasjonsrom, for ein handverkar som omg\ae r ein umogleg geometri via ein
+alternativ konstruksjonsmetode, og for ein sivilisasjon som investerer i infrastruktur
+(kortsiktig kostnad) for langsiktig vinst.
+\end{merknad}
+
+
+% ============================================================
+% VII  SUBSTRAT-UAVHENGIGHEIT
+% ============================================================
+\section{Substrat-uavhengigheit}
+\label{sec:substrat}
+
+\begin{quote}
+\itshape Korresponderer med \formlaere{} 7.1--7.32
+\end{quote}
+
+\begin{postulat}[Substrat-uavhengigheit]
+\label{post:substrat}
+Definisjonen av navigator (definisjon~\ref{def:navigator}) krev ingen bestemt fysisk
+substrat. Vilk\aa ra (a), (b), (c) kan oppfyllast i eit vilk\aa rleg fysisk system som har
+tilstandar, kan registrere avstand fr\aa{} ein m\aa ltilstand, og kan justere seg.
+\end{postulat}
+
+\begin{falsifisering}
+Postulatet fell om det kan visast at minst eitt av vilk\aa ra (a), (b), (c) krev ein
+eigenskap som berre organisk materie har.
+\end{falsifisering}
+
+\begin{teorem}
+\label{teo:substrat}
+Av definisjon~\ref{def:navigator} og postulat~\ref{post:substrat} f\o lgjer det at
+navigasjon er ein eigenskap ved systemets funksjonelle organisering, ikkje ved materialet
+det er laga av. Kvar dei tre vilk\aa ra er oppfylte, finst navigasjon.
+\end{teorem}
+
+\noindent
+Me viser no korleis navigator-trippelet $(G, \mu, \alpha)$ vert realisert i fem
+ulike substrat:
+
+\bigskip
+\noindent\textbf{VII.3.1\quad Diffusjonsmodell.}
+
+\medskip
+\begin{center}
+\begin{tabular}{@{}l >{\raggedright\arraybackslash}p{8cm}@{}}
+\toprule
+\textbf{Komponent} & \textbf{Realisering} \\
+\midrule
+Formrom $\mathbf{M}$         & Latentrom $\Reals^d$ \\
+M\aa ltilstand $G$            & Kondisjonert distribusjon $p(\x_0 \mid c)$ \\
+Avstandsfunksjon $\mu$        & Score $\nabla_{\x} \log p(\x_t)$ \\
+Justeringsfelt $\alpha$       & Stokastisk differensiallikning (reverse SDE) \\
+Seleksjonstrykk $\svec$       & Treningsdata \\
+Grenseflate $\partial N$      & Parameterrom og kondisjoneringsrom \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{merknad}
+Moduskollaps under sterk kondisjonering er same fenomen som konvergens mot ein haug
+(\formlaere{} 3.41): eitt seleksjonstrykk dominerer, og variasjonen snevrar inn.
+\end{merknad}
+
+\bigskip
+\noindent\textbf{VII.3.2\quad Embryo / Morfogenese.}
+
+\medskip
+\begin{center}
+\begin{tabular}{@{}l >{\raggedright\arraybackslash}p{8cm}@{}}
+\toprule
+\textbf{Komponent} & \textbf{Realisering} \\
+\midrule
+Formrom $\mathbf{M}$         & Morforom: rom av moglege anatomiar \\
+M\aa ltilstand $G$            & Anatomisk settform (kodifisert i bioelektrisk m\o nster) \\
+Avstandsfunksjon $\mu$        & Avvik mellom noverande og m\aa l-bioelektrisk m\o nster \\
+Justeringsfelt $\alpha$       & Cellevandring, differensiering, apoptose, proliferasjon \\
+Seleksjonstrykk $\svec$       & Genetiske, bioelektriske, mekaniske, kjemiske signal \\
+Grenseflate $\partial N$      & Heil organisme (i regenererande artar); organprimordium (i ikkje-regenererande) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{merknad}
+Planaria som regenererer hovud etter amputasjon navigerer tilbake til same posisjon i
+morforom uavhengig av kor dei vert kutta.
+Det bioelektriske m\o nsteret kan overskrivast utan \aa{} endre genomet (Levin, 2022):
+m\aa ltilstanden $G$ er redigerbar, ikkje hardkoda.
+\end{merknad}
+
+\bigskip
+\noindent\textbf{VII.3.3\quad Handverk (M\o belsnekkar).}
+
+\medskip
+\begin{center}
+\begin{tabular}{@{}l >{\raggedright\arraybackslash}p{8cm}@{}}
+\toprule
+\textbf{Komponent} & \textbf{Realisering} \\
+\midrule
+Formrom $\mathbf{M}$         & Formrom for stolklassen $\MC$ \\
+M\aa ltilstand $G$            & Mental representasjon + teikningar + tradisjon \\
+Avstandsfunksjon $\mu$        & Taktil og visuell tilbakemelding \\
+Justeringsfelt $\alpha$       & Kvart kutt, kvar b\o ying, kvar limsaum \\
+Seleksjonstrykk $\svec$       & Materiale, \o konomi, tradisjon, kroppens bruk, estetikk \\
+Grenseflate $\partial N$      & Verkstaden og levetida til handverkaren \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{merknad}
+Materialet navigerer samstundes mot sin eigen geometriske signatur
+(postulat~\ref{post:signatur}). Den ferdige forma oppst\aa r \emph{mellom} handverkaren
+og materialet. Ingen av dei kontrollerer utfallet aaleine.
+\end{merknad}
+
+\bigskip
+\noindent\textbf{VII.3.4\quad Evolusjon\ae r prosess.}
+
+\medskip
+\begin{center}
+\begin{tabular}{@{}l >{\raggedright\arraybackslash}p{8cm}@{}}
+\toprule
+\textbf{Komponent} & \textbf{Realisering} \\
+\midrule
+Formrom $\mathbf{M}$         & Genotyp-fenotyp-rom \\
+M\aa ltilstand $G$            & H\o gare fitness (implisitt, ikkje representert) \\
+Avstandsfunksjon $\mu$        & Differensiell reproduksjon \\
+Justeringsfelt $\alpha$       & Seleksjon, mutasjon, drift, rekombinasjon \\
+Seleksjonstrykk $\svec$       & Milj\o, konkurranse, seksuell seleksjon \\
+Grenseflate $\partial N$      & Populasjonen og dens generasjonstid \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{merknad}
+Ingen einskild organisme har oversikt. Populasjonen vandrar i landskapet utan ein
+sentralisert plan. Det er distribuert navigasjon (\formlaere{} 8) i sin reinaste form.
+\end{merknad}
+
+\bigskip
+\noindent\textbf{VII.3.5\quad Spr\aa kmodell (LLM).}
+
+\medskip
+\begin{center}
+\begin{tabular}{@{}l >{\raggedright\arraybackslash}p{8cm}@{}}
+\toprule
+\textbf{Komponent} & \textbf{Realisering} \\
+\midrule
+Formrom $\mathbf{M}$         & Tokenrom $V^T$ for sekvensar av lengd $T$ \\
+M\aa ltilstand $G$            & Kondisjonert fordeling $P(x_{t+1} \mid x_{1:t}, \text{prompt})$ \\
+Avstandsfunksjon $\mu$        & Tap-funksjonen (kryssentropi) \\
+Justeringsfelt $\alpha$       & Autoregresjon: kvart generert token er eit steg i vandringa \\
+Seleksjonstrykk $\svec$       & Treningskorpus, RLHF, promptkontekst \\
+Grenseflate $\partial N$      & Kontekstvinduet og parameterrommet \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{merknad}
+Kvar generert sekvens er ein \emph{veg} gjennom tokenrommet, ikkje ein posisjon.
+Sekvensen som vert realisert er den som gjer verknaden stasjon\ae r (\formlaere{} 9):
+ho minimerer kryssentropien langs vegen, ikkje berre ved endepunktet.
+Temperaturparameteren kontrollerer spreiinga (\formlaere{} 9.41).
+\end{merknad}
+
+\bigskip
+
+\begin{defn}[Overtalbarheitskontinuumet]
+\label{def:overtalbarheit}
+Lat $P(N)$ vere den optimale styringsstrategien for navigator $N$.
+Navigatorar ligg p\aa{} eit kontinuum:
+\begin{description}[font=\normalfont\itshape, leftmargin=2.5cm, labelwidth=1.8cm]
+  \item[Klasse A:] $P(N)$ = maskinvare-modifikasjon
+    (ingen settpunkt; alt er hardkoda)
+  \item[Klasse B:] $P(N)$ = settpunkt-omskriving
+    (m\aa ltilstand er redigerbar, men ikkje l\ae rbar)
+  \item[Klasse C:] $P(N)$ = trening med bel\o ning/straff
+    (systemet l\ae rer av erfaring)
+  \item[Klasse D:] $P(N)$ = kommunikasjon av grunnar
+    (systemet responderer p\aa{} argument)
+\end{description}
+For kvart steg opp treng ein \emph{mindre kunnskap om systemets indre} og \emph{meir
+kommunikasjon med systemet som heilskap}. Plasseringa av ein navigator p\aa{} dette
+kontinuumet avgjer kva slags interaksjon som er optimal.
+\end{defn}
+
+\begin{merknad}
+Kontinuumet er sj\o lv ein dimensjon i eit \emph{metaformrom}: rommet av moglege
+navigatorar. \formlaere{} er ein modell som opererer i dette metarommet.
+\end{merknad}
+
+\end{document}
