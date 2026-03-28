@@ -1,7 +1,8 @@
 """
-STOLAR -- 3D-punktsky-frames (ALLE stolar)
-Rendrar kvar stol som 3D-punktsky, sortert etter midtår.
-256x256px, svart bakgrunn, cyan→magenta gradient.
+STOLAR -- 3D-punktsky MORPH-animasjon
+Smooth interpolering mellom stolar sortert kronologisk.
+Fast kamera -- punktskya morphar frå éin stol til neste.
+256x256px, svart bakgrunn, cyan-magenta gradient.
 
 Køyr frå prosjektrota:
   python pipeline/viz_pointcloud_frames.py
@@ -22,9 +23,14 @@ from matplotlib import cm
 from PIL import Image, ImageDraw, ImageFont
 
 # ── Config ──
-N_POINTS = 2000
+N_POINTS = 2000          # punkt per stol
+N_CHAIRS = 100           # antal stolar i serien
+INTERP_FRAMES = 8        # interpoleringsframes mellom kvar stol
+HOLD_FRAMES = 2          # frames som held på kvar stol
 IMG_SIZE = 256
 DPI = 128
+ELEV = 20
+AZIM = 235               # fast kameravinkel
 OUT_DIR = "results/pointcloud_frames"
 os.makedirs(OUT_DIR, exist_ok=True)
 
@@ -33,6 +39,7 @@ CMAP = cm.get_cmap("cool")
 # ── Last metadata ──
 print("Lastar STOLAR-data...")
 df = pd.read_csv("STOLAR/STOLAR_all.csv", encoding="utf-8-sig")
+df.columns = [c.strip() for c in df.columns]
 H = "Høgde (cm)"; W = "Breidde (cm)"; D = "Djupn (cm)"
 FRA = "Frå år"; TIL = "Til år"; MAT = "Materialar"
 STI = "Stilperiode"; OBJ = "Objekt-ID"; GLB = "3D-modell"; NAMN = "Namn"
@@ -62,8 +69,14 @@ has_glb = df.dropna(subset=["glb_file", "midtaar"]).copy()
 has_glb = has_glb[(has_glb[H] > 20) & (has_glb[W] > 10)]
 has_glb = has_glb.sort_values("midtaar").reset_index(drop=True)
 
-N_TOTAL = len(has_glb)
-print(f"  {N_TOTAL} stolar med GLB + metadata -- rendrar ALLE")
+# Vel N_CHAIRS jamt fordelt
+n_avail = len(has_glb)
+idxs = np.linspace(0, n_avail - 1, N_CHAIRS, dtype=int)
+selection = has_glb.iloc[idxs].reset_index(drop=True)
+print(f"  {n_avail} stolar tilgjengeleg, vel {N_CHAIRS} for morph-serie")
+
+total_frames = N_CHAIRS * HOLD_FRAMES + (N_CHAIRS - 1) * INTERP_FRAMES
+print(f"  Totalt: {total_frames} frames ({HOLD_FRAMES} hold + {INTERP_FRAMES} interp per stol)")
 
 # ── Fonts ──
 try:
@@ -99,25 +112,36 @@ def load_pointcloud(glb_path):
         return None
 
 
-def render_frame(pts, frame_idx, total, year, material, stil):
-    """Render ein stol som 3D-punktsky → PIL Image."""
+def sort_points(pts):
+    """Sorter punktsky etter sfærisk vinkel for stabil korrespondanse."""
+    angles = np.arctan2(pts[:, 2], pts[:, 0])  # vinkel i XZ-planet
+    order = np.lexsort((pts[:, 1], angles))     # primær: vinkel, sekundær: høgde
+    return pts[order]
+
+
+def ease_in_out(t):
+    """Smooth easing: sakte start og slutt, rask i midten."""
+    return t * t * (3 - 2 * t)
+
+
+def render_pts(pts, frame_nr, total, year_str, info_str, progress):
+    """Render punktsky med fast kamera, returnerer PIL Image."""
     fig = plt.figure(figsize=(FIGSIZE, FIGSIZE), dpi=DPI)
     ax = fig.add_subplot(111, projection="3d")
     fig.patch.set_facecolor("#0a0a0f")
     ax.set_facecolor("#0a0a0f")
 
     y_vals = pts[:, 1]
-    norm = Normalize(vmin=y_vals.min(), vmax=y_vals.max())
+    norm = Normalize(vmin=-1, vmax=1)
     colors = CMAP(norm(y_vals))
     colors[:, :3] = colors[:, :3] * 0.6 + 0.4
     colors[:, 3] = 0.85
 
-    azim = 225 + (frame_idx / total) * 60
     ax.scatter(pts[:, 0], pts[:, 2], pts[:, 1],
                c=colors, s=1.5, edgecolors="none",
                depthshade=True, rasterized=True)
 
-    ax.view_init(elev=20, azim=azim)
+    ax.view_init(elev=ELEV, azim=AZIM)
     ax.set_axis_off()
     for a in [ax.xaxis, ax.yaxis, ax.zaxis]:
         a.pane.fill = False
@@ -134,49 +158,85 @@ def render_frame(pts, frame_idx, total, year, material, stil):
 
     # Tekstoverlay
     draw = ImageDraw.Draw(img)
-    draw.text((8, 4), str(int(year)), fill="#ffffff", font=FONT_BIG)
+    draw.text((8, 4), year_str, fill="#ffffff", font=FONT_BIG)
 
-    prog = f"{frame_idx + 1}/{total}"
-    bbox = draw.textbbox((0, 0), prog, font=FONT_SM)
-    draw.text((IMG_SIZE - bbox[2] - 8, 6), prog, fill="#666", font=FONT_SM)
+    prog_txt = f"{frame_nr + 1}/{total}"
+    bbox = draw.textbbox((0, 0), prog_txt, font=FONT_SM)
+    draw.text((IMG_SIZE - bbox[2] - 8, 6), prog_txt, fill="#666", font=FONT_SM)
 
-    bottom = material
-    if pd.notna(stil) and str(stil).strip():
-        bottom += f"  ·  {stil}"
-    draw.text((8, IMG_SIZE - 16), bottom, fill="#888", font=FONT_SM)
+    draw.text((8, IMG_SIZE - 16), info_str, fill="#888", font=FONT_SM)
 
-    frac = (frame_idx + 1) / total
-    draw.rectangle([0, IMG_SIZE - 2, int(IMG_SIZE * frac), IMG_SIZE], fill="#52b788")
+    draw.rectangle([0, IMG_SIZE - 2, int(IMG_SIZE * progress), IMG_SIZE], fill="#52b788")
 
     return img
 
 
-# ── Render ALLE ──
-print(f"\nRendrar {N_TOTAL} frames til {OUT_DIR}/...")
-rendered = 0
-skipped = 0
-
-for i, (_, row) in enumerate(has_glb.iterrows()):
+# ── Pre-last alle punktskyer ──
+print("\nLastar punktskyer...")
+clouds = []
+meta = []
+for i, (_, row) in enumerate(selection.iterrows()):
     glb_path = os.path.join(glb_dir, row["glb_file"])
     pts = load_pointcloud(glb_path)
+    if pts is not None:
+        pts = sort_points(pts)
+        clouds.append(pts)
+        meta.append(row)
+    if (i + 1) % 20 == 0:
+        print(f"  {i+1}/{N_CHAIRS} lasta ({len(clouds)} OK)")
 
-    if pts is None:
-        skipped += 1
-        continue
+print(f"  {len(clouds)} punktskyer klare")
 
-    img = render_frame(
-        pts, i, N_TOTAL,
-        year=row["midtaar"],
-        material=row["primmat"],
-        stil=row.get(STI, ""),
-    )
+# Oppdater totalt antal frames
+N = len(clouds)
+total_frames = N * HOLD_FRAMES + (N - 1) * INTERP_FRAMES
 
-    out_path = os.path.join(OUT_DIR, f"frame_{i:04d}.png")
-    img.save(out_path, "PNG")
-    rendered += 1
+# ── Render morph-serie ──
+print(f"\nRendrar {total_frames} frames til {OUT_DIR}/...")
+frame_nr = 0
 
-    if (i + 1) % 100 == 0:
-        print(f"  [{i+1:4d}/{N_TOTAL}] {row.get(OBJ, '?')} ({int(row['midtaar'])}) -- {rendered} ok, {skipped} skip")
+for ci in range(N):
+    row = meta[ci]
+    year = int(row["midtaar"])
+    mat = row["primmat"]
+    stil = row.get(STI, "")
+    info = mat
+    if pd.notna(stil) and str(stil).strip():
+        info += f"  ·  {stil}"
 
-print(f"\nFERDIG: {rendered} frames lagra, {skipped} hoppa over")
-print(f"Output: {OUT_DIR}/frame_0000.png ... frame_{N_TOTAL-1:04d}.png")
+    # Hold-frames: vis stolen som han er
+    for _ in range(HOLD_FRAMES):
+        img = render_pts(clouds[ci], frame_nr, total_frames,
+                         str(year), info, (frame_nr + 1) / total_frames)
+        img.save(os.path.join(OUT_DIR, f"frame_{frame_nr:04d}.png"), "PNG")
+        frame_nr += 1
+
+    # Interpolering til neste stol
+    if ci < N - 1:
+        next_row = meta[ci + 1]
+        next_year = int(next_row["midtaar"])
+        next_mat = next_row["primmat"]
+        next_stil = next_row.get(STI, "")
+        next_info = next_mat
+        if pd.notna(next_stil) and str(next_stil).strip():
+            next_info += f"  ·  {next_stil}"
+
+        for fi in range(INTERP_FRAMES):
+            t = ease_in_out((fi + 1) / (INTERP_FRAMES + 1))
+            pts_interp = (1 - t) * clouds[ci] + t * clouds[ci + 1]
+
+            # Interpoler årstal og tekst
+            yr_interp = int((1 - t) * year + t * next_year)
+            info_interp = info if t < 0.5 else next_info
+
+            img = render_pts(pts_interp, frame_nr, total_frames,
+                             str(yr_interp), info_interp,
+                             (frame_nr + 1) / total_frames)
+            img.save(os.path.join(OUT_DIR, f"frame_{frame_nr:04d}.png"), "PNG")
+            frame_nr += 1
+
+    if (ci + 1) % 10 == 0:
+        print(f"  stol {ci+1}/{N} ({year}) -- frame {frame_nr}/{total_frames}")
+
+print(f"\nFERDIG: {frame_nr} frames i {OUT_DIR}/")
+print(f"  @ 30fps = {frame_nr/30:.0f}s video")
