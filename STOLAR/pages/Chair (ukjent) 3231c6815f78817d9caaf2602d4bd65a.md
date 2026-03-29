@@ -5,9 +5,9 @@ Breidde (cm): 41
 Datering: 1890
 Djupn (cm): 43
 Estimert vekt (kg): 0.0
-Fra ar: 1890
-Hundre-ar: 1800-talet
-Hogde (cm): 81
+Frå år: 1890
+Hundreår: 1800-talet
+Høgde (cm): 81
 Materialar: Bøk
 Materialkommentar: [AI] Lakkert bøk med formskåret sete, dreide ben og tverrsprosser.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O372046/
@@ -17,5 +17,5 @@ Objekt-ID: O372046
 Produksjonsstad: England
 Produsent: ukjent
 Stilperiode: Viktorianisme
-Til ar: 1890
+Til år: 1890
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372046.glb

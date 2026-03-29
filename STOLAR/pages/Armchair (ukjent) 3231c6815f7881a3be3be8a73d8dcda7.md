@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: 1750-1770
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1750
-Hundre-ar: 1700-talet
-Hogde (cm): 0
+Frå år: 1750
+Hundreår: 1700-talet
+Høgde (cm): 0
 Materialar: Mahogni
 Materialkommentar: Skoren mahogni
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O372257/
@@ -18,5 +18,5 @@ Produksjonsstad: England
 Produsent: unknown
 Stilperiode: Nyklassisisme
 Teknikk: Skjæring
-Til ar: 1770
+Til år: 1770
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372257.glb

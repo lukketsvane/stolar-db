@@ -5,9 +5,9 @@ Breidde (cm): 47
 Datering: 1680-1690
 Djupn (cm): 42.5
 Estimert vekt (kg): 0.0
-Fra ar: 1680
-Hundre-ar: 1600-talet
-Hogde (cm): 106
+Frå år: 1680
+Hundreår: 1600-talet
+Høgde (cm): 106
 Materialar: Nøttetre, Rotting
 Materialkommentar: Valnøtt, med fletta sete og rygg
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O132481/
@@ -17,5 +17,5 @@ Objekt-ID: O132481
 Produksjonsstad: London
 Produsent: ukjent
 Stilperiode: Barokk
-Til ar: 1690
+Til år: 1690
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O132481.glb

@@ -5,9 +5,9 @@ Breidde (cm): 53.3
 Datering: 1720-1740
 Djupn (cm): 50.8
 Estimert vekt (kg): 0.0
-Fra ar: 1720
-Hundre-ar: 1700-talet
-Hogde (cm): 99
+Frå år: 1720
+Hundreår: 1700-talet
+Høgde (cm): 99
 Materialar: Mahogni, Silke
 Materialkommentar: [AI] Skåret mahogni med profilert rygg og vaseformet midtbrett. Polstret sete trukket med grønn silkedamask. Cabrioleben med skåret dekor i form av skjellornamentikk på kneet.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O118944/
@@ -17,5 +17,5 @@ Objekt-ID: O118944
 Produksjonsstad: England
 Produsent: ukjent
 Stilperiode: Rokokko
-Til ar: 1740
+Til år: 1740
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O118944.glb

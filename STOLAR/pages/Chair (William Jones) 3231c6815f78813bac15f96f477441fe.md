@@ -5,9 +5,9 @@ Breidde (cm): 51
 Datering: 1913-1914
 Djupn (cm): 56
 Estimert vekt (kg): 0.0
-Fra ar: 1913
-Hundre-ar: 1900-talet
-Hogde (cm): 47.5
+Frå år: 1913
+Hundreår: 1900-talet
+Høgde (cm): 47.5
 Materialar: Nøttetre, Perlemor
 Materialkommentar: Valnøtt med perlemorinnlegg
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O130479/
@@ -17,5 +17,5 @@ Objekt-ID: O130479
 Produksjonsstad: England
 Produsent: William Jones
 Stilperiode: Jugend/Art Nouveau
-Til ar: 1914
+Til år: 1914
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O130479.glb

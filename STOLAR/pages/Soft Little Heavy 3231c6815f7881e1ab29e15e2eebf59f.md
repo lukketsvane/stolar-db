@@ -5,9 +5,9 @@ Breidde (cm): 59
 Datering: 1991
 Djupn (cm): 72
 Estimert vekt (kg): 0.0
-Fra ar: 1991
-Hundre-ar: 1900-talet
-Hogde (cm): 75
+Frå år: 1991
+Hundreår: 1900-talet
+Høgde (cm): 75
 Materialar: Skumplast, Stål, Tekstil
 Materialkommentar: Steel frame with upholstered foam
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O50991/
@@ -17,5 +17,5 @@ Objekt-ID: O50991
 Produksjonsstad: Italy
 Produsent: Arad, Ron
 Stilperiode: Postmodernisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O50991.glb

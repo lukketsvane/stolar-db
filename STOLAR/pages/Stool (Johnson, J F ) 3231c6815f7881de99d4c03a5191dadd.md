@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: 1926-1927
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1926
-Hundre-ar: 1900-talet
-Hogde (cm): 0
+Frå år: 1926
+Hundreår: 1900-talet
+Høgde (cm): 0
 Materialar: Ibenholt, Mahogni, Silke
 Materialkommentar: Mahogany, veneered in ebony, drop-in seat pad upholstered with silk
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O113729/
@@ -17,5 +17,5 @@ Objekt-ID: O113729
 Produksjonsstad: London
 Produsent: Johnson, J. F.
 Stilperiode: Art Deco / Tidleg modernisme
-Til ar: 1927
+Til år: 1927
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O113729.glb

@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: 1550-1600
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1550
-Hundre-ar: 1600-talet
-Hogde (cm): 106
+Frå år: 1550
+Hundreår: 1600-talet
+Høgde (cm): 106
 Materialar: Tre
 Materialkommentar: Kyllingvingetre
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O179299/
@@ -17,5 +17,5 @@ Objekt-ID: O179299
 Produksjonsstad: China
 Produsent: Unknown
 Stilperiode: Renessanse
-Til ar: 1600
+Til år: 1600
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O179299.glb

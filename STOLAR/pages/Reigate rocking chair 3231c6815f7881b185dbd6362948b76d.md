@@ -5,9 +5,9 @@ Breidde (cm): 67.3
 Datering: 1968
 Djupn (cm): 81.3
 Estimert vekt (kg): 0.0
-Fra ar: 1968
-Hundre-ar: 1900-talet
-Hogde (cm): 86.4
+Frå år: 1968
+Hundreår: 1900-talet
+Høgde (cm): 86.4
 Materialar: Aluminium, Stål, Tekstil
 Materialkommentar: Nylon-coated steel frame with anodised aluminium seat and back supports and upholstered cushion.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O372094/
@@ -17,5 +17,5 @@ Objekt-ID: O372094
 Produksjonsstad: England
 Produsent: Plunkett, William
 Stilperiode: Modernisme / Midtjahrhundre
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372094.glb

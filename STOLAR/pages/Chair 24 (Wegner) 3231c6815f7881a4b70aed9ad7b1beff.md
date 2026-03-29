@@ -4,9 +4,9 @@ Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR
 Breidde (cm): 57
 Datering: 1950
 Djupn (cm): 52
-Fra ar: 1950
-Hundre-ar: 1900-talet
-Hogde (cm): 39
+Frå år: 1950
+Hundreår: 1900-talet
+Høgde (cm): 39
 Materialar: Bøk, Eik, Papir
 Materialkommentar: Oak/beech frame, paper-cord seat, steam-bent arm
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O181062/

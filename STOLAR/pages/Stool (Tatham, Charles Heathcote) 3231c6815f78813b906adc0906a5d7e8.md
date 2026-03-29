@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: ca. 1800
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1800
-Hundre-ar: 1800-talet
-Hogde (cm): 0
+Frå år: 1800
+Hundreår: 1800-talet
+Høgde (cm): 0
 Materialar: Bøk, Maling
 Materialkommentar: Bøk, måla for å etterlikne marmor
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O7882/
@@ -17,5 +17,5 @@ Objekt-ID: O7882
 Produksjonsstad: England
 Produsent: Tatham, Charles Heathcote
 Stilperiode: Empire
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O7882.glb

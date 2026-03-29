@@ -5,9 +5,9 @@ Breidde (cm): 104
 Datering: 1964
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1964
-Hundre-ar: 1900-talet
-Hogde (cm): 153
+Frå år: 1964
+Hundreår: 1900-talet
+Høgde (cm): 153
 Materialar: Tekstil, Ull
 Materialkommentar: [AI] Trykket tekstil av ull.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O369359/
@@ -17,5 +17,5 @@ Objekt-ID: O369359
 Produksjonsstad: Great Britain
 Produsent: Peter Murdoch
 Stilperiode: Modernisme / Midtjahrhundre
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O369359.glb

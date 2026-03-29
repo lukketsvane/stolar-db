@@ -5,9 +5,9 @@ Breidde (cm): 54.5
 Datering: ca. 1790
 Djupn (cm): 51.5
 Estimert vekt (kg): 0.0
-Fra ar: 1790
-Hundre-ar: 1700-talet
-Hogde (cm): 91
+Frå år: 1790
+Hundreår: 1700-talet
+Høgde (cm): 91
 Materialar: Lær, Mahogni, Messing
 Materialkommentar: [AI] Skåret og polert mahogni med lyreformet ryggbrett, profilert rammeverk, polstret sete trukket med lær og dekorert med messingstifter.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O371784/
@@ -17,5 +17,5 @@ Objekt-ID: O371784
 Produksjonsstad: England
 Produsent: Unknown
 Stilperiode: Nyklassisisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O371784.glb

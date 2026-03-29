@@ -5,9 +5,9 @@ Breidde (cm): 44
 Datering: 1836-1840
 Djupn (cm): 46.5
 Estimert vekt (kg): 0.0
-Fra ar: 1836
-Hundre-ar: 1800-talet
-Hogde (cm): 88.2
+Frå år: 1836
+Hundreår: 1800-talet
+Høgde (cm): 88.2
 Materialar: Nøttetre, Rotting
 Materialkommentar: Laminert valnøttramme, med fletta sete
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O59199/
@@ -16,5 +16,5 @@ Objekt-ID: O59199
 Produksjonsstad: Boppard-am-Rhein
 Produsent: Thonet, Michael
 Stilperiode: Wiener bentwood / Historisme
-Til ar: 1840
+Til år: 1840
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O59199.glb

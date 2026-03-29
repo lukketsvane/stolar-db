@@ -5,9 +5,9 @@ Breidde (cm): 70
 Datering: 1816-1825
 Djupn (cm): 83
 Estimert vekt (kg): 0.0
-Fra ar: 1816
-Hundre-ar: 1800-talet
-Hogde (cm): 47
+Frå år: 1816
+Hundreår: 1800-talet
+Høgde (cm): 47
 Materialar: Mahogni, Skinn
 Materialkommentar: [AI] Skåret, dreid og polert mahogni med rike utskjæringer i form av palmetter, værhoder og løveføtter. Polstret sete trukket med leopardmønstret skinn.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O372295/
@@ -17,5 +17,5 @@ Objekt-ID: O372295
 Produksjonsstad: England
 Produsent: Dixwell, Charles
 Stilperiode: Empire
-Til ar: 1825
+Til år: 1825
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372295.glb

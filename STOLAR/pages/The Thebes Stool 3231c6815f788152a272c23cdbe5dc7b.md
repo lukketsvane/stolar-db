@@ -5,9 +5,9 @@ Breidde (cm): 43.5
 Datering: 1884
 Djupn (cm): 43.5
 Estimert vekt (kg): 0.0
-Fra ar: 1884
-Hundre-ar: 1800-talet
-Hogde (cm): 28
+Frå år: 1884
+Hundreår: 1800-talet
+Høgde (cm): 28
 Materialar: Lær, Mahogni
 Materialkommentar: Mahogni eller valnøtt, med lærsete
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O7878/
@@ -17,5 +17,5 @@ Objekt-ID: O7878
 Produksjonsstad: London
 Produsent: William Birch & Co
 Stilperiode: Viktorianisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O7878.glb

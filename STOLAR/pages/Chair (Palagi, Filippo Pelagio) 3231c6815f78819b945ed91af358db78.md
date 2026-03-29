@@ -5,9 +5,9 @@ Breidde (cm): 53.5
 Datering: 1838-1840
 Djupn (cm): 48.8
 Estimert vekt (kg): 0.0
-Fra ar: 1838
-Hundre-ar: 1800-talet
-Hogde (cm): 99
+Frå år: 1838
+Hundreår: 1800-talet
+Høgde (cm): 99
 Materialar: Lønn, Mahogni
 Materialkommentar: Lønn- og mahognifiner på ein mahognikorpus
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O59211/
@@ -17,5 +17,5 @@ Objekt-ID: O59211
 Produksjonsstad: Turin
 Produsent: Palagi, Filippo Pelagio
 Stilperiode: Historisme
-Til ar: 1840
+Til år: 1840
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O59211.glb

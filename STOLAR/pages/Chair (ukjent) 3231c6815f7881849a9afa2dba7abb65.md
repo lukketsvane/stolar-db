@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: 1900-10
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1900
-Hundre-ar: 1900-talet
-Hogde (cm): 92.1
+Frå år: 1900
+Hundreår: 1900-talet
+Høgde (cm): 92.1
 Materialar: Skinn, Tre
 Materialkommentar: Wood and hide
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O186536/
@@ -17,5 +17,5 @@ Objekt-ID: O186536
 Produksjonsstad: England
 Produsent: ukjent
 Stilperiode: Jugend/Art Nouveau
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O186536.glb

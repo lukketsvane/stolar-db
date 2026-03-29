@@ -6,9 +6,9 @@ Datering: 1998
 Djupn (cm): 58
 Emneord: Design, Møbel
 Erverving: Kjøpt 2002
-Fra ar: 1998
-Hundre-ar: 1900-talet
-Hogde (cm): 79
+Frå år: 1998
+Hundreår: 1900-talet
+Høgde (cm): 79
 Materialar: Aluminium, Polypropylen
 Materialkommentar: Støpt polypropylen, fargelakkert formbøyd aluminium
 Nasjonalmuseet: https://www.nasjonalmuseet.no/samlingen/objekt/OK-2002-0136
@@ -16,5 +16,5 @@ Nemning: Stol
 Objekt-ID: OK-2002-0136
 Stilperiode: Postmodernisme
 Teknikk: Noting
-Til ar: 1998
+Til år: 1998
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-2002-0136.glb

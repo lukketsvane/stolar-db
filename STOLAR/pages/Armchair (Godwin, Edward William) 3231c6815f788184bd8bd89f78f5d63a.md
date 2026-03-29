@@ -5,9 +5,9 @@ Breidde (cm): 54
 Datering: 1867-1869
 Djupn (cm): 58.5
 Estimert vekt (kg): 0.0
-Fra ar: 1867
-Hundre-ar: 1800-talet
-Hogde (cm): 108.5
+Frå år: 1867
+Hundreår: 1800-talet
+Høgde (cm): 108.5
 Materialar: Eik, Lær
 Materialkommentar: Eik, med dreid dekor, polstert med stempla lær
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O61437/
@@ -18,5 +18,5 @@ Produksjonsstad: London
 Produsent: Godwin, Edward William
 Stilperiode: Viktorianisme
 Teknikk: Dreiing, Polstring
-Til ar: 1869
+Til år: 1869
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O61437.glb

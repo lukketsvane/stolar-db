@@ -5,9 +5,9 @@ Breidde (cm): 107.3
 Datering: ca. 1740
 Djupn (cm): 65.1
 Estimert vekt (kg): 0.0
-Fra ar: 1740
-Hundre-ar: 1700-talet
-Hogde (cm): 71
+Frå år: 1740
+Hundreår: 1700-talet
+Høgde (cm): 71
 Materialar: Ask, Eik, Nøttetre
 Materialkommentar: Massivt nøttetre og masurnøttrefinér på eik og ask, med grunn skjering i finéren
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O60670/
@@ -17,5 +17,5 @@ Produksjonsstad: Marlborough
 Produsent: Hill, Henry (of Marlborough)
 Stilperiode: Rokokko
 Teknikk: Finering, Skjæring
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O60670.glb

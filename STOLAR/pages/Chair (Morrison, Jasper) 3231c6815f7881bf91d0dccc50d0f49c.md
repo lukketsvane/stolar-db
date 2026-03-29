@@ -5,9 +5,9 @@ Breidde (cm): 39
 Datering: 1994
 Djupn (cm): 47
 Estimert vekt (kg): 0.0
-Fra ar: 1994
-Hundre-ar: 1900-talet
-Hogde (cm): 80
+Frå år: 1994
+Hundreår: 1900-talet
+Høgde (cm): 80
 Materialar: Bjørk, Finer
 Materialkommentar: [AI] Klarlakkert bjørk med sete av mørk finer.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O368624/
@@ -16,5 +16,5 @@ Objekt-ID: O368624
 Produksjonsstad: Udine
 Produsent: Morrison, Jasper
 Stilperiode: Postmodernisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O368624.glb

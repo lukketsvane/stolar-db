@@ -7,9 +7,9 @@ Djupn (cm): 48.5
 Emneord: Kunstindustri, Møbel
 Erverving: Tidligere innkommet, antagelig 1900
 Estimert vekt (kg): 13.9
-Fra ar: 1900
-Hundre-ar: 1900-talet
-Hogde (cm): 81
+Frå år: 1900
+Hundreår: 1900-talet
+Høgde (cm): 81
 Materialar: Eik, Tekstil
 Nasjonalmuseet: https://www.nasjonalmuseet.no/samlingen/objekt/NMK.INVENTAR.2017.0213
 Nasjonalitet: Noreg
@@ -18,5 +18,5 @@ Objekt-ID: NMK.INVENTAR.2017.0213
 Produksjonsstad: Norge
 Stilperiode: Jugend/Art Nouveau
 Teknikk: Tapping
-Til ar: 1900
+Til år: 1900
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/NMK.INVENTAR.2017.0213.glb

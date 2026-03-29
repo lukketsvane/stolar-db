@@ -5,9 +5,9 @@ Breidde (cm): 78.7
 Datering: 1895-1900
 Djupn (cm): 68.6
 Estimert vekt (kg): 0.0
-Fra ar: 1895
-Hundre-ar: 1800-talet
-Hogde (cm): 137.2
+Frå år: 1895
+Hundreår: 1800-talet
+Høgde (cm): 137.2
 Materialar: Fløyel, Mahogni
 Materialkommentar: [AI] Lakkert mahogni med innlagt dekor i buksbom, polstret og trukket med fløyel.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O371915/
@@ -17,5 +17,5 @@ Objekt-ID: O371915
 Produksjonsstad: Great Britain
 Produsent: Liberty & Co. Ltd.
 Stilperiode: Viktorianisme
-Til ar: 1900
+Til år: 1900
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O371915.glb

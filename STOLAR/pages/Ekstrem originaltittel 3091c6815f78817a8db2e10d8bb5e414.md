@@ -7,9 +7,9 @@ Djupn (cm): 61
 Emneord: Industridesign, Møbel
 Erverving: Gave 2016
 Estimert vekt (kg): 4.5
-Fra ar: 1972
-Hundre-ar: 1900-talet
-Hogde (cm): 74.5
+Frå år: 1972
+Hundreår: 1900-talet
+Høgde (cm): 74.5
 Materialar: Stålrør
 Materialkommentar: Bøyde stålrør
 Nasjonalmuseet: https://www.nasjonalmuseet.no/samlingen/objekt/NMK.2016.0135.001
@@ -18,5 +18,5 @@ Nemning: Stol
 Objekt-ID: NMK.2016.0135.001
 Produksjonsstad: Norge
 Stilperiode: Funksjonalisme
-Til ar: 1972
+Til år: 1972
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/NMK.2016.0135.001.glb

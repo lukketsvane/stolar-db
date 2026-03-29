@@ -5,9 +5,9 @@ Breidde (cm): 65
 Datering: ca. 1804
 Djupn (cm): 74
 Estimert vekt (kg): 0.0
-Fra ar: 1804
-Hundre-ar: 1800-talet
-Hogde (cm): 91
+Frå år: 1804
+Hundreår: 1800-talet
+Høgde (cm): 91
 Materialar: Bronse, Bøk, Maling, Rotting, Silke
 Materialkommentar: [AI] Svartmalt bøk med skåret og forgylt dekor, sider med flettet rotting, polstret sete trukket med mønstret silke, og dekorelementer i bronse.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O78951/
@@ -17,5 +17,5 @@ Objekt-ID: O78951
 Produksjonsstad: Great Britain
 Produsent: ukjent
 Stilperiode: Empire
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O78951.glb

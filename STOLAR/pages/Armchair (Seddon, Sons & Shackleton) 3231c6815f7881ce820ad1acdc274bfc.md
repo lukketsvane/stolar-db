@@ -5,9 +5,9 @@ Breidde (cm): 53
 Datering: 1790
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1790
-Hundre-ar: 1700-talet
-Hogde (cm): 95.3
+Frå år: 1790
+Hundreår: 1700-talet
+Høgde (cm): 95.3
 Materialar: Rotting, Tre
 Materialkommentar: Satintre med polykrom måla dekor; setet er fletta
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O368895/
@@ -17,5 +17,5 @@ Objekt-ID: O368895
 Produksjonsstad: England
 Produsent: Seddon, Sons & Shackleton
 Stilperiode: Nyklassisisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O368895.glb

@@ -5,9 +5,9 @@ Breidde (cm): 47
 Datering: 1900
 Djupn (cm): 52.6
 Estimert vekt (kg): 0.0
-Fra ar: 1900
-Hundre-ar: 1900-talet
-Hogde (cm): 86
+Frå år: 1900
+Hundreår: 1900-talet
+Høgde (cm): 86
 Materialar: Silke, Tre
 Materialkommentar: Skore pæretre, polstra i silke
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O59247/
@@ -17,5 +17,5 @@ Objekt-ID: O59247
 Produksjonsstad: Paris
 Produsent: Jallot, Léon Albert
 Stilperiode: Jugend/Art Nouveau
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O59247.glb

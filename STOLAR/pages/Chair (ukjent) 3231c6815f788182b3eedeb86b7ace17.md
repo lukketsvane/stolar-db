@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: ca. 1685--95
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1685
-Hundre-ar: 1600-talet
-Hogde (cm): 0
+Frå år: 1685
+Hundreår: 1600-talet
+Høgde (cm): 0
 Materialar: Nøttetre, Rotting
 Materialkommentar: Skore og samanføygde nøttetre med spanskrøyra sete og rygg (spanskrøyrflettinga er ikkje original)
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O168535/
@@ -18,5 +18,5 @@ Produksjonsstad: London
 Produsent: ukjent
 Stilperiode: Barokk
 Teknikk: Fletting, Samanføying, Skjæring
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O168535.glb

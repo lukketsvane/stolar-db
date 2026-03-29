@@ -4,9 +4,9 @@ Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR
 Breidde (cm): 63.5
 Datering: 1550
 Estimert vekt (kg): 0.0
-Fra ar: 1550
-Hundre-ar: 1500-talet
-Hogde (cm): 137.2
+Frå år: 1550
+Hundreår: 1500-talet
+Høgde (cm): 137.2
 Materialar: Eik
 Materialkommentar: Skoren eik, delvis forgylt
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O134655/
@@ -17,5 +17,5 @@ Produksjonsstad: Italy
 Produsent: Unknown
 Stilperiode: Renessanse
 Teknikk: Skjæring
-Til ar: 1550
+Til år: 1550
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O134655.glb

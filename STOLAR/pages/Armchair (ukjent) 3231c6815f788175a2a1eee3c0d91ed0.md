@@ -5,9 +5,9 @@ Breidde (cm): 64.8
 Datering: 1670-1680
 Djupn (cm): 47
 Estimert vekt (kg): 0.0
-Fra ar: 1670
-Hundre-ar: 1600-talet
-Hogde (cm): 45
+Frå år: 1670
+Hundreår: 1600-talet
+Høgde (cm): 45
 Materialar: Nøttetre, Rotting
 Materialkommentar: Lenestol av dreidd valnøtt, med sete- og ryggpanel i flettverk
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O172488/
@@ -17,5 +17,5 @@ Objekt-ID: O172488
 Produksjonsstad: England
 Produsent: ukjent
 Stilperiode: Barokk
-Til ar: 1680
+Til år: 1680
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O172488.glb

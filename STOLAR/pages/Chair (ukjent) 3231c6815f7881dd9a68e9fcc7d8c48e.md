@@ -5,9 +5,9 @@ Breidde (cm): 22
 Datering: 1690
 Djupn (cm): 50
 Estimert vekt (kg): 0.0
-Fra ar: 1690
-Hundre-ar: 1600-talet
-Hogde (cm): 81
+Frå år: 1690
+Hundreår: 1600-talet
+Høgde (cm): 81
 Materialar: Ibenholt, Rotting
 Materialkommentar: Ebony, carved and turned; caned seat
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O118450/
@@ -16,5 +16,5 @@ Objekt-ID: O118450
 Produksjonsstad: Indonesia
 Produsent: Unknown
 Stilperiode: Barokk
-Til ar: 1690
+Til år: 1690
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O118450.glb

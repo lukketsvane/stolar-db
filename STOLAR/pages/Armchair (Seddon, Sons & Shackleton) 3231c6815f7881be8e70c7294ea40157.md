@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: 1790
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1790
-Hundre-ar: 1700-talet
-Hogde (cm): 93
+Frå år: 1790
+Hundreår: 1700-talet
+Høgde (cm): 93
 Materialar: Rotting, Tre
 Materialkommentar: Måla satintre, med fletta sete
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O52926/
@@ -17,5 +17,5 @@ Objekt-ID: O52926
 Produksjonsstad: London
 Produsent: Seddon, Sons & Shackleton
 Stilperiode: Nyklassisisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O52926.glb

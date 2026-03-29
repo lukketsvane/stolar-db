@@ -5,9 +5,9 @@ Breidde (cm): 59
 Datering: ca. 1755-1770
 Djupn (cm): 56.5
 Estimert vekt (kg): 0.0
-Fra ar: 1755
-Hundre-ar: 1700-talet
-Hogde (cm): 94.5
+Frå år: 1755
+Hundreår: 1700-talet
+Høgde (cm): 94.5
 Materialar: Bjørk, Mahogni
 Materialkommentar: Carved mahogany; birch(?)
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O70665/
@@ -17,5 +17,5 @@ Objekt-ID: O70665
 Produksjonsstad: England
 Produsent: Thomas Chippendale Senior
 Stilperiode: Chippendale / Rokokko
-Til ar: 1770
+Til år: 1770
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O70665.glb

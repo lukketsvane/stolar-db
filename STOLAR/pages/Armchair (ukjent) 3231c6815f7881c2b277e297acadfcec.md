@@ -5,9 +5,9 @@ Breidde (cm): 83.8
 Datering: ca. 1830
 Djupn (cm): 72.4
 Estimert vekt (kg): 0.0
-Fra ar: 1830
-Hundre-ar: 1800-talet
-Hogde (cm): 109.2
+Frå år: 1830
+Hundreår: 1800-talet
+Høgde (cm): 109.2
 Materialar: Finer, Mahogni, Messing, Silke
 Materialkommentar: [AI] Mahogni og finer med skåret dekor og klovføtter. Polstret sete, rygg og vanger trukket med silke, dekorert med messingstifter.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O52961/
@@ -17,5 +17,5 @@ Objekt-ID: O52961
 Produksjonsstad: England
 Produsent: Unknown
 Stilperiode: Historisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O52961.glb

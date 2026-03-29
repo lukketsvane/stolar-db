@@ -5,9 +5,9 @@ Breidde (cm): 67.5
 Datering: 1680-1700
 Djupn (cm): 67
 Estimert vekt (kg): 0.0
-Fra ar: 1680
-Hundre-ar: 1600-talet
-Hogde (cm): 46.5
+Frå år: 1680
+Hundreår: 1600-talet
+Høgde (cm): 46.5
 Materialar: Finer, Nøttetre, Tekstil
 Materialkommentar: [AI] Skåret, dreid og finert nøttetre, lenestol med polstret sete trukket med tekstil.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O52888/
@@ -17,5 +17,5 @@ Objekt-ID: O52888
 Produksjonsstad: England
 Produsent: ukjent
 Stilperiode: Barokk
-Til ar: 1700
+Til år: 1700
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O52888.glb

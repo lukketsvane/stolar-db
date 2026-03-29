@@ -4,9 +4,9 @@ Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR
 Breidde (cm): 41
 Datering: ca. 1859
 Djupn (cm): 45.7
-Fra ar: 1859
-Hundre-ar: 1800-talet
-Hogde (cm): 93.8
+Frå år: 1859
+Hundreår: 1800-talet
+Høgde (cm): 93.8
 Materialar: Bøk, Rotting
 Materialkommentar: Dampbøygd bøk, laminert bøk, fletta sete
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O1240872/

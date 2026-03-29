@@ -5,9 +5,9 @@ Breidde (cm): 74
 Datering: 1899-1900
 Djupn (cm): 82
 Estimert vekt (kg): 0.0
-Fra ar: 1899
-Hundre-ar: 1800-talet
-Hogde (cm): 128
+Frå år: 1899
+Hundreår: 1800-talet
+Høgde (cm): 128
 Materialar: Nøttetre, Tekstil
 Materialkommentar: Skoren valnøtt, beisa; rygg og sete trekte med brodert og måla sateng med frynser (rekonstruksjon av originalpolstringa)
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O49610/
@@ -16,5 +16,5 @@ Objekt-ID: O49610
 Produksjonsstad: Nancy
 Produsent: Majorelle, Louis
 Stilperiode: Historisme
-Til ar: 1900
+Til år: 1900
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O49610.glb

@@ -7,9 +7,9 @@ Djupn (cm): 66.5
 Emneord: Møbel
 Erverving: Kjøpt 1995
 Estimert vekt (kg): 19.8
-Fra ar: 1897
-Hundre-ar: 1800-talet
-Hogde (cm): 108.7
+Frå år: 1897
+Hundreår: 1800-talet
+Høgde (cm): 108.7
 Materialar: Furu
 Materialkommentar: Armstol i utskåret og bemalt furu.
 Nasjonalmuseet: https://www.nasjonalmuseet.no/samlingen/objekt/OK-1995-0109
@@ -17,7 +17,7 @@ Nasjonalitet: Noreg
 Nemning: Armstol
 Objekt-ID: OK-1995-0109
 Produksjonsstad: Norge
-Setehogde (cm): 36.7
+Setehøgde (cm): 36.7
 Stilperiode: Jugend
-Til ar: 1897
+Til år: 1897
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-1995-0109.glb

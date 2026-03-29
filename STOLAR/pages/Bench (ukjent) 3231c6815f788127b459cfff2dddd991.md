@@ -5,9 +5,9 @@ Breidde (cm): 217
 Datering: 1710-1730
 Djupn (cm): 75
 Estimert vekt (kg): 0.0
-Fra ar: 1710
-Hundre-ar: 1700-talet
-Hogde (cm): 44
+Frå år: 1710
+Hundreår: 1700-talet
+Høgde (cm): 44
 Materialar: Alm, Eik
 Materialkommentar: [AI] Skåret eik og alm, overflatebehandlet med voks eller lakk. Benken har panelert rygg, skåret dekor med skjellmotiv og volutter, samt krumme ben.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O326669/
@@ -17,5 +17,5 @@ Objekt-ID: O326669
 Produksjonsstad: England
 Produsent: ukjent
 Stilperiode: Rokokko
-Til ar: 1730
+Til år: 1730
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O326669.glb

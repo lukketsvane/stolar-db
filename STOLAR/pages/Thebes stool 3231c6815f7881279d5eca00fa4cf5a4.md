@@ -6,9 +6,9 @@ Datering: 1883
 Djupn (cm): 42
 Emneord: Kunstindustri, Møbel
 Erverving: Kjøpt 2010
-Fra ar: 1883
-Hundre-ar: 1800-talet
-Hogde (cm): 36.5
+Frå år: 1883
+Hundreår: 1800-talet
+Høgde (cm): 36.5
 Materialar: Ask
 Materialkommentar: Fernissert ask
 Nasjonalmuseet: https://www.nasjonalmuseet.no/samlingen/objekt/NMK.2010.0164
@@ -18,5 +18,5 @@ Objekt-ID: NMK.2010.0164
 Produksjonsstad: Storbritannia
 Stilperiode: Historisme
 Teknikk: Tapping
-Til ar: 1883
+Til år: 1883
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/NMK.2010.0164.glb

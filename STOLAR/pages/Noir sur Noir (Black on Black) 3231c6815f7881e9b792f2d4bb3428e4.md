@@ -5,9 +5,9 @@ Breidde (cm): 45
 Datering: 2022-2023
 Djupn (cm): 42
 Estimert vekt (kg): 0.0
-Fra ar: 2022
-Hundre-ar: 2000-talet
-Hogde (cm): 75
+Frå år: 2022
+Hundreår: 2000-talet
+Høgde (cm): 75
 Materialar: Tre
 Materialkommentar: Wood is sourced by networks of people and families in the bush after fires or storms.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O1749965/
@@ -16,5 +16,5 @@ Objekt-ID: O1749965
 Produksjonsstad: Senegal
 Produsent: Niang, Balla
 Stilperiode: Samtidsdesign
-Til ar: 2023
+Til år: 2023
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1749965.glb

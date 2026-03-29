@@ -4,9 +4,9 @@ Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR
 Breidde (cm): 77.8
 Datering: 1956
 Djupn (cm): 73.5
-Fra ar: 1956
-Hundre-ar: 1900-talet
-Hogde (cm): 33
+Frå år: 1956
+Hundreår: 1900-talet
+Høgde (cm): 33
 Materialar: Nøttetre
 Materialkommentar: Walnut
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O144081/

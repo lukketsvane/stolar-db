@@ -5,9 +5,9 @@ Breidde (cm): 46
 Datering: 1862
 Djupn (cm): 58
 Estimert vekt (kg): 0.0
-Fra ar: 1862
-Hundre-ar: 1800-talet
-Hogde (cm): 89
+Frå år: 1862
+Hundreår: 1800-talet
+Høgde (cm): 89
 Materialar: Mahogni, Strie
 Materialkommentar: [AI] Skåret mahogni med polstring i rygg og sete, trukket med strie.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O370275/
@@ -17,5 +17,5 @@ Objekt-ID: O370275
 Produksjonsstad: England
 Produsent: John Pollard Seddon
 Stilperiode: Viktorianisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O370275.glb

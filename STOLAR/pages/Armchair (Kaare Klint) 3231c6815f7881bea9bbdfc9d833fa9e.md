@@ -5,9 +5,9 @@ Breidde (cm): 57.1
 Datering: 1933
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1933
-Hundre-ar: 1900-talet
-Hogde (cm): 90.1
+Frå år: 1933
+Hundreår: 1900-talet
+Høgde (cm): 90.1
 Materialar: Messing, Rotting, Teak
 Materialkommentar: [AI] Teak med flettet rotting i sete, rygg og fotstøtte. Sammenleggbar konstruksjon med regulerbar rygg og beslag i messing.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O371750/
@@ -17,5 +17,5 @@ Objekt-ID: O371750
 Produksjonsstad: Denmark
 Produsent: Kaare Klint
 Stilperiode: Art Deco / Tidleg modernisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O371750.glb

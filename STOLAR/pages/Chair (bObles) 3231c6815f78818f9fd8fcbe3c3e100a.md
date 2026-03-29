@@ -5,9 +5,9 @@ Breidde (cm): 24
 Datering: 2009
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 2009
-Hundre-ar: 2000-talet
-Hogde (cm): 31
+Frå år: 2009
+Hundreår: 2000-talet
+Høgde (cm): 31
 Materialar: Skumplast
 Materialkommentar: Formstøypt og limt EVA-skum
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O1171794/
@@ -17,5 +17,5 @@ Objekt-ID: O1171794
 Produksjonsstad: Denmark
 Produsent: bObles
 Stilperiode: Samtidsdesign
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1171794.glb

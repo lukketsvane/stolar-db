@@ -5,9 +5,9 @@ Breidde (cm): 56
 Datering: 1970
 Djupn (cm): 57
 Estimert vekt (kg): 0.0
-Fra ar: 1970
-Hundre-ar: 1900-talet
-Hogde (cm): 79
+Frå år: 1970
+Hundreår: 1900-talet
+Høgde (cm): 79
 Materialar: Glasfiber, Gummi, Maling, Stål
 Materialkommentar: [AI] Hvitmalt stålkonstruksjon med formpresset sete av blå glasfiber. Bein med gummiknotter.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O370277/
@@ -17,5 +17,5 @@ Objekt-ID: O370277
 Produksjonsstad: England
 Produsent: Race, Ernest
 Stilperiode: Postmodernisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O370277.glb

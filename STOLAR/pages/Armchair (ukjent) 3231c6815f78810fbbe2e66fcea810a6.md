@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: 1750-1760
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1750
-Hundre-ar: 1700-talet
-Hogde (cm): 0
+Frå år: 1750
+Hundreår: 1700-talet
+Høgde (cm): 0
 Materialar: Lær, Mahogni
 Materialkommentar: [AI] Skåret og profilert mahogni med polstret sete trukket med lær.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O145065/
@@ -17,5 +17,5 @@ Objekt-ID: O145065
 Produksjonsstad: Britain
 Produsent: ukjent
 Stilperiode: Nyklassisisme
-Til ar: 1760
+Til år: 1760
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O145065.glb

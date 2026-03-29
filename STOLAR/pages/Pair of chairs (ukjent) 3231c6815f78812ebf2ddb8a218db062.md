@@ -5,9 +5,9 @@ Breidde (cm): 54
 Datering: 1780-1790
 Djupn (cm): 51
 Estimert vekt (kg): 0.0
-Fra ar: 1780
-Hundre-ar: 1700-talet
-Hogde (cm): 97
+Frå år: 1780
+Hundreår: 1700-talet
+Høgde (cm): 97
 Materialar: Fløyel, Mahogni
 Materialkommentar: [AI] Skåret og profilert mahogni med detaljer i buksbom, polstret sete trukket med fløyel.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O372137/
@@ -17,5 +17,5 @@ Objekt-ID: O372137
 Produksjonsstad: England
 Produsent: ukjent
 Stilperiode: Nyklassisisme
-Til ar: 1790
+Til år: 1790
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372137.glb

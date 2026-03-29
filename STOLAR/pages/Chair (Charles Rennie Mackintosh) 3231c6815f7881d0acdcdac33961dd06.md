@@ -5,9 +5,9 @@ Breidde (cm): 44
 Datering: 1916
 Djupn (cm): 39.4
 Estimert vekt (kg): 0.0
-Fra ar: 1916
-Hundre-ar: 1900-talet
-Hogde (cm): 5.8
+Frå år: 1916
+Hundreår: 1900-talet
+Høgde (cm): 5.8
 Materialar: Eik, Skinn
 Materialkommentar: [AI] Eik med skårne tverrspiler i ryggen, polstret sete trukket med skinn.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O304876/
@@ -17,5 +17,5 @@ Objekt-ID: O304876
 Produksjonsstad: Great Britain
 Produsent: Charles Rennie Mackintosh
 Stilperiode: Jugend/Art Nouveau
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O304876.glb

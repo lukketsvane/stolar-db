@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: 1913
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1913
-Hundre-ar: 1900-talet
-Hogde (cm): 0
+Frå år: 1913
+Hundreår: 1900-talet
+Høgde (cm): 0
 Materialar: Eik, Furu, Rotting
 Materialkommentar: Måla furu og eik, flettverk
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O130991/
@@ -17,5 +17,5 @@ Objekt-ID: O130991
 Produksjonsstad: London
 Produsent: Fry, Roger Eliot
 Stilperiode: Jugend/Art Nouveau
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O130991.glb

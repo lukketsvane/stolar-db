@@ -5,9 +5,9 @@ Breidde (cm): 54
 Datering: 1956-1958
 Djupn (cm): 48
 Estimert vekt (kg): 0.0
-Fra ar: 1956
-Hundre-ar: 1900-talet
-Hogde (cm): 13.5
+Frå år: 1956
+Hundreår: 1900-talet
+Høgde (cm): 13.5
 Materialar: Finer, Kryssfiner, Mahogni
 Materialkommentar: Filippinsk mahogni, massiv og finert på kryssfiner.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O171525/
@@ -17,5 +17,5 @@ Objekt-ID: O171525
 Produksjonsstad: United States
 Produsent: Wright, Frank Lloyd
 Stilperiode: Modernisme / Midtjahrhundre
-Til ar: 1958
+Til år: 1958
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O171525.glb

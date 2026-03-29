@@ -5,9 +5,9 @@ Breidde (cm): 35
 Datering: 1908
 Djupn (cm): 43
 Estimert vekt (kg): 0.0
-Fra ar: 1908
-Hundre-ar: 1900-talet
-Hogde (cm): 100
+Frå år: 1908
+Hundreår: 1900-talet
+Høgde (cm): 100
 Materialar: Eik, Lær
 Materialkommentar: Stained oak, leather
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O56350/
@@ -16,5 +16,5 @@ Objekt-ID: O56350
 Produksjonsstad: Milwaukee
 Produsent: Wright, Frank Lloyd
 Stilperiode: Jugend/Art Nouveau
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O56350.glb

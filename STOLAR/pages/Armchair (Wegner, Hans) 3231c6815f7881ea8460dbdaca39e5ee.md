@@ -5,9 +5,9 @@ Breidde (cm): 54.6
 Datering: 1944
 Djupn (cm): 52.1
 Estimert vekt (kg): 0.0
-Fra ar: 1944
-Hundre-ar: 1900-talet
-Hogde (cm): 81.9
+Frå år: 1944
+Hundreår: 1900-talet
+Høgde (cm): 81.9
 Materialar: Lær, Mahogni
 Materialkommentar: [AI] Dampbøyd, dreid og formskåret mahogni med løs setepute trukket med lær.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O176209/
@@ -17,5 +17,5 @@ Objekt-ID: O176209
 Produksjonsstad: Denmark
 Produsent: Wegner, Hans
 Stilperiode: Skandinavisk modernisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O176209.glb

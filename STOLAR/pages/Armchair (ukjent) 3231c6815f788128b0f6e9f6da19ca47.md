@@ -4,9 +4,9 @@ Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR
 Breidde (cm): 55.9
 Datering: 1635
 Djupn (cm): 50.8
-Fra ar: 1635
-Hundre-ar: 1600-talet
-Hogde (cm): 87.6
+Frå år: 1635
+Hundreår: 1600-talet
+Høgde (cm): 87.6
 Materialar: Nøttetre
 Materialkommentar: Nøttetre
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O156940/
@@ -16,5 +16,5 @@ Objekt-ID: O156940
 Produksjonsstad: France
 Produsent: ukjent
 Stilperiode: Barokk
-Til ar: 1635
+Til år: 1635
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O156940.glb

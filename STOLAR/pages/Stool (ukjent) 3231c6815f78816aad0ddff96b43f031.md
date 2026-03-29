@@ -5,9 +5,9 @@ Breidde (cm): 52
 Datering: 1740-1760
 Djupn (cm): 36.5
 Estimert vekt (kg): 0.0
-Fra ar: 1740
-Hundre-ar: 1700-talet
-Hogde (cm): 40
+Frå år: 1740
+Hundreår: 1700-talet
+Høgde (cm): 40
 Materialar: Bøk, Lin, Metall, Silke, Skumplast
 Materialkommentar: Skoren og måla bøk; silke, flette av metalltråd, botnstoff av lin eller hamp, moderne skumfyll
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O94093/
@@ -17,5 +17,5 @@ Objekt-ID: O94093
 Produksjonsstad: Paris
 Produsent: ukjent
 Stilperiode: Nyklassisisme
-Til ar: 1760
+Til år: 1760
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O94093.glb

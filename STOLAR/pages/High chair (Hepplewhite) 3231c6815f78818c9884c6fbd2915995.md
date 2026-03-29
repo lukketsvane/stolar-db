@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: 1770-80
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1770
-Hundre-ar: 1700-talet
-Hogde (cm): 0
+Frå år: 1770
+Hundreår: 1700-talet
+Høgde (cm): 0
 Materialar: Mahogni
 Materialkommentar: Mahogany
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O145062/
@@ -17,5 +17,5 @@ Objekt-ID: O145062
 Produksjonsstad: England
 Produsent: Hepplewhite
 Stilperiode: Nyklassisisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O145062.glb

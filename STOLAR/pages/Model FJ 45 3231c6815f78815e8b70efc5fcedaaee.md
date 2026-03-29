@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: 1945
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1945
-Hundre-ar: 1900-talet
-Hogde (cm): 0
+Frå år: 1945
+Hundreår: 1900-talet
+Høgde (cm): 0
 Materialar: Skumplast, Teak, Ull
 Materialkommentar: Lakka og olja teakramme, handvoven skumpolstring trekt med ull
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O119282/
@@ -17,5 +17,5 @@ Objekt-ID: O119282
 Produksjonsstad: Denmark
 Produsent: Juhl, Finn
 Stilperiode: Skandinavisk modernisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O119282.glb

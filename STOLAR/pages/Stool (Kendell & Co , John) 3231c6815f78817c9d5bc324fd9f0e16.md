@@ -5,9 +5,9 @@ Breidde (cm): 41
 Datering: ca. 1840
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1840
-Hundre-ar: 1800-talet
-Hogde (cm): 47.5
+Frå år: 1840
+Hundreår: 1800-talet
+Høgde (cm): 47.5
 Materialar: Furu, Mahogni, Silke, Ull
 Materialkommentar: Mahogni og furu, damask, ull og silke
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O154942/
@@ -17,5 +17,5 @@ Objekt-ID: O154942
 Produksjonsstad: Leeds
 Produsent: Kendell & Co., John
 Stilperiode: Historisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O154942.glb

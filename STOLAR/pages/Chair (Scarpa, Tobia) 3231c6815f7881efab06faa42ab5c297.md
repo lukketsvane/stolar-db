@@ -5,9 +5,9 @@ Breidde (cm): 66
 Datering: 1965
 Djupn (cm): 66
 Estimert vekt (kg): 0.0
-Fra ar: 1965
-Hundre-ar: 1900-talet
-Hogde (cm): 69
+Frå år: 1965
+Hundreår: 1900-talet
+Høgde (cm): 69
 Materialar: Kryssfiner, Lær, Nøttetre
 Materialkommentar: Valnøtt, kryssfiner og russisk lær
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O372423/
@@ -17,5 +17,5 @@ Objekt-ID: O372423
 Produksjonsstad: Milan
 Produsent: Scarpa, Tobia
 Stilperiode: Modernisme / Midtjahrhundre
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372423.glb

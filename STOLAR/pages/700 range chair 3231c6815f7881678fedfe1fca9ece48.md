@@ -5,9 +5,9 @@ Breidde (cm): 61.5
 Datering: 1970-1975
 Djupn (cm): 56
 Estimert vekt (kg): 0.0
-Fra ar: 1970
-Hundre-ar: 1900-talet
-Hogde (cm): 70
+Frå år: 1970
+Hundreår: 1900-talet
+Høgde (cm): 70
 Materialar: Stål, Stålrør
 Materialkommentar: [AI] Forkrommet stålrør med sete og rygg i gitterverk av sveiset ståltråd.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O321673/
@@ -17,5 +17,5 @@ Objekt-ID: O321673
 Produksjonsstad: Britain
 Produsent: Mellor, David (CBE, OBE RDI)
 Stilperiode: Postmodernisme
-Til ar: 1975
+Til år: 1975
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O321673.glb

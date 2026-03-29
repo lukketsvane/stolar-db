@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: 1942-1952
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1942
-Hundre-ar: 1900-talet
-Hogde (cm): 0
+Frå år: 1942
+Hundreår: 1900-talet
+Høgde (cm): 0
 Materialar: Bøk, Furu
 Materialkommentar: Varnished beech and pine wood
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O38134/
@@ -17,5 +17,5 @@ Objekt-ID: O38134
 Produksjonsstad: United Kingdom
 Produsent: ukjent
 Stilperiode: Modernisme / Midtjahrhundre
-Til ar: 1952
+Til år: 1952
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O38134.glb

@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: 2024
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 2024
-Hundre-ar: 2000-talet
-Hogde (cm): 50
+Frå år: 2024
+Hundreår: 2000-talet
+Høgde (cm): 50
 Materialar: Messing, Naturstein
 Materialkommentar: [AI] Konisk understell og sarg i børstet messing, med sete av porøs naturstein.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O1788540/
@@ -17,5 +17,5 @@ Objekt-ID: O1788540
 Produksjonsstad: Korea
 Produsent: Seo Jeonghwa
 Stilperiode: Samtidsdesign
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1788540.glb

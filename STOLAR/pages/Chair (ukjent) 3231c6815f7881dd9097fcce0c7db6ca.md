@@ -5,9 +5,9 @@ Breidde (cm): 55.5
 Datering: ca. 1710
 Djupn (cm): 65
 Estimert vekt (kg): 0.0
-Fra ar: 1710
-Hundre-ar: 1700-talet
-Hogde (cm): 43.6
+Frå år: 1710
+Hundreår: 1700-talet
+Høgde (cm): 43.6
 Materialar: Alm, Bøk, Nøttetre, Tre
 Materialkommentar: [AI] Møbler og panel i alm, bøk og nøttetre med dreid og skåret dekor, lakkert og forgylt overflate.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O119864/
@@ -17,5 +17,5 @@ Objekt-ID: O119864
 Produksjonsstad: England
 Produsent: Unknown
 Stilperiode: Rokokko
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O119864.glb

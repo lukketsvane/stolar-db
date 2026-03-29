@@ -5,9 +5,9 @@ Breidde (cm): 44
 Datering: 1932
 Djupn (cm): 35
 Estimert vekt (kg): 0.0
-Fra ar: 1932
-Hundre-ar: 1900-talet
-Hogde (cm): 66
+Frå år: 1932
+Hundreår: 1900-talet
+Høgde (cm): 66
 Materialar: Lær, Stålrør, Tre
 Materialkommentar: [AI] Stålrørskonstruksjon med polstret sete og rygg trukket med lær.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O372058/
@@ -17,5 +17,5 @@ Objekt-ID: O372058
 Produksjonsstad: England
 Produsent: Heal & Son Ltd
 Stilperiode: Art Deco / Tidleg modernisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372058.glb

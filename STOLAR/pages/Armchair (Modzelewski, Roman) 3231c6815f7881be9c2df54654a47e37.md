@@ -5,9 +5,9 @@ Breidde (cm): 82
 Datering: 1959-1960
 Djupn (cm): 91
 Estimert vekt (kg): 0.0
-Fra ar: 1959
-Hundre-ar: 1900-talet
-Hogde (cm): 102
+Frå år: 1959
+Hundreår: 1900-talet
+Høgde (cm): 102
 Materialar: Glasfiber, Metall
 Materialkommentar: Formstøypt glasfiber, metall
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O1156386/
@@ -16,5 +16,5 @@ Objekt-ID: O1156386
 Produksjonsstad: Lódz
 Produsent: Modzelewski, Roman
 Stilperiode: Modernisme / Midtjahrhundre
-Til ar: 1960
+Til år: 1960
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1156386.glb

@@ -5,9 +5,9 @@ Breidde (cm): 76.2
 Datering: 1725-1730
 Djupn (cm): 67.3
 Estimert vekt (kg): 0.0
-Fra ar: 1725
-Hundre-ar: 1700-talet
-Hogde (cm): 99.1
+Frå år: 1725
+Hundreår: 1700-talet
+Høgde (cm): 99.1
 Materialar: Hestetagl, Mahogni, Messing, Silke, Stramei, Ull
 Materialkommentar: [AI] Skåret mahogni med polstret sete, rygg og vanger, trukket med brodert ull og silke på stramei, kantet med messingsøm. Innvendig polstring av hestetagl.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O119837/
@@ -17,5 +17,5 @@ Objekt-ID: O119837
 Produksjonsstad: England
 Produsent: ukjent
 Stilperiode: Rokokko
-Til ar: 1730
+Til år: 1730
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O119837.glb

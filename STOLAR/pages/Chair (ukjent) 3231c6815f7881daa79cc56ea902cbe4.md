@@ -5,9 +5,9 @@ Breidde (cm): 50.5
 Datering: about 1600
 Djupn (cm): 45
 Estimert vekt (kg): 0.0
-Fra ar: 1600
-Hundre-ar: 1600-talet
-Hogde (cm): 127.5
+Frå år: 1600
+Hundreår: 1600-talet
+Høgde (cm): 127.5
 Materialar: Nøttetre
 Materialkommentar: Nøttetre, samanføygd og skore
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O121809/
@@ -18,5 +18,5 @@ Produksjonsstad: Italy
 Produsent: Unknown
 Stilperiode: Barokk
 Teknikk: Samanføying, Skjæring
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O121809.glb

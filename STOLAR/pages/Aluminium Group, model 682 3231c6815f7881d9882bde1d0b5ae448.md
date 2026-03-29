@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: 1958
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1958
-Hundre-ar: 1900-talet
-Hogde (cm): 0
+Frå år: 1958
+Hundreår: 1900-talet
+Høgde (cm): 0
 Materialar: Aluminium, Kunstlær, Stål
 Materialkommentar: Støypt aluminiumsramme, stålsvingbase, kunstlærtrekk
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O119278/
@@ -18,5 +18,5 @@ Produksjonsstad: United States
 Produsent: Eames, Ray
 Stilperiode: Midtjahrhundre modernisme
 Teknikk: Polstring, Støyping
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O119278.glb

@@ -4,9 +4,9 @@ Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR
 Breidde (cm): 69
 Datering: 1984
 Djupn (cm): 63.5
-Fra ar: 1984
-Hundre-ar: 1900-talet
-Hogde (cm): 98
+Frå år: 1984
+Hundreår: 1900-talet
+Høgde (cm): 98
 Materialar: Kryssfiner
 Materialkommentar: Laminated plywood
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O48605/

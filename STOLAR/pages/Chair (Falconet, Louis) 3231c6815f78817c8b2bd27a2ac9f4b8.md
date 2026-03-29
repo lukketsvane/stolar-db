@@ -5,9 +5,9 @@ Breidde (cm): 57
 Datering: ca. 1765 -- ca. 1775
 Djupn (cm): 53
 Estimert vekt (kg): 0.0
-Fra ar: 1765
-Hundre-ar: 1700-talet
-Hogde (cm): 96
+Frå år: 1765
+Hundreår: 1700-talet
+Høgde (cm): 96
 Materialar: Bøk, Fløyel, Ull
 Materialkommentar: Skoren og måla bøk med trekk av ullfløyel
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O59055/
@@ -18,5 +18,5 @@ Produksjonsstad: Paris
 Produsent: Falconet, Louis
 Stilperiode: Nyklassisisme
 Teknikk: Polstring, Skjæring
-Til ar: 1775
+Til år: 1775
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O59055.glb

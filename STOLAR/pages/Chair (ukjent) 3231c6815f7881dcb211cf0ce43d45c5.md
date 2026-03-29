@@ -5,9 +5,9 @@ Breidde (cm): 49.5
 Datering: 1685-1700
 Djupn (cm): 54
 Estimert vekt (kg): 0.0
-Fra ar: 1685
-Hundre-ar: 1600-talet
-Hogde (cm): 47
+Frå år: 1685
+Hundreår: 1600-talet
+Høgde (cm): 47
 Materialar: Nøttetre, Rotting
 Materialkommentar: carved walnut, caned seat and back
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O368671/
@@ -17,5 +17,5 @@ Objekt-ID: O368671
 Produksjonsstad: England
 Produsent: Unknown
 Stilperiode: Barokk
-Til ar: 1700
+Til år: 1700
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O368671.glb

@@ -5,9 +5,9 @@ Breidde (cm): 44.8
 Datering: 1926-1927
 Djupn (cm): 53.9
 Estimert vekt (kg): 0.0
-Fra ar: 1926
-Hundre-ar: 1900-talet
-Hogde (cm): 86.4
+Frå år: 1926
+Hundreår: 1900-talet
+Høgde (cm): 86.4
 Materialar: Plast, Stålrør, Tekstil
 Materialkommentar: [AI] Bøyd og forkrommet stålrør med ryggstø av tekstil og armlener av plast.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O371744/
@@ -17,5 +17,5 @@ Objekt-ID: O371744
 Produksjonsstad: Germany
 Produsent: Breuer, Marcel Lajos
 Stilperiode: Bauhaus
-Til ar: 1927
+Til år: 1927
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O371744.glb

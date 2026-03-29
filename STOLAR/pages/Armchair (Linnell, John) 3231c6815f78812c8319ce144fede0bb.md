@@ -5,9 +5,9 @@ Breidde (cm): 66
 Datering: ca. 1754
 Djupn (cm): 60
 Estimert vekt (kg): 0.0
-Fra ar: 1754
-Hundre-ar: 1700-talet
-Hogde (cm): 44.5
+Frå år: 1754
+Hundreår: 1700-talet
+Høgde (cm): 44.5
 Materialar: Bøk, Tekstil
 Materialkommentar: Bøkeramme, forgylta og japannert, med spor av raud måling under; moderne polstring
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O115893/
@@ -17,5 +17,5 @@ Objekt-ID: O115893
 Produksjonsstad: London
 Produsent: Linnell, John
 Stilperiode: Nyklassisisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O115893.glb

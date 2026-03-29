@@ -5,9 +5,9 @@ Breidde (cm): 52
 Datering: ca. 1850
 Djupn (cm): 51
 Estimert vekt (kg): 0.0
-Fra ar: 1850
-Hundre-ar: 1800-talet
-Hogde (cm): 87
+Frå år: 1850
+Hundreår: 1800-talet
+Høgde (cm): 87
 Materialar: Jern, Stål, Tre
 Materialkommentar: Støypt jern, stål og tre, måla, forgylta og polstra metall, erstatta topptrekk, original og seinare staffering.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O1191356/
@@ -16,5 +16,5 @@ Objekt-ID: O1191356
 Produksjonsstad: Troy
 Produsent: Thomas E. Warren
 Stilperiode: Historisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1191356.glb

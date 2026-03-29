@@ -4,9 +4,9 @@ Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR
 Breidde (cm): 70.5
 Datering: 1986
 Djupn (cm): 93
-Fra ar: 1986
-Hundre-ar: 1900-talet
-Hogde (cm): 86
+Frå år: 1986
+Hundreår: 1900-talet
+Høgde (cm): 86
 Materialar: Stål
 Materialkommentar: Steel, waxed
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O21561/

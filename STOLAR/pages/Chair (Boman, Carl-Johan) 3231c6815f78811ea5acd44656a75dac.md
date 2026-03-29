@@ -5,9 +5,9 @@ Breidde (cm): 48.8
 Datering: 1962
 Djupn (cm): 43.8
 Estimert vekt (kg): 0.0
-Fra ar: 1962
-Hundre-ar: 1900-talet
-Hogde (cm): 40
+Frå år: 1962
+Hundreår: 1900-talet
+Høgde (cm): 40
 Materialar: Bjørk, Kryssfiner, Linoleum, Metall
 Materialkommentar: [AI] Formpresset og lakkert kryssfiner av bjørk, sete belagt med svart linoleum, detaljer i metall.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O371748/
@@ -17,5 +17,5 @@ Objekt-ID: O371748
 Produksjonsstad: Helsinki
 Produsent: Boman, Carl-Johan
 Stilperiode: Modernisme / Midtjahrhundre
-Til ar: 1962
+Til år: 1962
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O371748.glb

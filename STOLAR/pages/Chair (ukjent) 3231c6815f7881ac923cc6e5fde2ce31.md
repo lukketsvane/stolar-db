@@ -5,9 +5,9 @@ Breidde (cm): 47
 Datering: 1705-15
 Djupn (cm): 48
 Estimert vekt (kg): 0.0
-Fra ar: 1705
-Hundre-ar: 1700-talet
-Hogde (cm): 135
+Frå år: 1705
+Hundreår: 1700-talet
+Høgde (cm): 135
 Materialar: Nøttetre, Rotting
 Materialkommentar: Dreidde og skore nøttetre, med spanskrøyra sete og rygg
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O167597/
@@ -18,5 +18,5 @@ Produksjonsstad: England
 Produsent: unknown
 Stilperiode: Rokokko
 Teknikk: Dreiing, Fletting, Skjæring
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O167597.glb

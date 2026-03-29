@@ -5,9 +5,9 @@ Breidde (cm): 55.3
 Datering: 1938
 Djupn (cm): 58.2
 Estimert vekt (kg): 0.0
-Fra ar: 1938
-Hundre-ar: 1900-talet
-Hogde (cm): 77
+Frå år: 1938
+Hundreår: 1900-talet
+Høgde (cm): 77
 Materialar: Kryssfiner
 Materialkommentar: Formpressa kryssfiner (truleg bjørk). Målinga er ikkje original.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O130182/
@@ -17,5 +17,5 @@ Objekt-ID: O130182
 Produksjonsstad: Great Britain
 Produsent: Summers, Gerald
 Stilperiode: Art Deco / Tidleg modernisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O130182.glb

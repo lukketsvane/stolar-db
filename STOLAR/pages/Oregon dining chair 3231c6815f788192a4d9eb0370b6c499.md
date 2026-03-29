@@ -5,9 +5,9 @@ Breidde (cm): 52
 Datering: 1963
 Djupn (cm): 41
 Estimert vekt (kg): 0.0
-Fra ar: 1963
-Hundre-ar: 1900-talet
-Hogde (cm): 78
+Frå år: 1963
+Hundreår: 1900-talet
+Høgde (cm): 78
 Materialar: Furu, Tekstil
 Materialkommentar: Pine frame upholstered with Everflex or Tibor Regent material.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O372098/
@@ -17,5 +17,5 @@ Objekt-ID: O372098
 Produksjonsstad: England
 Produsent: Heritage, Robert
 Stilperiode: Modernisme / Midtjahrhundre
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372098.glb

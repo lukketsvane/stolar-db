@@ -6,9 +6,9 @@ Datering: 2009
 Djupn (cm): 61
 Emneord: Møbel
 Erverving: Innlån, 2019
-Fra ar: 2009
-Hundre-ar: 2000-talet
-Hogde (cm): 89
+Frå år: 2009
+Hundreår: 2000-talet
+Høgde (cm): 89
 Materialar: Polypropylen
 Materialkommentar: Sprøytestøp, liming og fargelakkering på plast, polypropylen
 Nasjonalmuseet: https://www.nasjonalmuseet.no/samlingen/objekt/NMK.DEP.2019.0014
@@ -16,5 +16,5 @@ Nemning: Stol
 Objekt-ID: NMK.DEP.2019.0014
 Stilperiode: Samtidsdesign
 Teknikk: Fargelakkering, Liming
-Til ar: 2009
+Til år: 2009
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/NMK.DEP.2019.0014.glb

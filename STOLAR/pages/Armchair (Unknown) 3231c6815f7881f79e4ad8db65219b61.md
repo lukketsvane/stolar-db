@@ -5,9 +5,9 @@ Breidde (cm): 57
 Datering: 1590
 Djupn (cm): 43
 Estimert vekt (kg): 0.0
-Fra ar: 1590
-Hundre-ar: 1500-talet
-Hogde (cm): 116.5
+Frå år: 1590
+Hundreår: 1500-talet
+Høgde (cm): 116.5
 Materialar: Eik
 Materialkommentar: Eik, dreidd og skoren
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O133237/
@@ -18,5 +18,5 @@ Produksjonsstad: France
 Produsent: Unknown
 Stilperiode: Renessanse
 Teknikk: Dreiing, Skjæring
-Til ar: 1590
+Til år: 1590
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O133237.glb

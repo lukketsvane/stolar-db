@@ -4,9 +4,9 @@ Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR
 Breidde (cm): 17.5
 Datering: 2008
 Djupn (cm): 25.5
-Fra ar: 2008
-Hundre-ar: 2000-talet
-Hogde (cm): 34
+Frå år: 2008
+Hundreår: 2000-talet
+Høgde (cm): 34
 Materialar: Polyester, Tre
 Materialkommentar: Pulverlakka tre, litografisk trykk
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O1191305/

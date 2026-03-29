@@ -5,9 +5,9 @@ Breidde (cm): 53
 Datering: c. 1785
 Djupn (cm): 53.5
 Estimert vekt (kg): 0.0
-Fra ar: 1785
-Hundre-ar: 1700-talet
-Hogde (cm): 94
+Frå år: 1785
+Hundreår: 1700-talet
+Høgde (cm): 94
 Materialar: Bøk, Mahogni
 Materialkommentar: Carved mahogany with modern beech corner braces; beech drop-in seat
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O55017/
@@ -17,5 +17,5 @@ Objekt-ID: O55017
 Produksjonsstad: Great Britain
 Produsent: Unknown
 Stilperiode: Nyklassisisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O55017.glb

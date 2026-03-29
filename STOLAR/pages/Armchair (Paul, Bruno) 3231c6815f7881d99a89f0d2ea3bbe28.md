@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: 1905
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1905
-Hundre-ar: 1900-talet
-Hogde (cm): 100
+Frå år: 1905
+Hundreår: 1900-talet
+Høgde (cm): 100
 Materialar: Bøk, Eik, Perlemor, Silke
 Materialkommentar: Bøkeramme med satintrefiner, innlagt med eik og perlemor i midten, med original polstring i råsilke
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O144277/
@@ -17,5 +17,5 @@ Objekt-ID: O144277
 Produksjonsstad: Munich
 Produsent: Paul, Bruno
 Stilperiode: Jugend/Art Nouveau
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O144277.glb

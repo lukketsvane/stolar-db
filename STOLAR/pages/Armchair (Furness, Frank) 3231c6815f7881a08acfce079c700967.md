@@ -5,9 +5,9 @@ Breidde (cm): 68
 Datering: 1871-1876
 Djupn (cm): 57
 Estimert vekt (kg): 0.0
-Fra ar: 1871
-Hundre-ar: 1800-talet
-Hogde (cm): 86
+Frå år: 1871
+Hundreår: 1800-talet
+Høgde (cm): 86
 Materialar: Eik
 Materialkommentar: Skåren eik
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O59243/
@@ -17,5 +17,5 @@ Produksjonsstad: Philadelphia
 Produsent: Furness, Frank
 Stilperiode: Historisme
 Teknikk: Skjæring
-Til ar: 1876
+Til år: 1876
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O59243.glb

@@ -5,9 +5,9 @@ Breidde (cm): 39
 Datering: ca. 1900
 Djupn (cm): 38
 Estimert vekt (kg): 0.0
-Fra ar: 1900
-Hundre-ar: 1900-talet
-Hogde (cm): 91.5
+Frå år: 1900
+Hundreår: 1900-talet
+Høgde (cm): 91.5
 Materialar: Fløyel, Messing, Tre
 Materialkommentar: Skore og dreidde pæretre; beslag av forgylt messing, fløyelspolstring
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O112468/
@@ -17,5 +17,5 @@ Objekt-ID: O112468
 Produksjonsstad: Paris
 Produsent: Bigaux, Louis
 Stilperiode: Jugend/Art Nouveau
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O112468.glb

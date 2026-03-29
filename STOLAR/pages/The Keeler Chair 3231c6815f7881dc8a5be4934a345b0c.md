@@ -4,9 +4,9 @@ Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR
 Breidde (cm): 97.7
 Datering: ca. 1960
 Djupn (cm): 66
-Fra ar: 1960
-Hundre-ar: 1900-talet
-Hogde (cm): 119
+Frå år: 1960
+Hundreår: 1900-talet
+Høgde (cm): 119
 Materialar: Kryssfiner, Stål
 Materialkommentar: Moulded plywood, bent tubular steel
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O76201/

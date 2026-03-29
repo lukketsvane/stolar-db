@@ -5,9 +5,9 @@ Breidde (cm): 55.5
 Datering: 1844
 Djupn (cm): 55.5
 Estimert vekt (kg): 0.0
-Fra ar: 1844
-Hundre-ar: 1800-talet
-Hogde (cm): 105
+Frå år: 1844
+Hundreår: 1800-talet
+Høgde (cm): 105
 Materialar: Eik, Plysj
 Materialkommentar: Eik, med trekk av stempla plysj
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O34058/
@@ -17,5 +17,5 @@ Objekt-ID: O34058
 Produksjonsstad: England
 Produsent: Cottingham, Lewis Nockalls
 Stilperiode: Historisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O34058.glb

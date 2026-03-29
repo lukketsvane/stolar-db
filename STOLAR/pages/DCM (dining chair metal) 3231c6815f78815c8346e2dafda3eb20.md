@@ -4,9 +4,9 @@ Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR
 Breidde (cm): 49.2
 Datering: ca. 1947
 Djupn (cm): 44.5
-Fra ar: 1947
-Hundre-ar: 1900-talet
-Hogde (cm): 74.6
+Frå år: 1947
+Hundreår: 1900-talet
+Høgde (cm): 74.6
 Materialar: Bjørk, Gummi, Kryssfiner, Stål
 Materialkommentar: Formpressa bjørkekryssfiner, ramme av stålrøyr, gummifeste
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O1371096/

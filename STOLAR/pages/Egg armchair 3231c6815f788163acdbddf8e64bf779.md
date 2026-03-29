@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: 1958
 Djupn (cm): 0
 Estimert vekt (kg): 15.0
-Fra ar: 1958
-Hundre-ar: 1900-talet
-Hogde (cm): 0
+Frå år: 1958
+Hundreår: 1900-talet
+Høgde (cm): 0
 Materialar: Aluminium, Lær, Plast
 Materialkommentar: Formpressa polystyren, lærpolstring, støypt aluminium
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O137614/
@@ -17,5 +17,5 @@ Objekt-ID: O137614
 Produksjonsstad: Denmark
 Produsent: Jacobsen, Arne Emil
 Stilperiode: Skandinavisk modernisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O137614.glb

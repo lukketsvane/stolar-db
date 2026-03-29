@@ -4,9 +4,9 @@ Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR
 Breidde (cm): 43.3
 Datering: 1902
 Djupn (cm): 45.8
-Fra ar: 1902
-Hundre-ar: 1900-talet
-Hogde (cm): 141.5
+Frå år: 1902
+Hundreår: 1900-talet
+Høgde (cm): 141.5
 Materialar: Eik, Lær
 Materialkommentar: Beisa eik, lærpolstring
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O34059/

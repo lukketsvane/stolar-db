@@ -5,9 +5,9 @@ Breidde (cm): 47
 Datering: 1920
 Djupn (cm): 41
 Estimert vekt (kg): 3.65
-Fra ar: 1920
-Hundre-ar: 1900-talet
-Hogde (cm): 91
+Frå år: 1920
+Hundreår: 1900-talet
+Høgde (cm): 91
 Materialar: Lær, Tre
 Materialkommentar: Painted wood with leather
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O166699/
@@ -17,5 +17,5 @@ Objekt-ID: O166699
 Produksjonsstad: Netherlands
 Produsent: Rietveld, Gerrit Thomas
 Stilperiode: Art Deco / Tidleg modernisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O166699.glb

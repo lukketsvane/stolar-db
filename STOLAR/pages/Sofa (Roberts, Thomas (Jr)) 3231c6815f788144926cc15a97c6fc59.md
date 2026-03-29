@@ -5,9 +5,9 @@ Breidde (cm): 212
 Datering: ca. 1725-1730
 Djupn (cm): 85
 Estimert vekt (kg): 0.0
-Fra ar: 1725
-Hundre-ar: 1700-talet
-Hogde (cm): 42
+Frå år: 1725
+Hundreår: 1700-talet
+Høgde (cm): 42
 Materialar: Bøk, Fløyel, Hestetagl, Lin, Nøttetre, Silke
 Materialkommentar: Hovudramme av bøk, finert med masurnøtt og dekorert med skoren og forgylta gesso; indre seteramme av bøk; trekk av grøn silkefløyel kanta med silkeflette; strukturell polstring av linband, botnstoff av lin, hestetaglstopping og trekk til stoppinga av lin, forma med ein framspringande kant
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O80347/
@@ -17,5 +17,5 @@ Objekt-ID: O80347
 Produksjonsstad: London
 Produsent: Roberts, Thomas (Jr)
 Stilperiode: Rokokko
-Til ar: 1730
+Til år: 1730
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O80347.glb

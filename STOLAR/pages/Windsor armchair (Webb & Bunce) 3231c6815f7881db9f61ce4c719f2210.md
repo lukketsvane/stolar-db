@@ -5,9 +5,9 @@ Breidde (cm): 58
 Datering: ca. 1817-1820
 Djupn (cm): 58
 Estimert vekt (kg): 0.0
-Fra ar: 1817
-Hundre-ar: 1800-talet
-Hogde (cm): 45.5
+Frå år: 1817
+Hundreår: 1800-talet
+Høgde (cm): 45.5
 Materialar: Alm, Tre
 Materialkommentar: Elm and fruitwood, turned and carved
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O372116/
@@ -17,5 +17,5 @@ Objekt-ID: O372116
 Produksjonsstad: London
 Produsent: Webb & Bunce
 Stilperiode: Empire
-Til ar: 1820
+Til år: 1820
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372116.glb

@@ -5,9 +5,9 @@ Breidde (cm): 38
 Datering: 1500-1600
 Djupn (cm): 46
 Estimert vekt (kg): 0.0
-Fra ar: 1500
-Hundre-ar: 1600-talet
-Hogde (cm): 54.2
+Frå år: 1500
+Hundreår: 1600-talet
+Høgde (cm): 54.2
 Materialar: Tre
 Materialkommentar: Skore tre, delvis forgylt
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O1273341/
@@ -17,5 +17,5 @@ Produksjonsstad: Venice (city)
 Produsent: ukjent
 Stilperiode: Renessanse
 Teknikk: Skjæring
-Til ar: 1600
+Til år: 1600
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1273341.glb

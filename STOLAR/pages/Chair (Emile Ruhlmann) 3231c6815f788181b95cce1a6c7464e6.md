@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: 1925
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1925
-Hundre-ar: 1900-talet
-Hogde (cm): 0
+Frå år: 1925
+Hundreår: 1900-talet
+Høgde (cm): 0
 Materialar: Fløyel, Palisander
 Materialkommentar: [AI] Polert palisander, polstret rygg og sete trukket med fløyel, ben avsluttet med saboter i bronse.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O372077/
@@ -17,5 +17,5 @@ Objekt-ID: O372077
 Produksjonsstad: France
 Produsent: Emile Ruhlmann
 Stilperiode: Art Deco / Tidleg modernisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372077.glb

@@ -5,9 +5,9 @@ Breidde (cm): 63.5
 Datering: 1788
 Djupn (cm): 63
 Estimert vekt (kg): 0.0
-Fra ar: 1788
-Hundre-ar: 1700-talet
-Hogde (cm): 91.5
+Frå år: 1788
+Hundreår: 1700-talet
+Høgde (cm): 91.5
 Materialar: Nøttetre, Silke
 Materialkommentar: Denne posten vil bli revidert etter konservering
 Skoren valnøtt, måla kvit og grå og delvis forgylta, med moderne silkepolstring og moderne hjul
@@ -18,5 +18,5 @@ Objekt-ID: O52864
 Produksjonsstad: Paris
 Produsent: Sené, Jean-Baptiste-Claude
 Stilperiode: Nyklassisisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O52864.glb

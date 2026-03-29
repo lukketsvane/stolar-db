@@ -5,9 +5,9 @@ Breidde (cm): 53.3
 Datering: 1550-1570
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1550
-Hundre-ar: 1600-talet
-Hogde (cm): 105.4
+Frå år: 1550
+Hundreår: 1600-talet
+Høgde (cm): 105.4
 Materialar: Nøttetre
 Materialkommentar: Skoren nøttetre eller kastanjetre(?)
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O156078/
@@ -18,5 +18,5 @@ Produksjonsstad: Italy
 Produsent: ukjent
 Stilperiode: Renessanse
 Teknikk: Skjæring
-Til ar: 1570
+Til år: 1570
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O156078.glb

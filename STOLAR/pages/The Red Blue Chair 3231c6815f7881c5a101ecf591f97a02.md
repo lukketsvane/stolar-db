@@ -5,9 +5,9 @@ Breidde (cm): 66
 Datering: 1918
 Djupn (cm): 83.5
 Estimert vekt (kg): 0.0
-Fra ar: 1918
-Hundre-ar: 1900-talet
-Hogde (cm): 87
+Frå år: 1918
+Hundreår: 1900-talet
+Høgde (cm): 87
 Materialar: Bøk, Kryssfiner
 Materialkommentar: Painted beech frame and plywood panels
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O142927/
@@ -16,5 +16,5 @@ Objekt-ID: O142927
 Produksjonsstad: Holland
 Produsent: Rietveld, Gerrit
 Stilperiode: Jugend/Art Nouveau
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O142927.glb

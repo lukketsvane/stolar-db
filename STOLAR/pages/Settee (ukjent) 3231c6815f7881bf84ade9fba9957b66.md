@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: 1700-1720
 Djupn (cm): 53.5
 Estimert vekt (kg): 0.0
-Fra ar: 1700
-Hundre-ar: 1700-talet
-Hogde (cm): 0
+Frå år: 1700
+Hundreår: 1700-talet
+Høgde (cm): 0
 Materialar: Nøttetre
 Materialkommentar: Carved walnut
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O371849/
@@ -17,5 +17,5 @@ Objekt-ID: O371849
 Produksjonsstad: England
 Produsent: unknown
 Stilperiode: Rokokko
-Til ar: 1720
+Til år: 1720
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O371849.glb

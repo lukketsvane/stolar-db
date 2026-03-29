@@ -5,9 +5,9 @@ Breidde (cm): 49.6
 Datering: 1913-1919
 Djupn (cm): 49.5
 Estimert vekt (kg): 0.0
-Fra ar: 1913
-Hundre-ar: 1900-talet
-Hogde (cm): 101.5
+Frå år: 1913
+Hundreår: 1900-talet
+Høgde (cm): 101.5
 Materialar: Rotting, Tre
 Materialkommentar: Måla tre, flettverk
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O302353/
@@ -17,5 +17,5 @@ Objekt-ID: O302353
 Produksjonsstad: Great Britain
 Produsent: Fry, Roger Eliot
 Stilperiode: Jugend/Art Nouveau
-Til ar: 1919
+Til år: 1919
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O302353.glb

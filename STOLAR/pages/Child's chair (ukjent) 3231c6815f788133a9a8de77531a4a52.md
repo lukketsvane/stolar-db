@@ -5,9 +5,9 @@ Breidde (cm): 33
 Datering: ca. 1855
 Djupn (cm): 36
 Estimert vekt (kg): 0.0
-Fra ar: 1855
-Hundre-ar: 1800-talet
-Hogde (cm): 68
+Frå år: 1855
+Hundreår: 1800-talet
+Høgde (cm): 68
 Materialar: Perlemor, Rotting, Tre
 Materialkommentar: Tre (truleg bøk), skore, dreidd, japannert og innlagt med perlemor, med spanskrøyrsete
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O1391587/
@@ -17,5 +17,5 @@ Objekt-ID: O1391587
 Produksjonsstad: France
 Produsent: ukjent
 Stilperiode: Historisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1391587.glb

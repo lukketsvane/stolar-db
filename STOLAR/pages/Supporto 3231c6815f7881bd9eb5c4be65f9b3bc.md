@@ -5,9 +5,9 @@ Breidde (cm): 40
 Datering: 1976-1979
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1976
-Hundre-ar: 1900-talet
-Hogde (cm): 0
+Frå år: 1976
+Hundreår: 1900-talet
+Høgde (cm): 0
 Materialar: Metall
 Materialkommentar: Chickenwire seat and back
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O144053/
@@ -17,5 +17,5 @@ Objekt-ID: O144053
 Produksjonsstad: Great Britain
 Produsent: Scott, Fred
 Stilperiode: Postmodernisme
-Til ar: 1979
+Til år: 1979
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O144053.glb

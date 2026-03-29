@@ -5,9 +5,9 @@ Breidde (cm): 152.4
 Datering: ca. 1870
 Djupn (cm): 73.7
 Estimert vekt (kg): 0.0
-Fra ar: 1870
-Hundre-ar: 1800-talet
-Hogde (cm): 116.8
+Frå år: 1870
+Hundreår: 1800-talet
+Høgde (cm): 116.8
 Materialar: Jern
 Materialkommentar: Støypt jern
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O1176403/
@@ -17,5 +17,5 @@ Objekt-ID: O1176403
 Produksjonsstad: Britain
 Produsent: Christopher Dresser
 Stilperiode: Viktorianisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1176403.glb

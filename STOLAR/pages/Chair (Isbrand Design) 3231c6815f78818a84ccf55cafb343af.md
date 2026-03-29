@@ -5,9 +5,9 @@ Breidde (cm): 48
 Datering: 1966
 Djupn (cm): 44
 Estimert vekt (kg): 0.0
-Fra ar: 1966
-Hundre-ar: 1900-talet
-Hogde (cm): 43
+Frå år: 1966
+Hundreår: 1900-talet
+Høgde (cm): 43
 Materialar: Bøk, Kryssfiner, Plast, Stålrør
 Materialkommentar: [AI] Lakkert, formspent kryssfiner av bøk med understell av forkrommet stålrør og glidere i plast.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O181063/
@@ -17,5 +17,5 @@ Objekt-ID: O181063
 Produksjonsstad: Denmark
 Produsent: Isbrand Design
 Stilperiode: Modernisme / Midtjahrhundre
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O181063.glb

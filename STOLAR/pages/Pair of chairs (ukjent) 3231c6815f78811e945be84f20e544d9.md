@@ -5,9 +5,9 @@ Breidde (cm): 62.2
 Datering: ca. 1740
 Djupn (cm): 66
 Estimert vekt (kg): 0.0
-Fra ar: 1740
-Hundre-ar: 1700-talet
-Hogde (cm): 100
+Frå år: 1740
+Hundreår: 1700-talet
+Høgde (cm): 100
 Materialar: Mahogni, Messing, Ull
 Materialkommentar: [AI] Skåret mahogni med gjennombrutt ryggdekor og svungne ben med kloføtter. Polstret sete trukket med mønstret tekstil i ull, dekorert med messingnagler.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O371951/
@@ -17,5 +17,5 @@ Objekt-ID: O371951
 Produksjonsstad: England
 Produsent: ukjent
 Stilperiode: Rokokko
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O371951.glb

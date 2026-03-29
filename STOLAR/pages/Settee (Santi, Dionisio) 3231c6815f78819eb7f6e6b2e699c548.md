@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: ca. 1806
 Djupn (cm): 62
 Estimert vekt (kg): 0.0
-Fra ar: 1806
-Hundre-ar: 1800-talet
-Hogde (cm): 112
+Frå år: 1806
+Hundreår: 1800-talet
+Høgde (cm): 112
 Materialar: Maling, Tekstil, Tre
 Materialkommentar: [AI] Malt tre med skåret dekor, polstret sete og fire ryggfelt trukket med mønstret tekstil.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O107444/
@@ -17,5 +17,5 @@ Objekt-ID: O107444
 Produksjonsstad: Rome
 Produsent: Santi, Dionisio
 Stilperiode: Empire
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O107444.glb

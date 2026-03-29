@@ -5,9 +5,9 @@ Breidde (cm): 44.5
 Datering: ca. 1855
 Djupn (cm): 39.4
 Estimert vekt (kg): 0.0
-Fra ar: 1855
-Hundre-ar: 1800-talet
-Hogde (cm): 83.8
+Frå år: 1855
+Hundreår: 1800-talet
+Høgde (cm): 83.8
 Materialar: Hestetagl, Mahogni
 Materialkommentar: [AI] Mahogni med skåret og dreid dekor, polstret sete trukket med hestetagl.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O321450/
@@ -17,5 +17,5 @@ Objekt-ID: O321450
 Produksjonsstad: England
 Produsent: ukjent
 Stilperiode: Historisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O321450.glb

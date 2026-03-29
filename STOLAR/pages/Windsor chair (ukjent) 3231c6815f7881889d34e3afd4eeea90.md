@@ -5,9 +5,9 @@ Breidde (cm): 55.2
 Datering: 1780-1820
 Djupn (cm): 40.6
 Estimert vekt (kg): 0.0
-Fra ar: 1780
-Hundre-ar: 1700-talet
-Hogde (cm): 90.2
+Frå år: 1780
+Hundreår: 1700-talet
+Høgde (cm): 90.2
 Materialar: Alm, Ask
 Materialkommentar: [AI] Dreid og skåret bøk, ask og alm med formskåret sete og gjennombrutt dekor i ryggspilen.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O326321/
@@ -17,5 +17,5 @@ Objekt-ID: O326321
 Produksjonsstad: England
 Produsent: ukjent
 Stilperiode: Empire
-Til ar: 1820
+Til år: 1820
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O326321.glb

@@ -5,9 +5,9 @@ Breidde (cm): 38.5
 Datering: ca. 1885
 Djupn (cm): 51
 Estimert vekt (kg): 0.0
-Fra ar: 1885
-Hundre-ar: 1800-talet
-Hogde (cm): 103.5
+Frå år: 1885
+Hundreår: 1800-talet
+Høgde (cm): 103.5
 Materialar: Mahogni, Skinn
 Materialkommentar: [AI] Mahogni med dreide forben, polstret sete og rygg trukket med mørkt skinn.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O8384/
@@ -17,5 +17,5 @@ Objekt-ID: O8384
 Produksjonsstad: London
 Produsent: Godwin, Edward William
 Stilperiode: Viktorianisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O8384.glb

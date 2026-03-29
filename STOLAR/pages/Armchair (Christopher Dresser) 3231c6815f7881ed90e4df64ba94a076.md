@@ -5,9 +5,9 @@ Breidde (cm): 66
 Datering: 1875-1880
 Djupn (cm): 52
 Estimert vekt (kg): 0.0
-Fra ar: 1875
-Hundre-ar: 1800-talet
-Hogde (cm): 76
+Frå år: 1875
+Hundreår: 1800-talet
+Høgde (cm): 76
 Materialar: Eik, Mahogni, Maling
 Materialkommentar: Tre (truleg mahogni og eik), ebonisert og malt
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O1779764/
@@ -18,5 +18,5 @@ Produksjonsstad: London
 Produsent: Christopher Dresser
 Stilperiode: Viktorianisme
 Teknikk: Lakkering
-Til ar: 1880
+Til år: 1880
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1779764.glb

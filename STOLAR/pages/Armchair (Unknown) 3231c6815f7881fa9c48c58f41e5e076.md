@@ -5,9 +5,9 @@ Breidde (cm): 65
 Datering: 1949-1951
 Djupn (cm): 74
 Estimert vekt (kg): 0.0
-Fra ar: 1949
-Hundre-ar: 1900-talet
-Hogde (cm): 96.9
+Frå år: 1949
+Hundreår: 1900-talet
+Høgde (cm): 96.9
 Materialar: Bjørk, Ull
 Materialkommentar: [AI] Lakkert bjørk med formbøyde armlener, polstret sete og rygg trukket med blått ullstoff.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O304866/
@@ -17,5 +17,5 @@ Objekt-ID: O304866
 Produksjonsstad: England
 Produsent: Unknown
 Stilperiode: Modernisme / Midtjahrhundre
-Til ar: 1951
+Til år: 1951
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O304866.glb

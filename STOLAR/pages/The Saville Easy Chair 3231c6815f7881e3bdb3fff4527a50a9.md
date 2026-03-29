@@ -5,9 +5,9 @@ Breidde (cm): 61
 Datering: ca. 1890
 Djupn (cm): 71
 Estimert vekt (kg): 0.0
-Fra ar: 1890
-Hundre-ar: 1800-talet
-Hogde (cm): 96.5
+Frå år: 1890
+Hundreår: 1800-talet
+Høgde (cm): 96.5
 Materialar: Fløyel, Mahogni
 Materialkommentar: Mahogany, upholstered in Utrecht Velvet
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O61431/
@@ -17,5 +17,5 @@ Objekt-ID: O61431
 Produksjonsstad: London
 Produsent: Jack, George Washington Henry
 Stilperiode: Viktorianisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O61431.glb

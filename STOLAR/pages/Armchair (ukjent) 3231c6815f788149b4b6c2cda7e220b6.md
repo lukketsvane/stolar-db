@@ -5,9 +5,9 @@ Breidde (cm): 53.7
 Datering: July 1980
 Djupn (cm): 52.1
 Estimert vekt (kg): 0.0
-Fra ar: 1980
-Hundre-ar: 1900-talet
-Hogde (cm): 84.1
+Frå år: 1980
+Hundreår: 1900-talet
+Høgde (cm): 84.1
 Materialar: Maling, Rotting, Tre
 Materialkommentar: [AI] Svartmalt tre med dreid og profilert dekor, malt ornamentikk og flettet sete av rotting.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O172495/
@@ -17,5 +17,5 @@ Objekt-ID: O172495
 Produksjonsstad: England
 Produsent: ukjent
 Stilperiode: Postmodernisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O172495.glb

@@ -5,9 +5,9 @@ Breidde (cm): 410
 Datering: 1936-37
 Djupn (cm): 510
 Estimert vekt (kg): 0.0
-Fra ar: 1936
-Hundre-ar: 1900-talet
-Hogde (cm): 750
+Frå år: 1936
+Hundreår: 1900-talet
+Høgde (cm): 750
 Materialar: Bjørk, Kryssfiner
 Materialkommentar: Laminert bjørk og bjørkekryssfiner
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O1159334/
@@ -17,5 +17,5 @@ Objekt-ID: O1159334
 Produksjonsstad: London
 Produsent: Breuer, Marcel Lajos
 Stilperiode: Bauhaus
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1159334.glb

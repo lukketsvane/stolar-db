@@ -5,9 +5,9 @@ Breidde (cm): 31
 Datering: ca. 1580
 Djupn (cm): 48
 Estimert vekt (kg): 0.0
-Fra ar: 1580
-Hundre-ar: 1600-talet
-Hogde (cm): 99.3
+Frå år: 1580
+Hundreår: 1600-talet
+Høgde (cm): 99.3
 Materialar: Tre
 Materialkommentar: Carving, gilding
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O77316/
@@ -17,5 +17,5 @@ Objekt-ID: O77316
 Produksjonsstad: Venice
 Produsent: Unknown
 Stilperiode: Renessanse
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O77316.glb

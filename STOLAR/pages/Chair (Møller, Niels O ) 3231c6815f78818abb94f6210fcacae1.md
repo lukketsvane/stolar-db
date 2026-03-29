@@ -5,9 +5,9 @@ Breidde (cm): 49
 Datering: 1964
 Djupn (cm): 47.5
 Estimert vekt (kg): 0.0
-Fra ar: 1964
-Hundre-ar: 1900-talet
-Hogde (cm): 78
+Frå år: 1964
+Hundreår: 1900-talet
+Høgde (cm): 78
 Materialar: Lær, Palisander
 Materialkommentar: Rosentre- eller teakramme; stripepolstring i ekte eller imitert lær.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O180090/
@@ -17,5 +17,5 @@ Objekt-ID: O180090
 Produksjonsstad: Denmark
 Produsent: Møller, Niels O.
 Stilperiode: Modernisme / Midtjahrhundre
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O180090.glb

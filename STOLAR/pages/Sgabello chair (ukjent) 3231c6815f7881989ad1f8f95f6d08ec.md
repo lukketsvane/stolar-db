@@ -5,9 +5,9 @@ Breidde (cm): 34.5
 Datering: about 1800-1830
 Djupn (cm): 53.8
 Estimert vekt (kg): 0.0
-Fra ar: 1800
-Hundre-ar: 1800-talet
-Hogde (cm): 103
+Frå år: 1800
+Hundreår: 1800-talet
+Høgde (cm): 103
 Materialar: Nøttetre
 Materialkommentar: Walnut, carved and parcel-gilt
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O131530/
@@ -17,5 +17,5 @@ Objekt-ID: O131530
 Produksjonsstad: Italy
 Produsent: Unknown
 Stilperiode: Empire
-Til ar: 1830
+Til år: 1830
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O131530.glb

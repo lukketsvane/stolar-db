@@ -4,9 +4,9 @@ Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR
 Breidde (cm): 55.5
 Datering: 1500
 Djupn (cm): 27.5
-Fra ar: 1500
-Hundre-ar: 1600-talet
-Hogde (cm): 53.5
+Frå år: 1500
+Hundreår: 1600-talet
+Høgde (cm): 53.5
 Materialar: Eik
 Materialkommentar: Eik
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O372271/
@@ -16,5 +16,5 @@ Objekt-ID: O372271
 Produksjonsstad: England
 Produsent: ukjent
 Stilperiode: Renessanse
-Til ar: 1500
+Til år: 1500
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372271.glb

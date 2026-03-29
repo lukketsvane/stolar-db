@@ -4,9 +4,9 @@ Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR
 Breidde (cm): 53.3
 Datering: 1964
 Djupn (cm): 37.5
-Fra ar: 1964
-Hundre-ar: 1900-talet
-Hogde (cm): 45.5
+Frå år: 1964
+Hundreår: 1900-talet
+Høgde (cm): 45.5
 Materialar: Metall, Polypropylen
 Materialkommentar: Injection-moulded polypropylene, metal base
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O21633/

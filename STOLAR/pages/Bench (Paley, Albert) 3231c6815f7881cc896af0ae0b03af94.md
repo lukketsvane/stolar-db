@@ -5,9 +5,9 @@ Breidde (cm): 66
 Datering: 1994
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1994
-Hundre-ar: 1900-talet
-Hogde (cm): 7.6
+Frå år: 1994
+Hundreår: 1900-talet
+Høgde (cm): 7.6
 Materialar: Mahogni, Stål
 Materialkommentar: Mjukstål, smidd og fabrikkert, med sete av honduransk mahogni innarbeidd med gullstøv.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O72634/
@@ -17,5 +17,5 @@ Objekt-ID: O72634
 Produksjonsstad: Rochester (New York)
 Produsent: Paley, Albert
 Stilperiode: Postmodernisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O72634.glb

@@ -5,9 +5,9 @@ Breidde (cm): 48
 Datering: 1690-1710
 Djupn (cm): 47
 Estimert vekt (kg): 0.0
-Fra ar: 1690
-Hundre-ar: 1600-talet
-Hogde (cm): 47
+Frå år: 1690
+Hundreår: 1600-talet
+Høgde (cm): 47
 Materialar: Eik, Lær, Messing
 Materialkommentar: Oak upholstered with leather and brass-headed nails
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O131718/
@@ -17,5 +17,5 @@ Objekt-ID: O131718
 Produksjonsstad: England
 Produsent: Unknown
 Stilperiode: Rokokko
-Til ar: 1710
+Til år: 1710
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O131718.glb

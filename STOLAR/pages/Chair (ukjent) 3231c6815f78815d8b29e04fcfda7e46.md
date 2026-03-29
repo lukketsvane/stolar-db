@@ -5,9 +5,9 @@ Breidde (cm): 35.75
 Datering: ca. 1973
 Djupn (cm): 56
 Estimert vekt (kg): 0.0
-Fra ar: 1973
-Hundre-ar: 1900-talet
-Hogde (cm): 43
+Frå år: 1973
+Hundreår: 1900-talet
+Høgde (cm): 43
 Materialar: Bøk
 Materialkommentar: Bøk
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O188133/
@@ -16,5 +16,5 @@ Objekt-ID: O188133
 Produksjonsstad: Asia
 Produsent: ukjent
 Stilperiode: Postmodernisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O188133.glb

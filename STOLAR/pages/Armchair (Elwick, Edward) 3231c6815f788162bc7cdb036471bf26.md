@@ -5,9 +5,9 @@ Breidde (cm): 72.4
 Datering: ca. 1750
 Djupn (cm): 81.3
 Estimert vekt (kg): 0.0
-Fra ar: 1750
-Hundre-ar: 1700-talet
-Hogde (cm): 104.1
+Frå år: 1750
+Hundreår: 1700-talet
+Høgde (cm): 104.1
 Materialar: Bøk, Tekstil
 Materialkommentar: Skåren og forgylta bøk, trukket med gobelin
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O53300/
@@ -17,5 +17,5 @@ Produksjonsstad: Wakefield
 Produsent: Elwick, Edward
 Stilperiode: Nyklassisisme
 Teknikk: Polstring, Skjæring
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O53300.glb

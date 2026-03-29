@@ -5,9 +5,9 @@ Breidde (cm): 69.5
 Datering: ca. 1898
 Djupn (cm): 62.5
 Estimert vekt (kg): 0.0
-Fra ar: 1898
-Hundre-ar: 1800-talet
-Hogde (cm): 83
+Frå år: 1898
+Hundreår: 1800-talet
+Høgde (cm): 83
 Materialar: Ask, Lær, Silke, Tekstil
 Materialkommentar: Skåren ask, beisa grøn; rygg og sete trukket med raud filt, dekorert med applikasjonsmønster i farget lær, sys på med silkesnorkontur
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O59312/
@@ -18,5 +18,5 @@ Produksjonsstad: Hungary
 Produsent: Faragó, Odön
 Stilperiode: Viktorianisme
 Teknikk: Polstring, Skjæring, Søm
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O59312.glb

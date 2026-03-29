@@ -4,9 +4,9 @@ Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR
 Breidde (cm): 47
 Datering: 1610
 Djupn (cm): 34.5
-Fra ar: 1610
-Hundre-ar: 1600-talet
-Hogde (cm): 60
+Frå år: 1610
+Hundreår: 1600-talet
+Høgde (cm): 60
 Materialar: Eik
 Materialkommentar: Eik, samanføygd, med dreidd og skoren dekor
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O75983/
@@ -17,5 +17,5 @@ Produksjonsstad: Great Britain
 Produsent: ukjent
 Stilperiode: Barokk
 Teknikk: Dreiing, Samanføying, Skjæring
-Til ar: 1610
+Til år: 1610
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O75983.glb

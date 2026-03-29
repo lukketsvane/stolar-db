@@ -5,9 +5,9 @@ Breidde (cm): 66.5
 Datering: ca. 1930
 Djupn (cm): 82.5
 Estimert vekt (kg): 0.0
-Fra ar: 1930
-Hundre-ar: 1900-talet
-Hogde (cm): 40
+Frå år: 1930
+Hundreår: 1900-talet
+Høgde (cm): 40
 Materialar: Fløyel, Tre
 Materialkommentar: Amboyna, med elfenbeininnlegg og fløyelaktig polstring
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O372106/
@@ -18,5 +18,5 @@ Produksjonsstad: France
 Produsent: Follot, Paul
 Stilperiode: Art Deco / Tidleg modernisme
 Teknikk: Innfelling, Polstring
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372106.glb

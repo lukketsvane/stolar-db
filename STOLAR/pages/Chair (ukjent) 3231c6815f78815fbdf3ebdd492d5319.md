@@ -5,9 +5,9 @@ Breidde (cm): 53
 Datering: ca. 1780- ca. 1820
 Djupn (cm): 45
 Estimert vekt (kg): 0.0
-Fra ar: 1780
-Hundre-ar: 1700-talet
-Hogde (cm): 82
+Frå år: 1780
+Hundreår: 1700-talet
+Høgde (cm): 82
 Materialar: Bøk, Lær
 Materialkommentar: Skoren og måla bøk; setet trekt i brunt lær
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O55190/
@@ -17,5 +17,5 @@ Objekt-ID: O55190
 Produksjonsstad: France
 Produsent: ukjent
 Stilperiode: Empire
-Til ar: 1820
+Til år: 1820
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O55190.glb

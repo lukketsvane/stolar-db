@@ -5,9 +5,9 @@ Breidde (cm): 60
 Datering: 1820
 Djupn (cm): 53.5
 Estimert vekt (kg): 0.0
-Fra ar: 1820
-Hundre-ar: 1800-talet
-Hogde (cm): 46
+Frå år: 1820
+Hundreår: 1800-talet
+Høgde (cm): 46
 Materialar: Bjørk, Maling, Strå, Tre
 Materialkommentar: [AI] Malt bjørk med skåret og dreid dekor, sete flettet med strå.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O172519/
@@ -17,5 +17,5 @@ Objekt-ID: O172519
 Produksjonsstad: Germany
 Produsent: ukjent
 Stilperiode: Empire
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O172519.glb

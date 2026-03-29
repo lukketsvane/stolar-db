@@ -4,9 +4,9 @@ Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR
 Breidde (cm): 28.5
 Datering: 2019
 Djupn (cm): 29.5
-Fra ar: 2019
-Hundre-ar: 2000-talet
-Hogde (cm): 6.5
+Frå år: 2019
+Hundreår: 2000-talet
+Høgde (cm): 6.5
 Materialar: Eik, Strå
 Materialkommentar: Eik og havrestrå
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O1525530/

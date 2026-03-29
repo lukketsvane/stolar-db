@@ -5,9 +5,9 @@ Breidde (cm): 49
 Datering: 1983
 Djupn (cm): 57
 Estimert vekt (kg): 0.0
-Fra ar: 1983
-Hundre-ar: 1900-talet
-Hogde (cm): 47
+Frå år: 1983
+Hundreår: 1900-talet
+Høgde (cm): 47
 Materialar: Ask, Skumplast, Ull
 Materialkommentar: [AI] Klarlakkert ask med polstret sete trukket med ull.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O301104/
@@ -17,5 +17,5 @@ Objekt-ID: O301104
 Produksjonsstad: Great Britain
 Produsent: Carter, Ronald
 Stilperiode: Postmodernisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O301104.glb

@@ -5,9 +5,9 @@ Breidde (cm): 63
 Datering: 1725-1730
 Djupn (cm): 72
 Estimert vekt (kg): 0.0
-Fra ar: 1725
-Hundre-ar: 1700-talet
-Hogde (cm): 44
+Frå år: 1725
+Hundreår: 1700-talet
+Høgde (cm): 44
 Materialar: Fløyel, Messing, Nøttetre
 Materialkommentar: Masurnøttfiner, med detaljar i skoren og forgylta gesso; polstra i grøn fløyel, med messingspikring
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O53160/
@@ -17,5 +17,5 @@ Objekt-ID: O53160
 Produksjonsstad: London
 Produsent: Roberts, Thomas (Jr)
 Stilperiode: Rokokko
-Til ar: 1730
+Til år: 1730
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O53160.glb

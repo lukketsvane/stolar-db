@@ -5,9 +5,9 @@ Breidde (cm): 3.6
 Datering: ca. 1930
 Djupn (cm): 3.6
 Estimert vekt (kg): 0.0
-Fra ar: 1930
-Hundre-ar: 1900-talet
-Hogde (cm): 42.3
+Frå år: 1930
+Hundreår: 1900-talet
+Høgde (cm): 42.3
 Materialar: Bjørk, Stål, Tekstil
 Materialkommentar: Bjørk, ebonisert og polstra, med støtter i røyrstål
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O143963/
@@ -17,5 +17,5 @@ Objekt-ID: O143963
 Produksjonsstad: Germany
 Produsent: Singer, Franz
 Stilperiode: Art Deco / Tidleg modernisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O143963.glb

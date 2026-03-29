@@ -4,9 +4,9 @@ Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR
 Breidde (cm): 61.5
 Datering: 1585
 Djupn (cm): 53
-Fra ar: 1585
-Hundre-ar: 1600-talet
-Hogde (cm): 114
+Frå år: 1585
+Hundreår: 1600-talet
+Høgde (cm): 114
 Materialar: Nøttetre
 Materialkommentar: Nøttetre, skoren og dreidd
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O133257/
@@ -17,5 +17,5 @@ Produksjonsstad: France
 Produsent: Unknown
 Stilperiode: Renessanse
 Teknikk: Dreiing, Skjæring
-Til ar: 1585
+Til år: 1585
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O133257.glb
