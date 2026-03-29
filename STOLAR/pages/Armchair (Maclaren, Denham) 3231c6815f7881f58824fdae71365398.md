@@ -1,19 +1,21 @@
 # Armchair (Maclaren, Denham)
-
 Bilete-URL: https://framemark.vam.ac.uk/collections/2006AT2692/full/full/0/default.jpg
-Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/VA_3d/O58653/O58653_bguw.png
+Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O58653_bguw.png
 Breidde (cm): 57
 Datering: ca. 1930
 Djupn (cm): 85
-Estimert vekt (kg): 57
-Frå år: 1930
-Hundreår: 1900-talet
-Høgde (cm): 68
+Estimert vekt (kg): 57.0
+Fra ar: 1930
+Hundre-ar: 1900-talet
+Hogde (cm): 68
 Materialar: Metall, Skinn
 Materialkommentar: Glas, metallbeslag og polstring i zebraskinn
-Nasjonalitet: Storbritannia
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O58653/
+Nasjonalitet: Storbritannia
+Nemning: Armstol
 Objekt-ID: O58653
 Produksjonsstad: London
 Produsent: Maclaren, Denham
-Til år: 0
+Stilperiode: Art Deco / Tidleg modernisme
+Til ar: 0
+3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O58653.glb

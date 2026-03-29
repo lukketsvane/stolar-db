@@ -1,20 +1,21 @@
 # Chair (Jacob, Georges)
-
-3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/VA_3d/O129648/O129648.glb
 Bilete-URL: https://framemark.vam.ac.uk/collections/2015HW6411/full/full/0/default.jpg
-Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/VA_3d/O129648/O129648_bguw.png
+Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O129648_bguw.png
 Breidde (cm): 37.5
 Datering: ca. 1785
 Djupn (cm): 45.5
-Estimert vekt (kg): 0
-Frå år: 1785
-Hundreår: 1700-talet
-Høgde (cm): 35.5
+Estimert vekt (kg): 0.0
+Fra ar: 1785
+Hundre-ar: 1700-talet
+Hogde (cm): 35.5
 Materialar: Nøttetre, Sadelgjord, Silke
 Materialkommentar: Skoren og forgylta valnøtt, med opphavleg(?) tett hampgjording(?), og moderne toppdekkje av silke
-Nasjonalitet: Frankrike
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O129648/
+Nasjonalitet: Frankrike
+Nemning: Stol
 Objekt-ID: O129648
 Produksjonsstad: Paris
 Produsent: Jacob, Georges
-Til år: 0
+Stilperiode: Nyklassisisme
+Til ar: 0
+3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O129648.glb

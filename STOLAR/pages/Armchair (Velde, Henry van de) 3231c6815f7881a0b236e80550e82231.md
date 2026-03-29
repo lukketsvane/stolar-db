@@ -1,20 +1,21 @@
 # Armchair (Velde, Henry van de)
-
-3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/VA_3d/O176176/O176176.glb
 Bilete-URL: https://framemark.vam.ac.uk/collections/2017JU5332/full/full/0/default.jpg
-Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/VA_3d/O176176/O176176_bguw.png
+Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O176176_bguw.png
 Breidde (cm): 44
 Datering: 1906
 Djupn (cm): 50.5
-Estimert vekt (kg): 0
-Frå år: 1906
-Hundreår: 1900-talet
-Høgde (cm): 51
+Estimert vekt (kg): 0.0
+Fra ar: 1906
+Hundre-ar: 1900-talet
+Hogde (cm): 51
 Materialar: Eik, Metall, Tekstil
 Materialkommentar: [AI] Beiset eik med polstret sete og ryggfelt trukket med stripet tekstil, kantet med pyntenagler i metall.
-Nasjonalitet: Tyskland
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O176176/
+Nasjonalitet: Tyskland
+Nemning: Armstol
 Objekt-ID: O176176
 Produksjonsstad: Germany
 Produsent: Velde, Henry van de
-Til år: 0
+Stilperiode: Jugend/Art Nouveau
+Til ar: 0
+3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O176176.glb

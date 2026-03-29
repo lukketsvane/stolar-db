@@ -1,20 +1,21 @@
 # Chair (ukjent)
-
-3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/VA_3d/O1140195/O1140195.glb
 Bilete-URL: https://framemark.vam.ac.uk/collections/2011ER1920/full/!800,800/0/default.jpg
-Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/VA_3d/O1140195/O1140195_bguw.png
+Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O1140195_bguw.png
 Breidde (cm): 41
 Datering: ca.1930-1970
 Djupn (cm): 0
-Estimert vekt (kg): 0
-Frå år: 1930
-Hundreår: 1900-talet
-Høgde (cm): 72
+Estimert vekt (kg): 0.0
+Fra ar: 1930
+Hundre-ar: 1900-talet
+Hogde (cm): 72
 Materialar: Tre
 Materialkommentar: Painted wood
-Nasjonalitet: Austerrike
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O1140195/
+Nasjonalitet: Austerrike
+Nemning: Stol
 Objekt-ID: O1140195
 Produksjonsstad: Austria
 Produsent: ukjent
-Til år: 1970
+Stilperiode: Modernisme / Midtjahrhundre
+Til ar: 1970
+3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1140195.glb

@@ -1,20 +1,21 @@
 # Armchair (unknown)
-
-3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/VA_3d/O371952/O371952.glb
 Bilete-URL: https://framemark.vam.ac.uk/collections/2018KR6367/full/full/0/default.jpg
-Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/VA_3d/O371952/O371952_bguw.png
+Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O371952_bguw.png
 Breidde (cm): 64.8
 Datering: ca. 1780- ca. 1830
 Djupn (cm): 52.1
-Estimert vekt (kg): 0
-Frå år: 1780
-Hundreår: 1700-talet
-Høgde (cm): 44.2
+Estimert vekt (kg): 0.0
+Fra ar: 1780
+Hundre-ar: 1700-talet
+Hogde (cm): 44.2
 Materialar: Løvtre
 Materialkommentar: Tropisk lauvtre (truleg huali-tre, med skoren dekor. Alternativt kan det vere rosentre av typen Dalbergia odorifera). Det er ikkje gjort vitskapleg analyse av treverket
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O371952/
+Nemning: Armstol
 Objekt-ID: O371952
 Produksjonsstad: Canton
 Produsent: unknown
+Stilperiode: Empire
 Teknikk: Skjæring
-Til år: 1830
+Til ar: 1830
+3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O371952.glb
