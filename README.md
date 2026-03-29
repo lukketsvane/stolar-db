@@ -23,48 +23,57 @@ All strukturert data er tilgjengeleg som ein enkel JSON-fil:
 https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/api.json
 ```
 
+Rotstrukturen har metadata (`generated`, `total`, `with_3d`, `with_bguw`, `base_url`) og ein `chairs`-liste med 2 300 objekt.
+
 ### Felt (2 300 postar)
 
 | Felt | Dekning | Skildring |
 |---|---|---|
 | `id` | 100 % | Objekt-ID (t.d. `OK-02274`, `NMK.2006.0076`) |
 | `name` | 100 % | Namn |
-| `type` | 100 % | Nemning: Stol, Armstol, Krakk, Barnestol, osb. |
+| `type` | 100 % | Nemning: Stol, Armstol, Krakk, osb. |
 | `materials` | 100 % | Materialar |
-| `height_cm` | 100 % | Hogde i cm |
-| `width_cm` | 99 % | Breidde i cm |
-| `depth_cm` | 98 % | Djupn i cm |
-| `year_from` | 100 % | Tidlegaste datering |
-| `year_to` | 96 % | Seinaste datering |
+| `materials_desc` | 100 % | Materialkommentar |
+| `dating` | 99 % | Dateringsstreng (t.d. "1750-1780") |
+| `year_from` | 99 % | Tidlegaste datering (tal) |
+| `year_to` | 64 % | Seinaste datering (tal) |
+| `century` | 99 % | Hundreår (t.d. "1700-talet") |
 | `style` | 99 % | Stilperiode (38 kategoriar) |
 | `designer` | 69 % | Designar/produsent |
 | `origin` | 95 % | Produksjonsstad |
 | `nationality` | 70 % | Nasjonalitet |
-| `weight_kg` | 69 % | Estimert vekt i kg |
+| `height_cm` | 89 % | Hogde i cm |
+| `width_cm` | 87 % | Breidde i cm |
+| `depth_cm` | 84 % | Djupn i cm |
+| `seat_height_cm` | 21 % | Setehogde i cm |
+| `weight_kg` | 7 % | Estimert vekt i kg |
+| `technique` | 44 % | Teknikk |
+| `keywords` | 29 % | Emneord |
+| `acquisition` | 29 % | Ervervingshistorikk |
 | `museum_url` | 100 % | Lenkje til museumsside |
+| `source_image_url` | 99 % | Original museumsfoto |
 | `glb_url` | 99 % | 3D-modell (GLB) |
 | `bguw_url` | 99 % | Bakgrunnsfjerna bilete |
-| `source_image_url` | 99 % | Original museumsfoto |
 
-### Stilperiodar
+### Stilperiodar (topp 15)
 
-| Stil | Antal | Periode |
-|---|---|---|
-| Nyklassisisme | 301 | ~1750-1800 |
-| Barokk | 264 | ~1600-1700 |
-| Rokokko | 222 | ~1700-1750 |
-| Postmodernisme | 212 | ~1970-2000 |
-| Historisme | 207 | ~1830-1900 |
-| Modernisme | 150 | ~1945-1970 |
-| Empire | 147 | ~1800-1830 |
-| Viktorianisme | 107 | ~1860-1900 |
-| Art Deco | 106 | ~1920-1945 |
-| Samtidsdesign | 79 | 2000+ |
-| Jugend / Art Nouveau | 79 | ~1900-1920 |
-| Renessanse | 63 | Før 1600 |
-| Funksjonalisme | 47 | ~1920-1940 |
-| Bauhaus | 20 | ~1919-1933 |
-| Skandinavisk modernisme | 14 | ~1930-1970 |
+| Stil | Antal |
+|---|---|
+| Nyklassisisme | 301 |
+| Barokk | 264 |
+| Rokokko | 222 |
+| Postmodernisme | 212 |
+| Historisme | 207 |
+| Modernisme / Midtjahrhundre | 150 |
+| Empire | 147 |
+| Viktorianisme | 107 |
+| Art Deco / Tidleg modernisme | 106 |
+| Samtidsdesign | 79 |
+| Jugend / Art Nouveau | 79 |
+| Renessanse | 63 |
+| Funksjonalisme | 47 |
+| Hepplewhite | 28 |
+| Regence | 27 |
 
 ### Stoltypar
 
