@@ -5,9 +5,9 @@ Breidde (cm): 59
 Datering: 1860-1880
 Djupn (cm): 51
 Estimert vekt (kg): 0.0
-Fra ar: 1860
-Hundre-ar: 1800-talet
-Hogde (cm): 84
+Frå år: 1860
+Hundreår: 1800-talet
+Høgde (cm): 84
 Materialar: Messing, Tekstil, Tre
 Materialkommentar: Tre, skore og dreidde, med polstring og messinghjul
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O1135253/
@@ -17,5 +17,5 @@ Objekt-ID: O1135253
 Produksjonsstad: London
 Produsent: Johnstone and Jeanes
 Stilperiode: Viktorianisme
-Til ar: 1880
+Til år: 1880
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1135253.glb

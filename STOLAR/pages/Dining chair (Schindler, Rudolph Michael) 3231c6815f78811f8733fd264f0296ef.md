@@ -5,9 +5,9 @@ Breidde (cm): 38
 Datering: ca.1946
 Djupn (cm): 40.6
 Estimert vekt (kg): 0.0
-Fra ar: 1946
-Hundre-ar: 1900-talet
-Hogde (cm): 79
+Frå år: 1946
+Hundreår: 1900-talet
+Høgde (cm): 79
 Materialar: Furu, Kryssfiner
 Materialkommentar: Kryssfiner av douglasgran, furu, spikra, beisa
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O1295279/
@@ -17,5 +17,5 @@ Objekt-ID: O1295279
 Produksjonsstad: California
 Produsent: Schindler, Rudolph Michael
 Stilperiode: Modernisme / Midtjahrhundre
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1295279.glb

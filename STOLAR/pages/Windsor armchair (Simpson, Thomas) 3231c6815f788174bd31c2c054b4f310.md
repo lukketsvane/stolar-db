@@ -5,9 +5,9 @@ Breidde (cm): 52.9
 Datering: 1830-1850
 Djupn (cm): 61.5
 Estimert vekt (kg): 0.0
-Fra ar: 1830
-Hundre-ar: 1800-talet
-Hogde (cm): 43
+Frå år: 1830
+Hundreår: 1800-talet
+Høgde (cm): 43
 Materialar: Alm, Ask, Bøk, Tre
 Materialkommentar: Barlind, bøk, ask og alm, dreidd, forma med trekkekniv, dreidd og skoren.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O98777/
@@ -16,5 +16,5 @@ Objekt-ID: O98777
 Produksjonsstad: Boston (Lincolnshire)
 Produsent: Simpson, Thomas
 Stilperiode: Historisme
-Til ar: 1850
+Til år: 1850
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O98777.glb

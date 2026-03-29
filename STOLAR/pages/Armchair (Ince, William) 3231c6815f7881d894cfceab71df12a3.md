@@ -5,9 +5,9 @@ Breidde (cm): 61
 Datering: ca. 1780-1790
 Djupn (cm): 52
 Estimert vekt (kg): 0.0
-Fra ar: 1780
-Hundre-ar: 1700-talet
-Hogde (cm): 98
+Frå år: 1780
+Hundreår: 1700-talet
+Høgde (cm): 98
 Materialar: Bøk, Maling
 Materialkommentar: Bøk, skoren og måla
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O123763/
@@ -17,5 +17,5 @@ Objekt-ID: O123763
 Produksjonsstad: London
 Produsent: Ince, William
 Stilperiode: Nyklassisisme
-Til ar: 1790
+Til år: 1790
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O123763.glb

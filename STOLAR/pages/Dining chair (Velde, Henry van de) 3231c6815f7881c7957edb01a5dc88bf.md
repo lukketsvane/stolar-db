@@ -4,13 +4,13 @@ Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR
 Breidde (cm): 0
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 0
-Hogde (cm): 0
+Frå år: 0
+Høgde (cm): 0
 Materialar: Eik, Messing, Tekstil
 Materialkommentar: [AI] Beiset eik, polstret sete og ryggfelt trukket med tekstil, kantet med messingspiker.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O176160/
 Nemning: Spisestol
 Objekt-ID: O176160
 Produsent: Velde, Henry van de
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O176160.glb

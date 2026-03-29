@@ -4,12 +4,12 @@ Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR
 Breidde (cm): 40
 Djupn (cm): 50
 Estimert vekt (kg): 0.0
-Fra ar: 0
-Hogde (cm): 90
+Frå år: 0
+Høgde (cm): 90
 Materialar: Mahogni, Maling, Rotting
 Materialkommentar: [AI] Profilert mahogni med flettet sete og rygg i rotting, dekorert med malte motiver og figurativ medaljong.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O1227389/
 Nemning: Stol
 Objekt-ID: O1227389
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1227389.glb

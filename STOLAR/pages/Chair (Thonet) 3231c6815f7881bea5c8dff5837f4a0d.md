@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: about 1865
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1865
-Hundre-ar: 1800-talet
-Hogde (cm): 0
+Frå år: 1865
+Hundreår: 1800-talet
+Høgde (cm): 0
 Materialar: Bøk
 Materialkommentar: Stempla og måla bøygdtre av bøk
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O171822/
@@ -17,5 +17,5 @@ Objekt-ID: O171822
 Produksjonsstad: Austria
 Produsent: Thonet
 Stilperiode: Wiener bentwood / Historisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O171822.glb

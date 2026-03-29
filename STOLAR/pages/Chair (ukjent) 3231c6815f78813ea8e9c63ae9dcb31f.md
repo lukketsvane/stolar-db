@@ -5,9 +5,9 @@ Breidde (cm): 41
 Datering: ca.1930-1970
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1930
-Hundre-ar: 1900-talet
-Hogde (cm): 72
+Frå år: 1930
+Hundreår: 1900-talet
+Høgde (cm): 72
 Materialar: Tre
 Materialkommentar: Painted wood
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O1140195/
@@ -17,5 +17,5 @@ Objekt-ID: O1140195
 Produksjonsstad: Austria
 Produsent: ukjent
 Stilperiode: Modernisme / Midtjahrhundre
-Til ar: 1970
+Til år: 1970
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1140195.glb

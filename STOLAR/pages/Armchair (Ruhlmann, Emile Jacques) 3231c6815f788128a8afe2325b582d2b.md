@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: ca. 1925
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1925
-Hundre-ar: 1900-talet
-Hogde (cm): 0
+Frå år: 1925
+Hundreår: 1900-talet
+Høgde (cm): 0
 Materialar: Messing, Pæretre, Silke
 Materialkommentar: Beisa pæretre med forsølva messingføter, og trekk av gull- og beigefarga sateng
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O131460/
@@ -17,5 +17,5 @@ Objekt-ID: O131460
 Produksjonsstad: Paris
 Produsent: Ruhlmann, Emile Jacques
 Stilperiode: Art Deco / Tidleg modernisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O131460.glb

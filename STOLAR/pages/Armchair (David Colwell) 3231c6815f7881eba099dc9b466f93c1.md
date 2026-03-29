@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: 1983
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1983
-Hundre-ar: 1900-talet
-Hogde (cm): 0
+Frå år: 1983
+Hundreår: 1900-talet
+Høgde (cm): 0
 Materialar: Bøk, Maling, Skumplast, Ull
 Materialkommentar: [AI] Svartmalt bøk, polstret med skumplast og trukket med rødt ulltekstil.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O371206/
@@ -17,5 +17,5 @@ Objekt-ID: O371206
 Produksjonsstad: Great Britain
 Produsent: David Colwell
 Stilperiode: Postmodernisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O371206.glb

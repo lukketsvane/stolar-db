@@ -5,9 +5,9 @@ Breidde (cm): 76
 Datering: 1750-1755
 Djupn (cm): 82.5
 Estimert vekt (kg): 0.0
-Fra ar: 1750
-Hundre-ar: 1700-talet
-Hogde (cm): 43
+Frå år: 1750
+Hundreår: 1700-talet
+Høgde (cm): 43
 Materialar: Messing, Silke, Tre, Ull
 Materialkommentar: [AI] Skåret og forgylt tre, polstret sete, rygg og armlener trukket med gobelinvevd tekstil, dekorert med messingsnagler.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O370234/
@@ -17,5 +17,5 @@ Objekt-ID: O370234
 Produksjonsstad: England
 Produsent: ukjent
 Stilperiode: Nyklassisisme
-Til ar: 1755
+Til år: 1755
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O370234.glb

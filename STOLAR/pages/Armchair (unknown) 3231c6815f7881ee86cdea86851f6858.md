@@ -5,9 +5,9 @@ Breidde (cm): 64.5
 Datering: 1720-1730
 Djupn (cm): 56
 Estimert vekt (kg): 0.0
-Fra ar: 1720
-Hundre-ar: 1700-talet
-Hogde (cm): 43.5
+Frå år: 1720
+Hundreår: 1700-talet
+Høgde (cm): 43.5
 Materialar: Mahogni, Nøttetre, Silke
 Materialkommentar: Skore nøttetre, restaurert med mahogni, med seinare setetrekk av silkebrokade
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O119851/
@@ -18,5 +18,5 @@ Produksjonsstad: England
 Produsent: unknown
 Stilperiode: Rokokko
 Teknikk: Polstring, Skjæring
-Til ar: 1730
+Til år: 1730
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O119851.glb

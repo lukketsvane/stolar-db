@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: 1933-1936
 Djupn (cm): 55.9
 Estimert vekt (kg): 0.0
-Fra ar: 1933
-Hundre-ar: 1900-talet
-Hogde (cm): 78.7
+Frå år: 1933
+Hundreår: 1900-talet
+Høgde (cm): 78.7
 Materialar: Kunstlær, Maling, Stålrør
 Materialkommentar: [AI] Malt stålrørskonstruksjon, polstret sete, rygg og armlener trukket med brunt kunstlær.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O372055/
@@ -17,5 +17,5 @@ Objekt-ID: O372055
 Produksjonsstad: England
 Produsent: Pel Limited - Pel Furniture
 Stilperiode: Art Deco / Tidleg modernisme
-Til ar: 1936
+Til år: 1936
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372055.glb

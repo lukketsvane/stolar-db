@@ -5,9 +5,9 @@ Breidde (cm): 46.4
 Datering: 1951
 Djupn (cm): 43.2
 Estimert vekt (kg): 0.0
-Fra ar: 1951
-Hundre-ar: 1900-talet
-Hogde (cm): 85.1
+Frå år: 1951
+Hundreår: 1900-talet
+Høgde (cm): 85.1
 Materialar: Bøk, Ull
 Materialkommentar: [AI] Lakkert bøk med polstret sete og rygg trukket med ull.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O372060/
@@ -17,5 +17,5 @@ Objekt-ID: O372060
 Produksjonsstad: England
 Produsent: Gordon Russell
 Stilperiode: Modernisme / Midtjahrhundre
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372060.glb

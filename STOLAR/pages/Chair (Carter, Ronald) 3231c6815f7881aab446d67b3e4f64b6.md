@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: ca. 1985
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1985
-Hundre-ar: 1900-talet
-Hogde (cm): 0
+Frå år: 1985
+Hundreår: 1900-talet
+Høgde (cm): 0
 Materialar: Ask
 Materialkommentar: Ash
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O130645/
@@ -16,5 +16,5 @@ Objekt-ID: O130645
 Produksjonsstad: Winkworth
 Produsent: Carter, Ronald
 Stilperiode: Postmodernisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O130645.glb

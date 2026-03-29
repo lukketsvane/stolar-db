@@ -5,9 +5,9 @@ Breidde (cm): 37.5
 Datering: ca. 1785
 Djupn (cm): 45.5
 Estimert vekt (kg): 0.0
-Fra ar: 1785
-Hundre-ar: 1700-talet
-Hogde (cm): 35.5
+Frå år: 1785
+Hundreår: 1700-talet
+Høgde (cm): 35.5
 Materialar: Nøttetre, Sadelgjord, Silke
 Materialkommentar: Skoren og forgylta valnøtt, med opphavleg(?) tett hampgjording(?), og moderne toppdekkje av silke
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O129648/
@@ -17,5 +17,5 @@ Objekt-ID: O129648
 Produksjonsstad: Paris
 Produsent: Jacob, Georges
 Stilperiode: Nyklassisisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O129648.glb

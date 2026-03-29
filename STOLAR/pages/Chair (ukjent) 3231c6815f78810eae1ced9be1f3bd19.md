@@ -5,9 +5,9 @@ Breidde (cm): 48
 Datering: 1660-1700
 Djupn (cm): 53
 Estimert vekt (kg): 0.0
-Fra ar: 1660
-Hundre-ar: 1600-talet
-Hogde (cm): 41.5
+Frå år: 1660
+Hundreår: 1600-talet
+Høgde (cm): 41.5
 Materialar: Nøttetre, Rotting
 Materialkommentar: [AI] Skåret og dreid nøttetre med sete og ryggfelt flettet med rotting.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O118941/
@@ -17,5 +17,5 @@ Objekt-ID: O118941
 Produksjonsstad: England
 Produsent: ukjent
 Stilperiode: Barokk
-Til ar: 1700
+Til år: 1700
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O118941.glb

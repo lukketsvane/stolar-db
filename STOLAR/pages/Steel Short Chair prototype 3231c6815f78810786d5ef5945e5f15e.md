@@ -5,9 +5,9 @@ Breidde (cm): 61
 Datering: 1932
 Djupn (cm): 79
 Estimert vekt (kg): 0.0
-Fra ar: 1932
-Hundre-ar: 1900-talet
-Hogde (cm): 36
+Frå år: 1932
+Hundreår: 1900-talet
+Høgde (cm): 36
 Materialar: Stål, Tre
 Materialkommentar: Stål og tre
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O134354/
@@ -17,5 +17,5 @@ Objekt-ID: O134354
 Produksjonsstad: Switzerland
 Produsent: Breuer, Marcel Lajos
 Stilperiode: Bauhaus
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O134354.glb

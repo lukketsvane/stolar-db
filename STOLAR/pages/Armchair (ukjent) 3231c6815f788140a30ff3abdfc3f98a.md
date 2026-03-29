@@ -5,9 +5,9 @@ Breidde (cm): 67.31
 Datering: ca. 1760
 Djupn (cm): 54.61
 Estimert vekt (kg): 0.0
-Fra ar: 1760
-Hundre-ar: 1700-talet
-Hogde (cm): 110.49
+Frå år: 1760
+Hundreår: 1700-talet
+Høgde (cm): 110.49
 Materialar: Mahogni, Tekstil
 Materialkommentar: Skoren mahogni. Broderiet er gjenbrukt på denne stolen
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O52823/
@@ -18,5 +18,5 @@ Produksjonsstad: England
 Produsent: ukjent
 Stilperiode: Nyklassisisme
 Teknikk: Polstring, Skjæring
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O52823.glb

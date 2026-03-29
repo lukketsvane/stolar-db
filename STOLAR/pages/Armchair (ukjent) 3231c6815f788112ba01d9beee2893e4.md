@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: 1550-1600
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1550
-Hundre-ar: 1600-talet
-Hogde (cm): 50
+Frå år: 1550
+Hundreår: 1600-talet
+Høgde (cm): 50
 Materialar: Tre
 Materialkommentar: Huali-tre
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O177077/
@@ -17,5 +17,5 @@ Objekt-ID: O177077
 Produksjonsstad: China
 Produsent: ukjent
 Stilperiode: Renessanse
-Til ar: 1600
+Til år: 1600
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O177077.glb

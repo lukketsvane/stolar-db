@@ -5,9 +5,9 @@ Breidde (cm): 61
 Datering: 1899-1900
 Djupn (cm): 65
 Estimert vekt (kg): 0.0
-Fra ar: 1899
-Hundre-ar: 1800-talet
-Hogde (cm): 114
+Frå år: 1899
+Hundreår: 1800-talet
+Høgde (cm): 114
 Materialar: Nøttetre, Perlemor
 Materialkommentar: Valnøtt med perlemor
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O371694/
@@ -16,5 +16,5 @@ Objekt-ID: O371694
 Produksjonsstad: British
 Produsent: Walton, George
 Stilperiode: Historisme
-Til ar: 1900
+Til år: 1900
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O371694.glb

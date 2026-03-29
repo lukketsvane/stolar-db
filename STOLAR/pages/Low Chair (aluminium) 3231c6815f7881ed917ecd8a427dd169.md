@@ -4,9 +4,9 @@ Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR
 Breidde (cm): 50
 Datering: 1993-1995
 Djupn (cm): 105.3
-Fra ar: 1993
-Hundre-ar: 1900-talet
-Hogde (cm): 60.8
+Frå år: 1993
+Hundreår: 1900-talet
+Høgde (cm): 60.8
 Materialar: Aluminium
 Materialkommentar: Aluminium, folded
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O62433/
@@ -15,5 +15,5 @@ Objekt-ID: O62433
 Produksjonsstad: Belgium
 Produsent: Severen, Maarten van
 Stilperiode: Postmodernisme
-Til ar: 1995
+Til år: 1995
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O62433.glb

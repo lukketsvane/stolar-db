@@ -5,9 +5,9 @@ Breidde (cm): 66
 Datering: 1956-1957
 Djupn (cm): 59.6
 Estimert vekt (kg): 0.0
-Fra ar: 1956
-Hundre-ar: 1900-talet
-Hogde (cm): 81.2
+Frå år: 1956
+Hundreår: 1900-talet
+Høgde (cm): 81.2
 Materialar: Aluminium, Glasfiber
 Materialkommentar: Glasfiber og aluminium
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O181078/
@@ -17,5 +17,5 @@ Objekt-ID: O181078
 Produksjonsstad: United States
 Produsent: saarinen
 Stilperiode: Midtjahrhundre modernisme
-Til ar: 1957
+Til år: 1957
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O181078.glb

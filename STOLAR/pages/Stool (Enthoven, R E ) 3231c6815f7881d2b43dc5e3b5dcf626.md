@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: ca. 1932
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1932
-Hundre-ar: 1900-talet
-Hogde (cm): 0
+Frå år: 1932
+Hundreår: 1900-talet
+Høgde (cm): 0
 Materialar: Fløyel, Maling, Tre
 Materialkommentar: [AI] Malt tre med svungne vanger og rektangulær sokkel, polstret sete trukket med fløyel.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O74040/
@@ -17,5 +17,5 @@ Objekt-ID: O74040
 Produksjonsstad: London
 Produsent: Enthoven, R. E.
 Stilperiode: Art Deco / Tidleg modernisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O74040.glb

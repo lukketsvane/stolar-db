@@ -5,9 +5,9 @@ Breidde (cm): 83
 Datering: 1936-1937
 Djupn (cm): 86
 Estimert vekt (kg): 0.0
-Fra ar: 1936
-Hundre-ar: 1900-talet
-Hogde (cm): 76
+Frå år: 1936
+Hundreår: 1900-talet
+Høgde (cm): 76
 Materialar: Bjørk, Tekstil, Tre
 Materialkommentar: [AI] Lakkert bjørk med arkitektonisk oppbygd ramme, polstret og trukket med stripete ulltekstil.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O112074/
@@ -16,5 +16,5 @@ Objekt-ID: O112074
 Produksjonsstad: America
 Produsent: Wright, Frank Lloyd
 Stilperiode: Art Deco / Tidleg modernisme
-Til ar: 1937
+Til år: 1937
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O112074.glb

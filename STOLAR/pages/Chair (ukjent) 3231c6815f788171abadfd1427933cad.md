@@ -5,9 +5,9 @@ Breidde (cm): 49
 Datering: ca. 1710
 Djupn (cm): 49
 Estimert vekt (kg): 0.0
-Fra ar: 1710
-Hundre-ar: 1700-talet
-Hogde (cm): 41
+Frå år: 1710
+Hundreår: 1700-talet
+Høgde (cm): 41
 Materialar: Bomull, Fløyel, Nøttetre
 Materialkommentar: Dreidd og skoren valnøtt, med polstring trekt i raud bomullsfløyel
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O118940/
@@ -17,5 +17,5 @@ Objekt-ID: O118940
 Produksjonsstad: England
 Produsent: ukjent
 Stilperiode: Rokokko
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O118940.glb

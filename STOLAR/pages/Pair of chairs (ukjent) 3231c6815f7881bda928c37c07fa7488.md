@@ -5,9 +5,9 @@ Breidde (cm): 50.8
 Datering: 1850-1900
 Djupn (cm): 45.7
 Estimert vekt (kg): 0.0
-Fra ar: 1850
-Hundre-ar: 1800-talet
-Hogde (cm): 123.2
+Frå år: 1850
+Hundreår: 1800-talet
+Høgde (cm): 123.2
 Materialar: Eik
 Materialkommentar: Carved oak
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O372343/
@@ -17,5 +17,5 @@ Objekt-ID: O372343
 Produksjonsstad: England
 Produsent: Unknown
 Stilperiode: Viktorianisme
-Til ar: 1900
+Til år: 1900
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372343.glb

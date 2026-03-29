@@ -4,9 +4,9 @@ Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR
 Breidde (cm): 41.2
 Datering: 1980
 Djupn (cm): 44.6
-Fra ar: 1980
-Hundre-ar: 1900-talet
-Hogde (cm): 94.1
+Frå år: 1980
+Hundreår: 1900-talet
+Høgde (cm): 94.1
 Materialar: Bjørk, Kryssfiner
 Materialkommentar: Carved birch plywood, felt-tip marker
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O1175279/

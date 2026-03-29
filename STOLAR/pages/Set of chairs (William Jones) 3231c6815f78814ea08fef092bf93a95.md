@@ -5,9 +5,9 @@ Breidde (cm): 51
 Datering: 1914
 Djupn (cm): 56
 Estimert vekt (kg): 0.0
-Fra ar: 1914
-Hundre-ar: 1900-talet
-Hogde (cm): 47.5
+Frå år: 1914
+Hundreår: 1900-talet
+Høgde (cm): 47.5
 Materialar: Mahogni, Messing, Perlemor, Tekstil
 Materialkommentar: [AI] Polert mahogni med innlagt dekor av perlemor og messing, polstret sete trukket med tekstil.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O303262/
@@ -17,5 +17,5 @@ Objekt-ID: O303262
 Produksjonsstad: England
 Produsent: William Jones
 Stilperiode: Jugend/Art Nouveau
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O303262.glb

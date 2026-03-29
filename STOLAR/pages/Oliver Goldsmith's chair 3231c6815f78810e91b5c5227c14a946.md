@@ -5,9 +5,9 @@ Breidde (cm): 63
 Datering: 1760-1765
 Djupn (cm): 55.5
 Estimert vekt (kg): 0.0
-Fra ar: 1760
-Hundre-ar: 1700-talet
-Hogde (cm): 43
+Frå år: 1760
+Hundreår: 1700-talet
+Høgde (cm): 43
 Materialar: Alm, Bøk
 Materialkommentar: Sete, armlene og bakre seteskinne er truleg av alm. Toppskinna er moglegvis alm. Bein, oppstandarar og sprosser er av bøk
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O372245/
@@ -17,5 +17,5 @@ Objekt-ID: O372245
 Produksjonsstad: London
 Produsent: ukjent
 Stilperiode: Nyklassisisme
-Til ar: 1765
+Til år: 1765
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372245.glb

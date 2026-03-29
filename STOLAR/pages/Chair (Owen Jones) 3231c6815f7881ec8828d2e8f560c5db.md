@@ -5,9 +5,9 @@ Breidde (cm): 47
 Datering: ca. 1873
 Djupn (cm): 51
 Estimert vekt (kg): 0.0
-Fra ar: 1873
-Hundre-ar: 1800-talet
-Hogde (cm): 87
+Frå år: 1873
+Hundreår: 1800-talet
+Høgde (cm): 87
 Materialar: Hestetagl, Mahogni, Nøttetre, Palisander
 Materialkommentar: Mahogni innlagt med sykomor, rosentre og valnøtt; vove hestetaglstrekk
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O166471/
@@ -17,5 +17,5 @@ Objekt-ID: O166471
 Produksjonsstad: London
 Produsent: Owen Jones
 Stilperiode: Viktorianisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O166471.glb

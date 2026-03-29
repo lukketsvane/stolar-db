@@ -5,9 +5,9 @@ Breidde (cm): 42
 Datering: 1960s
 Djupn (cm): 32
 Estimert vekt (kg): 0.0
-Fra ar: 1960
-Hundre-ar: 1900-talet
-Hogde (cm): 57
+Frå år: 1960
+Hundreår: 1900-talet
+Høgde (cm): 57
 Materialar: Metall, Rotting
 Materialkommentar: Rotting og metall
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O1156234/
@@ -15,5 +15,5 @@ Nemning: Stol
 Objekt-ID: O1156234
 Produsent: ukjent
 Stilperiode: Modernisme / Midtjahrhundre
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1156234.glb

@@ -4,9 +4,9 @@ Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR
 Breidde (cm): 61
 Datering: 1755
 Djupn (cm): 52
-Fra ar: 1755
-Hundre-ar: 1700-talet
-Hogde (cm): 125
+Frå år: 1755
+Hundreår: 1700-talet
+Høgde (cm): 125
 Materialar: Bøk, Maling
 Materialkommentar: Beechwood, painted black to imitate ebony
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O9031/

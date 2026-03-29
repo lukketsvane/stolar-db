@@ -5,9 +5,9 @@ Breidde (cm): 35
 Datering: 1550-1570
 Djupn (cm): 50.3
 Estimert vekt (kg): 0.0
-Fra ar: 1550
-Hundre-ar: 1600-talet
-Hogde (cm): 106
+Frå år: 1550
+Hundreår: 1600-talet
+Høgde (cm): 106
 Materialar: Nøttetre
 Materialkommentar: [AI] Mørkbeiset og lakkert nøttetre, rikt skåret med dekor av maskeroner, karyatider og heraldiske motiver.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O321378/
@@ -17,5 +17,5 @@ Objekt-ID: O321378
 Produksjonsstad: Italy
 Produsent: ukjent
 Stilperiode: Renessanse
-Til ar: 1570
+Til år: 1570
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O321378.glb

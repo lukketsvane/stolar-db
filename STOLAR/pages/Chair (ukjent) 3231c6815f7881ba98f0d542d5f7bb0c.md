@@ -5,9 +5,9 @@ Breidde (cm): 45
 Datering: 1678
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1678
-Hundre-ar: 1600-talet
-Hogde (cm): 102.2
+Frå år: 1678
+Hundreår: 1600-talet
+Høgde (cm): 102.2
 Materialar: Palisander
 Materialkommentar: Rosewood, carved and turned, and jointed
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O372184/
@@ -16,5 +16,5 @@ Objekt-ID: O372184
 Produksjonsstad: The Netherlands
 Produsent: Unknown
 Stilperiode: Barokk
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372184.glb

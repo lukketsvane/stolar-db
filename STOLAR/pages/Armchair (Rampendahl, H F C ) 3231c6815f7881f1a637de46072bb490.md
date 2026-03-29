@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: 1860-1865
 Djupn (cm): 820
 Estimert vekt (kg): 0.0
-Fra ar: 1860
-Hundre-ar: 1800-talet
-Hogde (cm): 0
+Frå år: 1860
+Hundreår: 1800-talet
+Høgde (cm): 0
 Materialar: Fløyel
 Materialkommentar: Horn, gevir og tenner frå ulike artar med fløyelspolstring
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O59260/
@@ -17,5 +17,5 @@ Objekt-ID: O59260
 Produksjonsstad: Germany
 Produsent: Rampendahl, H.F.C.
 Stilperiode: Historisme
-Til ar: 1865
+Til år: 1865
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O59260.glb

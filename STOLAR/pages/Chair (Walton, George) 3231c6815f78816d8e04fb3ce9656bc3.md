@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: 1896
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1896
-Hundre-ar: 1800-talet
-Hogde (cm): 0
+Frå år: 1896
+Hundreår: 1800-talet
+Høgde (cm): 0
 Materialar: Bjørk, Rotting
 Materialkommentar: Ebonisert bjørk, spanskrøyrfletting
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O132471/
@@ -17,5 +17,5 @@ Objekt-ID: O132471
 Produksjonsstad: Great Britain
 Produsent: Walton, George
 Stilperiode: Viktorianisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O132471.glb

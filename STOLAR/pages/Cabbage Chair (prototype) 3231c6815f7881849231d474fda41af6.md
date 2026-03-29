@@ -5,9 +5,9 @@ Breidde (cm): 78
 Datering: 2008
 Djupn (cm): 76
 Estimert vekt (kg): 6.6
-Fra ar: 2008
-Hundre-ar: 2000-talet
-Hogde (cm): 66
+Frå år: 2008
+Hundreår: 2000-talet
+Høgde (cm): 66
 Materialar: Papir
 Materialkommentar: Paper, waste roll prototype
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O1257436/

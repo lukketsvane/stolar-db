@@ -5,9 +5,9 @@ Breidde (cm): 55.9
 Datering: ca. 1900
 Djupn (cm): 54
 Estimert vekt (kg): 0.0
-Fra ar: 1900
-Hundre-ar: 1900-talet
-Hogde (cm): 94
+Frå år: 1900
+Hundreår: 1900-talet
+Høgde (cm): 94
 Materialar: Furu
 Materialkommentar: Skoren og måla furu
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O49613/
@@ -17,5 +17,5 @@ Objekt-ID: O49613
 Produksjonsstad: Norway
 Produsent: Kinsarvik, Lars
 Stilperiode: Jugend/Art Nouveau
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O49613.glb

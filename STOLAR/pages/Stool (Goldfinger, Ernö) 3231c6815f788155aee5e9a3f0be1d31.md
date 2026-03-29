@@ -5,9 +5,9 @@ Breidde (cm): 62
 Datering: 1935-1936
 Djupn (cm): 39
 Estimert vekt (kg): 0.0
-Fra ar: 1935
-Hundre-ar: 1900-talet
-Hogde (cm): 40
+Frå år: 1935
+Hundreår: 1900-talet
+Høgde (cm): 40
 Materialar: Lær, Lønn
 Materialkommentar: Maple with white leather upholstery
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O67147/
@@ -17,5 +17,5 @@ Objekt-ID: O67147
 Produksjonsstad: London
 Produsent: Goldfinger, Ernö
 Stilperiode: Art Deco / Tidleg modernisme
-Til ar: 1936
+Til år: 1936
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O67147.glb

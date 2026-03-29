@@ -5,9 +5,9 @@ Breidde (cm): 65
 Datering: 1906
 Djupn (cm): 63.5
 Estimert vekt (kg): 0.0
-Fra ar: 1906
-Hundre-ar: 1900-talet
-Hogde (cm): 51.6
+Frå år: 1906
+Hundreår: 1900-talet
+Høgde (cm): 51.6
 Materialar: Eik, Tekstil
 Materialkommentar: Beisa eik, skoren og samanføygd, med polstra ryggspile og sete
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O172455/
@@ -17,5 +17,5 @@ Objekt-ID: O172455
 Produksjonsstad: Germany
 Produsent: Velde, Henry van de
 Stilperiode: Jugend/Art Nouveau
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O172455.glb

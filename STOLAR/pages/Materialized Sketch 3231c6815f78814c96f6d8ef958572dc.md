@@ -4,9 +4,9 @@ Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR
 Breidde (cm): 48.5
 Datering: 2005
 Djupn (cm): 46
-Fra ar: 2005
-Hundre-ar: 2000-talet
-Hogde (cm): 76.5
+Frå år: 2005
+Hundreår: 2000-talet
+Høgde (cm): 76.5
 Materialar: Plast
 Materialkommentar: 3D-printed ABS resin, automotive paint, motion-capture
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O1299501/

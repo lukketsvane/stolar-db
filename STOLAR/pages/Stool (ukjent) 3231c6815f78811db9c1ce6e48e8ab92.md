@@ -4,9 +4,9 @@ Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR
 Breidde (cm): 48.3
 Datering: 1603
 Djupn (cm): 31.5
-Fra ar: 1603
-Hundre-ar: 1600-talet
-Hogde (cm): 58.4
+Frå år: 1603
+Hundreår: 1600-talet
+Høgde (cm): 58.4
 Materialar: Eik
 Materialkommentar: Eik, dreidd og samanføygd
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O55148/
@@ -17,5 +17,5 @@ Produksjonsstad: England
 Produsent: ukjent
 Stilperiode: Barokk
 Teknikk: Dreiing, Samanføying
-Til ar: 1603
+Til år: 1603
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O55148.glb

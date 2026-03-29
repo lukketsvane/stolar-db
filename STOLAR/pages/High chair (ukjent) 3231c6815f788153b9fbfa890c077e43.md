@@ -5,9 +5,9 @@ Breidde (cm): 45.5
 Datering: 1880
 Djupn (cm): 45
 Estimert vekt (kg): 0.0
-Fra ar: 1880
-Hundre-ar: 1800-talet
-Hogde (cm): 92.8
+Frå år: 1880
+Hundreår: 1800-talet
+Høgde (cm): 92.8
 Materialar: Tre
 Materialkommentar: Fernissert tre
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O69207/
@@ -17,5 +17,5 @@ Objekt-ID: O69207
 Produksjonsstad: Great Britain
 Produsent: ukjent
 Stilperiode: Viktorianisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O69207.glb

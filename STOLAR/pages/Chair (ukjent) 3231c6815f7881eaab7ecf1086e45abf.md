@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: 1630-1670
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1630
-Hundre-ar: 1600-talet
-Hogde (cm): 0
+Frå år: 1630
+Hundreår: 1600-talet
+Høgde (cm): 0
 Materialar: Eik
 Materialkommentar: Skoren og dreidd eik
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O372250/
@@ -18,5 +18,5 @@ Produksjonsstad: England
 Produsent: unknown
 Stilperiode: Barokk
 Teknikk: Dreiing, Skjæring
-Til ar: 1670
+Til år: 1670
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372250.glb

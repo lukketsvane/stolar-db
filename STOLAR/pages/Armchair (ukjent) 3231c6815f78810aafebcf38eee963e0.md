@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: ca. 1700-1750
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1700
-Hundre-ar: 1700-talet
-Hogde (cm): 57
+Frå år: 1700
+Hundreår: 1700-talet
+Høgde (cm): 57
 Materialar: Tre
 Materialkommentar: Hongmu-tre
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O71484/
@@ -17,5 +17,5 @@ Objekt-ID: O71484
 Produksjonsstad: China
 Produsent: ukjent
 Stilperiode: Rokokko
-Til ar: 1750
+Til år: 1750
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O71484.glb

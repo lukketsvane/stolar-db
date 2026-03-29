@@ -5,9 +5,9 @@ Breidde (cm): 232.4
 Datering: ca. 1856
 Djupn (cm): 114.9
 Estimert vekt (kg): 103.0
-Fra ar: 1856
-Hundre-ar: 1800-talet
-Hogde (cm): 148.6
+Frå år: 1856
+Hundreår: 1800-talet
+Høgde (cm): 148.6
 Materialar: Eik, Palisander, Silke
 Materialkommentar: Skoren massiv og laminert rosentre, med fernisserte forsterkingsklossar av kastanje eller eik, polstra silkedamask (ikkje original)
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O59258/
@@ -17,5 +17,5 @@ Objekt-ID: O59258
 Produksjonsstad: New York (City)
 Produsent: Belter, John Henry
 Stilperiode: Historisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O59258.glb

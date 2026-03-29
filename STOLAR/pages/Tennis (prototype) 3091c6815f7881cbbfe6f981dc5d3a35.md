@@ -7,9 +7,9 @@ Djupn (cm): 49
 Emneord: Design, Møbel
 Erverving: Kjøpt 2002
 Estimert vekt (kg): 9.5
-Fra ar: 2000
-Hundre-ar: 2000-talet
-Hogde (cm): 58
+Frå år: 2000
+Hundreår: 2000-talet
+Høgde (cm): 58
 Materialar: Jern, Ull
 Materialkommentar: Stell av fargelakkert jern, polstret pute trukket med ullstoff, maskinsydd
 Nasjonalmuseet: https://www.nasjonalmuseet.no/samlingen/objekt/OK-2002-0142
@@ -17,8 +17,8 @@ Nasjonalitet: Noreg
 Nemning: Stol
 Objekt-ID: OK-2002-0142
 Produksjonsstad: Norge
-Setehogde (cm): 45
+Setehøgde (cm): 45
 Stilperiode: Samtidsdesign
 Teknikk: Polstring, Skruing, Sveising
-Til ar: 2000
+Til år: 2000
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-2002-0142.glb

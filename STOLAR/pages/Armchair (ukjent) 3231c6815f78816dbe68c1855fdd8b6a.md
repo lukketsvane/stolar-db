@@ -4,9 +4,9 @@ Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR
 Breidde (cm): 62.5
 Datering: 1680
 Djupn (cm): 61
-Fra ar: 1680
-Hundre-ar: 1600-talet
-Hogde (cm): 40.5
+Frå år: 1680
+Hundreår: 1600-talet
+Høgde (cm): 40.5
 Materialar: Eik, Jern, Lær, Metall
 Materialkommentar: [AI] Dreid og beiset eik, polstret sete, rygg og vinger trukket med lær. Dekorative nagler av metall langs kantene. Regulerbar ryggstøtte med stenger av jern.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O131716/
@@ -16,5 +16,5 @@ Objekt-ID: O131716
 Produksjonsstad: England
 Produsent: ukjent
 Stilperiode: Barokk
-Til ar: 1680
+Til år: 1680
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O131716.glb

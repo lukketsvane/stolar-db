@@ -5,9 +5,9 @@ Breidde (cm): 50.8
 Datering: 1938
 Djupn (cm): 63.5
 Estimert vekt (kg): 0.0
-Fra ar: 1938
-Hundre-ar: 1900-talet
-Hogde (cm): 44.4
+Frå år: 1938
+Hundreår: 1900-talet
+Høgde (cm): 44.4
 Materialar: Aluminium, Gummi
 Materialkommentar: [AI] Formpresset og perforert aluminium med understell av bøyde aluminiumsprofiler, sko av gummi.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O371985/
@@ -16,5 +16,5 @@ Objekt-ID: O371985
 Produksjonsstad: Switzerland
 Produsent: Coray and Fischli
 Stilperiode: Art Deco / Tidleg modernisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O371985.glb

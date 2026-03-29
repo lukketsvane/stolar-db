@@ -4,9 +4,9 @@ Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR
 Breidde (cm): 58
 Datering: 2013
 Djupn (cm): 74
-Fra ar: 2013
-Hundre-ar: 2000-talet
-Hogde (cm): 76.5
+Frå år: 2013
+Hundreår: 2000-talet
+Høgde (cm): 76.5
 Materialar: Lær, Polyamid, Stål, Tekstil, Tre
 Materialkommentar: Tre, tekstil, lær, stål, nylon
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O1299646/

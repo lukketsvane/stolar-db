@@ -5,9 +5,9 @@ Breidde (cm): 170
 Datering: 1735-1740
 Djupn (cm): 73
 Estimert vekt (kg): 0.0
-Fra ar: 1735
-Hundre-ar: 1700-talet
-Hogde (cm): 101
+Frå år: 1735
+Hundreår: 1700-talet
+Høgde (cm): 101
 Materialar: Ask, Bøk, Eik, Gran, Nøttetre
 Materialkommentar: Skore, forgylte og måla nøttetre, komplettert med gran, med sekundærtre av bøk, eik og ask.
 
@@ -21,5 +21,5 @@ Produksjonsstad: London
 Produsent: Hallett, William
 Stilperiode: Rokokko
 Teknikk: Skjæring
-Til ar: 1740
+Til år: 1740
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O81508.glb

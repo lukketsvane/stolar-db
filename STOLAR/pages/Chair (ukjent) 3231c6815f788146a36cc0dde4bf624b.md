@@ -5,9 +5,9 @@ Breidde (cm): 49.5
 Datering: 1690-1705
 Djupn (cm): 63
 Estimert vekt (kg): 0.0
-Fra ar: 1690
-Hundre-ar: 1600-talet
-Hogde (cm): 120
+Frå år: 1690
+Hundreår: 1600-talet
+Høgde (cm): 120
 Materialar: Nøttetre, Rotting
 Materialkommentar: Nøttetre, dreidd, med spanskrøyrfletting
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O368659/
@@ -18,5 +18,5 @@ Produksjonsstad: England
 Produsent: ukjent
 Stilperiode: Barokk
 Teknikk: Dreiing, Fletting
-Til ar: 1705
+Til år: 1705
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O368659.glb

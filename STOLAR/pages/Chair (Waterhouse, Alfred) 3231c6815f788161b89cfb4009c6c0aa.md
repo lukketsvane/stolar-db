@@ -5,9 +5,9 @@ Breidde (cm): 46
 Datering: 1870-1873
 Djupn (cm): 56
 Estimert vekt (kg): 0.0
-Fra ar: 1870
-Hundre-ar: 1800-talet
-Hogde (cm): 90
+Frå år: 1870
+Hundreår: 1800-talet
+Høgde (cm): 90
 Materialar: Eik, Lær, Messing
 Materialkommentar: [AI] Beiset eik med dreid og skåret dekor. Polstret sete og rygg trukket med lær, dekorert med messingnagler.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O61470/
@@ -17,5 +17,5 @@ Objekt-ID: O61470
 Produksjonsstad: England
 Produsent: Waterhouse, Alfred
 Stilperiode: Viktorianisme
-Til ar: 1873
+Til år: 1873
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O61470.glb

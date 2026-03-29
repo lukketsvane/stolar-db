@@ -5,9 +5,9 @@ Breidde (cm): 56
 Datering: ca. 1725
 Djupn (cm): 58.5
 Estimert vekt (kg): 0.0
-Fra ar: 1725
-Hundre-ar: 1700-talet
-Hogde (cm): 116
+Frå år: 1725
+Hundreår: 1700-talet
+Høgde (cm): 116
 Materialar: Bøk, Tekstil
 Materialkommentar: Bøk, japanlakkert i gull og grønt på raud botn, med moderne polstring
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O8464/
@@ -18,5 +18,5 @@ Produksjonsstad: England
 Produsent: Unknown
 Stilperiode: Rokokko
 Teknikk: Lakkering, Polstring
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O8464.glb

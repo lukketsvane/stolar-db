@@ -5,9 +5,9 @@ Breidde (cm): 82
 Datering: ca. 1920
 Djupn (cm): 63
 Estimert vekt (kg): 18.0
-Fra ar: 1920
-Hundre-ar: 1900-talet
-Hogde (cm): 103.5
+Frå år: 1920
+Hundreår: 1900-talet
+Høgde (cm): 103.5
 Materialar: Ibenholt, Lønn, Silke
 Materialkommentar: Ibenholt og beisa lønn, polstra i brosjert silke (stoffet er rekonstruert etter originalen)
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O76209/
@@ -17,5 +17,5 @@ Objekt-ID: O76209
 Produksjonsstad: France
 Produsent: Groult, André
 Stilperiode: Art Deco / Tidleg modernisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O76209.glb

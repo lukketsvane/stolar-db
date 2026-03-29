@@ -6,9 +6,9 @@ Datering: 1935 (design)
 Djupn (cm): 43
 Emneord: Design, Møbel
 Erverving: Kjøpt 1996
-Fra ar: 1935
-Hundre-ar: 1900-talet
-Hogde (cm): 73.7
+Frå år: 1935
+Hundreår: 1900-talet
+Høgde (cm): 73.7
 Materialar: Bjørk
 Materialkommentar: Laminert bjørk og strie
 Nasjonalmuseet: https://www.nasjonalmuseet.no/samlingen/objekt/OK-1996-0001
@@ -18,5 +18,5 @@ Objekt-ID: OK-1996-0001
 Produksjonsstad: Oslo, Finland
 Stilperiode: Funksjonalisme
 Teknikk: Laminering
-Til ar: 1935
+Til år: 1935
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-1996-0001.glb

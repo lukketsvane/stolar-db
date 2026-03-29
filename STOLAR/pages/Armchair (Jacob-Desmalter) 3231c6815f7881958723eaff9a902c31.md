@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: ca. 1805
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1805
-Hundre-ar: 1800-talet
-Hogde (cm): 0
+Frå år: 1805
+Hundreår: 1800-talet
+Høgde (cm): 0
 Materialar: Bøk, Mahogni, Tekstil
 Materialkommentar: Mahogni, med siselerte og forgylte beslag, setesargar i bøk, og moderne polstring
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O74821/
@@ -17,5 +17,5 @@ Objekt-ID: O74821
 Produksjonsstad: Paris
 Produsent: Jacob-Desmalter
 Stilperiode: Empire
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O74821.glb

@@ -3,9 +3,9 @@ Bilete-URL: https://framemark.vam.ac.uk/collections/2006AX9544/full/full/0/defau
 Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O121095_bguw.png
 Datering: 1968
 Djupn (cm): 48.5
-Fra ar: 1968
-Hundre-ar: 1900-talet
-Hogde (cm): 94
+Frå år: 1968
+Hundreår: 1900-talet
+Høgde (cm): 94
 Materialar: Glasfiber
 Materialkommentar: Compression moulded fibreglass
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O121095/

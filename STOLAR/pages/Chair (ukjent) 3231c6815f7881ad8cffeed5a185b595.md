@@ -5,9 +5,9 @@ Breidde (cm): 35.25
 Datering: ca, 1850
 Djupn (cm): 31.9
 Estimert vekt (kg): 0.0
-Fra ar: 1850
-Hundre-ar: 1800-talet
-Hogde (cm): 64
+Frå år: 1850
+Hundreår: 1800-talet
+Høgde (cm): 64
 Materialar: Bjørk
 Materialkommentar: Birch
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O182189/
@@ -17,5 +17,5 @@ Objekt-ID: O182189
 Produksjonsstad: England
 Produsent: unknown
 Stilperiode: Historisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O182189.glb

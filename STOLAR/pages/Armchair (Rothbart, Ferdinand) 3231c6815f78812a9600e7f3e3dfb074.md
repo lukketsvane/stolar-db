@@ -5,9 +5,9 @@ Breidde (cm): 152.4
 Datering: ca. 1851
 Djupn (cm): 73.7
 Estimert vekt (kg): 0.0
-Fra ar: 1851
-Hundre-ar: 1800-talet
-Hogde (cm): 116.8
+Frå år: 1851
+Hundreår: 1800-talet
+Høgde (cm): 116.8
 Materialar: Eik, Furu, Messing, Ull
 Materialkommentar: Skoren eik og furu, polstring av ullplysj og ullduskar, naglane i messing
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O34913/
@@ -16,5 +16,5 @@ Objekt-ID: O34913
 Produksjonsstad: Coburg
 Produsent: Rothbart, Ferdinand
 Stilperiode: Historisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O34913.glb

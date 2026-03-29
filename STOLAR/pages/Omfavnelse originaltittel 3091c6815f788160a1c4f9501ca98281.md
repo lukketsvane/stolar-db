@@ -4,9 +4,9 @@ Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR
 Datering: 1986
 Emneord: Design, Møbel
 Erverving: Ervervet mellom 2003 og 2005
-Fra ar: 1986
-Hundre-ar: 1900-talet
-Hogde (cm): 107
+Frå år: 1986
+Hundreår: 1900-talet
+Høgde (cm): 107
 Materialar: Ask, Kryssfiner, Skumplast, Ull
 Materialkommentar: Bemalt og fargelakkert ask, skåret dekor, kryssfiner, skumplast polstring med ulltrekk
 Nasjonalmuseet: https://www.nasjonalmuseet.no/samlingen/objekt/NMK.2005.0640
@@ -16,5 +16,5 @@ Objekt-ID: NMK.2005.0640
 Produksjonsstad: Norge
 Stilperiode: Postmodernisme
 Teknikk: Liming, Polstring, Skruing
-Til ar: 1986
+Til år: 1986
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/NMK.2005.0640.glb

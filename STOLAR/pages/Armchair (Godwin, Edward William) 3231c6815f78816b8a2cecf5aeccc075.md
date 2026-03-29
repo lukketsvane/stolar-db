@@ -5,9 +5,9 @@ Breidde (cm): 52.8
 Datering: 1875-1880
 Djupn (cm): 58.5
 Estimert vekt (kg): 0.0
-Fra ar: 1875
-Hundre-ar: 1800-talet
-Hogde (cm): 89.1
+Frå år: 1875
+Hundreår: 1800-talet
+Høgde (cm): 89.1
 Materialar: Eik, Rotting
 Materialkommentar: Dreid og skåren eik, med rottingsete
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O53151/
@@ -17,5 +17,5 @@ Produksjonsstad: Warwick
 Produsent: Godwin, Edward William
 Stilperiode: Historisme
 Teknikk: Dreiing, Fletting, Skjæring
-Til ar: 1880
+Til år: 1880
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O53151.glb

@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: 1765-1775
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1765
-Hundre-ar: 1700-talet
-Hogde (cm): 0
+Frå år: 1765
+Hundreår: 1700-talet
+Høgde (cm): 0
 Materialar: Tekstil
 Materialkommentar: Notat frå undersøking av polstringa 26.11.1979. Stolen hadde hatt minst to tidlegare toppdekkjer. Polstringa var moderne gjennomgåande. Ramma hadde vore tett spikra fleire gonger nedst på skinnene. Berre éin gong øvst. Desse spikrane var større og peikar mot 1700-talet. Stor firkanta spikar
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O167600/
@@ -18,5 +18,5 @@ Produksjonsstad: England
 Produsent: Unknown
 Stilperiode: Nyklassisisme
 Teknikk: Polstring, Spikring
-Til ar: 1775
+Til år: 1775
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O167600.glb

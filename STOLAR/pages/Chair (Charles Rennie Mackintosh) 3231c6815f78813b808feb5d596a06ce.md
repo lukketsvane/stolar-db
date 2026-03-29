@@ -5,9 +5,9 @@ Breidde (cm): 54
 Datering: 1903-1904
 Djupn (cm): 45.5
 Estimert vekt (kg): 0.0
-Fra ar: 1903
-Hundre-ar: 1900-talet
-Hogde (cm): 45
+Frå år: 1903
+Hundreår: 1900-talet
+Høgde (cm): 45
 Materialar: Fløyel, Maling, Tre
 Materialkommentar: [AI] Malt tre med polstret sete og rygg trukket med fløyel.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O321658/
@@ -17,5 +17,5 @@ Objekt-ID: O321658
 Produksjonsstad: Great Britain
 Produsent: Charles Rennie Mackintosh
 Stilperiode: Jugend/Art Nouveau
-Til ar: 1904
+Til år: 1904
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O321658.glb

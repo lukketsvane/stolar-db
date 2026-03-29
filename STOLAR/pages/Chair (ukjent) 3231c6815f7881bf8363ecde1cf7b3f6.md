@@ -5,9 +5,9 @@ Breidde (cm): 49.5
 Datering: 1665-1670
 Djupn (cm): 47
 Estimert vekt (kg): 0.0
-Fra ar: 1665
-Hundre-ar: 1600-talet
-Hogde (cm): 102
+Frå år: 1665
+Hundreår: 1600-talet
+Høgde (cm): 102
 Materialar: Eik
 Materialkommentar: [AI] Skåret og dreid eik.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O109522/
@@ -17,5 +17,5 @@ Objekt-ID: O109522
 Produksjonsstad: England
 Produsent: Unknown
 Stilperiode: Barokk
-Til ar: 1670
+Til år: 1670
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O109522.glb

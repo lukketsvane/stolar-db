@@ -4,9 +4,9 @@ Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR
 Breidde (cm): 49
 Datering: 1960
 Djupn (cm): 57
-Fra ar: 1960
-Hundre-ar: 1900-talet
-Hogde (cm): 82
+Frå år: 1960
+Hundreår: 1900-talet
+Høgde (cm): 82
 Materialar: Polyuretan, Skumplast
 Materialkommentar: High density polyurethane foam
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O120670/

@@ -5,9 +5,9 @@ Breidde (cm): 66
 Datering: 1620-1625
 Djupn (cm): 64
 Estimert vekt (kg): 0.0
-Fra ar: 1620
-Hundre-ar: 1600-talet
-Hogde (cm): 126
+Frå år: 1620
+Hundreår: 1600-talet
+Høgde (cm): 126
 Materialar: Eik
 Materialkommentar: Eik, dreidd og skoren
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O167583/
@@ -18,5 +18,5 @@ Produksjonsstad: England
 Produsent: Unknown
 Stilperiode: Barokk
 Teknikk: Dreiing, Skjæring
-Til ar: 1625
+Til år: 1625
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O167583.glb

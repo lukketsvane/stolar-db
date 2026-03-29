@@ -5,9 +5,9 @@ Breidde (cm): 60.5
 Datering: 1897-1898
 Djupn (cm): 60
 Estimert vekt (kg): 0.0
-Fra ar: 1897
-Hundre-ar: 1800-talet
-Hogde (cm): 115
+Frå år: 1897
+Hundreår: 1800-talet
+Høgde (cm): 115
 Materialar: Ask, Strå
 Materialkommentar: Dreid ask, med sivsete
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O61464/
@@ -18,5 +18,5 @@ Produksjonsstad: London
 Produsent: Clissett, Philip
 Stilperiode: Viktorianisme
 Teknikk: Dreiing, Fletting
-Til ar: 1898
+Til år: 1898
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O61464.glb

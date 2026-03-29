@@ -5,9 +5,9 @@ Breidde (cm): 34.75
 Datering: 1930-39
 Djupn (cm): 31.7
 Estimert vekt (kg): 0.0
-Fra ar: 1930
-Hundre-ar: 1900-talet
-Hogde (cm): 58.5
+Frå år: 1930
+Hundreår: 1900-talet
+Høgde (cm): 58.5
 Materialar: Tre
 Materialkommentar: Wood, cut, turned and painted
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O211713/
@@ -16,5 +16,5 @@ Objekt-ID: O211713
 Produksjonsstad: UK
 Produsent: Unknown
 Stilperiode: Art Deco / Tidleg modernisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O211713.glb

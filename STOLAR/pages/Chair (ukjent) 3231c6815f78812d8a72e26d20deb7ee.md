@@ -5,9 +5,9 @@ Breidde (cm): 55
 Datering: 1715-1720
 Djupn (cm): 58
 Estimert vekt (kg): 0.0
-Fra ar: 1715
-Hundre-ar: 1700-talet
-Hogde (cm): 45
+Frå år: 1715
+Hundreår: 1700-talet
+Høgde (cm): 45
 Materialar: Fløyel, Nøttetre
 Materialkommentar: Carved walnut with upholstered seat of modern velvet
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O167698/
@@ -17,5 +17,5 @@ Objekt-ID: O167698
 Produksjonsstad: England
 Produsent: ukjent
 Stilperiode: Rokokko
-Til ar: 1720
+Til år: 1720
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O167698.glb

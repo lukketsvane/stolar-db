@@ -5,9 +5,9 @@ Breidde (cm): 70.5
 Datering: 1970
 Djupn (cm): 70
 Estimert vekt (kg): 0.0
-Fra ar: 1970
-Hundre-ar: 1900-talet
-Hogde (cm): 32.2
+Frå år: 1970
+Hundreår: 1900-talet
+Høgde (cm): 32.2
 Materialar: Lær, Tre
 Materialkommentar: Forma laminert treramme; lærtrukken pute.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O70648/
@@ -17,5 +17,5 @@ Produksjonsstad: Argentina
 Produsent: Churba, Alberto
 Stilperiode: Postmodernisme
 Teknikk: Laminering, Polstring
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O70648.glb

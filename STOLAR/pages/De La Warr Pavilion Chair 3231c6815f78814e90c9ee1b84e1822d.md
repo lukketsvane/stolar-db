@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: 2005-2006
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 2005
-Hundre-ar: 2000-talet
-Hogde (cm): 0
+Frå år: 2005
+Hundreår: 2000-talet
+Høgde (cm): 0
 Materialar: Aluminium, Polyamid, Skumplast, Ull
 Materialkommentar: Støypt, røyrforma og pressa aluminium, nylon, skumgummipolstring, ulltrekk
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O168946/
@@ -17,5 +17,5 @@ Objekt-ID: O168946
 Produksjonsstad: London
 Produsent: Barber, Edward
 Stilperiode: Samtidsdesign
-Til ar: 2006
+Til år: 2006
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O168946.glb

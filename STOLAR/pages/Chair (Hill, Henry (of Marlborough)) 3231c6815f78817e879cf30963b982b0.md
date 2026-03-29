@@ -5,9 +5,9 @@ Breidde (cm): 54.5
 Datering: ca. 1740
 Djupn (cm): 51.8
 Estimert vekt (kg): 0.0
-Fra ar: 1740
-Hundre-ar: 1700-talet
-Hogde (cm): 103
+Frå år: 1740
+Hundreår: 1700-talet
+Høgde (cm): 103
 Materialar: Bøk, Eik, Nøttetre
 Materialkommentar: Skoren og finert valnøtt, med konstruksjon i valnøtt, eik, bøk og truleg kastanje
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O60669/
@@ -16,5 +16,5 @@ Objekt-ID: O60669
 Produksjonsstad: Marlborough
 Produsent: Hill, Henry (of Marlborough)
 Stilperiode: Rokokko
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O60669.glb

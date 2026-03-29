@@ -5,9 +5,9 @@ Breidde (cm): 66
 Datering: 1860s
 Djupn (cm): 51.5
 Estimert vekt (kg): 0.0
-Fra ar: 1860
-Hundre-ar: 1800-talet
-Hogde (cm): 115.5
+Frå år: 1860
+Hundreår: 1800-talet
+Høgde (cm): 115.5
 Materialar: Ask
 Materialkommentar: Dreidd ask
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O371925/
@@ -17,5 +17,5 @@ Objekt-ID: O371925
 Produksjonsstad: England
 Produsent: ukjent
 Stilperiode: Viktorianisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O371925.glb

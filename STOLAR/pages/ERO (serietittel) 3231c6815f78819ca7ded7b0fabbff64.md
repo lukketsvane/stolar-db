@@ -6,17 +6,17 @@ Datering: Siste halvdel av 1950-tallet
 Djupn (cm): 47
 Emneord: Design, Møbel
 Erverving: Kjøpt 2001
-Fra ar: 1950
-Hundre-ar: 1900-talet
-Hogde (cm): 76
+Frå år: 1950
+Hundreår: 1900-talet
+Høgde (cm): 76
 Materialar: Stål
 Materialkommentar: Formbøyd fargelakkert stål, flettet plast
 Nasjonalmuseet: https://www.nasjonalmuseet.no/samlingen/objekt/OK-2001-0189
 Nemning: Stol
 Objekt-ID: OK-2001-0189
 Produksjonsstad: Oslo
-Setehogde (cm): 76
+Setehøgde (cm): 76
 Stilperiode: Modernisme / Midtjahrhundre
 Teknikk: Fletting, Formbøying, Skruing
-Til ar: 1950
+Til år: 1950
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-2001-0189.glb

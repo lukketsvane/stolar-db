@@ -5,9 +5,9 @@ Breidde (cm): 61
 Datering: ca. 1787-1795
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1787
-Hundre-ar: 1700-talet
-Hogde (cm): 98
+Frå år: 1787
+Hundreår: 1700-talet
+Høgde (cm): 98
 Materialar: Mahogni, Silke
 Materialkommentar: Skoren mahogni, innlagt med satintre, setet polstra i moderne silke
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O372217/
@@ -17,5 +17,5 @@ Objekt-ID: O372217
 Produksjonsstad: England
 Produsent: ukjent
 Stilperiode: Nyklassisisme
-Til ar: 1795
+Til år: 1795
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372217.glb

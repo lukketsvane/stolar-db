@@ -5,9 +5,9 @@ Breidde (cm): 39.5
 Datering: 1930-60
 Djupn (cm): 39
 Estimert vekt (kg): 0.0
-Fra ar: 1930
-Hundre-ar: 1900-talet
-Hogde (cm): 42.5
+Frå år: 1930
+Hundreår: 1900-talet
+Høgde (cm): 42.5
 Materialar: Bøk, Rotting
 Materialkommentar: Wicker, willow and beech
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O211676/
@@ -16,5 +16,5 @@ Objekt-ID: O211676
 Produksjonsstad: UK
 Produsent: Unknown
 Stilperiode: Art Deco / Tidleg modernisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O211676.glb

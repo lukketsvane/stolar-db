@@ -5,9 +5,9 @@ Breidde (cm): 51
 Datering: 1964
 Djupn (cm): 53
 Estimert vekt (kg): 0.0
-Fra ar: 1964
-Hundre-ar: 1900-talet
-Hogde (cm): 45.2
+Frå år: 1964
+Hundreår: 1900-talet
+Høgde (cm): 45.2
 Materialar: Plast, Stål
 Materialkommentar: Kromplettert stålramme; sete og rygg stansa ut av vinylkledd metallplate; plastputer for stabling.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O372085/
@@ -17,5 +17,5 @@ Objekt-ID: O372085
 Produksjonsstad: United States
 Produsent: Rowland, David
 Stilperiode: Modernisme / Midtjahrhundre
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372085.glb

@@ -5,9 +5,9 @@ Breidde (cm): 49
 Datering: 1891
 Djupn (cm): 40
 Estimert vekt (kg): 0.0
-Fra ar: 1891
-Hundre-ar: 1800-talet
-Hogde (cm): 100
+Frå år: 1891
+Hundreår: 1800-talet
+Høgde (cm): 100
 Materialar: Mahogni, Strå
 Materialkommentar: Mahogni med sivsete
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O130378/
@@ -17,5 +17,5 @@ Objekt-ID: O130378
 Produksjonsstad: London
 Produsent: Gimson, Ernest William
 Stilperiode: Viktorianisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O130378.glb

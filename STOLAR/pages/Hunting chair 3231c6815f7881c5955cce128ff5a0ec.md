@@ -5,9 +5,9 @@ Breidde (cm): 70
 Datering: 1950
 Djupn (cm): 86.7
 Estimert vekt (kg): 0.0
-Fra ar: 1950
-Hundre-ar: 1900-talet
-Hogde (cm): 27.8
+Frå år: 1950
+Hundreår: 1900-talet
+Høgde (cm): 27.8
 Materialar: Eik, Lær
 Materialkommentar: Oak and leather
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O63047/
@@ -17,5 +17,5 @@ Objekt-ID: O63047
 Produksjonsstad: Denmark
 Produsent: Mogensen, Borge
 Stilperiode: Skandinavisk modernisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O63047.glb

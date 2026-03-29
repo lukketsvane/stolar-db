@@ -5,9 +5,9 @@ Breidde (cm): 82
 Datering: 1715-1725
 Djupn (cm): 58.5
 Estimert vekt (kg): 0.0
-Fra ar: 1715
-Hundre-ar: 1700-talet
-Hogde (cm): 44
+Frå år: 1715
+Hundreår: 1700-talet
+Høgde (cm): 44
 Materialar: Fløyel, Mahogni
 Materialkommentar: [AI] Skåret mahogni, polstret rygg og sete trukket med fløyel.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O370272/
@@ -17,5 +17,5 @@ Objekt-ID: O370272
 Produksjonsstad: England
 Produsent: Unknown
 Stilperiode: Rokokko
-Til ar: 1725
+Til år: 1725
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O370272.glb

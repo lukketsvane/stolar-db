@@ -5,9 +5,9 @@ Breidde (cm): 48.2
 Datering: ca. 1930s
 Djupn (cm): 34.1
 Estimert vekt (kg): 0.0
-Fra ar: 1930
-Hundre-ar: 1900-talet
-Hogde (cm): 45.8
+Frå år: 1930
+Hundreår: 1900-talet
+Høgde (cm): 45.8
 Materialar: Rotting, Teak
 Materialkommentar: [AI] Teak med flettet sete av rotting.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O372059/
@@ -17,5 +17,5 @@ Objekt-ID: O372059
 Produksjonsstad: Great Britain
 Produsent: John Lewis
 Stilperiode: Art Deco / Tidleg modernisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372059.glb

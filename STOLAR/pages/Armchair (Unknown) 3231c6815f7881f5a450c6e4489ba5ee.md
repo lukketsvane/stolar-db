@@ -5,9 +5,9 @@ Breidde (cm): 65
 Datering: 1593
 Djupn (cm): 54
 Estimert vekt (kg): 0.0
-Fra ar: 1593
-Hundre-ar: 1600-talet
-Hogde (cm): 38.5
+Frå år: 1593
+Hundreår: 1600-talet
+Høgde (cm): 38.5
 Materialar: Eik, Maling
 Materialkommentar: [AI] Mørkmalt eik med skåret og profilert dekor, dreide forbein og armlenestøtter.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O167593/
@@ -16,5 +16,5 @@ Objekt-ID: O167593
 Produksjonsstad: Aberdeen
 Produsent: Unknown
 Stilperiode: Renessanse
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O167593.glb

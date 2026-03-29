@@ -5,9 +5,9 @@ Breidde (cm): 40
 Datering: 1927
 Djupn (cm): 59.3
 Estimert vekt (kg): 0.0
-Fra ar: 1927
-Hundre-ar: 1900-talet
-Hogde (cm): 43.2
+Frå år: 1927
+Hundreår: 1900-talet
+Høgde (cm): 43.2
 Materialar: Kryssfiner, Stål
 Materialkommentar: Kryssfiner, måla; røyrstål, måla
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O115798/
@@ -17,5 +17,5 @@ Objekt-ID: O115798
 Produksjonsstad: Netherlands
 Produsent: Rietveld, Gerrit Thomas
 Stilperiode: Art Deco / Tidleg modernisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O115798.glb

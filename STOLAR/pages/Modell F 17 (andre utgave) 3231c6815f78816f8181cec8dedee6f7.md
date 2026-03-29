@@ -6,16 +6,16 @@ Datering: Prod. ca. 1930 (design 1929)
 Djupn (cm): 68
 Emneord: Møbel
 Erverving: Gave 2011
-Fra ar: 1930
-Hundre-ar: 1900-talet
-Hogde (cm): 77
+Frå år: 1930
+Hundreår: 1900-talet
+Høgde (cm): 77
 Materialar: Stål, Tre
 Materialkommentar: Formbøyd stål trukket med kordfløyel
 Nasjonalmuseet: https://www.nasjonalmuseet.no/samlingen/objekt/NMK.2011.0320
 Nemning: Stol
 Objekt-ID: NMK.2011.0320
-Setehogde (cm): 41
+Setehøgde (cm): 41
 Stilperiode: Funksjonalisme
 Teknikk: Polstring, Skruing, Sveising, Søm
-Til ar: 1940
+Til år: 1940
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/NMK.2011.0320.glb

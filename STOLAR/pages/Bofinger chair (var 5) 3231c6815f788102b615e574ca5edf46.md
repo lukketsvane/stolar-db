@@ -4,9 +4,9 @@ Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR
 Breidde (cm): 53
 Datering: 1965
 Djupn (cm): 53
-Fra ar: 1965
-Hundre-ar: 1900-talet
-Hogde (cm): 74.5
+Frå år: 1965
+Hundreår: 1900-talet
+Høgde (cm): 74.5
 Materialar: Polyester
 Materialkommentar: Formstøypt polyesterharpiks
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O372070/
@@ -16,5 +16,5 @@ Objekt-ID: O372070
 Produksjonsstad: Karlsruhe
 Produsent: Rudolf  Baresel-Bofinger
 Stilperiode: Modernisme / Midtjahrhundre
-Til ar: 1965
+Til år: 1965
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372070.glb

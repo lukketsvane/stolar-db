@@ -5,9 +5,9 @@ Breidde (cm): 47
 Datering: ca. 1838
 Djupn (cm): 60
 Estimert vekt (kg): 0.0
-Fra ar: 1838
-Hundre-ar: 1800-talet
-Hogde (cm): 110.5
+Frå år: 1838
+Hundreår: 1800-talet
+Høgde (cm): 110.5
 Materialar: Eik, Kunstlær
 Materialkommentar: Skoren eik, med polstring trekt i imitert lær
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O55171/
@@ -17,5 +17,5 @@ Objekt-ID: O55171
 Produksjonsstad: England
 Produsent: A.W. Pugin
 Stilperiode: Historisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O55171.glb

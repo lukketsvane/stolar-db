@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: 1800-1900
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1800
-Hundre-ar: 1800-talet
-Hogde (cm): 35.5
+Frå år: 1800
+Hundreår: 1800-talet
+Høgde (cm): 35.5
 Materialar: Bøk, Silke
 Materialkommentar: Carved and water-gilded beech, with upholstery covered in brocaded silk woven with flowers
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O372331/
@@ -17,5 +17,5 @@ Objekt-ID: O372331
 Produksjonsstad: France
 Produsent: Unknown
 Stilperiode: Historisme
-Til ar: 1900
+Til år: 1900
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372331.glb

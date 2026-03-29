@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: 1897
 Djupn (cm): 54
 Estimert vekt (kg): 0.0
-Fra ar: 1897
-Hundre-ar: 1800-talet
-Hogde (cm): 45
+Frå år: 1897
+Hundreår: 1800-talet
+Høgde (cm): 45
 Materialar: Tre
 Materialkommentar: Beisa tre
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O140391/
@@ -17,5 +17,5 @@ Objekt-ID: O140391
 Produksjonsstad: Munich
 Produsent: Riemerschmid, Richard
 Stilperiode: Historisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O140391.glb

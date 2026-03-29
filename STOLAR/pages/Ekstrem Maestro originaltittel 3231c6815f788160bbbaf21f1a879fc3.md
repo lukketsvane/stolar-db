@@ -6,9 +6,9 @@ Datering: Mellom 1980 og 2013
 Djupn (cm): 56
 Emneord: Industridesign, Møbel, Prototyp
 Erverving: Gave 2016
-Fra ar: 1980
-Hundre-ar: 1900-talet
-Hogde (cm): 74
+Frå år: 1980
+Hundreår: 1900-talet
+Høgde (cm): 74
 Materialar: Kryssfiner
 Materialkommentar: Formbøyd kryssfinér
 Nasjonalmuseet: https://www.nasjonalmuseet.no/samlingen/objekt/NMK.2016.0137.003
@@ -17,5 +17,5 @@ Objekt-ID: NMK.2016.0137.003
 Produksjonsstad: Oslo
 Stilperiode: Postmodernisme
 Teknikk: Formbøying
-Til ar: 1980
+Til år: 1980
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/NMK.2016.0137.003.glb

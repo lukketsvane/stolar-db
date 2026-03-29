@@ -5,9 +5,9 @@ Breidde (cm): 61
 Datering: 1862
 Djupn (cm): 57.5
 Estimert vekt (kg): 0.0
-Fra ar: 1862
-Hundre-ar: 1800-talet
-Hogde (cm): 102
+Frå år: 1862
+Hundreår: 1800-talet
+Høgde (cm): 102
 Materialar: Eik, Messing, Tekstil
 Materialkommentar: [AI] Beiset eik med skåret dekor i nygotisk stil, polstret sete trukket med mønstret tekstil og kantet med messingnagler, forben med trinser i messing.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O61475/
@@ -15,5 +15,5 @@ Nemning: Armstol
 Objekt-ID: O61475
 Produsent: Seddon, John Pollard
 Stilperiode: Historisme
-Til ar: 1862
+Til år: 1862
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O61475.glb

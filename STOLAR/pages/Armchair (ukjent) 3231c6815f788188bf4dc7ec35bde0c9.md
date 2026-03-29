@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: c. 1780
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1780
-Hundre-ar: 1700-talet
-Hogde (cm): 96.5
+Frå år: 1780
+Hundreår: 1700-talet
+Høgde (cm): 96.5
 Materialar: Hestetagl, Mahogni
 Materialkommentar: Skoren mahogni, med polstring av hestetagl
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O369697/
@@ -18,5 +18,5 @@ Produksjonsstad: Great Britain
 Produsent: ukjent
 Stilperiode: Nyklassisisme
 Teknikk: Polstring, Skjæring
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O369697.glb

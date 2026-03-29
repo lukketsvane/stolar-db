@@ -5,9 +5,9 @@ Breidde (cm): 41.5
 Datering: 1850-1851
 Djupn (cm): 58.5
 Estimert vekt (kg): 0.0
-Fra ar: 1850
-Hundre-ar: 1800-talet
-Hogde (cm): 90.5
+Frå år: 1850
+Hundreår: 1800-talet
+Høgde (cm): 90.5
 Materialar: Eik, Ibenholt, Lær, Messing
 Materialkommentar: [AI] Dreid og skåret eik, ryggspeil med intarsia i ulike tresorter som ibenholt og nøttetre, polstret sete trukket med lær festet med messingnagler.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O61224/
@@ -17,5 +17,5 @@ Objekt-ID: O61224
 Produksjonsstad: Great Britain
 Produsent: White, William
 Stilperiode: Historisme
-Til ar: 1851
+Til år: 1851
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O61224.glb

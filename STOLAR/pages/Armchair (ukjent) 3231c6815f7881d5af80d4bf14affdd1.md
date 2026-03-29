@@ -5,9 +5,9 @@ Breidde (cm): 100
 Datering: ca. 1860-70
 Djupn (cm): 117
 Estimert vekt (kg): 0.0
-Fra ar: 1860
-Hundre-ar: 1800-talet
-Hogde (cm): 109
+Frå år: 1860
+Hundreår: 1800-talet
+Høgde (cm): 109
 Materialar: Bøk, Silke
 Materialkommentar: Skore og forgylte tredelar (truleg bøk), med silkepolstring
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O372123/
@@ -17,5 +17,5 @@ Objekt-ID: O372123
 Produksjonsstad: Paris
 Produsent: Unknown
 Stilperiode: Historisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372123.glb

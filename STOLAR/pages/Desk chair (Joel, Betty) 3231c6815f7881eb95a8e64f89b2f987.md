@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: 1929
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1929
-Hundre-ar: 1900-talet
-Hogde (cm): 0
+Frå år: 1929
+Hundreår: 1900-talet
+Høgde (cm): 0
 Materialar: Eik, Tekstil
 Materialkommentar: Queensland silky oak and upholstered seat
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O144122/
@@ -17,5 +17,5 @@ Objekt-ID: O144122
 Produksjonsstad: London
 Produsent: Joel, Betty
 Stilperiode: Art Deco / Tidleg modernisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O144122.glb

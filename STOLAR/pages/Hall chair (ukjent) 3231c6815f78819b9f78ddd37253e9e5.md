@@ -5,9 +5,9 @@ Breidde (cm): 62
 Datering: 1770-1780
 Djupn (cm): 61
 Estimert vekt (kg): 0.0
-Fra ar: 1770
-Hundre-ar: 1700-talet
-Hogde (cm): 98
+Frå år: 1770
+Hundreår: 1700-talet
+Høgde (cm): 98
 Materialar: Mahogni
 Materialkommentar: Skoren og måla mahogni
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O372362/
@@ -17,5 +17,5 @@ Objekt-ID: O372362
 Produksjonsstad: England
 Produsent: unknown
 Stilperiode: Nyklassisisme
-Til ar: 1780
+Til år: 1780
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372362.glb

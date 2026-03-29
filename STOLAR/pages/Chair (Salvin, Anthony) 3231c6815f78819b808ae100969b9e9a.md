@@ -5,9 +5,9 @@ Breidde (cm): 51
 Datering: 1836-1840
 Djupn (cm): 53
 Estimert vekt (kg): 0.0
-Fra ar: 1836
-Hundre-ar: 1800-talet
-Hogde (cm): 104
+Frå år: 1836
+Hundreår: 1800-talet
+Høgde (cm): 104
 Materialar: Eik, Silke
 Materialkommentar: [AI] Dreid og utskåret eik med gjennomsbrutt dekor i ryggstøet og profilert kryss-sprosse. Polstret sete trukket med mønstret silke.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O109862/
@@ -17,5 +17,5 @@ Objekt-ID: O109862
 Produksjonsstad: England
 Produsent: Salvin, Anthony
 Stilperiode: Historisme
-Til ar: 1840
+Til år: 1840
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O109862.glb

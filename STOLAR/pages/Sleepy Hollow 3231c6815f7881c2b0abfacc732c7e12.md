@@ -5,9 +5,9 @@ Breidde (cm): 64
 Datering: 1920
 Djupn (cm): 50
 Estimert vekt (kg): 0.0
-Fra ar: 1920
-Hundre-ar: 1900-talet
-Hogde (cm): 93
+Frå år: 1920
+Hundreår: 1900-talet
+Høgde (cm): 93
 Materialar: Rotting, Tre
 Materialkommentar: Palembang brown cane, bent wood
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O321615/
@@ -16,5 +16,5 @@ Objekt-ID: O321615
 Produksjonsstad: Leicester
 Produsent: Dryad Ltd.
 Stilperiode: Art Deco / Tidleg modernisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O321615.glb

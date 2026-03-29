@@ -5,9 +5,9 @@ Breidde (cm): 72.5
 Datering: ca. 1720
 Djupn (cm): 62
 Estimert vekt (kg): 0.0
-Fra ar: 1720
-Hundre-ar: 1700-talet
-Hogde (cm): 12.5
+Frå år: 1720
+Hundreår: 1700-talet
+Høgde (cm): 12.5
 Materialar: Bøk, Fløyel, Hestetagl, Lin, Nøttetre, Silke
 Materialkommentar: Bein og seteramme av masurbjørkfinert valnøtt med skoren og forgylta dekor; fast trekk av grøn silkefløyel kanta med silkeflette; strukturell polstring av lin, linband og hestetagl
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O80345/
@@ -17,5 +17,5 @@ Objekt-ID: O80345
 Produksjonsstad: Great Britain
 Produsent: Roberts Family
 Stilperiode: Rokokko
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O80345.glb

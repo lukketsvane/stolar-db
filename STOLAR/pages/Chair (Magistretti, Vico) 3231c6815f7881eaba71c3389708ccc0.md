@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: 1977-9
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1977
-Hundre-ar: 1900-talet
-Hogde (cm): 0
+Frå år: 1977
+Hundreår: 1900-talet
+Høgde (cm): 0
 Materialar: Metall, Skumplast
 Materialkommentar: Metall og skum
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O371742/
@@ -17,5 +17,5 @@ Objekt-ID: O371742
 Produksjonsstad: Italy
 Produsent: Magistretti, Vico
 Stilperiode: Postmodernisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O371742.glb

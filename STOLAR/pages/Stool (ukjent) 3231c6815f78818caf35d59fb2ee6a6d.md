@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: ca. 1860
 Djupn (cm): 33
 Estimert vekt (kg): 0.0
-Fra ar: 1860
-Hundre-ar: 1800-talet
-Hogde (cm): 50.8
+Frå år: 1860
+Hundreår: 1800-talet
+Høgde (cm): 50.8
 Materialar: Mahogni, Silke
 Materialkommentar: [AI] Dreid og skåret mahogni, polstret sete med hestetagl trukket med mønstret silke og possementbord.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O372154/
@@ -17,5 +17,5 @@ Objekt-ID: O372154
 Produksjonsstad: England
 Produsent: ukjent
 Stilperiode: Viktorianisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372154.glb

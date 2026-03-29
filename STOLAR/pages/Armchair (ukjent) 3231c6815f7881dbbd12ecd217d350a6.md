@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: ca. 1550-1650
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1550
-Hundre-ar: 1600-talet
-Hogde (cm): 50.5
+Frå år: 1550
+Hundreår: 1600-talet
+Høgde (cm): 50.5
 Materialar: Tre
 Materialkommentar: Huali-tre
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O71485/
@@ -17,5 +17,5 @@ Objekt-ID: O71485
 Produksjonsstad: China
 Produsent: Unknown
 Stilperiode: Barokk
-Til ar: 1650
+Til år: 1650
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O71485.glb

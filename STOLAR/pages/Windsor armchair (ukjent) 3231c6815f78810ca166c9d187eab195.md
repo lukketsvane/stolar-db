@@ -5,9 +5,9 @@ Breidde (cm): 69.5
 Datering: 1750
 Djupn (cm): 61
 Estimert vekt (kg): 0.0
-Fra ar: 1750
-Hundre-ar: 1700-talet
-Hogde (cm): 78
+Frå år: 1750
+Hundreår: 1700-talet
+Høgde (cm): 78
 Materialar: Mahogni
 Materialkommentar: [AI] Lakkert mahogni med skåret og dreid dekor, formet sete og utskårne kabriolben.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O371814/
@@ -17,5 +17,5 @@ Objekt-ID: O371814
 Produksjonsstad: London
 Produsent: ukjent
 Stilperiode: Nyklassisisme
-Til ar: 1750
+Til år: 1750
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O371814.glb

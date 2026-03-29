@@ -4,9 +4,9 @@ Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR
 Breidde (cm): 52
 Datering: ca. 1955
 Djupn (cm): 54
-Fra ar: 1955
-Hundre-ar: 1900-talet
-Hogde (cm): 77
+Frå år: 1955
+Hundreår: 1900-talet
+Høgde (cm): 77
 Materialar: Aluminium, Bjørk, Kryssfiner
 Materialkommentar: Ellevelags bjørkekryssfiner, aluminiumsføter
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O1359610/

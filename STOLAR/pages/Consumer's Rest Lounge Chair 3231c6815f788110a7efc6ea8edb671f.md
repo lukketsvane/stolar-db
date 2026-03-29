@@ -5,9 +5,9 @@ Breidde (cm): 74
 Datering: 1983
 Djupn (cm): 75
 Estimert vekt (kg): 0.0
-Fra ar: 1983
-Hundre-ar: 1900-talet
-Hogde (cm): 103
+Frå år: 1983
+Hundreår: 1900-talet
+Høgde (cm): 103
 Materialar: Plast, Stål
 Materialkommentar: Mildstål med krombelegg og plast
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O1160555/
@@ -17,5 +17,5 @@ Objekt-ID: O1160555
 Produksjonsstad: Berlin
 Produsent: Frank Schreiner
 Stilperiode: Postmodernisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1160555.glb

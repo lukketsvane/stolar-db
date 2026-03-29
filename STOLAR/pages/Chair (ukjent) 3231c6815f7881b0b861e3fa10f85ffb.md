@@ -5,9 +5,9 @@ Breidde (cm): 46.99
 Datering: 1800-1820
 Djupn (cm): 43.5
 Estimert vekt (kg): 0.0
-Fra ar: 1800
-Hundre-ar: 1800-talet
-Hogde (cm): 95.25
+Frå år: 1800
+Hundreår: 1800-talet
+Høgde (cm): 95.25
 Materialar: Bøk, Hestetagl, Silke, Tre
 Materialkommentar: Turned and carved cherrywood, with cherry veneer on beech; the upholstery of horsehair, covered in silk
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O372143/
@@ -17,5 +17,5 @@ Objekt-ID: O372143
 Produksjonsstad: Venice
 Produsent: Unknown
 Stilperiode: Empire
-Til ar: 1820
+Til år: 1820
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372143.glb

@@ -5,9 +5,9 @@ Breidde (cm): 74
 Datering: ca. 1860
 Djupn (cm): 82
 Estimert vekt (kg): 0.0
-Fra ar: 1860
-Hundre-ar: 1800-talet
-Hogde (cm): 128
+Frå år: 1860
+Hundreår: 1800-talet
+Høgde (cm): 128
 Materialar: Tekstil, Tre
 Materialkommentar: Gevir, horn og støyttenner på ei treramme, med polstra sete og rygg trekte i grøn plysj
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O62293/
@@ -16,5 +16,5 @@ Objekt-ID: O62293
 Produksjonsstad: Hamburg
 Produsent: Rampendahl, H. F. C.
 Stilperiode: Historisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O62293.glb

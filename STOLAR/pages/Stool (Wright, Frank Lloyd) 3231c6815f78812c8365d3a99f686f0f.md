@@ -5,9 +5,9 @@ Breidde (cm): 65
 Datering: 1937
 Djupn (cm): 77
 Estimert vekt (kg): 0.0
-Fra ar: 1937
-Hundre-ar: 1900-talet
-Hogde (cm): 42
+Frå år: 1937
+Hundreår: 1900-talet
+Høgde (cm): 42
 Materialar: Furu, Skumplast, Ull
 Materialkommentar: [AI] Lakkert furu med polstret sete trukket med tekstil av ull.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O112077/
@@ -17,5 +17,5 @@ Objekt-ID: O112077
 Produksjonsstad: America
 Produsent: Wright, Frank Lloyd
 Stilperiode: Art Deco / Tidleg modernisme
-Til ar: 1937
+Til år: 1937
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O112077.glb

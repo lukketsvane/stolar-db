@@ -5,9 +5,9 @@ Breidde (cm): 52.7
 Datering: ca. 1775
 Djupn (cm): 51
 Estimert vekt (kg): 0.0
-Fra ar: 1775
-Hundre-ar: 1700-talet
-Hogde (cm): 45.5
+Frå år: 1775
+Hundreår: 1700-talet
+Høgde (cm): 45.5
 Materialar: Tre
 Materialkommentar: Willow, japanned white and green
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O48873/
@@ -17,5 +17,5 @@ Objekt-ID: O48873
 Produksjonsstad: London
 Produsent: Thomas Chippendale Senior
 Stilperiode: Chippendale / Rokokko
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O48873.glb

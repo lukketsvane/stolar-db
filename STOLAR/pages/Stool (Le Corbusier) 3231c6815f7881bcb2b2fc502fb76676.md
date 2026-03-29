@@ -5,9 +5,9 @@ Breidde (cm): 51
 Datering: ca. 1929
 Djupn (cm): 36.5
 Estimert vekt (kg): 0.0
-Fra ar: 1929
-Hundre-ar: 1900-talet
-Hogde (cm): 45.5
+Frå år: 1929
+Hundreår: 1900-talet
+Høgde (cm): 45.5
 Materialar: Stål, Tekstil
 Materialkommentar: Tubular steel, painted and fabric
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O131463/
@@ -17,5 +17,5 @@ Objekt-ID: O131463
 Produksjonsstad: Paris
 Produsent: Le Corbusier
 Stilperiode: Modernisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O131463.glb

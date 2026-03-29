@@ -5,9 +5,9 @@ Breidde (cm): 60.5
 Datering: 1550
 Djupn (cm): 61
 Estimert vekt (kg): 0.0
-Fra ar: 1550
-Hundre-ar: 1500-talet
-Hogde (cm): 45.5
+Frå år: 1550
+Hundreår: 1500-talet
+Høgde (cm): 45.5
 Materialar: Eik
 Materialkommentar: Eik
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O60628/
@@ -17,5 +17,5 @@ Objekt-ID: O60628
 Produksjonsstad: England
 Produsent: Unknown
 Stilperiode: Renessanse
-Til ar: 1550
+Til år: 1550
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O60628.glb

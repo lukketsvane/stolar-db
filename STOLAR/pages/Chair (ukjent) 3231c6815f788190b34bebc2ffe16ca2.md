@@ -5,9 +5,9 @@ Breidde (cm): 58.5
 Datering: ca. 1780
 Djupn (cm): 55
 Estimert vekt (kg): 0.0
-Fra ar: 1780
-Hundre-ar: 1700-talet
-Hogde (cm): 97.5
+Frå år: 1780
+Hundreår: 1700-talet
+Høgde (cm): 97.5
 Materialar: Bøk, Rotting
 Materialkommentar: [AI] Skåret og dreid bøk med flettet rotting i sete og rygg.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O372159/
@@ -17,5 +17,5 @@ Objekt-ID: O372159
 Produksjonsstad: England
 Produsent: ukjent
 Stilperiode: Nyklassisisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372159.glb

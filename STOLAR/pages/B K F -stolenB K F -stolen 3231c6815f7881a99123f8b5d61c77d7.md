@@ -6,9 +6,9 @@ Datering: 1938
 Djupn (cm): 96
 Emneord: Design, Møbel
 Erverving: Kjøpt 1995
-Fra ar: 1938
-Hundre-ar: 1900-talet
-Hogde (cm): 95.5
+Frå år: 1938
+Hundreår: 1900-talet
+Høgde (cm): 95.5
 Materialar: Skinn, Stål
 Materialkommentar: Maskinsydd, semsket skinn, fargelakkert og formbøyd stål
 Nasjonalmuseet: https://www.nasjonalmuseet.no/samlingen/objekt/OK-1995-0111
@@ -17,5 +17,5 @@ Objekt-ID: OK-1995-0111
 Produksjonsstad: Ukjent
 Stilperiode: Modernisme
 Teknikk: Formbøying, Maskinsøm
-Til ar: 1938
+Til år: 1938
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-1995-0111.glb

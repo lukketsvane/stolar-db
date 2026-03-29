@@ -6,17 +6,17 @@ Datering: 1775-1780
 Djupn (cm): 58
 Emneord: Kunstindustri, Møbel
 Erverving: Kjøpt 1896
-Fra ar: 1775
-Hundre-ar: 1700-talet
-Hogde (cm): 97
+Frå år: 1775
+Hundreår: 1700-talet
+Høgde (cm): 97
 Materialar: Bøk, Silke
 Materialkommentar: Forgylt bøk med skåret dekor, damasktrekk.
 Nasjonalmuseet: https://www.nasjonalmuseet.no/samlingen/objekt/OK-05400
 Nemning: Armstol
 Objekt-ID: OK-05400
 Produksjonsstad: Ukjent
-Setehogde (cm): 97
+Setehøgde (cm): 97
 Stilperiode: Louis XVI
 Teknikk: Damask, Polstring
-Til ar: 1780
+Til år: 1780
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-05400.glb

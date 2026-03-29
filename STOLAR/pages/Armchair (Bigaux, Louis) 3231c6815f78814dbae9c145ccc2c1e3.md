@@ -5,9 +5,9 @@ Breidde (cm): 68
 Datering: ca. 1900
 Djupn (cm): 51.5
 Estimert vekt (kg): 0.0
-Fra ar: 1900
-Hundre-ar: 1900-talet
-Hogde (cm): 106
+Frå år: 1900
+Hundreår: 1900-talet
+Høgde (cm): 106
 Materialar: Fløyel, Messing, Pæretre
 Materialkommentar: Pæretre, med siselerte forgylta messingbeslag, trukket med gul fløyel
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O60320/
@@ -18,5 +18,5 @@ Produksjonsstad: Paris
 Produsent: Bigaux, Louis
 Stilperiode: Jugend/Art Nouveau
 Teknikk: Polstring
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O60320.glb

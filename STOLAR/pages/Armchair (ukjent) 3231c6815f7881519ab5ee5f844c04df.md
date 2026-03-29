@@ -4,9 +4,9 @@ Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR
 Breidde (cm): 61
 Datering: 1610
 Djupn (cm): 48.3
-Fra ar: 1610
-Hundre-ar: 1600-talet
-Hogde (cm): 116.8
+Frå år: 1610
+Hundreår: 1600-talet
+Høgde (cm): 116.8
 Materialar: Eik
 Materialkommentar: [AI] Skåret og dreid eik med relieffdekor, utskåret ryggtavle med våpenskjold og flatt sete.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O58564/
@@ -16,5 +16,5 @@ Objekt-ID: O58564
 Produksjonsstad: England
 Produsent: ukjent
 Stilperiode: Barokk
-Til ar: 1610
+Til år: 1610
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O58564.glb

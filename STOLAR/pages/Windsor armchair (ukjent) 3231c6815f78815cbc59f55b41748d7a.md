@@ -5,9 +5,9 @@ Breidde (cm): 69.5
 Datering: 1740 - 1760
 Djupn (cm): 61
 Estimert vekt (kg): 0.0
-Fra ar: 1740
-Hundre-ar: 1700-talet
-Hogde (cm): 78
+Frå år: 1740
+Hundreår: 1700-talet
+Høgde (cm): 78
 Materialar: Mahogni
 Materialkommentar: Stolane er laga av mahogni.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O371815/
@@ -17,5 +17,5 @@ Objekt-ID: O371815
 Produksjonsstad: England
 Produsent: ukjent
 Stilperiode: Nyklassisisme
-Til ar: 1760
+Til år: 1760
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O371815.glb

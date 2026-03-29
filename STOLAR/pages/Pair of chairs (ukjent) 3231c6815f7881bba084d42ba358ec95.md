@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: 1750-1775
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1750
-Hundre-ar: 1700-talet
-Hogde (cm): 0
+Frå år: 1750
+Hundreår: 1700-talet
+Høgde (cm): 0
 Materialar: Mahogni, Tekstil
 Materialkommentar: Skoren mahogni, damaskpolstring
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O372228/
@@ -18,5 +18,5 @@ Produksjonsstad: England
 Produsent: Unknown
 Stilperiode: Nyklassisisme
 Teknikk: Polstring, Skjæring
-Til ar: 1775
+Til år: 1775
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372228.glb

@@ -5,9 +5,9 @@ Breidde (cm): 47
 Datering: 1815-1818
 Djupn (cm): 53.5
 Estimert vekt (kg): 0.0
-Fra ar: 1815
-Hundre-ar: 1800-talet
-Hogde (cm): 101
+Frå år: 1815
+Hundreår: 1800-talet
+Høgde (cm): 101
 Materialar: Eik, Messing
 Materialkommentar: Eik, måla og forgylta, med forgylte messingbeslag; erstatningspolstring basert på originalen
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O7886/
@@ -17,5 +17,5 @@ Objekt-ID: O7886
 Produksjonsstad: London
 Produsent: Bridgens, Richard
 Stilperiode: Empire
-Til ar: 1818
+Til år: 1818
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O7886.glb

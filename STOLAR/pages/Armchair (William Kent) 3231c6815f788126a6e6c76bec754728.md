@@ -5,9 +5,9 @@ Breidde (cm): 79.5
 Datering: 1730-1740
 Djupn (cm): 78
 Estimert vekt (kg): 0.0
-Fra ar: 1730
-Hundre-ar: 1700-talet
-Hogde (cm): 104.7
+Frå år: 1730
+Hundreår: 1700-talet
+Høgde (cm): 104.7
 Materialar: Bøk, Lind
 Materialkommentar: Skoren lind og bartre på ei ramme av bøk og lind. Opphavleg dekt med gesso og forgylling, med polstra rygg og sete, men no stroppa ned til rein ramme
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O119865/
@@ -18,5 +18,5 @@ Produksjonsstad: London
 Produsent: William Kent
 Stilperiode: Rokokko
 Teknikk: Polstring, Skjæring
-Til ar: 1740
+Til år: 1740
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O119865.glb

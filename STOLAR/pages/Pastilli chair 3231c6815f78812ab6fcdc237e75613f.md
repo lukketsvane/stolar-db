@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: 1967
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1967
-Hundre-ar: 1900-talet
-Hogde (cm): 0
+Frå år: 1967
+Hundreår: 1900-talet
+Høgde (cm): 0
 Materialar: Glasfiber
 Materialkommentar: Formpressa glasfiber
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O132487/
@@ -17,5 +17,5 @@ Objekt-ID: O132487
 Produksjonsstad: Finland
 Produsent: Aarnio, Eero
 Stilperiode: Modernisme / Midtjahrhundre
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O132487.glb

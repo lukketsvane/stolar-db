@@ -5,9 +5,9 @@ Breidde (cm): 50
 Datering: 1926
 Djupn (cm): 64
 Estimert vekt (kg): 0.0
-Fra ar: 1926
-Hundre-ar: 1900-talet
-Hogde (cm): 84
+Frå år: 1926
+Hundreår: 1900-talet
+Høgde (cm): 84
 Materialar: Lær, Stålrør
 Materialkommentar: [AI] Forkrommet stålrør med sete og rygg i spent lær.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O371727/
@@ -17,5 +17,5 @@ Objekt-ID: O371727
 Produksjonsstad: Germany
 Produsent: Stam, Mart
 Stilperiode: Bauhaus
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O371727.glb

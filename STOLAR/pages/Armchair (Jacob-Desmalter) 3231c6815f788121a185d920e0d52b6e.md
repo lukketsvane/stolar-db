@@ -5,9 +5,9 @@ Breidde (cm): 66
 Datering: ca. 1805
 Djupn (cm): 61
 Estimert vekt (kg): 0.0
-Fra ar: 1805
-Hundre-ar: 1800-talet
-Hogde (cm): 96
+Frå år: 1805
+Hundreår: 1800-talet
+Høgde (cm): 96
 Materialar: Bronse, Mahogni, Silke
 Materialkommentar: Mahogni, skoren, med forgylte bronsebeslag, med moderne silkepolstring
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O59252/
@@ -17,5 +17,5 @@ Objekt-ID: O59252
 Produksjonsstad: Paris
 Produsent: Jacob-Desmalter
 Stilperiode: Empire
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O59252.glb

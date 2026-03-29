@@ -5,9 +5,9 @@ Breidde (cm): 127
 Datering: 1850-1870
 Djupn (cm): 67.3
 Estimert vekt (kg): 0.0
-Fra ar: 1850
-Hundre-ar: 1800-talet
-Hogde (cm): 101
+Frå år: 1850
+Hundreår: 1800-talet
+Høgde (cm): 101
 Materialar: Mahogni, Tekstil
 Materialkommentar: [AI] Rikt utskåret og polert mahogni med gjennombrutt ryggdekor i form av båndslyng, polstret sete trukket med tekstil.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O371831/
@@ -17,5 +17,5 @@ Objekt-ID: O371831
 Produksjonsstad: England
 Produsent: Unknown
 Stilperiode: Viktorianisme
-Til ar: 1870
+Til år: 1870
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O371831.glb

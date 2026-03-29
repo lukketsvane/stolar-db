@@ -4,9 +4,9 @@ Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR
 Breidde (cm): 42
 Datering: 2004
 Djupn (cm): 58
-Fra ar: 2004
-Hundre-ar: 2000-talet
-Hogde (cm): 46
+Frå år: 2004
+Hundreår: 2000-talet
+Høgde (cm): 46
 Materialar: Eik, Polyamid
 Materialkommentar: Eik med nylon
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O1153416/

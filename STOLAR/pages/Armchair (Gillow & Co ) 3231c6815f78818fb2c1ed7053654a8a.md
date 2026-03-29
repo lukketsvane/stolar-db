@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: c. 1787-1795
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1787
-Hundre-ar: 1700-talet
-Hogde (cm): 0
+Frå år: 1787
+Hundreår: 1700-talet
+Høgde (cm): 0
 Materialar: Bøk, Hestetagl, Mahogni
 Materialkommentar: Mahogni, med bøkeseterammar, setet polstert og trukket med hestetagl
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O53177/
@@ -18,5 +18,5 @@ Produksjonsstad: England
 Produsent: Gillow & Co.
 Stilperiode: Nyklassisisme
 Teknikk: Polstring
-Til ar: 1795
+Til år: 1795
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O53177.glb

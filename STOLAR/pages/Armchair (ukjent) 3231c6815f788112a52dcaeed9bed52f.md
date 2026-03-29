@@ -5,9 +5,9 @@ Breidde (cm): 44
 Datering: 1550
 Djupn (cm): 26.5
 Estimert vekt (kg): 0.0
-Fra ar: 1550
-Hundre-ar: 1500-talet
-Hogde (cm): 52
+Frå år: 1550
+Hundreår: 1500-talet
+Høgde (cm): 52
 Materialar: Nøttetre
 Materialkommentar: Nøttetre, skoren og delvis forgylta
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O176851/
@@ -18,5 +18,5 @@ Produksjonsstad: Italy
 Produsent: ukjent
 Stilperiode: Renessanse
 Teknikk: Skjæring
-Til ar: 1550
+Til år: 1550
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O176851.glb

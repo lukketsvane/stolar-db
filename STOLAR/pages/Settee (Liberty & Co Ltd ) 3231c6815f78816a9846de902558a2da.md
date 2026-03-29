@@ -5,9 +5,9 @@ Breidde (cm): 134
 Datering: 1895-1900
 Djupn (cm): 67
 Estimert vekt (kg): 0.0
-Fra ar: 1895
-Hundre-ar: 1800-talet
-Hogde (cm): 136.5
+Frå år: 1895
+Hundreår: 1800-talet
+Høgde (cm): 136.5
 Materialar: Mahogni, Plysj, Tre
 Materialkommentar: [AI] Mahogni med innlagt dekor i lyst tre, polstret og trukket med plysj.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O371716/
@@ -17,5 +17,5 @@ Objekt-ID: O371716
 Produksjonsstad: Great Britain
 Produsent: Liberty & Co. Ltd.
 Stilperiode: Viktorianisme
-Til ar: 1900
+Til år: 1900
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O371716.glb

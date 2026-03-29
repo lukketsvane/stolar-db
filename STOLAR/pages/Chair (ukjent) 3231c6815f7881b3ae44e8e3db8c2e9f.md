@@ -5,9 +5,9 @@ Breidde (cm): 48.5
 Datering: 1935-55
 Djupn (cm): 48
 Estimert vekt (kg): 0.0
-Fra ar: 1935
-Hundre-ar: 1900-talet
-Hogde (cm): 63.5
+Frå år: 1935
+Hundreår: 1900-talet
+Høgde (cm): 63.5
 Materialar: Tekstil, Tre
 Materialkommentar: Wood upholstered in cretonne
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O185727/
@@ -17,5 +17,5 @@ Objekt-ID: O185727
 Produksjonsstad: United Kingdom
 Produsent: unknown
 Stilperiode: Art Deco / Tidleg modernisme
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O185727.glb

@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: 1813
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1813
-Hundre-ar: 1800-talet
-Hogde (cm): 0
+Frå år: 1813
+Hundreår: 1800-talet
+Høgde (cm): 0
 Materialar: Bøk, Furu, Nøttetre, Rotting
 Materialkommentar: Bøk og furu, valnøttfiner, spanskrøyr.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O172510/
@@ -17,5 +17,5 @@ Objekt-ID: O172510
 Produksjonsstad: Germany
 Produsent: ukjent
 Stilperiode: Empire
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O172510.glb

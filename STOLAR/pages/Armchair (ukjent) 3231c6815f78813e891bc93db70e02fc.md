@@ -5,9 +5,9 @@ Breidde (cm): 56
 Datering: ca. 1790
 Djupn (cm): 53.5
 Estimert vekt (kg): 0.0
-Fra ar: 1790
-Hundre-ar: 1700-talet
-Hogde (cm): 91
+Frå år: 1790
+Hundreår: 1700-talet
+Høgde (cm): 91
 Materialar: Bøk, Mahogni, Tekstil
 Materialkommentar: Mahogni med beisa seteskinner av bøk(?). Overstoppa sete med polstringsmateriale frå 1900-talet (truleg 1960-åra)
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O145072/
@@ -18,5 +18,5 @@ Produksjonsstad: Great Britain
 Produsent: ukjent
 Stilperiode: Nyklassisisme
 Teknikk: Polstring
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O145072.glb

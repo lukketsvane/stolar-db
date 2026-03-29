@@ -5,9 +5,9 @@ Breidde (cm): 0
 Datering: 1855-1865
 Djupn (cm): 0
 Estimert vekt (kg): 0.0
-Fra ar: 1855
-Hundre-ar: 1800-talet
-Hogde (cm): 0
+Frå år: 1855
+Hundreår: 1800-talet
+Høgde (cm): 0
 Materialar: Nøttetre
 Materialkommentar: Skoren valnøtt
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O371730/
@@ -17,5 +17,5 @@ Objekt-ID: O371730
 Produksjonsstad: England
 Produsent: Unknown
 Stilperiode: Viktorianisme
-Til ar: 1865
+Til år: 1865
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O371730.glb

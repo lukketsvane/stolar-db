@@ -5,9 +5,9 @@ Breidde (cm): 49
 Datering: 1700-1725
 Djupn (cm): 52
 Estimert vekt (kg): 0.0
-Fra ar: 1700
-Hundre-ar: 1700-talet
-Hogde (cm): 108
+Frå år: 1700
+Hundreår: 1700-talet
+Høgde (cm): 108
 Materialar: Bøk, Nøttetre
 Materialkommentar: Nøttetre med seteskinner av bøk, med innfelte marketeripanel
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O107557/
@@ -18,5 +18,5 @@ Produksjonsstad: England
 Produsent: Unknown
 Stilperiode: Rokokko
 Teknikk: Innfelling
-Til ar: 1725
+Til år: 1725
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O107557.glb

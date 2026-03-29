@@ -5,9 +5,9 @@ Breidde (cm): 112
 Datering: 1851
 Djupn (cm): 100
 Estimert vekt (kg): 0.0
-Fra ar: 1851
-Hundre-ar: 1800-talet
-Hogde (cm): 113
+Frå år: 1851
+Hundreår: 1800-talet
+Høgde (cm): 113
 Materialar: Fløyel, Nøttetre
 Materialkommentar: Valnøtt, skåren og innlagt; porselenplate; armar og sete trukket med erstatta rosa bomullsfløyel
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O18955/
@@ -17,5 +17,5 @@ Produksjonsstad: Bath
 Produsent: Eyles, Henry
 Stilperiode: Historisme
 Teknikk: Innfelling, Polstring, Skjæring
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O18955.glb

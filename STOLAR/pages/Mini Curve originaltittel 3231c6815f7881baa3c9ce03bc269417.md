@@ -6,9 +6,9 @@ Datering: 2005
 Djupn (cm): 33
 Emneord: Industridesign, Møbel, Prototyp
 Erverving: Gave 2016
-Fra ar: 2005
-Hundre-ar: 2000-talet
-Hogde (cm): 93
+Frå år: 2005
+Hundreår: 2000-talet
+Høgde (cm): 93
 Materialar: Kryssfiner, Polyetylen, Stål, Tekstil
 Materialkommentar: Sortmalt, formbøyd kryssfinér, setet trukket i sort tekstil
 Nasjonalmuseet: https://www.nasjonalmuseet.no/samlingen/objekt/NMK.2016.0141
@@ -17,5 +17,5 @@ Objekt-ID: NMK.2016.0141
 Produksjonsstad: Oslo
 Stilperiode: Samtidsdesign
 Teknikk: Formbøying, Stopping
-Til ar: 2005
+Til år: 2005
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/NMK.2016.0141.glb

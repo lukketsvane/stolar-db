@@ -5,9 +5,9 @@ Breidde (cm): 63.5
 Datering: 1750-1770
 Djupn (cm): 45.7
 Estimert vekt (kg): 0.0
-Fra ar: 1750
-Hundre-ar: 1700-talet
-Hogde (cm): 90.8
+Frå år: 1750
+Hundreår: 1700-talet
+Høgde (cm): 90.8
 Materialar: Bøk, Lær
 Materialkommentar: Beisa bøk med lærpolstring
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O171815/
@@ -17,5 +17,5 @@ Produksjonsstad: Flanders
 Produsent: ukjent
 Stilperiode: Nyklassisisme
 Teknikk: Polstring
-Til ar: 1770
+Til år: 1770
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O171815.glb

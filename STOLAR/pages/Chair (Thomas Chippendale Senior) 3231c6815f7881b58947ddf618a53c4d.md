@@ -5,9 +5,9 @@ Breidde (cm): 53.5
 Datering: ca. 1775
 Djupn (cm): 43
 Estimert vekt (kg): 0.0
-Fra ar: 1775
-Hundre-ar: 1700-talet
-Hogde (cm): 98
+Frå år: 1775
+Hundreår: 1700-talet
+Høgde (cm): 98
 Materialar: Maling, Tre
 Materialkommentar: [AI] Hvitmalt tre med skåret og dreid dekor, kannelerte ben og malt ornamentikk bestående av laurbærkrans, sløyfe og monogram.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O370421/
@@ -17,5 +17,5 @@ Objekt-ID: O370421
 Produksjonsstad: London
 Produsent: Thomas Chippendale Senior
 Stilperiode: Chippendale / Rokokko
-Til ar: 0
+Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O370421.glb

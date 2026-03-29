@@ -4,9 +4,9 @@ Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR
 Breidde (cm): 0
 Datering: 1965
 Estimert vekt (kg): 0.0
-Fra ar: 1965
-Hundre-ar: 1900-talet
-Hogde (cm): 100
+Frå år: 1965
+Hundreår: 1900-talet
+Høgde (cm): 100
 Materialar: Alm, Metall, Skumplast, Tekstil
 Materialkommentar: [AI] Lakkert alm (knutealm) med innlegg av metall, polstret sete trukket med tekstil.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O1713794/
@@ -16,5 +16,5 @@ Objekt-ID: O1713794
 Produksjonsstad: London
 Produsent: Hitchins, Ron
 Stilperiode: Modernisme / Midtjahrhundre
-Til ar: 1965
+Til år: 1965
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1713794.glb
