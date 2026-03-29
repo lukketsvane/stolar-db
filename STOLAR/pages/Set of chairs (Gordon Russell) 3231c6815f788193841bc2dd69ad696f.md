@@ -1,20 +1,21 @@
 # Set of chairs (Gordon Russell)
-
-3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/VA_3d/O372060/O372060.glb
 Bilete-URL: https://framemark.vam.ac.uk/collections/2016JA4715/full/full/0/default.jpg
-Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/VA_3d/O372060/O372060_bguw.png
+Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O372060_bguw.png
 Breidde (cm): 46.4
 Datering: 1951
 Djupn (cm): 43.2
-Estimert vekt (kg): 0
-Frå år: 1951
-Hundreår: 1900-talet
-Høgde (cm): 85.1
+Estimert vekt (kg): 0.0
+Fra ar: 1951
+Hundre-ar: 1900-talet
+Hogde (cm): 85.1
 Materialar: Bøk, Ull
 Materialkommentar: [AI] Lakkert bøk med polstret sete og rygg trukket med ull.
-Nasjonalitet: Storbritannia
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O372060/
+Nasjonalitet: Storbritannia
+Nemning: Stol
 Objekt-ID: O372060
 Produksjonsstad: England
 Produsent: Gordon Russell
-Til år: 0
+Stilperiode: Modernisme / Midtjahrhundre
+Til ar: 0
+3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372060.glb

@@ -1,19 +1,20 @@
 # Chair (Mackintosh, Charles Rennie)
-
-3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/VA_3d/O11281/O11281.glb
 Bilete-URL: https://framemark.vam.ac.uk/collections/2006AP8492/full/full/0/default.jpg
-Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/VA_3d/O11281/O11281_bguw.png
+Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O11281_bguw.png
 Breidde (cm): 50.3
 Datering: 1897-1900
 Djupn (cm): 45.5
-Estimert vekt (kg): 0
-Frå år: 1897
-Hundreår: 1800-talet
-Høgde (cm): 136.5
+Estimert vekt (kg): 0.0
+Fra ar: 1897
+Hundre-ar: 1800-talet
+Hogde (cm): 136.5
 Materialar: Eik, Tekstil
 Materialkommentar: [AI] Mørkbeiset eik med utskåret ryggstykke, polstret sete trukket med tekstil.
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O11281/
+Nemning: Stol
 Objekt-ID: O11281
 Produksjonsstad: Glasgow
 Produsent: Mackintosh, Charles Rennie
-Til år: 1900
+Stilperiode: Historisme
+Til ar: 1900
+3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O11281.glb

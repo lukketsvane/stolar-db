@@ -1,20 +1,21 @@
 # Armchair (ukjent)
-
-3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/VA_3d/O131683/O131683.glb
 Bilete-URL: https://framemark.vam.ac.uk/collections/2015HV3902/full/full/0/default.jpg
-Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/VA_3d/O131683/O131683_bguw.png
+Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O131683_bguw.png
 Breidde (cm): 66
 Datering: 1610
 Djupn (cm): 46.5
-Frå år: 1610
-Hundreår: 1600-talet
-Høgde (cm): 139.5
+Fra ar: 1610
+Hundre-ar: 1600-talet
+Hogde (cm): 139.5
 Materialar: Eik
 Materialkommentar: Eik, samanføygd og skoren
-Nasjonalitet: Storbritannia
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O131683/
+Nasjonalitet: Storbritannia
+Nemning: Armstol
 Objekt-ID: O131683
 Produksjonsstad: England
 Produsent: unknown
+Stilperiode: Barokk
 Teknikk: Samanføying, Skjæring
-Til år: 1610
+Til ar: 1610
+3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O131683.glb

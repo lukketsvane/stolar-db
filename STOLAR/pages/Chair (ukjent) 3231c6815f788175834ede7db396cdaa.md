@@ -1,20 +1,22 @@
 # Chair (ukjent)
-
 Bilete-URL: https://framemark.vam.ac.uk/collections/2016JA7929/full/full/0/default.jpg
-Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/VA_3d/O80370/O80370_bguw.png
+Bilete-bguw: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/bguw/O80370_bguw.png
 Breidde (cm): 58.5
 Datering: ca. 1732
 Djupn (cm): 54.8
-Estimert vekt (kg): 0
-Frå år: 1732
-Hundreår: 1700-talet
-Høgde (cm): 99.2
+Estimert vekt (kg): 0.0
+Fra ar: 1732
+Hundre-ar: 1700-talet
+Hogde (cm): 99.2
 Materialar: Bøk, Fløyel, Furu, Hestetagl, Nøttetre, Silke
 Materialkommentar: Bein og seteramme av bøk, furu og nøttetre, oljeforgylt, delvis over slipt botn. Trekt med grøn silkefløyel kanta med silkeflette, med strukturell polstring av lin, linband og hestetagl
-Nasjonalitet: Storbritannia
 Nasjonalmuseet: https://collections.vam.ac.uk/item/O80370/
+Nasjonalitet: Storbritannia
+Nemning: Stol
 Objekt-ID: O80370
 Produksjonsstad: Great Britain
 Produsent: ukjent
+Stilperiode: Rokokko
 Teknikk: Polstring
-Til år: 0
+Til ar: 0
+3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O80370.glb
