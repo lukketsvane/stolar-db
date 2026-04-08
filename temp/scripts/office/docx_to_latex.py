@@ -237,6 +237,14 @@ PREAMBLE = r"""\documentclass[10pt,oneside]{book}
   \noindent\textbf{#1:} #2\par%
 }
 
+% A.6.x explanatory body text — slightly smaller, tight line spacing
+% so each A.6.x entry (heading + figure + explanation) fits compactly.
+\newcommand{\anote}[1]{%
+  \par\addvspace{1pt}%
+  {\footnotesize\linespread{0.93}\selectfont\noindent #1\par}%
+  \addvspace{1pt}%
+}
+
 % Reference entries — small font, tight spacing, hanging indent.
 % Mirrors the dense numbered footnote layout in the digibok Tractatus.
 \newcommand{\refentry}[1]{%
@@ -491,6 +499,7 @@ def convert(doc: 'Document') -> str:
     in_appendix = False
     in_referansar = False
     in_widebody = False
+    in_a6_body = False
     seen_a6 = False
     saw_first_chapter = False
     first_chapter_seen = False
@@ -731,7 +740,7 @@ def convert(doc: 'Document') -> str:
                         out.append(r'  \includegraphics[width=\linewidth]{' +
                                    ex_fig + '}')
                         out.append(r'\end{figure}')
-                    out.append(escape_latex(ex_body))
+                    out.append(r'\anote{' + escape_latex(ex_body) + '}')
                     out.append('')
                 if in_appendix:
                     in_appendix = False
@@ -837,6 +846,7 @@ def convert(doc: 'Document') -> str:
                     out.append(r'  \centering')
                     out.append(r'  \includegraphics[width=\linewidth]{' + fig_filename + '}')
                     out.append(r'\end{figure}')
+            in_a6_body = True
             i += 1
             continue
 
@@ -850,6 +860,7 @@ def convert(doc: 'Document') -> str:
                 out.append(r'\appendix')
                 out.append(r'\silentchapter{Formell spesifikasjon}{formell spesifikasjon}')
                 in_appendix = True
+            in_a6_body = False
             out.append(r'\prop{' + escape_latex(label) + '}{}{' + escape_latex(rest) + '}')
             out.append(r'\addcontentsline{toc}{section}{' + escape_latex(label + ' ' + rest) + '}')
             i += 1
@@ -956,6 +967,13 @@ def convert(doc: 'Document') -> str:
         # References — emit as compact \refentry{...}
         if in_referansar:
             out.append(r'\refentry{' + escape_latex(text) + '}')
+            i += 1
+            continue
+
+        # A.6.x explanatory body text — wrap in \anote{} for compact format
+        if in_a6_body:
+            out.append(r'\anote{' + escape_latex(text) + '}')
+            out.append('')
             i += 1
             continue
 
