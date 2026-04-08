@@ -73,7 +73,7 @@ def plot(rows, growth, n_total):
     apply_style()
 
     fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.78))
-    ax = fig.add_axes([0.18, 0.20, 0.74, 0.62])
+    ax = fig.add_axes([0.18, 0.2, 0.74, 0.72])
     ax2 = ax.twinx()
 
     years = [r['period_start'] for r in rows]
@@ -108,13 +108,6 @@ def plot(rows, growth, n_total):
     ax2.spines['left'].set_visible(False)
     ax2.spines['right'].set_color(ACCENT_TEAL)
 
-    fig.text(0.04, 0.95,
-             f'Formrommet veks monotont: {growth:.0f}× over {len(rows)} periodar',
-             fontsize=9.5, color=INK, ha='left', va='top', weight='bold')
-    fig.text(0.04, 0.90,
-             f'(H, W, D) konvekst hylster, 50-årsperiodar 1500–2050  ·  '
-             f'1.–99. persentil klipping',
-             fontsize=6.8, color=INK_SOFT, ha='left', va='top')
 
     fig.text(0.04, 0.025,
              f'n = {n_total} stolar med komplette dimensjonar  ·  '

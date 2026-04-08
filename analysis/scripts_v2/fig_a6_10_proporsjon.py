@@ -81,7 +81,7 @@ def plot(df, grid, med, q25, q75, century_kdes):
 
     # Single-panel version: just the XY scatter + rolling median + IQR
     fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.78))
-    ax = fig.add_axes([0.16, 0.20, 0.80, 0.62])
+    ax = fig.add_axes([0.16, 0.2, 0.8, 0.72])
 
     # Scatter (faint dots) + rolling median + IQR
     ax.scatter(df['year_mid'], df['hw'], s=2.0, color=INK_SOFT,
@@ -116,12 +116,6 @@ def plot(df, grid, med, q25, q75, century_kdes):
     for t in leg.get_texts():
         t.set_color(INK_SOFT)
 
-    fig.text(0.04, 0.95,
-             'Vert stolen flatare? H/B-proporsjonen 1500–2024',
-             fontsize=9.5, color=INK, ha='left', va='top', weight='bold')
-    fig.text(0.04, 0.90,
-             'Rullande 50-år median (raud) over alle stolar',
-             fontsize=6.8, color=INK_SOFT, ha='left', va='top')
 
     fig.text(0.04, 0.025,
              f'n = {len(df)} stolar  ·  H/W klipt til 1.–99. persentil  ·  '

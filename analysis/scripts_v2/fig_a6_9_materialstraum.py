@@ -90,7 +90,7 @@ def plot(g, n_total):
     apply_style()
 
     fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.85))
-    ax = fig.add_axes([0.13, 0.20, 0.73, 0.62])
+    ax = fig.add_axes([0.13, 0.2, 0.73, 0.72])
 
     x = g['period'].values
     ys = [g[m].values for m in MATERIALS]
@@ -124,12 +124,6 @@ def plot(g, n_total):
         t.set_color(INK_SOFT)
 
     # Title + sub
-    fig.text(0.04, 0.95,
-             'Materialbølgjer over fem hundreår',
-             fontsize=9.5, color=INK, ha='left', va='top', weight='bold')
-    fig.text(0.04, 0.90,
-             'Eik → nøttetre → mahogni → modernismen sitt stål, plast og kryssfiner',
-             fontsize=6.8, color=INK_SOFT, ha='left', va='top')
 
     fig.text(0.04, 0.025,
              f'n = {n_total} stolar med materialliste  ·  '

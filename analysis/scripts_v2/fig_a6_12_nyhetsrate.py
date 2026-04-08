@@ -81,7 +81,7 @@ def plot(rows, n_total, n_voxels_total):
     apply_style()
 
     fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.85))
-    ax = fig.add_axes([0.16, 0.20, 0.74, 0.62])
+    ax = fig.add_axes([0.16, 0.2, 0.74, 0.72])
     ax2 = ax.twinx()
 
     p   = np.array([r['period']   for r in rows])
@@ -122,12 +122,6 @@ def plot(rows, n_total, n_voxels_total):
     for t in leg.get_texts():
         t.set_color(INK_SOFT)
 
-    fig.text(0.04, 0.95,
-             'Nyhetsraten metnar ikkje: det tilstøytande moglege ekspanderer',
-             fontsize=9.5, color=INK, ha='left', va='top', weight='bold')
-    fig.text(0.04, 0.90,
-             f'Nye 5 cm-voksler per periode (raud) mot kumulativ summa (grå stipla)',
-             fontsize=6.8, color=INK_SOFT, ha='left', va='top')
 
     fig.text(0.04, 0.025,
              f'n = {n_total} stolar  ·  totalt {n_voxels_total} unike voksler  ·  '

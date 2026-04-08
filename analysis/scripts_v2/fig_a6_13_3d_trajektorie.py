@@ -128,12 +128,6 @@ def plot(df, g, path_length, displacement, tortuosity):
         axis.pane.set_alpha(0.4)
     ax.grid(True, color=RULE, linewidth=0.3, alpha=0.6)
 
-    fig.text(0.04, 0.95,
-             '3D-vandring gjennom morforommet, 1500–2025',
-             fontsize=9.5, color=INK, ha='left', va='top', weight='bold')
-    fig.text(0.04, 0.91,
-             'Sentroidar per 50-år, kopla i kronologisk rekkefølgje',
-             fontsize=6.8, color=INK_SOFT, ha='left', va='top')
 
     fig.text(0.04, 0.025,
              f'n = {len(df)} stolar  ·  '

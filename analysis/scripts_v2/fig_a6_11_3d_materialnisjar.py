@@ -105,12 +105,6 @@ def plot(df):
     for t in leg.get_texts():
         t.set_color(INK_SOFT)
 
-    fig.text(0.04, 0.95,
-             'Materialnisjar i 3D-morforommet',
-             fontsize=9.5, color=INK, ha='left', va='top', weight='bold')
-    fig.text(0.04, 0.91,
-             'Mahogni-stolen sit ein annan stad i geometrien enn stålstolen',
-             fontsize=6.8, color=INK_SOFT, ha='left', va='top')
 
     fig.text(0.04, 0.025,
              f'n = {len(df)} stolar med komplette dimensjonar  ·  '

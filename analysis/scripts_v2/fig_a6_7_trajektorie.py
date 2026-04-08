@@ -73,7 +73,7 @@ def plot(g, n_total, path_length, displacement, tortuosity):
     apply_style()
 
     fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.95))
-    ax = fig.add_axes([0.16, 0.15, 0.80, 0.66])
+    ax = fig.add_axes([0.16, 0.15, 0.8, 0.76])
 
     h = g['h_mean'].values
     w = g['w_mean'].values
@@ -121,12 +121,6 @@ def plot(g, n_total, path_length, displacement, tortuosity):
     for s in ('top', 'right'):
         ax.spines[s].set_visible(False)
 
-    fig.text(0.04, 0.95,
-             'Tyngdepunktet vandrar: postulatet er falsifisert',
-             fontsize=9.5, color=INK, ha='left', va='top', weight='bold')
-    fig.text(0.04, 0.90,
-             'Periodesentroidar i (Høgde × Breidde), 50-årsperiodar 1500–2050',
-             fontsize=6.8, color=INK_SOFT, ha='left', va='top')
 
     fig.text(0.04, 0.025,
              f'n = {n_total} stolar  ·  '
