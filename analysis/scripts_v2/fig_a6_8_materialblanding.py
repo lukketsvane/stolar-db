@@ -65,7 +65,7 @@ def plot(rows, n_total):
     apply_style()
 
     fig = plt.figure(figsize=fig_size(width_mm=89, ratio=1.10))
-    ax = fig.add_axes([0.32, 0.20, 0.62, 0.62])
+    ax = fig.add_axes([0.32, 0.2, 0.62, 0.72])
 
     n = len(rows)
     y = np.arange(n)[::-1]
@@ -103,12 +103,6 @@ def plot(rows, n_total):
     for s in ('top', 'right', 'left'):
         ax.spines[s].set_visible(False)
 
-    fig.text(0.04, 0.95,
-             'Norske og danske stolar blandar flest material',
-             fontsize=9.5, color=INK, ha='left', va='top', weight='bold')
-    fig.text(0.04, 0.90,
-             'Median 3 mot 2 i Italia og Storbritannia: kulturell signatur i material',
-             fontsize=6.8, color=INK_SOFT, ha='left', va='top')
 
     fig.text(0.04, 0.025,
              f'n = {n_total} stolar med material og land  ·  '

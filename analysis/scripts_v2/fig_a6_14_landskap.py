@@ -95,12 +95,6 @@ def plot(df, W, H, V):
         axis.pane.set_alpha(0.4)
     ax.grid(True, color=RULE, linewidth=0.3, alpha=0.5)
 
-    fig.text(0.04, 0.95,
-             'Tilpassingslandskapet har fleire stabile basengar',
-             fontsize=9.5, color=INK, ha='left', va='top', weight='bold')
-    fig.text(0.04, 0.91,
-             'Lyapunov-potensiale  V = −log p̂(W, H)  over alle stolar',
-             fontsize=6.8, color=INK_SOFT, ha='left', va='top')
 
     fig.text(0.04, 0.025,
              f'n = {len(df)} stolar  ·  '

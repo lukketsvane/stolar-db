@@ -87,7 +87,7 @@ def plot(overall, ci_lo, ci_hi, rows, n_total):
     # Tall narrow figure (~ book column width) — 25 bars need vertical space.
     fig = plt.figure(figsize=fig_size(width_mm=89, ratio=1.55))
     # Wider left margin for the long Norwegian style names
-    ax = fig.add_axes([0.42, 0.10, 0.55, 0.74])
+    ax = fig.add_axes([0.42, 0.1, 0.55, 0.84])
 
     n = len(rows)
     y = np.arange(n)[::-1]                         # reversed: most-negative on top
@@ -145,12 +145,6 @@ def plot(overall, ci_lo, ci_hi, rows, n_total):
             ha='center', va='bottom')
 
     # Title — sits above the gjennomsnitt label
-    fig.text(0.04, 0.94,
-             f'Berre {n_pos} av {n} stilperiodar har positiv silhuett',
-             fontsize=9.5, color=INK, ha='left', va='top', weight='bold')
-    fig.text(0.04, 0.91,
-             f'n = {n_total} stolar  ·  4 mesh-trekk z-skalert  ·  Stilperiode med ≥ 10 medlemar',
-             fontsize=6.8, color=INK_SOFT, ha='left', va='top')
 
     # Footer: 95 % CI for the overall score (well below the x-axis label)
     fig.text(0.04, 0.020,

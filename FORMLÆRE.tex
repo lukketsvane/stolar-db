@@ -159,9 +159,11 @@
 %   and the whole 15 mm slug is \llap'd into the LEFT margin so its right
 %   edge sits flush against the text-block left edge. Body text starts at
 %   the text margin and wraps there too — a perfect rectangle.
+%   The number itself is rendered in a heavier weight so it stands out
+%   against the regular body text.
 \newcommand{\prop}[3]{%
   \par\addvspace{6pt}%
-  \noindent\llap{\makebox[\propnumwidth][l]{#1\textsuperscript{\textit{#2}}}\hspace{\propnumgap}}%
+  \noindent\llap{\makebox[\propnumwidth][l]{\textbf{#1}\textsuperscript{\textit{#2}}}\hspace{\propnumgap}}%
   #3\par%
   \addvspace{2pt}%
 }
@@ -235,11 +237,22 @@
   \end{adjustwidth}%
 }
 
+% Compact body text for the appendix — smaller font, tighter line spacing.
+\newenvironment{appendixbody}{%
+  \begingroup\small\setlength{\parskip}{1.5pt plus 0.4pt}%
+  \linespread{0.95}\selectfont
+}{%
+  \endgroup
+}
+
 \begin{document}
 \frontmatter
 
 \thispagestyle{titlepage}
 \markboth{}{}
+\noindent\makebox[\textwidth]{%
+  \includegraphics[width=\textwidth]{cover-stolar.png}%
+}
 \vspace*{\fill}
 \begin{center}
   {\Huge\scshape\addfontfeature{LetterSpace=12} FORMLÆRE}
@@ -385,6 +398,7 @@ Proposisjonane er haldne opp mot eit empirisk materiale beståande av om lag 2 3
 \prop{7.8}{o}{Denne traktaten er sjølv ein posisjon i eit intellektuelt formrom, under eit sett av seleksjonstrykk. Om nokon viser at eitt einaste seleksjonstrykk er tilstrekkeleg til å forklare all formvariasjon for ein funksjonell klasse, fell proposisjon 2, og med det kollapsar den logiske kjeden (2.4, 3.2, 6.1, 7.1). At teksten kan fellast, er garantien for hennar gyldigheit.}
 \appendix
 \silentchapter{Formell spesifikasjon}{formell spesifikasjon}
+\begin{appendixbody}
 \prop{A.1}{}{Notasjon}
 \addcontentsline{toc}{section}{A.1 Notasjon}
 \prop{c}{}{ein klasse}
@@ -533,6 +547,7 @@ Wasserstein-distansen mellom suksessive 50-årsperiodar gjev mean 14,4 cm for h�
   \centering
   \includegraphics[width=\linewidth]{fig-A.6.14-landskap.pdf}
 \end{figure}
+\end{appendixbody}
 \backmatter
 \silentchapter{Etterord}{etterord}
 \begin{widebody}

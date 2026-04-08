@@ -201,9 +201,11 @@ PREAMBLE = r"""\documentclass[10pt,oneside]{book}
 %   and the whole 15 mm slug is \llap'd into the LEFT margin so its right
 %   edge sits flush against the text-block left edge. Body text starts at
 %   the text margin and wraps there too — a perfect rectangle.
+%   The number itself is rendered in a heavier weight so it stands out
+%   against the regular body text.
 \newcommand{\prop}[3]{%
   \par\addvspace{6pt}%
-  \noindent\llap{\makebox[\propnumwidth][l]{#1\textsuperscript{\textit{#2}}}\hspace{\propnumgap}}%
+  \noindent\llap{\makebox[\propnumwidth][l]{\textbf{#1}\textsuperscript{\textit{#2}}}\hspace{\propnumgap}}%
   #3\par%
   \addvspace{2pt}%
 }
@@ -275,6 +277,14 @@ PREAMBLE = r"""\documentclass[10pt,oneside]{book}
   \begin{adjustwidth}{-16mm}{0mm}%
 }{%
   \end{adjustwidth}%
+}
+
+% Compact body text for the appendix — smaller font, tighter line spacing.
+\newenvironment{appendixbody}{%
+  \begingroup\small\setlength{\parskip}{1.5pt plus 0.4pt}%
+  \linespread{0.95}\selectfont
+}{%
+  \endgroup
 }
 
 \begin{document}
@@ -540,12 +550,20 @@ def convert(doc: 'Document') -> str:
                 i += 1
                 continue
 
-        # Title page — vertically and horizontally centred. No header at all
-        # (uses the special "titlepage" pagestyle which suppresses everything).
+        # Title page — cover image at the top, then vertically centred
+        # title + subtitle. No header at all (uses the "titlepage" style).
         if style == 'Title':
             out.append(r'\thispagestyle{titlepage}')
             out.append(r'\markboth{}{}')
-            out.append(r'\vspace*{\fill}')
+            # Cover image — full text-width, on top
+            cover_path = FIG_DIR / 'cover-stolar.png'
+            if cover_path.exists():
+                out.append(r'\noindent\makebox[\textwidth]{%')
+                out.append(r'  \includegraphics[width=\textwidth]{cover-stolar.png}%')
+                out.append(r'}')
+                out.append(r'\vspace*{\fill}')
+            else:
+                out.append(r'\vspace*{\fill}')
             out.append(r'\begin{center}')
             out.append(r'  {\Huge\scshape\addfontfeature{LetterSpace=12} ' + escape_latex(text) + '}')
             i += 1
@@ -604,6 +622,10 @@ def convert(doc: 'Document') -> str:
                         out.append(r'  \includegraphics[width=\linewidth]{' +
                                    ex_fig + '}')
                         out.append(r'\end{figure}')
+                # Close the compact appendix body environment before leaving
+                if in_appendix:
+                    out.append(r'\end{appendixbody}')
+                    in_appendix = False
                 out.append(r'\backmatter')
                 out.append(r'\silentchapter{' + escape_latex(text) + '}{' + running_head(text) + '}')
                 out.append(r'\begin{widebody}')
@@ -657,6 +679,7 @@ def convert(doc: 'Document') -> str:
         if text.startswith('A  Formell') or text.startswith('A Formell'):
             out.append(r'\appendix')
             out.append(r'\silentchapter{Formell spesifikasjon}{formell spesifikasjon}')
+            out.append(r'\begin{appendixbody}')
             in_appendix = True
             i += 1
             continue
@@ -671,6 +694,7 @@ def convert(doc: 'Document') -> str:
             if not in_appendix:
                 out.append(r'\appendix')
                 out.append(r'\silentchapter{Formell spesifikasjon}{formell spesifikasjon}')
+                out.append(r'\begin{appendixbody}')
                 in_appendix = True
             out.append(r'\prop{' + escape_latex(label) + '}{}{' + escape_latex(rest) + '}')
             out.append(r'\addcontentsline{toc}{subsection}{' + escape_latex(label + ' ' + rest) + '}')
@@ -696,6 +720,7 @@ def convert(doc: 'Document') -> str:
             if not in_appendix:
                 out.append(r'\appendix')
                 out.append(r'\silentchapter{Formell spesifikasjon}{formell spesifikasjon}')
+                out.append(r'\begin{appendixbody}')
                 in_appendix = True
             out.append(r'\prop{' + escape_latex(label) + '}{}{' + escape_latex(rest) + '}')
             out.append(r'\addcontentsline{toc}{section}{' + escape_latex(label + ' ' + rest) + '}')

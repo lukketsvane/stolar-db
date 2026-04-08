@@ -74,7 +74,7 @@ def plot(rows, spread):
     apply_style()
 
     fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.85))
-    ax = fig.add_axes([0.30, 0.20, 0.66, 0.62])
+    ax = fig.add_axes([0.3, 0.2, 0.66, 0.72])
 
     n = len(rows)
     y = np.arange(n)[::-1]
@@ -126,12 +126,6 @@ def plot(rows, spread):
     for s in ('top', 'right', 'left'):
         ax.spines[s].set_visible(False)
 
-    fig.text(0.04, 0.95,
-             f'Variasjonen spreier seg over {spread:.0f}×: to storleiksordnar',
-             fontsize=9.5, color=INK, ha='left', va='top', weight='bold')
-    fig.text(0.04, 0.90,
-             'Sphericity er det mest kanaliserte trekket; hylster-volum det friaste',
-             fontsize=6.8, color=INK_SOFT, ha='left', va='top')
 
     fig.text(0.04, 0.025,
              f'n = {rows[0]["n"]} stolar med komplette mesh-trekk  ·  '

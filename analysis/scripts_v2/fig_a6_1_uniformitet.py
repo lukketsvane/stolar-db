@@ -92,7 +92,7 @@ def plot(rows, n_total, n_styles, n_mats):
     apply_style()
 
     fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.95))
-    ax = fig.add_axes([0.18, 0.20, 0.78, 0.62])
+    ax = fig.add_axes([0.18, 0.2, 0.78, 0.72])
 
     n_rows = len(rows)
     y = np.arange(n_rows)[::-1]
@@ -147,12 +147,6 @@ def plot(rows, n_total, n_styles, n_mats):
     for t in leg.get_texts():
         t.set_color(INK_SOFT)
 
-    fig.text(0.04, 0.95,
-             'Stilperiode slår materiale på alle fire dimensjonar',
-             fontsize=9.5, color=INK, ha='left', va='top', weight='bold')
-    fig.text(0.04, 0.90,
-             f'n = {n_total} stolar  ·  {n_styles} stilperiodar  ·  {n_mats} materialgrupper',
-             fontsize=6.8, color=INK_SOFT, ha='left', va='top')
 
     fig.text(0.04, 0.025,
              'Multiplikatoren til høgre = stil/materiale-forhold; større enn 1 betyr at stilperiode forklarer meir',

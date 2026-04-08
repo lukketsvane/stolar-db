@@ -49,7 +49,7 @@ def plot(g, n_total):
     apply_style()
 
     fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.78))
-    ax = fig.add_axes([0.13, 0.20, 0.83, 0.62])
+    ax = fig.add_axes([0.13, 0.2, 0.83, 0.72])
 
     periods = g['period25'].values
     fracs   = g['frac'].values
@@ -97,12 +97,6 @@ def plot(g, n_total):
     for s in ('top', 'right'):
         ax.spines[s].set_visible(False)
 
-    fig.text(0.04, 0.95,
-             'Mahogni-låsing i norske stolar, 1825–1849',
-             fontsize=9.5, color=INK, ha='left', va='top', weight='bold')
-    fig.text(0.04, 0.90,
-             'Frå null mahogni i førre periode (1750–1799) til 100 % i éin generasjon',
-             fontsize=6.8, color=INK_SOFT, ha='left', va='top')
 
     fig.text(0.04, 0.025,
              f'n = {n_total} norske stolar  ·  '

@@ -121,13 +121,6 @@ def plot(pair_starts, summary, n_total):
         for s in ('top', 'right'):
             ax.spines[s].set_visible(False)
 
-    fig.text(0.04, 0.95,
-             'Ingen periodepar er statistisk like: stase er falsifisert',
-             fontsize=9.5, color=INK, ha='left', va='top', weight='bold')
-    fig.text(0.04, 0.90,
-             f'Wasserstein-1 distanse mellom 50-årsperiodar (1500–2050)  ·  '
-             f'10 periodepar',
-             fontsize=6.8, color=INK_SOFT, ha='left', va='top')
 
     fig.text(0.04, 0.025,
              f'n = {n_total} stolar  ·  Stipla horisontal linje = «inga rørsle» (0,5 cm)',
