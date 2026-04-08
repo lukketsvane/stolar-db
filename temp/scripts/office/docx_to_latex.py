@@ -285,15 +285,6 @@ PREAMBLE = r"""\documentclass[10pt,oneside]{book}
   \end{adjustwidth}%
 }
 
-% Compact body text for the appendix — smaller font, tight line spacing,
-% small inter-paragraph gap so each A.6.x entry is dense and short.
-\newenvironment{appendixbody}{%
-  \begingroup\footnotesize\setlength{\parskip}{0.6pt plus 0.2pt}%
-  \linespread{0.92}\selectfont
-}{%
-  \endgroup
-}
-
 % Full-bleed cover page support — image at exact paper size, title overlaid.
 \usepackage{tikz}
 \usetikzlibrary{positioning}
@@ -742,9 +733,7 @@ def convert(doc: 'Document') -> str:
                         out.append(r'\end{figure}')
                     out.append(escape_latex(ex_body))
                     out.append('')
-                # Close the compact appendix body environment before leaving
                 if in_appendix:
-                    out.append(r'\end{appendixbody}')
                     in_appendix = False
                 out.append(r'\backmatter')
                 out.append(r'\silentchapter{' + escape_latex(text) + '}{' + running_head(text) + '}')
@@ -760,8 +749,12 @@ def convert(doc: 'Document') -> str:
                 out.append(r'\begin{widebody}')
                 out.append(r'\begin{ordliste}')
                 in_widebody = True
+            elif text == 'Føreord':
+                # Føreord also fills the full content width
+                out.append(r'\silentchapter{' + escape_latex(text) + '}{' + running_head(text) + '}')
+                out.append(r'\begin{widebody}')
+                in_widebody = True
             else:
-                # Føreord — cut centred title, keep header
                 out.append(r'\silentchapter{' + escape_latex(text) + '}{' + running_head(text) + '}')
             in_glossary = (text == 'Ordliste')
             in_referansar = (text == 'Referansar')
@@ -771,6 +764,13 @@ def convert(doc: 'Document') -> str:
         # Chapter-level proposition (1, 2, 3, ..., 7) — same visual format as
         # any other proposition; only the TOC entry and running header differ.
         if text in CHAPTER_TITLES:
+            # Close any open glossary/widebody before starting the main matter
+            if in_glossary:
+                out.append(r'\end{ordliste}')
+                in_glossary = False
+            if in_widebody:
+                out.append(r'\end{widebody}')
+                in_widebody = False
             if not first_chapter_seen:
                 out.append(r'\mainmatter')
                 first_chapter_seen = True
@@ -805,7 +805,6 @@ def convert(doc: 'Document') -> str:
         if text.startswith('A  Formell') or text.startswith('A Formell'):
             out.append(r'\appendix')
             out.append(r'\silentchapter{Formell spesifikasjon}{formell spesifikasjon}')
-            out.append(r'\begin{appendixbody}')
             in_appendix = True
             i += 1
             continue
@@ -820,7 +819,6 @@ def convert(doc: 'Document') -> str:
             if not in_appendix:
                 out.append(r'\appendix')
                 out.append(r'\silentchapter{Formell spesifikasjon}{formell spesifikasjon}')
-                out.append(r'\begin{appendixbody}')
                 in_appendix = True
             # Force the first A.6.x entry to start on a fresh page so the
             # empirical results section opens cleanly after the definitions.
@@ -851,7 +849,6 @@ def convert(doc: 'Document') -> str:
             if not in_appendix:
                 out.append(r'\appendix')
                 out.append(r'\silentchapter{Formell spesifikasjon}{formell spesifikasjon}')
-                out.append(r'\begin{appendixbody}')
                 in_appendix = True
             out.append(r'\prop{' + escape_latex(label) + '}{}{' + escape_latex(rest) + '}')
             out.append(r'\addcontentsline{toc}{section}{' + escape_latex(label + ' ' + rest) + '}')

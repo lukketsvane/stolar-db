@@ -243,15 +243,6 @@
   \end{adjustwidth}%
 }
 
-% Compact body text for the appendix — smaller font, tight line spacing,
-% small inter-paragraph gap so each A.6.x entry is dense and short.
-\newenvironment{appendixbody}{%
-  \begingroup\footnotesize\setlength{\parskip}{0.6pt plus 0.2pt}%
-  \linespread{0.92}\selectfont
-}{%
-  \endgroup
-}
-
 % Full-bleed cover page support — image at exact paper size, title overlaid.
 \usepackage{tikz}
 \usetikzlibrary{positioning}
@@ -275,6 +266,7 @@
 \silentchapter{Innhald}{innhald}
 \tableofcontents
 \silentchapter{Føreord}{føreord}
+\begin{widebody}
 \begin{overgang}Kvifor har ting den forma dei har?\end{overgang}
 Svaret dei fleste designteoretiske tekstar gjev, er ein variant av Louis Sullivans «form follows function». Jan Michl har brukt det meste av ein akademisk karriere på å vise at dette svaret er feil. Ikkje berre upresist, men aktivt villfartande. Form følgjer ikkje funksjon. Form følgjer form. Kvar ny gjenstand er ein modifikasjon av ein eksisterande gjenstand, gjort av nokon som arbeider innanfor avgrensa moglegheiter og med avgrensa kunnskap om kva dei gjer. Michl rydda grunnen grundigare enn nokon før han. Han viste at den funksjonalistiske doktrinen ikkje berre var upresis, men at ho hindra oss i å sjå korleis formgjeving faktisk verkar.
 
@@ -287,6 +279,7 @@ Kva rammeverket ikkje kan seie. Traktaten handlar om posisjonar og krefter, ikkj
 Wittgenstein skriv at den som forstår han, erkjenner at setningane hans er meiningslause, og kastar stigen etter å ha klatra opp. Min stige er meir beskjeden: proposisjonane i denne traktaten er nyttige berre dersom formgjevaren, etter å ha lese dei, kan legge dei frå seg og navigere landskapet med same intuisjon som før, men no med ei forståing av kvifor intuisjonen verkar. Rammeverket skal ikkje erstatte handverket. Det skal vise handverket kva det allereie gjer. Dersom eg ikkje tek feil i dette, så har eg sagt noko om form som var sant før eg sa det, og som vil vere sant etter at desse orda er gløymd.
 
 \begin{overgang}Oslo, 2026\end{overgang}
+\end{widebody}
 \silentchapter{Ordliste}{ordliste}
 \begin{widebody}
 \begin{ordliste}
@@ -309,6 +302,8 @@ Wittgenstein skriv at den som forstår han, erkjenner at setningane hans er mein
 Proposisjonane er haldne opp mot eit empirisk materiale beståande av om lag 2 300 europeiske stolar (1280–2024) frå Nasjonalmuseet og Victoria and Albert Museum. Tala tener som illustrasjonar, ikkje som premissar.
 
 \ordlisteentry{Kvar proposisjon er utstyrt med ein superscript som indikerer logisk status}{d = definisjon, a = postulat, t = teorem, o = observasjon, i = illustrasjon. Kvart postulat er knytt til eit eksplisitt falsifiseringsvilkår. Michl har demonstrert at «form følgjer funksjon» kollapsa fordi formelen var logisk utilgjengeleg for falsifisering. Denne traktaten lukkast berre i den grad ho let seg fei}
+\end{ordliste}
+\end{widebody}
 \mainmatter
 \clearpage
 \addcontentsline{toc}{chapter}{1 Form er ein posisjon i eit rom av moglegheiter}
@@ -411,7 +406,6 @@ Proposisjonane er haldne opp mot eit empirisk materiale beståande av om lag 2 3
 \prop{7.8}{o}{Denne traktaten er sjølv ein posisjon i eit intellektuelt formrom, under eit sett av seleksjonstrykk. Om nokon viser at eitt einaste seleksjonstrykk er tilstrekkeleg til å forklare all formvariasjon for ein funksjonell klasse, fell proposisjon 2, og med det kollapsar den logiske kjeden (2.4, 3.2, 6.1, 7.1). At teksten kan fellast, er garantien for hennar gyldigheit.}
 \appendix
 \silentchapter{Formell spesifikasjon}{formell spesifikasjon}
-\begin{appendixbody}
 \prop{A.1}{}{Notasjon}
 \addcontentsline{toc}{section}{A.1 Notasjon}
 \prop{c}{}{ein klasse}
@@ -519,7 +513,6 @@ Wasserstein-distansen mellom suksessive 50-årsperiodar gjev mean 14,4 cm for h�
   \centering
   \includegraphics[width=\linewidth]{fig-A.6.7-trajektorie.pdf}
 \end{figure}
-\end{widebody}
 \prop{A.6.8}{}{Materiell kompleksitet per nasjon (5.3)}
 \addcontentsline{toc}{subsection}{A.6.8 Materiell kompleksitet per nasjon (5.3)}
 \begin{figure}[H]
@@ -592,7 +585,6 @@ Symmetrisk avstandsmatrise over alle 25-årsperiodar i (H, B, D)-rommet. Mørke 
 \end{figure}
 KDE-tettleiken p̂(B, H) over alle stolar har to klare lokale maksimum: éin ved (B = 50, H = 91) — den tradisjonelle høgrygga stolen — og éin ved (B = 50, H = 45) — den lågare modernistiske stolen. Dei tomme dalane mellom toppane er forbodne regionar i morforommet, ein direkte falsifisering av uniform fordeling og støtte til proposisjon 3.2.
 
-\end{appendixbody}
 \backmatter
 \silentchapter{Etterord}{etterord}
 \begin{widebody}
