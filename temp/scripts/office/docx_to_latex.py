@@ -40,18 +40,21 @@ BUILD_DIR = ROOT / 'build_latex'
 
 # ── LaTeX preamble ────────────────────────────────────────────────────────────
 
-PREAMBLE = r"""\documentclass[10pt,twoside]{book}
+PREAMBLE = r"""\documentclass[10pt,oneside]{book}
 
 % Page geometry — 125 × 200 mm (Gyldendal 1999 Tractatus format).
-% twoside: inner margin (gutter) slightly wider than outer.
+% Wide LEFT margin holds the proposition numbers (marginal numbering style):
+% numbers are \llap'd into this margin so the body text block is a clean
+% rectangle with all lines (including continuation) flush left at the body
+% column. Right margin is narrow (no marginalia on the right).
 % Top includes the running header band; footskip minimal (no footer text).
 \usepackage[
   paperwidth=125mm,
   paperheight=200mm,
   top=20mm,
   bottom=18mm,
-  inner=18mm,
-  outer=13mm,
+  left=28mm,
+  right=12mm,
   headheight=12pt,
   headsep=6mm,
   footskip=8mm,
@@ -106,19 +109,19 @@ PREAMBLE = r"""\documentclass[10pt,twoside]{book}
 \renewcommand{\thechapter}{}
 
 % Running headers — chapter title at left, page number at right, thin rule.
-% Same layout on EVERY page (twoside layout but uniform header position).
+% oneside layout: same header on every page (no recto/verso distinction).
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[LE,LO]{\small\scshape\leftmark}  % chapter title at left on all pages
-\fancyhead[RE,RO]{\small\thepage}           % page number at right on all pages
+\fancyhead[L]{\small\scshape\leftmark}  % chapter title at left on all pages
+\fancyhead[R]{\small\thepage}           % page number at right on all pages
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0pt}
 % plain style (chapter-opening pages): same header, no footer
 \fancypagestyle{plain}{
   \fancyhf{}
-  \fancyhead[LE,LO]{\small\scshape\leftmark}
-  \fancyhead[RE,RO]{\small\thepage}
+  \fancyhead[L]{\small\scshape\leftmark}
+  \fancyhead[R]{\small\thepage}
   \renewcommand{\headrulewidth}{0.4pt}
   \renewcommand{\footrulewidth}{0pt}
 }
@@ -132,33 +135,39 @@ PREAMBLE = r"""\documentclass[10pt,twoside]{book}
 % ─── Proposition environment ──────────────────────────────────────────────
 %
 % \prop{1.21}{d}{Body text...}
-%   ⇒  number column ~22 mm, body column starts at 22 mm, body wraps to 22 mm
+%   ⇒  number sits in the LEFT MARGIN (\llap'd outside the text block);
+%      body text fills the entire text block as a clean justified rectangle;
+%      continuation lines wrap to the body column (= text margin).
+%
+% This is the Gyldendal 1999 Tractatus / Töpfer marginal-numbering layout:
+% the body text is a single uniform column and the proposition numbers hang
+% out into the white space to the left.
 %
 % Numbers in the digibok appear in the same weight as the body (regular,
 % not bold). The status letter is rendered as an italic superscript right
-% after the number. Body text is justified (matches the digibok where the
-% column is wide enough to support clean justification).
+% after the number.
 \usepackage{calc}
 \newlength{\propnumwidth}
-\setlength{\propnumwidth}{13mm}  % measured from digibok: ~11-13 mm
+\setlength{\propnumwidth}{13mm}  % column reserved for the number itself
+\newlength{\propnumgap}
+\setlength{\propnumgap}{2mm}     % gap between number column and body text
 
 % \prop{num}{status}{body}
-%   All proposition numbers sit at the same left column regardless of depth,
-%   matching the Gyldendal 1999 Tractatus layout (digibok reference).
-%   Body text starts at \propnumwidth from the text margin.
+%   The number is placed in a left-aligned 13 mm box, then a 2 mm gap,
+%   and the whole 15 mm slug is \llap'd into the LEFT margin so its right
+%   edge sits flush against the text-block left edge. Body text starts at
+%   the text margin and wraps there too — a perfect rectangle.
 \newcommand{\prop}[3]{%
-  \par\addvspace{8pt}%
-  {\setlength{\leftskip}{\propnumwidth}%
-   \setlength{\parindent}{-\propnumwidth}%
-   \noindent\makebox[\propnumwidth][l]{#1\textsuperscript{\textit{#2}}}#3\par}%
-  \addvspace{4pt}%
+  \par\addvspace{6pt}%
+  \noindent\llap{\makebox[\propnumwidth][l]{#1\textsuperscript{\textit{#2}}}\hspace{\propnumgap}}%
+  #3\par%
+  \addvspace{2pt}%
 }
 
-% Continuation paragraph — same body indent regardless of prop depth.
+% Continuation paragraph — plain paragraph at the body column (no number).
 \newcommand{\propcont}[1]{%
-  \par\addvspace{4pt}%
-  {\setlength{\leftskip}{\propnumwidth}%
-   \noindent#1\par}%
+  \par\addvspace{3pt}%
+  \noindent #1\par%
 }
 
 % Italic transition between chapters
@@ -189,10 +198,10 @@ PREAMBLE = r"""\documentclass[10pt,twoside]{book}
 }
 \usepackage{float}
 
-% Formula display blocks (for D4, D6, etc.) — monospace, indented
+% Formula display blocks (for D4, D6, etc.) — monospace, small left indent
 \newenvironment{formelblokk}{%
   \par\addvspace{4pt}%
-  \begingroup\ttfamily\small\leftskip=\propnumwidth\noindent
+  \begingroup\ttfamily\small\leftskip=4mm\noindent
 }{%
   \endgroup\par\addvspace{4pt}%
 }
