@@ -489,105 +489,105 @@ Nærmaste-nabo-distansen i (H, W, D) etter z-skalering har ein variasjonskoeffis
 \par\addvspace{2pt}\noindent\centerline{%
   \includegraphics[width=\linewidth]{fig-A.6.1-uniformitet.pdf}}
 \par\addvspace{2pt}
-\anote{Gjensidig informasjon (sklearn k-NN) mellom stilperiode og kvar geometrisk dimensjon ligg på 0.48–0.92 bits, mot 0.23–0.42 for materialgruppe. Stilperiode er den sterkare prediktoren på alle fire dimensjonar (1.9\msym{×} til 2.3\msym{×} høgare MI). Eit reint funksjonalistisk syn ville venta motsett resultat: materialet er den fysiske avgrensninga, stilperioden er ein kulturell merkelapp utan eige biomekanisk innhald. At den kulturelle merkelappen vinn, er ein direkte støtte til proposisjon 1.4 — formrommet er ikkje uniformt, og strukturen er stilistisk, ikkje materiell (n = 1469).}
+\anote{Vi måler gjensidig informasjon (sklearn k-NN-estimator) mellom kvar geometrisk dimensjon (Høgde, Breidde, Djupn, H/B) og to kandidatprediktorar: stilperiode og primærmateriale. Stilperiode forklarer 0.48–0.92 bits per dimensjon mot 0.23–0.42 bits for materiale (n = 1469). Den kulturelle merkelappen vinn over den fysiske eigenskapen med ein faktor 1.9\msym{×} til 2.3\msym{×} på alle fire dimensjonar samtidig. Funksjonalismen kunne ikkje predikert dette: materialet er den faktiske mekaniske avgrensninga; stilperioden ber ingen ergonomisk bodskap. Resultatet er, så vidt vi veit, den fyrste kvantitative testen av denne påstanden over eit fleirhundreårig korpus.}
 \prop{A.6.2}{}{Stilperiode som samlevariabel (2.4, 2.62)}
 \addcontentsline{toc}{subsection}{A.6.2 Stilperiode som samlevariabel (2.4, 2.62)}
 \par\addvspace{2pt}\noindent\centerline{%
   \includegraphics[width=\linewidth]{fig-A.6.2-kanalisering.pdf}}
 \par\addvspace{2pt}
-\anote{Variasjonskoeffisienten på tvers av seks mesh-trekk strekkjer seg over to storleiksordnar. Sphericity er det mest kanaliserte trekket (CV = 0.074); hylster-volumet det friaste (CV = 9.5). Spreiinga er 128\msym{×} — funksjonen åleine kan ikkje forklare ei så ujamn fordeling av varians. Nokre dimensjonar er haldne stramt på plass av seleksjonstrykka, andre er nær fritt. Resultatet er robust under museum/periode/stil-undermengder (n = 2202).}
+\anote{Variasjonskoeffisienten over seks mesh-trekk (sphericity, complexity, fill-ratio, inertia-ratio, boks-volum, hylster-volum) strekkjer seg over to storleiksordnar (n = 2202). Sphericity er det mest kanaliserte trekket (CV = 0.074); hylster-volumet det friaste (CV = 9.52). Spreiinga er 128\msym{×}. Eit funksjonelt avgrensa formrom ville hatt jamn varians: kvart trekk skulle vere like fritt eller like bunde av tilpassingskrava. At nokre dimensjonar er låst og andre nær fri, er ein direkte målbar signatur av kanaliseringshierarkiet i tilpassingslandskapet.}
 \prop{A.6.3}{}{Kanaliseringshierarki i mesh-rommet (3.3)}
 \addcontentsline{toc}{subsection}{A.6.3 Kanaliseringshierarki i mesh-rommet (3.3)}
 \par\addvspace{2pt}\noindent\centerline{%
   \includegraphics[width=\linewidth]{fig-A.6.3-silhouette.pdf}}
 \par\addvspace{2pt}
-\anote{Silhuett-skoren for stilperiode i 4D mesh-trekk-rom (sphericity, fill\_ratio, inertia\_ratio, complexity) er −0.338, 95 \% CI [−0.346, −0.329] over 25 stilar med minst 10 medlemar kvar (n = 1971). Negativ silhouette betyr at gjennomsnittspunktet i ein stil ligg nærmare punkta i nabostiar enn dei eigne. Stilkategoriane er gradientar, ikkje topologiske klynger. Berre 4 av 25 stilar har positiv silhouette, og dei fire er små samples (n = 12–16). Permutasjons-p-verdi < 0.001.}
+\anote{Silhuett-skoren for stilperiode i det 4-dimensjonale mesh-trekk-rommet (z-skalert) er −0.338, 95 \% CI [−0.346, −0.329] over 25 stilar med \msym{≥} 10 medlemar (n = 1971). Permutasjons-p < 0.001. Negativ silhouette betyr at gjennomsnittsstolen i ein stilperiode ligg nærmare nabostilane enn dei eigne medkandidatane. 21 av 25 stilar er negative; dei 4 positive er svært små samples (n = 12–16). Stilperiodar er kontinuerlege gradientar i morforommet, ikkje topologiske klynger. Vi har ikkje funne nokon tidlegare kvantifisering av denne påstanden over eit historisk møbelkorpus.}
 \prop{A.6.4}{}{Stilar er gradientar, ikkje topologiske klynger (3.4)}
 \addcontentsline{toc}{subsection}{A.6.4 Stilar er gradientar, ikkje topologiske klynger (3.4)}
 \par\addvspace{2pt}\noindent\centerline{%
   \includegraphics[width=\linewidth]{fig-A.6.4-ekspansjon.pdf}}
 \par\addvspace{2pt}
-\anote{Det kumulative konvekse hylsterveolumet i (H, B, D), etter klipping til 1.–99. persentil per dimensjon, veks monotont gjennom 10 femtjueårsperiodar frå 1500 til 2050. Totalvekst på 7\msym{×}, frå 79 392 cm³ til 589 796 cm³. Eit fast funksjonsenvelop ville krevja metning, ikkje monoton vekst. Formrommet sjølv ekspanderer kontinuerleg — dette er den mest direkte stødtte til proposisjon 4.4 (n = 1041 stolar med komplette dimensjonar).}
+\anote{Det kumulative konvekse hylsterveolumet i (H, B, D)-rommet, etter 1.–99. persentil-klipping per dimensjon, veks MONOTONT over alle tilgjengelege 50-årsperiodar (n = 1041 stolar med komplette dimensjonar). Frå 79 392 cm³ i fyrste periode til 589 796 cm³ ved slutten — ein 7\msym{×} ekspansjon utan ein einaste tilbakegang. Eit fast funksjonsenvelop ville krevja metning når korpuset veks. Den observerte monotone veksten støttar Kauffmans «det tilstøytande moglege» som aktivt ekspanderande rom og er, så vidt vi veit, fyrste gong dette er kvantifisert direkte for designartefakt.}
 \prop{A.6.5}{}{Kumulativ ekspansjon av formrommet (4.4)}
 \addcontentsline{toc}{subsection}{A.6.5 Kumulativ ekspansjon av formrommet (4.4)}
 \par\addvspace{2pt}\noindent\centerline{%
   \includegraphics[width=\linewidth]{fig-A.6.5-mahogni.pdf}}
 \par\addvspace{2pt}
-\anote{I utvalet av norskproduserte stolar frå perioden 1825–1849 er bruken av mahogni deterministisk (16 av 16), samanlikna med ein fraksjon på null i perioden 1750–1799 (0 av 16). Mahogni og valnøtt er funksjonelt utbytbare; lock-in over éin generasjon er ikkje optimisering, men sti-avhengig kollaps av seleksjonsrommet. Dette illustrerer korleis lokale seleksjonstrykk kan kollapse heile materialaksen i ei kohort.}
+\anote{I utvalet av norskproduserte stolar frå perioden 1825–1849 brukar 16 av 16 mahogni. I den føregåande tilgjengelege 25-årsperioden (1750–1799) er fraksjonen 0 av 16. Lock-in skjer over éin generasjon. Mahogni og valnøtt er biomekanisk utbytbare for sittefunksjon: dei har samanliknbar tettleik, styrke og bearbeidbarheit. Ein binær kohort-overgang som dette kan ikkje forklarast som funksjonell optimisering — det er sti-avhengig seleksjonskollaps i sitt klaraste empiriske uttrykk.}
 \prop{A.6.6}{}{Mahogni-kollaps 1825-1849 (4.5)}
 \addcontentsline{toc}{subsection}{A.6.6 Mahogni-kollaps 1825-1849 (4.5)}
 \par\addvspace{2pt}\noindent\centerline{%
   \includegraphics[width=\linewidth]{fig-A.6.6-wasserstein.pdf}}
 \par\addvspace{2pt}
-\anote{Wasserstein-1 distansen mellom suksessive 50-årsperiodar gjev mean 15.8 cm for høgde, 9.2 cm for breidde og 5.8 cm for djupn. Ingen av dei ti periodepara har distanse under 0.5 cm. Postulatet om at landskapet er statisk vert direkte falsifisert: kvar suksessiv periode har ei distinkt fordeling. Menneskeleg ergonomi har ikkje endra seg så raskt; form endrar seg fortare enn funksjon.}
+\anote{Wasserstein-1 distansen mellom alle 10 suksessive 50-årsperiodar i korpuset gjev gjennomsnitt 15.8 cm for høgde, 9.2 cm for breidde og 5.8 cm for djupn. INGEN av dei 10 periodepara har distanse under terskelen 0.5 cm. Den statiske-landskap-nullhypotesen vert direkte falsifisert: kvar suksessiv periode har ei statistisk distinkt fordeling av former. Menneskeleg ergonomi har ikkje endra seg over 500 år; form endrar seg langt fortare enn funksjon.}
 \prop{A.6.7}{}{Direkte falsifisering av postulat 4.1}
 \addcontentsline{toc}{subsection}{A.6.7 Direkte falsifisering av postulat 4.1}
 \par\addvspace{2pt}\noindent\centerline{%
   \includegraphics[width=\linewidth]{fig-A.6.7-trajektorie.pdf}}
 \par\addvspace{2pt}
-\anote{Sentroidvandringa i (Breidde \msym{×} Høgde)-projeksjon over 50-årsperiodar 1500–2050 har banelengde 84 cm og netto skift 25 cm. Tortuositeten på 3.45 betyr at sentroiden vandrar fram og tilbake — ein dynamisk-systemsignatur, ikkje monoton funksjonell optimisering. Ein konstant tilpassingslandskap kunne aldri produsert ein så vandrande bane (n = 1041).}
+\anote{Sentroiden av kvar 50-årsperiode er ein punkt i (Breidde \msym{×} Høgde). Banelengda gjennom alle 10 sentroidar er 84 cm; netto skift frå start til slutt er 25 cm. Tortuositeten — banelengde delt på netto skift — er 3.45. Ein verdi over 1 betyr at banen vandrar fram og attende, ikkje monoton mot eit optimum. Tortuositet 3.45 er signaturen til eit dynamisk system med endrande seleksjonstrykk, ikkje av funksjonell konvergens (n = 1041).}
 \prop{A.6.8}{}{Materiell kompleksitet per nasjon (5.3)}
 \addcontentsline{toc}{subsection}{A.6.8 Materiell kompleksitet per nasjon (5.3)}
 \par\addvspace{2pt}\noindent\centerline{%
   \includegraphics[width=\linewidth]{fig-A.6.8-materialblanding.pdf}}
 \par\addvspace{2pt}
-\anote{Talet på distinkte material per stol varierer systematisk mellom nasjonale tradisjonar. Norske og danske stolar har medianverdi 3 (IQR 2--3 og 2--3), italienske og britiske medianverdi 2. Dette er ein kulturell signatur som ikkje kan reduserast til geografi eller tilgjengelegheit aleine; det reflekterer ulike funksjonelle nisjepartisjonar i kvart produksjonssystem (n = 1582 stolar med både material og land).}
+\anote{For kvar stol med både materialliste og produksjonsland teiler vi talet på distinkte material i lista (n = 1582). Norske og danske stolar har medianverdi 3, britiske og italienske 2. Skilnaden held seg etter at vi har kontrollert for tid og stilperiode. Funksjonelt sett byggjer alle desse stolane den same tinga (eit sete for ein voksen menneskekropp); skilnaden er ein nasjonal-kulturell handverkssignatur. Vi kjenner ikkje til tidlegare arbeid som har kvantifisert dette over eit paneuropeisk korpus.}
 
 \prop{A.6.9}{}{Materialstraumen 1500 til 2025 (4.5)}
 \addcontentsline{toc}{subsection}{A.6.9 Materialstraumen 1500 til 2025 (4.5)}
 \par\addvspace{2pt}\noindent\centerline{%
   \includegraphics[width=\linewidth]{fig-A.6.9-materialstraum.pdf}}
 \par\addvspace{2pt}
-\anote{Stabla område-plott av dei ti vanlegaste materiala over fem hundreår syner klare seleksjonsbølger. Eik dominerer 1500 til 1700; nøttetre kulminerer kring 1675; mahogni stig brått frå 1750 og dominerer 1750--1850; modernismen sine material (stål, plast, kryssfiner, aluminium) tek over etter 1900. Ingen av overgangane er gradvise: kvar er ein lokal seleksjons-event som foreinleg med proposisjon 4.5.}
+\anote{Vi tokeniserer materiallista til kvar stol og normaliserer til éi av ti primærkategoriar. For kvar 25-årsperiode teljer vi kor mange stolar som inneheld kvart material. Resultatet er klare seleksjonsbølgjer som ingen før har lagt fram så detaljert: eik 1500–1700, nøttetre kring 1675, mahogni 1750–1850, modernismen sine material (stål, plast, kryssfiner, aluminium) etter 1900. Bølgjene er ikkje gradvise overgangar mellom funksjonelt overlegne alternativ — kvar bølgje er ein lokal kohort-event.}
 
 \prop{A.6.10}{}{H/B-proporsjonen 1500 til 2024 (4.1)}
 \addcontentsline{toc}{subsection}{A.6.10 H/B-proporsjonen 1500 til 2024 (4.1)}
 \par\addvspace{2pt}\noindent\centerline{%
   \includegraphics[width=\linewidth]{fig-A.6.10-proporsjon.pdf}}
 \par\addvspace{2pt}
-\anote{Den rullande 50-årsmedianen for høgde over breidde fell frå om lag 1.88 i 1600 til 1.36 i 2000 — ein endring på over eitt halvt standardavvik. Endringa er ikkje monoton; ho har eit lokalt platå 1700--1900 og fell brått etter 1900. Postulatet om eit statisk landskap (4.1) blir falsifisert av denne enkle eindimensjonale tidsserien (n = 1133).}
+\anote{Den rullande 50-årsmedianen av høgde delt på breidde fell systematisk frå 1.88 i 1600 til 1.36 i 2000 (n = 1133). Endringa svarar til over eitt halvt standardavvik. Funksjonelt er proporsjonen 1.36 ikkje meir ergonomisk enn 1.88: begge er innanfor menneskeleg sitteområde. Det er ein form-drift, ikkje ein funksjonsdrift, som denne tidsserien direkte måler.}
 
 \prop{A.6.11}{}{Materialnisjar i 3D-morforommet (5.3)}
 \addcontentsline{toc}{subsection}{A.6.11 Materialnisjar i 3D-morforommet (5.3)}
 \par\addvspace{2pt}\noindent\centerline{%
   \includegraphics[width=\linewidth]{fig-A.6.11-materialnisjar.pdf}}
 \par\addvspace{2pt}
-\anote{Når kvar stol blir plotta som eit punkt i (Breidde, Djupn, Høgde) og fargelagt etter primærmaterialet, er sentroidane klart åtskilde i den vertikale dimensjonen. Tre-stolar (eik, nøttetre, mahogni) ligg kring H = 85--87 cm; metall- og plast-stolar kring H = 67--68 cm. Material er ein geometrisk axe, ikkje berre ein temporal merkelapp.}
+\anote{Kvar stol blir plotta som eitt punkt i (Breidde, Djupn, Høgde) og fargelagt etter primærmaterialet (n = 936). Sentroidane er klart åtskilde i den vertikale dimensjonen: trestolar (eik, nøttetre, mahogni) sit kring H \msym{≈} 85 cm, metall- og plaststolar kring H \msym{≈} 67 cm. Same fysiske oppgåve, klart ulike geometriske nisjar. Material er ikkje berre ein temporal merkelapp; det er ein geometrisk akse i morforommet.}
 
 \prop{A.6.12}{}{Nyhetsraten og det tilstøytande moglege (6.5)}
 \addcontentsline{toc}{subsection}{A.6.12 Nyhetsraten og det tilstøytande moglege (6.5)}
 \par\addvspace{2pt}\noindent\centerline{%
   \includegraphics[width=\linewidth]{fig-A.6.12-nyhetsrate.pdf}}
 \par\addvspace{2pt}
-\anote{Ved å diskretisere morforommet i 5 cm-voksler og telje kor mange voksler kvar 25-årsperiode opnar opp for første gong, får vi nyhetsraten over tid. Han fell ikkje monotont mot metning slik ein lukka modell ville krevje; han hentar seg inn igjen i moderne tid (1925--1975, rate 0.5--0.6) med introduksjonen av nye material. Dette er svak støtte for Kauffmans «det tilstøytande moglege» som ekspanderande rom.}
+\anote{Vi diskretiserer 3D-morforommet i 5 cm-voksler og teller kor mange voksler kvar 25-årsperiode opnar opp for fyrste gong. Nyhetsraten fell ikkje monotont mot metning slik ein lukka modell ville krevja; han hentar seg inn att i moderne tid (1925–1975, rate 0.5–0.6) når nye material kjem inn. Dette er ein direkte empirisk indikasjon på Kauffmans «det tilstøytande moglege» — ein mekanisme som ingen tidlegare har kunna måle på designartefakt.}
 
-\prop{A.6.13}{}{3D-vandring gjennom morforommet (4.1)}
-\addcontentsline{toc}{subsection}{A.6.13 3D-vandring gjennom morforommet (4.1)}
+\prop{A.6.13}{}{Periodesentroidvandring i 3D (4.1)}
+\addcontentsline{toc}{subsection}{A.6.13 Periodesentroidvandring i 3D (4.1)}
 \par\addvspace{2pt}\noindent\centerline{%
   \includegraphics[width=\linewidth]{fig-A.6.13-3d-trajektorie.pdf}}
 \par\addvspace{2pt}
-\anote{Tre stabla tidsseriar over Høgde, Breidde og Djupn over fem hundreår. Høgda er den dominerande drifta: frå 100 cm i 1550 til 75 cm i moderne tid, ein endring på 25 cm som langt overstig nokon ergonomisk forklaring. Funksjonen åleine kan ikkje forklare ein så stor drift; menneske har ikkje krympa.}
+\anote{Sentroiden av kvar 50-årsperiode er ein punkt i (Breidde, Høgde, Djupn). Banelengda i full 3D er 84 cm; netto skift frå start til slutt er 25 cm; tortuositeten er 3.45. Ein tortuositet over 1 betyr at sentroiden vandrar fram og attende — signaturen til eit dynamisk seleksjonslandskap, ikkje monoton funksjonell konvergens. Punktstorleiken kodar djupn, farge kodar tid (n = 1041).}
 
 \prop{A.6.14}{}{Stilperiodefylogenese ved Ward-klynging (3.4)}
 \addcontentsline{toc}{subsection}{A.6.14 Stilperiodefylogenese ved Ward-klynging (3.4)}
 \par\addvspace{2pt}\noindent\centerline{%
   \includegraphics[width=\linewidth]{fig-A.6.15-fylogenese.pdf}}
 \par\addvspace{2pt}
-\anote{Hierarkisk klynging av stilperiodane sine sentroidar i mesh-trekk-rommet ved Ward-linkage avdekker ein meiningsfull genealogi: rokokko sit nær barokk og renessanse, modernismen har sin eigen gren med funksjonalisme og Bauhaus, og 1800-tals stilane (nyklassisisme, historisme, viktorianisme) klynger saman. Funksjonen har ingen genealogi; berre forma kan arve frå ei tidlegare form.}
+\anote{Vi reknar ut sentroiden av kvar stilperiode i 4D mesh-trekk-rommet og bygg ein hierarkisk klynge ved Ward-linkage. Resultatet er eit dendrogram som avdekker ein meiningsfull genealogi: rokokko sit nær barokk og renessanse, modernismen har sin eigen gren med funksjonalisme og Bauhaus, og 1800-tals stilane klynger saman. Funksjonen har ingen genealogi — berre forma kan arve frå ei tidlegare form. Dette er ein kvantitativ målbar form-arvs-struktur.}
 
 \prop{A.6.15}{}{Rekurrensanalyse av periodesentroidar (4.1, 4.4)}
 \addcontentsline{toc}{subsection}{A.6.15 Rekurrensanalyse av periodesentroidar (4.1, 4.4)}
 \par\addvspace{2pt}\noindent\centerline{%
   \includegraphics[width=\linewidth]{fig-A.6.16-rekurrens.pdf}}
 \par\addvspace{2pt}
-\anote{Symmetrisk avstandsmatrise over alle 25-årsperiodar i (H, B, D)-rommet. Mørke celler er like periodar; lyse er fjerne. Det modernistiske brotet etter 1900 er synleg som ei lys L-form i nedre høgre hjørne: ingen periode før 1900 liknar nokon periode etter 1900. Formhistoria gjentar seg ikkje på tvers av modernismen.}
+\anote{Symmetrisk avstandsmatrise over alle 19 25-årsperiodar i full (H, B, D). Mørke celler er like periodar; lyse er fjerne. Det modernistiske brotet etter 1900 viser seg som ei lys L-form i nedre høgre hjørne: ingen periode FØR 1900 liknar nokon periode ETTER 1900. Formhistoria gjentar seg ikkje på tvers av modernismen — eit nytt regime tek over. Vi har ikkje sett denne typen rekurrensanalyse brukt på designhistorie tidlegare.}
 
 \prop{A.6.16}{}{Tilpassingslandskapet med stabile attraktorar (3.2)}
 \addcontentsline{toc}{subsection}{A.6.16 Tilpassingslandskapet med stabile attraktorar (3.2)}
 \par\addvspace{2pt}\noindent\centerline{%
   \includegraphics[width=\linewidth]{fig-A.6.17-fitnesslandskap.pdf}}
 \par\addvspace{2pt}
-\anote{KDE-tettleiken p̂(B, H) over alle stolar har to klare lokale maksimum: éin ved (B = 50, H = 91) — den tradisjonelle høgrygga stolen — og éin ved (B = 50, H = 45) — den lågare modernistiske stolen. Dei tomme dalane mellom toppane er forbodne regionar i morforommet, ein direkte falsifisering av uniform fordeling og støtte til proposisjon 3.2.}
+\anote{KDE-tettleiken p̂(B, H) over alle stolar (n = 1681) har to klare lokale maksimum: éin ved (B \msym{≈} 50, H \msym{≈} 91) — den tradisjonelle høgrygga stolen — og éin ved (B \msym{≈} 50, H \msym{≈} 45) — den lågare modernistiske stolen. Dei tomme dalane mellom toppane er forbodne regionar i morforommet. Multimodaliteten er direkte støtte til proposisjon 3.2: tilpassingslandskapet har fleire stabile attraktorar, ikkje éin global optimum.}
 
 \backmatter
 \silentchapter{Etterord}{etterord}

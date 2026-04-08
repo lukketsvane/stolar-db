@@ -69,22 +69,36 @@ def plot(df):
     ax = fig.add_subplot(111, projection='3d', computed_zorder=False)
     fig.subplots_adjust(left=0.0, right=0.98, bottom=0.10, top=0.86)
 
+    # Clip the displayed range to the 5–95 percentile of each dimension
+    # so the cloud isn't dominated by outliers and the axis scales are
+    # comparable across dimensions.
+    clip = {}
+    for c in ('w_cm', 'd_cm', 'h_cm'):
+        lo, hi = np.percentile(df[c], [5, 95])
+        clip[c] = (lo, hi)
+
     for mat, colour in MATERIALS:
         sub = df[df['mat'] == mat]
         if len(sub) < 5:
             continue
         ax.scatter(
             sub['w_cm'], sub['d_cm'], sub['h_cm'],
-            s=8, color=colour, alpha=0.55, linewidths=0,
+            s=6, color=colour, alpha=0.40, linewidths=0,
             label=f'{mat.capitalize()}  ({len(sub)})',
             depthshade=True,
         )
         # Add the centroid as a larger marker
         ax.scatter(
             [sub['w_cm'].mean()], [sub['d_cm'].mean()], [sub['h_cm'].mean()],
-            s=80, color=colour, edgecolor=INK, linewidths=0.7,
+            s=110, color=colour, edgecolor=INK, linewidths=0.9,
             marker='o', zorder=10,
         )
+
+    ax.set_xlim(clip['w_cm'])
+    ax.set_ylim(clip['d_cm'])
+    ax.set_zlim(clip['h_cm'])
+    # Equal box aspect so visual distances mean the same in every dim
+    ax.set_box_aspect((1, 1, 1))
 
     ax.set_xlabel('Breidde  (cm)', fontsize=7.5, labelpad=2)
     ax.set_ylabel('Djupn  (cm)',   fontsize=7.5, labelpad=2)
