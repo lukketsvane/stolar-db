@@ -19,3 +19,11 @@ Produsent: Bachem, Josef
 Stilperiode: Art Deco / Tidleg modernisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O301143.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8328
+Fill-ratio (mesh): 0.8599
+Inertia-ratio (mesh): 0.7878
+Kompleksitet (mesh, log10 v/a): 4.6088
+Konveks hylster-volum (m³): 5.0588

@@ -20,3 +20,11 @@ Produksjonsstad: Norge
 Stilperiode: Funksjonalisme
 Til år: 1972
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/NMK.2016.0135.001.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8109
+Fill-ratio (mesh): 0.7038
+Inertia-ratio (mesh): 0.7152
+Kompleksitet (mesh, log10 v/a): 5.5550
+Konveks hylster-volum (m³): 0.1956

@@ -20,3 +20,11 @@ Stilperiode: Modernisme
 Teknikk: Plugging, Skruing
 Til år: 1917
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-1994-0136.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8198
+Fill-ratio (mesh): 0.4776
+Inertia-ratio (mesh): 0.5265
+Kompleksitet (mesh, log10 v/a): 5.3672
+Konveks hylster-volum (m³): 0.2232

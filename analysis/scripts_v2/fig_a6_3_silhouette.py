@@ -85,9 +85,9 @@ def plot(overall, ci_lo, ci_hi, rows, n_total):
     apply_style()
 
     # Tall narrow figure (~ book column width) — 25 bars need vertical space.
-    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=1.55))
+    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=1.32))
     # Wider left margin for the long Norwegian style names
-    ax = fig.add_axes([0.42, 0.1, 0.55, 0.84])
+    ax = fig.add_axes([0.42, 0.1, 0.55, 0.85])
 
     n = len(rows)
     y = np.arange(n)[::-1]                         # reversed: most-negative on top
@@ -147,10 +147,6 @@ def plot(overall, ci_lo, ci_hi, rows, n_total):
     # Title — sits above the gjennomsnitt label
 
     # Footer: 95 % CI for the overall score (well below the x-axis label)
-    fig.text(0.04, 0.020,
-             f'95 % CI for gjennomsnittet  [{ci_lo:+.3f},  {ci_hi:+.3f}]   ·   '
-             f'Negativ skore = stilen er meir lik nabostiar enn seg sjølv',
-             fontsize=6.5, color=INK_SOFT, ha='left')
 
     out = FIG_DIR / 'fig-A.6.3-silhouette.pdf'
     fig.savefig(out)

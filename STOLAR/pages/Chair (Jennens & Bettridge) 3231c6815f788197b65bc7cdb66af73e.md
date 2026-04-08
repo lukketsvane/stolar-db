@@ -18,3 +18,11 @@ Produsent: Jennens & Bettridge
 Stilperiode: Historisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O79003.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8187
+Fill-ratio (mesh): 0.5559
+Inertia-ratio (mesh): 0.4841
+Kompleksitet (mesh, log10 v/a): 5.4467
+Konveks hylster-volum (m³): 0.1152

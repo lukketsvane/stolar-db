@@ -64,8 +64,8 @@ def run_test():
 def plot(rows, n_total):
     apply_style()
 
-    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=1.10))
-    ax = fig.add_axes([0.32, 0.2, 0.62, 0.72])
+    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.94))
+    ax = fig.add_axes([0.32, 0.15000000000000002, 0.62, 0.77])
 
     n = len(rows)
     y = np.arange(n)[::-1]
@@ -104,11 +104,6 @@ def plot(rows, n_total):
         ax.spines[s].set_visible(False)
 
 
-    fig.text(0.04, 0.025,
-             f'n = {n_total} stolar med material og land  ·  '
-             f'Land med ≥ {MIN_PER_COUNTRY} stolar  ·  '
-             f'Raud strek = IQR, raud prikk = median, svart strek = snitt',
-             fontsize=6.3, color=INK_SOFT, ha='left')
 
     out = FIG_DIR / 'fig-A.6.8-materialblanding.pdf'
     fig.savefig(out)

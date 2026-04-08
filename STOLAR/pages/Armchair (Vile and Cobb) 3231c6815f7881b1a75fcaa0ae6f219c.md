@@ -19,3 +19,11 @@ Produsent: Vile and Cobb
 Stilperiode: Nyklassisisme
 Til år: 1765
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O53098.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8069
+Fill-ratio (mesh): 0.6227
+Inertia-ratio (mesh): 0.6149
+Kompleksitet (mesh, log10 v/a): 4.6471
+Konveks hylster-volum (m³): 2.7911

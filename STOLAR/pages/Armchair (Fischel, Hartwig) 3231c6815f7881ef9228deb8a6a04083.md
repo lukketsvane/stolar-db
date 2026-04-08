@@ -18,3 +18,11 @@ Produsent: Fischel, Hartwig
 Stilperiode: Jugend/Art Nouveau
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O84500.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8435
+Fill-ratio (mesh): 0.7577
+Inertia-ratio (mesh): 0.5949
+Kompleksitet (mesh, log10 v/a): 5.7994
+Konveks hylster-volum (m³): 0.0512

@@ -20,3 +20,11 @@ Stilperiode: Viktorianisme
 Teknikk: Polstring, Skjæring, Søm
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O59312.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8364
+Fill-ratio (mesh): 0.7911
+Inertia-ratio (mesh): 0.6863
+Kompleksitet (mesh, log10 v/a): 5.4192
+Konveks hylster-volum (m³): 0.2422

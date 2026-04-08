@@ -20,3 +20,11 @@ Stilperiode: Bauhaus
 Teknikk: Bøygd, Fletting
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372083.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8550
+Fill-ratio (mesh): 0.7812
+Inertia-ratio (mesh): 0.6098
+Kompleksitet (mesh, log10 v/a): 5.4971
+Konveks hylster-volum (m³): 0.1671

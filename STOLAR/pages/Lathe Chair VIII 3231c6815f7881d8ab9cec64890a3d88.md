@@ -16,3 +16,11 @@ Produksjonsstad: Holland
 Produsent: Brajkovic, Sebastian
 Stilperiode: Samtidsdesign
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O188139.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8167
+Fill-ratio (mesh): 0.6179
+Inertia-ratio (mesh): 0.5610
+Kompleksitet (mesh, log10 v/a): 5.1106
+Konveks hylster-volum (m³): 0.5299

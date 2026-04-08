@@ -19,3 +19,11 @@ Produsent: Rowland, David
 Stilperiode: Modernisme / Midtjahrhundre
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372086.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8113
+Fill-ratio (mesh): 0.7312
+Inertia-ratio (mesh): 0.5508
+Kompleksitet (mesh, log10 v/a): 6.0797
+Konveks hylster-volum (m³): 0.0150

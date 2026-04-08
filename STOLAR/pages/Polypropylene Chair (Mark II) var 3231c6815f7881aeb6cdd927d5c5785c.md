@@ -17,3 +17,11 @@ Produksjonsstad: Great Britain
 Produsent: Day, Robin
 Stilperiode: Modernisme / Midtjahrhundre
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O21634.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8344
+Fill-ratio (mesh): 0.7176
+Inertia-ratio (mesh): 0.5517
+Kompleksitet (mesh, log10 v/a): 5.9482
+Konveks hylster-volum (m³): 0.0243

@@ -20,3 +20,11 @@ Stilperiode: Art Deco / Tidleg modernisme
 Teknikk: Innfelling, Polstring
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O93711.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8656
+Fill-ratio (mesh): 0.6483
+Inertia-ratio (mesh): 0.7170
+Kompleksitet (mesh, log10 v/a): 5.4064
+Konveks hylster-volum (m³): 0.2878

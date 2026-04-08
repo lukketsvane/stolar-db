@@ -19,3 +19,11 @@ Produsent: Wells Coates
 Stilperiode: Art Deco / Tidleg modernisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O304869.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8277
+Fill-ratio (mesh): 0.7579
+Inertia-ratio (mesh): 0.6825
+Kompleksitet (mesh, log10 v/a): 5.3245
+Konveks hylster-volum (m³): 0.3028

@@ -18,3 +18,11 @@ Produsent: Niang, Balla
 Stilperiode: Samtidsdesign
 Til år: 2023
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1749965.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7987
+Fill-ratio (mesh): 0.4230
+Inertia-ratio (mesh): 0.4298
+Kompleksitet (mesh, log10 v/a): 5.5554
+Konveks hylster-volum (m³): 0.0599

@@ -19,3 +19,11 @@ Produsent: John Pollard Seddon
 Stilperiode: Viktorianisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O370275.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8236
+Fill-ratio (mesh): 0.6118
+Inertia-ratio (mesh): 0.4902
+Kompleksitet (mesh, log10 v/a): 5.3665
+Konveks hylster-volum (m³): 0.1440

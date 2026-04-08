@@ -91,8 +91,8 @@ def run_test(df):
 def plot(rows, n_total, n_styles, n_mats):
     apply_style()
 
-    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.95))
-    ax = fig.add_axes([0.18, 0.2, 0.78, 0.72])
+    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.81))
+    ax = fig.add_axes([0.18, 0.15000000000000002, 0.78, 0.77])
 
     n_rows = len(rows)
     y = np.arange(n_rows)[::-1]
@@ -140,17 +140,14 @@ def plot(rows, n_total, n_styles, n_mats):
     for s in ('top', 'right', 'left'):
         ax.spines[s].set_visible(False)
 
-    # Legend below the bars
-    leg = ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.20),
-                    fontsize=7.5, ncol=2, handletextpad=0.4,
-                    columnspacing=1.4, borderaxespad=0)
+    # Legend inside the chart, lower-right (compact)
+    leg = ax.legend(loc='lower right', fontsize=7.0, ncol=1,
+                    handletextpad=0.4, labelspacing=0.25,
+                    borderaxespad=0.4)
     for t in leg.get_texts():
         t.set_color(INK_SOFT)
 
 
-    fig.text(0.04, 0.025,
-             'Multiplikatoren til høgre = stil/materiale-forhold; større enn 1 betyr at stilperiode forklarer meir',
-             fontsize=6.5, color=INK_SOFT, ha='left')
 
     out = FIG_DIR / 'fig-A.6.1-uniformitet.pdf'
     fig.savefig(out)

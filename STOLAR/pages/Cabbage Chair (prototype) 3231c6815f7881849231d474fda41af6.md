@@ -18,3 +18,11 @@ Produksjonsstad: Tokyo (city)
 Produsent: Oki Sato
 Stilperiode: Samtidsdesign
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1257436.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8884
+Fill-ratio (mesh): 0.5374
+Inertia-ratio (mesh): 0.7503
+Kompleksitet (mesh, log10 v/a): 5.4509
+Konveks hylster-volum (m³): 0.2489

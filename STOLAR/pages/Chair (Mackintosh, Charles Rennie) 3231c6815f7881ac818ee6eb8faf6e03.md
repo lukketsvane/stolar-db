@@ -18,3 +18,11 @@ Produsent: Mackintosh, Charles Rennie
 Stilperiode: Historisme
 Til år: 1900
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O11281.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7230
+Fill-ratio (mesh): 0.6286
+Inertia-ratio (mesh): 0.2618
+Kompleksitet (mesh, log10 v/a): 4.9629
+Konveks hylster-volum (m³): 0.2196

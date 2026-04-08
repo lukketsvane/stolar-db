@@ -19,3 +19,11 @@ Stilperiode: Samtidsdesign
 Teknikk: Formbøying
 Til år: 2005
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/NMK.2016.0142.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7548
+Fill-ratio (mesh): 0.3836
+Inertia-ratio (mesh): 0.2012
+Kompleksitet (mesh, log10 v/a): 5.2329
+Konveks hylster-volum (m³): 0.0533

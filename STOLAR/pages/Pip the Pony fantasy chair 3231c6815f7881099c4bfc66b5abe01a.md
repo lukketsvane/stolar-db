@@ -17,3 +17,11 @@ Produksjonsstad: England
 Produsent: Johnson, Zandra
 Stilperiode: Samtidsdesign
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1191305.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8075
+Fill-ratio (mesh): 0.8014
+Inertia-ratio (mesh): 0.5982
+Kompleksitet (mesh, log10 v/a): 4.6098
+Konveks hylster-volum (m³): 2.4920

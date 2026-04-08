@@ -20,3 +20,11 @@ Stilperiode: Rokokko
 Teknikk: Dreiing, Fletting, Plugging, Samanføying, Skjæring
 Til år: 1715
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O129869.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7378
+Fill-ratio (mesh): 0.5686
+Inertia-ratio (mesh): 0.2484
+Kompleksitet (mesh, log10 v/a): 4.9653
+Konveks hylster-volum (m³): 0.1934

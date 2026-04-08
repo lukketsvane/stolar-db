@@ -19,3 +19,11 @@ Produsent: Summers, Gerald
 Stilperiode: Art Deco / Tidleg modernisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O130182.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8109
+Fill-ratio (mesh): 0.6420
+Inertia-ratio (mesh): 0.7227
+Kompleksitet (mesh, log10 v/a): 5.4770
+Konveks hylster-volum (m³): 0.1601

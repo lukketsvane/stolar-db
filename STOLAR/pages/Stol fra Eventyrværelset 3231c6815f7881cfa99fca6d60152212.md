@@ -21,3 +21,11 @@ Setehøgde (cm): 36.7
 Stilperiode: Jugend
 Til år: 1897
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-1995-0109.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8177
+Fill-ratio (mesh): 0.6552
+Inertia-ratio (mesh): 0.5565
+Kompleksitet (mesh, log10 v/a): 5.1528
+Konveks hylster-volum (m³): 0.2889

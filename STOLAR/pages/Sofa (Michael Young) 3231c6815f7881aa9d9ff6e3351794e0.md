@@ -19,3 +19,11 @@ Produsent: Michael Young
 Stilperiode: Postmodernisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1227036.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8106
+Fill-ratio (mesh): 0.8773
+Inertia-ratio (mesh): 0.3162
+Kompleksitet (mesh, log10 v/a): 4.6191
+Konveks hylster-volum (m³): 1.3323

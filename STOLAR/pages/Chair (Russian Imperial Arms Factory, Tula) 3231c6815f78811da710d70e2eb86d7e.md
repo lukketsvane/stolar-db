@@ -19,3 +19,11 @@ Produsent: Russian Imperial Arms Factory, Tula
 Stilperiode: Nyklassisisme
 Til år: 1755
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O122348.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8277
+Fill-ratio (mesh): 0.7955
+Inertia-ratio (mesh): 0.6665
+Kompleksitet (mesh, log10 v/a): 4.6806
+Konveks hylster-volum (m³): 2.7681

@@ -18,3 +18,11 @@ Stilperiode: Postmodernisme
 Teknikk: Skruing
 Til år: 1999
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/NMK.2012.0277.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8179
+Fill-ratio (mesh): 0.7061
+Inertia-ratio (mesh): 0.4776
+Kompleksitet (mesh, log10 v/a): 6.3719
+Konveks hylster-volum (m³): 0.0045

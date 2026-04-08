@@ -19,3 +19,11 @@ Produsent: Pugin, Edward Welby
 Stilperiode: Viktorianisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O61207.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8222
+Fill-ratio (mesh): 0.6926
+Inertia-ratio (mesh): 0.4875
+Kompleksitet (mesh, log10 v/a): 5.3827
+Konveks hylster-volum (m³): 0.1252

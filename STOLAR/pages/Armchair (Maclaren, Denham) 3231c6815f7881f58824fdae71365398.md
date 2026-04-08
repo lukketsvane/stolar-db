@@ -19,3 +19,11 @@ Produsent: Maclaren, Denham
 Stilperiode: Art Deco / Tidleg modernisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O58653.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8282
+Fill-ratio (mesh): 0.7881
+Inertia-ratio (mesh): 0.7240
+Kompleksitet (mesh, log10 v/a): 5.5531
+Konveks hylster-volum (m³): 0.1935

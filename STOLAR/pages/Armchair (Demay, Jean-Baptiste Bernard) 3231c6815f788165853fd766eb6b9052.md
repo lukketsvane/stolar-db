@@ -20,3 +20,11 @@ Stilperiode: Empire
 Teknikk: Polstring, Skjæring
 Til år: 1810
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O71524.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8206
+Fill-ratio (mesh): 0.7268
+Inertia-ratio (mesh): 0.7090
+Kompleksitet (mesh, log10 v/a): 5.2929
+Konveks hylster-volum (m³): 0.3084

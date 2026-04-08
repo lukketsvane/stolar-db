@@ -19,3 +19,11 @@ Produsent: Lutyens, Edwin Landseer (Sir)
 Stilperiode: Jugend/Art Nouveau
 Til år: 1918
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O83923.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8414
+Fill-ratio (mesh): 0.7633
+Inertia-ratio (mesh): 0.6804
+Kompleksitet (mesh, log10 v/a): 5.9711
+Konveks hylster-volum (m³): 0.0331

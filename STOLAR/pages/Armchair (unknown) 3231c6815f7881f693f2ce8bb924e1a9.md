@@ -19,3 +19,11 @@ Stilperiode: Empire
 Teknikk: Skjæring
 Til år: 1830
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O371952.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7941
+Fill-ratio (mesh): 0.5437
+Inertia-ratio (mesh): 0.4135
+Kompleksitet (mesh, log10 v/a): 5.9542
+Konveks hylster-volum (m³): 0.0175

@@ -225,9 +225,15 @@ PREAMBLE = r"""\documentclass[10pt,oneside]{book}
 }
 
 % Glossary entries — bold term, regular body, tight no-indent block.
-% Compact: minimal vertical separation so many entries fit on one page.
+% Wrapped in a compact environment so many entries fit on one page.
+\newenvironment{ordliste}{%
+  \begingroup\footnotesize\setlength{\parskip}{0.6pt plus 0.2pt}%
+  \linespread{0.94}\selectfont
+}{%
+  \endgroup
+}
 \newcommand{\ordlisteentry}[2]{%
-  \par\addvspace{2pt}%
+  \par\addvspace{0.5pt}%
   \noindent\textbf{#1:} #2\par%
 }
 
@@ -279,13 +285,18 @@ PREAMBLE = r"""\documentclass[10pt,oneside]{book}
   \end{adjustwidth}%
 }
 
-% Compact body text for the appendix — smaller font, tighter line spacing.
+% Compact body text for the appendix — smaller font, tight line spacing,
+% small inter-paragraph gap so each A.6.x entry is dense and short.
 \newenvironment{appendixbody}{%
-  \begingroup\small\setlength{\parskip}{1.5pt plus 0.4pt}%
-  \linespread{0.95}\selectfont
+  \begingroup\footnotesize\setlength{\parskip}{0.6pt plus 0.2pt}%
+  \linespread{0.92}\selectfont
 }{%
   \endgroup
 }
+
+% Full-bleed cover page support — image at exact paper size, title overlaid.
+\usepackage{tikz}
+\usetikzlibrary{positioning}
 
 \begin{document}
 \frontmatter
@@ -489,6 +500,7 @@ def convert(doc: 'Document') -> str:
     in_appendix = False
     in_referansar = False
     in_widebody = False
+    seen_a6 = False
     saw_first_chapter = False
     first_chapter_seen = False
 
@@ -512,18 +524,108 @@ def convert(doc: 'Document') -> str:
         'A.6.11': 'fig-A.6.11-materialnisjar.pdf',
         'A.6.12': 'fig-A.6.12-nyhetsrate.pdf',
         'A.6.13': 'fig-A.6.13-3d-trajektorie.pdf',
-        'A.6.14': 'fig-A.6.14-landskap.pdf',
+        'A.6.14': 'fig-A.6.15-fylogenese.pdf',
+        'A.6.15': 'fig-A.6.16-rekurrens.pdf',
+        'A.6.16': 'fig-A.6.17-fitnesslandskap.pdf',
     }
     # New A.6.x sections that aren't in the docx, injected after the last
-    # existing A.6.x entry.
+    # existing A.6.x entry. Each tuple is (label, title, explanatory body).
     extra_a6_sections = [
-        ('A.6.8',  'Materiell kompleksitet per nasjon (5.3)'),
-        ('A.6.9',  'Materialstraumen 1500 til 2025 (4.5)'),
-        ('A.6.10', 'H/B-proporsjonen 1500 til 2024 (4.1)'),
-        ('A.6.11', 'Materialnisjar i 3D-morforommet (5.3)'),
-        ('A.6.12', 'Nyhetsraten og det tilstøytande moglege (6.5)'),
-        ('A.6.13', '3D-vandring gjennom morforommet (4.1)'),
-        ('A.6.14', 'Tilpassingslandskapet som Lyapunov-flate (3.2)'),
+        (
+            'A.6.8',
+            'Materiell kompleksitet per nasjon (5.3)',
+            'Talet på distinkte material per stol varierer systematisk '
+            'mellom nasjonale tradisjonar. Norske og danske stolar har '
+            'medianverdi 3 (IQR 2--3 og 2--3), italienske og britiske '
+            'medianverdi 2. Dette er ein kulturell signatur som ikkje '
+            'kan reduserast til geografi eller tilgjengelegheit aleine; '
+            'det reflekterer ulike funksjonelle nisjepartisjonar i kvart '
+            'produksjonssystem (n = 1582 stolar med både material og land).',
+        ),
+        (
+            'A.6.9',
+            'Materialstraumen 1500 til 2025 (4.5)',
+            'Stabla område-plott av dei ti vanlegaste materiala over fem '
+            'hundreår syner klare seleksjonsbølger. Eik dominerer 1500 til '
+            '1700; nøttetre kulminerer kring 1675; mahogni stig brått frå '
+            '1750 og dominerer 1750--1850; modernismen sine material (stål, '
+            'plast, kryssfiner, aluminium) tek over etter 1900. Ingen av '
+            'overgangane er gradvise: kvar er ein lokal seleksjons-event '
+            'som foreinleg med proposisjon 4.5.',
+        ),
+        (
+            'A.6.10',
+            'H/B-proporsjonen 1500 til 2024 (4.1)',
+            'Den rullande 50-årsmedianen for høgde over breidde fell frå '
+            'om lag 1.88 i 1600 til 1.36 i 2000 — ein endring på over '
+            'eitt halvt standardavvik. Endringa er ikkje monoton; ho har '
+            'eit lokalt platå 1700--1900 og fell brått etter 1900. '
+            'Postulatet om eit statisk landskap (4.1) blir falsifisert '
+            'av denne enkle eindimensjonale tidsserien (n = 1133).',
+        ),
+        (
+            'A.6.11',
+            'Materialnisjar i 3D-morforommet (5.3)',
+            'Når kvar stol blir plotta som eit punkt i (Breidde, Djupn, '
+            'Høgde) og fargelagt etter primærmaterialet, er sentroidane '
+            'klart åtskilde i den vertikale dimensjonen. Tre-stolar '
+            '(eik, nøttetre, mahogni) ligg kring H = 85--87 cm; metall- '
+            'og plast-stolar kring H = 67--68 cm. Material er ein '
+            'geometrisk axe, ikkje berre ein temporal merkelapp.',
+        ),
+        (
+            'A.6.12',
+            'Nyhetsraten og det tilstøytande moglege (6.5)',
+            'Ved å diskretisere morforommet i 5 cm-voksler og telje kor '
+            'mange voksler kvar 25-årsperiode opnar opp for første gong, '
+            'får vi nyhetsraten over tid. Han fell ikkje monotont mot '
+            'metning slik ein lukka modell ville krevje; han hentar seg '
+            'inn igjen i moderne tid (1925--1975, rate 0.5--0.6) med '
+            'introduksjonen av nye material. Dette er svak støtte for '
+            'Kauffmans «det tilstøytande moglege» som ekspanderande rom.',
+        ),
+        (
+            'A.6.13',
+            '3D-vandring gjennom morforommet (4.1)',
+            'Tre stabla tidsseriar over Høgde, Breidde og Djupn '
+            'over fem hundreår. Høgda er den dominerande drifta: '
+            'frå 100 cm i 1550 til 75 cm i moderne tid, ein endring '
+            'på 25 cm som langt overstig nokon ergonomisk forklaring. '
+            'Funksjonen åleine kan ikkje forklare ein så stor drift; '
+            'menneske har ikkje krympa.',
+        ),
+        (
+            'A.6.14',
+            'Stilperiodefylogenese ved Ward-klynging (3.4)',
+            'Hierarkisk klynging av stilperiodane sine sentroidar i '
+            'mesh-trekk-rommet ved Ward-linkage avdekker ein meiningsfull '
+            'genealogi: rokokko sit nær barokk og renessanse, '
+            'modernismen har sin eigen gren med funksjonalisme og '
+            'Bauhaus, og 1800-tals stilane (nyklassisisme, historisme, '
+            'viktorianisme) klynger saman. Funksjonen har ingen '
+            'genealogi; berre forma kan arve frå ei tidlegare form.',
+        ),
+        (
+            'A.6.15',
+            'Rekurrensanalyse av periodesentroidar (4.1, 4.4)',
+            'Symmetrisk avstandsmatrise over alle 25-årsperiodar i '
+            '(H, B, D)-rommet. Mørke celler er like periodar; lyse er '
+            'fjerne. Det modernistiske brotet etter 1900 er synleg '
+            'som ei lys L-form i nedre høgre hjørne: ingen periode '
+            'før 1900 liknar nokon periode etter 1900. Formhistoria '
+            'gjentar seg ikkje på tvers av modernismen.',
+        ),
+        (
+            'A.6.16',
+            'Tilpassingslandskapet med stabile attraktorar (3.2)',
+            'KDE-tettleiken p̂(B, H) over alle stolar har to '
+            'klare lokale maksimum: éin ved (B = 50, H = 91) — den '
+            'tradisjonelle høgrygga stolen — og éin ved (B = 50, '
+            'H = 45) — den lågare modernistiske stolen. Dei tomme '
+            'dalane mellom toppane er forbodne regionar i '
+            'morforommet, ein direkte falsifisering av uniform '
+            'fordeling og støtte til proposisjon 3.2.',
+        ),
     ]
     pending_a6_fig: str | None = None
     skip_manual_toc = False  # set after \tableofcontents until next H1
@@ -550,38 +652,52 @@ def convert(doc: 'Document') -> str:
                 i += 1
                 continue
 
-        # Title page — cover image at the top, then vertically centred
-        # title + subtitle. No header at all (uses the "titlepage" style).
+        # Title page — full-bleed cover image with the title overlaid via
+        # tikz. The image fills the entire 125 x 200 mm page (no margins),
+        # and the FORMLÆRE title + subtitle sit on top, vertically centred,
+        # in white so they read against the dark chair grid.
         if style == 'Title':
-            out.append(r'\thispagestyle{titlepage}')
-            out.append(r'\markboth{}{}')
-            # Cover image — full text-width, on top
             cover_path = FIG_DIR / 'cover-stolar.png'
-            if cover_path.exists():
-                out.append(r'\noindent\makebox[\textwidth]{%')
-                out.append(r'  \includegraphics[width=\textwidth]{cover-stolar.png}%')
-                out.append(r'}')
-                out.append(r'\vspace*{\fill}')
-            else:
-                out.append(r'\vspace*{\fill}')
-            out.append(r'\begin{center}')
-            out.append(r'  {\Huge\scshape\addfontfeature{LetterSpace=12} ' + escape_latex(text) + '}')
-            i += 1
-            # Look ahead (skipping blank paragraphs) for a Subtitle to join
-            # the same centred block.
-            j = i
+            # Look ahead for the Subtitle so we can typeset the whole block
+            j = i + 1
             while j < len(paras) and not paras[j].text.strip():
                 j += 1
+            sub_text = ''
             if j < len(paras):
                 p2 = paras[j]
                 if (p2.style.name if p2.style else '') == 'Subtitle':
-                    sub = p2.text.strip()
-                    if sub:
-                        out.append(r'  \\[1.2em]')
-                        out.append(r'  {\large\itshape ' + escape_latex(sub) + '}')
+                    sub_text = p2.text.strip()
                     i = j + 1
-            out.append(r'\end{center}')
-            out.append(r'\vspace*{\fill}')
+                else:
+                    i += 1
+            else:
+                i += 1
+
+            out.append(r'\thispagestyle{titlepage}')
+            out.append(r'\markboth{}{}')
+            out.append(r'\noindent')
+            out.append(r'\begin{tikzpicture}[remember picture, overlay]')
+            if cover_path.exists():
+                out.append(r'  \node[anchor=north west, inner sep=0] '
+                           r'at (current page.north west) {%')
+                out.append(r'    \includegraphics[width=\paperwidth,'
+                           r'height=\paperheight,keepaspectratio=false]'
+                           r'{cover-stolar.png}%')
+                out.append(r'  };')
+                # Full-page dark scrim covering the entire cover so the
+                # white title text reads cleanly against the busy chair grid.
+                out.append(r'  \fill[black, opacity=0.55] '
+                           r'(current page.north west) rectangle '
+                           r'(current page.south east);')
+            text_block = r'    {\Huge\scshape\addfontfeature{LetterSpace=12}\bfseries ' + escape_latex(text) + '}'
+            if sub_text:
+                text_block += (r' \\[1.4em] '
+                               r'{\large\itshape ' + escape_latex(sub_text) + '}')
+            out.append(r'  \node[white, align=center] '
+                       r'at (current page.center) {%')
+            out.append(text_block)
+            out.append(r'  };')
+            out.append(r'\end{tikzpicture}')
             out.append(r'\clearpage')
             continue
         if style == 'Subtitle':
@@ -597,7 +713,9 @@ def convert(doc: 'Document') -> str:
         # which suppresses the centred chapter title (the running header is
         # enough since it shows the section name on every page).
         if text in SECTION_NAMES:
-            # Close any open widebody from the previous back-matter section
+            # Close any open widebody / ordliste from the previous section
+            if in_glossary:
+                out.append(r'\end{ordliste}')
             if in_widebody:
                 out.append(r'\end{widebody}')
                 in_widebody = False
@@ -609,8 +727,8 @@ def convert(doc: 'Document') -> str:
                 skip_manual_toc = True
             elif text == 'Etterord':
                 # Inject extra A.6.x sections before leaving the appendix.
-                # These have figures but no body text in the docx.
-                for ex_label, ex_title in extra_a6_sections:
+                # Each section: heading + figure + explanatory body paragraph.
+                for ex_label, ex_title, ex_body in extra_a6_sections:
                     out.append(r'\prop{' + escape_latex(ex_label) + '}{}{' +
                                escape_latex(ex_title) + '}')
                     out.append(r'\addcontentsline{toc}{subsection}{' +
@@ -622,6 +740,8 @@ def convert(doc: 'Document') -> str:
                         out.append(r'  \includegraphics[width=\linewidth]{' +
                                    ex_fig + '}')
                         out.append(r'\end{figure}')
+                    out.append(escape_latex(ex_body))
+                    out.append('')
                 # Close the compact appendix body environment before leaving
                 if in_appendix:
                     out.append(r'\end{appendixbody}')
@@ -634,8 +754,14 @@ def convert(doc: 'Document') -> str:
                 out.append(r'\silentchapter{' + escape_latex(text) + '}{' + running_head(text) + '}')
                 out.append(r'\begin{widebody}')
                 in_widebody = True
+            elif text == 'Ordliste':
+                # Ordliste fills full content width and uses the compact env
+                out.append(r'\silentchapter{' + escape_latex(text) + '}{' + running_head(text) + '}')
+                out.append(r'\begin{widebody}')
+                out.append(r'\begin{ordliste}')
+                in_widebody = True
             else:
-                # Føreord, Ordliste — cut centred title, keep header
+                # Føreord — cut centred title, keep header
                 out.append(r'\silentchapter{' + escape_latex(text) + '}{' + running_head(text) + '}')
             in_glossary = (text == 'Ordliste')
             in_referansar = (text == 'Referansar')
@@ -696,6 +822,11 @@ def convert(doc: 'Document') -> str:
                 out.append(r'\silentchapter{Formell spesifikasjon}{formell spesifikasjon}')
                 out.append(r'\begin{appendixbody}')
                 in_appendix = True
+            # Force the first A.6.x entry to start on a fresh page so the
+            # empirical results section opens cleanly after the definitions.
+            if not seen_a6:
+                out.append(r'\clearpage')
+                seen_a6 = True
             out.append(r'\prop{' + escape_latex(label) + '}{}{' + escape_latex(rest) + '}')
             out.append(r'\addcontentsline{toc}{subsection}{' + escape_latex(label + ' ' + rest) + '}')
 

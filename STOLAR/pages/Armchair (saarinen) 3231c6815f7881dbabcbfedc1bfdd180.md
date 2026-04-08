@@ -19,3 +19,11 @@ Produsent: saarinen
 Stilperiode: Midtjahrhundre modernisme
 Til år: 1957
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O181078.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8503
+Fill-ratio (mesh): 0.5203
+Inertia-ratio (mesh): 0.4363
+Kompleksitet (mesh, log10 v/a): 5.4535
+Konveks hylster-volum (m³): 0.0920

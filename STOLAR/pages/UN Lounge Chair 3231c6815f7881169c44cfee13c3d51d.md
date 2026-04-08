@@ -17,3 +17,11 @@ Produksjonsstad: Berlin
 Produsent: Jongerius, Hella
 Stilperiode: Samtidsdesign
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1299646.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8510
+Fill-ratio (mesh): 0.6916
+Inertia-ratio (mesh): 0.7943
+Kompleksitet (mesh, log10 v/a): 4.6885
+Konveks hylster-volum (m³): 3.9001

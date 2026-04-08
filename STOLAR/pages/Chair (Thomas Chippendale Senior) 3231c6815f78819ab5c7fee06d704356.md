@@ -20,3 +20,11 @@ Stilperiode: Chippendale / Rokokko
 Teknikk: Polstring, Skjæring
 Til år: 1770
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O70654.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7872
+Fill-ratio (mesh): 0.6599
+Inertia-ratio (mesh): 0.4357
+Kompleksitet (mesh, log10 v/a): 5.3022
+Konveks hylster-volum (m³): 0.1562

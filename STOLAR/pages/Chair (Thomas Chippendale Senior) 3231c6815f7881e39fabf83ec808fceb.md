@@ -19,3 +19,11 @@ Produsent: Thomas Chippendale Senior
 Stilperiode: Chippendale / Rokokko
 Til år: 1770
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O70665.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7840
+Fill-ratio (mesh): 0.6410
+Inertia-ratio (mesh): 0.5278
+Kompleksitet (mesh, log10 v/a): 5.2907
+Konveks hylster-volum (m³): 0.1843

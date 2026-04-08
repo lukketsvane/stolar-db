@@ -19,3 +19,11 @@ Produsent: Race, Ernest
 Stilperiode: Modernisme / Midtjahrhundre
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O301111.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8163
+Fill-ratio (mesh): 0.7955
+Inertia-ratio (mesh): 0.5118
+Kompleksitet (mesh, log10 v/a): 5.4547
+Konveks hylster-volum (m³): 0.1640

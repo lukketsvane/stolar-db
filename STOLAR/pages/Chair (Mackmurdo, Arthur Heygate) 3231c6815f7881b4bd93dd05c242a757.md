@@ -19,3 +19,11 @@ Produsent: Mackmurdo, Arthur Heygate
 Stilperiode: Viktorianisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O53071.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7685
+Fill-ratio (mesh): 0.6442
+Inertia-ratio (mesh): 0.2988
+Kompleksitet (mesh, log10 v/a): 4.9987
+Konveks hylster-volum (m³): 0.2427

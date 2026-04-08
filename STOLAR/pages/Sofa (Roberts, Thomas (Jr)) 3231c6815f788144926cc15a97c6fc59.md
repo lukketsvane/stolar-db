@@ -19,3 +19,11 @@ Produsent: Roberts, Thomas (Jr)
 Stilperiode: Rokokko
 Til år: 1730
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O80347.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7511
+Fill-ratio (mesh): 0.7510
+Inertia-ratio (mesh): 0.3186
+Kompleksitet (mesh, log10 v/a): 5.5128
+Konveks hylster-volum (m³): 0.0609

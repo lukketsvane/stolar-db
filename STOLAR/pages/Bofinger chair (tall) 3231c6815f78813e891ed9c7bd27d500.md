@@ -17,3 +17,11 @@ Produsent: Rudolf Baresel-Bofinger
 Stilperiode: Modernisme / Midtjahrhundre
 Til år: 1965
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372075.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8217
+Fill-ratio (mesh): 0.6882
+Inertia-ratio (mesh): 0.6368
+Kompleksitet (mesh, log10 v/a): 5.2487
+Konveks hylster-volum (m³): 0.3288

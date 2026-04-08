@@ -19,3 +19,11 @@ Produsent: Robin Day
 Stilperiode: Modernisme / Midtjahrhundre
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1248498.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8446
+Fill-ratio (mesh): 0.5652
+Inertia-ratio (mesh): 0.5538
+Kompleksitet (mesh, log10 v/a): 6.1328
+Konveks hylster-volum (m³): 0.0177

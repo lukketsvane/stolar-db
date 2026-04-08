@@ -18,3 +18,11 @@ Produsent: Julius Yacoby
 Stilperiode: Historisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O117703.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7912
+Fill-ratio (mesh): 0.6542
+Inertia-ratio (mesh): 0.3963
+Kompleksitet (mesh, log10 v/a): 5.1838
+Konveks hylster-volum (m³): 0.1811

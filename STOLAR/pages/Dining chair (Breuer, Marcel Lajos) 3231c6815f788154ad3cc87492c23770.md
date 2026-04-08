@@ -19,3 +19,11 @@ Produsent: Breuer, Marcel Lajos
 Stilperiode: Bauhaus
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1159333.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7993
+Fill-ratio (mesh): 0.7770
+Inertia-ratio (mesh): 0.5044
+Kompleksitet (mesh, log10 v/a): 4.6324
+Konveks hylster-volum (m³): 2.0380

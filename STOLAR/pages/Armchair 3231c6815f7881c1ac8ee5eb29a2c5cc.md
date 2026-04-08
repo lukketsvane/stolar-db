@@ -13,3 +13,11 @@ Nemning: Armstol
 Objekt-ID: O1597143
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1597143.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8090
+Fill-ratio (mesh): 0.7194
+Inertia-ratio (mesh): 0.4269
+Kompleksitet (mesh, log10 v/a): 4.6712
+Konveks hylster-volum (m³): 1.6305

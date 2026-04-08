@@ -20,3 +20,11 @@ Stilperiode: Jugend/Art Nouveau
 Teknikk: Tapping
 Til år: 1900
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/NMK.INVENTAR.2017.0213.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7978
+Fill-ratio (mesh): 0.7766
+Inertia-ratio (mesh): 0.5095
+Kompleksitet (mesh, log10 v/a): 5.4222
+Konveks hylster-volum (m³): 0.1249

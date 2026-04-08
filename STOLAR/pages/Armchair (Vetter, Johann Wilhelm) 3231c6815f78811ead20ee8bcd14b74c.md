@@ -19,3 +19,11 @@ Produsent: Vetter, Johann Wilhelm
 Stilperiode: Historisme
 Til år: 1850
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O59298.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7951
+Fill-ratio (mesh): 0.6276
+Inertia-ratio (mesh): 0.5961
+Kompleksitet (mesh, log10 v/a): 5.0146
+Konveks hylster-volum (m³): 0.7669

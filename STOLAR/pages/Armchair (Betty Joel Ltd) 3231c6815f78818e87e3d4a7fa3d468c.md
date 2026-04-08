@@ -19,3 +19,11 @@ Produsent: Betty Joel Ltd
 Stilperiode: Art Deco / Tidleg modernisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O129974.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.9111
+Fill-ratio (mesh): 0.6846
+Inertia-ratio (mesh): 0.7700
+Kompleksitet (mesh, log10 v/a): 5.5086
+Konveks hylster-volum (m³): 0.1985

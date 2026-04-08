@@ -20,3 +20,11 @@ Stilperiode: Nyklassisisme
 Teknikk: Fletting, Hengsling
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O93872.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8540
+Fill-ratio (mesh): 0.4889
+Inertia-ratio (mesh): 0.6032
+Kompleksitet (mesh, log10 v/a): 5.1609
+Konveks hylster-volum (m³): 0.3028

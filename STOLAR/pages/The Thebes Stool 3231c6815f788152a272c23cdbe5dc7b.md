@@ -19,3 +19,11 @@ Produsent: William Birch & Co
 Stilperiode: Viktorianisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O7878.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8376
+Fill-ratio (mesh): 0.9741
+Inertia-ratio (mesh): 0.7933
+Kompleksitet (mesh, log10 v/a): 6.1947
+Konveks hylster-volum (m³): 0.0319

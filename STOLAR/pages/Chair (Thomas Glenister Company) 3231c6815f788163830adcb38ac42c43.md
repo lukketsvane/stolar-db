@@ -19,3 +19,11 @@ Produsent: Thomas Glenister Company
 Stilperiode: Modernisme / Midtjahrhundre
 Til år: 1950
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372043.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8228
+Fill-ratio (mesh): 0.5354
+Inertia-ratio (mesh): 0.3473
+Kompleksitet (mesh, log10 v/a): 5.9121
+Konveks hylster-volum (m³): 0.0139

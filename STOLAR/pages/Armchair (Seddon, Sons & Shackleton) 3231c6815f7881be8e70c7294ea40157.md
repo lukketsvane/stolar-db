@@ -19,3 +19,11 @@ Produsent: Seddon, Sons & Shackleton
 Stilperiode: Nyklassisisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O52926.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7919
+Fill-ratio (mesh): 0.6143
+Inertia-ratio (mesh): 0.4025
+Kompleksitet (mesh, log10 v/a): 5.3106
+Konveks hylster-volum (m³): 0.1136

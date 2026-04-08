@@ -19,3 +19,11 @@ Produsent: Wright, Frank Lloyd
 Stilperiode: Jugend/Art Nouveau
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O112088.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8479
+Fill-ratio (mesh): 0.5947
+Inertia-ratio (mesh): 0.5125
+Kompleksitet (mesh, log10 v/a): 4.6199
+Konveks hylster-volum (m³): 1.7471

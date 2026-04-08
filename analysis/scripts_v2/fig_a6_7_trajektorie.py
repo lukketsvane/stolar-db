@@ -72,8 +72,8 @@ def run_test():
 def plot(g, n_total, path_length, displacement, tortuosity):
     apply_style()
 
-    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.95))
-    ax = fig.add_axes([0.16, 0.15, 0.8, 0.76])
+    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.81))
+    ax = fig.add_axes([0.16, 0.1, 0.8, 0.81])
 
     h = g['h_mean'].values
     w = g['w_mean'].values
@@ -122,12 +122,6 @@ def plot(g, n_total, path_length, displacement, tortuosity):
         ax.spines[s].set_visible(False)
 
 
-    fig.text(0.04, 0.025,
-             f'n = {n_total} stolar  ·  '
-             f'Total bane {path_length:.0f} cm  ·  '
-             f'Netto skift {displacement:.0f} cm  ·  '
-             f'Tortuositet {tortuosity:.2f}',
-             fontsize=6.5, color=INK_SOFT, ha='left')
 
     out = FIG_DIR / 'fig-A.6.7-trajektorie.pdf'
     fig.savefig(out)

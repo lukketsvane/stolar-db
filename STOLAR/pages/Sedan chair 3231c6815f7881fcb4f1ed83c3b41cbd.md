@@ -18,3 +18,11 @@ Produksjonsstad: Italy
 Stilperiode: Nyklassisisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O109491.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8280
+Fill-ratio (mesh): 0.6145
+Inertia-ratio (mesh): 0.4994
+Kompleksitet (mesh, log10 v/a): 4.6416
+Konveks hylster-volum (m³): 2.0378

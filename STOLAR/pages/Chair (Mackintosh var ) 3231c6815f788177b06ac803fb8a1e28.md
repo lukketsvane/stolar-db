@@ -16,3 +16,11 @@ Produksjonsstad: Glasgow
 Produsent: Mackintosh, Charles Rennie
 Stilperiode: Jugend/Art Nouveau
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O11345.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8411
+Fill-ratio (mesh): 0.6883
+Inertia-ratio (mesh): 0.4829
+Kompleksitet (mesh, log10 v/a): 5.4965
+Konveks hylster-volum (m³): 0.1299

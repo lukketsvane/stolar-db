@@ -19,3 +19,11 @@ Produsent: Johnson, J. F.
 Stilperiode: Art Deco / Tidleg modernisme
 Til år: 1927
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O113729.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8043
+Fill-ratio (mesh): 0.5441
+Inertia-ratio (mesh): 0.5903
+Kompleksitet (mesh, log10 v/a): 4.6198
+Konveks hylster-volum (m³): 1.9043

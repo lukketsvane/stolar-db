@@ -14,3 +14,11 @@ Objekt-ID: O442573
 Produksjonsstad: China
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O442573.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.5398
+Fill-ratio (mesh): 0.8877
+Inertia-ratio (mesh): 0.3978
+Kompleksitet (mesh, log10 v/a): 5.3145
+Konveks hylster-volum (m³): 0.0729

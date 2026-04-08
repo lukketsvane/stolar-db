@@ -19,3 +19,11 @@ Produsent: Plunkett, William
 Stilperiode: Modernisme / Midtjahrhundre
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372094.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8349
+Fill-ratio (mesh): 0.5817
+Inertia-ratio (mesh): 0.6008
+Kompleksitet (mesh, log10 v/a): 5.4236
+Konveks hylster-volum (m³): 0.2610

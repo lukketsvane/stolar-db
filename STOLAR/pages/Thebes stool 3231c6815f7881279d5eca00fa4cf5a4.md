@@ -20,3 +20,11 @@ Stilperiode: Historisme
 Teknikk: Tapping
 Til år: 1883
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/NMK.2010.0164.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8324
+Fill-ratio (mesh): 0.6007
+Inertia-ratio (mesh): 0.7118
+Kompleksitet (mesh, log10 v/a): 6.1054
+Konveks hylster-volum (m³): 0.0328

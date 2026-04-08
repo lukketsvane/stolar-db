@@ -20,3 +20,11 @@ Stilperiode: Sheraton
 Teknikk: Polstring
 Til år: 1820
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-06612.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7813
+Fill-ratio (mesh): 0.6695
+Inertia-ratio (mesh): 0.4420
+Kompleksitet (mesh, log10 v/a): 5.3732
+Konveks hylster-volum (m³): 0.1123

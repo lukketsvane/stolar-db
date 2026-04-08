@@ -19,3 +19,11 @@ Produsent: Kinsarvik, Lars
 Stilperiode: Jugend/Art Nouveau
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O86699.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8605
+Fill-ratio (mesh): 0.7594
+Inertia-ratio (mesh): 0.5887
+Kompleksitet (mesh, log10 v/a): 5.0995
+Konveks hylster-volum (m³): 0.5871

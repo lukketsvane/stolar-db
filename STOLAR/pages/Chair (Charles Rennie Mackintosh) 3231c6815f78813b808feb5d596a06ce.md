@@ -19,3 +19,11 @@ Produsent: Charles Rennie Mackintosh
 Stilperiode: Jugend/Art Nouveau
 Til år: 1904
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O321658.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7434
+Fill-ratio (mesh): 0.4866
+Inertia-ratio (mesh): 0.3608
+Kompleksitet (mesh, log10 v/a): 4.6397
+Konveks hylster-volum (m³): 0.9147

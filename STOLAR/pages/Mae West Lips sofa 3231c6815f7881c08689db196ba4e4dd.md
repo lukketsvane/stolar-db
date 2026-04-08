@@ -19,3 +19,11 @@ Produsent: Salvador Dalí
 Stilperiode: Art Deco / Tidleg modernisme
 Til år: 1938
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1441053.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8118
+Fill-ratio (mesh): 0.5029
+Inertia-ratio (mesh): 0.3832
+Kompleksitet (mesh, log10 v/a): 4.7476
+Konveks hylster-volum (m³): 0.7575

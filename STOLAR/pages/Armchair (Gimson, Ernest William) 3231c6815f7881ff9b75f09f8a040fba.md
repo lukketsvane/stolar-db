@@ -19,3 +19,11 @@ Stilperiode: Historisme
 Teknikk: Dreiing, Fletting
 Til år: 1904
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O15900.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7895
+Fill-ratio (mesh): 0.6200
+Inertia-ratio (mesh): 0.3542
+Kompleksitet (mesh, log10 v/a): 5.0640
+Konveks hylster-volum (m³): 0.2617

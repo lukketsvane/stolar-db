@@ -19,3 +19,11 @@ Produsent: unknown
 Stilperiode: Art Deco / Tidleg modernisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O185727.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8353
+Fill-ratio (mesh): 0.6423
+Inertia-ratio (mesh): 0.6487
+Kompleksitet (mesh, log10 v/a): 5.6288
+Konveks hylster-volum (m³): 0.0900

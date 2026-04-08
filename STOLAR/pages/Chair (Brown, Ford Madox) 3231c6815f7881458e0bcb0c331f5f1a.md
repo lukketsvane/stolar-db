@@ -19,3 +19,11 @@ Produsent: Brown, Ford Madox
 Stilperiode: Viktorianisme
 Til år: 1900
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372317.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8086
+Fill-ratio (mesh): 0.6583
+Inertia-ratio (mesh): 0.3956
+Kompleksitet (mesh, log10 v/a): 5.4461
+Konveks hylster-volum (m³): 0.0864

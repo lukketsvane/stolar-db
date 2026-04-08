@@ -19,3 +19,11 @@ Produsent: Unknown
 Stilperiode: Viktorianisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372101.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8250
+Fill-ratio (mesh): 0.5089
+Inertia-ratio (mesh): 0.5577
+Kompleksitet (mesh, log10 v/a): 5.4094
+Konveks hylster-volum (m³): 0.1923

@@ -19,3 +19,11 @@ Produsent: Thomas Edward Collcutt
 Stilperiode: Viktorianisme
 Til år: 1880
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O371760.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7812
+Fill-ratio (mesh): 0.6207
+Inertia-ratio (mesh): 0.4533
+Kompleksitet (mesh, log10 v/a): 5.3286
+Konveks hylster-volum (m³): 0.1311

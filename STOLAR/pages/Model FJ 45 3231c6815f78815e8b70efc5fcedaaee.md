@@ -19,3 +19,11 @@ Produsent: Juhl, Finn
 Stilperiode: Skandinavisk modernisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O119282.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8418
+Fill-ratio (mesh): 0.7919
+Inertia-ratio (mesh): 0.7422
+Kompleksitet (mesh, log10 v/a): 4.6936
+Konveks hylster-volum (m³): 3.8934

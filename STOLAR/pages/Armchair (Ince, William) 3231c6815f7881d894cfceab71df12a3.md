@@ -19,3 +19,11 @@ Produsent: Ince, William
 Stilperiode: Nyklassisisme
 Til år: 1790
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O123763.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8176
+Fill-ratio (mesh): 0.5860
+Inertia-ratio (mesh): 0.4626
+Kompleksitet (mesh, log10 v/a): 5.2817
+Konveks hylster-volum (m³): 0.1785

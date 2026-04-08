@@ -19,3 +19,11 @@ Produsent: Kaare Klint
 Stilperiode: Art Deco / Tidleg modernisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O371750.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7846
+Fill-ratio (mesh): 0.5966
+Inertia-ratio (mesh): 0.3246
+Kompleksitet (mesh, log10 v/a): 4.9475
+Konveks hylster-volum (m³): 0.4797

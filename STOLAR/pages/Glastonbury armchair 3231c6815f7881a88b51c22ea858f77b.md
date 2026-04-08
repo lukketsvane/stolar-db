@@ -19,3 +19,11 @@ Produsent: Unknown
 Stilperiode: Renessanse
 Til år: 1550
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O60628.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8063
+Fill-ratio (mesh): 0.6361
+Inertia-ratio (mesh): 0.4462
+Kompleksitet (mesh, log10 v/a): 5.9281
+Konveks hylster-volum (m³): 0.0220

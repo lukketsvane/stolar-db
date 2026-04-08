@@ -89,8 +89,8 @@ def run_test():
 def plot(g, n_total):
     apply_style()
 
-    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.85))
-    ax = fig.add_axes([0.13, 0.2, 0.73, 0.72])
+    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.72))
+    ax = fig.add_axes([0.13, 0.15000000000000002, 0.73, 0.77])
 
     x = g['period'].values
     ys = [g[m].values for m in MATERIALS]
@@ -125,10 +125,6 @@ def plot(g, n_total):
 
     # Title + sub
 
-    fig.text(0.04, 0.025,
-             f'n = {n_total} stolar med materialliste  ·  '
-             f'25-årsperiodar  ·  Stolar med fleire material er talt for kvart',
-             fontsize=6.3, color=INK_SOFT, ha='left')
 
     out = FIG_DIR / 'fig-A.6.9-materialstraum.pdf'
     fig.savefig(out)

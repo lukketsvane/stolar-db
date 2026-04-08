@@ -19,3 +19,11 @@ Produsent: Boman, Carl-Johan
 Stilperiode: Modernisme / Midtjahrhundre
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O181073.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7966
+Fill-ratio (mesh): 0.6818
+Inertia-ratio (mesh): 0.4810
+Kompleksitet (mesh, log10 v/a): 4.6534
+Konveks hylster-volum (m³): 1.6581

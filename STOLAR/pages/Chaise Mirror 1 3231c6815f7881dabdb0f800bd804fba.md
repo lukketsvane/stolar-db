@@ -18,3 +18,11 @@ Stilperiode: Samtidsdesign
 Teknikk: Fargelakkering, Liming
 Til år: 2009
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/NMK.DEP.2019.0014.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8581
+Fill-ratio (mesh): 0.6808
+Inertia-ratio (mesh): 0.4945
+Kompleksitet (mesh, log10 v/a): 4.6918
+Konveks hylster-volum (m³): 2.3481

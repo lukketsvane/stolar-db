@@ -19,3 +19,11 @@ Produsent: Robert Heritage
 Stilperiode: Modernisme / Midtjahrhundre
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372088.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8752
+Fill-ratio (mesh): 0.6923
+Inertia-ratio (mesh): 0.7220
+Kompleksitet (mesh, log10 v/a): 5.5260
+Konveks hylster-volum (m³): 0.1766

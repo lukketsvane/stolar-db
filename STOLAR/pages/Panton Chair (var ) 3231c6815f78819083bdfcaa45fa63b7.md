@@ -16,3 +16,11 @@ Produksjonsstad: Basel
 Produsent: Panton, Verner
 Stilperiode: Funksjonalisme
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O120670.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8329
+Fill-ratio (mesh): 0.5405
+Inertia-ratio (mesh): 0.5606
+Kompleksitet (mesh, log10 v/a): 5.4792
+Konveks hylster-volum (m³): 0.1312

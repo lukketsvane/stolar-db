@@ -17,3 +17,11 @@ Produksjonsstad: Los Angeles
 Produsent: Eames, Charles
 Stilperiode: Midtjahrhundre modernisme
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1371096.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8313
+Fill-ratio (mesh): 0.6739
+Inertia-ratio (mesh): 0.6377
+Kompleksitet (mesh, log10 v/a): 5.5327
+Konveks hylster-volum (m³): 0.1205

@@ -20,3 +20,11 @@ Stilperiode: Viktorianisme
 Teknikk: Finering, Innfelling, Polstring, Skjæring
 Til år: 1886
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O21544.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8679
+Fill-ratio (mesh): 0.5629
+Inertia-ratio (mesh): 0.6078
+Kompleksitet (mesh, log10 v/a): 5.3778
+Konveks hylster-volum (m³): 0.2454

@@ -20,3 +20,11 @@ Stilperiode: Jugend/Art Nouveau
 Teknikk: Polstring
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O59246.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8231
+Fill-ratio (mesh): 0.7719
+Inertia-ratio (mesh): 0.5830
+Kompleksitet (mesh, log10 v/a): 4.6254
+Konveks hylster-volum (m³): 2.6573

@@ -19,3 +19,11 @@ Produsent: J. S. Ford, Johnson & Co
 Stilperiode: Jugend/Art Nouveau
 Til år: 1905
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O370282.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8110
+Fill-ratio (mesh): 0.8413
+Inertia-ratio (mesh): 0.4921
+Kompleksitet (mesh, log10 v/a): 5.4034
+Konveks hylster-volum (m³): 0.1594

@@ -19,3 +19,11 @@ Produsent: Holland & Sons
 Stilperiode: Historisme
 Til år: 1843
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O140084.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7606
+Fill-ratio (mesh): 0.5476
+Inertia-ratio (mesh): 0.3631
+Kompleksitet (mesh, log10 v/a): 4.6454
+Konveks hylster-volum (m³): 1.1352

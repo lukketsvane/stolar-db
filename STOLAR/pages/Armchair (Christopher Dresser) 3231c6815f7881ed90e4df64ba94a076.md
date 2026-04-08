@@ -20,3 +20,11 @@ Stilperiode: Viktorianisme
 Teknikk: Lakkering
 Til år: 1880
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1779764.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8459
+Fill-ratio (mesh): 0.6902
+Inertia-ratio (mesh): 0.6801
+Kompleksitet (mesh, log10 v/a): 5.4697
+Konveks hylster-volum (m³): 0.1728

@@ -19,3 +19,11 @@ Produsent: Le Corbusier
 Stilperiode: Modernisme
 Til år: 1955
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1176157.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8059
+Fill-ratio (mesh): 0.4900
+Inertia-ratio (mesh): 0.5540
+Kompleksitet (mesh, log10 v/a): 3.8598
+Konveks hylster-volum (m³): 0.0137

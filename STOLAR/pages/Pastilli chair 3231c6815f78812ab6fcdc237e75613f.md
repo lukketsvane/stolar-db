@@ -19,3 +19,11 @@ Produsent: Aarnio, Eero
 Stilperiode: Modernisme / Midtjahrhundre
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O132487.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.9232
+Fill-ratio (mesh): 0.6171
+Inertia-ratio (mesh): 0.6312
+Kompleksitet (mesh, log10 v/a): 4.7226
+Konveks hylster-volum (m³): 2.4098

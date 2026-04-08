@@ -19,3 +19,11 @@ Produsent: Webb & Bunce
 Stilperiode: Empire
 Til år: 1820
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372116.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7799
+Fill-ratio (mesh): 0.6010
+Inertia-ratio (mesh): 0.4049
+Kompleksitet (mesh, log10 v/a): 5.9511
+Konveks hylster-volum (m³): 0.0136

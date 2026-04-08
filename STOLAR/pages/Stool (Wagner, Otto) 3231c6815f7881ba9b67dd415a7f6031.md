@@ -19,3 +19,11 @@ Produsent: Wagner, Otto
 Stilperiode: Jugend/Art Nouveau
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O84672.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8346
+Fill-ratio (mesh): 0.9661
+Inertia-ratio (mesh): 0.8401
+Kompleksitet (mesh, log10 v/a): 5.8744
+Konveks hylster-volum (m³): 0.0774

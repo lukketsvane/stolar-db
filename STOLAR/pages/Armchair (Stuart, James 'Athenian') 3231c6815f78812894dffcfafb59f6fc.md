@@ -19,3 +19,11 @@ Produsent: Stuart, James 'Athenian'
 Stilperiode: Nyklassisisme
 Til år: 1765
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O73923.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8242
+Fill-ratio (mesh): 0.6530
+Inertia-ratio (mesh): 0.6587
+Kompleksitet (mesh, log10 v/a): 5.3226
+Konveks hylster-volum (m³): 0.2967

@@ -19,3 +19,11 @@ Produsent: Ruhlmann, Emile Jacques
 Stilperiode: Art Deco / Tidleg modernisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O131460.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8549
+Fill-ratio (mesh): 0.7424
+Inertia-ratio (mesh): 0.7234
+Kompleksitet (mesh, log10 v/a): 4.6144
+Konveks hylster-volum (m³): 4.5124

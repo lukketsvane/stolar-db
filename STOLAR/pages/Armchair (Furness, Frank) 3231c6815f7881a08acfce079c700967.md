@@ -19,3 +19,11 @@ Stilperiode: Historisme
 Teknikk: Skjæring
 Til år: 1876
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O59243.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8185
+Fill-ratio (mesh): 0.8689
+Inertia-ratio (mesh): 0.6739
+Kompleksitet (mesh, log10 v/a): 5.3713
+Konveks hylster-volum (m³): 0.2651

@@ -19,3 +19,11 @@ Produsent: Bath Cabinet Makers
 Stilperiode: Art Deco / Tidleg modernisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O326737.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7852
+Fill-ratio (mesh): 0.6159
+Inertia-ratio (mesh): 0.4959
+Kompleksitet (mesh, log10 v/a): 4.6325
+Konveks hylster-volum (m³): 1.7449

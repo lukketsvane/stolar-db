@@ -72,8 +72,8 @@ def run_test():
 def plot(rows, growth, n_total):
     apply_style()
 
-    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.78))
-    ax = fig.add_axes([0.18, 0.2, 0.74, 0.72])
+    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.66))
+    ax = fig.add_axes([0.18, 0.15000000000000002, 0.74, 0.77])
     ax2 = ax.twinx()
 
     years = [r['period_start'] for r in rows]
@@ -109,10 +109,6 @@ def plot(rows, growth, n_total):
     ax2.spines['right'].set_color(ACCENT_TEAL)
 
 
-    fig.text(0.04, 0.025,
-             f'n = {n_total} stolar med komplette dimensjonar  ·  '
-             f'Start {vols[0]:.0f} cm³  ·  Slutt {vols[-1]:.0f} cm³',
-             fontsize=6.5, color=INK_SOFT, ha='left')
 
     out = FIG_DIR / 'fig-A.6.4-ekspansjon.pdf'
     fig.savefig(out)

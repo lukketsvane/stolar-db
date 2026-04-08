@@ -19,3 +19,11 @@ Produsent: Chan, Kwok Hoi
 Stilperiode: Modernisme / Midtjahrhundre
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O170164.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7761
+Fill-ratio (mesh): 0.3892
+Inertia-ratio (mesh): 0.4040
+Kompleksitet (mesh, log10 v/a): 5.9894
+Konveks hylster-volum (m³): 0.0097

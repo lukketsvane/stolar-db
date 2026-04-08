@@ -19,3 +19,11 @@ Produsent: Christopher Dresser
 Stilperiode: Viktorianisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1176403.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7286
+Fill-ratio (mesh): 0.6104
+Inertia-ratio (mesh): 0.2560
+Kompleksitet (mesh, log10 v/a): 4.4337
+Konveks hylster-volum (m³): 0.1494

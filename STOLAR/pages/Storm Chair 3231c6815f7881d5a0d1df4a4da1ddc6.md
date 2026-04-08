@@ -19,3 +19,11 @@ Produsent: Richards, Stephen
 Stilperiode: Samtidsdesign
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O77299.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.9160
+Fill-ratio (mesh): 0.4759
+Inertia-ratio (mesh): 0.7015
+Kompleksitet (mesh, log10 v/a): 4.7188
+Konveks hylster-volum (m³): 2.5172

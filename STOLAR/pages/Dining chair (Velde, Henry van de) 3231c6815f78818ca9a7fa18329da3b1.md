@@ -14,3 +14,11 @@ Objekt-ID: O176165
 Produsent: Velde, Henry van de
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O176165.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7679
+Fill-ratio (mesh): 0.6186
+Inertia-ratio (mesh): 0.3624
+Kompleksitet (mesh, log10 v/a): 4.6297
+Konveks hylster-volum (m³): 1.0558

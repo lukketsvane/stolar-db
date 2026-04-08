@@ -18,3 +18,11 @@ Produsent: Thonet, Michael
 Stilperiode: Wiener bentwood / Historisme
 Til år: 1840
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O59199.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7792
+Fill-ratio (mesh): 0.6264
+Inertia-ratio (mesh): 0.4414
+Kompleksitet (mesh, log10 v/a): 5.3845
+Konveks hylster-volum (m³): 0.1185

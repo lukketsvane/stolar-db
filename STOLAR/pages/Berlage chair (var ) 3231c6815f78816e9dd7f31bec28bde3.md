@@ -16,3 +16,11 @@ Produksjonsstad: Rotterdam
 Produsent: Hutten, Richard
 Stilperiode: Samtidsdesign
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1153416.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7704
+Fill-ratio (mesh): 0.7362
+Inertia-ratio (mesh): 0.4193
+Kompleksitet (mesh, log10 v/a): 4.6473
+Konveks hylster-volum (m³): 1.4131

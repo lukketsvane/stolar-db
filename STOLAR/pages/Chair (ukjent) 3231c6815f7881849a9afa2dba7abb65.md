@@ -19,3 +19,11 @@ Produsent: ukjent
 Stilperiode: Jugend/Art Nouveau
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O186536.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7375
+Fill-ratio (mesh): 0.5530
+Inertia-ratio (mesh): 0.2739
+Kompleksitet (mesh, log10 v/a): 5.3151
+Konveks hylster-volum (m³): 0.0823

@@ -19,3 +19,11 @@ Produsent: Heal & Son Ltd
 Stilperiode: Art Deco / Tidleg modernisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372058.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8268
+Fill-ratio (mesh): 0.6076
+Inertia-ratio (mesh): 0.4926
+Kompleksitet (mesh, log10 v/a): 5.6339
+Konveks hylster-volum (m³): 0.0675

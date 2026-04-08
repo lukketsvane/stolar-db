@@ -73,7 +73,7 @@ def run_test():
 def plot(pair_starts, summary, n_total):
     apply_style()
 
-    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=1.05))
+    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.89))
     gs = fig.add_gridspec(3, 1, left=0.16, right=0.96,
                           bottom=0.13, top=0.82, hspace=0.45)
 
@@ -122,9 +122,6 @@ def plot(pair_starts, summary, n_total):
             ax.spines[s].set_visible(False)
 
 
-    fig.text(0.04, 0.025,
-             f'n = {n_total} stolar  ·  Stipla horisontal linje = «inga rørsle» (0,5 cm)',
-             fontsize=6.5, color=INK_SOFT, ha='left')
 
     out = FIG_DIR / 'fig-A.6.6-wasserstein.pdf'
     fig.savefig(out)

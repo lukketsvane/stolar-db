@@ -65,7 +65,7 @@ def run_test():
 def plot(df):
     apply_style()
 
-    fig = plt.figure(figsize=fig_size(width_mm=105, ratio=0.95))
+    fig = plt.figure(figsize=fig_size(width_mm=105, ratio=0.81))
     ax = fig.add_subplot(111, projection='3d', computed_zorder=False)
     fig.subplots_adjust(left=0.0, right=0.98, bottom=0.10, top=0.86)
 
@@ -106,10 +106,6 @@ def plot(df):
         t.set_color(INK_SOFT)
 
 
-    fig.text(0.04, 0.025,
-             f'n = {len(df)} stolar med komplette dimensjonar  ·  '
-             f'Store ringar = sentroidar per material',
-             fontsize=6.3, color=INK_SOFT, ha='left')
 
     out = FIG_DIR / 'fig-A.6.11-materialnisjar.pdf'
     fig.savefig(out)

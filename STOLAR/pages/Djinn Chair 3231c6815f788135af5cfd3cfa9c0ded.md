@@ -17,3 +17,11 @@ Produksjonsstad: Paris
 Produsent: Mourgue, Olivier
 Stilperiode: Modernisme / Midtjahrhundre
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O121252.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8747
+Fill-ratio (mesh): 0.6401
+Inertia-ratio (mesh): 0.7719
+Kompleksitet (mesh, log10 v/a): 4.6745
+Konveks hylster-volum (m³): 4.2590

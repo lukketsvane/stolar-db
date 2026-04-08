@@ -19,3 +19,11 @@ Produsent: Ashbee, Charles Robert
 Stilperiode: Viktorianisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O371712.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8167
+Fill-ratio (mesh): 0.7248
+Inertia-ratio (mesh): 0.5455
+Kompleksitet (mesh, log10 v/a): 5.1404
+Konveks hylster-volum (m³): 0.3947

@@ -19,3 +19,11 @@ Produsent: Mogensen, Borge
 Stilperiode: Skandinavisk modernisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O63047.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8346
+Fill-ratio (mesh): 0.5822
+Inertia-ratio (mesh): 0.7551
+Kompleksitet (mesh, log10 v/a): 6.2918
+Konveks hylster-volum (m³): 0.0140

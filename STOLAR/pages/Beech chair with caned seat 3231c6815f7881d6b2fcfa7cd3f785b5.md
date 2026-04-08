@@ -17,3 +17,11 @@ Produsent: Riemerschmid, Richard
 Stilperiode: Jugend/Art Nouveau
 Til år: 1906
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O133484.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7777
+Fill-ratio (mesh): 0.6195
+Inertia-ratio (mesh): 0.3908
+Kompleksitet (mesh, log10 v/a): 5.9259
+Konveks hylster-volum (m³): 0.0140

@@ -20,3 +20,11 @@ Produsent: Sené, Jean-Baptiste-Claude
 Stilperiode: Nyklassisisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O52864.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8419
+Fill-ratio (mesh): 0.5974
+Inertia-ratio (mesh): 0.4818
+Kompleksitet (mesh, log10 v/a): 5.3443
+Konveks hylster-volum (m³): 0.1770

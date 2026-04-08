@@ -19,3 +19,11 @@ Produsent: Newman, Edward
 Stilperiode: Nyklassisisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O59056.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8008
+Fill-ratio (mesh): 0.6106
+Inertia-ratio (mesh): 0.4194
+Kompleksitet (mesh, log10 v/a): 4.6575
+Konveks hylster-volum (m³): 1.1104

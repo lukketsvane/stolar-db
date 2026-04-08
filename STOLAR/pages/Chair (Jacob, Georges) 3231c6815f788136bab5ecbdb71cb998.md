@@ -19,3 +19,11 @@ Produsent: Jacob, Georges
 Stilperiode: Nyklassisisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O129649.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.4041
+Fill-ratio (mesh): 0.3989
+Inertia-ratio (mesh): 0.2639
+Kompleksitet (mesh, log10 v/a): 4.6624
+Konveks hylster-volum (m³): 0.2834

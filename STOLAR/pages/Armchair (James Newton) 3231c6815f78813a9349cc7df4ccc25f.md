@@ -19,3 +19,11 @@ Produsent: James Newton
 Stilperiode: Empire
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O122700.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8231
+Fill-ratio (mesh): 0.7654
+Inertia-ratio (mesh): 0.6667
+Kompleksitet (mesh, log10 v/a): 4.6445
+Konveks hylster-volum (m³): 2.6290

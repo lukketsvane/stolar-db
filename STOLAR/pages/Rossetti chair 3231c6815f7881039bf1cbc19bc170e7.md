@@ -19,3 +19,11 @@ Produsent: Rossetti, Dante Gabriel
 Stilperiode: Viktorianisme
 Til år: 1880
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O33770.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8146
+Fill-ratio (mesh): 0.6666
+Inertia-ratio (mesh): 0.3982
+Kompleksitet (mesh, log10 v/a): 4.6615
+Konveks hylster-volum (m³): 1.4204

@@ -80,8 +80,8 @@ def run_test():
 def plot(rows, n_total, n_voxels_total):
     apply_style()
 
-    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.85))
-    ax = fig.add_axes([0.16, 0.2, 0.74, 0.72])
+    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.72))
+    ax = fig.add_axes([0.16, 0.15000000000000002, 0.74, 0.77])
     ax2 = ax.twinx()
 
     p   = np.array([r['period']   for r in rows])
@@ -123,10 +123,6 @@ def plot(rows, n_total, n_voxels_total):
         t.set_color(INK_SOFT)
 
 
-    fig.text(0.04, 0.025,
-             f'n = {n_total} stolar  ·  totalt {n_voxels_total} unike voksler  ·  '
-             f'25-årsperiodar',
-             fontsize=6.3, color=INK_SOFT, ha='left')
 
     out = FIG_DIR / 'fig-A.6.12-nyhetsrate.pdf'
     fig.savefig(out)
