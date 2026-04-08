@@ -89,7 +89,7 @@ def run_test():
 def plot(g, n_total):
     apply_style()
 
-    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.72))
+    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.56))
     ax = fig.add_axes([0.13, 0.15000000000000002, 0.73, 0.77])
 
     x = g['period'].values

@@ -66,7 +66,7 @@ def run_test():
 def plot(df, g, path_length, displacement, tortuosity):
     apply_style()
 
-    fig = plt.figure(figsize=fig_size(width_mm=105, ratio=0.81))
+    fig = plt.figure(figsize=fig_size(width_mm=105, ratio=0.63))
     ax = fig.add_subplot(111, projection='3d')
     fig.subplots_adjust(left=0.0, right=0.96, bottom=0.10, top=0.86)
 

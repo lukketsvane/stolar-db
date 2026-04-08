@@ -72,7 +72,7 @@ def run_test():
 def plot(g, n_total, path_length, displacement, tortuosity):
     apply_style()
 
-    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.81))
+    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.63))
     ax = fig.add_axes([0.16, 0.1, 0.8, 0.81])
 
     h = g['h_mean'].values

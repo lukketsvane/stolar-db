@@ -73,7 +73,7 @@ def run_test():
 def plot(rows, spread):
     apply_style()
 
-    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.72))
+    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.56))
     ax = fig.add_axes([0.3, 0.15000000000000002, 0.66, 0.77])
 
     n = len(rows)

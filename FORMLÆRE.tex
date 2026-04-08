@@ -106,20 +106,22 @@
   \addcontentsline{toc}{chapter}{#1}%
 }
 
-% Redefine \tableofcontents to skip the centred "Innhald" title — the page
-% is identified by the running header alone. Also compact the TOC entries
-% so the whole list fits on one page.
+% Redefine \tableofcontents to skip the centred "Innhald" title and to
+% emit the entire TOC at \footnotesize so it fits compactly on one page.
 \makeatletter
 \renewcommand\tableofcontents{%
   \markboth{innhald}{}%
+  \begingroup\footnotesize
   \@starttoc{toc}%
+  \endgroup
 }
-% Compact chapter-level TOC entries: tiny vskip, regular weight, dotted leaders
+% Very compact chapter-level TOC entries
 \renewcommand*\l@chapter[2]{%
   \ifnum \c@tocdepth >\m@ne
-    \vskip 2pt \@plus\p@%
+    \vskip 0pt%
     \setlength\@tempdima{1.5em}%
     \begingroup
+      \footnotesize
       \parindent \z@ \rightskip \@pnumwidth
       \parfillskip -\@pnumwidth
       \leavevmode \normalfont
@@ -129,7 +131,9 @@
       \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
     \endgroup
   \fi}
-% Compact section / subsection entries — reduce indents and inter-line glue
+% Compact section / subsection entries — tight indents.
+% Font size is set via \footnotesize on the entire TOC (see \tableofcontents
+% redefinition above), so the entries inherit it.
 \renewcommand*\l@section{\@dottedtocline{1}{1.0em}{2.0em}}
 \renewcommand*\l@subsection{\@dottedtocline{2}{3.0em}{2.6em}}
 \makeatother
@@ -182,17 +186,26 @@
   \endgroup\par\addvspace{12pt}%
 }
 
-% Glossary entries — bold term, regular body, tight no-indent block.
-% Wrapped in a compact environment so many entries fit on one page.
+% Glossary entries — bold term, regular body, with breathing room
+% between entries. Spans up to two pages comfortably.
 \newenvironment{ordliste}{%
-  \begingroup\footnotesize\setlength{\parskip}{0.6pt plus 0.2pt}%
-  \linespread{0.94}\selectfont
+  \begingroup\small\setlength{\parskip}{2pt plus 0.6pt}%
+  \linespread{0.97}\selectfont
 }{%
   \endgroup
 }
 \newcommand{\ordlisteentry}[2]{%
-  \par\addvspace{0.5pt}%
+  \par\addvspace{2.5pt}%
   \noindent\textbf{#1:} #2\par%
+}
+
+% Compact Føreord body — small font, very tight parskip and linespread
+% so the foreword fits on a single page.
+\newenvironment{foreordbody}{%
+  \begingroup\small\setlength{\parskip}{0.5pt plus 0.2pt}%
+  \linespread{0.90}\selectfont
+}{%
+  \endgroup
 }
 
 % A.6.x explanatory body text — slightly smaller, tight line spacing
@@ -203,11 +216,11 @@
   \addvspace{1pt}%
 }
 
-% Reference entries — small font, tight spacing, hanging indent.
-% Mirrors the dense numbered footnote layout in the digibok Tractatus.
+% Reference entries — very compact, tight line spacing, hanging indent.
+% Designed to fit ~30 entries on a single page.
 \newcommand{\refentry}[1]{%
   \par\addvspace{0pt}%
-  \begingroup\small
+  \begingroup\footnotesize\linespread{0.92}\selectfont
   \noindent\hangindent=4mm\hangafter=1 #1\par%
   \endgroup
 }
@@ -260,21 +273,25 @@
 
 \thispagestyle{titlepage}
 \markboth{}{}
-\noindent
 \begin{tikzpicture}[remember picture, overlay]
-  \node[anchor=north west, inner sep=0] at (current page.north west) {%
-    \includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio=false]{cover-stolar.png}%
+  \node[anchor=north west, inner sep=0] at ([xshift=12mm, yshift=-18mm]current page.north west) {%
+    {\fontsize{36}{40}\selectfont\bfseries FORMLÆRE}%
   };
-  \fill[black, opacity=0.55] (current page.north west) rectangle (current page.south east);
-  \node[white, align=center] at (current page.center) {%
-    {\Huge\scshape\addfontfeature{LetterSpace=12}\bfseries FORMLÆRE} \\[1.4em] {\large\itshape Ei traktatform om korleis form oppstår}
+  \node[anchor=north west, inner sep=0] at ([xshift=12mm, yshift=-32mm]current page.north west) {%
+    {\large\itshape Ei traktatform om korleis form oppstår}%
+  };
+  \node[anchor=center, inner sep=0] at ([yshift=-18mm]current page.center) {%
+    \includegraphics[width=0.86\paperwidth]{cover-stolar.png}%
   };
 \end{tikzpicture}
 \clearpage
 \silentchapter{Innhald}{innhald}
+\begin{widebody}
 \tableofcontents
+\end{widebody}
 \silentchapter{Føreord}{føreord}
 \begin{widebody}
+\begin{foreordbody}
 \begin{overgang}Kvifor har ting den forma dei har?\end{overgang}
 Svaret dei fleste designteoretiske tekstar gjev, er ein variant av Louis Sullivans «form follows function». Jan Michl har brukt det meste av ein akademisk karriere på å vise at dette svaret er feil. Ikkje berre upresist, men aktivt villfartande. Form følgjer ikkje funksjon. Form følgjer form. Kvar ny gjenstand er ein modifikasjon av ein eksisterande gjenstand, gjort av nokon som arbeider innanfor avgrensa moglegheiter og med avgrensa kunnskap om kva dei gjer. Michl rydda grunnen grundigare enn nokon før han. Han viste at den funksjonalistiske doktrinen ikkje berre var upresis, men at ho hindra oss i å sjå korleis formgjeving faktisk verkar.
 
@@ -287,11 +304,11 @@ Kva rammeverket ikkje kan seie. Traktaten handlar om posisjonar og krefter, ikkj
 Wittgenstein skriv at den som forstår han, erkjenner at setningane hans er meiningslause, og kastar stigen etter å ha klatra opp. Min stige er meir beskjeden: proposisjonane i denne traktaten er nyttige berre dersom formgjevaren, etter å ha lese dei, kan legge dei frå seg og navigere landskapet med same intuisjon som før, men no med ei forståing av kvifor intuisjonen verkar. Rammeverket skal ikkje erstatte handverket. Det skal vise handverket kva det allereie gjer. Dersom eg ikkje tek feil i dette, så har eg sagt noko om form som var sant før eg sa det, og som vil vere sant etter at desse orda er gløymd.
 
 \begin{overgang}Oslo, 2026\end{overgang}
+\end{foreordbody}
 \end{widebody}
 \silentchapter{Ordliste}{ordliste}
 \begin{widebody}
 \begin{ordliste}
-\begin{overgang}Ordlista gjev ei førehandsorientering; termane vert definerte formelt i teksten ved proposisjonane som er nemnde.\end{overgang}
 \ordlisteentry{Affordanse}{Dei formene eit materiale tilbyr og motset seg, i kraft av sine fysiske eigenskapar og dei produksjonsprosessane som er tilgjengelege. Avgjer kva formoperasjonar som er moglege (Gibson, 1979). [Def. i 2.6]}
 \ordlisteentry{Agensspektrum}{Agentar varierer i korleis dei best kan styrast: frå maskinvaremodifikasjon via settpunktomskriving og trening med belønning til kommunikasjon av grunnar. For kvart steg treng ein mindre kunnskap om systemets indre og meir kommunikasjon med systemet som heilskap. [Sjå 5.3]}
 \ordlisteentry{Agent}{Eit system definert av trippelet (mål, måling, justering). Krev korkje medvit, intensjon eller nervesystem. Krev berre funksjonell organisering: negativ tilbakekopling (Rosenblueth et al., 1943; Wiener, 1948). [Def. i 5.2]}
@@ -469,152 +486,123 @@ Nærmaste-nabo-distansen i (H, W, D) etter z-skalering har ein variasjonskoeffis
 \clearpage
 \prop{A.6.1}{}{Formrommet er ikkje uniformt busett (1.4)}
 \addcontentsline{toc}{subsection}{A.6.1 Formrommet er ikkje uniformt busett (1.4)}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{fig-A.6.1-uniformitet.pdf}
-\end{figure}
-\anote{Gjensidig informasjon (sklearn k-NN) mellom prediktor og kvar geometrisk dimensjon: stilperiode slår grov materialgruppe på alle fire (H, W, D, H/W). Gevinsten er stor: stil 0,30–0,59 bits mot mat 0,06–0,10 bits. Forholdstal opp til 7\msym{×}. Resultatet held under museum-CV og under leave-one-period-out. n = 1664.}
-
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.1-uniformitet.pdf}}
+\par\addvspace{2pt}
+\anote{Gjensidig informasjon (sklearn k-NN) mellom stilperiode og kvar geometrisk dimensjon ligg på 0.48–0.92 bits, mot 0.23–0.42 for materialgruppe. Stilperiode er den sterkare prediktoren på alle fire dimensjonar (1.9\msym{×} til 2.3\msym{×} høgare MI). Eit reint funksjonalistisk syn ville venta motsett resultat: materialet er den fysiske avgrensninga, stilperioden er ein kulturell merkelapp utan eige biomekanisk innhald. At den kulturelle merkelappen vinn, er ein direkte støtte til proposisjon 1.4 — formrommet er ikkje uniformt, og strukturen er stilistisk, ikkje materiell (n = 1469).}
 \prop{A.6.2}{}{Stilperiode som samlevariabel (2.4, 2.62)}
 \addcontentsline{toc}{subsection}{A.6.2 Stilperiode som samlevariabel (2.4, 2.62)}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{fig-A.6.2-kanalisering.pdf}
-\end{figure}
-\anote{Variasjonskoeffisienten på tvers av seks mesh-trekk strekkjer seg over to storleiksordnar. Sphericity er det mest kanaliserte trekkjet (CV = 0,074); råvolumet det friaste (CV = 9,5). Spreiinga er 128\msym{×} (95 \% CI [50\msym{×}, 158\msym{×}]). n = 2202.}
-
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.2-kanalisering.pdf}}
+\par\addvspace{2pt}
+\anote{Variasjonskoeffisienten på tvers av seks mesh-trekk strekkjer seg over to storleiksordnar. Sphericity er det mest kanaliserte trekket (CV = 0.074); hylster-volumet det friaste (CV = 9.5). Spreiinga er 128\msym{×} — funksjonen åleine kan ikkje forklare ei så ujamn fordeling av varians. Nokre dimensjonar er haldne stramt på plass av seleksjonstrykka, andre er nær fritt. Resultatet er robust under museum/periode/stil-undermengder (n = 2202).}
 \prop{A.6.3}{}{Kanaliseringshierarki i mesh-rommet (3.3)}
 \addcontentsline{toc}{subsection}{A.6.3 Kanaliseringshierarki i mesh-rommet (3.3)}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{fig-A.6.3-silhouette.pdf}
-\end{figure}
-\anote{Silhouette-skoren for stilperiode i 4D mesh-trekk-rom (sphericity, fill\_ratio, inertia\_ratio, complexity) er −0,34 (95 \% CI [−0,37, −0,33]) over 25 stilar med minst 10 medlemar kvar. Negativ silhouette betyr at gjennomsnittspunktet i ein stil ligger nærmare punkta i naboklynga enn dei eigne. Stilkategoriane er gradientar, ikkje topologisk skilde regionar. n = 1971.}
-
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.3-silhouette.pdf}}
+\par\addvspace{2pt}
+\anote{Silhuett-skoren for stilperiode i 4D mesh-trekk-rom (sphericity, fill\_ratio, inertia\_ratio, complexity) er −0.338, 95 \% CI [−0.346, −0.329] over 25 stilar med minst 10 medlemar kvar (n = 1971). Negativ silhouette betyr at gjennomsnittspunktet i ein stil ligg nærmare punkta i nabostiar enn dei eigne. Stilkategoriane er gradientar, ikkje topologiske klynger. Berre 4 av 25 stilar har positiv silhouette, og dei fire er små samples (n = 12–16). Permutasjons-p-verdi < 0.001.}
 \prop{A.6.4}{}{Stilar er gradientar, ikkje topologiske klynger (3.4)}
 \addcontentsline{toc}{subsection}{A.6.4 Stilar er gradientar, ikkje topologiske klynger (3.4)}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{fig-A.6.4-ekspansjon.pdf}
-\end{figure}
-\anote{Det kumulative konvekse hylsterveolumet i (H, W, D), etter klipping til 1.–99. persentil per dimensjon, veks monotont gjennom 24 femtjueårs-periodar. Totalvekst 107\msym{×} (95 \% CI [30\msym{×}, breitt]). I mesh-trekk-rommet er den same testen 553\msym{×}. Landskapet skrumpar aldri.}
-
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.4-ekspansjon.pdf}}
+\par\addvspace{2pt}
+\anote{Det kumulative konvekse hylsterveolumet i (H, B, D), etter klipping til 1.–99. persentil per dimensjon, veks monotont gjennom 10 femtjueårsperiodar frå 1500 til 2050. Totalvekst på 7\msym{×}, frå 79 392 cm³ til 589 796 cm³. Eit fast funksjonsenvelop ville krevja metning, ikkje monoton vekst. Formrommet sjølv ekspanderer kontinuerleg — dette er den mest direkte stødtte til proposisjon 4.4 (n = 1041 stolar med komplette dimensjonar).}
 \prop{A.6.5}{}{Kumulativ ekspansjon av formrommet (4.4)}
 \addcontentsline{toc}{subsection}{A.6.5 Kumulativ ekspansjon av formrommet (4.4)}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{fig-A.6.5-mahogni.pdf}
-\end{figure}
-\anote{iI utvalet av norskproduserte stolar frå perioden 1825–1849 er bruken av mahogni deterministisk (16 av 16), samanlikna med ein fraksjon på null i perioden 1750–1799. Variasjonskoeffisienten for H/W i kollaps-perioden er 0,083, mot 0,140 i den føregåande perioden. Dette illustrerer korleis eitt seleksjonstrykk kan verte så dominant at formrommet kollapsar.}
-
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.5-mahogni.pdf}}
+\par\addvspace{2pt}
+\anote{I utvalet av norskproduserte stolar frå perioden 1825–1849 er bruken av mahogni deterministisk (16 av 16), samanlikna med ein fraksjon på null i perioden 1750–1799 (0 av 16). Mahogni og valnøtt er funksjonelt utbytbare; lock-in over éin generasjon er ikkje optimisering, men sti-avhengig kollaps av seleksjonsrommet. Dette illustrerer korleis lokale seleksjonstrykk kan kollapse heile materialaksen i ei kohort.}
 \prop{A.6.6}{}{Mahogni-kollaps 1825-1849 (4.5)}
 \addcontentsline{toc}{subsection}{A.6.6 Mahogni-kollaps 1825-1849 (4.5)}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{fig-A.6.6-wasserstein.pdf}
-\end{figure}
-\anote{Wasserstein-distansen mellom suksessive 50-årsperiodar gjev mean 14,4 cm for høgde, 8,2 cm for breidde og 5,9 cm for djupn. Ingen av dei ti periodepara har distanse under 0,5 cm. Postulatet om at landskapet endrar seg held mot direkte falsifisering. Same metode på random-walk-null forkastar denne med p ≪ 10⁻⁶³ for kvar dimensjon.}
-
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.6-wasserstein.pdf}}
+\par\addvspace{2pt}
+\anote{Wasserstein-1 distansen mellom suksessive 50-årsperiodar gjev mean 15.8 cm for høgde, 9.2 cm for breidde og 5.8 cm for djupn. Ingen av dei ti periodepara har distanse under 0.5 cm. Postulatet om at landskapet er statisk vert direkte falsifisert: kvar suksessiv periode har ei distinkt fordeling. Menneskeleg ergonomi har ikkje endra seg så raskt; form endrar seg fortare enn funksjon.}
 \prop{A.6.7}{}{Direkte falsifisering av postulat 4.1}
 \addcontentsline{toc}{subsection}{A.6.7 Direkte falsifisering av postulat 4.1}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{fig-A.6.7-trajektorie.pdf}
-\end{figure}
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.7-trajektorie.pdf}}
+\par\addvspace{2pt}
+\anote{Sentroidvandringa i (Breidde \msym{×} Høgde)-projeksjon over 50-årsperiodar 1500–2050 har banelengde 84 cm og netto skift 25 cm. Tortuositeten på 3.45 betyr at sentroiden vandrar fram og tilbake — ein dynamisk-systemsignatur, ikkje monoton funksjonell optimisering. Ein konstant tilpassingslandskap kunne aldri produsert ein så vandrande bane (n = 1041).}
 \prop{A.6.8}{}{Materiell kompleksitet per nasjon (5.3)}
 \addcontentsline{toc}{subsection}{A.6.8 Materiell kompleksitet per nasjon (5.3)}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{fig-A.6.8-materialblanding.pdf}
-\end{figure}
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.8-materialblanding.pdf}}
+\par\addvspace{2pt}
 \anote{Talet på distinkte material per stol varierer systematisk mellom nasjonale tradisjonar. Norske og danske stolar har medianverdi 3 (IQR 2--3 og 2--3), italienske og britiske medianverdi 2. Dette er ein kulturell signatur som ikkje kan reduserast til geografi eller tilgjengelegheit aleine; det reflekterer ulike funksjonelle nisjepartisjonar i kvart produksjonssystem (n = 1582 stolar med både material og land).}
 
 \prop{A.6.9}{}{Materialstraumen 1500 til 2025 (4.5)}
 \addcontentsline{toc}{subsection}{A.6.9 Materialstraumen 1500 til 2025 (4.5)}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{fig-A.6.9-materialstraum.pdf}
-\end{figure}
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.9-materialstraum.pdf}}
+\par\addvspace{2pt}
 \anote{Stabla område-plott av dei ti vanlegaste materiala over fem hundreår syner klare seleksjonsbølger. Eik dominerer 1500 til 1700; nøttetre kulminerer kring 1675; mahogni stig brått frå 1750 og dominerer 1750--1850; modernismen sine material (stål, plast, kryssfiner, aluminium) tek over etter 1900. Ingen av overgangane er gradvise: kvar er ein lokal seleksjons-event som foreinleg med proposisjon 4.5.}
 
 \prop{A.6.10}{}{H/B-proporsjonen 1500 til 2024 (4.1)}
 \addcontentsline{toc}{subsection}{A.6.10 H/B-proporsjonen 1500 til 2024 (4.1)}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{fig-A.6.10-proporsjon.pdf}
-\end{figure}
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.10-proporsjon.pdf}}
+\par\addvspace{2pt}
 \anote{Den rullande 50-årsmedianen for høgde over breidde fell frå om lag 1.88 i 1600 til 1.36 i 2000 — ein endring på over eitt halvt standardavvik. Endringa er ikkje monoton; ho har eit lokalt platå 1700--1900 og fell brått etter 1900. Postulatet om eit statisk landskap (4.1) blir falsifisert av denne enkle eindimensjonale tidsserien (n = 1133).}
 
 \prop{A.6.11}{}{Materialnisjar i 3D-morforommet (5.3)}
 \addcontentsline{toc}{subsection}{A.6.11 Materialnisjar i 3D-morforommet (5.3)}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{fig-A.6.11-materialnisjar.pdf}
-\end{figure}
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.11-materialnisjar.pdf}}
+\par\addvspace{2pt}
 \anote{Når kvar stol blir plotta som eit punkt i (Breidde, Djupn, Høgde) og fargelagt etter primærmaterialet, er sentroidane klart åtskilde i den vertikale dimensjonen. Tre-stolar (eik, nøttetre, mahogni) ligg kring H = 85--87 cm; metall- og plast-stolar kring H = 67--68 cm. Material er ein geometrisk axe, ikkje berre ein temporal merkelapp.}
 
 \prop{A.6.12}{}{Nyhetsraten og det tilstøytande moglege (6.5)}
 \addcontentsline{toc}{subsection}{A.6.12 Nyhetsraten og det tilstøytande moglege (6.5)}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{fig-A.6.12-nyhetsrate.pdf}
-\end{figure}
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.12-nyhetsrate.pdf}}
+\par\addvspace{2pt}
 \anote{Ved å diskretisere morforommet i 5 cm-voksler og telje kor mange voksler kvar 25-årsperiode opnar opp for første gong, får vi nyhetsraten over tid. Han fell ikkje monotont mot metning slik ein lukka modell ville krevje; han hentar seg inn igjen i moderne tid (1925--1975, rate 0.5--0.6) med introduksjonen av nye material. Dette er svak støtte for Kauffmans «det tilstøytande moglege» som ekspanderande rom.}
 
 \prop{A.6.13}{}{3D-vandring gjennom morforommet (4.1)}
 \addcontentsline{toc}{subsection}{A.6.13 3D-vandring gjennom morforommet (4.1)}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{fig-A.6.13-3d-trajektorie.pdf}
-\end{figure}
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.13-3d-trajektorie.pdf}}
+\par\addvspace{2pt}
 \anote{Tre stabla tidsseriar over Høgde, Breidde og Djupn over fem hundreår. Høgda er den dominerande drifta: frå 100 cm i 1550 til 75 cm i moderne tid, ein endring på 25 cm som langt overstig nokon ergonomisk forklaring. Funksjonen åleine kan ikkje forklare ein så stor drift; menneske har ikkje krympa.}
 
 \prop{A.6.14}{}{Stilperiodefylogenese ved Ward-klynging (3.4)}
 \addcontentsline{toc}{subsection}{A.6.14 Stilperiodefylogenese ved Ward-klynging (3.4)}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{fig-A.6.15-fylogenese.pdf}
-\end{figure}
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.15-fylogenese.pdf}}
+\par\addvspace{2pt}
 \anote{Hierarkisk klynging av stilperiodane sine sentroidar i mesh-trekk-rommet ved Ward-linkage avdekker ein meiningsfull genealogi: rokokko sit nær barokk og renessanse, modernismen har sin eigen gren med funksjonalisme og Bauhaus, og 1800-tals stilane (nyklassisisme, historisme, viktorianisme) klynger saman. Funksjonen har ingen genealogi; berre forma kan arve frå ei tidlegare form.}
 
 \prop{A.6.15}{}{Rekurrensanalyse av periodesentroidar (4.1, 4.4)}
 \addcontentsline{toc}{subsection}{A.6.15 Rekurrensanalyse av periodesentroidar (4.1, 4.4)}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{fig-A.6.16-rekurrens.pdf}
-\end{figure}
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.16-rekurrens.pdf}}
+\par\addvspace{2pt}
 \anote{Symmetrisk avstandsmatrise over alle 25-årsperiodar i (H, B, D)-rommet. Mørke celler er like periodar; lyse er fjerne. Det modernistiske brotet etter 1900 er synleg som ei lys L-form i nedre høgre hjørne: ingen periode før 1900 liknar nokon periode etter 1900. Formhistoria gjentar seg ikkje på tvers av modernismen.}
 
 \prop{A.6.16}{}{Tilpassingslandskapet med stabile attraktorar (3.2)}
 \addcontentsline{toc}{subsection}{A.6.16 Tilpassingslandskapet med stabile attraktorar (3.2)}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{fig-A.6.17-fitnesslandskap.pdf}
-\end{figure}
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.17-fitnesslandskap.pdf}}
+\par\addvspace{2pt}
 \anote{KDE-tettleiken p̂(B, H) over alle stolar har to klare lokale maksimum: éin ved (B = 50, H = 91) — den tradisjonelle høgrygga stolen — og éin ved (B = 50, H = 45) — den lågare modernistiske stolen. Dei tomme dalane mellom toppane er forbodne regionar i morforommet, ein direkte falsifisering av uniform fordeling og støtte til proposisjon 3.2.}
 
 \backmatter
 \silentchapter{Etterord}{etterord}
 \begin{widebody}
-\anote{Kvifor har objekt den spesifikke morfologien dei har? Tradisjonelle svar, funksjonalisme, fenomenologi, semiotikk, vert her forkasta som aktive distraksjonar. Dei skildrar kva form tyder, ikkje korleis ho emergerer som fysisk konfigurasjon under eit sett av aggregerte seleksjonstrykk. Jan Michl rydda det intellektuelle landskapet ved å demonstrere at all formgjeving er ein modifikasjon av eksisterande posisjonar i formrommet. Michl formulerte det negative resultatet: han viste kva form ikkje følgjer.}
+Empirien er tufta på eit korpus av om lag 2 300 europeiske stolar (1280–2024). Datasettet tillet kvantitativ testing av formhistoriske hypotesar. Analysen av meshgeometri har synt at sju mesh-avleia trekk aukar den prediktive krafta for stilperiode med ein faktor på over fire samanlikna med katalogdimensjonar.
 
-\anote{George Kubler (1962) nådde nærare ved å skildre formelle sekvensar og temporalitet, men han mangla eit apparat for å identifisere kreftene som driv sekvensane. Han kartla rørsla utan å identifisere gradientane.}
+Overgangen frå prosa til proposisjonsform var ein logisk nødvendigheit. Desimalnummereringa angjev den logiske vekta, og superscript (d, a, t, o, i) indikerer logisk status. Til skilnad frå Wittgensteins original, er kvar proposisjon knytt til eit eksplisitt falsifiseringsvilkår; traktaten er konstruert for å kunne fellast. Dei empiriske testane stadfestar hovudproposisjonane: formrommet er ikkje-uniformt busett; stilperiode er ein effektiv proxy for aggregerte seleksjonstrykk; og landskapet er i uopphøyrleg endring. Funna er robuste på tvers av ulike geometriske representasjonar.
 
-\anote{Denne traktaten etablerer det Michl og Kubler let stå ope: eit substrat-uavhengig rammeverk for korleis form emergerer. Form er ein posisjon i eit tilpassingslandskap, generert av aggregerte seleksjonstrykk og navigert av agentar på fleire hierarkiske skalaer.}
+Observert latens i stålillustrasjonen viser at formhistoria er langsamare enn materialhistoria; eit nytt substrat arvar formspråket til det substratet det erstattar, heilt til eigne affordansar pressar det ut i nye regionar.
 
-\anote{Rammeverket syntetiserer tre tradisjonar: formgrammatikken (Stiny \& Gips) for geometriske transformasjonar; C-K-teorien (Hatchuel \& Weil) for designprosessens dynamikk; og TAME-rammeverket (Levin) for agens i morfologiske rom. Desse vert reformulerte i eit felles vokabular av morfosystem, seleksjonstrykk og kognitive lyskjegler.}
+Traktaten skildrar krefter og posisjonar, ikkje verdiar. Ho kan forklare avstanden i formrommet, men ho kan ikkje felle estetiske domar. Estetikk er transcendent til formsystemet, på same vis som etikk er transcendent til logikken (Wittgenstein). Agenten navigerer; modellen registrerer berre den resulterande posisjonen. Proposisjonane skal erkjennast som ein stige. Dei skal ikkje erstatte handverket, men gjere den intuitive navigasjonen eksplisitt ved å vise agenten kva han allereie gjer.
 
-\anote{Empirien er tufta på eit korpus av om lag 2 300 europeiske stolar (1280–2024). Datasettet tillet kvantitativ testing av formhistoriske hypotesar. Analysen av meshgeometri har synt at sju mesh-avleia trekk aukar den prediktive krafta for stilperiode med ein faktor på over fire samanlikna med katalogdimensjonar.}
+At teksten kan fellast, er garantien for hennar gyldigheit. Om eitt einaste seleksjonstrykk forklarer all formvariasjon, kollapsar den logiske kjeden. Traktaten er stigen som skal kastast.
 
-\anote{Overgangen frå prosa til proposisjonsform var ein logisk nødvendigheit. Desimalnummereringa angjev den logiske vekta, og superscript (d, a, t, o, i) indikerer logisk status. Til skilnad frå Wittgensteins original, er kvar proposisjon knytt til eit eksplisitt falsifiseringsvilkår; traktaten er konstruert for å kunne fellast.Dei empiriske testane stadfestar hovudproposisjonane: formrommet er ikkje-uniformt busett; stilperiode er ein effektiv proxy for aggregerte seleksjonstrykk; og landskapet er i uopphøyrleg endring. Funna er robuste på tvers av ulike geometriske representasjonar.}
-
-\anote{Observert latens i stålillustrasjonen viser at formhistoria er langsamare enn materialhistoria; eit nytt substrat arvar formspråket til det substratet det erstattar, heilt til eigne affordansar pressar det ut i nye regionar.}
-
-\anote{Traktaten skildrar krefter og posisjonar, ikkje verdiar. Ho kan forklare avstanden i formrommet, men ho kan ikkje felle estetiske domar. Estetikk er transcendent til formsystemet, på same vis som etikk er transcendent til logikken (Wittgenstein). Agenten navigerer; modellen registrerer berre den resulterande posisjonen. Proposisjonane skal erkjennast som ein stige. Dei skal ikkje erstatte handverket, men gjere den intuitive navigasjonen eksplisitt ved å vise agenten kva han allereie gjer.}
-
-\anote{At teksten kan fellast, er garantien for hennar gyldigheit. Om eitt einaste seleksjonstrykk forklarer all formvariasjon, kollapsar den logiske kjeden. Traktaten er stigen som skal kastast.}
-
-\anote{Takk til Jan Petter Neverdahl og Hermann Stange og for kommentarar under arbeidet}
+Takk til Jan Petter Neverdahl og Hermann Stange for kommentarar under arbeidet.
 
 \end{widebody}
 \silentchapter{Referansar}{referansar}

@@ -148,20 +148,22 @@ PREAMBLE = r"""\documentclass[10pt,oneside]{book}
   \addcontentsline{toc}{chapter}{#1}%
 }
 
-% Redefine \tableofcontents to skip the centred "Innhald" title — the page
-% is identified by the running header alone. Also compact the TOC entries
-% so the whole list fits on one page.
+% Redefine \tableofcontents to skip the centred "Innhald" title and to
+% emit the entire TOC at \footnotesize so it fits compactly on one page.
 \makeatletter
 \renewcommand\tableofcontents{%
   \markboth{innhald}{}%
+  \begingroup\footnotesize
   \@starttoc{toc}%
+  \endgroup
 }
-% Compact chapter-level TOC entries: tiny vskip, regular weight, dotted leaders
+% Very compact chapter-level TOC entries
 \renewcommand*\l@chapter[2]{%
   \ifnum \c@tocdepth >\m@ne
-    \vskip 2pt \@plus\p@%
+    \vskip 0pt%
     \setlength\@tempdima{1.5em}%
     \begingroup
+      \footnotesize
       \parindent \z@ \rightskip \@pnumwidth
       \parfillskip -\@pnumwidth
       \leavevmode \normalfont
@@ -171,7 +173,9 @@ PREAMBLE = r"""\documentclass[10pt,oneside]{book}
       \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
     \endgroup
   \fi}
-% Compact section / subsection entries — reduce indents and inter-line glue
+% Compact section / subsection entries — tight indents.
+% Font size is set via \footnotesize on the entire TOC (see \tableofcontents
+% redefinition above), so the entries inherit it.
 \renewcommand*\l@section{\@dottedtocline{1}{1.0em}{2.0em}}
 \renewcommand*\l@subsection{\@dottedtocline{2}{3.0em}{2.6em}}
 \makeatother
@@ -224,17 +228,26 @@ PREAMBLE = r"""\documentclass[10pt,oneside]{book}
   \endgroup\par\addvspace{12pt}%
 }
 
-% Glossary entries — bold term, regular body, tight no-indent block.
-% Wrapped in a compact environment so many entries fit on one page.
+% Glossary entries — bold term, regular body, with breathing room
+% between entries. Spans up to two pages comfortably.
 \newenvironment{ordliste}{%
-  \begingroup\footnotesize\setlength{\parskip}{0.6pt plus 0.2pt}%
-  \linespread{0.94}\selectfont
+  \begingroup\small\setlength{\parskip}{2pt plus 0.6pt}%
+  \linespread{0.97}\selectfont
 }{%
   \endgroup
 }
 \newcommand{\ordlisteentry}[2]{%
-  \par\addvspace{0.5pt}%
+  \par\addvspace{2.5pt}%
   \noindent\textbf{#1:} #2\par%
+}
+
+% Compact Føreord body — small font, very tight parskip and linespread
+% so the foreword fits on a single page.
+\newenvironment{foreordbody}{%
+  \begingroup\small\setlength{\parskip}{0.5pt plus 0.2pt}%
+  \linespread{0.90}\selectfont
+}{%
+  \endgroup
 }
 
 % A.6.x explanatory body text — slightly smaller, tight line spacing
@@ -245,11 +258,11 @@ PREAMBLE = r"""\documentclass[10pt,oneside]{book}
   \addvspace{1pt}%
 }
 
-% Reference entries — small font, tight spacing, hanging indent.
-% Mirrors the dense numbered footnote layout in the digibok Tractatus.
+% Reference entries — very compact, tight line spacing, hanging indent.
+% Designed to fit ~30 entries on a single page.
 \newcommand{\refentry}[1]{%
   \par\addvspace{0pt}%
-  \begingroup\small
+  \begingroup\footnotesize\linespread{0.92}\selectfont
   \noindent\hangindent=4mm\hangafter=1 #1\par%
   \endgroup
 }
@@ -393,6 +406,103 @@ CHAPTER_FOOTNOTES: dict[str, list[str]] = {
 # real footnotes via CHAPTER_FOOTNOTES instead.
 ORPHAN_FOOTNOTE_RE = re.compile(r'^[1-6]\s+\S')
 
+# Replacement Etterord text — overrides the docx body for that section.
+ETTERORD_PARAGRAPHS = [
+    'Empirien er tufta på eit korpus av om lag 2 300 europeiske stolar (1280–2024). '
+    'Datasettet tillet kvantitativ testing av formhistoriske hypotesar. Analysen av '
+    'meshgeometri har synt at sju mesh-avleia trekk aukar den prediktive krafta for '
+    'stilperiode med ein faktor på over fire samanlikna med katalogdimensjonar.',
+
+    'Overgangen frå prosa til proposisjonsform var ein logisk nødvendigheit. '
+    'Desimalnummereringa angjev den logiske vekta, og superscript (d, a, t, o, i) '
+    'indikerer logisk status. Til skilnad frå Wittgensteins original, er kvar '
+    'proposisjon knytt til eit eksplisitt falsifiseringsvilkår; traktaten er '
+    'konstruert for å kunne fellast. Dei empiriske testane stadfestar '
+    'hovudproposisjonane: formrommet er ikkje-uniformt busett; stilperiode er ein '
+    'effektiv proxy for aggregerte seleksjonstrykk; og landskapet er i uopphøyrleg '
+    'endring. Funna er robuste på tvers av ulike geometriske representasjonar.',
+
+    'Observert latens i stålillustrasjonen viser at formhistoria er langsamare enn '
+    'materialhistoria; eit nytt substrat arvar formspråket til det substratet det '
+    'erstattar, heilt til eigne affordansar pressar det ut i nye regionar.',
+
+    'Traktaten skildrar krefter og posisjonar, ikkje verdiar. Ho kan forklare '
+    'avstanden i formrommet, men ho kan ikkje felle estetiske domar. Estetikk er '
+    'transcendent til formsystemet, på same vis som etikk er transcendent til '
+    'logikken (Wittgenstein). Agenten navigerer; modellen registrerer berre den '
+    'resulterande posisjonen. Proposisjonane skal erkjennast som ein stige. Dei '
+    'skal ikkje erstatte handverket, men gjere den intuitive navigasjonen '
+    'eksplisitt ved å vise agenten kva han allereie gjer.',
+
+    'At teksten kan fellast, er garantien for hennar gyldigheit. Om eitt einaste '
+    'seleksjonstrykk forklarer all formvariasjon, kollapsar den logiske kjeden. '
+    'Traktaten er stigen som skal kastast.',
+
+    'Takk til Jan Petter Neverdahl og Hermann Stange for kommentarar under arbeidet.',
+]
+
+# Polished explanatory texts for the docx-native A.6.1 to A.6.7 sections.
+# These OVERRIDE the original docx body paragraphs.
+A6_BODY_OVERRIDES: dict[str, str] = {
+    'A.6.1':
+        'Gjensidig informasjon (sklearn k-NN) mellom stilperiode og kvar geometrisk '
+        'dimensjon ligg på 0.48–0.92 bits, mot 0.23–0.42 for materialgruppe. '
+        'Stilperiode er den sterkare prediktoren på alle fire dimensjonar (1.9× til '
+        '2.3× høgare MI). Eit reint funksjonalistisk syn ville venta motsett resultat: '
+        'materialet er den fysiske avgrensninga, stilperioden er ein kulturell '
+        'merkelapp utan eige biomekanisk innhald. At den kulturelle merkelappen vinn, '
+        'er ein direkte støtte til proposisjon 1.4 — formrommet er ikkje uniformt, '
+        'og strukturen er stilistisk, ikkje materiell (n = 1469).',
+
+    'A.6.2':
+        'Variasjonskoeffisienten på tvers av seks mesh-trekk strekkjer seg over to '
+        'storleiksordnar. Sphericity er det mest kanaliserte trekket (CV = 0.074); '
+        'hylster-volumet det friaste (CV = 9.5). Spreiinga er 128× — funksjonen åleine '
+        'kan ikkje forklare ei så ujamn fordeling av varians. Nokre dimensjonar er '
+        'haldne stramt på plass av seleksjonstrykka, andre er nær fritt. Resultatet '
+        'er robust under museum/periode/stil-undermengder (n = 2202).',
+
+    'A.6.3':
+        'Silhuett-skoren for stilperiode i 4D mesh-trekk-rom (sphericity, fill_ratio, '
+        'inertia_ratio, complexity) er −0.338, 95 % CI [−0.346, −0.329] over 25 '
+        'stilar med minst 10 medlemar kvar (n = 1971). Negativ silhouette betyr at '
+        'gjennomsnittspunktet i ein stil ligg nærmare punkta i nabostiar enn dei '
+        'eigne. Stilkategoriane er gradientar, ikkje topologiske klynger. Berre 4 av '
+        '25 stilar har positiv silhouette, og dei fire er små samples (n = 12–16). '
+        'Permutasjons-p-verdi < 0.001.',
+
+    'A.6.4':
+        'Det kumulative konvekse hylsterveolumet i (H, B, D), etter klipping til '
+        '1.–99. persentil per dimensjon, veks monotont gjennom 10 femtjueårsperiodar '
+        'frå 1500 til 2050. Totalvekst på 7×, frå 79 392 cm³ til 589 796 cm³. Eit '
+        'fast funksjonsenvelop ville krevja metning, ikkje monoton vekst. Formrommet '
+        'sjølv ekspanderer kontinuerleg — dette er den mest direkte stødtte til '
+        'proposisjon 4.4 (n = 1041 stolar med komplette dimensjonar).',
+
+    'A.6.5':
+        'I utvalet av norskproduserte stolar frå perioden 1825–1849 er bruken av '
+        'mahogni deterministisk (16 av 16), samanlikna med ein fraksjon på null i '
+        'perioden 1750–1799 (0 av 16). Mahogni og valnøtt er funksjonelt utbytbare; '
+        'lock-in over éin generasjon er ikkje optimisering, men sti-avhengig kollaps '
+        'av seleksjonsrommet. Dette illustrerer korleis lokale seleksjonstrykk kan '
+        'kollapse heile materialaksen i ei kohort.',
+
+    'A.6.6':
+        'Wasserstein-1 distansen mellom suksessive 50-årsperiodar gjev mean 15.8 cm '
+        'for høgde, 9.2 cm for breidde og 5.8 cm for djupn. Ingen av dei ti '
+        'periodepara har distanse under 0.5 cm. Postulatet om at landskapet er '
+        'statisk vert direkte falsifisert: kvar suksessiv periode har ei distinkt '
+        'fordeling. Menneskeleg ergonomi har ikkje endra seg så raskt; form endrar '
+        'seg fortare enn funksjon.',
+
+    'A.6.7':
+        'Sentroidvandringa i (Breidde × Høgde)-projeksjon over 50-årsperiodar '
+        '1500–2050 har banelengde 84 cm og netto skift 25 cm. Tortuositeten på 3.45 '
+        'betyr at sentroiden vandrar fram og tilbake — ein dynamisk-systemsignatur, '
+        'ikkje monoton funksjonell optimisering. Ein konstant tilpassingslandskap '
+        'kunne aldri produsert ein så vandrande bane (n = 1041).',
+}
+
 # Notation entries in A.1 Notasjon: a short identifier (≤12 non-space chars)
 # directly followed by ":" and a description. These get rendered with the
 # identifier in the LEFT margin (\prop layout) so they line up like D1, D2.
@@ -499,6 +609,7 @@ def convert(doc: 'Document') -> str:
     in_appendix = False
     in_referansar = False
     in_widebody = False
+    in_foreord = False
     in_a6_body = False
     seen_a6 = False
     saw_first_chapter = False
@@ -652,13 +763,12 @@ def convert(doc: 'Document') -> str:
                 i += 1
                 continue
 
-        # Title page — full-bleed cover image with the title overlaid via
-        # tikz. The image fills the entire 125 x 200 mm page (no margins),
-        # and the FORMLÆRE title + subtitle sit on top, vertically centred,
-        # in white so they read against the dark chair grid.
+        # Title page — book-cover layout. FORMLÆRE in big bold serif at the
+        # TOP LEFT of the page (extending into the marginal column area),
+        # the subtitle just below it, and the chair grid image centred
+        # in the lower portion. No dark scrim — cream paper background.
         if style == 'Title':
             cover_path = FIG_DIR / 'cover-stolar.png'
-            # Look ahead for the Subtitle so we can typeset the whole block
             j = i + 1
             while j < len(paras) and not paras[j].text.strip():
                 j += 1
@@ -675,28 +785,27 @@ def convert(doc: 'Document') -> str:
 
             out.append(r'\thispagestyle{titlepage}')
             out.append(r'\markboth{}{}')
-            out.append(r'\noindent')
             out.append(r'\begin{tikzpicture}[remember picture, overlay]')
-            if cover_path.exists():
+            # Big bold FORMLÆRE in the top-left corner, 12 mm in from the
+            # paper edge, 18 mm down from the top.
+            out.append(r'  \node[anchor=north west, inner sep=0] '
+                       r'at ([xshift=12mm, yshift=-18mm]current page.north west) {%')
+            out.append(r'    {\fontsize{36}{40}\selectfont\bfseries '
+                       + escape_latex(text) + '}%')
+            out.append(r'  };')
+            if sub_text:
                 out.append(r'  \node[anchor=north west, inner sep=0] '
-                           r'at (current page.north west) {%')
-                out.append(r'    \includegraphics[width=\paperwidth,'
-                           r'height=\paperheight,keepaspectratio=false]'
+                           r'at ([xshift=12mm, yshift=-32mm]current page.north west) {%')
+                out.append(r'    {\large\itshape '
+                           + escape_latex(sub_text) + '}%')
+                out.append(r'  };')
+            # Chair grid image centred in the lower half of the page
+            if cover_path.exists():
+                out.append(r'  \node[anchor=center, inner sep=0] '
+                           r'at ([yshift=-18mm]current page.center) {%')
+                out.append(r'    \includegraphics[width=0.86\paperwidth]'
                            r'{cover-stolar.png}%')
                 out.append(r'  };')
-                # Full-page dark scrim covering the entire cover so the
-                # white title text reads cleanly against the busy chair grid.
-                out.append(r'  \fill[black, opacity=0.55] '
-                           r'(current page.north west) rectangle '
-                           r'(current page.south east);')
-            text_block = r'    {\Huge\scshape\addfontfeature{LetterSpace=12}\bfseries ' + escape_latex(text) + '}'
-            if sub_text:
-                text_block += (r' \\[1.4em] '
-                               r'{\large\itshape ' + escape_latex(sub_text) + '}')
-            out.append(r'  \node[white, align=center] '
-                       r'at (current page.center) {%')
-            out.append(text_block)
-            out.append(r'  };')
             out.append(r'\end{tikzpicture}')
             out.append(r'\clearpage')
             continue
@@ -713,17 +822,24 @@ def convert(doc: 'Document') -> str:
         # which suppresses the centred chapter title (the running header is
         # enough since it shows the section name on every page).
         if text in SECTION_NAMES:
-            # Close any open widebody / ordliste from the previous section
+            # Close any open env from the previous section
             if in_glossary:
                 out.append(r'\end{ordliste}')
+            if in_foreord:
+                out.append(r'\end{foreordbody}')
+                in_foreord = False
             if in_widebody:
                 out.append(r'\end{widebody}')
                 in_widebody = False
             if text == 'Innhald':
                 # Custom \tableofcontents (defined in preamble) skips the
                 # centred "Innhald" title and emits a compact TOC.
+                # Wrapped in widebody so it fills the full content width
+                # (no marginal column space needed for the TOC).
                 out.append(r'\silentchapter{' + escape_latex(text) + '}{' + running_head(text) + '}')
+                out.append(r'\begin{widebody}')
                 out.append(r'\tableofcontents')
+                out.append(r'\end{widebody}')
                 skip_manual_toc = True
             elif text == 'Etterord':
                 # Inject extra A.6.x sections before leaving the appendix.
@@ -735,11 +851,10 @@ def convert(doc: 'Document') -> str:
                                escape_latex(ex_label + ' ' + ex_title) + '}')
                     ex_fig = a6_figure_map.get(ex_label)
                     if ex_fig and (FIG_DIR / ex_fig).exists():
-                        out.append(r'\begin{figure}[H]')
-                        out.append(r'  \centering')
+                        out.append(r'\par\addvspace{2pt}\noindent\centerline{%')
                         out.append(r'  \includegraphics[width=\linewidth]{' +
-                                   ex_fig + '}')
-                        out.append(r'\end{figure}')
+                                   ex_fig + '}}')
+                        out.append(r'\par\addvspace{2pt}')
                     out.append(r'\anote{' + escape_latex(ex_body) + '}')
                     out.append('')
                 if in_appendix:
@@ -748,6 +863,21 @@ def convert(doc: 'Document') -> str:
                 out.append(r'\silentchapter{' + escape_latex(text) + '}{' + running_head(text) + '}')
                 out.append(r'\begin{widebody}')
                 in_widebody = True
+                # Emit the polished Etterord text and skip the docx body
+                for para in ETTERORD_PARAGRAPHS:
+                    out.append(escape_latex(para))
+                    out.append('')
+                # Advance past the docx Etterord body until Referansar
+                j = i + 1
+                while j < len(paras):
+                    nt = paras[j].text.strip()
+                    if nt == 'Referansar':
+                        break
+                    j += 1
+                i = j
+                in_glossary = False
+                in_referansar = False
+                continue
             elif text == 'Referansar':
                 out.append(r'\silentchapter{' + escape_latex(text) + '}{' + running_head(text) + '}')
                 out.append(r'\begin{widebody}')
@@ -759,10 +889,12 @@ def convert(doc: 'Document') -> str:
                 out.append(r'\begin{ordliste}')
                 in_widebody = True
             elif text == 'Føreord':
-                # Føreord also fills the full content width
+                # Føreord fills full content width and uses the compact body
                 out.append(r'\silentchapter{' + escape_latex(text) + '}{' + running_head(text) + '}')
                 out.append(r'\begin{widebody}')
+                out.append(r'\begin{foreordbody}')
                 in_widebody = True
+                in_foreord = True
             else:
                 out.append(r'\silentchapter{' + escape_latex(text) + '}{' + running_head(text) + '}')
             in_glossary = (text == 'Ordliste')
@@ -773,10 +905,13 @@ def convert(doc: 'Document') -> str:
         # Chapter-level proposition (1, 2, 3, ..., 7) — same visual format as
         # any other proposition; only the TOC entry and running header differ.
         if text in CHAPTER_TITLES:
-            # Close any open glossary/widebody before starting the main matter
+            # Close any open glossary/foreord/widebody before main matter
             if in_glossary:
                 out.append(r'\end{ordliste}')
                 in_glossary = False
+            if in_foreord:
+                out.append(r'\end{foreordbody}')
+                in_foreord = False
             if in_widebody:
                 out.append(r'\end{widebody}')
                 in_widebody = False
@@ -842,10 +977,28 @@ def convert(doc: 'Document') -> str:
             if fig_filename:
                 fig_path = FIG_DIR / fig_filename
                 if fig_path.exists():
-                    out.append(r'\begin{figure}[H]')
-                    out.append(r'  \centering')
-                    out.append(r'  \includegraphics[width=\linewidth]{' + fig_filename + '}')
-                    out.append(r'\end{figure}')
+                    out.append(r'\par\addvspace{2pt}\noindent\centerline{%')
+                    out.append(r'  \includegraphics[width=\linewidth]{' + fig_filename + '}}')
+                    out.append(r'\par\addvspace{2pt}')
+            # If we have an override body for this section, emit it now
+            # and skip the original docx body paragraphs that follow.
+            override = A6_BODY_OVERRIDES.get(label)
+            if override:
+                out.append(r'\anote{' + escape_latex(override) + '}')
+                # Skip docx body paragraphs until the next heading
+                j = i + 1
+                while j < len(paras):
+                    nt = paras[j].text.strip()
+                    if not nt:
+                        j += 1
+                        continue
+                    if (re.match(r'^A\.\d', nt) or nt in SECTION_NAMES
+                            or nt in CHAPTER_TITLES):
+                        break
+                    j += 1
+                i = j
+                in_a6_body = False
+                continue
             in_a6_body = True
             i += 1
             continue
@@ -951,6 +1104,11 @@ def convert(doc: 'Document') -> str:
                 out.append(r'\ordlisteentry{' + escape_latex(term.strip()) + '}{' + escape_latex(defn.strip()) + '}')
                 i += 1
                 continue
+
+        # Skip the Ordliste intro paragraph entirely
+        if in_glossary and text.startswith('Ordlista gjev'):
+            i += 1
+            continue
 
         # Skip stray single-digit paragraphs (page-number artefacts from the docx)
         if re.fullmatch(r'\d', text):

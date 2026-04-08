@@ -59,7 +59,7 @@ def run_test():
 def plot(df, periods, dist):
     apply_style()
 
-    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.70))
+    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.55))
     ax = fig.add_axes([0.16, 0.1, 0.74, 0.8300000000000001])
 
     # Cream → rust → ink colormap. Light = similar, dark = far.

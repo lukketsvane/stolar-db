@@ -64,7 +64,7 @@ def run_test():
 def plot(rows, n_total):
     apply_style()
 
-    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.94))
+    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.73))
     ax = fig.add_axes([0.32, 0.15000000000000002, 0.62, 0.77])
 
     n = len(rows)

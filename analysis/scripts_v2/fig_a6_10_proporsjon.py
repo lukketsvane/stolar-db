@@ -80,7 +80,7 @@ def plot(df, grid, med, q25, q75, century_kdes):
     apply_style()
 
     # Single-panel version: just the XY scatter + rolling median + IQR
-    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.66))
+    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.55))
     ax = fig.add_axes([0.16, 0.15000000000000002, 0.8, 0.77])
 
     # Scatter (faint dots) + rolling median + IQR

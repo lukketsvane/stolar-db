@@ -85,7 +85,7 @@ def plot(overall, ci_lo, ci_hi, rows, n_total):
     apply_style()
 
     # Tall narrow figure (~ book column width) — 25 bars need vertical space.
-    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=1.32))
+    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.85))
     # Wider left margin for the long Norwegian style names
     ax = fig.add_axes([0.42, 0.1, 0.55, 0.85])
 
