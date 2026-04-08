@@ -1,33 +1,33 @@
 \xpg@aux {variant=nynorsk}{norwegian}
 \contentsline {chapter}{Innhald}{ii}{}%
-\contentsline {chapter}{Føreord}{iv}{}%
-\contentsline {chapter}{Ordliste}{vi}{}%
+\contentsline {chapter}{Føreord}{iii}{}%
+\contentsline {chapter}{Ordliste}{iv}{}%
 \contentsline {chapter}{1 Form er ein posisjon i eit rom av moglegheiter}{1}{}%
-\contentsline {chapter}{2 Ikkje alle posisjonar er like sannsynlege}{2}{}%
-\contentsline {chapter}{3 Seleksjonstrykka produserer eit landskap over formrommet}{3}{}%
-\contentsline {chapter}{4 Landskapet er dynamisk}{4}{}%
-\contentsline {chapter}{5 Det finst agentar som responderer på landskapet}{5}{}%
-\contentsline {chapter}{6 Forma oppstår mellom agentane}{7}{}%
-\contentsline {chapter}{7 Ingen form er endeleg}{8}{}%
-\contentsline {chapter}{Formell spesifikasjon}{9}{}%
-\contentsline {section}{A.1 Notasjon}{9}{}%
-\contentsline {section}{A.3 Definisjonar}{9}{}%
-\contentsline {section}{A.6 Empiriske testresultat}{10}{}%
-\contentsline {subsection}{A.6.1 Formrommet er ikkje uniformt busett (1.4)}{11}{}%
-\contentsline {subsection}{A.6.2 Stilperiode som samlevariabel (2.4, 2.62)}{11}{}%
-\contentsline {subsection}{A.6.3 Kanaliseringshierarki i mesh-rommet (3.3)}{12}{}%
-\contentsline {subsection}{A.6.4 Stilar er gradientar, ikkje topologiske klynger (3.4)}{13}{}%
-\contentsline {subsection}{A.6.5 Kumulativ ekspansjon av formrommet (4.4)}{14}{}%
-\contentsline {subsection}{A.6.6 Mahogni-kollaps 1825-1849 (4.5)}{14}{}%
-\contentsline {subsection}{A.6.7 Direkte falsifisering av postulat 4.1}{15}{}%
-\contentsline {subsection}{A.6.8 Materiell kompleksitet per nasjon (5.3)}{16}{}%
-\contentsline {subsection}{A.6.9 Materialstraumen 1500 til 2025 (4.5)}{16}{}%
-\contentsline {subsection}{A.6.10 H/B-proporsjonen 1500 til 2024 (4.1)}{17}{}%
-\contentsline {subsection}{A.6.11 Materialnisjar i 3D-morforommet (5.3)}{18}{}%
-\contentsline {subsection}{A.6.12 Nyhetsraten og det tilstøytande moglege (6.5)}{18}{}%
-\contentsline {subsection}{A.6.13 3D-vandring gjennom morforommet (4.1)}{19}{}%
-\contentsline {subsection}{A.6.14 Stilperiodefylogenese ved Ward-klynging (3.4)}{20}{}%
-\contentsline {subsection}{A.6.15 Rekurrensanalyse av periodesentroidar (4.1, 4.4)}{21}{}%
-\contentsline {subsection}{A.6.16 Tilpassingslandskapet med stabile attraktorar (3.2)}{22}{}%
-\contentsline {chapter}{Etterord}{24}{}%
-\contentsline {chapter}{Referansar}{26}{}%
+\contentsline {chapter}{2 Ikkje alle posisjonar er like sannsynlege}{3}{}%
+\contentsline {chapter}{3 Seleksjonstrykka produserer eit landskap over formrommet}{5}{}%
+\contentsline {chapter}{4 Landskapet er dynamisk}{7}{}%
+\contentsline {chapter}{5 Det finst agentar som responderer på landskapet}{8}{}%
+\contentsline {chapter}{6 Forma oppstår mellom agentane}{11}{}%
+\contentsline {chapter}{7 Ingen form er endeleg}{13}{}%
+\contentsline {chapter}{Formell spesifikasjon}{15}{}%
+\contentsline {section}{A.1 Notasjon}{15}{}%
+\contentsline {section}{A.3 Definisjonar}{15}{}%
+\contentsline {section}{A.6 Empiriske testresultat}{17}{}%
+\contentsline {subsection}{A.6.1 Formrommet er ikkje uniformt busett (1.4)}{18}{}%
+\contentsline {subsection}{A.6.2 Stilperiode som samlevariabel (2.4, 2.62)}{18}{}%
+\contentsline {subsection}{A.6.3 Kanaliseringshierarki i mesh-rommet (3.3)}{19}{}%
+\contentsline {subsection}{A.6.4 Stilar er gradientar, ikkje topologiske klynger (3.4)}{19}{}%
+\contentsline {subsection}{A.6.5 Kumulativ ekspansjon av formrommet (4.4)}{20}{}%
+\contentsline {subsection}{A.6.6 Mahogni-kollaps 1825-1849 (4.5)}{21}{}%
+\contentsline {subsection}{A.6.7 Direkte falsifisering av postulat 4.1}{21}{}%
+\contentsline {subsection}{A.6.8 Materiell kompleksitet per nasjon (5.3)}{22}{}%
+\contentsline {subsection}{A.6.9 Materialstraumen 1500 til 2025 (4.5)}{22}{}%
+\contentsline {subsection}{A.6.10 H/B-proporsjonen 1500 til 2024 (4.1)}{23}{}%
+\contentsline {subsection}{A.6.11 Materialnisjar i 3D-morforommet (5.3)}{23}{}%
+\contentsline {subsection}{A.6.12 Nyhetsraten og det tilstøytande moglege (6.5)}{24}{}%
+\contentsline {subsection}{A.6.13 Periodesentroidvandring i 3D (4.1)}{25}{}%
+\contentsline {subsection}{A.6.14 Stilperiodefylogenese ved Ward-klynging (3.4)}{26}{}%
+\contentsline {subsection}{A.6.15 Rekurrensanalyse av periodesentroidar (4.1, 4.4)}{26}{}%
+\contentsline {subsection}{A.6.16 Tilpassingslandskapet med stabile attraktorar (3.2)}{27}{}%
+\contentsline {chapter}{Etterord}{29}{}%
+\contentsline {chapter}{Referansar}{30}{}%
