@@ -91,7 +91,7 @@ def run_test(df):
 def plot(rows, n_total, n_styles, n_mats):
     apply_style()
 
-    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.81))
+    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.63))
     ax = fig.add_axes([0.18, 0.15000000000000002, 0.78, 0.77])
 
     n_rows = len(rows)

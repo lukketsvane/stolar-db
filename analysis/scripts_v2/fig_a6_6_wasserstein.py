@@ -73,7 +73,7 @@ def run_test():
 def plot(pair_starts, summary, n_total):
     apply_style()
 
-    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.89))
+    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.69))
     gs = fig.add_gridspec(3, 1, left=0.16, right=0.96,
                           bottom=0.13, top=0.82, hspace=0.45)
 

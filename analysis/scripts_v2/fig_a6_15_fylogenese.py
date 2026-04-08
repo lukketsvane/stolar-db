@@ -80,7 +80,7 @@ def run_test():
 def plot(df, centroids, Z):
     apply_style()
 
-    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.80))
+    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.62))
     ax = fig.add_axes([0.42, 0.1, 0.55, 0.85])
 
     labels = list(centroids.index)
