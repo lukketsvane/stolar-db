@@ -1,0 +1,495 @@
+\documentclass[10pt,twoside]{book}
+
+% Page geometry — 125 × 200 mm (Gyldendal 1999 Tractatus format).
+% twoside: inner margin (gutter) slightly wider than outer.
+% Top includes the running header band; footskip minimal (no footer text).
+\usepackage[
+  paperwidth=125mm,
+  paperheight=200mm,
+  top=20mm,
+  bottom=18mm,
+  inner=18mm,
+  outer=13mm,
+  headheight=12pt,
+  headsep=6mm,
+  footskip=8mm,
+]{geometry}
+
+% UTF-8 + Norwegian (nynorsk)
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage[variant=nynorsk]{norwegian}
+
+% Body font — the digibok is set in Sabon. EB Garamond is the closest
+% free serif with the same general feel; fall back to TeX Gyre Pagella.
+\IfFontExistsTF{EB Garamond}{
+  \setmainfont{EB Garamond}[
+    Numbers={Lining,Proportional},
+    SmallCapsFeatures={LetterSpace=4},
+  ]
+}{
+  \setmainfont{TeX Gyre Pagella}
+}
+% Body size 10.5 pt on 12.5 pt leading (close to Sabon 10.5/12 in the digibok)
+\renewcommand{\normalsize}{\fontsize{10.5}{12.5}\selectfont}
+\normalsize
+
+% Better line breaking (must be loaded after font setup)
+\usepackage{microtype}
+
+% Math-symbol fallback font — EB Garamond lacks ∀ ∃ ∈ ⊆ ⊃ ≠ etc.,
+% so the Python preprocessor wraps them in \msym{...} which uses
+% Cambria Math (always present on Windows).
+\newfontfamily{\mathfbfont}{Cambria Math}[Scale=0.95]
+\newcommand{\msym}[1]{{\mathfbfont #1}}
+
+% Headings — small caps, centred, generous spacing
+\usepackage{titlesec}
+\titleformat{\chapter}[block]
+  {\normalfont\centering\scshape\addfontfeature{LetterSpace=10}\large}
+  {}{0em}{\MakeLowercase}
+\titlespacing*{\chapter}{0pt}{2.5em}{2.5em}
+
+\titleformat{\section}[block]
+  {\normalfont\centering\scshape\addfontfeature{LetterSpace=6}\normalsize}
+  {}{0em}{\MakeLowercase}
+\titlespacing*{\section}{0pt}{2.5em}{1.5em}
+
+\titleformat{\subsection}[block]
+  {\normalfont\scshape\addfontfeature{LetterSpace=2}\small}
+  {}{0em}{\MakeLowercase}
+\titlespacing*{\subsection}{0pt}{1.5em}{0.8em}
+
+% Hide chapter numbers (chapters are titled by name)
+\renewcommand{\thechapter}{}
+
+% Running headers — chapter title at left, page number at right, thin rule.
+% Same layout on EVERY page (twoside layout but uniform header position).
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,LO]{\small\scshape\leftmark}  % chapter title at left on all pages
+\fancyhead[RE,RO]{\small\thepage}           % page number at right on all pages
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+% plain style (chapter-opening pages): same header, no footer
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyhead[LE,LO]{\small\scshape\leftmark}
+  \fancyhead[RE,RO]{\small\thepage}
+  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+% empty style: only used on title page
+\fancypagestyle{empty}{
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+% ─── Proposition environment ──────────────────────────────────────────────
+%
+% \prop{1.21}{d}{Body text...}
+%   ⇒  number column ~22 mm, body column starts at 22 mm, body wraps to 22 mm
+%
+% Numbers in the digibok appear in the same weight as the body (regular,
+% not bold). The status letter is rendered as an italic superscript right
+% after the number. Body text is justified (matches the digibok where the
+% column is wide enough to support clean justification).
+\usepackage{calc}
+\newlength{\propnumwidth}
+\setlength{\propnumwidth}{13mm}  % measured from digibok: ~11-13 mm
+
+% \prop{num}{status}{body}
+%   All proposition numbers sit at the same left column regardless of depth,
+%   matching the Gyldendal 1999 Tractatus layout (digibok reference).
+%   Body text starts at \propnumwidth from the text margin.
+\newcommand{\prop}[3]{%
+  \par\addvspace{8pt}%
+  {\setlength{\leftskip}{\propnumwidth}%
+   \setlength{\parindent}{-\propnumwidth}%
+   \noindent\makebox[\propnumwidth][l]{#1\textsuperscript{\textit{#2}}}#3\par}%
+  \addvspace{4pt}%
+}
+
+% Continuation paragraph — same body indent regardless of prop depth.
+\newcommand{\propcont}[1]{%
+  \par\addvspace{4pt}%
+  {\setlength{\leftskip}{\propnumwidth}%
+   \noindent#1\par}%
+}
+
+% Italic transition between chapters
+\newenvironment{overgang}{%
+  \par\addvspace{12pt}%
+  \begingroup\itshape\noindent
+}{%
+  \endgroup\par\addvspace{12pt}%
+}
+
+% Glossary entries — bold term, regular body, small hanging indent
+\newcommand{\ordlisteentry}[2]{%
+  \par\addvspace{4pt}%
+  {\setlength{\leftskip}{3mm}%
+   \setlength{\parindent}{-3mm}%
+   \noindent\textbf{#1:} #2\par}%
+}
+
+% Figures — centred, max width = text width
+\usepackage{graphicx}
+\graphicspath{{analysis/figures/}}
+\usepackage{caption}
+\captionsetup{
+  font={small,it},
+  labelformat=empty,
+  justification=centering,
+  skip=4pt,
+}
+\usepackage{float}
+
+% Formula display blocks (for D4, D6, etc.) — monospace, indented
+\newenvironment{formelblokk}{%
+  \par\addvspace{4pt}%
+  \begingroup\ttfamily\small\leftskip=\propnumwidth\noindent
+}{%
+  \endgroup\par\addvspace{4pt}%
+}
+
+% Avoid widows/orphans
+\widowpenalty=10000
+\clubpenalty=10000
+
+% Body paragraph defaults
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt minus 0.5pt}
+\linespread{1.0}
+
+\begin{document}
+\frontmatter
+
+\pagestyle{empty}\vspace*{4cm}
+\begin{center}
+  {\Huge\scshape\addfontfeature{LetterSpace=12} FORMLÆRE}
+\end{center}
+\begin{center}
+  {\large\itshape Ei traktatform om korleis form oppstår}
+\end{center}
+\pagestyle{fancy}
+\tableofcontents
+\clearpage
+\chapter*{Føreord}
+\addcontentsline{toc}{chapter}{Føreord}
+\markboth{føreord}{}
+\begin{overgang}Kvifor har ting den forma dei har?\end{overgang}
+Svaret dei fleste designteoretiske tekstar gjev, er ein variant av Louis Sullivans «form follows function». Jan Michl har brukt det meste av ein akademisk karriere på å vise at dette svaret er feil. Ikkje berre upresist, men aktivt villfartande. Form følgjer ikkje funksjon. Form følgjer form. Kvar ny gjenstand er ein modifikasjon av ein eksisterande gjenstand, gjort av nokon som arbeider innanfor avgrensa moglegheiter og med avgrensa kunnskap om kva dei gjer. Michl rydda grunnen grundigare enn nokon før han. Han viste at den funksjonalistiske doktrinen ikkje berre var upresis, men at ho hindra oss i å sjå korleis formgjeving faktisk verkar.
+
+George Kubler kom nærare. I The Shape of Time (1962) viste han at former ordnar seg i sekvensar, at kvar gjenstand er eit punkt i ein formell sekvens, og at somme punkt er «prime objects» som opnar nye sekvensar medan andre er replikasjonar. Kubler såg forma si historie som eit problem om posisjon og tid, ikkje om meining og bruk. Men han mangla eit apparat for å forklare kvifor sekvensane tek dei retningane dei gjer. Han skildra rørsla utan å identifisere kreftene.
+
+Denne traktaten forsøkjer å gjere det Michl ikkje gjorde og Kubler ikkje kunne: å gje eit substrat-uavhengig rammeverk for korleis form oppstår. Ikkje kvifor ein bestemt stol ser ut som han gjer, men kva slags prosess som genererer alle former, inkludert stolar, inkludert bein, inkludert fuglereit, inkludert algoritmar. Svaret kan samanfattast i éi setning: Form er ein posisjon i eit rom bland moglege former, forma av samtidige seleksjonstrykk, navigert av aktørar på fleire skalaer.
+
+Kva rammeverket ikkje kan seie. Traktaten handlar om posisjonar og krefter, ikkje om verdi. Ho kan forklare kvifor ein Wegner-stol og ein Monobloc okkuperer ulike posisjonar i same landskap. Ho kan ikkje seie noko om kvifor den eine er verdt å halde i handa og den andre ikkje er det. Estetisk dom ligg utanfor formsystemet, på same vis som etikk ligg utanfor logikken i Wittgensteins framstilling. Ikkje fordi det er uviktig, men fordi det ikkje let seg fange i proposisjonar. Ho seier heller ikkje noko om intensjon. Formgjevaren si oppleving av å skape, tvilerådinga, det brå gjennombrotet, den langsame tilnærminga, er usynleg i landskapsmodellen. Agenten navigerer; modellen registrerer berre den resulterende posisjonen. Innvendig liv er ikkje same sak som ytre spor.
+
+Wittgenstein skriv at den som forstår han, erkjenner at setningane hans er meiningslause, og kastar stigen etter å ha klatra opp. Min stige er meir beskjeden: proposisjonane i denne traktaten er nyttige berre dersom formgjevaren, etter å ha lese dei, kan legge dei frå seg og navigere landskapet med same intuisjon som før, men no med ei forståing av kvifor intuisjonen verkar. Rammeverket skal ikkje erstatte handverket. Det skal vise handverket kva det allereie gjer. Dersom eg ikkje tek feil i dette, så har eg sagt noko om form som var sant før eg sa det, og som vil vere sant etter at desse orda er gløymd.
+
+\begin{overgang}Oslo, 2026\end{overgang}
+\chapter*{Ordliste}
+\addcontentsline{toc}{chapter}{Ordliste}
+\markboth{ordliste}{}
+\begin{overgang}Ordlista gjev ei førehandsorientering; termane vert definerte formelt i teksten ved proposisjonane som er nemnde.\end{overgang}
+\ordlisteentry{Affordanse}{Dei formene eit materiale tilbyr og motset seg, i kraft av sine fysiske eigenskapar og dei produksjonsprosessane som er tilgjengelege. Avgjer kva formoperasjonar som er moglege (Gibson, 1979). [Def. i 2.6]}
+\ordlisteentry{Agensspektrum}{Agentar varierer i korleis dei best kan styrast: frå maskinvaremodifikasjon via settpunktomskriving og trening med belønning til kommunikasjon av grunnar. For kvart steg treng ein mindre kunnskap om systemets indre og meir kommunikasjon med systemet som heilskap. [Sjå 5.3]}
+\ordlisteentry{Agent}{Eit system definert av trippelet (mål, måling, justering). Krev korkje medvit, intensjon eller nervesystem. Krev berre funksjonell organisering: negativ tilbakekopling (Rosenblueth et al., 1943; Wiener, 1948). [Def. i 5.2]}
+\ordlisteentry{Formalgebra}{Mengda av former i eit euklidsk rom, utstyrt med operasjonane sum, differanse og produkt. Grunnlaget for formgrammatikken. [Def. i D4]}
+\ordlisteentry{Formgjevar}{Kvar instans av agens i formdomenet. Materialet er ein formgjevar. Marknaden er ein formgjevar. Handverkaren er ein formgjevar. Synonym med agent (def. 5.2) når konteksten er formgjeving. [Sjå 5.2, 6.1]}
+\ordlisteentry{Formgrammatikk}{Ein algebra over former i eit euklidsk rom, med reglar som opererer under innleiring: kvar regel fyrer for kvar førekomst av venstre side i noverande form, eventuelt transformert. Konstruksjonshistoria er irrelevant; berre den noverande forma avgjer kva reglar som kan fyre. Grammatikken spesifiserer kva som er mogleg; seleksjonstrykka avgjer kva som vert realisert. [Def. i 3.42, formelt i D4]}
+\ordlisteentry{Formrom (morphospace)}{Mengda av alle moglege former innanfor ein gjeven klasse (ei gruppe objekt with same hovudfunksjon). Eit matematisk rom der kvar akse representerer ein målbar eigenskap. Kvar realisert gjenstand er eitt punkt i denne projeksjonen. [Def. i 1.2]}
+\ordlisteentry{Innleiring}{Ein euklidsk transformasjon som viser at éi form finst i ei anna, eventuelt rotert, flytta eller skalert. Innleiringa er ein eigenskap ved den noverande forma, uavhengig av korleis ho vart konstruert. Avgjer kva generative operasjonar som er tilgjengelege for ein agent. [Def. i D4, kopla til D8 og T6]}
+\ordlisteentry{Kanalisering}{Graden av robustheit til ein form mot forstyrringar. Målt som brattleiken på dalveggane i landskapet. Bratte veggar: stabil stil. Flate veggar: ustabil (Waddington, 1957). [Def. i 3.3]}
+\ordlisteentry{Klasse}{Ei gruppe objekt som deler same hovudfunksjon. Klassen definerer formrommet. [Def. i 1.2]}
+\ordlisteentry{Kognitiv lyskjegle}{Den romleg-temporale regionen ein agent kan representere og påverke. Storleiken avheng av signalfarten i mediet. Avgrensinga gjeld ikkje berre rekkjevidda, men oppløysinga: kva intern struktur agenten kan oppdage i ei form (Fields \& Levin, 2022). [Def. i 5.5, 5.52]}
+\ordlisteentry{Projeksjon}{Avbildinga av ei form inn i formrommet gjennom eit val av aksar. Projeksjonen er naudsynt for empirisk testing, men tapsbringande: forma er rikare enn kvar endeleg mengd målingar kan fange. [Def. i 1.21]}
+\ordlisteentry{Seleksjonstrykk}{Ein faktor som endrar sannsynlegheitsfordelinga over formrommet. Ikkje ein regel som dikterer éi form, men ein gradient som gjer visse former meir sannsynlege enn andre. [Def. i 2.1]}
+\ordlisteentry{Substrat}{Det fysiske, algoritmiske eller sosiale systemet som realiserer agensen. Formrommet er substrat-uavhengig: posisjonen er den same uavhengig av korleis objektet vart laga (Turing, 1950; Levin, 2022). [Def. i 5.22]}
+\ordlisteentry{Tilpassingslandskap}{Grafen til den aggregerte verknaden av alle samtidige seleksjonstrykk over formrommet. Haugane er stabile posisjonar der kvar lita endring gjev dårlegare tilpassing; dalane er posisjonar ingen selekterer (Wright, 1932; Waddington, 1957). [Def. i 3.1]}
+Proposisjonane er haldne opp mot eit empirisk materiale beståande av om lag 2 300 europeiske stolar (1280–2024) frå Nasjonalmuseet og Victoria and Albert Museum. Tala tener som illustrasjonar, ikkje som premissar.
+
+\ordlisteentry{Kvar proposisjon er utstyrt med ein superscript som indikerer logisk status}{d = definisjon, a = postulat, t = teorem, o = observasjon, i = illustrasjon. Kvart postulat er knytt til eit eksplisitt falsifiseringsvilkår. Michl har demonstrert at «form følgjer funksjon» kollapsa fordi formelen var logisk utilgjengeleg for falsifisering. Denne traktaten lukkast berre i den grad ho let seg fei}
+\mainmatter
+\clearpage
+\addcontentsline{toc}{chapter}{1 Form er ein posisjon i eit rom av moglegheiter}
+\markboth{form er ein posisjon i eit rom av\ldots}{}
+\prop{1}{}{Form er ein posisjon i eit rom av moglegheiter}
+\prop{1.1}{o}{Kvart objekt med ein spesifikk morfologi eksisterer i denne forma framfor andre moglege konfigurasjonar. At ein bestemt posisjon er realisert i formrommet, krev ein dekomposisjon av dei kreftene som verkar.}
+\prop{1.2}{d}{Det teoretiske formrommet til ein klasse er mengda av alle moglege posisjonar, definert av eit sett genererande parameter. Det empiriske formrommet er det affine rommet utspent av ein endeleg samling målbare eigenskapar; kvar realisert gjenstand er eitt punkt i denne projeksjonen. Med mindre anna er sagt, er formrommet affint: distansar og vinklar krev eksplisitt metrisk grunngjeving.}
+\prop{1.21}{d}{Projeksjonen er naudsynt for empirisk testing, men ho er tapsbringande: forma er rikare enn kvar endeleg mengd målingar kan fange. Same form kan dekomponerast i ulike delformer avhengig av kva operasjonar ein utfører. Valet av aksar avgjer kva klynger, grenser og tomrom analysen kan registrere.}
+\prop{1.22}{o}{Formrommet er empirisk tilgjengeleg som eit tilpassingslandskap. Kvar museumssamling og kvar biologisk taksonomi utgjer eit delvis kartlagt segment av dette rommet.}
+\prop{1.3}{d}{Formrommet er inndelt i tre regionar: dei busette (realiserte posisjonar), dei opne (moglege men urealiserte) og dei forbodne (fysisk umoglege). Grensa mellom dei moglege og dei forbodne regionane er ein funksjon av tilgjengeleg teknologi.}
+\prop{1.31}{o}{Ei open region kan artikulerast som ein uavgjord proposisjon: "det finst ein stol utan bein" namngjev ein posisjon som korkje er sann (realisert) eller logisk falsk (forboden). Skilnaden er empirisk, ikkje logisk.}
+\prop{1.4}{o}{Formrommet er ikkje uniformt busett. Dei realiserte formene aggregerer i klynger kring spesifikke attraktorar, med tomme dalar mellom seg. Dette mønsteret av klynger krev forklaring.}
+\prop{1.5}{t}{Sidan fordelinga av former ikkje er tilfeldig, må det finnast krefter som favoriserer visse posisjonar framfor andre. Å identifisere desse gradientane er målet for det fylgjande.}
+\prop{1.6}{d}{Ein einskild form er eit punkt i formrommet. Ein stil er ei klynge kring ein haug i landskapet. Ein tradisjon er ein stig av ordna punkt over tid.}
+\prop{1.7}{t}{Formrommet er substrat-uavhengig. Definisjonen refererer berre til målbare eigenskapar; same posisjon i formrommet kan okkuperast uavhengig av om agenten er ein handverkar, ein fabrikk eller ein algoritme. Posisjonen er invariant; vegen dit er lokal.}
+\prop{1.71}{t}{Substrat-uavhengigheita gjeld posisjonen, ikkje navigasjonen. Agentens noverande tilstand avgjer kva han kan identifisere og transformere. Form fungerer som den induktive premissen for vidare form.}
+\clearpage
+\addcontentsline{toc}{chapter}{2 Ikkje alle posisjonar er like sannsynlege}
+\markboth{ikkje alle posisjonar er like\ldots}{}
+\prop{2}{}{Ikkje alle posisjonar er like sannsynlege}
+\prop{2.1}{d}{Eit seleksjonstrykk er ein faktor som endrar sannsynlegheitsfordelinga over formrommet. Det er ikkje ein regel som dikterer éi bestemt form, men ein gradient som gjer visse posisjonar meir sannsynlege enn andre. Ein regel genererer éi form; ein gradient genererer ein tendens.}
+\prop{2.2}{a}{For kvar funksjonell klasse finst det minst to seleksjonstrykk som er statistisk uavhengige av kvarandre.\footnote{Postulatet fell om det finst ein klasse der eitt einaste seleksjonstrykk er tilstrekkeleg til å forklare all observert formvariasjon.}}
+\prop{2.3}{a}{For minst eitt par av seleksjonstrykk peikar gradientane i motstridande retningar i minst éin region av formrommet.}
+\prop{2.4}{t}{Av 2.2 og 2.3: sidan fleire uavhengige seleksjonstrykk verkar samstundes og dreg i ulike retningar, kan ikkje alle verte optimalt tilfredsstilte. Kvar realisert form er difor eit kompromiss: den einaste moglege balansen under dei vilkåra som rådde.}
+\prop{2.41}{t}{Sidan det finst fleire gyldige kompromiss, er skilnaden mellom to former innanfor same klasse ikkje ein feil, men eit uttrykk for at kreftene kan balanserast på meir enn éin måte.}
+\prop{2.5}{t}{Funksjonen definerer klassen og med det formrommet. Innanfor klassen er funksjonen konstant. Det som er konstant har null varians og ber null informasjon om kvifor éi bestemt form vart realisert framfor ei anna. All observert formvariasjon under konstant funksjon er driven av dei andre seleksjonstrykka.}
+\prop{2.51}{o}{Dei fem hovudgruppene av seleksjonstrykk er: materialaffordanse, teknologisk kapasitet, økonomisk trykk, kulturelt trykk og ergonomisk trykk. Denne taksonomien er empirisk, ikkje utleidd frå proposisjonane over.}
+\prop{2.6}{d}{Materialaffordansen er dei operasjonane eit materiale tilbyr og motset seg under gjevne kostnads- og tilgjengelegheitsavgrensingar. Tre tilbyr eit variert repertoar (liming, skjæring, dreiing), men repertoaret er historisk variabelt (dampbøying på 1800-talet). Metall før bogesveisen var avgrensa til mekaniske samanføyingar; sveiseteknologien gjorde kontinuerleg materialføyning generell og billeg. Signaturen er probabilistisk: operasjonsrepertoaret bind sannsynsfordelinga over formrommet, ikkje det einskilde objektet.}
+\prop{2.61}{o}{Signaturen er latent: det teoretiske repertoaret slår ikkje nødvendigvis ut i observerbar geometri. Det som endrar seg over tid er ikkje materialet, men kva operasjonar som er praktisk og økonomisk tilgjengelege for agentane. Latensen kan vere lang; materialet er til stades, men algebraen manglar.}
+\prop{2.62}{o}{Kvart einskildtrykk åleine forklarer lite av den totale variasjonen. Av 2.4: ein samlevariabel korrelert med alle samtidige seleksjonstrykk bør predikere formvariasjon betre enn kvart einskildtrykk.}
+\clearpage
+\addcontentsline{toc}{chapter}{3 Seleksjonstrykka produserer eit landskap over formrommet}
+\markboth{seleksjonstrykka produserer eit\ldots}{}
+\prop{3}{}{Seleksjonstrykka produserer eit landskap over formrommet}
+\prop{3.1}{d}{Tilpassingslandskapet er grafen til den aggregerheader verknaden av alle samtidige seleksjonstrykk over formrommet. Kvar posisjon i rommet har ein verdi: kor godt forma tilfredsstiller alle verksame seleksjonstrykk samstundes. Lokale maksimum er haugar: stabile posisjonar der kvar lita endring gjev dårlegare tilpassing. Former samlar seg på haugane. Lokale minimum er dalar: posisjonar som ingen selekterer, fordi kvar lita endring fører mot ein betre posisjon.}
+\prop{3.2}{t}{Av 2.2 og 2.3: tilpassingsfunksjonen har generisk fleire lokale maksimum. Landskapet har difor fleire haugar. Talet på haugar som er synlege avheng av oppløysinga i den projeksjonen ein måler. Få aksar skjuler haugar; mange aksar avslører dei. Dimensjonaliteten i formrommet avgjer kva topologi analysen kan registrere.}
+\prop{3.3}{d}{Kvar haug er ein attraktor: ei form som er stabil fordi små endringar i alle retningar gjev dårlegare tilpassing. Graden av stabilitet er brattleiken på dalveggane. Bratte veggar tyder at forma er kanalisert: robust mot forstyrringar. Kanalisering er målbar som den andrederiverte av tilpassingsfunksjonen.}
+\prop{3.4}{d}{Ein stil er ei klynge av realiserte former kring same haug. Klynga vert synleg fyrst i ein projeksjon med tilstrekkeleg mange aksar; i eit rom av få dimensjonar kan ho vere diffus (jf. 1.21). Spreiinga er eit mål på kor flat haugen er. Kanalisering forklarer kvifor stilar held saman: dalveggane er bratte nok til at små forstyrringar ikkje kastar forma ut av klynga.}
+\prop{3.41}{t}{At ein stil er ei klynge, ikkje ein kategori, forklarer kvifor stilar har uskarpe grenser. Grensa mellom to klynger i eit kontinuerleg rom er nødvendigvis diffus.}
+\prop{3.42}{t}{Ei klynge i formrommet er det statistiske sporet av ein generativ struktur. Ein formgrammatikk er eit system av reglar som opererer direkte på geometri i eit euklidsk rom. Ein regel a  b kan brukast på ei form s når det finst ein euklidsk transformasjon  slik at (a)  s; resultatet er (s  (a)) + (b). Operasjonen er definert under innleiring, difor avgjer forma sjølv kva reglar som kan fyre; konstruksjonshistoria er irrelevant. Grammatikken spesifiserer kva som er mogleg; seleksjonstrykka avgjer kva som vert realisert.}
+\prop{3.421}{t}{Kombinasjonen av to former kan framkalle delformer ingen av dei inneheldt åleine. Dette er ein algebraisk nødvendigheit i kvar system der operasjonane er definerte over geometri, ikkje over symbol. Same form, ulike dekomposisjonar: ikkje fordi forma er tvetydig, men fordi ho er rikare enn kvar einskild operasjon som produserte ho.}
+\prop{3.5}{t}{Formgjeving konstruerer ikkje landskapet. Landskapet er gjeve av vilkåra. Å oppdage ein haug er ikkje å skape han. Det er å finne det landskapet allereie inneheld.}
+\prop{3.6}{t}{Eit arketype som dukkar opp uavhengig i tradisjonar utan kontakt, er sterkt prov for at haugen er ein eigenskap ved landskapet, ikkje ved nokon einskild agent.}
+\prop{3.7}{o}{Av 2.4: ein samlevariabel korrelert med alle samtidige seleksjonstrykk bør predikere formvariasjon betre enn kvart einskildtrykk. Stilperiode er ein slik samlevariabel. Han er ikkje ein forklaring; han er ein proxy som absorberer alle samtidige seleksjonstrykk i éin etikett. Stilkategoriane er deskriptive, ikkje kausale. Dei beskriv kvar vandringa stansa. Dei forklarer ikkje kvifor.}
+\clearpage
+\addcontentsline{toc}{chapter}{4 Landskapet er dynamisk}
+\markboth{landskapet er dynamisk}{}
+\prop{4}{}{Landskapet er dynamisk}
+\prop{4.1}{a}{Seleksjonstrykka er ikkje konstante over tid. Ein ny teknologi flyttar grensa for det forbodne i formrommet; ein ny marknad rekonfigurerer kva som vert belønna; eit nytt materiale utvidar mengda av moglege operasjonar.}
+\prop{4.2}{t}{Av 3.1 og 4.1: landskapet er ein dynamisk flate. Haugar kan stige, søkke, flytte seg, bifurkere eller koalescere. Ein posisjon som var optimalt tilpassa under eitt sett av vilkår, kan i neste augeblink vere suboptimal.}
+\prop{4.3}{o}{Endringa i formrommet er diskontinuerleg. Lange periodar med stase vert avbrotne av brå topologiske skifte. Mønsteret fylgjer logikken i brot og stase: ein eksplosiv radiasjon inn i den nyopna regionen, fylgd av ein gradvis konvergens mot nye attraktorar.}
+\prop{4.4}{o}{Landskapet har minne. Kvar realisert form etterlet seg eit spor som modifiserer seleksjonstrykka for den neste. Forma og landskapet endrar kvarandre gjensidig. All formgjeving er i praksis omformgjeving: agenten startar aldri frå ein tom posisjon.}
+\prop{4.5}{i}{Når eitt seleksjonstrykk vert dominant, kollapsar landskapet til éin attraktor. Ikkje berre materialrommet krympar, men formrommet sjølv. Eitt seleksjonstrykk som overkøyrer alle andre er ikkje ei forklaring av form; det er eit fråvær av forklaring.}
+\clearpage
+\addcontentsline{toc}{chapter}{5 Det finst agentar som responderer på landskapet}
+\markboth{det finst agentar som responderer på\ldots}{}
+\prop{5}{}{Det finst agentar som responderer på landskapet}
+\prop{5.1}{a}{For kvar funksjonell klasse finst det minst éin agent som navigerer tilpassingslandskapet via negativ tilbakekopling.}
+\prop{5.2}{d}{Ein agent er eit system definert av trippelet (mål, måling, justering). Dette er den funksjonelle organiseringa av målretta åtferd som skildra av Wiener og Rosenblueth (1943, 1948).}
+\prop{5.21}{t}{Definisjonen krev korkje medvit, intensjon eller nervesystem; ho krev berre funksjonell organisering i form av negativ tilbakekopling. Kvar denne organiseringa finst, finst agens.}
+\prop{5.22}{t}{Agens er substrat-uavhengig: same organisering kan realiserast i mekaniske, elektriske eller biologiske medium. Turing-universalitet tillet simulering av vilkårlege diskrete berekningar, men føreset at berekninga er diskret.}
+\prop{5.23}{i}{Same struktur i ulike medium: ein planaria navigerer morforommet via bioelektriske gradientar; ein handverkar via taktil tilbakemelding; ein diffusjonsmodell via denoising i eit latent rom. Substrata er ulike; strukturen er identisk.}
+\prop{5.3}{o}{Agens utgjer eit spektrum. Agentar varierer i korleis dei vert styrte: frå maskinvaremodifikasjon via settpunktomskriving og trening til kommunikasjon av grunnar. Høgare trinn krev mindre kunnskap om indre struktur og meir interaksjon med systemet som heilskap.}
+\prop{5.5}{d}{Den kognitive lyskjegla til ein agent er den romleg-temporale regionen han kan representere og påverke. Det som ligg utanfor linsa til agenten, er kausalt utilgjengeleg.}
+\prop{5.51}{o}{Lyskjeglene varierer i skala: frå cellulær fysiologi over minutt til designtradisjonar som navigerer formrommet over hundreår.}
+\prop{5.52}{o}{Lyskjegla avgrensar oppløysinga: kva delformer ein agent kan identifisere, avgjer moglege transformasjonar. Barnet, snikkaren og algoritmen dekomponerer same form i ulike operasjonelle einingar.}
+\prop{5.521}{t}{Den generative kapasiteten er lukka under sum og differanse av identifiserte delar. Når to former møtest, kan snittet innehalde strukturar som ikkje finst i dekomposisjonen til nokon av operandane. Dette er kjelda til framveksande kompleksitet.}
+\prop{5.53}{d}{Fem operasjoner modifiserer lyskjegla: (i) utviding til nye regionar, (ii) auka oppløysing, (iii) rørsle mot nytt territorium, (iv) kollaps til éin realisert posisjon, og (v) skjerping av presisjon.}
+\prop{5.54}{t}{Operasjonane føreset berre kausal rekkevidd og tilbakekopling; dei krev korkje medvit eller proposisjonar.}
+\prop{5.55}{i}{Lyskjegla utvidar seg i planariaen ved endra gradientar (i), kollapsar i diffusjonsmodellen ved denoising (iv), og rører seg i handverkaren ved nyskaping (iii). Operasjonen er invariant; substratet er lokalt.}
+\prop{5.56}{o}{C-K-teorien (Hatchuel \& Weil) er det proposisjonslogiske spesialtilfellet av lyskjegle-strukturen. Dei fire C-K-operatorane svarar til restriksjonar av dei fem lyskjegleoperasjonane.}
+\prop{5.6}{o}{Navigasjonskompetanse er ein akkumulert eigenskap. Kvar realisert form utvidar agentens lyskjegle. Læring er den temporale utvidinga av agentens tilgjengelege formrom.}
+\prop{5.61}{t}{Læring, biologisk seleksjon og bayesiansk inferens er isomorfe operasjonar i ulike substrat; dei minskar alle avstanden mellom modell og verd.}
+\prop{5.62}{o}{Læring er hierarkisk: frå enkel navigasjon (1. orden) via strategiskifte (2. orden) til restrukturering av sjølve formrommet (3. orden).}
+\prop{5.7}{o}{Materialet deltek ikkje berre gjennom motstand, men som ein aktiv agent som informerer den neste handlinga gjennom sine reaksjonar og brot.}
+\clearpage
+\addcontentsline{toc}{chapter}{6 Forma oppstår mellom agentane}
+\markboth{forma oppstår mellom agentane}{}
+\prop{6}{}{Forma oppstår mellom agentane}
+\prop{6.1}{t}{Av 2.2 og 5.1: kvar realisert form er eit poly-agentisk kompromiss. Materialaffordansen, reiskapen, marknaden og kulturen utgjer uavhengige gradientar som dreg i motstridande retningar. Ingen einskild agent dikterer den resulterande morfologien; ho emergerer i resonansen mellom dei, som ein posisjon ingen einskild del kunne ha navigert mot åleine.}
+\prop{6.2}{t}{Kvart hierarkisk nivå i systemet er ein kompetent problemløysar innanfor sin eigen kognitive lyskjegle. Dei lågare komponentane navigerer etter lokale gradientar, men bidreg samstundes til mål dei sjølve manglar kapasitet til å representere. Reduksjonisme og holisme er komplementære skildringsnivå: mekanismen forklarer korleis, det intelligente kompromisset forklarer kvifor. Begge er sanne, men ingen er tilstrekkeleg åleine.}
+\prop{6.3}{o}{Kommunikasjonen mellom agentar er avgrensa av ein endeleg bandbreidde, som definerer oppløysinga i koordineringa. Ved låg bandbreidde er navigasjonen grov og stokastisk, prega av prøving og feiling; ved høg bandbreidde vert koordineringa finmaska, og forma kan artikulerast gjennom eksplisitt spesifikasjon.}
+\prop{6.31}{t}{Det finst eit strukturelt byttetilhøve mellom bandbreidde og uavhengigheit. Tett kopla agentar konvergerer mot eit felles representasjonsformat som avgrensar kva regionar av formrommet dei kan utforske. Lauskopla agentar oppretheld kognitiv autonomi og kan søke i ulike territorium samstundes, men koordinerer dårlegare. Den effektive navigasjonsevna til eit system er ein funksjon av denne balansen.}
+\prop{6.32}{o}{Bandbreidda har ein temporal dimensjon i forma av latens. Låg latens tillet finmaska sanntidskoordinering; ved høg latens må kvar agent operere på ein intern modell av dei andre agentane sin framtidige tilstand. Koordineringa er då berre så presis som modellens adekvatheit.}
+\prop{6.4}{o}{Når koplinga mellom agentar er robust, emergerer eit overordna system med auka kognitiv lyskjegle og meir samansette mål. Ved brot i samanbindinga krympar systemet; ein del som frikoplar seg frå nettverket fylgjer berre eigne, kortsiktige gradientar. Dette fenomenet er isomorft med kreft i biologien og dekadanse i formhistoria.}
+\prop{6.41}{o}{Eit multi-agent-system kan oppnå metastabilitet på tvers av fleire skalaer utan at nokon einskild skala er fullt optimalisert. Denne stabiliteten let tradisjonar og institusjonar persistere gjennom fluktuasjonar som ville ha utsletta sub-komponentane deira om dei opererte i isolasjon.}
+\prop{6.42}{t}{Når samanbindinga mellom agentar er tilstrekkeleg tett til at heilskapen realiserer ein eigen tilbakekoplingssyklus (mål, måling, justering), vert heilskapen sjølv ein agent etter definisjonen i 5.2. Skiljet mellom ein aggregering av agentar og ein einskild agent er funksjonelt, ikkje ontologisk.}
+\prop{6.5}{t}{Stilar og tradisjonar er deskriptive mellomkonstruksjonar utan kausal kraft. Dei skildrar berre dei punkta i formrommet der vandringa mellombels har stansa. Å formgje «i ein stil» er ein logisk feil: det er å imitere eit statistisk symptom utan å forstå dei seleksjonstrykka som genererte klynga i utgangspunktet.}
+\clearpage
+\addcontentsline{toc}{chapter}{7 Ingen form er endeleg}
+\markboth{ingen form er endeleg}{}
+\prop{7}{}{Ingen form er endeleg}
+\prop{7.1}{t}{Av 2.4 og 4.1: sidan seleksjonstrykka endrar seg, vil kvar realisert balanse med tida verte suboptimal. Posisjonen som var optimalt tilpassa under eitt sett av vilkår, er det ikkje under det neste. Kvar realisert form er gyldig berre for dei vilkåra som rådde i det augeblinket ho vart aktualisert.}
+\prop{7.2}{t}{Dei mest robuste tradisjonane er ikkje dei rigide, men dei med høgast agens-oppløysing: fleire uavhengige tilpassingsmekanismar på fleire skalaer gjev raskare respons når landskapet endrar seg.}
+\prop{7.3}{o}{Det einaste varige er den generative strukturen: formrommet, seleksjonstrykka, landskapet og agentane. Formene i seg sjølve er flyktige spor; grammatikken er stabil.}
+\prop{7.4}{o}{Dette rammeverket er ikkje ein ontologisk påstand om kva form er, men eit koordinatsystem for spesifikasjon. At strukturen er substrat-uavhengig er eit teikn på modellens fruktbarheit, ikkje eit prov for sanning.}
+\prop{7.5}{o}{Agenten som skildrar formverda er sjølv ein del av ho; det finst ingen arkimedisk punkt på utsida. Ei formlære er aldri transcendent; ho er alltid lokal og situert.}
+\prop{7.6}{o}{Å gje form er: å definere kva måltilstand materien skal navigere mot; å velje kva krefter som skal utgjere landskapet; å utvide agentens kognitive lyskjegle slik at latente affordansar vert synlege; å akseptere at forma emergerer mellom agentane; og å leggje til rette for vilkåra som dei kompetente delane opererer under.}
+\prop{7.7}{o}{Formverda er alt som er tilfelle. Tilpassingslandskapet er alt som verkar. Navigasjonen er utan slutt.}
+\prop{7.8}{o}{Denne traktaten er sjølv ein posisjon i eit intellektuelt formrom, under eit sett av seleksjonstrykk. Om nokon viser at eitt einaste seleksjonstrykk er tilstrekkeleg til å forklare all formvariasjon for ein funksjonell klasse, fell proposisjon 2, og med det kollapsar den logiske kjeden (2.4, 3.2, 6.1, 7.1). At teksten kan fellast, er garantien for hennar gyldigheit.}
+\appendix
+\chapter*{Formell spesifikasjon}
+\addcontentsline{toc}{chapter}{Formell spesifikasjon}
+\markboth{formell spesifikasjon}{}
+\section*{A.1 Notasjon}
+\markboth{a.1 notasjon}{}
+\addcontentsline{toc}{section}{A.1 Notasjon}
+\begin{overgang}c: ein klasse\end{overgang}
+\begin{overgang}x: ei form\end{overgang}
+\begin{overgang}p: eit seleksjonstrykk\end{overgang}
+\begin{overgang}A: ein agent\end{overgang}
+\begin{overgang}G: ein grammatikk\end{overgang}
+\begin{overgang}t: eit tidspunkt\end{overgang}
+\begin{overgang}π : Shape \msym{→} \msym{ℝ}ⁿ: morforomprojeksjonen\end{overgang}
+\begin{overgang}L(G): språket (mengda av alle former) ein grammatikk G genererer\end{overgang}
+\begin{overgang}H: Shannon-entropi\end{overgang}
+\begin{overgang}I: gjensidig informasjon\end{overgang}
+\begin{overgang}Cov: kovarians\end{overgang}
+\section*{A.3 Definisjonar}
+\markboth{a.3 definisjonar}{}
+\addcontentsline{toc}{section}{A.3 Definisjonar}
+\prop{D1}{}{(Formrom, prop. 1.2)}
+\propcont{Morphospace(c) := \{ π(x) : x \msym{∈} c \} \msym{⊆} \msym{ℝ}ⁿ}
+\prop{D2}{}{(Seleksjonstrykk, prop. 2.1)}
+\propcont{p : \msym{ℝ}ⁿ \msym{→} \msym{ℝ}}
+\prop{D3}{}{(Tilpassingslandskap, prop. 3.1)}
+\propcont{Landscape(c, t) := Σᵢ wᵢ(t) \msym{·} pᵢ}
+\prop{D4}{}{(Formalgebra og formgrammatikk, prop. 3.42)}
+\propcont{Lat S vere ei mengd av former i eit euklidsk rom Eⁿ, utstyrt med operasjonar og lukka under den euklidske transformasjonsgruppa Trans(Eⁿ):}
+\propcont{s₁ + s₂ (sum)}
+\propcont{s₁ − s₂ (differanse)}
+\propcont{(snittet s₁ \msym{·} s₂ := s₁ − (s₁ − s₂) er ein avleidd, ikkje primitiv, operasjon)}
+\propcont{Ein innleiring av a i s er ein transformasjon τ \msym{∈} Trans(Eⁿ) slik at τ(a) \msym{≤} s.}
+\propcont{Ein formgrammatikk er eit trippel SG = (S, R, ω) der R = \{ rᵢ : (aᵢ, bᵢ) \}, med regelapplikasjon:}
+\propcont{s \msym{→} (s − τ(aᵢ)) + τ(bᵢ)}
+\propcont{L(SG) = \{ s \msym{∈} S : ω \msym{→}* s ved bruk av reglar i R \}}
+\prop{D5}{}{(Grammatikk-klynge-bru, prop. 3.42)}
+\propcont{\msym{∀}G \msym{∈} Grammar : π(L(G)) dannar ei klynge i Morphospace(c)}
+\prop{D6}{}{(Agent, prop. 5.2)}
+\propcont{Agent A := (g, d, δ)}
+\propcont{Krav: Det finst ein Lyapunov-funksjon V over tilstandsrommet slik at:}
+\propcont{V(g) = 0}
+\propcont{V(x) > 0 for x \msym{≠} g}
+\propcont{V er ikkje-aukande i forventning langs sekvensen x\_(n+1) = δ(x\_n)}
+\prop{D7}{}{(Kognitiv lyskjegle, prop. 5.5)}
+\propcont{C(A) \msym{⊆} Shape \msym{×} T}
+\prop{D8}{}{(Innleiringsoppløysing, prop. 5.52)}
+\propcont{E(s, A) := \{ t \msym{∈} Shape : t \msym{≤} s \msym{∧} \msym{∃}u \msym{∈} T : (t, u) \msym{∈} C(A) \}}
+\prop{D9}{}{(Lyskjegleoperasjonar, prop. 5.53)}
+\propcont{(i) Utviding: C(A, t₂) \msym{⊃} C(A, t₁)}
+\propcont{(ii) Oppløysing: |E(s, A, t₂)| > |E(s, A, t₁)|}
+\propcont{(iii) Rørsle: \msym{∃}r \msym{∈} C(A, t₂) \textbackslash{} cl(C(A, t₁))}
+\propcont{(iv) Kollaps: C(A, t₂) = \{π⁻¹(x₀)\}}
+\propcont{(v) Skjerping: C(A, t₂) = C(A, t₁) \msym{∧} |E(s, A, t₂)| > |E(s, A, t₁)|}
+\section*{A.6 Empiriske testresultat}
+\markboth{a.6 empiriske testresultat}{}
+\addcontentsline{toc}{section}{A.6 Empiriske testresultat}
+Nærmaste-nabo-distansen i (H, W, D) etter z-skalering har ein variasjonskoeffisient (CV) på 5,4 (95 \% CI [3,7, 5,9]), noko som er om lag 15 gonger over Poisson-nullhypotesen på 0,36. Funna er robuste på tvers av 14 hold-out-subset (museum, periode, stil), inkludert NMK isolert (n = 63). n = 1664.
+
+\subsection*{A.6.1 Formrommet er ikkje uniformt busett (1.4)}
+\addcontentsline{toc}{subsection}{A.6.1 Formrommet er ikkje uniformt busett (1.4)}
+Gjensidig informasjon (sklearn k-NN) mellom prediktor og kvar geometrisk dimensjon: stilperiode slår grov materialgruppe på alle fire (H, W, D, H/W). Gevinsten er stor: stil 0,30–0,59 bits mot mat 0,06–0,10 bits. Forholdstal opp til 7\msym{×}. Resultatet held under museum-CV og under leave-one-period-out. n = 1664.
+
+\subsection*{A.6.2 Stilperiode som samlevariabel (2.4, 2.62)}
+\addcontentsline{toc}{subsection}{A.6.2 Stilperiode som samlevariabel (2.4, 2.62)}
+Variasjonskoeffisienten på tvers av seks mesh-trekk strekkjer seg over to storleiksordnar. Sphericity er det mest kanaliserte trekkjet (CV = 0,074); råvolumet det friaste (CV = 9,5). Spreiinga er 128\msym{×} (95 \% CI [50\msym{×}, 158\msym{×}]). n = 2202.
+
+\subsection*{A.6.3 Kanaliseringshierarki i mesh-rommet (3.3)}
+\addcontentsline{toc}{subsection}{A.6.3 Kanaliseringshierarki i mesh-rommet (3.3)}
+Silhouette-skoren for stilperiode i 4D mesh-trekk-rom (sphericity, fill\_ratio, inertia\_ratio, complexity) er −0,34 (95 \% CI [−0,37, −0,33]) over 25 stilar med minst 10 medlemar kvar. Negativ silhouette betyr at gjennomsnittspunktet i ein stil ligger nærmare punkta i naboklynga enn dei eigne. Stilkategoriane er gradientar, ikkje topologisk skilde regionar. n = 1971.
+
+\subsection*{A.6.4 Stilar er gradientar, ikkje topologiske klynger (3.4)}
+\addcontentsline{toc}{subsection}{A.6.4 Stilar er gradientar, ikkje topologiske klynger (3.4)}
+Det kumulative konvekse hylsterveolumet i (H, W, D), etter klipping til 1.–99. persentil per dimensjon, veks monotont gjennom 24 femtjueårs-periodar. Totalvekst 107\msym{×} (95 \% CI [30\msym{×}, breitt]). I mesh-trekk-rommet er den same testen 553\msym{×}. Landskapet skrumpar aldri.
+
+\subsection*{A.6.5 Kumulativ ekspansjon av formrommet (4.4)}
+\addcontentsline{toc}{subsection}{A.6.5 Kumulativ ekspansjon av formrommet (4.4)}
+iI utvalet av norskproduserte stolar frå perioden 1825–1849 er bruken av mahogni deterministisk (16 av 16), samanlikna med ein fraksjon på null i perioden 1750–1799. Variasjonskoeffisienten for H/W i kollaps-perioden er 0,083, mot 0,140 i den føregåande perioden. Dette illustrerer korleis eitt seleksjonstrykk kan verte så dominant at formrommet kollapsar.
+
+\subsection*{A.6.6 Mahogni-kollaps 1825-1849 (4.5)}
+\addcontentsline{toc}{subsection}{A.6.6 Mahogni-kollaps 1825-1849 (4.5)}
+Wasserstein-distansen mellom suksessive 50-årsperiodar gjev mean 14,4 cm for høgde, 8,2 cm for breidde og 5,9 cm for djupn. Ingen av dei ti periodepara har distanse under 0,5 cm. Postulatet om at landskapet endrar seg held mot direkte falsifisering. Same metode på random-walk-null forkastar denne med p ≪ 10⁻⁶³ for kvar dimensjon.
+
+\subsection*{A.6.7 Direkte falsifisering av postulat 4.1}
+\addcontentsline{toc}{subsection}{A.6.7 Direkte falsifisering av postulat 4.1}
+\backmatter\chapter*{Etterord}
+\addcontentsline{toc}{chapter}{Etterord}
+\markboth{etterord}{}
+Kvifor har objekt den spesifikke morfologien dei har? Tradisjonelle svar, funksjonalisme, fenomenologi, semiotikk, vert her forkasta som aktive distraksjonar. Dei skildrar kva form tyder, ikkje korleis ho emergerer som fysisk konfigurasjon under eit sett av aggregerte seleksjonstrykk. Jan Michl rydda det intellektuelle landskapet ved å demonstrere at all formgjeving er ein modifikasjon av eksisterande posisjonar i formrommet. Michl formulerte det negative resultatet: han viste kva form ikkje følgjer.
+
+George Kubler (1962) nådde nærare ved å skildre formelle sekvensar og temporalitet, men han mangla eit apparat for å identifisere kreftene som driv sekvensane. Han kartla rørsla utan å identifisere gradientane.
+
+Denne traktaten etablerer det Michl og Kubler let stå ope: eit substrat-uavhengig rammeverk for korleis form emergerer. Form er ein posisjon i eit tilpassingslandskap, generert av aggregerte seleksjonstrykk og navigert av agentar på fleire hierarkiske skalaer.
+
+Rammeverket syntetiserer tre tradisjonar: formgrammatikken (Stiny \& Gips) for geometriske transformasjonar; C-K-teorien (Hatchuel \& Weil) for designprosessens dynamikk; og TAME-rammeverket (Levin) for agens i morfologiske rom. Desse vert reformulerte i eit felles vokabular av morfosystem, seleksjonstrykk og kognitive lyskjegler.
+
+Empirien er tufta på eit korpus av om lag 2 300 europeiske stolar (1280–2024). Datasettet tillet kvantitativ testing av formhistoriske hypotesar. Analysen av meshgeometri har synt at sju mesh-avleia trekk aukar den prediktive krafta for stilperiode med ein faktor på over fire samanlikna med katalogdimensjonar.
+
+Overgangen frå prosa til proposisjonsform var ein logisk nødvendigheit. Desimalnummereringa angjev den logiske vekta, og superscript (d, a, t, o, i) indikerer logisk status. Til skilnad frå Wittgensteins original, er kvar proposisjon knytt til eit eksplisitt falsifiseringsvilkår; traktaten er konstruert for å kunne fellast.Dei empiriske testane stadfestar hovudproposisjonane: formrommet er ikkje-uniformt busett; stilperiode er ein effektiv proxy for aggregerte seleksjonstrykk; og landskapet er i uopphøyrleg endring. Funna er robuste på tvers av ulike geometriske representasjonar.
+
+Observert latens i stålillustrasjonen viser at formhistoria er langsamare enn materialhistoria; eit nytt substrat arvar formspråket til det substratet det erstattar, heilt til eigne affordansar pressar det ut i nye regionar.
+
+Traktaten skildrar krefter og posisjonar, ikkje verdiar. Ho kan forklare avstanden i formrommet, men ho kan ikkje felle estetiske domar. Estetikk er transcendent til formsystemet, på same vis som etikk er transcendent til logikken (Wittgenstein). Agenten navigerer; modellen registrerer berre den resulterande posisjonen. Proposisjonane skal erkjennast som ein stige. Dei skal ikkje erstatte handverket, men gjere den intuitive navigasjonen eksplisitt ved å vise agenten kva han allereie gjer.
+
+At teksten kan fellast, er garantien for hennar gyldigheit. Om eitt einaste seleksjonstrykk forklarer all formvariasjon, kollapsar den logiske kjeden. Traktaten er stigen som skal kastast.
+
+Takk til Jan Petter Neverdahl og Hermann Stange og for kommentarar under arbeidet
+
+\chapter*{Referansar}
+\addcontentsline{toc}{chapter}{Referansar}
+\markboth{referansar}{}
+Sullivan, L. H. (1896). The tall office building artistically considered. Lippincott's Magazine, 57, 403–409.
+
+Thompson, D'A. W. (1917). On growth and form. Cambridge University Press.
+
+Wright, S. (1932). The roles of mutation, inbreeding, crossbreeding, and selection in evolution. Proc. Sixth Int. Congress of Genetics, 1, 356–366.
+
+Rosenblueth, A., Wiener, N. \& Bigelow, J. (1943). Behavior, purpose and teleology. Philosophy of Science, 10(1), 18–24.
+
+Shannon, C. E. (1948). A mathematical theory of communication. Bell System Technical Journal, 27, 379–423.
+
+Wiener, N. (1948). Cybernetics. MIT Press.
+
+Turing, A. M. (1950). Computing machinery and intelligence. Mind, 59(236), 433–460.
+
+Waddington, C. H. (1957). The strategy of the genes. George Allen \& Unwin.
+
+Kubler, G. (1962). The shape of time. Yale University Press.
+
+Kuhn, T. S. (1962). The structure of scientific revolutions. University of Chicago Press.
+
+Raup, D. M. (1966). Geometric analysis of shell coiling. Journal of Paleontology, 40(5), 1178–1190.
+
+Eldredge, N. \& Gould, S. J. (1972). Punctuated equilibria. I T. J. M. Schopf (Red.), Models in paleobiology, 82–115.
+
+Stiny, G. \& Gips, J. (1972). Shape grammars and the generative specification of painting and sculpture. Information Processing 71, 1460–1465.
+
+Gibson, J. J. (1979). The ecological approach to visual perception. Houghton Mifflin.
+
+Stiny, G. (1980). Introduction to shape and shape grammars. Environment and Planning B, 7(3), 343–351.
+
+Stiny, G. (1991). The algebras of design. Research in Engineering Design, 2, 171–181.
+
+Kauffman, S. A. (1993). The origins of order. Oxford University Press.
+
+Arthur, W. B. (1994). Increasing returns and path dependence in the economy. University of Michigan Press.
+
+Michl, J. (1995). Form follows WHAT? The modernist notion of function as a carte blanche.
+
+Odling-Smee, F. J., Laland, K. N. \& Feldman, M. W. (2003). Niche construction. Princeton University Press.
+
+Hatchuel, A. \& Weil, B. (2003). A new approach of innovative design: An introduction to C-K theory. Proc. ICED 2003.
+
+Hatchuel, A. \& Weil, B. (2009). C-K design theory: An advanced formulation. Research in Engineering Design, 19(4), 181–192.
+
+Stiny, G. (2006). Shape: Talking about seeing and doing. MIT Press.
+
+Mitteroecker, P. \& Huttegger, S. M. (2009). The concept of morphospaces in evolutionary and developmental biology. Biological Theory, 4(1), 54–67.
+
+Fields, C. \& Levin, M. (2022). Competency in navigating arbitrary spaces. Entropy, 24(6), 819.
+
+Levin, M. (2022). Technological approach to mind everywhere. Frontiers in Systems Neuroscience, 16, 768201.
+
+Levin, M. (2025). Living things are not machines (also, they totally are). Noema Magazine.
+
+1 Proposisjon 3 definerer landskapet som ein funksjon av seleksjonstrykka. Seleksjonstrykka er ikkje konstante. Altså er heller ikkje landskapet det.
+
+2 Proposisjonane 1 til 4 skildrar rommet, kreftene, landskapet og dynamikken. Dei spesifiserer topografien, men seier ingenting om kven eller kva som navigerer gradientane. Ei ny antaking er naudsynt.
+
+3 Dei aggregerte gradientane produserer ein topologi over formrommet.
+
+4 Postulatet fell om tilpassingslandskapet for ein klasse kan visast å vere topologisk uendra over ein periode der den observerte fordelinga av former endrar seg.
+
+5 Av 1.5: dei observerte posisjonane må vere resultat av krefter som favoriserer visse regionar. Desse trykka har ein bestemt karakter.
+
+6 Falsifiseringsvilkår: Postulatet fell om det finst ein klasse der fordelinga av former i formrommet er statistisk uavskiljbar frå ein tilfeldig prosess utan tilbakekopling.
+
+
+\end{document}
