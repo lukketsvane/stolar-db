@@ -220,10 +220,20 @@
 \widowpenalty=10000
 \clubpenalty=10000
 
-% Body paragraph defaults
+% Body paragraph defaults — tight for the small page
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{5pt plus 1pt minus 0.5pt}
+\setlength{\parskip}{3pt plus 0.6pt minus 0.4pt}
 \linespread{1.0}
+
+% Wide environment for back-matter sections (Etterord, Referansar) that
+% should fill the full content width including the 16 mm marginal number
+% column. Pulls the left edge 16 mm to the left of the body block.
+\usepackage{changepage}
+\newenvironment{widebody}{%
+  \begin{adjustwidth}{-16mm}{0mm}%
+}{%
+  \end{adjustwidth}%
+}
 
 \begin{document}
 \frontmatter
@@ -429,32 +439,103 @@ Nærmaste-nabo-distansen i (H, W, D) etter z-skalering har ein variasjonskoeffis
 
 \prop{A.6.1}{}{Formrommet er ikkje uniformt busett (1.4)}
 \addcontentsline{toc}{subsection}{A.6.1 Formrommet er ikkje uniformt busett (1.4)}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{fig-A.6.1-uniformitet.pdf}
+\end{figure}
 Gjensidig informasjon (sklearn k-NN) mellom prediktor og kvar geometrisk dimensjon: stilperiode slår grov materialgruppe på alle fire (H, W, D, H/W). Gevinsten er stor: stil 0,30–0,59 bits mot mat 0,06–0,10 bits. Forholdstal opp til 7\msym{×}. Resultatet held under museum-CV og under leave-one-period-out. n = 1664.
 
 \prop{A.6.2}{}{Stilperiode som samlevariabel (2.4, 2.62)}
 \addcontentsline{toc}{subsection}{A.6.2 Stilperiode som samlevariabel (2.4, 2.62)}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{fig-A.6.2-kanalisering.pdf}
+\end{figure}
 Variasjonskoeffisienten på tvers av seks mesh-trekk strekkjer seg over to storleiksordnar. Sphericity er det mest kanaliserte trekkjet (CV = 0,074); råvolumet det friaste (CV = 9,5). Spreiinga er 128\msym{×} (95 \% CI [50\msym{×}, 158\msym{×}]). n = 2202.
 
 \prop{A.6.3}{}{Kanaliseringshierarki i mesh-rommet (3.3)}
 \addcontentsline{toc}{subsection}{A.6.3 Kanaliseringshierarki i mesh-rommet (3.3)}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{fig-A.6.3-silhouette.pdf}
+\end{figure}
 Silhouette-skoren for stilperiode i 4D mesh-trekk-rom (sphericity, fill\_ratio, inertia\_ratio, complexity) er −0,34 (95 \% CI [−0,37, −0,33]) over 25 stilar med minst 10 medlemar kvar. Negativ silhouette betyr at gjennomsnittspunktet i ein stil ligger nærmare punkta i naboklynga enn dei eigne. Stilkategoriane er gradientar, ikkje topologisk skilde regionar. n = 1971.
 
 \prop{A.6.4}{}{Stilar er gradientar, ikkje topologiske klynger (3.4)}
 \addcontentsline{toc}{subsection}{A.6.4 Stilar er gradientar, ikkje topologiske klynger (3.4)}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{fig-A.6.4-ekspansjon.pdf}
+\end{figure}
 Det kumulative konvekse hylsterveolumet i (H, W, D), etter klipping til 1.–99. persentil per dimensjon, veks monotont gjennom 24 femtjueårs-periodar. Totalvekst 107\msym{×} (95 \% CI [30\msym{×}, breitt]). I mesh-trekk-rommet er den same testen 553\msym{×}. Landskapet skrumpar aldri.
 
 \prop{A.6.5}{}{Kumulativ ekspansjon av formrommet (4.4)}
 \addcontentsline{toc}{subsection}{A.6.5 Kumulativ ekspansjon av formrommet (4.4)}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{fig-A.6.5-mahogni.pdf}
+\end{figure}
 iI utvalet av norskproduserte stolar frå perioden 1825–1849 er bruken av mahogni deterministisk (16 av 16), samanlikna med ein fraksjon på null i perioden 1750–1799. Variasjonskoeffisienten for H/W i kollaps-perioden er 0,083, mot 0,140 i den føregåande perioden. Dette illustrerer korleis eitt seleksjonstrykk kan verte så dominant at formrommet kollapsar.
 
 \prop{A.6.6}{}{Mahogni-kollaps 1825-1849 (4.5)}
 \addcontentsline{toc}{subsection}{A.6.6 Mahogni-kollaps 1825-1849 (4.5)}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{fig-A.6.6-wasserstein.pdf}
+\end{figure}
 Wasserstein-distansen mellom suksessive 50-årsperiodar gjev mean 14,4 cm for høgde, 8,2 cm for breidde og 5,9 cm for djupn. Ingen av dei ti periodepara har distanse under 0,5 cm. Postulatet om at landskapet endrar seg held mot direkte falsifisering. Same metode på random-walk-null forkastar denne med p ≪ 10⁻⁶³ for kvar dimensjon.
 
 \prop{A.6.7}{}{Direkte falsifisering av postulat 4.1}
 \addcontentsline{toc}{subsection}{A.6.7 Direkte falsifisering av postulat 4.1}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{fig-A.6.7-trajektorie.pdf}
+\end{figure}
+\prop{A.6.8}{}{Materiell kompleksitet per nasjon (5.3)}
+\addcontentsline{toc}{subsection}{A.6.8 Materiell kompleksitet per nasjon (5.3)}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{fig-A.6.8-materialblanding.pdf}
+\end{figure}
+\prop{A.6.9}{}{Materialstraumen 1500 til 2025 (4.5)}
+\addcontentsline{toc}{subsection}{A.6.9 Materialstraumen 1500 til 2025 (4.5)}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{fig-A.6.9-materialstraum.pdf}
+\end{figure}
+\prop{A.6.10}{}{H/B-proporsjonen 1500 til 2024 (4.1)}
+\addcontentsline{toc}{subsection}{A.6.10 H/B-proporsjonen 1500 til 2024 (4.1)}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{fig-A.6.10-proporsjon.pdf}
+\end{figure}
+\prop{A.6.11}{}{Materialnisjar i 3D-morforommet (5.3)}
+\addcontentsline{toc}{subsection}{A.6.11 Materialnisjar i 3D-morforommet (5.3)}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{fig-A.6.11-materialnisjar.pdf}
+\end{figure}
+\prop{A.6.12}{}{Nyhetsraten og det tilstøytande moglege (6.5)}
+\addcontentsline{toc}{subsection}{A.6.12 Nyhetsraten og det tilstøytande moglege (6.5)}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{fig-A.6.12-nyhetsrate.pdf}
+\end{figure}
+\prop{A.6.13}{}{3D-vandring gjennom morforommet (4.1)}
+\addcontentsline{toc}{subsection}{A.6.13 3D-vandring gjennom morforommet (4.1)}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{fig-A.6.13-3d-trajektorie.pdf}
+\end{figure}
+\prop{A.6.14}{}{Tilpassingslandskapet som Lyapunov-flate (3.2)}
+\addcontentsline{toc}{subsection}{A.6.14 Tilpassingslandskapet som Lyapunov-flate (3.2)}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{fig-A.6.14-landskap.pdf}
+\end{figure}
 \backmatter
 \silentchapter{Etterord}{etterord}
+\begin{widebody}
 Kvifor har objekt den spesifikke morfologien dei har? Tradisjonelle svar, funksjonalisme, fenomenologi, semiotikk, vert her forkasta som aktive distraksjonar. Dei skildrar kva form tyder, ikkje korleis ho emergerer som fysisk konfigurasjon under eit sett av aggregerte seleksjonstrykk. Jan Michl rydda det intellektuelle landskapet ved å demonstrere at all formgjeving er ein modifikasjon av eksisterande posisjonar i formrommet. Michl formulerte det negative resultatet: han viste kva form ikkje følgjer.
 
 George Kubler (1962) nådde nærare ved å skildre formelle sekvensar og temporalitet, men han mangla eit apparat for å identifisere kreftene som driv sekvensane. Han kartla rørsla utan å identifisere gradientane.
@@ -475,7 +556,9 @@ At teksten kan fellast, er garantien for hennar gyldigheit. Om eitt einaste sele
 
 Takk til Jan Petter Neverdahl og Hermann Stange og for kommentarar under arbeidet
 
+\end{widebody}
 \silentchapter{Referansar}{referansar}
+\begin{widebody}
 \refentry{Sullivan, L. H. (1896). The tall office building artistically considered. Lippincott's Magazine, 57, 403–409.}
 \refentry{Thompson, D'A. W. (1917). On growth and form. Cambridge University Press.}
 \refentry{Wright, S. (1932). The roles of mutation, inbreeding, crossbreeding, and selection in evolution. Proc. Sixth Int. Congress of Genetics, 1, 356–366.}
@@ -503,5 +586,6 @@ Takk til Jan Petter Neverdahl og Hermann Stange og for kommentarar under arbeide
 \refentry{Fields, C. \& Levin, M. (2022). Competency in navigating arbitrary spaces. Entropy, 24(6), 819.}
 \refentry{Levin, M. (2022). Technological approach to mind everywhere. Frontiers in Systems Neuroscience, 16, 768201.}
 \refentry{Levin, M. (2025). Living things are not machines (also, they totally are). Noema Magazine.}
+\end{widebody}
 
 \end{document}

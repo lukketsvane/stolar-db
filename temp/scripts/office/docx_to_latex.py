@@ -262,10 +262,20 @@ PREAMBLE = r"""\documentclass[10pt,oneside]{book}
 \widowpenalty=10000
 \clubpenalty=10000
 
-% Body paragraph defaults
+% Body paragraph defaults — tight for the small page
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{5pt plus 1pt minus 0.5pt}
+\setlength{\parskip}{3pt plus 0.6pt minus 0.4pt}
 \linespread{1.0}
+
+% Wide environment for back-matter sections (Etterord, Referansar) that
+% should fill the full content width including the 16 mm marginal number
+% column. Pulls the left edge 16 mm to the left of the body block.
+\usepackage{changepage}
+\newenvironment{widebody}{%
+  \begin{adjustwidth}{-16mm}{0mm}%
+}{%
+  \end{adjustwidth}%
+}
 
 \begin{document}
 \frontmatter
@@ -468,6 +478,7 @@ def convert(doc: 'Document') -> str:
     in_glossary = False
     in_appendix = False
     in_referansar = False
+    in_widebody = False
     saw_first_chapter = False
     first_chapter_seen = False
 
@@ -478,14 +489,32 @@ def convert(doc: 'Document') -> str:
 
     # Build a list of (anchor, fig_filename) by walking known A.6 sub-section headings
     a6_figure_map = {
-        'A.6.1': 'fig-1.4-morphospace.png',
-        'A.6.2': 'fig-2.4-prediktor.png',
-        'A.6.3': 'fig-3.3-channeling-v2.png',
-        'A.6.4': 'fig-3.4-silhouette.png',
-        'A.6.5': 'I-4_morphospace_ekspansjon.png',
-        'A.6.6': 'fig-4.5-mahogni.png',
-        'A.6.7': 'fig-falsification-4.1.png',
+        'A.6.1':  'fig-A.6.1-uniformitet.pdf',
+        'A.6.2':  'fig-A.6.2-kanalisering.pdf',
+        'A.6.3':  'fig-A.6.3-silhouette.pdf',
+        'A.6.4':  'fig-A.6.4-ekspansjon.pdf',
+        'A.6.5':  'fig-A.6.5-mahogni.pdf',
+        'A.6.6':  'fig-A.6.6-wasserstein.pdf',
+        'A.6.7':  'fig-A.6.7-trajektorie.pdf',
+        'A.6.8':  'fig-A.6.8-materialblanding.pdf',
+        'A.6.9':  'fig-A.6.9-materialstraum.pdf',
+        'A.6.10': 'fig-A.6.10-proporsjon.pdf',
+        'A.6.11': 'fig-A.6.11-materialnisjar.pdf',
+        'A.6.12': 'fig-A.6.12-nyhetsrate.pdf',
+        'A.6.13': 'fig-A.6.13-3d-trajektorie.pdf',
+        'A.6.14': 'fig-A.6.14-landskap.pdf',
     }
+    # New A.6.x sections that aren't in the docx, injected after the last
+    # existing A.6.x entry.
+    extra_a6_sections = [
+        ('A.6.8',  'Materiell kompleksitet per nasjon (5.3)'),
+        ('A.6.9',  'Materialstraumen 1500 til 2025 (4.5)'),
+        ('A.6.10', 'H/B-proporsjonen 1500 til 2024 (4.1)'),
+        ('A.6.11', 'Materialnisjar i 3D-morforommet (5.3)'),
+        ('A.6.12', 'Nyhetsraten og det tilstøytande moglege (6.5)'),
+        ('A.6.13', '3D-vandring gjennom morforommet (4.1)'),
+        ('A.6.14', 'Tilpassingslandskapet som Lyapunov-flate (3.2)'),
+    ]
     pending_a6_fig: str | None = None
     skip_manual_toc = False  # set after \tableofcontents until next H1
 
@@ -550,6 +579,10 @@ def convert(doc: 'Document') -> str:
         # which suppresses the centred chapter title (the running header is
         # enough since it shows the section name on every page).
         if text in SECTION_NAMES:
+            # Close any open widebody from the previous back-matter section
+            if in_widebody:
+                out.append(r'\end{widebody}')
+                in_widebody = False
             if text == 'Innhald':
                 # Custom \tableofcontents (defined in preamble) skips the
                 # centred "Innhald" title and emits a compact TOC.
@@ -557,10 +590,30 @@ def convert(doc: 'Document') -> str:
                 out.append(r'\tableofcontents')
                 skip_manual_toc = True
             elif text == 'Etterord':
+                # Inject extra A.6.x sections before leaving the appendix.
+                # These have figures but no body text in the docx.
+                for ex_label, ex_title in extra_a6_sections:
+                    out.append(r'\prop{' + escape_latex(ex_label) + '}{}{' +
+                               escape_latex(ex_title) + '}')
+                    out.append(r'\addcontentsline{toc}{subsection}{' +
+                               escape_latex(ex_label + ' ' + ex_title) + '}')
+                    ex_fig = a6_figure_map.get(ex_label)
+                    if ex_fig and (FIG_DIR / ex_fig).exists():
+                        out.append(r'\begin{figure}[H]')
+                        out.append(r'  \centering')
+                        out.append(r'  \includegraphics[width=\linewidth]{' +
+                                   ex_fig + '}')
+                        out.append(r'\end{figure}')
                 out.append(r'\backmatter')
                 out.append(r'\silentchapter{' + escape_latex(text) + '}{' + running_head(text) + '}')
+                out.append(r'\begin{widebody}')
+                in_widebody = True
+            elif text == 'Referansar':
+                out.append(r'\silentchapter{' + escape_latex(text) + '}{' + running_head(text) + '}')
+                out.append(r'\begin{widebody}')
+                in_widebody = True
             else:
-                # Føreord, Ordliste, Referansar — cut centred title, keep header
+                # Føreord, Ordliste — cut centred title, keep header
                 out.append(r'\silentchapter{' + escape_latex(text) + '}{' + running_head(text) + '}')
             in_glossary = (text == 'Ordliste')
             in_referansar = (text == 'Referansar')
@@ -608,7 +661,8 @@ def convert(doc: 'Document') -> str:
             i += 1
             continue
 
-        # A.6.x sub-section — render as marginal \prop (label in left margin).
+        # A.6.x sub-section — render as marginal \prop (label in left margin),
+        # then immediately embed the falsification figure for that section.
         m_a6 = re.match(r'^(A\.\d\.\d)\s+(.*)$', text)
         if m_a6:
             label = m_a6.group(1)
@@ -620,7 +674,16 @@ def convert(doc: 'Document') -> str:
                 in_appendix = True
             out.append(r'\prop{' + escape_latex(label) + '}{}{' + escape_latex(rest) + '}')
             out.append(r'\addcontentsline{toc}{subsection}{' + escape_latex(label + ' ' + rest) + '}')
-            pending_a6_fig = a6_figure_map.get(label)
+
+            # Embed the falsification figure right under the heading
+            fig_filename = a6_figure_map.get(label)
+            if fig_filename:
+                fig_path = FIG_DIR / fig_filename
+                if fig_path.exists():
+                    out.append(r'\begin{figure}[H]')
+                    out.append(r'  \centering')
+                    out.append(r'  \includegraphics[width=\linewidth]{' + fig_filename + '}')
+                    out.append(r'\end{figure}')
             i += 1
             continue
 
@@ -730,22 +793,9 @@ def convert(doc: 'Document') -> str:
             i += 1
             continue
 
-        # Italic-only paragraph → likely a transition or caption
+        # Italic-only paragraph → italic transition (overgang)
         all_italic = bool(p.runs) and all(r.italic for r in p.runs if r.text.strip())
         if all_italic and len(text) < 200:
-            # Caption following an A.6.x heading: emit as figure block
-            if pending_a6_fig is not None:
-                fig_path = FIG_DIR / pending_a6_fig
-                if fig_path.exists():
-                    out.append(r'\begin{figure}[H]')
-                    out.append(r'  \centering')
-                    out.append(r'  \includegraphics[width=\linewidth]{' + pending_a6_fig + '}')
-                    out.append(r'  \caption{' + escape_latex(text) + '}')
-                    out.append(r'\end{figure}')
-                    pending_a6_fig = None
-                    i += 1
-                    continue
-            # Otherwise: italic transition
             out.append(r'\begin{overgang}' + escape_latex(text) + r'\end{overgang}')
             i += 1
             continue
@@ -761,6 +811,8 @@ def convert(doc: 'Document') -> str:
         out.append('')
         i += 1
 
+    if in_widebody:
+        out.append(r'\end{widebody}')
     out.append(POSTAMBLE)
     return '\n'.join(out)
 
