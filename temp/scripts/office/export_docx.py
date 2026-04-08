@@ -31,7 +31,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[3]
 TEX  = ROOT / 'FORMLÆRE.tex'
 CLEAN = ROOT / 'temp' / 'FORMLÆRE-clean.tex'
-OUT  = ROOT / 'FORMLÆRE-export.docx'
+# Writes the polished docx to FORMLÆRE.docx in the repo root.
+# The original Word source is preserved as FORMLÆRE-source.docx and is
+# used by docx_to_latex.py to build the LaTeX/PDF.
+OUT  = ROOT / 'FORMLÆRE.docx'
 REF  = ROOT / 'temp' / 'reference.docx'
 PANDOC = (
     'C:/Users/Shadow/AppData/Local/Microsoft/WinGet/Packages/'
@@ -124,13 +127,19 @@ def clean_tex(src: str) -> str:
         body = m.group(1)
         src = MINIMAL_PREAMBLE + body + '\n\\end{document}\n'
 
-    # Remove the entire tikzpicture cover block, then add a simple title
-    # at the start of the document body.
+    # Remove the entire tikzpicture cover block, then add a clean title
+    # block + the cover image at the start of the document body.
+    cover_block = (
+        r'\n{\\Huge\\bfseries FORMLÆRE}\n\n'
+        r'{\\large\\itshape Ei traktatform om korleis form oppstår}\n\n'
+        r'\\vspace{1em}\n\n'
+        r'\\noindent\\includegraphics[width=\\linewidth]{cover-stolar.png}\n\n'
+        r'\\clearpage\n\n'
+    )
     src = re.sub(
         r'\\begin\{tikzpicture\}\[remember picture, overlay\].*?'
         r'\\end\{tikzpicture\}',
-        r'\n{\\Huge\\bfseries FORMLÆRE}\n\n'
-        r'{\\large\\itshape Ei traktatform om korleis form oppstår}\n\n',
+        cover_block,
         src,
         flags=re.DOTALL,
     )
@@ -144,16 +153,39 @@ def clean_tex(src: str) -> str:
         strip_centerline, src,
     )
 
+    # Word / Google Docs cannot render PDF images inside docx. The figure
+    # scripts save both .pdf (for the LaTeX build) and .png (for the docx
+    # export). Swap .pdf -> .png in every \includegraphics path.
+    src = re.sub(
+        r'(\\includegraphics\[[^\]]*\]\{[^}]+)\.pdf\}',
+        r'\1.png}', src,
+    )
+
     # Strip silent-chapter mark argument: \silentchapter{NAME}{mark} -> \chapter*{NAME}
     src = replace_n_arg_macro(
         src, 'silentchapter', 2,
         lambda name, mark: '\\chapter*{' + name + '}'
     )
 
-    # \prop{num}{status}{body} -> \textbf{num$^{status}$} body
+    # \prop{num}{status}{body} -> headings or bold inline depending on level
+    #   1, 2, ..., 7         -> \chapter*{N. body}   (becomes Heading 1)
+    #   A.6.1, A.6.2, ...    -> \section*{label body} (becomes Heading 2)
+    #   A.1, A.3, A.6        -> \section*{label body} (becomes Heading 2)
+    #   D1, T6, ...          -> bold inline
+    #   1.1, 1.21, etc.      -> bold inline
+    chapter_re = re.compile(r'^[1-7]$')
+    a6_re      = re.compile(r'^A\.\d\.\d+$')
+    ax_re      = re.compile(r'^A\.\d$')
+
     def prop_repl(num, status, body):
+        num_s = num.strip()
+        body_clean = body.strip()
+        if chapter_re.match(num_s):
+            return f'\n\n\\chapter*{{{num_s}.\\quad {body_clean}}}\n\n'
+        if a6_re.match(num_s) or ax_re.match(num_s):
+            return f'\n\n\\section*{{{num_s}\\quad {body_clean}}}\n\n'
         sup = f'\\textsuperscript{{\\textit{{{status}}}}}' if status.strip() else ''
-        return f'\n\n\\noindent\\textbf{{{num}}}{sup}\\quad {body}\n\n'
+        return f'\n\n\\noindent\\textbf{{{num_s}}}{sup}\\quad {body_clean}\n\n'
     src = replace_n_arg_macro(src, 'prop', 3, prop_repl)
 
     # \propcont{body} -> body
