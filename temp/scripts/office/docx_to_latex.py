@@ -109,28 +109,72 @@ PREAMBLE = r"""\documentclass[10pt,oneside]{book}
 \renewcommand{\thechapter}{}
 
 % Running headers — chapter title at left, page number at right, thin rule.
-% oneside layout: same header on every page (no recto/verso distinction).
+% The header rule is extended LEFT by 16 mm via \fancyheadoffset so it
+% spans the full content width INCLUDING the marginal number column
+% (otherwise the rule looks narrow because it's anchored to the body
+% text block which sits to the right of the number margin).
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\small\scshape\leftmark}  % chapter title at left on all pages
-\fancyhead[R]{\small\thepage}           % page number at right on all pages
+\fancyhead[L]{\small\scshape\leftmark}  % chapter title at left on every page
+\fancyhead[R]{\small\thepage}           % page number at right on every page
+\fancyheadoffset[L]{16mm}               % extend header left over the number margin
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0pt}
-% plain style (chapter-opening pages): same header, no footer
+% plain style (chapter-opening pages): identical to fancy (full header).
 \fancypagestyle{plain}{
   \fancyhf{}
   \fancyhead[L]{\small\scshape\leftmark}
   \fancyhead[R]{\small\thepage}
+  \fancyheadoffset[L]{16mm}
   \renewcommand{\headrulewidth}{0.4pt}
   \renewcommand{\footrulewidth}{0pt}
 }
-% empty style: only used on title page
-\fancypagestyle{empty}{
+% title style — used ONLY on the title page: nothing in the header at all.
+\fancypagestyle{titlepage}{
   \fancyhf{}
+  \fancyheadoffset[L]{0pt}
   \renewcommand{\headrulewidth}{0pt}
   \renewcommand{\footrulewidth}{0pt}
 }
+
+% \silentchapter{display name}{lowercase mark}
+%   Starts a new page, sets the running mark, adds a TOC entry, and uses the
+%   plain pagestyle for the opening page — but DOES NOT emit a centred chapter
+%   title (the chapter is identified by the running header and by its content).
+\newcommand{\silentchapter}[2]{%
+  \clearpage
+  \markboth{#2}{}%
+  \addcontentsline{toc}{chapter}{#1}%
+}
+
+% Redefine \tableofcontents to skip the centred "Innhald" title — the page
+% is identified by the running header alone. Also compact the TOC entries
+% so the whole list fits on one page.
+\makeatletter
+\renewcommand\tableofcontents{%
+  \markboth{innhald}{}%
+  \@starttoc{toc}%
+}
+% Compact chapter-level TOC entries: tiny vskip, regular weight, dotted leaders
+\renewcommand*\l@chapter[2]{%
+  \ifnum \c@tocdepth >\m@ne
+    \vskip 2pt \@plus\p@%
+    \setlength\@tempdima{1.5em}%
+    \begingroup
+      \parindent \z@ \rightskip \@pnumwidth
+      \parfillskip -\@pnumwidth
+      \leavevmode \normalfont
+      \advance\leftskip\@tempdima
+      \hskip -\leftskip
+      #1\nobreak\leaders\hbox{$\m@th\mkern \@dotsep mu\hbox{.}\mkern \@dotsep mu$}\hfill
+      \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
+    \endgroup
+  \fi}
+% Compact section / subsection entries — reduce indents and inter-line glue
+\renewcommand*\l@section{\@dottedtocline{1}{1.0em}{2.0em}}
+\renewcommand*\l@subsection{\@dottedtocline{2}{3.0em}{2.6em}}
+\makeatother
 
 % ─── Proposition environment ──────────────────────────────────────────────
 %
@@ -178,12 +222,20 @@ PREAMBLE = r"""\documentclass[10pt,oneside]{book}
   \endgroup\par\addvspace{12pt}%
 }
 
-% Glossary entries — bold term, regular body, small hanging indent
+% Glossary entries — bold term, regular body, tight no-indent block.
+% Compact: minimal vertical separation so many entries fit on one page.
 \newcommand{\ordlisteentry}[2]{%
-  \par\addvspace{4pt}%
-  {\setlength{\leftskip}{3mm}%
-   \setlength{\parindent}{-3mm}%
-   \noindent\textbf{#1:} #2\par}%
+  \par\addvspace{2pt}%
+  \noindent\textbf{#1:} #2\par%
+}
+
+% Reference entries — small font, tight spacing, hanging indent.
+% Mirrors the dense numbered footnote layout in the digibok Tractatus.
+\newcommand{\refentry}[1]{%
+  \par\addvspace{0pt}%
+  \begingroup\small
+  \noindent\hangindent=4mm\hangafter=1 #1\par%
+  \endgroup
 }
 
 % Figures — centred, max width = text width
@@ -284,6 +336,40 @@ CHAPTER_TITLES = {
 }
 SECTION_NAMES = {'Innhald', 'Føreord', 'Ordliste', 'Etterord', 'Referansar'}
 
+# Footnotes that the docx leaves stranded as plain numbered paragraphs at the
+# end of the file (after the bibliography). They're injected as real LaTeX
+# \footnote{} calls on the chapter-opening propositions where they belong, so
+# they appear at the bottom of the correct page. Mapping by chapter number:
+CHAPTER_FOOTNOTES: dict[str, list[str]] = {
+    '2': [
+        'Av 1.5: dei observerte posisjonane må vere resultat av krefter som favoriserer visse regionar. Desse trykka har ein bestemt karakter.',
+        'Falsifiseringsvilkår: Postulatet fell om det finst ein klasse der fordelinga av former i formrommet er statistisk uavskiljbar frå ein tilfeldig prosess utan tilbakekopling.',
+    ],
+    '3': [
+        'Dei aggregerte gradientane produserer ein topologi over formrommet.',
+    ],
+    '4': [
+        'Proposisjon 3 definerer landskapet som ein funksjon av seleksjonstrykka. Seleksjonstrykka er ikkje konstante. Altså er heller ikkje landskapet det.',
+        'Postulatet fell om tilpassingslandskapet for ein klasse kan visast å vere topologisk uendra over ein periode der den observerte fordelinga av former endrar seg.',
+    ],
+    '5': [
+        'Proposisjonane 1 til 4 skildrar rommet, kreftene, landskapet og dynamikken. Dei spesifiserer topografien, men seier ingenting om kven eller kva som navigerer gradientane. Ei ny antaking er naudsynt.',
+    ],
+}
+
+# Pattern matching the orphan numbered footnote paragraphs at the end of the
+# docx (after Referansar). They look like "1 Some text..." through "6 ...".
+# We skip them entirely from the rendered output because they're injected as
+# real footnotes via CHAPTER_FOOTNOTES instead.
+ORPHAN_FOOTNOTE_RE = re.compile(r'^[1-6]\s+\S')
+
+# Notation entries in A.1 Notasjon: a short identifier (≤12 non-space chars)
+# directly followed by ":" and a description. These get rendered with the
+# identifier in the LEFT margin (\prop layout) so they line up like D1, D2.
+# (Entries with a space before the colon, e.g. "π : Shape → ℝⁿ:", do NOT
+# match — they fall through to the regular body-paragraph handler.)
+NOTATION_RE = re.compile(r'^(\S{1,12}):\s+(\S.*)$')
+
 
 def is_chapter(text: str) -> bool:
     return text.strip() in CHAPTER_TITLES or any(text.strip().startswith(c.split(' ', 1)[0] + ' ') and len(text.strip()) < 80 for c in CHAPTER_TITLES if False)
@@ -381,6 +467,7 @@ def convert(doc: 'Document') -> str:
     out = [PREAMBLE]
     in_glossary = False
     in_appendix = False
+    in_referansar = False
     saw_first_chapter = False
     first_chapter_seen = False
 
@@ -424,49 +511,59 @@ def convert(doc: 'Document') -> str:
                 i += 1
                 continue
 
-        # Title page — always blank header and no page number
+        # Title page — vertically and horizontally centred. No header at all
+        # (uses the special "titlepage" pagestyle which suppresses everything).
         if style == 'Title':
-            out.append(r'\pagestyle{empty}\vspace*{4cm}')
+            out.append(r'\thispagestyle{titlepage}')
+            out.append(r'\markboth{}{}')
+            out.append(r'\vspace*{\fill}')
             out.append(r'\begin{center}')
             out.append(r'  {\Huge\scshape\addfontfeature{LetterSpace=12} ' + escape_latex(text) + '}')
-            out.append(r'\end{center}')
             i += 1
+            # Look ahead (skipping blank paragraphs) for a Subtitle to join
+            # the same centred block.
+            j = i
+            while j < len(paras) and not paras[j].text.strip():
+                j += 1
+            if j < len(paras):
+                p2 = paras[j]
+                if (p2.style.name if p2.style else '') == 'Subtitle':
+                    sub = p2.text.strip()
+                    if sub:
+                        out.append(r'  \\[1.2em]')
+                        out.append(r'  {\large\itshape ' + escape_latex(sub) + '}')
+                    i = j + 1
+            out.append(r'\end{center}')
+            out.append(r'\vspace*{\fill}')
+            out.append(r'\clearpage')
             continue
         if style == 'Subtitle':
+            # Subtitle without a preceding Title (defensive) — render plain.
             if text:
                 out.append(r'\begin{center}')
                 out.append(r'  {\large\itshape ' + escape_latex(text) + '}')
                 out.append(r'\end{center}')
-            # Restore normal page style after title+subtitle
-            out.append(r'\pagestyle{fancy}')
             i += 1
             continue
 
-        # Section headings
+        # Section headings — all front/back-matter sections use \silentchapter
+        # which suppresses the centred chapter title (the running header is
+        # enough since it shows the section name on every page).
         if text in SECTION_NAMES:
-            if text == 'Føreord' and not first_chapter_seen:
-                # \frontmatter is already in the preamble; don't reset page counter
-                out.append(r'\chapter*{' + escape_latex(text) + '}')
-                out.append(r'\addcontentsline{toc}{chapter}{' + escape_latex(text) + '}')
-                out.append(r'\markboth{' + running_head(text) + '}{}')
-            elif text == 'Innhald':
-                # Use LaTeX's auto-TOC; skip the manual TOC entries that follow
+            if text == 'Innhald':
+                # Custom \tableofcontents (defined in preamble) skips the
+                # centred "Innhald" title and emits a compact TOC.
+                out.append(r'\silentchapter{' + escape_latex(text) + '}{' + running_head(text) + '}')
                 out.append(r'\tableofcontents')
-                out.append(r'\clearpage')
                 skip_manual_toc = True
             elif text == 'Etterord':
-                out.append(r'\backmatter\chapter*{' + escape_latex(text) + '}')
-                out.append(r'\addcontentsline{toc}{chapter}{' + escape_latex(text) + '}')
-                out.append(r'\markboth{' + running_head(text) + '}{}')
-            elif text == 'Referansar':
-                out.append(r'\chapter*{' + escape_latex(text) + '}')
-                out.append(r'\addcontentsline{toc}{chapter}{' + escape_latex(text) + '}')
-                out.append(r'\markboth{' + running_head(text) + '}{}')
+                out.append(r'\backmatter')
+                out.append(r'\silentchapter{' + escape_latex(text) + '}{' + running_head(text) + '}')
             else:
-                out.append(r'\chapter*{' + escape_latex(text) + '}')
-                out.append(r'\addcontentsline{toc}{chapter}{' + escape_latex(text) + '}')
-                out.append(r'\markboth{' + running_head(text) + '}{}')
+                # Føreord, Ordliste, Referansar — cut centred title, keep header
+                out.append(r'\silentchapter{' + escape_latex(text) + '}{' + running_head(text) + '}')
             in_glossary = (text == 'Ordliste')
+            in_referansar = (text == 'Referansar')
             i += 1
             continue
 
@@ -486,22 +583,32 @@ def convert(doc: 'Document') -> str:
             out.append(r'\clearpage')
             out.append(r'\addcontentsline{toc}{chapter}{' + escape_latex(text.rstrip('.')) + '}')
             out.append(r'\markboth{' + running_head(ch_body) + '}{}')
-            # Emit as a regular proposition (no status letter)
-            out.append(r'\prop{' + escape_latex(ch_num) + '}{}{' + escape_latex(ch_body) + '}')
+            # Inject any chapter-level footnotes (originally orphan paragraphs
+            # at the end of the docx) so they appear at the bottom of THIS page.
+            body_tex = escape_latex(ch_body)
+            for fn in CHAPTER_FOOTNOTES.get(ch_num, []):
+                body_tex += r'\footnote{' + escape_latex(fn) + '}'
+            out.append(r'\prop{' + escape_latex(ch_num) + '}{}{' + body_tex + '}')
             in_glossary = False
             i += 1
             continue
 
-        # Appendix top-level (explicit heading, if any)
+        # Skip orphan numbered footnote paragraphs at the end of the doc
+        # (after the bibliography). They are already injected as real
+        # \footnote{} calls on the chapter-opening propositions above.
+        if ORPHAN_FOOTNOTE_RE.match(text):
+            i += 1
+            continue
+
+        # Appendix top-level (explicit heading, if any) — use silent chapter
         if text.startswith('A  Formell') or text.startswith('A Formell'):
             out.append(r'\appendix')
-            out.append(r'\chapter*{' + escape_latex('A  Formell spesifikasjon') + '}')
-            out.append(r'\addcontentsline{toc}{chapter}{Formell spesifikasjon}')
+            out.append(r'\silentchapter{Formell spesifikasjon}{formell spesifikasjon}')
             in_appendix = True
             i += 1
             continue
 
-        # A.6.x sub-section
+        # A.6.x sub-section — render as marginal \prop (label in left margin).
         m_a6 = re.match(r'^(A\.\d\.\d)\s+(.*)$', text)
         if m_a6:
             label = m_a6.group(1)
@@ -509,17 +616,15 @@ def convert(doc: 'Document') -> str:
             # First A.x heading also marks the start of the appendix
             if not in_appendix:
                 out.append(r'\appendix')
-                out.append(r'\chapter*{' + escape_latex('Formell spesifikasjon') + '}')
-                out.append(r'\addcontentsline{toc}{chapter}{Formell spesifikasjon}')
-                out.append(r'\markboth{formell spesifikasjon}{}')
+                out.append(r'\silentchapter{Formell spesifikasjon}{formell spesifikasjon}')
                 in_appendix = True
-            out.append(r'\subsection*{' + escape_latex(label + ' ' + rest) + '}')
+            out.append(r'\prop{' + escape_latex(label) + '}{}{' + escape_latex(rest) + '}')
             out.append(r'\addcontentsline{toc}{subsection}{' + escape_latex(label + ' ' + rest) + '}')
             pending_a6_fig = a6_figure_map.get(label)
             i += 1
             continue
 
-        # A.x section heading
+        # A.x section heading — render as marginal \prop (label in left margin).
         m_ax = re.match(r'^(A\.\d)\s+(.*)$', text)
         if m_ax:
             label = m_ax.group(1)
@@ -527,13 +632,9 @@ def convert(doc: 'Document') -> str:
             # First A.x heading also marks the start of the appendix
             if not in_appendix:
                 out.append(r'\appendix')
-                out.append(r'\chapter*{' + escape_latex('Formell spesifikasjon') + '}')
-                out.append(r'\addcontentsline{toc}{chapter}{Formell spesifikasjon}')
-                out.append(r'\markboth{formell spesifikasjon}{}')
+                out.append(r'\silentchapter{Formell spesifikasjon}{formell spesifikasjon}')
                 in_appendix = True
-            out.append(r'\section*{' + escape_latex(label + ' ' + rest) + '}')
-            out.append(r'\markboth{' + running_head(label + ' ' + rest) + '}{}')
-
+            out.append(r'\prop{' + escape_latex(label) + '}{}{' + escape_latex(rest) + '}')
             out.append(r'\addcontentsline{toc}{section}{' + escape_latex(label + ' ' + rest) + '}')
             i += 1
             continue
@@ -567,6 +668,19 @@ def convert(doc: 'Document') -> str:
                 i += 1
             out.append(r'\prop{' + escape_latex(num) + '}{' + escape_latex(status) + '}{' + body_tex + '}')
             continue
+
+        # Appendix notation entry (e.g. "c: ein klasse", "Cov: kovarians")
+        # — render with the identifier in the LEFT margin like D1/D2.
+        if in_appendix:
+            m_not = NOTATION_RE.match(text)
+            if m_not:
+                name, descr = m_not.groups()
+                # Avoid mis-matching APPENDIX_PROP_RE (D1, T6) — they are
+                # handled by the next branch.
+                if not APPENDIX_PROP_RE.match(text):
+                    out.append(r'\prop{' + escape_latex(name) + '}{}{' + escape_latex(descr.strip()) + '}')
+                    i += 1
+                    continue
 
         # Appendix definition entry (D4, T6, A1) — look ahead for body lines
         if in_appendix:
@@ -633,6 +747,12 @@ def convert(doc: 'Document') -> str:
                     continue
             # Otherwise: italic transition
             out.append(r'\begin{overgang}' + escape_latex(text) + r'\end{overgang}')
+            i += 1
+            continue
+
+        # References — emit as compact \refentry{...}
+        if in_referansar:
+            out.append(r'\refentry{' + escape_latex(text) + '}')
             i += 1
             continue
 

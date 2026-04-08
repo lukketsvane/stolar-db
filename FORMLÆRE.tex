@@ -67,28 +67,72 @@
 \renewcommand{\thechapter}{}
 
 % Running headers — chapter title at left, page number at right, thin rule.
-% oneside layout: same header on every page (no recto/verso distinction).
+% The header rule is extended LEFT by 16 mm via \fancyheadoffset so it
+% spans the full content width INCLUDING the marginal number column
+% (otherwise the rule looks narrow because it's anchored to the body
+% text block which sits to the right of the number margin).
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\small\scshape\leftmark}  % chapter title at left on all pages
-\fancyhead[R]{\small\thepage}           % page number at right on all pages
+\fancyhead[L]{\small\scshape\leftmark}  % chapter title at left on every page
+\fancyhead[R]{\small\thepage}           % page number at right on every page
+\fancyheadoffset[L]{16mm}               % extend header left over the number margin
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0pt}
-% plain style (chapter-opening pages): same header, no footer
+% plain style (chapter-opening pages): identical to fancy (full header).
 \fancypagestyle{plain}{
   \fancyhf{}
   \fancyhead[L]{\small\scshape\leftmark}
   \fancyhead[R]{\small\thepage}
+  \fancyheadoffset[L]{16mm}
   \renewcommand{\headrulewidth}{0.4pt}
   \renewcommand{\footrulewidth}{0pt}
 }
-% empty style: only used on title page
-\fancypagestyle{empty}{
+% title style — used ONLY on the title page: nothing in the header at all.
+\fancypagestyle{titlepage}{
   \fancyhf{}
+  \fancyheadoffset[L]{0pt}
   \renewcommand{\headrulewidth}{0pt}
   \renewcommand{\footrulewidth}{0pt}
 }
+
+% \silentchapter{display name}{lowercase mark}
+%   Starts a new page, sets the running mark, adds a TOC entry, and uses the
+%   plain pagestyle for the opening page — but DOES NOT emit a centred chapter
+%   title (the chapter is identified by the running header and by its content).
+\newcommand{\silentchapter}[2]{%
+  \clearpage
+  \markboth{#2}{}%
+  \addcontentsline{toc}{chapter}{#1}%
+}
+
+% Redefine \tableofcontents to skip the centred "Innhald" title — the page
+% is identified by the running header alone. Also compact the TOC entries
+% so the whole list fits on one page.
+\makeatletter
+\renewcommand\tableofcontents{%
+  \markboth{innhald}{}%
+  \@starttoc{toc}%
+}
+% Compact chapter-level TOC entries: tiny vskip, regular weight, dotted leaders
+\renewcommand*\l@chapter[2]{%
+  \ifnum \c@tocdepth >\m@ne
+    \vskip 2pt \@plus\p@%
+    \setlength\@tempdima{1.5em}%
+    \begingroup
+      \parindent \z@ \rightskip \@pnumwidth
+      \parfillskip -\@pnumwidth
+      \leavevmode \normalfont
+      \advance\leftskip\@tempdima
+      \hskip -\leftskip
+      #1\nobreak\leaders\hbox{$\m@th\mkern \@dotsep mu\hbox{.}\mkern \@dotsep mu$}\hfill
+      \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
+    \endgroup
+  \fi}
+% Compact section / subsection entries — reduce indents and inter-line glue
+\renewcommand*\l@section{\@dottedtocline{1}{1.0em}{2.0em}}
+\renewcommand*\l@subsection{\@dottedtocline{2}{3.0em}{2.6em}}
+\makeatother
 
 % ─── Proposition environment ──────────────────────────────────────────────
 %
@@ -136,12 +180,20 @@
   \endgroup\par\addvspace{12pt}%
 }
 
-% Glossary entries — bold term, regular body, small hanging indent
+% Glossary entries — bold term, regular body, tight no-indent block.
+% Compact: minimal vertical separation so many entries fit on one page.
 \newcommand{\ordlisteentry}[2]{%
-  \par\addvspace{4pt}%
-  {\setlength{\leftskip}{3mm}%
-   \setlength{\parindent}{-3mm}%
-   \noindent\textbf{#1:} #2\par}%
+  \par\addvspace{2pt}%
+  \noindent\textbf{#1:} #2\par%
+}
+
+% Reference entries — small font, tight spacing, hanging indent.
+% Mirrors the dense numbered footnote layout in the digibok Tractatus.
+\newcommand{\refentry}[1]{%
+  \par\addvspace{0pt}%
+  \begingroup\small
+  \noindent\hangindent=4mm\hangafter=1 #1\par%
+  \endgroup
 }
 
 % Figures — centred, max width = text width
@@ -176,19 +228,19 @@
 \begin{document}
 \frontmatter
 
-\pagestyle{empty}\vspace*{4cm}
+\thispagestyle{titlepage}
+\markboth{}{}
+\vspace*{\fill}
 \begin{center}
   {\Huge\scshape\addfontfeature{LetterSpace=12} FORMLÆRE}
-\end{center}
-\begin{center}
+  \\[1.2em]
   {\large\itshape Ei traktatform om korleis form oppstår}
 \end{center}
-\pagestyle{fancy}
-\tableofcontents
+\vspace*{\fill}
 \clearpage
-\chapter*{Føreord}
-\addcontentsline{toc}{chapter}{Føreord}
-\markboth{føreord}{}
+\silentchapter{Innhald}{innhald}
+\tableofcontents
+\silentchapter{Føreord}{føreord}
 \begin{overgang}Kvifor har ting den forma dei har?\end{overgang}
 Svaret dei fleste designteoretiske tekstar gjev, er ein variant av Louis Sullivans «form follows function». Jan Michl har brukt det meste av ein akademisk karriere på å vise at dette svaret er feil. Ikkje berre upresist, men aktivt villfartande. Form følgjer ikkje funksjon. Form følgjer form. Kvar ny gjenstand er ein modifikasjon av ein eksisterande gjenstand, gjort av nokon som arbeider innanfor avgrensa moglegheiter og med avgrensa kunnskap om kva dei gjer. Michl rydda grunnen grundigare enn nokon før han. Han viste at den funksjonalistiske doktrinen ikkje berre var upresis, men at ho hindra oss i å sjå korleis formgjeving faktisk verkar.
 
@@ -201,9 +253,7 @@ Kva rammeverket ikkje kan seie. Traktaten handlar om posisjonar og krefter, ikkj
 Wittgenstein skriv at den som forstår han, erkjenner at setningane hans er meiningslause, og kastar stigen etter å ha klatra opp. Min stige er meir beskjeden: proposisjonane i denne traktaten er nyttige berre dersom formgjevaren, etter å ha lese dei, kan legge dei frå seg og navigere landskapet med same intuisjon som før, men no med ei forståing av kvifor intuisjonen verkar. Rammeverket skal ikkje erstatte handverket. Det skal vise handverket kva det allereie gjer. Dersom eg ikkje tek feil i dette, så har eg sagt noko om form som var sant før eg sa det, og som vil vere sant etter at desse orda er gløymd.
 
 \begin{overgang}Oslo, 2026\end{overgang}
-\chapter*{Ordliste}
-\addcontentsline{toc}{chapter}{Ordliste}
-\markboth{ordliste}{}
+\silentchapter{Ordliste}{ordliste}
 \begin{overgang}Ordlista gjev ei førehandsorientering; termane vert definerte formelt i teksten ved proposisjonane som er nemnde.\end{overgang}
 \ordlisteentry{Affordanse}{Dei formene eit materiale tilbyr og motset seg, i kraft av sine fysiske eigenskapar og dei produksjonsprosessane som er tilgjengelege. Avgjer kva formoperasjonar som er moglege (Gibson, 1979). [Def. i 2.6]}
 \ordlisteentry{Agensspektrum}{Agentar varierer i korleis dei best kan styrast: frå maskinvaremodifikasjon via settpunktomskriving og trening med belønning til kommunikasjon av grunnar. For kvart steg treng ein mindre kunnskap om systemets indre og meir kommunikasjon med systemet som heilskap. [Sjå 5.3]}
@@ -242,7 +292,7 @@ Proposisjonane er haldne opp mot eit empirisk materiale beståande av om lag 2 3
 \clearpage
 \addcontentsline{toc}{chapter}{2 Ikkje alle posisjonar er like sannsynlege}
 \markboth{ikkje alle posisjonar er like\ldots}{}
-\prop{2}{}{Ikkje alle posisjonar er like sannsynlege}
+\prop{2}{}{Ikkje alle posisjonar er like sannsynlege\footnote{Av 1.5: dei observerte posisjonane må vere resultat av krefter som favoriserer visse regionar. Desse trykka har ein bestemt karakter.}\footnote{Falsifiseringsvilkår: Postulatet fell om det finst ein klasse der fordelinga av former i formrommet er statistisk uavskiljbar frå ein tilfeldig prosess utan tilbakekopling.}}
 \prop{2.1}{d}{Eit seleksjonstrykk er ein faktor som endrar sannsynlegheitsfordelinga over formrommet. Det er ikkje ein regel som dikterer éi bestemt form, men ein gradient som gjer visse posisjonar meir sannsynlege enn andre. Ein regel genererer éi form; ein gradient genererer ein tendens.}
 \prop{2.2}{a}{For kvar funksjonell klasse finst det minst to seleksjonstrykk som er statistisk uavhengige av kvarandre.\footnote{Postulatet fell om det finst ein klasse der eitt einaste seleksjonstrykk er tilstrekkeleg til å forklare all observert formvariasjon.}}
 \prop{2.3}{a}{For minst eitt par av seleksjonstrykk peikar gradientane i motstridande retningar i minst éin region av formrommet.}
@@ -256,7 +306,7 @@ Proposisjonane er haldne opp mot eit empirisk materiale beståande av om lag 2 3
 \clearpage
 \addcontentsline{toc}{chapter}{3 Seleksjonstrykka produserer eit landskap over formrommet}
 \markboth{seleksjonstrykka produserer eit\ldots}{}
-\prop{3}{}{Seleksjonstrykka produserer eit landskap over formrommet}
+\prop{3}{}{Seleksjonstrykka produserer eit landskap over formrommet\footnote{Dei aggregerte gradientane produserer ein topologi over formrommet.}}
 \prop{3.1}{d}{Tilpassingslandskapet er grafen til den aggregerheader verknaden av alle samtidige seleksjonstrykk over formrommet. Kvar posisjon i rommet har ein verdi: kor godt forma tilfredsstiller alle verksame seleksjonstrykk samstundes. Lokale maksimum er haugar: stabile posisjonar der kvar lita endring gjev dårlegare tilpassing. Former samlar seg på haugane. Lokale minimum er dalar: posisjonar som ingen selekterer, fordi kvar lita endring fører mot ein betre posisjon.}
 \prop{3.2}{t}{Av 2.2 og 2.3: tilpassingsfunksjonen har generisk fleire lokale maksimum. Landskapet har difor fleire haugar. Talet på haugar som er synlege avheng av oppløysinga i den projeksjonen ein måler. Få aksar skjuler haugar; mange aksar avslører dei. Dimensjonaliteten i formrommet avgjer kva topologi analysen kan registrere.}
 \prop{3.3}{d}{Kvar haug er ein attraktor: ei form som er stabil fordi små endringar i alle retningar gjev dårlegare tilpassing. Graden av stabilitet er brattleiken på dalveggane. Bratte veggar tyder at forma er kanalisert: robust mot forstyrringar. Kanalisering er målbar som den andrederiverte av tilpassingsfunksjonen.}
@@ -270,7 +320,7 @@ Proposisjonane er haldne opp mot eit empirisk materiale beståande av om lag 2 3
 \clearpage
 \addcontentsline{toc}{chapter}{4 Landskapet er dynamisk}
 \markboth{landskapet er dynamisk}{}
-\prop{4}{}{Landskapet er dynamisk}
+\prop{4}{}{Landskapet er dynamisk\footnote{Proposisjon 3 definerer landskapet som ein funksjon av seleksjonstrykka. Seleksjonstrykka er ikkje konstante. Altså er heller ikkje landskapet det.}\footnote{Postulatet fell om tilpassingslandskapet for ein klasse kan visast å vere topologisk uendra over ein periode der den observerte fordelinga av former endrar seg.}}
 \prop{4.1}{a}{Seleksjonstrykka er ikkje konstante over tid. Ein ny teknologi flyttar grensa for det forbodne i formrommet; ein ny marknad rekonfigurerer kva som vert belønna; eit nytt materiale utvidar mengda av moglege operasjonar.}
 \prop{4.2}{t}{Av 3.1 og 4.1: landskapet er ein dynamisk flate. Haugar kan stige, søkke, flytte seg, bifurkere eller koalescere. Ein posisjon som var optimalt tilpassa under eitt sett av vilkår, kan i neste augeblink vere suboptimal.}
 \prop{4.3}{o}{Endringa i formrommet er diskontinuerleg. Lange periodar med stase vert avbrotne av brå topologiske skifte. Mønsteret fylgjer logikken i brot og stase: ein eksplosiv radiasjon inn i den nyopna regionen, fylgd av ein gradvis konvergens mot nye attraktorar.}
@@ -279,7 +329,7 @@ Proposisjonane er haldne opp mot eit empirisk materiale beståande av om lag 2 3
 \clearpage
 \addcontentsline{toc}{chapter}{5 Det finst agentar som responderer på landskapet}
 \markboth{det finst agentar som responderer på\ldots}{}
-\prop{5}{}{Det finst agentar som responderer på landskapet}
+\prop{5}{}{Det finst agentar som responderer på landskapet\footnote{Proposisjonane 1 til 4 skildrar rommet, kreftene, landskapet og dynamikken. Dei spesifiserer topografien, men seier ingenting om kven eller kva som navigerer gradientane. Ei ny antaking er naudsynt.}}
 \prop{5.1}{a}{For kvar funksjonell klasse finst det minst éin agent som navigerer tilpassingslandskapet via negativ tilbakekopling.}
 \prop{5.2}{d}{Ein agent er eit system definert av trippelet (mål, måling, justering). Dette er den funksjonelle organiseringa av målretta åtferd som skildra av Wiener og Rosenblueth (1943, 1948).}
 \prop{5.21}{t}{Definisjonen krev korkje medvit, intensjon eller nervesystem; ho krev berre funksjonell organisering i form av negativ tilbakekopling. Kvar denne organiseringa finst, finst agens.}
@@ -324,25 +374,21 @@ Proposisjonane er haldne opp mot eit empirisk materiale beståande av om lag 2 3
 \prop{7.7}{o}{Formverda er alt som er tilfelle. Tilpassingslandskapet er alt som verkar. Navigasjonen er utan slutt.}
 \prop{7.8}{o}{Denne traktaten er sjølv ein posisjon i eit intellektuelt formrom, under eit sett av seleksjonstrykk. Om nokon viser at eitt einaste seleksjonstrykk er tilstrekkeleg til å forklare all formvariasjon for ein funksjonell klasse, fell proposisjon 2, og med det kollapsar den logiske kjeden (2.4, 3.2, 6.1, 7.1). At teksten kan fellast, er garantien for hennar gyldigheit.}
 \appendix
-\chapter*{Formell spesifikasjon}
-\addcontentsline{toc}{chapter}{Formell spesifikasjon}
-\markboth{formell spesifikasjon}{}
-\section*{A.1 Notasjon}
-\markboth{a.1 notasjon}{}
+\silentchapter{Formell spesifikasjon}{formell spesifikasjon}
+\prop{A.1}{}{Notasjon}
 \addcontentsline{toc}{section}{A.1 Notasjon}
-\begin{overgang}c: ein klasse\end{overgang}
-\begin{overgang}x: ei form\end{overgang}
-\begin{overgang}p: eit seleksjonstrykk\end{overgang}
-\begin{overgang}A: ein agent\end{overgang}
-\begin{overgang}G: ein grammatikk\end{overgang}
-\begin{overgang}t: eit tidspunkt\end{overgang}
+\prop{c}{}{ein klasse}
+\prop{x}{}{ei form}
+\prop{p}{}{eit seleksjonstrykk}
+\prop{A}{}{ein agent}
+\prop{G}{}{ein grammatikk}
+\prop{t}{}{eit tidspunkt}
 \begin{overgang}π : Shape \msym{→} \msym{ℝ}ⁿ: morforomprojeksjonen\end{overgang}
-\begin{overgang}L(G): språket (mengda av alle former) ein grammatikk G genererer\end{overgang}
-\begin{overgang}H: Shannon-entropi\end{overgang}
-\begin{overgang}I: gjensidig informasjon\end{overgang}
-\begin{overgang}Cov: kovarians\end{overgang}
-\section*{A.3 Definisjonar}
-\markboth{a.3 definisjonar}{}
+\prop{L(G)}{}{språket (mengda av alle former) ein grammatikk G genererer}
+\prop{H}{}{Shannon-entropi}
+\prop{I}{}{gjensidig informasjon}
+\prop{Cov}{}{kovarians}
+\prop{A.3}{}{Definisjonar}
 \addcontentsline{toc}{section}{A.3 Definisjonar}
 \prop{D1}{}{(Formrom, prop. 1.2)}
 \propcont{Morphospace(c) := \{ π(x) : x \msym{∈} c \} \msym{⊆} \msym{ℝ}ⁿ}
@@ -377,40 +423,38 @@ Proposisjonane er haldne opp mot eit empirisk materiale beståande av om lag 2 3
 \propcont{(iii) Rørsle: \msym{∃}r \msym{∈} C(A, t₂) \textbackslash{} cl(C(A, t₁))}
 \propcont{(iv) Kollaps: C(A, t₂) = \{π⁻¹(x₀)\}}
 \propcont{(v) Skjerping: C(A, t₂) = C(A, t₁) \msym{∧} |E(s, A, t₂)| > |E(s, A, t₁)|}
-\section*{A.6 Empiriske testresultat}
-\markboth{a.6 empiriske testresultat}{}
+\prop{A.6}{}{Empiriske testresultat}
 \addcontentsline{toc}{section}{A.6 Empiriske testresultat}
 Nærmaste-nabo-distansen i (H, W, D) etter z-skalering har ein variasjonskoeffisient (CV) på 5,4 (95 \% CI [3,7, 5,9]), noko som er om lag 15 gonger over Poisson-nullhypotesen på 0,36. Funna er robuste på tvers av 14 hold-out-subset (museum, periode, stil), inkludert NMK isolert (n = 63). n = 1664.
 
-\subsection*{A.6.1 Formrommet er ikkje uniformt busett (1.4)}
+\prop{A.6.1}{}{Formrommet er ikkje uniformt busett (1.4)}
 \addcontentsline{toc}{subsection}{A.6.1 Formrommet er ikkje uniformt busett (1.4)}
 Gjensidig informasjon (sklearn k-NN) mellom prediktor og kvar geometrisk dimensjon: stilperiode slår grov materialgruppe på alle fire (H, W, D, H/W). Gevinsten er stor: stil 0,30–0,59 bits mot mat 0,06–0,10 bits. Forholdstal opp til 7\msym{×}. Resultatet held under museum-CV og under leave-one-period-out. n = 1664.
 
-\subsection*{A.6.2 Stilperiode som samlevariabel (2.4, 2.62)}
+\prop{A.6.2}{}{Stilperiode som samlevariabel (2.4, 2.62)}
 \addcontentsline{toc}{subsection}{A.6.2 Stilperiode som samlevariabel (2.4, 2.62)}
 Variasjonskoeffisienten på tvers av seks mesh-trekk strekkjer seg over to storleiksordnar. Sphericity er det mest kanaliserte trekkjet (CV = 0,074); råvolumet det friaste (CV = 9,5). Spreiinga er 128\msym{×} (95 \% CI [50\msym{×}, 158\msym{×}]). n = 2202.
 
-\subsection*{A.6.3 Kanaliseringshierarki i mesh-rommet (3.3)}
+\prop{A.6.3}{}{Kanaliseringshierarki i mesh-rommet (3.3)}
 \addcontentsline{toc}{subsection}{A.6.3 Kanaliseringshierarki i mesh-rommet (3.3)}
 Silhouette-skoren for stilperiode i 4D mesh-trekk-rom (sphericity, fill\_ratio, inertia\_ratio, complexity) er −0,34 (95 \% CI [−0,37, −0,33]) over 25 stilar med minst 10 medlemar kvar. Negativ silhouette betyr at gjennomsnittspunktet i ein stil ligger nærmare punkta i naboklynga enn dei eigne. Stilkategoriane er gradientar, ikkje topologisk skilde regionar. n = 1971.
 
-\subsection*{A.6.4 Stilar er gradientar, ikkje topologiske klynger (3.4)}
+\prop{A.6.4}{}{Stilar er gradientar, ikkje topologiske klynger (3.4)}
 \addcontentsline{toc}{subsection}{A.6.4 Stilar er gradientar, ikkje topologiske klynger (3.4)}
 Det kumulative konvekse hylsterveolumet i (H, W, D), etter klipping til 1.–99. persentil per dimensjon, veks monotont gjennom 24 femtjueårs-periodar. Totalvekst 107\msym{×} (95 \% CI [30\msym{×}, breitt]). I mesh-trekk-rommet er den same testen 553\msym{×}. Landskapet skrumpar aldri.
 
-\subsection*{A.6.5 Kumulativ ekspansjon av formrommet (4.4)}
+\prop{A.6.5}{}{Kumulativ ekspansjon av formrommet (4.4)}
 \addcontentsline{toc}{subsection}{A.6.5 Kumulativ ekspansjon av formrommet (4.4)}
 iI utvalet av norskproduserte stolar frå perioden 1825–1849 er bruken av mahogni deterministisk (16 av 16), samanlikna med ein fraksjon på null i perioden 1750–1799. Variasjonskoeffisienten for H/W i kollaps-perioden er 0,083, mot 0,140 i den føregåande perioden. Dette illustrerer korleis eitt seleksjonstrykk kan verte så dominant at formrommet kollapsar.
 
-\subsection*{A.6.6 Mahogni-kollaps 1825-1849 (4.5)}
+\prop{A.6.6}{}{Mahogni-kollaps 1825-1849 (4.5)}
 \addcontentsline{toc}{subsection}{A.6.6 Mahogni-kollaps 1825-1849 (4.5)}
 Wasserstein-distansen mellom suksessive 50-årsperiodar gjev mean 14,4 cm for høgde, 8,2 cm for breidde og 5,9 cm for djupn. Ingen av dei ti periodepara har distanse under 0,5 cm. Postulatet om at landskapet endrar seg held mot direkte falsifisering. Same metode på random-walk-null forkastar denne med p ≪ 10⁻⁶³ for kvar dimensjon.
 
-\subsection*{A.6.7 Direkte falsifisering av postulat 4.1}
+\prop{A.6.7}{}{Direkte falsifisering av postulat 4.1}
 \addcontentsline{toc}{subsection}{A.6.7 Direkte falsifisering av postulat 4.1}
-\backmatter\chapter*{Etterord}
-\addcontentsline{toc}{chapter}{Etterord}
-\markboth{etterord}{}
+\backmatter
+\silentchapter{Etterord}{etterord}
 Kvifor har objekt den spesifikke morfologien dei har? Tradisjonelle svar, funksjonalisme, fenomenologi, semiotikk, vert her forkasta som aktive distraksjonar. Dei skildrar kva form tyder, ikkje korleis ho emergerer som fysisk konfigurasjon under eit sett av aggregerte seleksjonstrykk. Jan Michl rydda det intellektuelle landskapet ved å demonstrere at all formgjeving er ein modifikasjon av eksisterande posisjonar i formrommet. Michl formulerte det negative resultatet: han viste kva form ikkje følgjer.
 
 George Kubler (1962) nådde nærare ved å skildre formelle sekvensar og temporalitet, men han mangla eit apparat for å identifisere kreftene som driv sekvensane. Han kartla rørsla utan å identifisere gradientane.
@@ -431,74 +475,33 @@ At teksten kan fellast, er garantien for hennar gyldigheit. Om eitt einaste sele
 
 Takk til Jan Petter Neverdahl og Hermann Stange og for kommentarar under arbeidet
 
-\chapter*{Referansar}
-\addcontentsline{toc}{chapter}{Referansar}
-\markboth{referansar}{}
-Sullivan, L. H. (1896). The tall office building artistically considered. Lippincott's Magazine, 57, 403–409.
-
-Thompson, D'A. W. (1917). On growth and form. Cambridge University Press.
-
-Wright, S. (1932). The roles of mutation, inbreeding, crossbreeding, and selection in evolution. Proc. Sixth Int. Congress of Genetics, 1, 356–366.
-
-Rosenblueth, A., Wiener, N. \& Bigelow, J. (1943). Behavior, purpose and teleology. Philosophy of Science, 10(1), 18–24.
-
-Shannon, C. E. (1948). A mathematical theory of communication. Bell System Technical Journal, 27, 379–423.
-
-Wiener, N. (1948). Cybernetics. MIT Press.
-
-Turing, A. M. (1950). Computing machinery and intelligence. Mind, 59(236), 433–460.
-
-Waddington, C. H. (1957). The strategy of the genes. George Allen \& Unwin.
-
-Kubler, G. (1962). The shape of time. Yale University Press.
-
-Kuhn, T. S. (1962). The structure of scientific revolutions. University of Chicago Press.
-
-Raup, D. M. (1966). Geometric analysis of shell coiling. Journal of Paleontology, 40(5), 1178–1190.
-
-Eldredge, N. \& Gould, S. J. (1972). Punctuated equilibria. I T. J. M. Schopf (Red.), Models in paleobiology, 82–115.
-
-Stiny, G. \& Gips, J. (1972). Shape grammars and the generative specification of painting and sculpture. Information Processing 71, 1460–1465.
-
-Gibson, J. J. (1979). The ecological approach to visual perception. Houghton Mifflin.
-
-Stiny, G. (1980). Introduction to shape and shape grammars. Environment and Planning B, 7(3), 343–351.
-
-Stiny, G. (1991). The algebras of design. Research in Engineering Design, 2, 171–181.
-
-Kauffman, S. A. (1993). The origins of order. Oxford University Press.
-
-Arthur, W. B. (1994). Increasing returns and path dependence in the economy. University of Michigan Press.
-
-Michl, J. (1995). Form follows WHAT? The modernist notion of function as a carte blanche.
-
-Odling-Smee, F. J., Laland, K. N. \& Feldman, M. W. (2003). Niche construction. Princeton University Press.
-
-Hatchuel, A. \& Weil, B. (2003). A new approach of innovative design: An introduction to C-K theory. Proc. ICED 2003.
-
-Hatchuel, A. \& Weil, B. (2009). C-K design theory: An advanced formulation. Research in Engineering Design, 19(4), 181–192.
-
-Stiny, G. (2006). Shape: Talking about seeing and doing. MIT Press.
-
-Mitteroecker, P. \& Huttegger, S. M. (2009). The concept of morphospaces in evolutionary and developmental biology. Biological Theory, 4(1), 54–67.
-
-Fields, C. \& Levin, M. (2022). Competency in navigating arbitrary spaces. Entropy, 24(6), 819.
-
-Levin, M. (2022). Technological approach to mind everywhere. Frontiers in Systems Neuroscience, 16, 768201.
-
-Levin, M. (2025). Living things are not machines (also, they totally are). Noema Magazine.
-
-1 Proposisjon 3 definerer landskapet som ein funksjon av seleksjonstrykka. Seleksjonstrykka er ikkje konstante. Altså er heller ikkje landskapet det.
-
-2 Proposisjonane 1 til 4 skildrar rommet, kreftene, landskapet og dynamikken. Dei spesifiserer topografien, men seier ingenting om kven eller kva som navigerer gradientane. Ei ny antaking er naudsynt.
-
-3 Dei aggregerte gradientane produserer ein topologi over formrommet.
-
-4 Postulatet fell om tilpassingslandskapet for ein klasse kan visast å vere topologisk uendra over ein periode der den observerte fordelinga av former endrar seg.
-
-5 Av 1.5: dei observerte posisjonane må vere resultat av krefter som favoriserer visse regionar. Desse trykka har ein bestemt karakter.
-
-6 Falsifiseringsvilkår: Postulatet fell om det finst ein klasse der fordelinga av former i formrommet er statistisk uavskiljbar frå ein tilfeldig prosess utan tilbakekopling.
-
+\silentchapter{Referansar}{referansar}
+\refentry{Sullivan, L. H. (1896). The tall office building artistically considered. Lippincott's Magazine, 57, 403–409.}
+\refentry{Thompson, D'A. W. (1917). On growth and form. Cambridge University Press.}
+\refentry{Wright, S. (1932). The roles of mutation, inbreeding, crossbreeding, and selection in evolution. Proc. Sixth Int. Congress of Genetics, 1, 356–366.}
+\refentry{Rosenblueth, A., Wiener, N. \& Bigelow, J. (1943). Behavior, purpose and teleology. Philosophy of Science, 10(1), 18–24.}
+\refentry{Shannon, C. E. (1948). A mathematical theory of communication. Bell System Technical Journal, 27, 379–423.}
+\refentry{Wiener, N. (1948). Cybernetics. MIT Press.}
+\refentry{Turing, A. M. (1950). Computing machinery and intelligence. Mind, 59(236), 433–460.}
+\refentry{Waddington, C. H. (1957). The strategy of the genes. George Allen \& Unwin.}
+\refentry{Kubler, G. (1962). The shape of time. Yale University Press.}
+\refentry{Kuhn, T. S. (1962). The structure of scientific revolutions. University of Chicago Press.}
+\refentry{Raup, D. M. (1966). Geometric analysis of shell coiling. Journal of Paleontology, 40(5), 1178–1190.}
+\refentry{Eldredge, N. \& Gould, S. J. (1972). Punctuated equilibria. I T. J. M. Schopf (Red.), Models in paleobiology, 82–115.}
+\refentry{Stiny, G. \& Gips, J. (1972). Shape grammars and the generative specification of painting and sculpture. Information Processing 71, 1460–1465.}
+\refentry{Gibson, J. J. (1979). The ecological approach to visual perception. Houghton Mifflin.}
+\refentry{Stiny, G. (1980). Introduction to shape and shape grammars. Environment and Planning B, 7(3), 343–351.}
+\refentry{Stiny, G. (1991). The algebras of design. Research in Engineering Design, 2, 171–181.}
+\refentry{Kauffman, S. A. (1993). The origins of order. Oxford University Press.}
+\refentry{Arthur, W. B. (1994). Increasing returns and path dependence in the economy. University of Michigan Press.}
+\refentry{Michl, J. (1995). Form follows WHAT? The modernist notion of function as a carte blanche.}
+\refentry{Odling-Smee, F. J., Laland, K. N. \& Feldman, M. W. (2003). Niche construction. Princeton University Press.}
+\refentry{Hatchuel, A. \& Weil, B. (2003). A new approach of innovative design: An introduction to C-K theory. Proc. ICED 2003.}
+\refentry{Hatchuel, A. \& Weil, B. (2009). C-K design theory: An advanced formulation. Research in Engineering Design, 19(4), 181–192.}
+\refentry{Stiny, G. (2006). Shape: Talking about seeing and doing. MIT Press.}
+\refentry{Mitteroecker, P. \& Huttegger, S. M. (2009). The concept of morphospaces in evolutionary and developmental biology. Biological Theory, 4(1), 54–67.}
+\refentry{Fields, C. \& Levin, M. (2022). Competency in navigating arbitrary spaces. Entropy, 24(6), 819.}
+\refentry{Levin, M. (2022). Technological approach to mind everywhere. Frontiers in Systems Neuroscience, 16, 768201.}
+\refentry{Levin, M. (2025). Living things are not machines (also, they totally are). Noema Magazine.}
 
 \end{document}
