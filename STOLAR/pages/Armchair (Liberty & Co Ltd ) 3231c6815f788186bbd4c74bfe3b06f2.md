@@ -19,3 +19,11 @@ Produsent: Liberty & Co. Ltd.
 Stilperiode: Viktorianisme
 Til år: 1900
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O371717.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7872
+Fill-ratio (mesh): 0.9256
+Inertia-ratio (mesh): 0.4514
+Kompleksitet (mesh, log10 v/a): 4.9254
+Konveks hylster-volum (m³): 0.6914

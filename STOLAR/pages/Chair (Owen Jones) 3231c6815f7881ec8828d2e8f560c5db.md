@@ -19,3 +19,11 @@ Produsent: Owen Jones
 Stilperiode: Viktorianisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O166471.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8210
+Fill-ratio (mesh): 0.6621
+Inertia-ratio (mesh): 0.5178
+Kompleksitet (mesh, log10 v/a): 5.3630
+Konveks hylster-volum (m³): 0.1450

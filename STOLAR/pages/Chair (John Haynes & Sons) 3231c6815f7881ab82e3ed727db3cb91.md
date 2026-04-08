@@ -19,3 +19,11 @@ Produsent: John Haynes & Sons
 Stilperiode: Postmodernisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O172491.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7536
+Fill-ratio (mesh): 0.5647
+Inertia-ratio (mesh): 0.2961
+Kompleksitet (mesh, log10 v/a): 5.1141
+Konveks hylster-volum (m³): 0.1879

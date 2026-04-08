@@ -19,3 +19,11 @@ Produsent: White, William
 Stilperiode: Historisme
 Til år: 1851
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O61224.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8093
+Fill-ratio (mesh): 0.6769
+Inertia-ratio (mesh): 0.4483
+Kompleksitet (mesh, log10 v/a): 5.3501
+Konveks hylster-volum (m³): 0.1280

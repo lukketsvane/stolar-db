@@ -17,3 +17,11 @@ Produksjonsstad: Japan
 Produsent: Tendo Mokko
 Stilperiode: Modernisme / Midtjahrhundre
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1359610.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8288
+Fill-ratio (mesh): 0.6586
+Inertia-ratio (mesh): 0.5607
+Kompleksitet (mesh, log10 v/a): 4.6486
+Konveks hylster-volum (m³): 2.5156

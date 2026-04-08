@@ -17,3 +17,11 @@ Produksjonsstad: Tokyo (city)
 Produsent: nendo
 Stilperiode: Samtidsdesign
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1227489.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.9555
+Fill-ratio (mesh): 0.5772
+Inertia-ratio (mesh): 0.9323
+Kompleksitet (mesh, log10 v/a): 5.5839
+Konveks hylster-volum (m³): 0.1861

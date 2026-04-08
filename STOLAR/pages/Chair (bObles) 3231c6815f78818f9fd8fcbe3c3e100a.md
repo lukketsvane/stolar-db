@@ -19,3 +19,11 @@ Produsent: bObles
 Stilperiode: Samtidsdesign
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1171794.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8032
+Fill-ratio (mesh): 0.8204
+Inertia-ratio (mesh): 0.4034
+Kompleksitet (mesh, log10 v/a): 5.7515
+Konveks hylster-volum (m³): 0.0299

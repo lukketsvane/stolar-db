@@ -19,3 +19,11 @@ Produsent: Morrison, Jasper
 Stilperiode: Postmodernisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O113578.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8397
+Fill-ratio (mesh): 0.6717
+Inertia-ratio (mesh): 0.8022
+Kompleksitet (mesh, log10 v/a): 4.6792
+Konveks hylster-volum (m³): 3.4482

@@ -20,3 +20,11 @@ Stilperiode: Historisme
 Teknikk: Polstring
 Til år: 1845
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O79068.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8014
+Fill-ratio (mesh): 0.8000
+Inertia-ratio (mesh): 0.4895
+Kompleksitet (mesh, log10 v/a): 3.1754
+Konveks hylster-volum (m³): 341.3799

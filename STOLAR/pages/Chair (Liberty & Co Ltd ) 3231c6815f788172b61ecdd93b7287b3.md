@@ -19,3 +19,11 @@ Produsent: Liberty & Co. Ltd.
 Stilperiode: Jugend/Art Nouveau
 Til år: 1906
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O301112.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7657
+Fill-ratio (mesh): 0.5898
+Inertia-ratio (mesh): 0.3544
+Kompleksitet (mesh, log10 v/a): 5.2239
+Konveks hylster-volum (m³): 0.1201

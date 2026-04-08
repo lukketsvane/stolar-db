@@ -18,3 +18,11 @@ Produsent: Rampendahl, H. F. C.
 Stilperiode: Historisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O62293.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8635
+Fill-ratio (mesh): 0.5962
+Inertia-ratio (mesh): 0.5535
+Kompleksitet (mesh, log10 v/a): 5.0930
+Konveks hylster-volum (m³): 0.4160

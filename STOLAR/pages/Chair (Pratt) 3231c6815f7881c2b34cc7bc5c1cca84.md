@@ -19,3 +19,11 @@ Produsent: Pratt
 Stilperiode: Nyklassisisme
 Til år: 1794
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O73628.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8071
+Fill-ratio (mesh): 0.6069
+Inertia-ratio (mesh): 0.4830
+Kompleksitet (mesh, log10 v/a): 5.3561
+Konveks hylster-volum (m³): 0.1340

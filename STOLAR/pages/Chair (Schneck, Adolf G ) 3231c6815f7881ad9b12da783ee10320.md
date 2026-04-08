@@ -18,3 +18,11 @@ Produsent: Schneck, Adolf G.
 Stilperiode: Art Deco / Tidleg modernisme
 Til år: 1928
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O133325.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7902
+Fill-ratio (mesh): 0.6985
+Inertia-ratio (mesh): 0.5035
+Kompleksitet (mesh, log10 v/a): 4.6081
+Konveks hylster-volum (m³): 1.8772

@@ -20,3 +20,11 @@ Stilperiode: Renessanse
 Teknikk: Skjæring
 Til år: 1570
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O156078.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8071
+Fill-ratio (mesh): 0.4619
+Inertia-ratio (mesh): 0.3215
+Kompleksitet (mesh, log10 v/a): 4.6814
+Konveks hylster-volum (m³): 1.0227

@@ -19,3 +19,11 @@ Produsent: Race, Ernest
 Stilperiode: Postmodernisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O370277.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.5953
+Fill-ratio (mesh): 0.4185
+Inertia-ratio (mesh): 0.2436
+Kompleksitet (mesh, log10 v/a): 4.3141
+Konveks hylster-volum (m³): 1.8589

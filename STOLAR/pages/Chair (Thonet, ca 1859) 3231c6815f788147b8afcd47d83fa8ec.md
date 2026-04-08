@@ -17,3 +17,11 @@ Produksjonsstad: Vienna
 Produsent: Thonet
 Stilperiode: Wiener bentwood / Historisme
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1240872.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8116
+Fill-ratio (mesh): 0.5784
+Inertia-ratio (mesh): 0.3477
+Kompleksitet (mesh, log10 v/a): 4.6851
+Konveks hylster-volum (m³): 0.9579

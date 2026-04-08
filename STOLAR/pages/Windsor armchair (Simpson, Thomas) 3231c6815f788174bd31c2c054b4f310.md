@@ -18,3 +18,11 @@ Produsent: Simpson, Thomas
 Stilperiode: Historisme
 Til år: 1850
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O98777.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8238
+Fill-ratio (mesh): 0.6555
+Inertia-ratio (mesh): 0.4937
+Kompleksitet (mesh, log10 v/a): 6.0200
+Konveks hylster-volum (m³): 0.0161

@@ -17,3 +17,11 @@ Produksjonsstad: London
 Produsent: Bentley, Richard
 Stilperiode: Nyklassisisme
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O9031.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7896
+Fill-ratio (mesh): 0.5231
+Inertia-ratio (mesh): 0.3928
+Kompleksitet (mesh, log10 v/a): 5.0788
+Konveks hylster-volum (m³): 0.2167

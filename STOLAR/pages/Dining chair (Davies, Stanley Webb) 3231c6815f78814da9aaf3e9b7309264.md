@@ -18,3 +18,11 @@ Produsent: Davies, Stanley Webb
 Stilperiode: Modernisme / Midtjahrhundre
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O123775.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8498
+Fill-ratio (mesh): 0.6557
+Inertia-ratio (mesh): 0.5364
+Kompleksitet (mesh, log10 v/a): 4.6594
+Konveks hylster-volum (m³): 2.6504

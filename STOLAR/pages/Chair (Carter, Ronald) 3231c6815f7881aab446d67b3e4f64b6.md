@@ -18,3 +18,11 @@ Produsent: Carter, Ronald
 Stilperiode: Postmodernisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O130645.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7894
+Fill-ratio (mesh): 0.7278
+Inertia-ratio (mesh): 0.5262
+Kompleksitet (mesh, log10 v/a): 4.6167
+Konveks hylster-volum (m³): 1.9656

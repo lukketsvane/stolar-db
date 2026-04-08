@@ -73,8 +73,8 @@ def run_test():
 def plot(rows, spread):
     apply_style()
 
-    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.85))
-    ax = fig.add_axes([0.3, 0.2, 0.66, 0.72])
+    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.72))
+    ax = fig.add_axes([0.3, 0.15000000000000002, 0.66, 0.77])
 
     n = len(rows)
     y = np.arange(n)[::-1]
@@ -127,10 +127,6 @@ def plot(rows, spread):
         ax.spines[s].set_visible(False)
 
 
-    fig.text(0.04, 0.025,
-             f'n = {rows[0]["n"]} stolar med komplette mesh-trekk  ·  '
-             f'95 % CI bootstrap (B = 500)',
-             fontsize=6.5, color=INK_SOFT, ha='left')
 
     out = FIG_DIR / 'fig-A.6.2-kanalisering.pdf'
     fig.savefig(out)

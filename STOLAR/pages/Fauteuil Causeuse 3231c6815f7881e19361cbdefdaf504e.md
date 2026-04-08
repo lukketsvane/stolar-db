@@ -20,3 +20,11 @@ Stilperiode: Louis XVI
 Teknikk: Damask, Polstring
 Til år: 1780
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-05400.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8167
+Fill-ratio (mesh): 0.6785
+Inertia-ratio (mesh): 0.7233
+Kompleksitet (mesh, log10 v/a): 5.2567
+Konveks hylster-volum (m³): 0.4399

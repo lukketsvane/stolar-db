@@ -17,3 +17,11 @@ Produsent: Seddon, John Pollard
 Stilperiode: Historisme
 Til år: 1862
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O61475.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7942
+Fill-ratio (mesh): 0.6692
+Inertia-ratio (mesh): 0.5219
+Kompleksitet (mesh, log10 v/a): 5.2281
+Konveks hylster-volum (m³): 0.2516

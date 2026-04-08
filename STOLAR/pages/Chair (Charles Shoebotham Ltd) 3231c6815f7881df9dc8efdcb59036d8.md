@@ -18,3 +18,11 @@ Produsent: Charles Shoebotham Ltd
 Stilperiode: Modernisme / Midtjahrhundre
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O111829.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8304
+Fill-ratio (mesh): 0.7432
+Inertia-ratio (mesh): 0.5438
+Kompleksitet (mesh, log10 v/a): 5.8300
+Konveks hylster-volum (m³): 0.0445

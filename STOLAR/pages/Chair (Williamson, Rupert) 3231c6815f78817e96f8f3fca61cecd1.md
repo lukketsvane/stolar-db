@@ -19,3 +19,11 @@ Produsent: Williamson, Rupert
 Stilperiode: Postmodernisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O129268.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7550
+Fill-ratio (mesh): 0.6525
+Inertia-ratio (mesh): 0.3876
+Kompleksitet (mesh, log10 v/a): 5.8854
+Konveks hylster-volum (m³): 0.0151

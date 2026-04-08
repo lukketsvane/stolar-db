@@ -18,3 +18,11 @@ Produsent: Gimson, Ernest William
 Stilperiode: Postmodernisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O132470.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7565
+Fill-ratio (mesh): 0.6017
+Inertia-ratio (mesh): 0.3000
+Kompleksitet (mesh, log10 v/a): 4.6707
+Konveks hylster-volum (m³): 0.9085

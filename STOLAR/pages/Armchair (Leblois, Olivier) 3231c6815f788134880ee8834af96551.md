@@ -19,3 +19,11 @@ Produsent: Leblois, Olivier
 Stilperiode: Postmodernisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O170154.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8505
+Fill-ratio (mesh): 0.6815
+Inertia-ratio (mesh): 0.7422
+Kompleksitet (mesh, log10 v/a): 4.6183
+Konveks hylster-volum (m³): 3.4919

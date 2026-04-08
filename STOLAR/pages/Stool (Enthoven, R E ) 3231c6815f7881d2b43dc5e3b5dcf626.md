@@ -19,3 +19,11 @@ Produsent: Enthoven, R. E.
 Stilperiode: Art Deco / Tidleg modernisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O74040.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7702
+Fill-ratio (mesh): 0.8505
+Inertia-ratio (mesh): 0.5653
+Kompleksitet (mesh, log10 v/a): 4.6085
+Konveks hylster-volum (m³): 2.9498

@@ -17,3 +17,11 @@ Produksjonsstad: Stockholm
 Produsent: Front Design
 Stilperiode: Samtidsdesign
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1299501.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8635
+Fill-ratio (mesh): 0.5722
+Inertia-ratio (mesh): 0.5196
+Kompleksitet (mesh, log10 v/a): 4.7167
+Konveks hylster-volum (m³): 1.9592

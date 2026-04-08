@@ -19,3 +19,11 @@ Produsent: Demay, Jean-Baptiste Bernard
 Stilperiode: Empire
 Til år: 1810
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O72640.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7953
+Fill-ratio (mesh): 0.7134
+Inertia-ratio (mesh): 0.4884
+Kompleksitet (mesh, log10 v/a): 5.0448
+Konveks hylster-volum (m³): 0.6386

@@ -18,3 +18,11 @@ Produsent: Walton, George
 Stilperiode: Historisme
 Til år: 1900
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O62424.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8007
+Fill-ratio (mesh): 0.6223
+Inertia-ratio (mesh): 0.5010
+Kompleksitet (mesh, log10 v/a): 5.1366
+Konveks hylster-volum (m³): 0.3258

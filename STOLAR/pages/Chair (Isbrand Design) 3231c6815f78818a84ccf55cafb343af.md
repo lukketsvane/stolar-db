@@ -19,3 +19,11 @@ Produsent: Isbrand Design
 Stilperiode: Modernisme / Midtjahrhundre
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O181063.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7748
+Fill-ratio (mesh): 0.6174
+Inertia-ratio (mesh): 0.4296
+Kompleksitet (mesh, log10 v/a): 6.0090
+Konveks hylster-volum (m³): 0.0152

@@ -19,3 +19,11 @@ Stilperiode: Funksjonalisme
 Teknikk: Polstring, Skruing, Sveising, Søm
 Til år: 1940
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/NMK.2011.0320.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8515
+Fill-ratio (mesh): 0.7450
+Inertia-ratio (mesh): 0.6501
+Kompleksitet (mesh, log10 v/a): 5.5029
+Konveks hylster-volum (m³): 0.1767

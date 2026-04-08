@@ -19,3 +19,11 @@ Produsent: Heal & Son Ltd
 Stilperiode: Viktorianisme
 Til år: 1899
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372100.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7733
+Fill-ratio (mesh): 0.6404
+Inertia-ratio (mesh): 0.3863
+Kompleksitet (mesh, log10 v/a): 4.6747
+Konveks hylster-volum (m³): 1.1553

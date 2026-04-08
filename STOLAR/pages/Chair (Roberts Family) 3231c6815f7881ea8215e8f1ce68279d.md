@@ -19,3 +19,11 @@ Produsent: Roberts Family
 Stilperiode: Rokokko
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O80338.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7959
+Fill-ratio (mesh): 0.6066
+Inertia-ratio (mesh): 0.4569
+Kompleksitet (mesh, log10 v/a): 6.0163
+Konveks hylster-volum (m³): 0.0151

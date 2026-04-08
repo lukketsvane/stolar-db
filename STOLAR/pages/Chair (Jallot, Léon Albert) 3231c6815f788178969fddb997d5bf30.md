@@ -19,3 +19,11 @@ Produsent: Jallot, Léon Albert
 Stilperiode: Jugend/Art Nouveau
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O59247.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8082
+Fill-ratio (mesh): 0.6656
+Inertia-ratio (mesh): 0.4683
+Kompleksitet (mesh, log10 v/a): 5.4057
+Konveks hylster-volum (m³): 0.1481

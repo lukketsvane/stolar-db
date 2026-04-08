@@ -19,3 +19,11 @@ Produsent: Goerke, Gustav
 Stilperiode: Jugend/Art Nouveau
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O117800.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8348
+Fill-ratio (mesh): 0.9832
+Inertia-ratio (mesh): 0.8057
+Kompleksitet (mesh, log10 v/a): 4.5846
+Konveks hylster-volum (m³): 5.5674

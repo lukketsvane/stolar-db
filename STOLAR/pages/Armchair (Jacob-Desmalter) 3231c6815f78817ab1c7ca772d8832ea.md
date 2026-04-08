@@ -20,3 +20,11 @@ Stilperiode: Empire
 Teknikk: Damask, Polstring, Skjæring
 Til år: 1813
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372105.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8218
+Fill-ratio (mesh): 0.6706
+Inertia-ratio (mesh): 0.6052
+Kompleksitet (mesh, log10 v/a): 5.2820
+Konveks hylster-volum (m³): 0.3236

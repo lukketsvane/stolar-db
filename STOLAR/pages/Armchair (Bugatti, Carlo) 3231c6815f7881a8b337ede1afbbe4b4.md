@@ -20,3 +20,11 @@ Stilperiode: Jugend/Art Nouveau
 Teknikk: Dreiing
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O49616.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7953
+Fill-ratio (mesh): 0.6403
+Inertia-ratio (mesh): 0.4774
+Kompleksitet (mesh, log10 v/a): 4.6195
+Konveks hylster-volum (m³): 1.8842

@@ -20,3 +20,11 @@ Stilperiode: Rokokko
 Teknikk: Polstring, Skjæring
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372220.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8326
+Fill-ratio (mesh): 0.6824
+Inertia-ratio (mesh): 0.7357
+Kompleksitet (mesh, log10 v/a): 5.9385
+Konveks hylster-volum (m³): 0.0460

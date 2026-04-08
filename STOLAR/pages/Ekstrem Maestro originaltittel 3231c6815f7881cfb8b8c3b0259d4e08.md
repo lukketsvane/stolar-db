@@ -20,3 +20,11 @@ Stilperiode: Postmodernisme
 Teknikk: Formbøying
 Til år: 1980
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/NMK.2016.0136.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8443
+Fill-ratio (mesh): 0.4874
+Inertia-ratio (mesh): 0.4990
+Kompleksitet (mesh, log10 v/a): 5.2828
+Konveks hylster-volum (m³): 0.1795

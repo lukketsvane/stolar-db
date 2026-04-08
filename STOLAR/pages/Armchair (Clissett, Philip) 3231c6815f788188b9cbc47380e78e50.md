@@ -20,3 +20,11 @@ Stilperiode: Viktorianisme
 Teknikk: Dreiing, Fletting
 Til år: 1898
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O61464.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7870
+Fill-ratio (mesh): 0.6112
+Inertia-ratio (mesh): 0.3905
+Kompleksitet (mesh, log10 v/a): 5.1342
+Konveks hylster-volum (m³): 0.2285

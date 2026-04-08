@@ -19,3 +19,11 @@ Produsent: ukjent
 Stilperiode: Empire
 Til år: 1820
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O55190.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7936
+Fill-ratio (mesh): 0.4579
+Inertia-ratio (mesh): 0.3182
+Kompleksitet (mesh, log10 v/a): 5.4697
+Konveks hylster-volum (m³): 0.0575

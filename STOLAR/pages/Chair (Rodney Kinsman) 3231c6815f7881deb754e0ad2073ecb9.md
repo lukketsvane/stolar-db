@@ -19,3 +19,11 @@ Produsent: Rodney Kinsman
 Stilperiode: Modernisme / Midtjahrhundre
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372079.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8250
+Fill-ratio (mesh): 0.6862
+Inertia-ratio (mesh): 0.4313
+Kompleksitet (mesh, log10 v/a): 5.4046
+Konveks hylster-volum (m³): 0.1512

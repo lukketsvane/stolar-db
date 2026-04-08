@@ -19,3 +19,11 @@ Produsent: Emile Ruhlmann
 Stilperiode: Art Deco / Tidleg modernisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372077.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8360
+Fill-ratio (mesh): 0.5598
+Inertia-ratio (mesh): 0.4980
+Kompleksitet (mesh, log10 v/a): 4.6748
+Konveks hylster-volum (m³): 1.4432

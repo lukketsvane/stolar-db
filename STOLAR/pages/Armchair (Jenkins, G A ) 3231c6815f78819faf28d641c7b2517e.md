@@ -19,3 +19,11 @@ Produsent: Jenkins, G.A.
 Stilperiode: Modernisme / Midtjahrhundre
 Til år: 1952
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O145060.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8344
+Fill-ratio (mesh): 0.6986
+Inertia-ratio (mesh): 0.6672
+Kompleksitet (mesh, log10 v/a): 5.5326
+Konveks hylster-volum (m³): 0.1517

@@ -19,3 +19,11 @@ Produsent: Svensson, Carl Petter
 Stilperiode: Historisme
 Til år: 1885
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O58227.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8457
+Fill-ratio (mesh): 0.5555
+Inertia-ratio (mesh): 0.5837
+Kompleksitet (mesh, log10 v/a): 5.2999
+Konveks hylster-volum (m³): 0.2399

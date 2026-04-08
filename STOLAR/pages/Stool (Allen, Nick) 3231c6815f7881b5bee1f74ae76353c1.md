@@ -19,3 +19,11 @@ Produsent: Allen, Nick
 Stilperiode: Postmodernisme
 Til år: 1988
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O21564.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8034
+Fill-ratio (mesh): 0.9746
+Inertia-ratio (mesh): 0.7014
+Kompleksitet (mesh, log10 v/a): 5.8622
+Konveks hylster-volum (m³): 0.0788

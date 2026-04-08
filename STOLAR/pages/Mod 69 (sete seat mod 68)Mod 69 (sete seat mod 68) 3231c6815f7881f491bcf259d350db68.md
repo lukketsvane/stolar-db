@@ -20,3 +20,11 @@ Stilperiode: Funksjonalisme
 Teknikk: Laminering
 Til år: 1935
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-1996-0001.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8297
+Fill-ratio (mesh): 0.6569
+Inertia-ratio (mesh): 0.4418
+Kompleksitet (mesh, log10 v/a): 5.5565
+Konveks hylster-volum (m³): 0.0861

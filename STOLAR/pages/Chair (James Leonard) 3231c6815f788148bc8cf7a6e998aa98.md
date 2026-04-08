@@ -18,3 +18,11 @@ Produsent: James Leonard
 Stilperiode: Modernisme / Midtjahrhundre
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1428066.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8123
+Fill-ratio (mesh): 0.7591
+Inertia-ratio (mesh): 0.5670
+Kompleksitet (mesh, log10 v/a): 4.6544
+Konveks hylster-volum (m³): 2.1297

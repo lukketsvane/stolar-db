@@ -18,3 +18,11 @@ Produsent: Majorelle, Louis
 Stilperiode: Historisme
 Til år: 1900
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O49610.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7647
+Fill-ratio (mesh): 0.4656
+Inertia-ratio (mesh): 0.3217
+Kompleksitet (mesh, log10 v/a): 5.0683
+Konveks hylster-volum (m³): 0.2764

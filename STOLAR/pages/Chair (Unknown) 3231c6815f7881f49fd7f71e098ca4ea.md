@@ -20,3 +20,11 @@ Stilperiode: Rokokko
 Teknikk: Innfelling
 Til år: 1725
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O107557.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7751
+Fill-ratio (mesh): 0.5539
+Inertia-ratio (mesh): 0.3251
+Kompleksitet (mesh, log10 v/a): 5.1961
+Konveks hylster-volum (m³): 0.1360

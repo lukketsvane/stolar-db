@@ -17,3 +17,11 @@ Produksjonsstad: London
 Produsent: Kinsman, Rodney
 Stilperiode: Postmodernisme
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O21604.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8298
+Fill-ratio (mesh): 0.6764
+Inertia-ratio (mesh): 0.6706
+Kompleksitet (mesh, log10 v/a): 5.5340
+Konveks hylster-volum (m³): 0.1420

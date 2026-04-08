@@ -19,3 +19,11 @@ Produsent: Decurso, Giorgio
 Stilperiode: Postmodernisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1298370.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8144
+Fill-ratio (mesh): 0.5392
+Inertia-ratio (mesh): 0.4310
+Kompleksitet (mesh, log10 v/a): 4.6619
+Konveks hylster-volum (m³): 1.5608

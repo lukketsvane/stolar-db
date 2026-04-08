@@ -20,3 +20,11 @@ Stilperiode: Nyklassisisme
 Teknikk: Polstring, Skjæring
 Til år: 1765
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O73919.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7482
+Fill-ratio (mesh): 0.6625
+Inertia-ratio (mesh): 0.3955
+Kompleksitet (mesh, log10 v/a): 4.8868
+Konveks hylster-volum (m³): 0.5799

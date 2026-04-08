@@ -18,3 +18,11 @@ Produsent: Gimson, Ernest William
 Stilperiode: Jugend/Art Nouveau
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O118479.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7692
+Fill-ratio (mesh): 0.6892
+Inertia-ratio (mesh): 0.2859
+Kompleksitet (mesh, log10 v/a): 5.0869
+Konveks hylster-volum (m³): 0.2053

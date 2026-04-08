@@ -48,8 +48,8 @@ def run_test():
 def plot(g, n_total):
     apply_style()
 
-    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.78))
-    ax = fig.add_axes([0.13, 0.2, 0.83, 0.72])
+    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.66))
+    ax = fig.add_axes([0.13, 0.15000000000000002, 0.83, 0.77])
 
     periods = g['period25'].values
     fracs   = g['frac'].values
@@ -98,10 +98,6 @@ def plot(g, n_total):
         ax.spines[s].set_visible(False)
 
 
-    fig.text(0.04, 0.025,
-             f'n = {n_total} norske stolar  ·  '
-             f'kohorter med ≥ {MIN_N} stolar  ·  Talet over kvar bar = stolar i kohorten',
-             fontsize=6.5, color=INK_SOFT, ha='left')
 
     out = FIG_DIR / 'fig-A.6.5-mahogni.pdf'
     fig.savefig(out)

@@ -18,3 +18,11 @@ Produsent: Hewett, Richard
 Stilperiode: Nyklassisisme
 Til år: 1780
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O141954.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7948
+Fill-ratio (mesh): 0.6453
+Inertia-ratio (mesh): 0.4276
+Kompleksitet (mesh, log10 v/a): 5.1669
+Konveks hylster-volum (m³): 0.2601

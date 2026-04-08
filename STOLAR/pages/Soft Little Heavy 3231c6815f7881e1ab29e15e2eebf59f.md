@@ -19,3 +19,11 @@ Produsent: Arad, Ron
 Stilperiode: Postmodernisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O50991.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.9008
+Fill-ratio (mesh): 0.6095
+Inertia-ratio (mesh): 0.6281
+Kompleksitet (mesh, log10 v/a): 5.5444
+Konveks hylster-volum (m³): 0.1710

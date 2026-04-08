@@ -18,3 +18,11 @@ Produsent: Hitchins, Ron
 Stilperiode: Modernisme / Midtjahrhundre
 Til år: 1965
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1713794.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8025
+Fill-ratio (mesh): 0.6731
+Inertia-ratio (mesh): 0.4428
+Kompleksitet (mesh, log10 v/a): 5.2207
+Konveks hylster-volum (m³): 0.1742

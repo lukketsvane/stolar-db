@@ -18,3 +18,11 @@ Produsent: ukjent
 Stilperiode: Barokk
 Til år: 1635
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O156940.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8190
+Fill-ratio (mesh): 0.7660
+Inertia-ratio (mesh): 0.5234
+Kompleksitet (mesh, log10 v/a): 4.6468
+Konveks hylster-volum (m³): 2.1853

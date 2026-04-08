@@ -19,3 +19,11 @@ Produsent: Ravilious, Eric
 Stilperiode: Art Deco / Tidleg modernisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O304505.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8190
+Fill-ratio (mesh): 0.6754
+Inertia-ratio (mesh): 0.5172
+Kompleksitet (mesh, log10 v/a): 5.3516
+Konveks hylster-volum (m³): 0.2318

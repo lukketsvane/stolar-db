@@ -22,3 +22,11 @@ Stilperiode: Postmodernisme
 Teknikk: Formbøying, Laminering, Polstring, Skruing
 Til år: 1983
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/NMK.2005.0638.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7820
+Fill-ratio (mesh): 0.5945
+Inertia-ratio (mesh): 0.4371
+Kompleksitet (mesh, log10 v/a): 4.9298
+Konveks hylster-volum (m³): 0.5760

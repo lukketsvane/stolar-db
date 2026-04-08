@@ -22,3 +22,11 @@ Stilperiode: Samtidsdesign
 Teknikk: Polstring, Skruing, Sveising
 Til år: 2000
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/OK-2002-0142.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8553
+Fill-ratio (mesh): 0.7026
+Inertia-ratio (mesh): 0.6858
+Kompleksitet (mesh, log10 v/a): 5.7562
+Konveks hylster-volum (m³): 0.0822

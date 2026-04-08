@@ -19,3 +19,11 @@ Produsent: Jacobsen, Arne Emil
 Stilperiode: Skandinavisk modernisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O137614.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8573
+Fill-ratio (mesh): 0.5349
+Inertia-ratio (mesh): 0.4914
+Kompleksitet (mesh, log10 v/a): 4.7096
+Konveks hylster-volum (m³): 2.2172

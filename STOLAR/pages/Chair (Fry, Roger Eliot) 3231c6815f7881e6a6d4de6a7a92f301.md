@@ -19,3 +19,11 @@ Produsent: Fry, Roger Eliot
 Stilperiode: Jugend/Art Nouveau
 Til år: 1919
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O302353.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7622
+Fill-ratio (mesh): 0.7169
+Inertia-ratio (mesh): 0.4171
+Kompleksitet (mesh, log10 v/a): 5.2270
+Konveks hylster-volum (m³): 0.1699

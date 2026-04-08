@@ -16,3 +16,11 @@ Produksjonsstad: Milan
 Produsent: Magistretti, Vico
 Stilperiode: Modernisme / Midtjahrhundre
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O121095.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8315
+Fill-ratio (mesh): 0.5746
+Inertia-ratio (mesh): 0.5320
+Kompleksitet (mesh, log10 v/a): 5.1125
+Konveks hylster-volum (m³): 0.5075

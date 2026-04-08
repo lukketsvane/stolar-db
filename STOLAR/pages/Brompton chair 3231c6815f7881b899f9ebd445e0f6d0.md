@@ -19,3 +19,11 @@ Produsent: Carter, Ronald
 Stilperiode: Modernisme / Midtjahrhundre
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O371752.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7947
+Fill-ratio (mesh): 0.7181
+Inertia-ratio (mesh): 0.5618
+Kompleksitet (mesh, log10 v/a): 4.6254
+Konveks hylster-volum (m³): 2.3476

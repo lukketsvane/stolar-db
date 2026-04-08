@@ -16,3 +16,11 @@ Produksjonsstad: Shanghai
 Produsent: Baas, Maarten
 Stilperiode: Samtidsdesign
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1322039.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8106
+Fill-ratio (mesh): 0.7138
+Inertia-ratio (mesh): 0.4860
+Kompleksitet (mesh, log10 v/a): 5.4755
+Konveks hylster-volum (m³): 0.0987

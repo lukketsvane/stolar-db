@@ -19,3 +19,11 @@ Stilperiode: Barokk
 Teknikk: Samanføying, Skjæring
 Til år: 1610
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O131683.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7739
+Fill-ratio (mesh): 0.6741
+Inertia-ratio (mesh): 0.3520
+Kompleksitet (mesh, log10 v/a): 4.9283
+Konveks hylster-volum (m³): 0.3509

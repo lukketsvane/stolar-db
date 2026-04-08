@@ -19,3 +19,11 @@ Produsent: Unknown
 Stilperiode: Historisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372123.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8888
+Fill-ratio (mesh): 0.5407
+Inertia-ratio (mesh): 0.7063
+Kompleksitet (mesh, log10 v/a): 5.2312
+Konveks hylster-volum (m³): 0.5925

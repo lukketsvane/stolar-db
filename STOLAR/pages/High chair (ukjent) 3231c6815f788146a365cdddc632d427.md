@@ -20,3 +20,11 @@ Stilperiode: Barokk
 Teknikk: Dreiing, Skjæring
 Til år: 1700
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O182002.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7871
+Fill-ratio (mesh): 0.6873
+Inertia-ratio (mesh): 0.4048
+Kompleksitet (mesh, log10 v/a): 4.6839
+Konveks hylster-volum (m³): 1.6345

@@ -19,3 +19,11 @@ Produsent: Unknown
 Stilperiode: Rokokko
 Til år: 1750
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O369667.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8891
+Fill-ratio (mesh): 0.8614
+Inertia-ratio (mesh): 0.7917
+Kompleksitet (mesh, log10 v/a): 5.8208
+Konveks hylster-volum (m³): 0.0981

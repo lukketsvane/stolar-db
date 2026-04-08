@@ -16,3 +16,11 @@ Produsent: George Fejer
 Stilperiode: Postmodernisme
 Til år: 1971
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O372052.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8419
+Fill-ratio (mesh): 0.6725
+Inertia-ratio (mesh): 0.6261
+Kompleksitet (mesh, log10 v/a): 4.6420
+Konveks hylster-volum (m³): 2.9486

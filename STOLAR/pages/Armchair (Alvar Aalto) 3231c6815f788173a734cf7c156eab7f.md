@@ -19,3 +19,11 @@ Produsent: Alvar Aalto
 Stilperiode: Nordisk funksjonalisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O181067.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8194
+Fill-ratio (mesh): 0.7472
+Inertia-ratio (mesh): 0.5865
+Kompleksitet (mesh, log10 v/a): 4.6324
+Konveks hylster-volum (m³): 2.5155

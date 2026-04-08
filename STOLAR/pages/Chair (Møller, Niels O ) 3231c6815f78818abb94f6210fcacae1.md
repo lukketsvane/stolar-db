@@ -19,3 +19,11 @@ Produsent: Møller, Niels O.
 Stilperiode: Modernisme / Midtjahrhundre
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O180090.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7861
+Fill-ratio (mesh): 0.7131
+Inertia-ratio (mesh): 0.4690
+Kompleksitet (mesh, log10 v/a): 5.4611
+Konveks hylster-volum (m³): 0.0993

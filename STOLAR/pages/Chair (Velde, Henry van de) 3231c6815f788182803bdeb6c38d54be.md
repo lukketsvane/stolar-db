@@ -19,3 +19,11 @@ Produsent: Velde, Henry van de
 Stilperiode: Jugend/Art Nouveau
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O172455.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7872
+Fill-ratio (mesh): 0.6253
+Inertia-ratio (mesh): 0.4329
+Kompleksitet (mesh, log10 v/a): 5.8003
+Konveks hylster-volum (m³): 0.0226

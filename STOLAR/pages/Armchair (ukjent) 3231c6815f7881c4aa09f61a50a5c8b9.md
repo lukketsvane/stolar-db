@@ -18,3 +18,11 @@ Produsent: Unknown
 Stilperiode: Nyklassisisme
 Til år: 1800
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O59309.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8251
+Fill-ratio (mesh): 0.6208
+Inertia-ratio (mesh): 0.4000
+Kompleksitet (mesh, log10 v/a): 5.2277
+Konveks hylster-volum (m³): 0.1687

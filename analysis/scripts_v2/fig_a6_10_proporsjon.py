@@ -80,8 +80,8 @@ def plot(df, grid, med, q25, q75, century_kdes):
     apply_style()
 
     # Single-panel version: just the XY scatter + rolling median + IQR
-    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.78))
-    ax = fig.add_axes([0.16, 0.2, 0.8, 0.72])
+    fig = plt.figure(figsize=fig_size(width_mm=89, ratio=0.66))
+    ax = fig.add_axes([0.16, 0.15000000000000002, 0.8, 0.77])
 
     # Scatter (faint dots) + rolling median + IQR
     ax.scatter(df['year_mid'], df['hw'], s=2.0, color=INK_SOFT,
@@ -117,10 +117,6 @@ def plot(df, grid, med, q25, q75, century_kdes):
         t.set_color(INK_SOFT)
 
 
-    fig.text(0.04, 0.025,
-             f'n = {len(df)} stolar  ·  H/W klipt til 1.–99. persentil  ·  '
-             f'IQR = interkvartilbreidde',
-             fontsize=6.3, color=INK_SOFT, ha='left')
 
     out = FIG_DIR / 'fig-A.6.10-proporsjon.pdf'
     fig.savefig(out)

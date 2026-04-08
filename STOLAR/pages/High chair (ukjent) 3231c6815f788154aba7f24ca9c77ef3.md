@@ -19,3 +19,11 @@ Produsent: ukjent
 Stilperiode: Modernisme / Midtjahrhundre
 Til år: 1952
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O38134.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7956
+Fill-ratio (mesh): 0.6863
+Inertia-ratio (mesh): 0.4066
+Kompleksitet (mesh, log10 v/a): 4.6350
+Konveks hylster-volum (m³): 1.5555

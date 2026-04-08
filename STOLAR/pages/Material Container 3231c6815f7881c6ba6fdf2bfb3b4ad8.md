@@ -19,3 +19,11 @@ Produsent: Seo Jeonghwa
 Stilperiode: Samtidsdesign
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O1788540.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8607
+Fill-ratio (mesh): 0.7212
+Inertia-ratio (mesh): 0.4373
+Kompleksitet (mesh, log10 v/a): 5.8664
+Konveks hylster-volum (m³): 0.0363

@@ -20,3 +20,11 @@ Stilperiode: Midtjahrhundre modernisme
 Teknikk: Polstring, Støyping
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O119278.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7828
+Fill-ratio (mesh): 0.6334
+Inertia-ratio (mesh): 0.4128
+Kompleksitet (mesh, log10 v/a): 4.6739
+Konveks hylster-volum (m³): 1.3489

@@ -19,3 +19,11 @@ Produsent: Heal, Ambrose (Sir)
 Stilperiode: Art Deco / Tidleg modernisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O144038.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8153
+Fill-ratio (mesh): 0.7174
+Inertia-ratio (mesh): 0.4952
+Kompleksitet (mesh, log10 v/a): 5.2143
+Konveks hylster-volum (m³): 0.2347

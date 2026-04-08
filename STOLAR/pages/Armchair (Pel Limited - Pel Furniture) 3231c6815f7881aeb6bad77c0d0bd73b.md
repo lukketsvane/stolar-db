@@ -19,3 +19,11 @@ Produsent: Pel Limited - Pel Furniture
 Stilperiode: Art Deco / Tidleg modernisme
 Til år: 1936
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O371981.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8622
+Fill-ratio (mesh): 0.7674
+Inertia-ratio (mesh): 0.6943
+Kompleksitet (mesh, log10 v/a): 5.6074
+Konveks hylster-volum (m³): 0.1470

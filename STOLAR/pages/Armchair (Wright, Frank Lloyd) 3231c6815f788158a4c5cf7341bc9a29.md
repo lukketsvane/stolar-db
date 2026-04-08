@@ -19,3 +19,11 @@ Produsent: Wright, Frank Lloyd
 Stilperiode: Art Deco / Tidleg modernisme
 Til år: 1937
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O112075.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8758
+Fill-ratio (mesh): 0.7177
+Inertia-ratio (mesh): 0.7928
+Kompleksitet (mesh, log10 v/a): 4.6068
+Konveks hylster-volum (m³): 4.9127

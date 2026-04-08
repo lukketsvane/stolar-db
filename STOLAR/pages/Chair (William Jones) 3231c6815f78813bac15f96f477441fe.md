@@ -19,3 +19,11 @@ Produsent: William Jones
 Stilperiode: Jugend/Art Nouveau
 Til år: 1914
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O130479.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7759
+Fill-ratio (mesh): 0.6282
+Inertia-ratio (mesh): 0.4473
+Kompleksitet (mesh, log10 v/a): 4.6347
+Konveks hylster-volum (m³): 1.4288

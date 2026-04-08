@@ -19,3 +19,11 @@ Produsent: Tatham, Charles Heathcote
 Stilperiode: Empire
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O7882.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8477
+Fill-ratio (mesh): 0.9135
+Inertia-ratio (mesh): 0.7078
+Kompleksitet (mesh, log10 v/a): 4.6783
+Konveks hylster-volum (m³): 3.9956

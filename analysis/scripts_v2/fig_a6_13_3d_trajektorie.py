@@ -66,7 +66,7 @@ def run_test():
 def plot(df, g, path_length, displacement, tortuosity):
     apply_style()
 
-    fig = plt.figure(figsize=fig_size(width_mm=105, ratio=0.95))
+    fig = plt.figure(figsize=fig_size(width_mm=105, ratio=0.81))
     ax = fig.add_subplot(111, projection='3d')
     fig.subplots_adjust(left=0.0, right=0.96, bottom=0.10, top=0.86)
 
@@ -129,12 +129,6 @@ def plot(df, g, path_length, displacement, tortuosity):
     ax.grid(True, color=RULE, linewidth=0.3, alpha=0.6)
 
 
-    fig.text(0.04, 0.025,
-             f'n = {len(df)} stolar  ·  '
-             f'Total bane {path_length:.0f} cm  ·  '
-             f'Netto {displacement:.0f} cm  ·  '
-             f'Tortuositet {tortuosity:.2f}',
-             fontsize=6.3, color=INK_SOFT, ha='left')
 
     out = FIG_DIR / 'fig-A.6.13-3d-trajektorie.pdf'
     fig.savefig(out)

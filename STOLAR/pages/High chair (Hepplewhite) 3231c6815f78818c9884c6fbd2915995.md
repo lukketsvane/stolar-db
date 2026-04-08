@@ -19,3 +19,11 @@ Produsent: Hepplewhite
 Stilperiode: Nyklassisisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O145062.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8288
+Fill-ratio (mesh): 0.5384
+Inertia-ratio (mesh): 0.4211
+Kompleksitet (mesh, log10 v/a): 4.6403
+Konveks hylster-volum (m³): 1.3554

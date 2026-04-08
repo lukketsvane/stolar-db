@@ -19,3 +19,11 @@ Produsent: Godwin, Edward William
 Stilperiode: Viktorianisme
 Til år: 0
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O112269.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.7675
+Fill-ratio (mesh): 0.6466
+Inertia-ratio (mesh): 0.4160
+Kompleksitet (mesh, log10 v/a): 5.1756
+Konveks hylster-volum (m³): 0.1941

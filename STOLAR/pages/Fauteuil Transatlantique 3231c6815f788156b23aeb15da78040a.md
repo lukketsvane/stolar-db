@@ -20,3 +20,11 @@ Produsent: Gray, Eileen
 Stilperiode: Art Deco / Tidleg modernisme
 Til år: 1930
 3D-modell: https://raw.githubusercontent.com/lukketsvane/stolar-db/main/STOLAR/glb/O122351.glb
+
+## 3D-mesh-trekk
+
+Sphericity (mesh): 0.8284
+Fill-ratio (mesh): 0.7992
+Inertia-ratio (mesh): 0.5609
+Kompleksitet (mesh, log10 v/a): 4.6657
+Konveks hylster-volum (m³): 2.7166
