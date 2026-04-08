@@ -129,10 +129,12 @@ def clean_tex(src: str) -> str:
 
     # Remove the entire tikzpicture cover block, then add a clean title
     # block + the cover image at the start of the document body.
+    # Use \title and \maketitle so pandoc generates a Title style.
     cover_block = (
-        r'\n{\\Huge\\bfseries FORMLÆRE}\n\n'
-        r'{\\large\\itshape Ei traktatform om korleis form oppstår}\n\n'
-        r'\\vspace{1em}\n\n'
+        r'\n\\title{FORMLÆRE}\n'
+        r'\\author{}\n'
+        r'\\date{Ei traktatform om korleis form oppstår}\n'
+        r'\\maketitle\n\n'
         r'\\noindent\\includegraphics[width=\\linewidth]{cover-stolar.png}\n\n'
         r'\\clearpage\n\n'
     )
@@ -181,11 +183,11 @@ def clean_tex(src: str) -> str:
         num_s = num.strip()
         body_clean = body.strip()
         if chapter_re.match(num_s):
-            return f'\n\n\\chapter*{{{num_s}.\\quad {body_clean}}}\n\n'
+            return f'\n\n\\chapter*{{{num_s}.~~{body_clean}}}\n\n'
         if a6_re.match(num_s) or ax_re.match(num_s):
-            return f'\n\n\\section*{{{num_s}\\quad {body_clean}}}\n\n'
+            return f'\n\n\\section*{{{num_s}~~{body_clean}}}\n\n'
         sup = f'\\textsuperscript{{\\textit{{{status}}}}}' if status.strip() else ''
-        return f'\n\n\\noindent\\textbf{{{num_s}}}{sup}\\quad {body_clean}\n\n'
+        return f'\n\n\\noindent\\textbf{{{num_s}}}{sup}~~{body_clean}\n\n'
     src = replace_n_arg_macro(src, 'prop', 3, prop_repl)
 
     # \propcont{body} -> body
