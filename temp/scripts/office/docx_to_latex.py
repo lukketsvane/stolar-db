@@ -657,9 +657,9 @@ def convert(doc: 'Document') -> str:
         'A.6.11': 'fig-A.6.11-materialnisjar.pdf',
         'A.6.12': 'fig-A.6.12-nyhetsrate.pdf',
         'A.6.13': 'fig-A.6.13-3d-trajektorie.pdf',
-        'A.6.14': 'fig-A.6.15-fylogenese.pdf',
-        'A.6.15': 'fig-A.6.16-rekurrens.pdf',
-        'A.6.16': 'fig-A.6.17-fitnesslandskap.pdf',
+        'A.6.14': 'fig-A.6.14-fylogenese.pdf',
+        'A.6.15': 'fig-A.6.15-rekurrens.pdf',
+        'A.6.16': 'fig-A.6.16-fitnesslandskap.pdf',
     }
     # New A.6.x sections that aren't in the docx, injected after the last
     # existing A.6.x entry. Each tuple is (label, title, explanatory body).
