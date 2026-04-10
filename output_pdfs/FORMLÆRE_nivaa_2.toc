@@ -1,0 +1,36 @@
+\xpg@aux {variant=nynorsk}{norwegian}
+\contentsline {chapter}{Innhald}{ii}{}%
+\contentsline {chapter}{Føreord}{iii}{}%
+\contentsline {chapter}{Ordliste}{iv}{}%
+\contentsline {chapter}{Proposisjonar}{1}{}%
+\contentsline {chapter}{2 Ikkje alle posisjonar er like sannsynlege}{2}{}%
+\contentsline {chapter}{3 Seleksjonstrykka produserer eit landskap}{3}{}%
+\contentsline {chapter}{4 Landskapet er dynamisk}{4}{}%
+\contentsline {chapter}{5 Det finst agentar}{5}{}%
+\contentsline {chapter}{6 Forma oppstår mellom agentane}{6}{}%
+\contentsline {chapter}{7 Om det som ikkje lèt seg forme}{7}{}%
+\contentsline {section}{A.1 Notasjon}{7}{}%
+\contentsline {section}{A.3 Definisjonar}{7}{}%
+\contentsline {section}{A.6 Empiriske testresultat}{9}{}%
+\contentsline {subsection}{A.6.1 Formrommet er ikkje uniformt busett (1.4)}{10}{}%
+\contentsline {subsection}{A.6.2 Stilperiode som samlevariabel (2.4, 2.62)}{10}{}%
+\contentsline {subsection}{A.6.3 Kanaliseringshierarki i mesh-rommet (3.3)}{11}{}%
+\contentsline {subsection}{A.6.4 Stilar er gradientar, ikkje topologiske klynger (3.4)}{11}{}%
+\contentsline {subsection}{A.6.5 Kumulativ ekspansjon av formrommet (4.4)}{12}{}%
+\contentsline {subsection}{A.6.6 Mahogni-kollaps 1825-1849 (4.5)}{13}{}%
+\contentsline {subsection}{A.6.7 Direkte falsifisering av postulat 4.1}{13}{}%
+\contentsline {subsection}{A.6.8 Materiell kompleksitet per nasjon (5.3)}{14}{}%
+\contentsline {subsection}{A.6.9 Materialstraumen 1500 til 2025 (4.5)}{14}{}%
+\contentsline {subsection}{A.6.10 H/B-proporsjonen 1500 til 2024 (4.1)}{15}{}%
+\contentsline {subsection}{A.6.11 Materialnisjar i 3D-morforommet (5.3)}{15}{}%
+\contentsline {subsection}{A.6.12 Nyhetsraten og det tilstøytande moglege (6.5)}{16}{}%
+\contentsline {subsection}{A.6.13 Periodesentroidvandring i 3D (4.1)}{17}{}%
+\contentsline {subsection}{A.6.14 Stilperiodefylogenese ved Ward-klynging (3.4)}{18}{}%
+\contentsline {subsection}{A.6.15 Rekurrensanalyse av periodesentroidar (4.1, 4.4)}{18}{}%
+\contentsline {subsection}{A.6.16 Tilpassingslandskapet med stabile attraktorar (3.2)}{19}{}%
+\contentsline {subsection}{A.6.17 Endringsrate og episodisk diskontinuitet (4.3)}{20}{}%
+\contentsline {subsection}{A.6.18 Latente materialsignaturar (2.61)}{21}{}%
+\contentsline {subsection}{A.6.19 Det empiriske kraftfeltet i morforommet (3.1, 3.2, 3.3)}{22}{}%
+\contentsline {subsection}{A.6.20 Stolatlaset}{23}{}%
+\contentsline {chapter}{Etterord}{26}{}%
+\contentsline {chapter}{Referansar}{27}{}%
