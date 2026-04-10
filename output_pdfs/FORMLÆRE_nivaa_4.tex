@@ -1,0 +1,628 @@
+\documentclass[10pt,oneside]{book}
+
+% Page geometry — 125 × 200 mm (Gyldendal 1999 Tractatus format).
+% Wide LEFT margin holds the proposition numbers (marginal numbering style):
+% numbers are \llap'd into this margin so the body text block is a clean
+% rectangle with all lines (including continuation) flush left at the body
+% column. Right margin is narrow (no marginalia on the right).
+% Top includes the running header band; footskip minimal (no footer text).
+\usepackage[
+  paperwidth=125mm,
+  paperheight=200mm,
+  top=20mm,
+  bottom=18mm,
+  left=28mm,
+  right=12mm,
+  headheight=12pt,
+  headsep=6mm,
+  footskip=8mm,
+]{geometry}
+
+% UTF-8 + Norwegian (nynorsk)
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage[variant=nynorsk]{norwegian}
+
+% Body font — the digibok is set in Sabon. EB Garamond is the closest
+% free serif with the same general feel; fall back to TeX Gyre Pagella.
+\IfFontExistsTF{EB Garamond}{
+  \setmainfont{EB Garamond}[
+    Numbers={Lining,Proportional},
+    SmallCapsFeatures={LetterSpace=4},
+  ]
+}{
+  \setmainfont{TeX Gyre Pagella}
+}
+% Body size 10.5 pt on 12.5 pt leading (close to Sabon 10.5/12 in the digibok)
+\renewcommand{\normalsize}{\fontsize{10.5}{12.5}\selectfont}
+\normalsize
+
+% Better line breaking (must be loaded after font setup)
+\usepackage{microtype}
+\usepackage{endnotes}
+\let\footnote=\endnote
+
+% Math-symbol fallback font — EB Garamond lacks ∀ ∃ ∈ ⊆ ⊃ ≠ etc.,
+% so the Python preprocessor wraps them in \msym{...} which uses
+% Cambria Math (alltid present on Windows).
+\newfontfamily{\mathfbfont}{Cambria Math}[Scale=0.95]
+\newcommand{\msym}[1]{{\mathfbfont #1}}
+
+% Headings — small caps, centred, generous spacing
+\usepackage{titlesec}
+\titleformat{\chapter}[block]
+  {\normalfont\centering\scshape\addfontfeature{LetterSpace=10}\large}
+  {}{0em}{\MakeLowercase}
+\titlespacing*{\chapter}{0pt}{2.5em}{2.5em}
+
+\titleformat{\section}[block]
+  {\normalfont\centering\scshape\addfontfeature{LetterSpace=6}\normalsize}
+  {}{0em}{\MakeLowercase}
+\titlespacing*{\section}{0pt}{2.5em}{1.5em}
+
+\titleformat{\subsection}[block]
+  {\normalfont\scshape\addfontfeature{LetterSpace=2}\small}
+  {}{0em}{\MakeLowercase}
+\titlespacing*{\subsection}{0pt}{1.5em}{0.8em}
+
+% Hide chapter numbers (chapters are titled by name)
+\renewcommand{\thechapter}{}
+
+% Running headers — chapter title at left, page number at right, thin rule.
+% The header rule is extended LEFT by 16 mm via \fancyheadoffset so it
+% spans the full content width INCLUDING the marginal number column
+% (otherwise the rule looks narrow because it's anchored to the body
+% text block which sits to the right of the number margin).
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\scshape\leftmark}  % chapter title at left on every page
+\fancyhead[R]{\small\thepage}           % page number at right on every page
+\fancyheadoffset[L]{16mm}               % extend header left over the number margin
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+% plain style (chapter-opening pages): identical to fancy (full header).
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyhead[L]{\small\scshape\leftmark}
+  \fancyhead[R]{\small\thepage}
+  \fancyheadoffset[L]{16mm}
+  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+% title style — used ONLY on the title page: nothing in the header at all.
+\fancypagestyle{titlepage}{
+  \fancyhf{}
+  \fancyheadoffset[L]{0pt}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+% \silentchapter{display name}{lowercase mark}
+%   Starts a new page, sets the running mark, adds a TOC entry, and uses the
+%   plain pagestyle for the opening page — but DOES NOT emit a centred chapter
+%   title (the chapter is identified by the running header and by its content).
+\newcommand{\silentchapter}[2]{%
+    \markboth{#2}{}%
+  \addcontentsline{toc}{chapter}{#1}%
+}
+
+% Redefine \tableofcontents to skip the centred "Innhald" title and to
+% emit the entire TOC at \footnotesize so it fits compactly on one page.
+\makeatletter
+\renewcommand\tableofcontents{%
+  \markboth{innhald}{}%
+  \begingroup\footnotesize
+  \@starttoc{toc}%
+  \endgroup
+}
+% Very compact chapter-level TOC entries
+\renewcommand*\l@chapter[2]{%
+  \ifnum \c@tocdepth >\m@ne
+    \vskip 0pt%
+    \setlength\@tempdima{1.5em}%
+    \begingroup
+      \footnotesize
+      \parindent \z@ \rightskip \@pnumwidth
+      \parfillskip -\@pnumwidth
+      \leavevmode \normalfont
+      \advance\leftskip\@tempdima
+      \hskip -\leftskip
+      #1\nobreak\leaders\hbox{$\m@th\mkern \@dotsep mu\hbox{.}\mkern \@dotsep mu$}\hfill
+      \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
+    \endgroup
+  \fi}
+% Compact section / subsection entries — tight indents.
+% Font size is set via \footnotesize on the entire TOC (see \tableofcontents
+% redefinition above), so the entries inherit it.
+\renewcommand*\l@section{\@dottedtocline{1}{1.0em}{2.0em}}
+\renewcommand*\l@subsection{\@dottedtocline{2}{3.0em}{2.6em}}
+\makeatother
+
+% ─── Proposition environment ──────────────────────────────────────────────
+%
+% \prop{1.21}{d}{Body text..\footnote{Udelelegheit tyder her at vidare dekomponering øydelegg objektets kausale funksjon i den gjevne lyskjegla.}.}
+%   ⇒  number sits in the LEFT MARGIN (\llap'd outside the text block);
+%      body text fills the entire text block as a clean justified rectangle;
+%      continuation lines wrap to the body column (= text margin).
+%
+% This is the Gyldendal 1999 Tractatus / Töpfer marginal-numbering layout:
+% the body text is a single uniform column and the proposition numbers hang
+% out into the white space to the left.
+%
+% Numbers in the digibok appear in the same weight as the body (regular,
+% not bold). The status letter is rendered as an italic superscript right
+% after the number.
+\usepackage{calc}
+\newlength{\propnumwidth}
+\setlength{\propnumwidth}{13mm}  % column reserved for the number itself
+\newlength{\propnumgap}
+\setlength{\propnumgap}{2mm}     % gap between number column and body text
+
+% \prop{num}{status}{body}
+%   The number is placed in a left-aligned 13 mm box, then a 2 mm gap,
+%   and the whole 15 mm slug is \llap'd into the LEFT margin so its right
+%   edge sits flush against the text-block left edge. Body text starts at
+%   the text margin and wraps there too — a perfect rectangle.
+%   The number itself is rendered in a heavier weight so it stands out
+%   against the regular body text.
+\newcommand{\prop}[3]{%
+  \par\addvspace{6pt}%
+  \noindent\llap{\makebox[\propnumwidth][l]{\textbf{#1}\textsuperscript{\textit{#2}}}\hspace{\propnumgap}}%
+  #3\par%
+  \addvspace{2pt}%
+}
+
+% Continuation paragraph — plain paragraph at the body column (no number).
+\newcommand{\propcont}[1]{%
+  \par\addvspace{3pt}%
+  \noindent #1\par%
+}
+
+% Italic transition between chapters
+\newenvironment{overgang}{%
+  \par\addvspace{12pt}%
+  \begingroup\itshape\noindent
+}{%
+  \endgroup\par\addvspace{12pt}%
+}
+
+% Glossary entries — bold term, regular body, with breathing room
+% between entries. Spans up to two pages comfortably.
+\newenvironment{ordliste}{%
+  \begingroup\small\setlength{\parskip}{2pt plus 0.6pt}%
+  \linespread{0.97}\selectfont
+}{%
+  \endgroup
+}
+\newcommand{\ordlisteentry}[2]{%
+  \par\addvspace{2.5pt}%
+  \noindent\textbf{#1:} #2\par%
+}
+
+% Compact Føreord body — small font, very tight parskip and linespread
+% so the foreword fits on a single page.
+\newenvironment{foreordbody}{%
+  \begingroup\small\setlength{\parskip}{0.5pt plus 0.2pt}%
+  \linespread{0.90}\selectfont
+}{%
+  \endgroup
+}
+
+% A.6.x explanatory body text — slightly smaller, tight line spacing
+% so each A.6.x entry (heading + figure + explanation) fits compactly.
+\newcommand{\anote}[1]{%
+  \par\addvspace{1pt}%
+  {\footnotesize\linespread{0.93}\selectfont\noindent #1\par}%
+  \addvspace{1pt}%
+}
+
+% Reference entries — very compact, tight line spacing, hanging indent.
+% Designed to fit ~30 entries on a single page.
+\newcommand{\refentry}[1]{%
+  \par\addvspace{0pt}%
+  \begingroup\footnotesize\linespread{0.92}\selectfont
+  \noindent\hangindent=4mm\hangafter=1 #1\par%
+  \endgroup
+}
+
+% Figures — centred, max width = text width
+\usepackage{graphicx}
+\graphicspath{{analysis/figures/}}
+\usepackage{caption}
+\captionsetup{
+  font={small,it},
+  labelformat=empty,
+  justification=centering,
+  skip=4pt,
+}
+\usepackage{float}
+
+% Formula display blocks (for D4, D6, etc.) — monospace, small left indent
+\newenvironment{formelblokk}{%
+  \par\addvspace{4pt}%
+  \begingroup\ttfamily\small\leftskip=4mm\noindent
+}{%
+  \endgroup\par\addvspace{4pt}%
+}
+
+% Avoid widows/orphans
+\widowpenalty=10000
+\clubpenalty=10000
+
+% Body paragraph defaults — tight for the small page
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt plus 0.6pt minus 0.4pt}
+\linespread{1.0}
+
+% Wide environment for back-matter sections (Etterord, Referansar) that
+% should fill the full content width including the 16 mm marginal number
+% column. Pulls the left edge 16 mm to the left of the body block.
+\usepackage{changepage}
+\newenvironment{widebody}{%
+  \begin{adjustwidth}{-16mm}{0mm}%
+}{%
+  \end{adjustwidth}%
+}
+
+% Full-bleed cover page support — image at exact paper size, title overlaid.
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
+\begin{document}
+\mainmatter
+\silentchapter{Proposisjonar}{proposisjonar}
+
+\prop{1}{}{Formverda er alt som er tilfelle.}
+\prop{1.1}{o}{Formverda er totaliteten av realiserte konfigurasjonar, ikkje av ting\footnote{Den underliggande ontologien skil ikkje mellom ei fysisk samanføyning, eit distribuert nettverk av mikroteenester eller eit sekvensielt endestadium i eit systemkall.}.}
+\prop{1.11}{t}{Alt som har form, har nettopp denne forma og inga anna\footnote{Ein maskintilstand i eit lukka system fastslår identiteten sin absolutt i augneblikket av eksekvering.}.}
+\prop{1.12}{t}{At ein konfigurasjon tek éi eksakt form, der uendeleg mange andre var logisk moglege, krev ei årsaksforklaring utover konfigurasjonen sjølv\footnote{Ei spesifikk minneallokering refererer naudsynleg utover sine eigne byte til prosessen som gav kommandoen om ho.}.}
+\prop{1.121}{t}{Forklaringa ligg i relasjonen mellom den manifesterte konfigurasjonen og totaliteten av formene som var moglege, men urealiserte\footnote{Ei grensesnittutforming får tyngda si ikkje frå piksla åleine, men frå frastøytinga av alle dei latente interaksjonsstiane brukaren vart forhindra frå å ta.}.}
+\prop{1.2}{d}{Eit \textbf{objekt}\footnote{I ein databasemodell er objektet den atomære oppføringa; i ein asynkron arkitektur er det den udelelege pakka av tilstandsendring.} er den enklaste bestanddelen i ei form.}
+\prop{1.21}{t}{Objektet er udeleleg og uforanderleg\footnote{Dekomponering nedanfor dette abstraksjonsnivået oppløyser funksjonen og sprengjer den ontologiske ramma for handlingsrommet.}.}
+\prop{1.211}{t}{Objekta utgjer substansen i formverda\footnote{Repertoaret av primitivar definerer det ytre sjiktet for kva som i det heile let seg kompilere.}.}
+\prop{1.22}{d}{Ein \textbf{konfigurasjon}\footnote{Grafen av nodar og kantar bestemmer eigenskapane til systemet strengt utan omsyn til kva domene nodane representerer.} er ei bestemd samansetjing av objekt.}
+\prop{1.221}{t}{Forma er strukturen til konfigurasjonen\footnote{Det materielle substratet kan skiftast frå silisium til karbon, men overføringsfunksjonen står urørd.}.}
+\prop{1.3}{d}{\textbf{Formrommet}\footnote{Søkerommet for ein genetisk algoritme er isomorft med alle morfologiske tilstandar klassen tillét.} (\textit{morphospace}) til ein klasse er mengda av alle moglege konfigurasjonar av objekt i denne klassen.\footnote{Raup (1966); Mitteroecker \& Huttegger (2009)}}
+\prop{1.31}{d}{Kvart realisert objekt er eitt eksakt punkt i dette n-dimensjonale rommet\footnote{Tilstandsvektoren i ein kognitiv arkitektur tilordnar konfigurasjonen ein irreversibel og eintydig indeks i rommet.}.}
+\prop{1.32}{d}{Det empiriske formrommet er alltid ein projeksjon\footnote{Kompresjon av høgdimensjonal brukaråtferd ned til skalerbare metrikkar tvingar fram eit tap av oppløysing i faseovergangen.}.}
+\prop{1.321}{t}{Inga endeleg mengd parametrar fangar den latente kompleksiteten heilt og fullt.\footnote{Thompson (1917)}}
+\prop{1.33}{d}{Klassen er den funksjonelle kategorien som avgrensar formrommet\footnote{Typing set ramma for operasjonane; det som ikkje kan validerast innanfor typesystemet, fell utanfor det moglege rommet.}.}
+\prop{1.331}{t}{Ho etablerer grensene; seleksjonstrykka avgjer fordelinga innanfor grensene\footnote{Nettverkets bandbreidde og den menneskelege merksemda agerer som filtermekanismar for kva tilstandar som akkumulerast og overlever i systemet.}.}
+\prop{1.4}{d}{Formrommet deler seg topologisk i tre regionar: dei busette, dei opne og dei forbodne\footnote{Designprosessen er redusert til styring av grensesnitta mellom desse tre ontologiske fasane.}.}
+\prop{1.41}{o}{Dei busette regionane utgjer det historiske arkivet\footnote{Ein versjonskontrollert logg inneheld heile slektstreet av levedyktige mutasjonar over tid.}.}
+\prop{1.411}{o}{Dei fungerer som ankerpunkt for all framtidig navigasjon\footnote{Grensesnittkonvensjonar som dra-og-slepp herdar til faste stasjonar systemet lyt passere for å sikre framkommelegheit.}.}
+\prop{1.42}{o}{Dei opne regionane utgjer det \textit{tilstøytande moglege}\footnote{Det tilstøytande moglege utgjer den presise radiusen av innovasjon som kodesystemet toler ved neste iterasjon.}.}
+\prop{1.421}{o}{Dei er tilgjengelege, men uaktualiserte\footnote{Avkutta kodespor kviler i basen, kompilert, men uoppkalla fram til eit eksternt handlingsmønster bryt straumen.}.}
+\prop{1.43}{d}{Dei forbodne regionane er dei som vert utelukka av materielle, strukturelle eller energetiske restriksjonar under gjeldande vilkår\footnote{Konkurransen om den endelege tilstanden i eit transaksjonsminne definerer dei fysisk uframkallelege asymmetriane.}.}
+\prop{1.431}{t}{Det som er forbode under eitt sett vilkår, treng ikkje vere forbode under eit anna\footnote{Introduksjon av asynkrone trådar tilgjengeliggjer augneblikkeleg den synkront uoppnåelege arkitekturen.}.}
+\silentchapter{2 Ikkje alle posisjonar er like sannsynlege}{ikkje alle posisjonar er like sannsynlege}
+\prop{2}{}{Ikkje alle posisjonar er like sannsynlege.\footnote{Sannsynet er systemtilstandens vekt; ingen tenestekonfigurasjon flyt fritt.}}
+\prop{2.1}{d}{Eit \textbf{seleksjonstrykk} er ein faktor som endrar sannsynsfordelinga over formrommet.\footnote{Wright (1932)}\footnote{Prosessorkostnad, nettverkslatens og minneavgrensing deformerer topologien.}}
+\prop{2.11}{t}{Han er ingen regel som dikterer éi form, men ein gradient som gjer visse posisjonar meir sannsynlege enn andre.\footnote{Gradienten tvingar fram mønsteret; han dikterer korkje den eksakte kodelinja eller grensesnittpikselen.}}
+\prop{2.111}{t}{Eit seleksjonstrykk åleine avgjer ikkje ein posisjon.\footnote{Eitt isolert optimaliseringskrav genererer ingen stabil arkitektur.}}
+\prop{2.12}{a}{I kvar funksjonell klasse verkar alltid meir enn eitt seleksjonstrykk samstundes.\footnote{Eit distribuert system er fanga mellom kryssande trykk; konsensuskravet dreg mot latens, tilgjengekravet mot partisjonering.}}
+\prop{2.121}{t}{Einsidige formforklaringar er alltid ufullstendige.\footnote{Å tilskrive suksessen til eit grensesnitt utelukkande til friksjonsløysinga neglisjerer det bakenforliggjande minnehierarkiet.}}
+\prop{2.13}{a}{For minst eitt par av seleksjonstrykk peikar gradientane i motstridande retningar i minst éin region av formrommet.\footnote{CAP-teoremet formaliserer korleis konsistens og tilgjenge peikar i diametralt motsette retningar under partisjonering.}}
+\prop{2.131}{t}{Sidan fleire uavhengige trykk dreg i ulike retningar, kan ikkje alle stettast optimalt samstundes.\footnote{Ingen relasjonsdatabase kan gje både maksimal normalisering og minimal leselatens på same tid.}}
+\prop{2.14}{t}{Funksjonen definerer klassen og med det formrommet.\footnote{API-kontrakten definerer tenesteklassen og stakar ut integrasjonsrommet.}}
+\prop{2.141}{t}{Innanfor klassen er funksjonen konstant.\footnote{Forretningslogikken ber inga informasjon om kvifor to klientar med ulikt grensesnitt visualiserer tilstanden ulikt.}}
+\prop{2.2}{d}{\textbf{Materialaffordansen} er operasjonane eit materiale tilbyr og yter motstand mot, under gjevne vilkår for kostnad og tilgjenge.\footnote{Gibson (1979)}\footnote{Affordansen i eit grafisk grensesnitt er ingen farge, men sekvensen av hendingar fargen logisk opnar for.}}
+\prop{2.21}{t}{Signaturen er probabilistisk: Repertoaret bind sannsynsfordelinga, ikkje det einskilde objektet.\footnote{API-dokumentasjonen skildrar eit latent repertoar av moglege tilstandsovergangar, ikkje ein spesifikk sesjon.}}
+\prop{2.211}{o}{Signaturen er latent.\footnote{Eit lukka system skjuler sitt fulle tilstandsrom bak den aktuelle tilstanden.}}
+\prop{2.22}{t}{Ein samlevariabel, korrelert med alle samtidige seleksjonstrykk, bør predikere formvariasjon betre enn eitkvart einskildtrykk.\footnote{Designmønsteret fangar summen av fleire arkitektoniske trykk betre enn isolerte omsyn til minne eller prosessortid.}}
+\prop{2.221}{o}{Stilperioden er ein slik samlevariabel.\footnote{Det programvaretekniske paradigmet fungerer presis slik; objektorientering kondenserer tiår med erfaring i modularisering og gjenbruk.}}
+\silentchapter{3 Seleksjonstrykka produserer eit landskap}{seleksjonstrykka produserer eit landskap}
+\prop{3}{}{Seleksjonstrykka spenner ut eit landskap over formrommet.\footnote{Kompilatoren stettar syntaksen, køyretida allokerer minne, og nettet introduserer latens; summen av desse vilkåra spenner ut arkitekturens usynlege topografi.}}
+\prop{3.1}{d}{\textbf{Tilpassingslandskapet}\footnote{Den stødige likevekta for distribuerte nodar samsvarar med eit av landskapet sine høgaste punkt.} er den aggregerte vektoren av alle verksame seleksjonstrykk i formrommet.\footnote{Wright (1932)}}
+\prop{3.11}{t}{Kvar posisjon held ein verdi: graden av forløysing av alle verksame trykk samstundes.\footnote{Responstida, feilraten og minnebruken kollapsar til ein einskild skalar for kvar tenkjeleg arkitektur.}}
+\prop{3.111}{o}{Kvart seleksjonstrykk kastar ei vekt som fluktuerer i tid.\footnote{Skaleringsbehovet søv heilt til den brå oppvakninga frå trafikken treffer; landskapet kvelvar seg over natta.}}
+\prop{3.12}{t}{Frå 2.12, 2.13 og 3.1 lyt ein slutte: tilpassingsfunksjonen ber generisk fram talrike lokale maksima.\footnote{Eit fordelt system toler eit mylder av fragmenterte tilstandar, der kvar og ein er ufravikeleg i si eiga subklynge.}}
+\prop{3.121}{t}{Slik er landskapet eit taggete massiv, bygt av mange haugar.\footnote{I designrommet for operativsystem rår både den tunge monolittiske kjernen og mikrokjernen som udiskutable optimum, kvar på sin isolerte topp.}}
+\prop{3.2}{d}{Stabilitetsgraden til haugen svarar til dalvegganes brattleik.\footnote{Waddington (1957)}\footnote{Tilstandsmaskiner dirigerer feilsteg til nullpunktet med ubønhøyrleg kraft; stupbratte veggar let ingenting gå i bane.}}
+\prop{3.21}{t}{Bratte veggar innvarslar kanalisering: forma støyter perturberingar frå seg.\footnote{Mekanismar som overvakar og attskaper prosessar skapar ein stiv trajektorie der avvik omgåande kvelast.}}
+\prop{3.211}{o}{Nokre seleksjonstrykk regjerer over andre.\footnote{Fysisk straumbrot trumfar all asynkron logikk.}}
+\prop{3.3}{d}{Ein \textbf{stil} er sverminga av former kring same punkt.\footnote{Kubler (1962)}\footnote{Hundrevis av rammverk implementerer MVC, men alle fell mot det same konseptuelle tyngdepunktet.}}
+\prop{3.31}{t}{At stilen ter seg som ein sverm heller enn ein kategori, gjer den strukturelle uskarpleiken ved grensene naudsynt.\footnote{Graden av tillit i eit nulltillit-nettverk glir inn i det grå; kva punkt som forvandlar tilstanden er berre ein grenselaus overgang.}}
+\prop{3.311}{t}{Samanføyinga av to klynger i det kontinuerlege rom er overgitt åt sløringa.\footnote{Distribuerte transaksjonar bleiknar vekk i eventualitet; konsensusgrensa lèt seg aldri endeleg teikne.}}
+\prop{3.4}{t}{Formgjevinga sår aldri sitt eige landskap.\footnote{Koding set ikkje reglane for fysikkens minne og bandbreidd.}}
+\prop{3.41}{t}{Landskapet fylgjer naudsynt og ubryteleg av vilkåra.\footnote{Kryptografiske sanningar støyper sjølv sine retningar; eit nettverk krev asymmetrisk nøkkelutveksling av eiga drift.}}
+\prop{3.411}{t}{Å reise eit bygg over ei høgde er berre ei oppdaging, inkje under.\footnote{Isolerte avdelingar i ei verksemd skriv opp same handtering av feil; den logiske toppen let seg finne av alle.}}
+\silentchapter{4 Landskapet er dynamisk}{landskapet er dynamisk}
+\prop{4}{}{Landskapet er dynamisk.}
+\prop{4.1}{a}{Seleksjonstrykka kviler aldri\footnote{Teknologisk gjeld og endra kravspesifikasjonar syter for at trykka fluktuerer konstant. Krav til responstid og datakonsistens omformar domenet utan varsel.}.}
+\prop{4.11}{t}{Av 3.1 og 4.1: landskapet er ei uroleg flate\footnote{Nettverkstopologien er aldri statisk; nodar fell ut, og bandbreidda snevrast inn.}.}
+\prop{4.111}{t}{Haugar kan stige, søkke, flytte seg, bifurkere eller smelte saman.}
+\prop{4.2}{o}{Endringa er diskontinuerleg.\footnote{Eldredge \& Gould (1972)\footnote{Eit paradigmeskifte i programmering manifesterer seg nøyaktig slik: stase broten av brå topologiske restruktureringar. Overgangen frå monolitt til mikrotjenester slettar det gamle kartet på eit sekund.}}}
+\prop{4.21}{o}{Lange periodar med stase vert avbrotne av brå topologiske skifte\footnote{Heile klassar av designmønster vert forelda over natta når underliggande køyre-miljø vert oppdaterte.}.}
+\prop{4.211}{o}{Det typiske forløpet er: eksplosiv radiasjon inn i ein nyopna region, fylgd av gradvis konvergens mot nye attraktorar\footnote{Nye bibliotek utløyser eksplosiv radiasjon av løysingar, før dei best eigna mønstera vert standardiserte. Eit nytt grensesnitt skaper vill flora før konvensjonane set seg.}.}
+\prop{4.3}{t}{Landskapet har minne.\footnote{Arthur (1994)\footnote{Den eksisterande databasestrukturen er eit minnespor som avgrensar kva for nye tenester som rasjonelt kan implementerast. Tidlegare avgjerder ligg innbakte i koden som spøkelsestrykk.}}}
+\prop{4.31}{o}{Kvar realisert form etterlét eit spor som modifiserer seleksjonstrykka for den neste\footnote{Eit publisert API bind framtida; fjerning av eit endepunkt øydelegg det omkringliggande økosystemet.}.}
+\prop{4.311}{t}{Forma og landskapet endrar kvarandre gjensidig.}
+\prop{4.4}{o}{Formrommet ekspanderer kumulativt\footnote{API-økosystem ekspanderer monotont; fjerning av funksjonar skjuler berre kompleksiteten, medan det underliggande konseptrommet veks.}.}
+\prop{4.41}{o}{Nye regionar vert busette; gamle vert sjeldan heilt forlatne\footnote{Tidlegare versjonar av ein protokoll må vedlikehaldast for bakoverkompatibilitet; lag på lag med historie eksisterer samstundes.}.}
+\prop{4.411}{o}{Det kumulative konvekse hylstervolumet veks monotont over alle tilgjengelege periodar, utan ein einaste tilbakegang.}
+\prop{4.5}{o}{Når eitt seleksjonstrykk vert dominant, kollapsar landskapet mot éin attraktor\footnote{Viss berre prosesseringsfart vektast og minnekostnad ignorerast, kollapsar systemarkitekturen mot ubrukbar rigiditet. Eit absolutt krav om tryggleik frys systemet i statisk uvirksamheit.}.}
+\prop{4.51}{t}{Eit einsidig trykk som køyrer over alle andre er ikkje ei forklaring av form.}
+\prop{4.511}{t}{Det er eit fråvær av forklaring.}
+\silentchapter{5 Det finst agentar}{det finst agentar}
+\prop{5}{}{Verda inneheld agentar som responderer på landskapet.\footnote{Ein ruter som allokerer bandbreidde og ein klient som navigerer eit grensesnitt er isomorfe traverseringar av det same topologiske rommet.}}
+\prop{5.1}{a}{For kvar funksjonell klasse finst det minst eitt system som navigerer tilpassingslandskapet via negativ tilbakekopling.\footnote{Eit kvart sjølvjusterande distribuert nettverk stettar aksioma for systemisk agens.}}
+\prop{5.11}{d}{Ein \textbf{agent} er ein operator definert uttømande ved trippelet: måltilstand, avstandsmåling, justeringsmekanisme.\footnote{Rosenblueth, Wiener \& Bigelow (1943)}\footnote{Avstandsfunksjonen i digitale økosystem er uttømt gjeven ved nettverkslatens og feilratar.}}
+\prop{5.111}{t}{Definisjonen er betinga av tilbakekopling.}
+\prop{5.12}{o}{Agentar er differensierte langs tre målbare dimensjonar.}
+\prop{5.121}{o}{Dei skil seg ved spennvidda i representasjonen av formrommet, frekvensen på tilbakekoplinga, og djupna i oppdateringa av eigne reglar.\footnote{Skilnaden mellom ei heuristikk og eit operativsystem ligg i volumet av den kognitive lyskjegla og arkitekturens rekursjonsdjupne.}}
+\prop{5.13}{t}{Agenten responderer ikkje på forma, men på gradienten i landskapet.}
+\prop{5.131}{t}{Måltilstanden er ikkje ein posisjon agenten finn opp.\footnote{Ein ruting-protokoll produserer ikkje den kortaste vegen; han deriverer landskapets asymmetri til eit val.}}
+\prop{5.2}{d}{Den \textbf{kognitive lyskjegla} til ein agent er den presise delmengda av formrommet han kan representere og manipulere.\footnote{Fields \& Levin (2022)}\footnote{For ein mikroteknestekomponent er lyskjegla isomorf med variablane definert i API-kontrakten.}}
+\prop{5.21}{t}{Det som ligg utanfor lyskjegla, er kausalt ikkje-eksisterande.\footnote{Trafikk som ikkje rører dei opne portane i brannmuren er eit ontologisk tomrom for nettverket.}}
+\prop{5.211}{o}{Lyskjegler spenner over vilkårlege skalaer.}
+\prop{5.22}{t}{Lyskjegla dikterer formrommets oppløysing.}
+\prop{5.221}{t}{Kva sub-geometriar ein agent kan skilje, avgjer kva formtransformasjonar han kan operere.\footnote{Eit lågoppløyst brukargrensesnitt stenger av funksjonell rekkevidd og amputerer transformasjonar i applikasjonstilstanden.}}
+\prop{5.23}{d}{Fem kanoniske operasjonar muterer lyskjegla: ekspansjon, refraksjon, translasjon, kollaps og spissing.\footnote{Elevasjon av brukarrettar er ein algebraisk ekspansjon av aktørens lyskjegle.}}
+\prop{5.231}{d}{Ekspansjon: Lyskjegla innlemmar nye topologiske regionar.\footnote{Lese-tilgang til eit tidlegare kryptografisk låst register.}}
+\prop{5.232}{d}{Refraksjon: Sub-komponentar materialiserer seg i det etablerte rommet.\footnote{Parsing av ei ustrukturert loggfil til eit typa JSON-objekt.}}
+\prop{5.233}{d}{Translasjon: Lyskjegla forskyvast langs formrommets aksar.\footnote{Migrasjon av infrastruktur frå lokal drift til ei tenestebasert sky.}}
+\prop{5.234}{d}{Kollaps: Lyskjegla singulariserer mot éin urokkeleg posisjon.\footnote{Kompileringa av dynamisk kode til ei statisk binærfil.}}
+\prop{5.235}{d}{Spissing: Volumet bevarast, men presisjonen over operasjonar asymptoterer mot ei grense.\footnote{Kalibrering av hyperparametrar i ei maskinlæringsmodell.}}
+\prop{5.3}{d}{Agentens essensielle funksjon er evna til direkte manipulering av systemets geometri.\footnote{Ein REST-arkitektur utgjer eit formelt grammatikksystem: identifiser ressurs, muter tilstand via eit lukka operativsett.}}
+\prop{5.31}{d}{Vektorrommet av alle konfigurasjonar, lukka under union og snitt, konstituerer ein \textbf{formalgebra}.}
+\prop{5.311}{t}{Formalgebraen definerer horisonten for alle generative operasjonar.}
+\prop{5.32}{t}{Grammatikken induserer ein naboskap for kvar gyldig form.}
+\prop{5.321}{d}{Naboskapen er mengda av konfigurasjonar handgripelege gjennom éin diskret operasjon.}
+\prop{5.33}{t}{Grammatikken definerer moglegheitsrommet.}
+\prop{5.331}{t}{Trykket i landskapet fastset den endelege trajektorien.}
+\prop{5.4}{d}{Substratet opererer som ein null-ordens agent.\footnote{Maskinvarearkitekturen utøver null-ordens agens: han avviser logisk gyldig programvare som bryt med latensgrensene.}}
+\prop{5.41}{t}{Han søkjer inga maksimering.}
+\prop{5.411}{t}{Han vetoar utvalde konfigurasjonar og gjev resonans til andre gjennom ufravikelege avgrensingar.}
+\prop{5.5}{t}{Navigasjonskompetanse let seg akkumulere som strukturert informasjon.}
+\prop{5.51}{t}{Kvar erobra posisjon utvidar kjegla for framtidig persepsjon.}
+\prop{5.511}{d}{Læring er den irreversible morfologiske ekspansjonen av tilgjengeleg formrom.}
+\silentchapter{6 Forma oppstår mellom agentane}{forma oppstår mellom agentane}
+\prop{6}{}{Forma oppstår mellom agentane.\footnote{Arkitekturen er ikkje noko nodane eig, men tilstanden som trer fram i krysninga av anropa deira.}}
+\prop{6.1}{t}{Av 2.12 og 5.1: sidan meir enn eitt seleksjonstrykk alltid verkar, og sidan ulike agentar responderer på ulike trykk, er kvar realisert form eit poly-agentisk kompromiss.\footnote{Odling-Smee, Laland \& Feldman (2003)}\footnote{Åtferda til eit distribuert system lèt seg ikkje dedusere frå kjeldekoden til éin av nodane; morfologien spring ut av konfliktane i nettverket.}}
+\prop{6.11}{t}{Materialaffordansen, reiskapen, marknaden og kulturen utgjer uavhengige gradientar.\footnote{Brukaropplevinga emergerer presis der forretningslogikk, databaseskjema og nettverkslatens kryssar kvarandre som inkommensurable gradientar.}}
+\prop{6.111}{t}{Ingen einskild agent dikterer den resulterande morfologien.\footnote{Eit monolittisk styresett sviktar der domenet krev polysentrisk tilpassing.}}
+\prop{6.12}{t}{Sjølv når éin agent har nominell kontroll, avgjer landskapet kva reglar som faktisk fyrer.\footnote{Sjølv det strengaste deklarative oppsett må underkaste seg flaskehalsane i den materielle maskinvaren.}}
+\prop{6.121}{t}{Agenten vel frå naboskapen; landskapet filtrerer naboskapen.\footnote{Eit strengt typa grensesnitt filtrerer det moglege rommet av metodar; datatypane disiplinerer kva kall som når fram.}}
+\prop{6.13}{o}{Bandbreidda har ein temporal dimensjon i form av latens.\footnote{Asynkronitet handterer den romlege fordelinga ved å postulere tidsforsinka skuggar av sanninga.}}
+\prop{6.131}{t}{Ved høg latens må kvar agent operere på ein intern modell av dei andre agentane sin framtidige tilstand.\footnote{Klienten lyt utføre optimistiske UI-oppdateringar for å binde over gapet mellom lokalt klikk og utkvittert database.}}
+\prop{6.2}{o}{Når koplinga mellom agentar er robust, emergerer eit overordna system.\footnote{Der hendingsbussar flettar isolerte applikasjonar tett nok saman, trer plattforma fram som eit makroskopisk subjekt.}}
+\prop{6.21}{t}{Det overordna systemet har større lyskjegle og meir samansette mål.\footnote{Plattform-økosystemet maksimerer globalt volum og levetid, eit optimum mikromodulane overhovudet ikkje kjenner til.}}
+\prop{6.211}{t}{Når samanbindinga er tilstrekkeleg tett til at heilskapen realiserer ein eigen tilbakekoplingssløyfe, vert heilskapen sjølv ein agent etter definisjonen i 5.11.\footnote{Kuhn (1962)}\footnote{Når container-klusteret byrjar automatisk å skalere opp og ned instansar basert på ekstern last, agerer det på sin eigen vegner.}}
+\prop{6.3}{t}{Stilar og tradisjonar er deskriptive mellomkonstruksjonar utan kausal kraft.\footnote{Namnelappen "MVC-paradigme" er ein post-festum diagnostikk; mønsteret tvingar i seg sjølv ikkje fram noko kode.}}
+\prop{6.31}{t}{Dei skildrar dei punkta i formrommet der vandringa mellombels har stansa.\footnote{Arkitektoniske mønster utgjer gjenkjennelege arr etter gjentatte møte mellom likearta strukturelle press.}}
+\prop{6.311}{t}{Å formgje «i ein stil» er ein logisk feil.\footnote{Å freiste å overføre ei objektorientert form direkte til eit reint funksjonelt rammeverk, lyt gje monaleg syntaktisk støy.}}
+\prop{6.4}{t}{Nyhetsraten i formrommet er ein funksjon av det tilstøytande moglege.\footnote{Å lansere eit nytt API-kall eksponerer i same sekund eit massivt tre av uprøvde systemkombinasjonar.}}
+\prop{6.41}{o}{Kvar realisert form opnar nye regionar av naboskapen som ikkje fanst før.\footnote{Kompilatoren utgjer sjølv fundamentet som lèt høgnivå-abstraksjonar breie ut sine eigne formrom.}}
+\prop{6.411}{t}{Det moglege veks med det realiserte.\footnote{Kauffman (1993)}\footnote{Nettverkseffekten dikterer at morfologien sjølv ekspanderer; eit nytt kommunikasjonsgrensesnitt kvadrerer korleis pakkane kan vandre.}}
+\prop{6.5}{t}{Ingen form er endeleg.\footnote{Kvar versjonsutgjeving på hovudgreina markerer berre ein kort hvilepuls i ein uavbroten kontinuerleg distribusjon.}}
+\prop{6.51}{t}{Av 2.131 og 4.1: sidan seleksjonstrykka endrar seg, vil kvar realisert balanse med tida verte suboptimal.\footnote{Modulane lyt evig refaktorerast av di brukaråtferd og minnekrav kontinuerleg rører seg under the execution layer.}}
+\prop{6.511}{t}{Kvar realisert form er gyldig berre for dei vilkåra som rådde i det augeblinket ho vart aktualisert.\footnote{Prosessar frosne fast i ein tråd optimalisert for 32-bits minne sprekk for kvart parallelliserte kall systemet mottek.}}
+\prop{6.6}{o}{Dette rammeverket er ikkje ein ontologisk påstand om kva form er.\footnote{Rammeverket er materielt tomt og bind seg korkje til serverfarmar eller nevrale brikker.}}
+\prop{6.61}{o}{Det er eit koordinatsystem for spesifikasjon.\footnote{Programmeraren opererer strengt innanfor grensesnitta utan å teoretisere korleis portane opnar elektrisiteten i logikk-kretsane.}}
+\prop{6.611}{o}{At strukturen er substrat-uavhengig er eit teikn på fruktbarheit, ikkje eit prov for sanning.\footnote{Dei isomorfe trekka som utspelar seg mellom programvareutvikling og evolusjonær morfologi, syner at syntaksen har gripe evolusjonsdynamikken reint formelt.}}
+\prop{6.7}{o}{Formverda er alt som er tilfelle. Tilpassingslandskapet er alt som verkar. Navigasjonen er utan slutt.\footnote{Koden er the state. Domeneavhengigheitene er landskapet. Refaktoreringa vert aldri innstilt.}}
+\prop{6.71}{o}{Denne traktaten er sjølv ein posisjon i eit formrom.\footnote{Kapittelinndelinga utfaldar seg i eit strengt rekursivt domenetre for eit gjeve ontologisk hierarki.}}
+\prop{6.711}{o}{At teksten kan falsifiserast, er garantien for hennar gyldigheit.\footnote{Eit testbart formelt system stadfestar seg berre som adekvat i den grad dårlege input verkeleg klarer å krasje det.}}
+
+\silentchapter{7 Om det som ikkje lèt seg forme}{om det som ikkje lèt seg forme}
+\prop{7}{}{Om det som manglar form, lyt ein teia.}
+
+\addcontentsline{toc}{section}{A.1 Notasjon}
+\prop{c}{}{ein klasse}
+\prop{x}{}{ei form}
+\prop{p}{}{eit seleksjonstrykk}
+\prop{G}{}{ein grammatikk}
+\prop{t}{}{eit tidspunkt}
+\begin{overgang}π : Shape \msym{→} \msym{ℝ}ⁿ: morforomprojeksjonen\end{overgang}
+\prop{L(G)}{}{språket (mengda av alle former) ein grammatikk G genererer}
+\prop{H}{}{Shannon-entropi}
+\prop{I}{}{gjensidig informasjon}
+\prop{Cov}{}{kovarians}
+\addcontentsline{toc}{section}{A.3 Definisjonar}
+\prop{D1}{}{(Formrom, prop. 1.2)}
+\propcont{Morphospace(c) := \{ π(x) : x \msym{∈} c \} \msym{⊆} \msym{ℝ}ⁿ}
+\prop{D2}{}{(Seleksjonstrykk, prop. 2.1)}
+\propcont{p : \msym{ℝ}ⁿ \msym{→} \msym{ℝ}}
+\prop{D3}{}{(Tilpassingslandskap, prop. 3.1)}
+\propcont{Landscape(c, t) := Σᵢ wᵢ(t) \msym{·} pᵢ}
+\prop{D4}{}{(Formalgebra og formgrammatikk, prop. 3.42)}
+\propcont{Lat S vere ei mengd av former i eit euklidsk rom Eⁿ, utstyrt med operasjonar og lukka under den euklidske transformasjonsgruppa Trans(Eⁿ):}
+\propcont{s₁ + s₂ (sum)}
+\propcont{s₁ − s₂ (differanse)}
+\propcont{(snittet s₁ \msym{·} s₂ := s₁ − (s₁ − s₂) er ein avleidd, ikkje primitiv, operasjon)}
+\propcont{Ein innleiring av a i s er ein transformasjon τ \msym{∈} Trans(Eⁿ) slik at τ(a) \msym{≤} s.}
+\propcont{Ein formgrammatikk er eit trippel SG = (S, R, ω) der R = \{ rᵢ : (aᵢ, bᵢ) \}, med regelapplikasjon:}
+\propcont{s \msym{→} (s − τ(aᵢ)) + τ(bᵢ)}
+\propcont{L(SG) = \{ s \msym{∈} S : ω \msym{→}* s ved bruk av reglar i R \}}
+\prop{D5}{}{(Grammatikk-klynge-bru, prop. 3.42)}
+\propcont{\msym{∀}G \msym{∈} Grammar : π(L(G)) dannar ei klynge i Morphospace(c)}
+\prop{D6}{}{(Agent, prop. 5.2)}
+\propcont{Agent A := (g, d, δ)}
+\propcont{Krav: Det finst ein Lyapunov-funksjon V over tilstandsrommet slik at:}
+\propcont{V(g) = 0}
+\propcont{V(x) > 0 for x \msym{≠} g}
+\propcont{V er ikkje-aukande i forventning langs sekvensen x\_(n+1) = δ(x\_n)}
+\prop{D7}{}{(Kognitiv lyskjegle, prop. 5.5)}
+\propcont{C(A) \msym{⊆} Shape \msym{×} T}
+\prop{D8}{}{(Innleiringsoppløysing, prop. 5.52)}
+\propcont{E(s, A) := \{ t \msym{∈} Shape : t \msym{≤} s \msym{∧} \msym{∃}u \msym{∈} T : (t, u) \msym{∈} C(A) \}}
+\prop{D9}{}{(Lyskjegleoperasjonar, prop. 5.53)}
+\propcont{(i) Utviding: C(A, t₂) \msym{⊃} C(A, t₁)}
+\propcont{(ii) Oppløysing: |E(s, A, t₂)| > |E(s, A, t₁)|}
+\propcont{(iii) Rørsle: \msym{∃}r \msym{∈} C(A, t₂) \textbackslash{} cl(C(A, t₁))}
+\propcont{(iv) Kollaps: C(A, t₂) = \{π⁻¹(x₀)\}}
+\propcont{(v) Skjerping: C(A, t₂) = C(A, t₁) \msym{∧} |E(s, A, t₂)| > |E(s, A, t₁)|}
+\addcontentsline{toc}{section}{A.6 Empiriske testresultat}
+Nærmaste-nabo-distansen i (H, W, D) etter z-skalering har ein variasjonskoeffisient (CV) på 5,4 (95 \% CI [3,7, 5,9]), noko som er om lag 15 gonger over Poisson-nullhypotesen på 0,36. Funna er robuste på tvers av 14 hold-out-subset (museum, periode, stil), inkludert NMK isolert (n = 63). n = 1664.
+
+\clearpage
+\addcontentsline{toc}{subsection}{A.6.1 Formrommet er ikkje uniformt busett (1.4)}
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.1-uniformitet.pdf}}
+\par\addvspace{2pt}
+\anote{Vi måler gjensidig informasjon (sklearn k-NN-estimator) mellom kvar geometrisk dimensjon (Høgde, Breidde, Djupn, H/B) og to kandidatprediktorar: stilperiode og primærmateriale. Stilperiode forklarer 0.48–0.92 bits per dimensjon mot 0.23–0.42 bits for materiale (n = 1469). Den kulturelle merkelappen vinn over den fysiske eigenskapen med ein faktor 1.9\msym{×} til 2.3\msym{×} på alle fire dimensjonar samtidig. Funksjonalismen kunne ikkje predikert dette: materialet er den faktiske mekaniske avgrensninga; stilperioden ber ingen ergonomisk bodskap. Resultatet er, så vidt vi veit, den fyrste kvantitative testen av denne påstanden over eit fleirhundreårig korpus.}
+\addcontentsline{toc}{subsection}{A.6.2 Stilperiode som samlevariabel (2.4, 2.62)}
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.2-kanalisering.pdf}}
+\par\addvspace{2pt}
+\anote{Variasjonskoeffisienten over seks mesh-trekk (sphericity, complexity, fill-ratio, inertia-ratio, boks-volum, hylster-volum) strekkjer seg over to storleiksordnar (n = 2202). Sphericity er det mest kanaliserte trekket (CV = 0.074); hylster-volumet det friaste (CV = 9.52). Spreiinga er 128\msym{×}. Eit funksjonelt avgrensa formrom ville hatt jamn varians: kvart trekk skulle vere like fritt eller like bunde av tilpassingskrava. At nokre dimensjonar er låst og andre nær fri, er ein direkte målbar signatur av kanaliseringshierarkiet i tilpassingslandskapet.}
+\addcontentsline{toc}{subsection}{A.6.3 Kanaliseringshierarki i mesh-rommet (3.3)}
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.3-silhouette.pdf}}
+\par\addvspace{2pt}
+\anote{Silhuett-skoren for stilperiode i det 4-dimensjonale mesh-trekk-rommet (z-skalert) er −0.338, 95 \% CI [−0.346, −0.329] over 25 stilar med \msym{≥} 10 medlemar (n = 1971). Permutasjons-p < 0.001. Negativ silhouette tyder at gjennomsnittsstolen i ein stilperiode ligg nærmare nabostilane enn dei eigne medkandidatane. 21 av 25 stilar er negative; dei 4 positive er svært små samples (n = 12–16). Stilperiodar er kontinuerlege gradientar i morforommet, ikkje topologiske klynger. Vi har ikkje funne nokon tidlegare kvantifisering av denne påstanden over eit historisk møbelkorpus.}
+\addcontentsline{toc}{subsection}{A.6.4 Stilar er gradientar, ikkje topologiske klynger (3.4)}
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.4-ekspansjon.pdf}}
+\par\addvspace{2pt}
+\anote{Det kumulative konvekse hylsterveolumet i (H, B, D)-rommet, etter 1.–99. persentil-klipping per dimensjon, veks MONOTONT over alle tilgjengelege 50-årsperiodar (n = 1041 stolar med komplette dimensjonar). Frå 79 392 cm³ i fyrste periode til 589 796 cm³ ved slutten — ein 7\msym{×} ekspansjon utan ein einaste tilbakegang. Eit fast funksjonsenvelop ville krevja metning når korpuset veks. Den observerte monotone veksten støttar Kauffmans «det tilstøytande moglege» som aktivt ekspanderande rom og er, så vidt vi veit, fyrste gong dette er kvantifisert direkte for designartefakt.}
+\addcontentsline{toc}{subsection}{A.6.5 Kumulativ ekspansjon av formrommet (4.4)}
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.5-mahogni.pdf}}
+\par\addvspace{2pt}
+\anote{I utvalet av norskproduserte stolar frå perioden 1825–1849 brukar 16 av 16 mahogni. I den føregåande tilgjengelege 25-årsperioden (1750–1799) er fraksjonen 0 av 16. Lock-in skjer over éin generasjon. Mahogni og valnøtt er biomekanisk utbytbare for sittefunksjon: dei har samanliknbar tettleik, styrke og bearbeidbarheit. Ein binær kohort-overgang som dette kan ikkje forklarast som funksjonell optimisering — det er sti-avhengig seleksjonskollaps i sitt klaraste empiriske uttrykk.}
+\addcontentsline{toc}{subsection}{A.6.6 Mahogni-kollaps 1825-1849 (4.5)}
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.6-wasserstein.pdf}}
+\par\addvspace{2pt}
+\anote{Wasserstein-1 distansen mellom alle 10 suksessive 50-årsperiodar i korpuset gjev gjennomsnitt 15.8 cm for høgde, 9.2 cm for breidde og 5.8 cm for djupn. INGEN av dei 10 periodepara har distanse under terskelen 0.5 cm. Den statiske-landskap-nullhypotesen vert direkte falsifisert: kvar suksessiv periode har ei statistisk distinkt fordeling av former. Menneskeleg ergonomi har ikkje endra seg over 500 år; form endrar seg langt fortare enn funksjon.}
+\addcontentsline{toc}{subsection}{A.6.7 Direkte falsifisering av postulat 4.1}
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.7-trajektorie.pdf}}
+\par\addvspace{2pt}
+\anote{Sentroiden av kvar 50-årsperiode er ein punkt i (Breidde \msym{×} Høgde). Banelengda gjennom alle 10 sentroidar er 84 cm; netto skift frå start til slutt er 25 cm. Tortuositeten — banelengde delt på netto skift — er 3.45. Ein verdi over 1 tyder at banen vandrar fram og attende, ikkje monoton mot eit optimum. Tortuositet 3.45 er signaturen til eit dynamisk system med endrande seleksjonstrykk, ikkje av funksjonell konvergens (n = 1041).}
+\addcontentsline{toc}{subsection}{A.6.8 Materiell kompleksitet per nasjon (5.3)}
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.8-materialblanding.pdf}}
+\par\addvspace{2pt}
+\anote{For kvar stol med både materialliste og produksjonsland teiler vi talet på distinkte material i lista (n = 1582). Norske og danske stolar har medianverdi 3, britiske og italienske 2. Skilnaden held seg etter at vi har kontrollert for tid og stilperiode. Funksjonelt sett byggjer alle desse stolane den same tinga (eit sete for ein voksen menneskekropp); skilnaden er ein nasjonal-kulturell handverkssignatur. Vi kjenner ikkje til tidlegare arbeid som har kvantifisert dette over eit paneuropeisk korpus.}
+
+\addcontentsline{toc}{subsection}{A.6.9 Materialstraumen 1500 til 2025 (4.5)}
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.9-materialstraum.pdf}}
+\par\addvspace{2pt}
+\anote{Vi tokeniserer materiallista til kvar stol og normaliserer til éi av ti primærkategoriar. For kvar 25-årsperiode teljer vi kor mange stolar som inneheld kvart material. Resultatet er klare seleksjonsbølgjer som ingen før har lagt fram så detaljert: eik 1500–1700, nøttetre kring 1675, mahogni 1750–1850, modernismen sine material (stål, plast, kryssfiner, aluminium) etter 1900. Bølgjene er ikkje gradvise overgangar mellom funksjonelt overlegne alternativ — kvar bølgje er ein lokal kohort-event.}
+
+\addcontentsline{toc}{subsection}{A.6.10 H/B-proporsjonen 1500 til 2024 (4.1)}
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.10-proporsjon.pdf}}
+\par\addvspace{2pt}
+\anote{Den rullande 50-årsmedianen av høgde delt på breidde fell systematisk frå 1.88 i 1600 til 1.36 i 2000 (n = 1133). Endringa svarar til over eitt halvt standardavvik. Funksjonelt er proporsjonen 1.36 ikkje meir ergonomisk enn 1.88: begge er innanfor menneskeleg sitteområde. Det er ein form-drift, ikkje ein funksjonsdrift, som denne tidsserien direkte måler.}
+
+\addcontentsline{toc}{subsection}{A.6.11 Materialnisjar i 3D-morforommet (5.3)}
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.11-materialnisjar.pdf}}
+\par\addvspace{2pt}
+\anote{Kvar stol blir plotta som eitt punkt i (Breidde, Djupn, Høgde) og fargelagt etter primærmaterialet (n = 936). Sentroidane er klart åtskilde i den vertikale dimensjonen: trestolar (eik, nøttetre, mahogni) sit kring H \msym{≈} 85 cm, metall- og plaststolar kring H \msym{≈} 67 cm. Same fysiske oppgåve, klart ulike geometriske nisjar. Material er ikkje berre ein temporal merkelapp; det er ein geometrisk akse i morforommet.}
+
+\addcontentsline{toc}{subsection}{A.6.12 Nyhetsraten og det tilstøytande moglege (6.5)}
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.12-nyhetsrate.pdf}}
+\par\addvspace{2pt}
+\anote{Vi diskretiserer 3D-morforommet i 5 cm-voksler og teller kor mange voksler kvar 25-årsperiode opnar opp for fyrste gong. Nyhetsraten fell ikkje monotont mot metning slik ein lukka modell ville krevja; han hentar seg inn att i moderne tid (1925–1975, rate 0.5–0.6) når nye material kjem inn. Dette er ein direkte empirisk indikasjon på Kauffmans «det tilstøytande moglege» — ein mekanisme som ingen tidlegare har kunna måle på designartefakt.}
+
+\addcontentsline{toc}{subsection}{A.6.13 Periodesentroidvandring i 3D (4.1)}
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.13-3d-trajektorie.pdf}}
+\par\addvspace{2pt}
+\anote{Sentroiden av kvar 50-årsperiode er ein punkt i (Breidde, Høgde, Djupn). Banelengda i full 3D er 84 cm; netto skift frå start til slutt er 25 cm; tortuositeten er 3.45. Ein tortuositet over 1 tyder at sentroiden vandrar fram og attende — signaturen til eit dynamisk seleksjonslandskap, ikkje monoton funksjonell konvergens. Punktstorleiken kodar djupn, farge kodar tid (n = 1041).}
+
+\addcontentsline{toc}{subsection}{A.6.14 Stilperiodefylogenese ved Ward-klynging (3.4)}
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.14-fylogenese.pdf}}
+\par\addvspace{2pt}
+\anote{Vi reknar ut sentroiden av kvar stilperiode i 4D mesh-trekk-rommet og bygg ein hierarkisk klynge ved Ward-linkage. Resultatet er eit dendrogram som avdekker ein meiningsfull genealogi: rokokko sit nær barokk og renessanse, modernismen har sin eigen gren med funksjonalisme og Bauhaus, og 1800-tals stilane klynger saman. Funksjonen har ingen genealogi — berre forma kan arve frå ei tidlegare form. Dette er ein kvantitativ målbar form-arvs-struktur.}
+
+\addcontentsline{toc}{subsection}{A.6.15 Rekurrensanalyse av periodesentroidar (4.1, 4.4)}
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.15-rekurrens.pdf}}
+\par\addvspace{2pt}
+\anote{Symmetrisk avstandsmatrise over alle 19 25-årsperiodar i full (H, B, D). Mørke celler er like periodar; lyse er fjerne. Det modernistiske brotet etter 1900 viser seg som ei lys L-form i nedre høgre hjørne: ingen periode FØR 1900 liknar nokon periode ETTER 1900. Formhistoria gjentar seg ikkje på tvers av modernismen — eit nytt regime tek over. Vi har ikkje sett denne typen rekurrensanalyse brukt på designhistorie tidlegare.}
+
+\addcontentsline{toc}{subsection}{A.6.16 Tilpassingslandskapet med stabile attraktorar (3.2)}
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.16-fitnesslandskap.pdf}}
+\par\addvspace{2pt}
+\anote{KDE-tettleiken p̂(B, H) over alle stolar (n = 1681) har to klare lokale maksimum: éin ved (B \msym{≈} 50, H \msym{≈} 91) — den tradisjonelle høgrygga stolen — og éin ved (B \msym{≈} 50, H \msym{≈} 45) — den lågare modernistiske stolen. Dei tomme dalane mellom toppane er forbodne regionar i morforommet. Multimodaliteten er direkte støtte til proposisjon 3.2: tilpassingslandskapet har fleire stabile attraktorar, ikkje éin global optimum.}
+
+\addcontentsline{toc}{subsection}{A.6.17 Endringsrate og episodisk diskontinuitet (4.3)}
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.17-endringsrate.pdf}}
+\par\addvspace{2pt}
+\anote{Vi reknar ut Wasserstein-1 distansen mellom suksessive 25-årsperiodar i kvar av (Høgde, Breidde, Djupn) og aggregerer til ein samla rate R = \msym{√}(W\textsubscript{H}² + W\textsubscript{B}² + W\textsubscript{D}²) cm per 25-årssteg (n = 1105 stolar, 17 periodeparar etter krav om minst 10 stolar per bin). Sarle's bimodalitetskoeffisient er BC = 0,44, godt under terskelen 0,555. Streng bimodalitet er ikkje påvist: ratefordelinga er unimodal med ein lang hale. Men dei høgaste episodane er klart åtskilde frå mediananen 17,4 cm/25 år: 1650–1675 (34,0), 1825–1850 (28,7), 1675–1700 (28,3), 1800–1825 (26,2) og 1900–1925 (23,9). Dei stillaste periodane ligg under 13 cm. Proposisjon 4.3 brukar ordet «diskontinuerleg», ikkje «bimodal»: episodane stadfestar det. Det modernistiske brotet er tydeleg i ratane, men det 17. hundreårets stilskifte er endå tydelegare. «Diskontinuerleg» bør forståast som episodisk, ikkje som bimodalt fordelt.}
+
+\addcontentsline{toc}{subsection}{A.6.18 Latente materialsignaturar (2.61)}
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.18-materiallatens.pdf}}
+\par\addvspace{2pt}
+\anote{For kvar 50-årsperiode reknar vi ut sentroiden i (Høgde, Breidde, Djupn) for stolar som inneheld det aktuelle moderne materialet, og avstanden til sentroiden for stolar med utelukkande tre. Kvart panel viser materialets eige punkt-sky lagt over den same lyse bakgrunna av trestolar, slik at ein ser kor lenge det moderne materialet held seg innanfor det treaktige territoriet før det bryt ut. Stål viser signaturen klarast: avstand kring 10 cm i 1900 og 1950, så eit brått sprang til 38 cm i 2000 — ein latensperiode på minst femti år før divergensen. Plast og kryssfiner viser same forløp i mindre dramatisk form (begge under 13 cm i 1950, over 16 cm i 2000). Aluminium har berre eitt observerbart vindauge, 1950, der det ligg ekstremt nær trestolen (7,9 cm) — framleis i latent fase i korpuset. Alle fire moderne material er fyrst geometrisk uskiljelege frå tre, og dei som divergerer, gjer det brått. Materialet ber affordansen lenge før agentane realiserer han.}
+
+\addcontentsline{toc}{subsection}{A.6.19 Det empiriske kraftfeltet i morforommet (3.1, 3.2, 3.3)}
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.19-kraftfelt.pdf}}
+\par\addvspace{2pt}
+\anote{Tilpassingslandskapet er ikkje ein metafor — det er ei empirisk målbar topologi over morforommet. Vi reknar ut den gaussiske kjerne-tettleiken \msym{ρ̂}(B, H) over alle 1\,656 stolar med (Breidde, Høgde) og viser ho som ei fylt høgdekart med konturlinjer. Kraftfeltet \msym{−∇}V \msym{=} \msym{∇}log\,\msym{ρ̂} er overlagt som eit pilfelt på eit regulært rutenett: kvar piltipp peikar mot den næraste haugen i landskapet, slik agenten vil glide om ho fylgjer den lokale gradienten. Tre lokale maksimum vert oppdaga automatisk av eit maximum-filter og namngjevne av den hyppigaste stilperioden i kvar 9-cm-radius: Nyklassisisme (n = 361), Historisme (n = 314) og Modernisme/Midtjahrhundre (n = 170). Den turkise bana frå 1500 til 2025 er sentroiden av kvar 50-årsperiode i korpuset, lagt oppå landskapet som ei historisk vandring: tradisjonen sirklar lenge rundt den klassiske haugen, så glid han ned mot den modernistiske attraktoren etter 1900. Landskapet, gradientane, attraktorane og bana er alle utleidde frå dei same n stolane utan modell, fit eller imposed kategoriar. Proposisjonens sentrale diagram er for fyrste gong ein empirisk målt gjenstand.}
+
+\addcontentsline{toc}{subsection}{A.6.20 Stolatlaset}
+\par\addvspace{2pt}\noindent\centerline{%
+  \includegraphics[width=\linewidth]{fig-A.6.20-stolatlaset.pdf}}
+\par\addvspace{2pt}
+\anote{Specimen-platet til appendikset: 1\,571 europeiske stolar i kronologisk orden, kvar teikna i sine eigne (Breidde, Høgde)-proporsjonar som ein eigen flis i mosaikken. Lesast spalte for spalte (40 spaltar \msym{×} 40 rader, sortert kolonnvis). Fyllfargen i kvar flis er primærmaterialet (tre, stål, kryssfiner, plast, aluminium, anna). Den indre kremfarga forma er stolens faktiske geometriske proporsjonar; ein tynn linje innanfor markerer setehøgda 45 cm; ein kort innvendig stripe peikar mot stolens avvik frå sentroiden av sin eigen 25-årskohort — kvart objekt ber sin individuelle signatur mot peer group. Frå avstand viser mosaikken materialepokane: tre dominerer 1315–1900 som ein nesten samanhengande brun mur; etter 1900 spring det ut ein eksplosjon av rust (stål), turkis (kryssfiner) og gull (plast). Frå nært hald les ein kvar flis som éin verkeleg gjenstand. Ingen har, så vidt vi veit, publisert eit slikt felt-i-felt-syn av eit europeisk møbelkorpus tidlegare.}
+
+\backmatter
+\silentchapter{Etterord}{etterord}
+\begin{widebody}
+Empirien er tufta på eit korpus av om lag 2 300 europeiske stolar (1280–2024). Datasettet tillet kvantitativ testing av formhistoriske hypotesar. Analysen av meshgeometri har synt at sju mesh-avleia trekk aukar den prediktive krafta for stilperiode med ein faktor på over fire samanlikna med katalogdimensjonar.
+
+Overgangen frå prosa til proposisjonsform var ein logisk nødvendigheit. Desimalnummereringa angjev den logiske vekta, og superscript (d, a, t, o, i) indikerer logisk status. Til skilnad frå Wittgensteins original, er kvar proposisjon knytt til eit eksplisitt falsifiseringsvilkår; traktaten er konstruert for å kunne falsifiserast. Dei empiriske testane stadfestar hovudproposisjonane: formrommet er ikkje-uniformt busett; stilperiode er ein effektiv proxy for aggregerte seleksjonstrykk; og landskapet er i uopphøyrleg endring. Funna er robuste på tvers av ulike geometriske representasjonar.
+
+Observert latens i stålillustrasjonen viser at formhistoria er langsamare enn materialhistoria; eit nytt substrat arvar formspråket til det substratet det erstattar, heilt til eigne affordansar pressar det ut i nye regionar.
+
+Traktaten skildrar krefter og posisjonar, ikkje verdiar. Ho kan forklare avstanden i formrommet, men ho kan ikkje felle estetiske domar. Estetikk er transcendent til formsystemet, på same vis som etikk er transcendent til logikken (Wittgenstein). Agenten navigerer; modellen registrerer berre den resulterande posisjonen. Proposisjonane skal erkjennast som ein stige. Dei skal ikkje erstatte handverket, men gjere den intuitive navigasjonen eksplisitt ved å vise agenten kva han allereie gjer.
+
+At teksten kan falsifiserast, er garantien for hennar gyldigheit. Om eitt einaste seleksjonstrykk forklarer all formvariasjon, kollapsar den logiske kjeden. Traktaten er stigen som skal kastast.
+
+Takk til Jan Petter Neverdahl og Hermann Stange for kommentarar under arbeidet.
+
+\end{widebody}
+
+
+\silentchapter{Notatar}{notatar}
+\begin{widebody}
+\theendnotes
+\end{widebody}
+
+\silentchapter{Referansar}{referansar}
+\begin{widebody}
+\refentry{Sullivan, L. H. (1896). The tall office building artistically considered. Lippincott's Magazine, 57, 403–409.}
+\refentry{Thompson, D'A. W. (1917). On growth and form. Cambridge University Press.}
+\refentry{Wright, S. (1932). The roles of mutation, inbreeding, crossbreeding, and selection in evolution. Proc. Sixth Int. Congress of Genetics, 1, 356–366.}
+\refentry{Rosenblueth, A., Wiener, N. \& Bigelow, J. (1943). Behavior, purpose and teleology. Philosophy of Science, 10(1), 18–24.}
+\refentry{Shannon, C. E. (1948). A mathematical theory of communication. Bell System Technical Journal, 27, 379–423.}
+\refentry{Wiener, N. (1948). Cybernetics. MIT Press.}
+\refentry{Turing, A. M. (1950). Computing machinery and intelligence. Mind, 59(236), 433–460.}
+\refentry{Waddington, C. H. (1957). The strategy of the genes. George Allen \& Unwin.}
+\refentry{Kubler, G. (1962). The shape of time. Yale University Press.}
+\refentry{Kuhn, T. S. (1962). The structure of scientific revolutions. University of Chicago Press.}
+\refentry{Raup, D. M. (1966). Geometric analysis of shell coiling. Journal of Paleontology, 40(5), 1178–1190.}
+\refentry{Eldredge, N. \& Gould, S. J. (1972). Punctuated equilibria. I T. J. M. Schopf (Red.), Models in paleobiology, 82–115.}
+\refentry{Stiny, G. \& Gips, J. (1972). Shape grammars and the generative specification of painting and sculpture. Information Processing 71, 1460–1465.}
+\refentry{Gibson, J. J. (1979). The ecological approach to visual perception. Houghton Mifflin.}
+\refentry{Stiny, G. (1980). Introduction to shape and shape grammars. Environment and Planning B, 7(3), 343–351.}
+\refentry{Stiny, G. (1991). The algebras of design. Research in Engineering Design, 2, 171–181.}
+\refentry{Kauffman, S. A. (1993). The origins of order. Oxford University Press.}
+\refentry{Arthur, W. B. (1994). Increasing returns and path dependence in the economy. University of Michigan Press.}
+\refentry{Michl, J. (1995). Form follows WHAT? The modernist notion of function as a carte blanche.}
+\refentry{Odling-Smee, F. J., Laland, K. N. \& Feldman, M. W. (2003). Niche construction. Princeton University Press.}
+\refentry{Hatchuel, A. \& Weil, B. (2003). A new approach of innovative design: An introduction to C-K theory. Proc. ICED 2003.}
+\refentry{Hatchuel, A. \& Weil, B. (2009). C-K design theory: An advanced formulation. Research in Engineering Design, 19(4), 181–192.}
+\refentry{Stiny, G. (2006). Shape: Talking about seeing and doing. MIT Press.}
+\refentry{Mitteroecker, P. \& Huttegger, S. M. (2009). The concept of morphospaces in evolutionary and developmental biology. Biological Theory, 4(1), 54–67.}
+\refentry{Fields, C. \& Levin, M. (2022). Competency in navigating arbitrary spaces. Entropy, 24(6), 819.}
+\refentry{Levin, M. (2022). Technological approach to mind everywhere. Frontiers in Systems Neuroscience, 16, 768201.}
+\refentry{Levin, M. (2025). Living things are not machines (also, they totally are). Noema Magazine.}
+\end{widebody}
+
+\end{document}
