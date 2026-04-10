@@ -17,6 +17,19 @@
 
 \prop{1.32}{d}{Morforommet er ein algebra lukka under union, differanse og transformasjon. Algebraen definerer kva operasjonar som er moglege.}
 
+\propcont{Lat S vere ei mengd av former i eit euklidsk rom E\textsuperscript{n}, utstyrt med den euklidske transformasjonsgruppa Trans(E\textsuperscript{n}):}
+
+\begin{center}\small
+\begin{tabular}{l@{\hspace{6mm}}l}
+s\textsubscript{1} + s\textsubscript{2}   & union (sum) \\
+s\textsubscript{1} \msym{−} s\textsubscript{2}   & differanse \\
+s\textsubscript{1} \msym{·} s\textsubscript{2} := s\textsubscript{1} \msym{−} (s\textsubscript{1} \msym{−} s\textsubscript{2}) & snitt (avleidd) \\
+\msym{τ}(a) \msym{≤} s, \quad \msym{τ} \msym{∈} Trans(E\textsuperscript{n}) & innleiring \\
+\end{tabular}
+\end{center}
+
+\propcont{Ei \textbf{innleiring} av a i s er ein transformasjon som plasserer a i s, eventuelt rotert, flytta eller skalert. Innleiringa er ein eigenskap ved den noverande forma, uavhengig av korleis ho vart konstruert.}
+
 \prop{1.4}{d}{Formrommet deler seg i tre regionar: busette, opne og forbodne.}
 
 \prop{1.41}{o}{Dei busette regionane er det historiske arkivet. Dei fungerer som ankerpunkt; tyngda veks med okkupasjonstid. Uavhengig konvergens provar at optimumet er reelt.}
@@ -26,6 +39,18 @@
 \prop{1.43}{d}{Dei forbodne regionane er utelukka av materielle, strukturelle eller energetiske vilkår. Forbodet følgjer vilkåra, ikkje regionen. Eit materialskifte kan opne ein forboden region.}
 
 \prop{1.44}{d}{Dei tre regionane utgjer ein epistemisk partisjon: det kjende (K), det tenkelege ukjende (C\msym{∖}K), og det utenkjelege. Grensene er epistemiske, ikkje ontologiske.}
+
+\propcont{C er konseptrommet: alle former som er tenkelege men ikkje avgjorte. K er kunnskapsrommet: alle former som er kjende å verke eller svikte. Design er rørsla mellom dei:}
+
+\begin{center}\small
+\begin{tabular}{l@{\hspace{4mm}}l@{\hspace{4mm}}l}
+\textbf{Operator} & \textbf{Retning} & \textbf{Verknad} \\[2pt]
+C\msym{→}C & partisjon & konseptet vert spesifisert \\
+C\msym{→}K & realisering & konseptet vert avgjort \\
+K\msym{→}K & deduksjon & ny kunnskap frå eksisterande \\
+K\msym{→}C & konjunksjon & ny kunnskap opnar nye konsept \\
+\end{tabular}
+\end{center}
 
 \silentchapter{2 Ikkje alle posisjonar er like sannsynlege}{ikkje alle posisjonar er like sannsynlege}
 
@@ -85,6 +110,16 @@
 
 \prop{5.11}{d}{Ein \textbf{agent} er ein operator definert av trippelet: måltilstand, avstandsmåling, justeringsmekanisme. Agens krev berre funksjonell organisering; verken medvit, intensjon eller nervesystem. Informasjonsflyt skil agentar frå passiv materie.}
 
+\propcont{Formelt: Agent A := (g, d, \msym{δ}). Det finst ein Lyapunov-funksjon V slik at:}
+
+\begin{center}\small
+\begin{tabular}{l@{\hspace{4mm}}l}
+V(g) = 0 & målet er nullpunktet \\
+V(x) > 0 for x \msym{≠} g & alt anna er avstand \\
+V er ikkje-aukande langs x\textsubscript{n+1} = \msym{δ}(x\textsubscript{n}) & systemet nærmar seg målet \\
+\end{tabular}
+\end{center}
+
 \prop{5.12}{o}{Agens er stratifisert. Termostaten og arkitekten skil seg berre i navigasjonskompleksitet.}
 
 \prop{5.13}{t}{Agenten responderer på gradienten i landskapet, ikkje på forma. Han oppfinn ikkje målet; han oppdagar det. Navigasjon krev berre den lokale gradienten. Lokal kompetanse produserer global manifestasjon.}
@@ -94,6 +129,17 @@
 \prop{5.21}{t}{Lyskjegla dikterer oppløysinga til formrommet. Agenten persiperer affordansar, ikkje former. Ein affordans er den lokale asymmetrien innanfor lyskjegla. Utviding aktualiserer latente affordansar; innsnevring deaktiverer reelle.}
 
 \prop{5.3}{d}{Agentens essensielle funksjon er manipulering av formgeometrien. Konfigurasjonar lukka under union og snitt utgjer ein \textbf{formalgebra}; \textbf{formgrammatikken} utfører diskrete overgangar i denne geometrien. Reglar fyrer på innleiring; inndatageometrien er einaste premiss.}
+
+\propcont{Ein formgrammatikk er eit trippel SG = (S, R, \msym{ω}) der R = \{r\textsubscript{i} : (a\textsubscript{i}, b\textsubscript{i})\}:}
+
+\begin{center}\small
+\begin{tabular}{l@{\hspace{4mm}}l}
+\textbf{Regelapplikasjon} & s \msym{→} (s \msym{−} \msym{τ}(a\textsubscript{i})) + \msym{τ}(b\textsubscript{i}) \\[2pt]
+\textbf{Språk} & L(SG) = \{s \msym{∈} S : \msym{ω} \msym{→}* s\} \\[2pt]
+\textbf{Fyring} & regelen fyrer for kvar innleiring av a\textsubscript{i} i s \\
+\textbf{Premiss} & berre noverande geometri; ikkje konstruksjonshistorie \\
+\end{tabular}
+\end{center}
 
 \prop{5.31}{t}{Grammatikkoperasjonen er ein C\msym{→}C-partisjon: ho utvidar konseptet. Realisering er ein C\msym{→}K-operasjon: ho avgjer det. Grammatikken definerer moglegheitsrommet; landskapet fastset trajektorien. Agenten forløyser konfigurasjonen som mest radikalt reduserer lokal spenning.}
 
@@ -131,9 +177,7 @@
 
 \prop{6.5}{t}{Inga form er endeleg. Kvar balanse vert med tida suboptimal. Berre den generative strukturen varer: formrom, trykk, landskap, agentar. Formene er flyktige spor; grammatikken er stabil.}
 
-\prop{6.6}{o}{Rammeverket ytrar ingen ontologisk påstand. Det er eit koordinatsystem. Agenten er innbakt i formverda han skildrar; det finst inga utside.}
-
-\prop{6.7}{o}{Formverda er det tilfellet som verkar. Navigasjonen held fram.}
+\prop{6.6}{o}{Formverda er det tilfellet som verkar. Navigasjonen held fram.}
 
 \silentchapter{7 Om det som ikkje lèt seg seie}{om det som ikkje lèt seg seie}
 \prop{7}{}{Om det som ikkje lèt seg seie, lyt formgjevaren forme.}
