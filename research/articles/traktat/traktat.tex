@@ -172,11 +172,19 @@
 %   the text margin and wraps there too — a perfect rectangle.
 %   The number itself is rendered in a heavier weight so it stands out
 %   against the regular body text.
+% Regular proposition
 \newcommand{\prop}[3]{%
   \par\addvspace{6pt}%
   \noindent\llap{\makebox[\propnumwidth][l]{\textbf{#1}\textsuperscript{\textit{#2}}}\hspace{\propnumgap}}%
   #3\par%
   \addvspace{2pt}%
+}
+% Main proposition (integer numbers 1–7): larger, medium-bold
+\newcommand{\mainprop}[3]{%
+  \par\addvspace{14pt}%
+  \noindent\llap{\makebox[\propnumwidth][l]{{\fontsize{12.5}{14}\selectfont\textbf{#1}}\textsuperscript{\textit{#2}}}\hspace{\propnumgap}}%
+  {\fontsize{12.5}{14}\selectfont #3}\par%
+  \addvspace{6pt}%
 }
 
 % Continuation paragraph — plain paragraph at the body column (no number).
