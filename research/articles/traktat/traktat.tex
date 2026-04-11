@@ -107,6 +107,11 @@
   \markboth{#2}{}%
   \addcontentsline{toc}{chapter}{#1}%
 }
+\newcommand{\flowchapter}[2]{%
+  \par\addvspace{18pt}%
+  \markboth{#2}{}%
+  \addcontentsline{toc}{chapter}{#1}%
+}
 
 % Redefine \tableofcontents to skip the centred "Innhald" title and to
 % emit the entire TOC at \footnotesize so it fits compactly on one page.
@@ -311,31 +316,49 @@
 % Proposisjonar
 \input{proposisjonar}
 
-% Referansar
+% Etterord
+\silentchapter{Etterord}{etterord}
+\begin{widebody}
+\begin{overgang}Éin stol\end{overgang}
+
+Thonet nr.~14 (1859) okkuperer eitt punkt i morforommet. Klassen er definert av affordansestrukturen: objektet tilbyr sitting, stabling og transport til ein kafé, ein arbeidar og eit dampskip.
+
+Seleksjonstrykka verkar samstundes: materialkostnad (bøk er billeg), produksjonshastigheit (damppressing eliminerer kompleks samanføying), transportvolum (seks delar, 36 stolar per kubikkmeter), og sosial lesbarheit (visuell lettheit i eit offentleg rom). Kvart trykk avgrensar kvar forma \textit{ikkje} kan vere. Det som står att, er nr.~14.
+
+Bøketreet er ein null-ordens agent: det vetoar sprø bøyingar og gjev resonans til mjuke kurver gjennom fiberretninga. Dampen er ein agent som opnar ein forboden region; buktingar under 90\textdegree{} vert moglege gjennom temporær endring av materialaffordansen. Thonet navigerer med ein lyskjegle som rommar minst fire aksar samstundes: kostnad, monteringstid, transportvolum og visuell karakter. Ein agent med omsorg for berre éin akse ville produsert ein stol som sviktar under dei andre.
+
+Tanken «ein stol av bøygd heiltre» var i C før 1830. Thonet sine eksperiment flytta han til K. Realiseringa opna nye regionar i C: kva andre former kan dampbøygd tre ta? Det tilstøytande moglege ekspanderte. Stolen har vore i uavbroten produksjon i over 160 år; ho sit på ein bratt haug der kvart avsteg kostar.
+
+Ettertida kallar nr.~14 ein «wienstol» og plasserer han i kategorien historisme. Stilkategorien forklarer ingenting. Stolen vart ikkje forma av historismen; historismen er det statistiske sporet av dei same seleksjonstrykka som forma stolen.
+
+\end{widebody}
+
+% Referansar (nummererte for å korrespondere med superscript i proposisjonane)
 \silentchapter{Referansar}{referansar}
 \begin{widebody}
-\refentry{Sullivan, L. H. (1896). The tall office building artistically considered. \textit{Lippincott's Magazine}, 57, 403--409.}
-\refentry{Thompson, D'A. W. (1917). \textit{On growth and form}. Cambridge University Press.}
-\refentry{Wright, S. (1932). The roles of mutation, inbreeding, crossbreeding, and selection in evolution. \textit{Proc. Sixth Int. Congress of Genetics}, 1, 356--366.}
-\refentry{Rosenblueth, A., Wiener, N. \& Bigelow, J. (1943). Behavior, purpose and teleology. \textit{Philosophy of Science}, 10(1), 18--24.}
-\refentry{Wiener, N. (1948). \textit{Cybernetics}. MIT Press.}
-\refentry{Waddington, C. H. (1957). \textit{The strategy of the genes}. George Allen \& Unwin.}
-\refentry{Kubler, G. (1962). \textit{The shape of time}. Yale University Press.}
-\refentry{Raup, D. M. (1966). Geometric analysis of shell coiling. \textit{Journal of Paleontology}, 40(5), 1178--1190.}
-\refentry{Eldredge, N. \& Gould, S. J. (1972). Punctuated equilibria. I T. J. M. Schopf (Red.), \textit{Models in paleobiology}, 82--115.}
-\refentry{Stiny, G. \& Gips, J. (1972). Shape grammars and the generative specification of painting and sculpture. \textit{Information Processing 71}, 1460--1465.}
-\refentry{Gibson, J. J. (1979). \textit{The ecological approach to visual perception}. Houghton Mifflin.}
-\refentry{Stiny, G. (1991). The algebras of design. \textit{Research in Engineering Design}, 2, 171--181.}
-\refentry{Kauffman, S. A. (1993). \textit{The origins of order}. Oxford University Press.}
-\refentry{Arthur, W. B. (1994). \textit{Increasing returns and path dependence in the economy}. University of Michigan Press.}
-\refentry{Michl, J. (1995). Form follows WHAT? The modernist notion of function as a carte blanche.}
-\refentry{Hatchuel, A. \& Weil, B. (2003). A new approach of innovative design: An introduction to C-K theory. \textit{Proc. ICED 2003}.}
-\refentry{Stiny, G. (2006). \textit{Shape: Talking about seeing and doing}. MIT Press.}
-\refentry{Hatchuel, A. \& Weil, B. (2009). C-K design theory: An advanced formulation. \textit{Research in Engineering Design}, 19(4), 181--192.}
-\refentry{Mitteroecker, P. \& Huttegger, S. M. (2009). The concept of morphospaces in evolutionary and developmental biology. \textit{Biological Theory}, 4(1), 54--67.}
-\refentry{Fields, C. \& Levin, M. (2022). Competency in navigating arbitrary spaces. \textit{Entropy}, 24(6), 819.}
-\refentry{Levin, M. (2022). Technological approach to mind everywhere. \textit{Frontiers in Systems Neuroscience}, 16, 768201.}
-\refentry{Doctor, T., Wakefield, E., Pavlic, T. P. \& Levin, M. (2024). Biology, Buddhism, and AI: Care as the driver of intelligence. \textit{Entropy}, 26(4), 352.}
+\refentry{[1] Sullivan, L. H. (1896). The tall office building artistically considered. \textit{Lippincott's Magazine}, 57, 403--409.}
+\refentry{[2] Thompson, D'A. W. (1917). \textit{On growth and form}. Cambridge University Press.}
+\refentry{[3] Wright, S. (1932). The roles of mutation, inbreeding, crossbreeding, and selection in evolution. \textit{Proc. Sixth Int. Congress of Genetics}, 1, 356--366.}
+\refentry{[4] Rosenblueth, A., Wiener, N. \& Bigelow, J. (1943). Behavior, purpose and teleology. \textit{Philosophy of Science}, 10(1), 18--24.}
+\refentry{[5] Wiener, N. (1948). \textit{Cybernetics}. MIT Press.}
+\refentry{[6] Waddington, C. H. (1957). \textit{The strategy of the genes}. George Allen \& Unwin.}
+\refentry{[7] Simon, H. A. (1962). The architecture of complexity. \textit{Proc. American Philosophical Society}, 106(6), 467--482.}
+\refentry{[8] Kubler, G. (1962). \textit{The shape of time}. Yale University Press.}
+\refentry{[9] Raup, D. M. (1966). Geometric analysis of shell coiling. \textit{Journal of Paleontology}, 40(5), 1178--1190.}
+\refentry{[10] Stiny, G. \& Gips, J. (1972). Shape grammars and the generative specification of painting and sculpture. \textit{Information Processing 71}, 1460--1465.}
+\refentry{[11] Gibson, J. J. (1979). \textit{The ecological approach to visual perception}. Houghton Mifflin.}
+\refentry{[12] Kauffman, S. A. (1993). \textit{The origins of order}. Oxford University Press.}
+\refentry{[13] Arthur, W. B. (1994). \textit{Increasing returns and path dependence in the economy}. University of Michigan Press.}
+\refentry{[14] Michl, J. (1995). Form follows WHAT? The modernist notion of function as a carte blanche. \textit{1. Designforum Finland Magazine}, 1.}
+\refentry{[15] Hatchuel, A. \& Weil, B. (2003). A new approach of innovative design: An introduction to C-K theory. \textit{Proc. ICED 2003}.}
+\refentry{[16] Hatchuel, A. \& Weil, B. (2009). C-K design theory: An advanced formulation. \textit{Research in Engineering Design}, 19(4), 181--192.}
+\refentry{[17] Stiny, G. (2006). \textit{Shape: Talking about seeing and doing}. MIT Press.}
+\refentry{[18] Odling-Smee, F. J., Laland, K. N. \& Feldman, M. W. (2003). \textit{Niche construction}. Princeton University Press.}
+\refentry{[19] Mitteroecker, P. \& Huttegger, S. M. (2009). The concept of morphospaces in evolutionary and developmental biology. \textit{Biological Theory}, 4(1), 54--67.}
+\refentry{[20] Fields, C. \& Levin, M. (2022). Competency in navigating arbitrary spaces. \textit{Entropy}, 24(6), 819.}
+\refentry{[21] Levin, M. (2022). Technological approach to mind everywhere. \textit{Frontiers in Systems Neuroscience}, 16, 768201.}
+\refentry{[22] Doctor, T., Wakefield, E., Pavlic, T. P. \& Levin, M. (2024). Biology, Buddhism, and AI: Care as the driver of intelligence. \textit{Entropy}, 26(4), 352.}
+\refentry{[23] Levin, M. (2025). Living things are not machines (also, they totally are). \textit{Noema Magazine}.}
 \end{widebody}
 
 \end{document}
