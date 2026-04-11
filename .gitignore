@@ -20,7 +20,13 @@ research/book/build_latex/
 *.npz
 *_prescale.glb
 
+# Large reference files (books, PDFs over 50MB)
+research/references/**/*.pdf
+
 # Tool configs
 .claude/
 .gemini/
 research/temp/
+.env
+*_local.env
+*env.local
