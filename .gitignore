@@ -1,14 +1,26 @@
+# Environment
 .env
+.env*.local
+.vercel
+
+# Python
 __pycache__/
 *.pyc
 venv/
 .venv/
-*.log
-.claude/
-.gemini/
+
+# Node
 node_modules/
+
+# LaTeX build artifacts
+research/book/build_latex/
+*.synctex.gz
+
+# Large binaries
 *.npz
 *_prescale.glb
-.vercel
-.env*.local
-referansar/
+
+# Tool configs
+.claude/
+.gemini/
+research/temp/
