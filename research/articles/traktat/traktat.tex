@@ -1,0 +1,341 @@
+\documentclass[10pt,oneside]{book}
+
+% Page geometry — 125 × 200 mm (Gyldendal 1999 Tractatus format).
+% Wide LEFT margin holds the proposition numbers (marginal numbering style):
+% numbers are \llap'd into this margin so the body text block is a clean
+% rectangle with all lines (including continuation) flush left at the body
+% column. Right margin is narrow (no marginalia on the right).
+% Top includes the running header band; footskip minimal (no footer text).
+\usepackage[
+  paperwidth=125mm,
+  paperheight=200mm,
+  top=20mm,
+  bottom=18mm,
+  left=28mm,
+  right=12mm,
+  headheight=12pt,
+  headsep=6mm,
+  footskip=8mm,
+]{geometry}
+
+% UTF-8 + Norwegian (nynorsk)
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage[variant=nynorsk]{norwegian}
+
+% Body font — the digibok is set in Sabon. EB Garamond is the closest
+% free serif with the same general feel; fall back to TeX Gyre Pagella.
+\IfFontExistsTF{EB Garamond}{
+  \setmainfont{EB Garamond}[
+    Numbers={Lining,Proportional},
+    SmallCapsFeatures={LetterSpace=4},
+  ]
+}{
+  \setmainfont{TeX Gyre Pagella}
+}
+% Body size 10.5 pt on 12.5 pt leading (close to Sabon 10.5/12 in the digibok)
+\renewcommand{\normalsize}{\fontsize{10.5}{12.5}\selectfont}
+\normalsize
+
+% Better line breaking (must be loaded after font setup)
+\usepackage{microtype}
+\usepackage{endnotes}
+\let\footnote=\endnote
+
+% Math-symbol fallback font — EB Garamond lacks ∀ ∃ ∈ ⊆ ⊃ ≠ etc.,
+% so the Python preprocessor wraps them in \msym{...} which uses
+% Cambria Math (alltid present on Windows).
+\newfontfamily{\mathfbfont}{Cambria Math}[Scale=0.95]
+\newcommand{\msym}[1]{{\mathfbfont #1}}
+
+% Headings — small caps, centred, generous spacing
+\usepackage{titlesec}
+\titleformat{\chapter}[block]
+  {\normalfont\centering\scshape\addfontfeature{LetterSpace=10}\large}
+  {}{0em}{\MakeLowercase}
+\titlespacing*{\chapter}{0pt}{2.5em}{2.5em}
+
+\titleformat{\section}[block]
+  {\normalfont\centering\scshape\addfontfeature{LetterSpace=6}\normalsize}
+  {}{0em}{\MakeLowercase}
+\titlespacing*{\section}{0pt}{2.5em}{1.5em}
+
+\titleformat{\subsection}[block]
+  {\normalfont\scshape\addfontfeature{LetterSpace=2}\small}
+  {}{0em}{\MakeLowercase}
+\titlespacing*{\subsection}{0pt}{1.5em}{0.8em}
+
+% Hide chapter numbers (chapters are titled by name)
+\renewcommand{\thechapter}{}
+
+% Running headers — chapter title at left, page number at right, thin rule.
+% The header rule is extended LEFT by 16 mm via \fancyheadoffset so it
+% spans the full content width INCLUDING the marginal number column
+% (otherwise the rule looks narrow because it's anchored to the body
+% text block which sits to the right of the number margin).
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\scshape\leftmark}  % chapter title at left on every page
+\fancyhead[R]{\small\thepage}           % page number at right on every page
+\fancyheadoffset[L]{16mm}               % extend header left over the number margin
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+% plain style (chapter-opening pages): identical to fancy (full header).
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyhead[L]{\small\scshape\leftmark}
+  \fancyhead[R]{\small\thepage}
+  \fancyheadoffset[L]{16mm}
+  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+% title style — used ONLY on the title page: nothing in the header at all.
+\fancypagestyle{titlepage}{
+  \fancyhf{}
+  \fancyheadoffset[L]{0pt}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+% \silentchapter{display name}{lowercase mark}
+%   Starts a new page, sets the running mark, adds a TOC entry, and uses the
+%   plain pagestyle for the opening page — but DOES NOT emit a centred chapter
+%   title (the chapter is identified by the running header and by its content).
+\newcommand{\silentchapter}[2]{%
+  \clearpage
+  \markboth{#2}{}%
+  \addcontentsline{toc}{chapter}{#1}%
+}
+
+% Redefine \tableofcontents to skip the centred "Innhald" title and to
+% emit the entire TOC at \footnotesize so it fits compactly on one page.
+\makeatletter
+\renewcommand\tableofcontents{%
+  \markboth{innhald}{}%
+  \begingroup\footnotesize
+  \@starttoc{toc}%
+  \endgroup
+}
+% Very compact chapter-level TOC entries
+\renewcommand*\l@chapter[2]{%
+  \ifnum \c@tocdepth >\m@ne
+    \vskip 0pt%
+    \setlength\@tempdima{1.5em}%
+    \begingroup
+      \footnotesize
+      \parindent \z@ \rightskip \@pnumwidth
+      \parfillskip -\@pnumwidth
+      \leavevmode \normalfont
+      \advance\leftskip\@tempdima
+      \hskip -\leftskip
+      #1\nobreak\leaders\hbox{$\m@th\mkern \@dotsep mu\hbox{.}\mkern \@dotsep mu$}\hfill
+      \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
+    \endgroup
+  \fi}
+% Compact section / subsection entries — tight indents.
+% Font size is set via \footnotesize on the entire TOC (see \tableofcontents
+% redefinition above), so the entries inherit it.
+\renewcommand*\l@section{\@dottedtocline{1}{1.0em}{2.0em}}
+\renewcommand*\l@subsection{\@dottedtocline{2}{3.0em}{2.6em}}
+\makeatother
+
+% ─── Proposition environment ──────────────────────────────────────────────
+%
+% \prop{1.21}{d}{Body text..\footnote{Udelelegheit tyder her at vidare dekomponering øydelegg objektets kausale funksjon i den gjevne lyskjegla.}.}
+%   ⇒  number sits in the LEFT MARGIN (\llap'd outside the text block);
+%      body text fills the entire text block as a clean justified rectangle;
+%      continuation lines wrap to the body column (= text margin).
+%
+% This is the Gyldendal 1999 Tractatus / Töpfer marginal-numbering layout:
+% the body text is a single uniform column and the proposition numbers hang
+% out into the white space to the left.
+%
+% Numbers in the digibok appear in the same weight as the body (regular,
+% not bold). The status letter is rendered as an italic superscript right
+% after the number.
+\usepackage{calc}
+\newlength{\propnumwidth}
+\setlength{\propnumwidth}{13mm}  % column reserved for the number itself
+\newlength{\propnumgap}
+\setlength{\propnumgap}{2mm}     % gap between number column and body text
+
+% \prop{num}{status}{body}
+%   The number is placed in a left-aligned 13 mm box, then a 2 mm gap,
+%   and the whole 15 mm slug is \llap'd into the LEFT margin so its right
+%   edge sits flush against the text-block left edge. Body text starts at
+%   the text margin and wraps there too — a perfect rectangle.
+%   The number itself is rendered in a heavier weight so it stands out
+%   against the regular body text.
+\newcommand{\prop}[3]{%
+  \par\addvspace{6pt}%
+  \noindent\llap{\makebox[\propnumwidth][l]{\textbf{#1}\textsuperscript{\textit{#2}}}\hspace{\propnumgap}}%
+  #3\par%
+  \addvspace{2pt}%
+}
+
+% Continuation paragraph — plain paragraph at the body column (no number).
+\newcommand{\propcont}[1]{%
+  \par\addvspace{3pt}%
+  \noindent #1\par%
+}
+
+% Italic transition between chapters
+\newenvironment{overgang}{%
+  \par\addvspace{12pt}%
+  \begingroup\itshape\noindent
+}{%
+  \endgroup\par\addvspace{12pt}%
+}
+
+% Glossary entries — bold term, regular body, with breathing room
+% between entries. Spans up to two pages comfortably.
+\newenvironment{ordliste}{%
+  \begingroup\small\setlength{\parskip}{2pt plus 0.6pt}%
+  \linespread{0.97}\selectfont
+}{%
+  \endgroup
+}
+\newcommand{\ordlisteentry}[2]{%
+  \par\addvspace{2.5pt}%
+  \noindent\textbf{#1:} #2\par%
+}
+
+% Compact Føreord body — small font, very tight parskip and linespread
+% so the foreword fits on a single page.
+\newenvironment{foreordbody}{%
+  \begingroup\small\setlength{\parskip}{0.5pt plus 0.2pt}%
+  \linespread{0.90}\selectfont
+}{%
+  \endgroup
+}
+
+% A.6.x explanatory body text — slightly smaller, tight line spacing
+% so each A.6.x entry (heading + figure + explanation) fits compactly.
+\newcommand{\anote}[1]{%
+  \par\addvspace{1pt}%
+  {\footnotesize\linespread{0.93}\selectfont\noindent #1\par}%
+  \addvspace{1pt}%
+}
+
+% Reference entries — very compact, tight line spacing, hanging indent.
+% Designed to fit ~30 entries on a single page.
+\newcommand{\refentry}[1]{%
+  \par\addvspace{0pt}%
+  \begingroup\footnotesize\linespread{0.92}\selectfont
+  \noindent\hangindent=4mm\hangafter=1 #1\par%
+  \endgroup
+}
+
+% Figures — centred, max width = text width
+\usepackage{graphicx}
+\graphicspath{{../figures/}{../analysis/figures/}}
+\usepackage{caption}
+\captionsetup{
+  font={small,it},
+  labelformat=empty,
+  justification=centering,
+  skip=4pt,
+}
+\usepackage{float}
+
+% Formula display blocks (for D4, D6, etc.) — monospace, small left indent
+\newenvironment{formelblokk}{%
+  \par\addvspace{4pt}%
+  \begingroup\ttfamily\small\leftskip=4mm\noindent
+}{%
+  \endgroup\par\addvspace{4pt}%
+}
+
+% Avoid widows/orphans
+\widowpenalty=10000
+\clubpenalty=10000
+
+% Body paragraph defaults — tight for the small page
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt plus 0.6pt minus 0.4pt}
+\linespread{1.0}
+
+% Wide environment for back-matter sections (Etterord, Referansar) that
+% should fill the full content width including the 16 mm marginal number
+% column. Pulls the left edge 16 mm to the left of the body block.
+\usepackage{changepage}
+\newenvironment{widebody}{%
+  \begin{adjustwidth}{-16mm}{0mm}%
+}{%
+  \end{adjustwidth}%
+}
+
+% Full-bleed cover page support — image at exact paper size, title overlaid.
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
+\begin{document}
+
+% Tittelside
+\thispagestyle{titlepage}
+\markboth{}{}
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor=north west, inner sep=0] at ([xshift=12mm, yshift=-18mm]current page.north west) {%
+    {\fontsize{36}{40}\selectfont\bfseries FORMLÆRE}%
+  };
+  \node[anchor=north west, inner sep=0] at ([xshift=12mm, yshift=-32mm]current page.north west) {%
+    {\large\itshape Proposisjonar}%
+  };
+\end{tikzpicture}
+\clearpage
+
+% Ordliste
+\silentchapter{Ordliste}{ordliste}
+\begin{widebody}
+\begin{ordliste}
+\ordlisteentry{Affordanse}{Operasjonane eit materiale tillèt og hindrar (Gibson, 1979). Avgjer kva formoperasjonar som er moglege. [2.2]}
+\ordlisteentry{Agent}{Eit system definert av trippelet (mål, måling, justering). Krev berre organisering; verken medvit, intensjon eller nervesystem (Rosenblueth et al., 1943; Wiener, 1948). [5.11]}
+\ordlisteentry{C (tankerommet)}{Alle former som er tenkelege men ikkje avgjorte. Svarar til dei opne regionane i morforommet. [1.44]}
+\ordlisteentry{Formalgebra}{Mengda av former lukka under union, differanse og transformasjon. Grunnlaget for formgrammatikken. [1.32]}
+\ordlisteentry{Formgrammatikk}{Trippelet SG = (S, R, \msym{ω}). Reglar som opererer under innleiring; berre den noverande forma avgjer kva som fyrer. [5.3]}
+\ordlisteentry{Formrom}{Mengda av alle moglege konfigurasjonar innanfor ein klasse. Eit rom der kvar akse er ein målbar eigenskap (Raup, 1966). [1.3]}
+\ordlisteentry{Innleiring}{Transformasjonen som viser at éi form finst i ei anna. Avgjer kva grammatikkreglar som kan fyre. [1.32]}
+\ordlisteentry{K (kunnskapsrommet)}{Alle former som er kjende å verke eller svikte. Svarar til dei busette og stadfesta forbodne regionane. [1.44]}
+\ordlisteentry{Kanalisering}{Robustheit mot forstyrringar. Bratte dalveggar = stabil form (Waddington, 1957). [3.2]}
+\ordlisteentry{Klasse}{Ei gruppe objekt som deler same affordansestruktur: dei tilbyr same konstellasjon av operasjonar til same konstellasjon av agentar. [1.31]}
+\ordlisteentry{Kognitiv lyskjegle}{Delmengda av formrommet agenten kan representere og manipulere (Fields \& Levin, 2022). [5.2]}
+\ordlisteentry{Multiskala-kompetanse}{Agens opererer samstundes på fleire skalaer, kvar med si eiga lyskjegle og sine eigne grammatikkreglar (Levin, 2022). [6.12]}
+\ordlisteentry{Omsorg}{Mengda av aksar i formrommet agenten aktivt justerer for. Omsorg er intelligensens innhald; intelligens er omsorgas form. [5.6, 5.61]}
+\ordlisteentry{Seleksjonstrykk}{Ein gradient som endrar sannsynsfordelinga over formrommet (Wright, 1932). [2.1]}
+\ordlisteentry{Substrat}{Det fysiske, algoritmiske eller sosiale systemet som realiserer agensen. Fungerer som ein null-ordens agent (Levin, 2022). [5.4]}
+\ordlisteentry{Tilpassingslandskap}{Vektorsummen av alle verksame seleksjonstrykk over formrommet (Wright, 1932; Waddington, 1957). [3.1]}
+\end{ordliste}
+\end{widebody}
+
+% Proposisjonar
+\input{proposisjonar}
+
+% Referansar
+\silentchapter{Referansar}{referansar}
+\begin{widebody}
+\refentry{Sullivan, L. H. (1896). The tall office building artistically considered. \textit{Lippincott's Magazine}, 57, 403--409.}
+\refentry{Thompson, D'A. W. (1917). \textit{On growth and form}. Cambridge University Press.}
+\refentry{Wright, S. (1932). The roles of mutation, inbreeding, crossbreeding, and selection in evolution. \textit{Proc. Sixth Int. Congress of Genetics}, 1, 356--366.}
+\refentry{Rosenblueth, A., Wiener, N. \& Bigelow, J. (1943). Behavior, purpose and teleology. \textit{Philosophy of Science}, 10(1), 18--24.}
+\refentry{Wiener, N. (1948). \textit{Cybernetics}. MIT Press.}
+\refentry{Waddington, C. H. (1957). \textit{The strategy of the genes}. George Allen \& Unwin.}
+\refentry{Kubler, G. (1962). \textit{The shape of time}. Yale University Press.}
+\refentry{Raup, D. M. (1966). Geometric analysis of shell coiling. \textit{Journal of Paleontology}, 40(5), 1178--1190.}
+\refentry{Eldredge, N. \& Gould, S. J. (1972). Punctuated equilibria. I T. J. M. Schopf (Red.), \textit{Models in paleobiology}, 82--115.}
+\refentry{Stiny, G. \& Gips, J. (1972). Shape grammars and the generative specification of painting and sculpture. \textit{Information Processing 71}, 1460--1465.}
+\refentry{Gibson, J. J. (1979). \textit{The ecological approach to visual perception}. Houghton Mifflin.}
+\refentry{Stiny, G. (1991). The algebras of design. \textit{Research in Engineering Design}, 2, 171--181.}
+\refentry{Kauffman, S. A. (1993). \textit{The origins of order}. Oxford University Press.}
+\refentry{Arthur, W. B. (1994). \textit{Increasing returns and path dependence in the economy}. University of Michigan Press.}
+\refentry{Michl, J. (1995). Form follows WHAT? The modernist notion of function as a carte blanche.}
+\refentry{Hatchuel, A. \& Weil, B. (2003). A new approach of innovative design: An introduction to C-K theory. \textit{Proc. ICED 2003}.}
+\refentry{Stiny, G. (2006). \textit{Shape: Talking about seeing and doing}. MIT Press.}
+\refentry{Hatchuel, A. \& Weil, B. (2009). C-K design theory: An advanced formulation. \textit{Research in Engineering Design}, 19(4), 181--192.}
+\refentry{Mitteroecker, P. \& Huttegger, S. M. (2009). The concept of morphospaces in evolutionary and developmental biology. \textit{Biological Theory}, 4(1), 54--67.}
+\refentry{Fields, C. \& Levin, M. (2022). Competency in navigating arbitrary spaces. \textit{Entropy}, 24(6), 819.}
+\refentry{Levin, M. (2022). Technological approach to mind everywhere. \textit{Frontiers in Systems Neuroscience}, 16, 768201.}
+\refentry{Doctor, T., Wakefield, E., Pavlic, T. P. \& Levin, M. (2024). Biology, Buddhism, and AI: Care as the driver of intelligence. \textit{Entropy}, 26(4), 352.}
+\end{widebody}
+
+\end{document}
