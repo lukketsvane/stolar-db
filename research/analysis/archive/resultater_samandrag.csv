@@ -1,9 +1,0 @@
-test,variabel,resultat,status
-P5.1 Brownsk rørsle avvist,H/W,Helling ~0 (ikkje 0.5),stadfesta
-P2.61o Prediktorhierarki,Høgde,stil MI=0.598 > mat MI=0.057,stadfesta (proxy-effekt)
-OU-attraktor,H,"μ=84.1, T½=35 år, R²=0.18",stadfesta
-OU-attraktor,W,"μ=56.5, T½=21 år, R²=0.01",stadfesta
-OU-attraktor,D,"μ=55.0, T½=25 år, R²=0.03",stadfesta
-OU-attraktor,HW,"μ=1.6, T½=16 år, R²=0.07",stadfesta
-Temporal retur,H/W/D,1988 ↔ 1950 (dist=1.051),stadfesta
-P2.62i Stål latent,H/W,"pre-1925 μ=1.22 (n=97), post μ=1.32 (n=86), p=0.485",ikkje signifikant
