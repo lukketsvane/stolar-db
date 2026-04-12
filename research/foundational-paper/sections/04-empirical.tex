@@ -1,7 +1,22 @@
 \section{Empirical Demonstration}
 \label{sec:empirical}
 
-The theory's propositions are not only logically coherent; they are empirically falsifiable. We test the core predictions against a corpus of European chairs spanning 744 years.
+The theory's propositions are not only logically coherent; they are empirically falsifiable. We test the core predictions against a corpus of European chairs spanning 744 years. Figure~\ref{fig:morphospace} shows the corpus projected into morphospace and the fitness landscape derived from it.
+
+\begin{figure*}[!t]
+\centering
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{figures/fig-morphospace-en.pdf}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{figures/fig-landscape-en.pdf}
+\end{minipage}
+\caption{\textbf{A}: 1,662 European chairs projected into morphospace (width $\times$ height); color encodes date. \textbf{B}: Fitness landscape as kernel density estimate with gradient vector field and period centroid trajectory (red).}
+\label{fig:morphospace}
+\end{figure*}
 
 \subsection{Data}
 
@@ -58,13 +73,36 @@ The key findings are as follows.
 
 \textbf{The morphospace is non-uniformly occupied} (Proposition 1). The nearest-neighbor coefficient of variation is 5.36, fifteen times the Poisson null expectation of 0.36 ($\mathrm{CI}_{95}$: [3.71, 5.94]). Forms cluster densely around specific regions rather than scattering uniformly; the landscape has structure.
 
-\textbf{Style predicts more than material} (Proposition 2). Mutual information between style period and form is 1.9--2.3 times greater than between material and form, across all four measured dimensions (H, W, D, H/W). This holds in every subset. Since style is an aggregate variable and material a single pressure, the asymmetry is partly expected; nevertheless, the magnitude and consistency of the gap are compatible with the claim that form variation within a class is driven primarily by forces beyond material constraint.
+\textbf{Style predicts more than material} (Proposition 2). Mutual information between style period and form is 1.9--2.3 times greater than between material and form, across all four measured dimensions (H, W, D, H/W). Since style is an aggregate variable with more categories than material, the asymmetry could partly be a cardinality artifact. A control analysis rules this out: 1,000 random groupings with the same cardinality as style period yield MI values 80--85 times lower than observed ($p < 0.001$ for all four dimensions). Style carries genuine morphological information, not merely higher category count.
 
 \textbf{Styles do not form discrete clusters} (Proposition 3). Silhouette analysis in four-dimensional mesh space yields a score of $-0.338$ ($\mathrm{CI}_{95}$: [$-0.346$, $-0.329$]), with 21 of 25 style categories showing negative individual scores. The negative values indicate that historian-defined style categories do not correspond to compact clusters in form space. This is consistent with the gradient hypothesis, though it does not exclude alternative clustering solutions.
 
-\textbf{A constraint hierarchy exists} (Proposition 3). The coefficient of variation spans 128-fold across the six mesh features ($\mathrm{CI}_{95}$: [50$\times$, 158$\times$]). Sphericity (CV $= 0.074$) is tightly constrained; volume (CV $= 9.39$) fluctuates freely. This asymmetry is consistent with a landscape that channels some geometric properties strongly while leaving others open.
+\textbf{A constraint hierarchy exists} (Proposition 3). The coefficient of variation spans 128-fold across the six mesh features ($\mathrm{CI}_{95}$: [50$\times$, 158$\times$]). Sphericity (CV $= 0.074$) is tightly constrained; volume (CV $= 9.39$) fluctuates freely. Figure~\ref{fig:channeling} shows the hierarchy.
 
-\textbf{The morphospace expands cumulatively} (Proposition 4). The cumulative convex hull expands by a factor of 553 in mesh space over ten 50-year periods ($\mathrm{CI}_{95}$: [435$\times$, 752{,}308$\times$]). While monotone growth is expected for any accumulating sample, the growth rate substantially exceeds a random-draw null: each successive period contributes genuinely novel form regions rather than re-sampling the existing occupied area. The wide upper confidence bound reflects the sensitivity of hull volume to outlier forms in sparsely sampled early periods.
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{figures/fig-channeling-en.pdf}
+\caption{Constraint hierarchy: coefficient of variation (CV) for six mesh features, ranked from most constrained (sphericity) to least constrained (hull volume). Horizontal bars show 95\% bootstrap CIs.}
+\label{fig:channeling}
+\end{figure}
+
+\textbf{Styles do not form discrete clusters} (Proposition 3). Figure~\ref{fig:silhouette} shows the silhouette scores per style period.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{figures/fig-silhouette-en.pdf}
+\caption{Silhouette analysis in four-dimensional mesh space. All 25 style categories show negative or near-zero silhouette scores ($\overline{s} = -0.338$), confirming that styles are overlapping gradients, not discrete clusters.}
+\label{fig:silhouette}
+\end{figure}
+
+\textbf{The morphospace expands cumulatively} (Proposition 4). The cumulative convex hull expands monotonically over ten 50-year periods ($\mathrm{CI}_{95}$: [435$\times$, 752{,}308$\times$]). Figure~\ref{fig:expansion} shows the growth curve.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{figures/fig-expansion-en.pdf}
+\caption{Cumulative morphospace expansion. Rust line: convex hull volume (log scale). Teal dashed: cumulative chair count. Each successive 50-year period contributes genuinely novel form regions.}
+\label{fig:expansion}
+\end{figure}
 
 \textbf{The landscape shifts significantly between periods} (Proposition 4). The mean Wasserstein-1 distance between consecutive 50-year periods is 14.4~cm (H), 8.2~cm (W), and 5.9~cm (D). None of the ten period transitions show near-zero distance. The landscape is dynamic.
 
@@ -72,14 +110,14 @@ Figure~\ref{fig:materialstream} shows the material composition of the corpus ove
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=\columnwidth]{figures/fig-A.6.9-materialstraum.png}
+\includegraphics[width=\columnwidth]{figures/fig-materialstream-en.png}
 \caption{Material streams across 500 years. Each stratum shows the count of chairs per 50-year period by primary material. Successive waves (oak, walnut, mahogany, steel, plastic) drive cumulative morphospace expansion.}
 \label{fig:materialstream}
 \end{figure}
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=\columnwidth]{figures/fig-A.6.18-materiallatens.png}
+\includegraphics[width=\columnwidth]{figures/fig-materiallatency-en.png}
 \caption{Material latency. Top panels: morphospace centroids for four materials (steel, plastic, plywood, aluminum) plotted against the full corpus (gray). Arrows trace centroid movement over time. Bottom panel: latency-divergence timeline showing that geometric divergence follows material introduction with a systematic lag.}
 \label{fig:latency}
 \end{figure}
