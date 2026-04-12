@@ -1,0 +1,65 @@
+\input{preamble}
+
+\begin{document}
+
+% ── Title block (spans both columns) ──
+\twocolumn[{%
+\begin{@twocolumnfalse}
+
+\vspace*{2mm}
+
+{\centering
+{\Large\bfseries Care as Compass: A Formal Theory of Design Form\\[2pt]
+Grounded in Morphospace, Selection Landscape,\\[2pt]
+and Multi-Scale Agency\par}
+
+\vspace{8pt}
+
+{\normalsize Iver Raknes Finne\par}
+\vspace{1pt}
+{\small\itshape Institute of Design, Oslo School of Architecture and Design (AHO)\par}
+\vspace{0pt}
+{\small iver.raknes.finne@stud.aho.no\par}
+
+\vspace{10pt}
+
+% ── Abstract ──
+\begin{minipage}{0.94\textwidth}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{4pt}
+
+{\footnotesize
+\noindent\textbf{Abstract}\quad
+Design theory evaluates proposals on criteria such as logic, correctness, clarity, and originality, yet these criteria lack grounding in a shared formal framework. No existing theory simultaneously provides a syntactic account of form, an epistemic account of the design process, and an explanation of why certain forms arise rather than others. Three formal traditions each address part of the problem but remain disconnected: Stiny's shape algebra provides syntax, Hatchuel and Weil's C-K theory provides epistemic logic, and Levin's multi-scale competence framework provides dynamics. We propose \formlaere{}, a formal design theory structured as seven propositions that unify these traditions into a single generative equation: $\mathrm{Form} = SG(\nabla_{C(A)}\, L(c,t))$. The theory introduces \textit{care}; the dimensionality of the agent's cognitive cone; as the measure of design intelligence. We test the theory against a corpus of 2,066 European chairs (1280--2024) from Nasjonalmuseet and the Victoria and Albert Museum, supplemented by 2,204 three-dimensional mesh models. Twenty statistical analyses across 14 cross-validation subsets yield results consistent with the theory's core predictions: style predicts 1.9--2.3$\times$ more form variation than material, historian-defined style categories do not form discrete morphological clusters (silhouette $= -0.338$), and the occupied morphospace expands cumulatively (553$\times$ hull growth). We demonstrate the theory's explanatory reach through five worked examples spanning the steel tube chair race of 1925--1928, Neri Oxman's Silk Pavilion, AI-assisted design tools, conversational agent design, and continental-scale ecological restoration. The theory yields seven immediate, falsifiable research programs.
+
+\vspace{4pt}
+\noindent\textbf{Keywords}\quad design theory, morphospace, fitness landscape, shape grammar, C-K theory, multi-scale agency, care, selection pressure
+}
+
+\vspace{4pt}
+\noindent\rule{\textwidth}{0.4pt}
+\end{minipage}
+\par}
+
+\vspace{8pt}
+
+\end{@twocolumnfalse}
+}]
+
+% ── Body ──
+\input{sections/01-introduction}
+\input{sections/02-background}
+\input{sections/03-theory}
+\input{sections/04-empirical}
+\input{sections/05-examples}
+\input{sections/06-discussion}
+\input{sections/07-agenda}
+\input{sections/08-conclusion}
+
+% ── References ──
+\begingroup
+\small
+\printbibliography[title={References}]
+\endgroup
+
+\end{document}
