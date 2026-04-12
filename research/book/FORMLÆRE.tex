@@ -102,8 +102,14 @@
 %   Starts a new page, sets the running mark, adds a TOC entry, and uses the
 %   plain pagestyle for the opening page — but DOES NOT emit a centred chapter
 %   title (the chapter is identified by the running header and by its content).
+% \silentchapter starts a new page. \flowchapter does not (for tractatus flow).
 \newcommand{\silentchapter}[2]{%
   \clearpage
+  \markboth{#2}{}%
+  \addcontentsline{toc}{chapter}{#1}%
+}
+\newcommand{\flowchapter}[2]{%
+  \par\addvspace{18pt}%
   \markboth{#2}{}%
   \addcontentsline{toc}{chapter}{#1}%
 }

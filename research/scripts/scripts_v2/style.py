@@ -149,8 +149,9 @@ def caption_below(fig, title, sub=None, footer=None,
 
 
 # ── Data loading helper ───────────────────────────────────────────────────────
-ROOT = Path(__file__).resolve().parents[2]
-DATA_CSV = ROOT / 'STOLAR' / 'STOLAR.csv'
+REPO_ROOT = Path(__file__).resolve().parents[3]
+ROOT = Path(__file__).resolve().parents[2]           # research/
+DATA_CSV = REPO_ROOT / 'STOLAR' / 'STOLAR.csv'
 MESH_CSV = ROOT / 'analysis' / 'mesh_features.csv'
 FIG_DIR  = ROOT / 'analysis' / 'figures'
 

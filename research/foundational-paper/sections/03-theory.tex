@@ -10,7 +10,9 @@ The theory begins with ontology. An \textbf{object} is the simplest constituent 
 
 The \textbf{morphospace} of a class is the set of all its possible configurations \parencite{Raup1966, Mitteroecker2009}. Every realized object occupies one point in this space. The empirical morphospace is always a projection; the form exists independently of the measurement. This distinction matters: any empirical analysis captures a subspace, never the full morphospace.
 
-The class is defined not by a single function but by a shared \textbf{affordance structure} \parencite{Gibson1979}. Objects in the class offer the same constellation of operations to the same constellation of agents. A chair offers sitting to a human body, stacking to a waiter, transport to a freight handler, visual character to a social space. This shared affordance structure sets the boundaries of the morphospace; the selection pressures (Proposition 2) distribute its contents.
+The class is defined not by a single function but by a shared \textbf{affordance structure} \parencite{Gibson1979}. Objects in the class offer the same constellation of operations to the same constellation of agents. A chair offers sitting to a human body, stacking to a waiter, transport to a freight handler, visual character to a social space.
+
+The affordance structure sets \textit{necessary but not sufficient} conditions for class membership. A throne and a toilet both afford sitting but belong to different classes; a stool and a chair share most affordances, but the boundary between them is partly cultural, not purely affordance-structural. Institutional, linguistic, and cultural factors co-determine class boundaries. The affordance structure sets the frame; the selection pressures (Proposition 2) distribute the contents within it.
 
 The morphospace carries algebraic structure. The forms are closed under union (combination), difference (subtraction), and transformation (rotation, translation, scaling). Let $S$ be a set of forms in a Euclidean space $E^n$, equipped with the transformation group $\mathrm{Trans}(E^n)$:
 
@@ -100,7 +102,11 @@ The agent manipulates form geometry directly. Configurations closed under union 
 
 \textbf{Care} is the number of axes in the morphospace that the agent actively represents and adjusts for \parencite{Doctor2024}. An agent with care for three dimensions discovers compromises that an agent with one dimension does not know exist. The first produces forms that withstand multiple pressures simultaneously. The second produces forms that fail along the axes it did not see.
 
-The competence of an agent is its ability to navigate toward stable positions in the landscape. Competence grows with care. What we call intelligence is precisely this competence. Care is therefore the content of intelligence; intelligence is the form of care \parencite{Doctor2024}. To expand the cognitive cone is an ethical act: it is to take more forces into the compromise. To narrow it is to surrender parts of the world of form to forces no one represents.
+Care is not the same as \textit{capacity}. Capacity is the width of the cognitive cone; it is how many axes the agent \textit{can} represent. Care is how many it \textit{does} represent. A designer with broad capacity who attends to only one axis; say, visual novelty alone; exhibits narrow care despite high capacity. The distinction is critical for Proposition 7: it is care, not capacity, that is legible in form.
+
+The word ``care'' is chosen deliberately over ``attention'' or ``scope.'' Attention is value-neutral; care carries normative weight \parencite{Doctor2024}. Doctor, Wakefield, Pavlic, and Levin derive the concept from Buddhist compassion tradition: care implies that the agent \textit{ought} to represent more axes, not merely that it \textit{could}. This normative dimension is not a weakness of the definition; it is a consequence of the fact that design actions have real consequences along the axes the agent chooses not to see.
+
+The competence of an agent is its ability to navigate toward stable positions in the landscape. Competence grows with care. What we call intelligence is precisely this competence. Care is therefore the content of intelligence; intelligence is the form of care \parencite{Doctor2024}.
 
 \subsection{Proposition 6: Form arises between agents}
 \label{sec:prop6}
@@ -116,6 +122,27 @@ Agency is \textbf{multiscalar} \parencite{Levin2022}. Each scale has its own com
 
 \noindent where $SG$ is the shape grammar, $L(c,t)$ is the scalar fitness landscape for class $c$ at time $t$, and $\nabla_{C(A)} L$ denotes the gradient of $L$ projected onto the subspace spanned by the agent's cognitive cone $C(A)$. Formally, if $\Pi_{C(A)}$ is the orthogonal projection onto $C(A) \subseteq \mathbb{R}^n$, then $\nabla_{C(A)} L = \Pi_{C(A)}\, \nabla L$. The agent perceives only those components of the landscape gradient that fall within its representational capacity. Form is the grammar's response to this perceived gradient.
 
+A clarification is necessary. The equation is a \textit{structural schema}, not a prediction engine. It specifies which components are necessary and jointly sufficient for explaining form; grammar, landscape, and cone; but it does not specify the functional form of $L$, which grammar rules fire, or the dimensionality of $C(A)$ for a given agent. The analogy is $F = ma$ before the force law is known: Newton's second law identifies force, mass, and acceleration as the right components, but does not predict a projectile's trajectory without the gravitational field being specified. The present study lays the structural foundation; the parametric specification is an open research program (Section~\ref{sec:agenda}).
+
+Table~\ref{tab:ck-mapping} shows how the C-K operators map onto landscape navigation and grammar operations. The first two operators ($C \to C$ and $C \to K$) are directly embedded in the core equation. The latter two ($K \to K$ and $K \to C$) operate on the landscape itself: deduction updates the agent's model of the landscape without moving the position in morphospace, and conjunction opens new morphospace regions through surprising knowledge combinations. Together, the four operators constitute the epistemic dynamics that drive navigation.
+
+\begin{table}[!t]
+\centering
+\caption{Mapping of C-K operators to landscape navigation.}
+\label{tab:ck-mapping}
+\small
+\begin{tabularx}{\columnwidth}{@{}l l >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{Op.} & \textbf{C-K} & \textbf{Landscape interpretation} \\
+\midrule
+$C \!\to\! C$ & partition & Grammar rule fires; new position in morphospace \\[2pt]
+$C \!\to\! K$ & realization & Prototype is built; concept acquires truth value \\[2pt]
+$K \!\to\! K$ & deduction & Landscape model is updated; gradient becomes clearer \\[2pt]
+$K \!\to\! C$ & conjunction & New knowledge opens forbidden regions; morphospace expands \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
 The agent chooses; the landscape filters. Control is always shared. Exploration requires loose coupling; exploitation requires tight. The designer is never alone in the landscape. She navigates in a field of competing agencies from microbial tissue to market forces \parencite{Levin2022}. Her competence lies in coordinating independent cognitive cones toward a stable form-optimum.
 
 A style lacks causal force \parencite{Kubler1962, Michl1995}. It is not a force but a \textbf{pattern memory}: a macro-scale attractor that channels the cognitive cones of agents who observe it. It simplifies navigation by offering a recognizable center of gravity; but to design ``in a style'' is a category error; it is to imitate the statistical outcome of forces one has not understood.
@@ -125,13 +152,29 @@ No form is final. Every balance becomes suboptimal with time. Only the generativ
 \subsection{Proposition 7: Form shows how far care reached}
 \label{sec:prop7}
 
-The concluding proposition follows deductively from Propositions 5 and 6. If care is the number of axes actively represented (Proposition 5), and if form arises as a poly-agentistic compromise across those axes (Proposition 6), then the realized form is a legible record of the compromise's dimensionality. A form designed under narrow care fails systematically along the axes that were not attended to; the failure bears the signature of the blindness that produced it.
+The concluding proposition follows deductively from Propositions 5 and 6. It contains two claims that must be distinguished.
 
-This is not primarily an ethical claim; it is a diagnostic one. The form is evidence. Given a realized artifact, the theory predicts that its failure modes will cluster on axes absent from the designer's cognitive cone. The ethical implication follows secondarily: if the designer could have represented more axes but chose not to, the resulting failures are attributable to that choice. But Proposition 7 is falsifiable independently of its ethical reading. If forms designed under demonstrably narrow care perform no worse along unattended axes than forms designed under broad care, the proposition is refuted.
+\textbf{The descriptive claim} (theorem). If care is the number of axes actively represented (Proposition 5), and if form arises as a poly-agentistic compromise across those axes (Proposition 6), then the realized form is a legible record of the compromise's dimensionality. Form is evidence. Given a realized artifact, the theory predicts that its failure modes will cluster on axes absent from the designer's cognitive cone. A form designed under narrow care fails systematically along the axes that were not attended to; the failure bears the signature of the blindness that produced it. This claim is falsifiable: if forms designed under demonstrably narrow care perform no worse along unattended axes than forms designed under broad care, the proposition is refuted.
 
-Figure~\ref{fig:architecture} summarizes the complete theoretical architecture: the empirical morphospace (A), the fitness landscape derived from it (B), the nested cognitive cones across competence scales (C), and the synthesis equation that unifies the three source traditions (D).
+\textbf{The normative claim} (ethical implication). If the designer could have represented more axes but chose not to, the resulting failures are attributable to that choice. This claim does not follow from the formal apparatus alone; it requires an additional premise: that agents ought to represent as many axes as they have capacity for. The premise is not deducible from Propositions 1--6, but it is not arbitrary either; it follows from the fact that design actions have real consequences for other agents navigating the same landscape. To narrow the cognitive cone is to surrender parts of the world of form to forces no one represents. The consequences are borne by those who live with the form, not by those who shaped it.
 
-\input{figures/fig-1-architecture}
+The distinction between these two claims matters. The descriptive claim can be tested empirically independent of the normative claim. The normative claim gives the descriptive claim direction and relevance, but does not stand or fall with it.
+
+Figure~\ref{fig:levin-clc} illustrates the cognitive light cone as formalized by Doctor et al.: three archetypes of care cones with increasing dimensionality. Figure~\ref{fig:synthesis} shows how the synthesis equation unifies the three source traditions.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{figures/levin-clc-scales.png}
+\caption{Three archetypes of care light cones (CLC). \textbf{(a)}: Narrow care; the agent represents few axes. \textbf{(b)}: Moderate care; the agent represents more axes than the physical light cone requires. \textbf{(c)}: Broad care; the agent's cognitive horizon exceeds its physical reach. From \textcite{Doctor2024}.}
+\label{fig:levin-clc}
+\end{figure}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{figures/syntese_diag_en.png}
+\caption{The synthesis equation: three source traditions (syntax, logic, dynamics) converge on the core equation $\mathrm{Form} = SG(\nabla_{C(A)} L(c,t))$. Dashed arrow shows $K$-expansion feedback.}
+\label{fig:synthesis}
+\end{figure}
 
 \begin{table*}[!t]
 \centering

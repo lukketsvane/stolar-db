@@ -15,13 +15,23 @@ The theory provides unified explanations for phenomena that existing frameworks 
 
 \subsection{Limitations}
 
-The theory has been tested against a single artifact class (the European chair). Generalization to other classes; architecture, graphic design, software interfaces, biological design; is theorized but not yet demonstrated. Cross-domain replication is the most immediate research priority (Section~\ref{sec:agenda}).
+The theory has six significant limitations that must be acknowledged.
 
-The corpus is geographically limited to European collections. Non-European design traditions are not represented. If the theory's landscape attractors reflect universal physical and ergonomic constraints, non-European chairs should converge on similar morphospace structures. If they do not, the theory requires revision to accommodate culturally specific landscape features.
+\textbf{Single artifact class.} The theory has been tested against a single artifact class (the European chair). Generalization to other classes; architecture, graphic design, software interfaces, biological design; is theorized but not yet demonstrated. Cross-domain replication is the most immediate next step (Section~\ref{sec:agenda}).
 
-The three-dimensional mesh models are computationally generated from catalog images, not directly scanned from physical objects. While the geometric features extracted from these models produce consistent results across 84 cross-validation tests, direct 3D scanning would strengthen the empirical foundation.
+\textbf{Geographic limitation.} The corpus is limited to European collections. Non-European design traditions are not represented. If the theory's landscape attractors reflect universal physical-ergonomic constraints, non-European chairs should converge on similar morphospace structures. If they do not, the theory requires revision to accommodate culturally specific landscape features.
 
-The theory does not yet specify the functional form of the fitness landscape. The weights $w_i(t)$ in the landscape equation $L(c,t) = \sum w_i(t) \cdot p_i$ are treated as time-varying parameters, not as functions with specified dynamics. A fully predictive theory would require modeling the temporal evolution of these weights; this remains an open problem.
+\textbf{Mesh reliability.} The three-dimensional mesh models are AI-generated from museum photographs (Hunyuan3D-2), not directly scanned from physical objects. The reconstructions are single-image estimates with known limitations: underside and rear geometry is interpolated, not observed. The consistency of results across 84 cross-validation tests provides indirect evidence of robustness, but direct 3D scanning of a subset would substantially strengthen the empirical foundation.
+
+\textbf{Landscape function is underdetermined.} The theory does not yet specify the functional form of the fitness landscape. The weights $w_i(t)$ in the landscape equation are treated as time-varying parameters, not as functions with specified dynamics. The core equation is a structural schema; it identifies the right components, but a fully predictive theory requires specification of $L$ and $C(A)$ for concrete domains.
+
+\textbf{MI control.} The finding that style predicts more than material (the MI asymmetry) is partly expected by construction: style is an aggregate variable with 25 categories, while material is a single variable. Although the asymmetry is consistent across all hold-outs, a control test against a randomly aggregated variable with the same cardinality would strengthen the argument.
+
+\textbf{Care is not directly measured.} Propositions 5--7 (agency, care, and the diagnostic conclusion) are formalized and illustrated but not directly tested in the present study. An operational measurement protocol for care; for example through think-aloud protocol analysis; is an open research program.
+
+\subsection{Contemporary approaches}
+
+The only published study we are aware of that applies morphospace analysis to designed artifacts is Valverde et al.'s work on arcade video games \parencite{Valverde2025}, where CPU speed and ROM size serve as axes. Their findings; diversification, stabilization, and collapse over four decades; are consistent with Propositions 3--4 of \formlaere{}. The present study differs by adding a formal agent layer (Propositions 5--7) and by testing against a substantially more heterogeneous artifact corpus where form variation cannot be reduced to two technical parameters.
 
 \subsection{Relationship to existing design theories}
 
