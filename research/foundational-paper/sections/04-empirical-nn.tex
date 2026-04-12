@@ -29,6 +29,29 @@ Alle testar er kryssvaliderte mot 14 uavhengige delmengder: heile korpuset, kvar
 
 \subsection{Resultat}
 
+\begin{table*}[!b]
+\centering
+\caption{Oppsummering av empirisk evidens. \textbf{Sterk}: stor effektstorleik, smal KI, robust i alle hold-outs, falsifiseringstest halden.}
+\label{tab:evidence}
+\small
+\begin{tabularx}{\textwidth}{@{} >{\raggedright}p{0.14\textwidth} >{\raggedright}p{0.20\textwidth} >{\raggedright}p{0.22\textwidth} c >{\raggedright\arraybackslash}p{0.08\textwidth} @{}}
+\toprule
+\textbf{Proposisjon} & \textbf{Test} & \textbf{Resultat} & \textbf{Robust?} & \textbf{Rating} \\
+\midrule
+1 (morforom) & NN-distanse CV & 5,36 (Poisson-null: 0,36) & 11/11 & Sterk \\[2pt]
+2 (trykk) & MI: stil vs materiale & Stil vinn 4/4 dimensjonar & 14/14 & Sterk \\[2pt]
+2 (trykk) & Min parvis MI & 0,030 bits (uavhengigheit) & --- & Sterk \\[2pt]
+3 (landskap) & CV-spreiing, mesh & 128$\times$ range & 14/14 & Sterk \\[2pt]
+3 (landskap) & Silhouette, mesh & $-$0,338; 21/25 negative & 14/14 & Sterk \\[2pt]
+4 (dynamisk) & Hylster-vekst, katalog & 107$\times$ monoton & 14/14 & Sterk \\[2pt]
+4 (dynamisk) & Hylster-vekst, mesh & 553$\times$ monoton & 14/14 & Sterk \\[2pt]
+4 (dynamisk) & Wasserstein $d$(H) & 14,4 cm per periode & 10/10 & Sterk \\[2pt]
+4 (dynamisk) & Mahogni-kohort & 16/16 = 100\% & --- & Sterk \\[2pt]
+5 (agentar) & KS vs uniform null & $p \ll 10^{-200}$ alle dim & --- & Sterk \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
 Tabell~\ref{tab:evidence} oppsummerer dei ti kjernefunna.
 
 \textbf{Morforommet er ikkje-uniformt busett} (proposisjon 1). Nærmaste-nabo variasjonskoeffisienten er 5,36; femten gonger Poisson-nullforventninga på 0,36 ($\mathrm{CI}_{95}$: [3,71; 5,94]).
