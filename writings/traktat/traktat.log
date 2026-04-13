@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.3.27)  13 APR 2026 14:07
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.3.27)  13 APR 2026 14:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -843,34 +843,35 @@ Package microtype Info: Character `156' is missing
 
 ]
 Package microtype Info: Character `156' is missing
-(microtype)             in font `\TU/EBGaramond(0)/m/it/9'.
+(microtype)             in font `\TU/EBGaramond(0)/m/it/10.5'.
 (microtype)             Ignoring protrusion settings for this character.
+LaTeX Font Info:    Calculating math sizes for size <10.5> on input line 7.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <10.5> not available
+(Font)              size <10.95> substituted on input line 7.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <10.5> not available
+(Font)              size <10.95> substituted on input line 7.
+
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 7.
+(Font)              <10.5> on input line 7.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 7.
+(Font)              <7.34996> on input line 7.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 7.
+(Font)              <5.25> on input line 7.
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <10.5> not available
+(Font)              size <10.95> substituted on input line 7.
 
 (C:\Users\Shadow\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
 Package microtype Info: Character `156' is missing
-(microtype)             in font `\TU/EBGaramond(0)/b/it/9'.
+(microtype)             in font `\TU/EBGaramond(0)/b/it/10.5'.
 (microtype)             Ignoring protrusion settings for this character.
-
-Overfull \hbox (1.17638pt too wide) in paragraph at lines 13--14
-[]\TU/EBGaramond(0)/m/n/9 Proposisjonane er haldne opp mot eit datasett på om l
-ag 2300 europeiske stolar (1280–
- []
-
-
-Overfull \hbox (2.25931pt too wide) in paragraph at lines 13--14
-\TU/EBGaramond(0)/m/n/9 2024) frå Nasjonalmuseet og Victoria and Albert Museum,
- inkludert fullstendig mesh-
- []
-
 ) [2
 
 ]
@@ -889,6 +890,10 @@ en av alle verksame seleksjonstrykk over formrommet (Wright,
 (proposisjonar.tex
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 5.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 5.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 5.
 Package microtype Info: Character `156' is missing
 (microtype)             in font `\TU/EBGaramond(0)/b/it/8'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -897,30 +902,10 @@ File: ../figures/fencing.png Graphic file (type bmp)
  [3
 
 ]
-LaTeX Font Info:    Calculating math sizes for size <10.5> on input line 20.
-
-
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <10.5> not available
-(Font)              size <10.95> substituted on input line 20.
-
-
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <10.5> not available
-(Font)              size <10.95> substituted on input line 20.
-
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.5> on input line 20.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7.34996> on input line 20.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5.25> on input line 20.
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <10.5> not available
-(Font)              size <10.95> substituted on input line 20.
-
 Package microtype Info: Character `156' is missing
 (microtype)             in font `\TU/EBGaramond(0)/m/it/7.34996'.
 (microtype)             Ignoring protrusion settings for this character.
-[4
+ [4
 
 ]
 Overfull \hbox (6.09863pt too wide) in paragraph at lines 50--50
@@ -928,15 +913,6 @@ Overfull \hbox (6.09863pt too wide) in paragraph at lines 50--50
 ame struk-
  []
 
-
-Overfull \hbox (20.36815pt too wide) in paragraph at lines 64--64
-[]\TU/EBGaramond(0)/m/n/10.5 Kvart realisert objekt utgjer eitt eksakt punkt i 
-dette n-dimensjonale
- []
-
-Package microtype Info: Character `156' is missing
-(microtype)             in font `\TU/EBGaramond(0)/m/it/10.5'.
-(microtype)             Ignoring protrusion settings for this character.
 [5]
 LaTeX Font Info:    Font shape `TU/CambriaMath(0)/m/n' will be
 (Font)              scaled to size 9.97496pt on input line 90.
@@ -946,6 +922,8 @@ Overfull \hbox (0.93631pt too wide) in paragraph at lines 90--90
 $[]$ Det \TU/EBGaramond(0)/b/n/10.5 kjen-
  []
 
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 99.
 
 Underfull \hbox (badness 10000) in paragraph at lines 101--102
 []\TU/EBGaramond(0)/b/n/9 Lyskjegle-
@@ -978,9 +956,9 @@ operasjonane materialet tillèt og hindrar.$[]$
  []
 
 
-Overfull \hbox (59.62431pt too wide) in paragraph at lines 159--159
+Overfull \hbox (26.98314pt too wide) in paragraph at lines 159--159
 []\TU/EBGaramond(0)/b/n/10.5 Tilpassingslandskapet \TU/EBGaramond(0)/m/n/10.5 e
-r vektorsummen av alle verksame seleksjonstrykk.$[]$
+r vektorsummen av alle verksame seleksjons-
  []
 
 [8]
@@ -1008,14 +986,9 @@ Overfull \hbox (0.29137pt too wide) in paragraph at lines 213--213
  []
 
 [10]
-Overfull \hbox (4.82466pt too wide) in paragraph at lines 225--225
-\TU/EBGaramond(0)/m/n/10.5 standsmåling, justering. Det som endrar seg, er lysk
-jeglas breidd
- []
-
 File: ../figures/math/termostat-designar.png Graphic file (type bmp)
 <../figures/math/termostat-designar.png>
-[11]
+ [11]
 Overfull \hbox (0.34465pt too wide) in paragraph at lines 247--247
 []\TU/EBGaramond(0)/b/n/10.5 Kognitiv lyskjegle \TU/EBGaramond(0)/m/n/10.5 er d
 elmengda av formrommet agenten kan
@@ -1147,11 +1120,11 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 20052 strings out of 402987
- 444347 string characters out of 5448317
- 924000 words of memory out of 5000000
- 48383 multiletter control sequences out of 15000+600000
- 632115 words of font info for 95 fonts, out of 8000000 for 9000
+ 20049 strings out of 402987
+ 444221 string characters out of 5448317
+ 923997 words of memory out of 5000000
+ 48381 multiletter control sequences out of 15000+600000
+ 632107 words of font info for 94 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  84i,13n,104p,1839b,641s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
