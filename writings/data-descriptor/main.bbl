@@ -1,4 +1,4 @@
-\begin{thebibliography}{27}
+\begin{thebibliography}{38}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -11,11 +11,27 @@ David~M. Raup.
 \newblock \emph{Journal of Paleontology}, 40\penalty0 (5):\penalty0 1178--1190,
   1966.
 
+\bibitem[McGhee(1999)]{mcghee1999morphology}
+George~R. McGhee.
+\newblock \emph{Theoretical Morphology: The Concept and Its Applications}.
+\newblock Columbia University Press, 1999.
+
 \bibitem[Mitteroecker and Huttegger(2009)]{mitteroecher2009morphospace}
 Philipp Mitteroecker and Simon~M. Huttegger.
 \newblock The concept of morphospaces in evolutionary and developmental
   biology.
 \newblock \emph{Biological Theory}, 4\penalty0 (1):\penalty0 54--67, 2009.
+
+\bibitem[Mitteroecker(2022)]{mitteroecker2022thirty}
+Philipp Mitteroecker.
+\newblock Thirty years of geometric morphometrics: Achievements, challenges,
+  and the ongoing quest for biological meaningfulness.
+\newblock \emph{American Journal of Biological Anthropology}, 2022.
+
+\bibitem[Steadman and Mitchell(2010)]{steadman2010morphospace}
+Philip Steadman and Linda~J. Mitchell.
+\newblock Architectural morphospace: Mapping worlds of built forms.
+\newblock \emph{Environment and Planning B}, 37:\penalty0 197--220, 2010.
 
 \bibitem[MacLeod(2018)]{macleod2018quantitative}
 Norman MacLeod.
@@ -56,6 +72,28 @@ Anne Kandler and Enrico~R. Crema.
 \newblock A quantitative workflow for modeling diversification in material
   culture.
 \newblock \emph{PLOS ONE}, 15\penalty0 (2), 2019.
+
+\bibitem[Osada et~al.(2002)Osada, Funkhouser, Chazelle, and
+  Dobkin]{osada2002shape}
+Robert Osada, Thomas Funkhouser, Bernard Chazelle, and David Dobkin.
+\newblock Shape distributions.
+\newblock \emph{ACM Transactions on Graphics}, 21\penalty0 (4):\penalty0
+  807--832, 2002.
+
+\bibitem[Grosman et~al.(2022)]{grosman2022artifact3d}
+Leore Grosman et~al.
+\newblock {Artifact3-D}: New software for accurate, objective and efficient
+  {3D} analysis and documentation of archaeological artifacts.
+\newblock \emph{PLOS ONE}, 17\penalty0 (6):\penalty0 e0268401, 2022.
+
+\bibitem[Hanik et~al.(2023)Hanik, Ducke, Hege, Fless, and von
+  Tycowicz]{hanik2023sundials}
+Martin Hanik, Benjamin Ducke, Hans-Christian Hege, Friederike Fless, and
+  Christoph von Tycowicz.
+\newblock Intrinsic shape analysis in archaeology: A case study on ancient
+  sundials.
+\newblock \emph{ACM Journal on Computing and Cultural Heritage}, 16\penalty0
+  (4), 2023.
 
 \bibitem[Stiny and Gips(1972)]{stiny1972shape}
 George Stiny and James Gips.
@@ -129,6 +167,11 @@ Mathieu Aubry, Daniel Maturana, Alexei~A. Efros, Bryan~C. Russell, and Josef
 \newblock Seeing {3D} chairs: Exemplar part-based {2D-3D} alignment.
 \newblock In \emph{CVPR}, 2014.
 
+\bibitem[Fu et~al.(2021)]{fu2021future3d}
+Huan Fu et~al.
+\newblock {3D-FUTURE}: {3D} furniture shape with {TextURE}.
+\newblock \emph{International Journal of Computer Vision}, 2021.
+
 \bibitem[Sipiran et~al.(2021)]{sipiran2021shrec}
 Ivan Sipiran et~al.
 \newblock {SHREC 2021}: Retrieval of cultural heritage objects.
@@ -145,6 +188,17 @@ Lev Manovich.
 \newblock \emph{Cultural Analytics}.
 \newblock MIT Press, 2020.
 
+\bibitem[Wilkinson et~al.(2016)]{wilkinson2016fair}
+Mark~D. Wilkinson et~al.
+\newblock The {FAIR} guiding principles for scientific data management and
+  stewardship.
+\newblock \emph{Scientific Data}, 3:\penalty0 160018, 2016.
+
+\bibitem[Barzaghi et~al.(2024)]{barzaghi2024fair3d}
+Sebastian Barzaghi et~al.
+\newblock A proposal for a {FAIR} management of {3D} data in cultural heritage.
+\newblock \emph{Data Intelligence}, 2024.
+
 \bibitem[{Tencent}(2024)]{hunyuan3d}
 {Tencent}.
 \newblock Hunyuan3d-2: Image-to-3d generation, 2024.
@@ -154,5 +208,15 @@ Lev Manovich.
 Michael Dawson-Haggerty.
 \newblock trimesh, 2019.
 \newblock URL \url{https://trimesh.org/}.
+
+\bibitem[Kubler(1962)]{kubler1962shape}
+George Kubler.
+\newblock \emph{The Shape of Time}.
+\newblock Yale University Press, 1962.
+
+\bibitem[Thompson(1917)]{thompson1917growth}
+D'Arcy~Wentworth Thompson.
+\newblock \emph{On Growth and Form}.
+\newblock Cambridge University Press, 1917.
 
 \end{thebibliography}

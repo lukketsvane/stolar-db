@@ -10,11 +10,12 @@ from google.genai import types
 # Configuration
 API_KEY = os.environ.get("GEMINI_API_KEY")
 client = genai.Client(api_key=API_KEY)
-MODEL_ID = "gemini-2.0-flash"
+PRIMARY_MODEL = "gemini-2.0-flash"
+FALLBACK_MODEL = "gemini-flash-latest"
 JSON_PATH = "STOLAR/enriched_chairs.json"
 API_PATH = "STOLAR/api.json"
 IMAGE_DIR = "STOLAR/bguw"
-MAX_WORKERS = 5 # Parallel requests
+MAX_WORKERS = 3 # Parallel requests
 
 PROMPT = """Analyze this chair image and provide information according to the following schema in JSON format:
 - tal_komponentar (int): Number of main structural components.
@@ -48,21 +49,44 @@ def process_chair(chair_id):
         with open(image_path, "rb") as f:
             image_bytes = f.read()
         
-        response = client.models.generate_content(
-            model=MODEL_ID,
-            contents=[
-                PROMPT,
-                types.Part.from_bytes(data=image_bytes, mime_type="image/png")
-            ],
-            config=types.GenerateContentConfig(
-                response_mime_type="application/json",
+        # Try primary model
+        model_to_use = PRIMARY_MODEL
+        try:
+            response = client.models.generate_content(
+                model=model_to_use,
+                contents=[
+                    PROMPT,
+                    types.Part.from_bytes(data=image_bytes, mime_type="image/png")
+                ],
+                config=types.GenerateContentConfig(
+                    response_mime_type="application/json",
+                )
             )
-        )
+        except Exception as e:
+            if "429" in str(e) or "RESOURCE_EXHAUSTED" in str(e):
+                # Quota hit on primary, try fallback
+                model_to_use = FALLBACK_MODEL
+                print(f"Quota hit for {PRIMARY_MODEL}, trying {FALLBACK_MODEL} for {chair_id}...")
+                response = client.models.generate_content(
+                    model=model_to_use,
+                    contents=[
+                        PROMPT,
+                        types.Part.from_bytes(data=image_bytes, mime_type="image/png")
+                    ],
+                    config=types.GenerateContentConfig(
+                        response_mime_type="application/json",
+                    )
+                )
+            else:
+                raise e
         
         result = json.loads(response.text)
         return chair_id, result
     except Exception as e:
         print(f"Error processing {chair_id}: {e}")
+        # If we hit a rate limit on both or other error, return error string
+        if "429" in str(e) or "RESOURCE_EXHAUSTED" in str(e):
+            return chair_id, "RETRY"
         return chair_id, "ERROR"
 
 def main():
@@ -79,23 +103,30 @@ def main():
     
     print(f"Found {len(missing)} missing chairs with images.")
     
-    # Process in batches of 50 to save progress frequently
-    batch_size = 50
+    # Process in batches of 20 to save progress frequently
+    batch_size = 20
     for i in range(0, len(missing), batch_size):
         batch = missing[i:i+batch_size]
         print(f"Processing batch {i//batch_size + 1}/{(len(missing)-1)//batch_size + 1}...")
         
         with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
             future_to_id = {executor.submit(process_chair, cid): cid for cid in batch}
+            batch_results = 0
             for future in concurrent.futures.as_completed(future_to_id):
                 cid, result = future.result()
-                if result and result != "ERROR":
+                if result and isinstance(result, dict):
                     enriched_data[cid] = result
+                    batch_results += 1
+                elif result == "RETRY":
+                    # If we hit 429 on both models, we should probably wait
+                    print("Hit quota on both models, sleeping for 60s...")
+                    time.sleep(60)
         
-        save_data(JSON_PATH, enriched_data)
-        # Periodic sync with DB
-        os.system("python STOLAR/enrich_db.py")
-        print(f"Saved progress and synced DB. Total enriched: {len(enriched_data)}")
+        if batch_results > 0:
+            save_data(JSON_PATH, enriched_data)
+            # Periodic sync with DB
+            os.system("python STOLAR/enrich_db.py")
+            print(f"Saved progress and synced DB. Total enriched: {len(enriched_data)}")
         
         # Rate limit safety between batches
         time.sleep(2)

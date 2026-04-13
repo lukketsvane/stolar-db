@@ -1,40 +1,40 @@
-% STOLAR Data Descriptor
+% STOLAR Datadeskriptor — Nynorsk
 % Iver Raknes Finne, AHO, 2026
-% Compile: pdflatex main && bibtex main && pdflatex main && pdflatex main
+% Kompiler: pdflatex main && bibtex main && pdflatex main && pdflatex main
 \input{preamble}
 
 \begin{document}
 
-% ── Title block ──────────────────────────────────────────────────────────────
+% ── Tittelblokk ──────────────────────────────────────────────────────────────
 \twocolumn[{%
 \begin{@twocolumnfalse}
 \vspace*{4mm}
 {\raggedright
-{\fontsize{22}{26}\selectfont\bfseries STOLAR: An Open Geometric Database of\\2\,048 European Chairs (1280--2024)\par}
+{\fontsize{22}{26}\selectfont\bfseries STOLAR: Ein open geometrisk database\\av 2\,048 europeiske stolar (1280--2024)\par}
 \vspace{6pt}
 \textit{Iver Raknes Finne}\\[2pt]
 {\small\textit{Institutt for design, Arkitektur- og designh\o gskolen i Oslo (AHO)}\\
 \texttt{iver.raknes.finne@stud.aho.no}\par}
 \vspace{10pt}
-\noindent\small\textbf{Abstract}\enspace
-Design history has long relied on qualitative case studies of individual artefacts.
-Quantitative morphometric approaches, routine in palaeontology and evolutionary biology since Raup (1966),
-remain rare in the study of designed objects.
-We present STOLAR, an open research database of 2\,048 European chairs spanning 1280--2024,
-compiled from the collections of the Nasjonalmuseet (Oslo) and the Victoria and Albert Museum (London).
-Each record includes up to 30 metadata fields with 99\% dimensional coverage,
-a background-removed photograph, and an AI-generated 3D mesh.
-From the 3D meshes we extract five geometric shape descriptors:
-sphericity, fill ratio, inertia ratio, complexity, and convex hull volume.
-Principal component analysis of the shape descriptors reveals that 60\% of geometric variation
-is explained by two axes: a compactness/roundness axis (PC1, 35.5\%) and a mass/complexity axis (PC2, 24.5\%).
-The database, 3D models, and all analysis code are released under the MIT licence.
+\noindent\small\textbf{Samandrag}\enspace
+Designhistoria har lenge kvilt p\aa{} kvalitative studiar av einskilde artefaktar.
+Kvantitative morfometriske tilnermingar, vanlege i paleontologi og evolusjonsbiologi sidan Raup (1966),
+er sjeldan brukte i studiet av designa objekt.
+Me presenterer STOLAR, ein open forskingsdatabase med 2\,048 europeiske stolar fr\aa{} 1280--2024,
+kompilert fr\aa{} samlingane til Nasjonalmuseet (Oslo) og Victoria and Albert Museum (London).
+Kvar post inneheld opptil 30 metadatafelt med 99\% dimensjonsdekning,
+eit bakgrunnsfjerna fotografi og ein AI-generert 3D-mesh.
+Fr\aa{} 3D-meshane utvinnar me fem geometriske formdeskriptorar:
+sf\ae risitet, fyllgrad, tregleiksratio, kompleksitet og konvekst hylstervolum.
+Prinsipalkomponentanalyse av formdeskriptorane avslerer at 60\% av geometrisk variasjon
+er forklart av to aksar: ein kompaktheit/rundingsakse (PC1, 35.5\%) og ein masse/kompleksitetsakse (PC2, 24.5\%).
+Databasen, 3D-modellane og all analysekode er frigjeven under MIT-lisensen.
 \par\vspace{6pt}
-\noindent\small\textbf{Keywords}\enspace morphospace, design history, shape grammar, 3D morphometrics, cultural evolution, chair design
+\noindent\small\textbf{Nokkelord}\enspace morforom, designhistorie, formgrammatikk, 3D-morfometrikk, kulturell evolusjon, stoldesign
 \par\vspace{10pt}
 \centering
 \includegraphics[width=0.95\textwidth]{chairs_top144_16x9.jpg}
-\captionof{figure}{A selection of 144 chairs from the STOLAR corpus (1280--2024). The morphological diversity; from medieval oak to contemporary injection-moulded plastic; is the empirical phenomenon the database seeks to characterise.}
+\captionof{figure}{Eit utval av 144 stolar fr\aa{} STOLAR-korpuset (1280--2024). Det morfologiske mangfaldet; fr\aa{} mellomaldersk eik til samtids sproytest\o ypt plast; er det empiriske fenomenet databasen s\o kjer \aa{} karakterisere.}
 \label{fig:atlas}
 \vspace{8pt}
 }
@@ -43,485 +43,460 @@ The database, 3D models, and all analysis code are released under the MIT licenc
 \thispagestyle{plain}
 
 
-% ═══════════════════════════════════════════════════════════════════════════════
-\section{Background \& Summary}
+% ═══════════════════════════════════════════
+\section{Bakgrunn og samandrag}
 
-The chair is among the most widely produced designed artefacts in history.
-Every culture that uses seated posture has developed chairs,
-and the resulting morphological diversity spans seven centuries of stylistic,
-material, and technological change.
-Yet despite this richness, the study of furniture form remains overwhelmingly qualitative.
-No large-scale, open database exists that combines dimensional measurements
-with three-dimensional geometry for a significant corpus of chairs.
+Stolen er blant dei mest produserte designa artefaktane i historia.
+Kvar kultur som nyttar sitjande posisjon har utvikla stolar,
+og det resulterande morfologiske mangfaldet spenner over sju hundre\aa r med stilistisk,
+materiell og teknologisk endring.
+Tr\aa ss denne rikdomen er studiet av mobelform overv\ae ldande kvalitativt.
+Ingen storskala, open database eksisterer som kombinerer dimensjonsm\aa lingar
+med tredimensjonal geometri for eit vesentleg korpus av stolar.
 
-\paragraph{Quantitative morphometrics of artefacts.}
-In evolutionary biology, the concept of \emph{morphospace}
-has been productive since Raup's geometric analysis of shell coiling~\cite{raup1966geometric}
-and has been generalised to developmental biology~\cite{mitteroecher2009morphospace}.
-Analogous methods have been applied to archaeological artefacts:
-MacLeod~\cite{macleod2018quantitative} demonstrated digital shape analysis
-as an alternative to landmark-based morphometrics for projectile points,
-and Ros et al.~\cite{pottery2022morphometrics} applied PCA to pottery profiles
-spanning the 12th--19th centuries.
-Grabner et al.~\cite{grabner2015automotive} performed geometric morphometric analysis
-on European car silhouettes over time, finding convergent evolution across brands.
-Cultural evolutionary studies~\cite{lycett2016cultural,mesoudi2011cultural,shennan2015cultural}
-and diversification workflows~\cite{kandler2019diversification}
-confirm that material culture follows measurable evolutionary patterns.
-However, these studies are typically limited to lithic tools, pottery, or 2D vehicle outlines.
-Three-dimensional morphometric analysis of furniture has not been attempted.
+\paragraph{Morforom og kvantitativ morfometrikk.}
+I evolusjonsbiologi har konseptet \emph{morforom}
+vore produktivt sidan Raup si geometriske analyse av skjelspiralar~\cite{raup1966geometric}.
+McGhee~\cite{mcghee1999morphology} systematiserte konseptet teoretisk morforom
+som eit fleirdimensjonalt rom av mogelege former;
+Mitteroecker og Huttegger~\cite{mitteroecher2009morphospace} utvida det til utviklingsbiologi;
+og Mitteroecker~\cite{mitteroecker2022thirty} gjennomgjekk nyleg tretti \aa r
+med geometrisk morfometrikk, der han noterte ekspansjon utover biologiske bruksomr\aa de.
 
-\paragraph{Shape grammars and furniture.}
-Shape grammars provide a formal syntax for design~\cite{stiny1972shape,stiny1980introduction,stiny2006shape,stiny1991algebras}.
-The first application to furniture was Knight's~\cite{knight1980hepplewhite} generation
-of Hepplewhite chair-back designs from a parametric grammar in 1980.
-Subsequent work includes Barros et al.'s ``ChairDNA'' grammar
-for mass customisation, derived from six Thonet chairs~\cite{barros2016chair},
-and Xue and Chen's shape grammar for Ming-style wooden furniture~\cite{xuechen2024shape}.
-A systematic review of fifty years of shape grammar applications~\cite{haakonsen2023shapegrammar}
-identifies a persistent gap: studies are almost exclusively \emph{generative}
-(producing new forms from small corpora of 3--10 objects)
-rather than \emph{analytical} (characterising existing corpora at scale).
-No study has attempted to validate or induce shape grammars
-from a dataset of hundreds or thousands of chairs.
+Morforom-konseptet er brukt i arkitektur:
+Steadman og Mitchell~\cite{steadman2010morphospace} kartla verder av bygde former
+ved \aa{} plotte rektangul\ae re bygningsplanar i eit 2D-morforom.
+I arkeologi demonstrerte MacLeod~\cite{macleod2018quantitative} digital formanalyse
+p\aa{} prosjektilspissar, og Ros et al.~\cite{pottery2022morphometrics} brukte PCA
+p\aa{} keramikkprofilar fr\aa{} 1200--1800-talet.
+Grabner et al.~\cite{grabner2015automotive} utforte geometrisk morfometrisk analyse
+p\aa{} europeiske bilsiluettar og fann konvergent evolusjon mellom merke.
+Kulturelle evolusjonsstudiar~\cite{lycett2016cultural,mesoudi2011cultural,shennan2015cultural}
+og diversifiseringsmetodar~\cite{kandler2019diversification}
+stadfestar at materiell kultur fylgjer m\aa lbare evolusjon\ae re monster.
+Desse studia er avgrensa til steinreiskapar, keramikk, bygningsplanar eller 2D-kjoretoykonturar.
+Tredimensjonal morfometrisk analyse av moblar er ikkje forsekt.
 
-\paragraph{C-K theory.}
-C-K theory offers a complementary logic of design reasoning~\cite{hatchuel2003new,hatchuel2009ck},
-partitioning the process into a concept space $C$ and a knowledge space $K$.
-Both shape grammars and C-K theory would benefit from large empirical datasets
-that map the actual distribution of realised forms.
+\paragraph{3D-formdeskriptorar p\aa{} artefaktar.}
+Globale formdeskriptorar for 3D-objekt vart introduserte av Osada et al.~\cite{osada2002shape}
+for formattfinning; familien inkluderer sf\ae risitet, kompaktheit og tregleiksratioar.
+I arkeologi utvikla Grosman et al.~\cite{grosman2022artifact3d} Artifact3-D,
+som reknar ut volum, overflateareal og massesenter p\aa{} 3D-skanna litiske artefaktar.
+Hanik et al.~\cite{hanik2023sundials} utforte intrinsisk formanalyse
+p\aa{} antikke solur i eit ikkje-euklidsk formrom og utleidde breiddegrad fr\aa{} form.
+Desse studia viser at volumetriske formdeskriptorar kan karakterisere artefaktgeometri;
+men ingen er brukte p\aa{} moblar eller p\aa{} AI-genererte (i staden for skanna) meshar.
 
-\paragraph{Existing 3D datasets.}
-Several large-scale 3D shape repositories exist.
-ShapeNet~\cite{chang2015shapenet} contains over 51\,000 chair models,
-PartNet~\cite{mo2019partnet} provides part-level annotations for 26\,671 objects,
-and Aubry et al.~\cite{aubry2014chairs} aligned $\sim$1\,300 chair CAD models
-to real photographs.
-In cultural heritage, SHREC 2021~\cite{sipiran2021shrec} provides
-938 3D-scanned pre-Columbian artefacts for shape retrieval.
-Burnap et al.~\cite{burnap2023aesthetic} have linked geometric features
-to design appeal using machine learning on vehicle models.
-Manovich~\cite{manovich2020cultural} pioneered large-scale computational analysis
-of visual culture, but limited to 2D image features.
-None of these datasets combines museum-curated historical artefacts
-with temporal metadata, verified dimensions, and computed 3D shape descriptors.
+\paragraph{Formgrammatikkar og moblar.}
+Formgrammatikkar gjev ein formell syntaks for design~\cite{stiny1972shape,stiny1980introduction,stiny2006shape,stiny1991algebras}.
+Den forste bruken p\aa{} moblar var Knight si~\cite{knight1980hepplewhite} generering
+av Hepplewhite-stolryggdesignar fr\aa{} ein parametrisk grammatikk i 1980.
+Seinare arbeid inkluderer Barros et al. sin ``ChairDNA''-grammatikk
+for massetilpassing, utleidd fr\aa{} seks Thonet-stolar~\cite{barros2016chair},
+og Xue og Chen sin formgrammatikk for Ming-stil tremoblar~\cite{xuechen2024shape}.
+Ein systematisk gjennomgang av femti \aa r med formgrammatikk~\cite{haakonsen2023shapegrammar}
+identifiserer eit vedvarande gap: studia er n\ae r utelukkande \emph{generative}
+(produserer nye former fr\aa{} sm\aa{} korpus p\aa{} 3--10 objekt)
+heller enn \emph{analytiske} (karakteriserer eksisterande korpus i stor skala).
+Ingen studie har forsekt \aa{} validere eller indusere formgrammatikkar
+fr\aa{} eit datasett med hundrevis eller tusenvis av stolar.
+
+\paragraph{C-K-teori.}
+C-K-teori tilbyr ein komplement\ae r logikk for designresonnering~\cite{hatchuel2003new,hatchuel2009ck},
+som deler prosessen i eit tankerom $C$ og eit kunnskapsrom $K$.
+B\aa de formgrammatikkar og C-K-teori ville ha nytte av store empiriske datasett
+som kartlegg den faktiske fordelinga av realiserte former.
+
+\paragraph{Eksisterande 3D-datasett.}
+Fleire storskala 3D-formsamlingar finst (Tabell~\ref{tab:datasets}).
+ShapeNet~\cite{chang2015shapenet} inneheld over 51\,000 stolmodellar,
+PartNet~\cite{mo2019partnet} gjev del-annotasjonar for 26\,671 objekt,
+Aubry et al.~\cite{aubry2014chairs} kopla $\sim$1\,300 stol-CAD-modellar
+til fotografi, og 3D-FUTURE~\cite{fu2021future3d} tilbyr 9\,992 teksturerte mobelmodellar.
+Innan kulturarv tilbyr SHREC 2021~\cite{sipiran2021shrec}
+938 3D-skanna prekolumbianske artefaktar for formattfinning.
+Burnap et al.~\cite{burnap2023aesthetic} har kopla geometriske trekk
+til designappell gjennom maskinl\ae ring p\aa{} kjoretoymodellar.
+Manovich~\cite{manovich2020cultural} var pioner for storskala kalkulatorisk analyse
+av visuell kultur, men avgrensa til 2D-biletetrekk.
+Ingen av desse datasetta kombinerer museumskuraterte historiske artefaktar
+med temporal metadata, verifiserte dimensjonar og utrekna 3D-formdeskriptorar.
+Nyleg arbeid med FAIR-datahandtering for 3D-kulturarv~\cite{wilkinson2016fair,barzaghi2024fair3d}
+understrekar viktigheita av opne, veldokumenterte datasett;
+STOLAR er utforma for \aa{} oppfylle desse prinsippa.
 
 \paragraph{STOLAR.}
-STOLAR fills this gap.
-The database contains 2\,048 chairs from two major European collections:
-the Nasjonalmuseet for kunst, arkitektur og design (Oslo; 426 objects)
-and the Victoria and Albert Museum (London; 1\,622 objects),
-spanning 1280--2024 (744 years).
-Each record includes museum-assigned metadata (dating, materials, style period, provenance),
-catalogue dimensions (height, width, depth at $>$98\% coverage),
-a background-removed photograph,
-and an AI-generated 3D mesh from which five geometric shape descriptors are computed:
-sphericity, fill ratio, inertia ratio, complexity, and convex hull volume.
-To our knowledge, this is the first open morphometric dataset
-of designed objects that combines museum provenance
-with 3D shape analysis at this temporal and quantitative scale.
+STOLAR fyller dette gapet.
+Databasen inneheld 2\,048 stolar fr\aa{} to store europeiske samlingar:
+Nasjonalmuseet for kunst, arkitektur og design (Oslo; 426 objekt)
+og Victoria and Albert Museum (London; 1\,622 objekt),
+som spenner over 1280--2024 (744 \aa r).
+Kvar post inneheld museumstildelt metadata (datering, materialar, stilperiode, proveniens),
+katalogdimensjonar (hogde, breidde, djupn med $>$98\% dekning),
+eit bakgrunnsfjerna fotografi,
+og ein AI-generert 3D-mesh som fem geometriske formdeskriptorar er utrekna fr\aa :
+sf\ae risitet, fyllgrad, tregleiksratio, kompleksitet og konvekst hylstervolum.
+S\aa{} langt me veit er dette det forste opne morfometriske datasettet
+av designa objekt som kombinerer museumsproveniens
+med 3D-formanalyse i denne temporale og kvantitative skalaen.
 
 
-% ═══════════════════════════════════════════════════════════════════════════════
-\section{Methods}
+% ═══════════════════════════════════════════
+\section{Metode}
 
-The data pipeline consists of three stages (Figure~\ref{fig:pipeline}):
-data acquisition and harmonisation, image processing, and 3D reconstruction.
-All pipeline code is available in the GitHub repository.
+Datapipelinen best\aa r av tre steg (Figur~\ref{fig:pipeline}):
+datainnhenting og harmonisering, bileteprosessering og 3D-rekonstruksjon.
+All pipelinekode er tilgjengeleg i GitHub-repositoriet.
 
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{pipeline.png}
-\caption{The STOLAR data pipeline. Stage~1 collects and harmonises metadata from two museum APIs into a unified schema. Stage~2 produces standardised background-removed images using Gemini Vision. Stage~3 generates calibrated 3D meshes using Hunyuan3D-2 and extracts five geometric shape descriptors.}
+\caption{STOLAR-datapipelinen. Steg~1 hentar og harmoniserer metadata fr\aa{} to museum-API-ar. Steg~2 produserer standardiserte bakgrunnsfjerna bilete med Gemini Vision. Steg~3 genererer kalibrerte 3D-meshar med Hunyuan3D-2 og utvinnar fem geometriske formdeskriptorar.}
 \label{fig:pipeline}
 \end{figure*}
 
-\subsection{Data acquisition}
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{fig-02-datakort.pdf}
+\caption{Seks stolar fr\aa{} databasen vist som datakort med bakgrunnsfjerna bilete og mesh-utrekna formdeskriptorar (sf\ae risitet, fyllgrad, tregleiksratio, kompleksitet, hylstervolum).}
+\label{fig:datakort}
+\end{figure*}
 
-Chair records were collected from two public museum APIs.
-Nasjonalmuseet objects were retrieved via the museum's DAMS REST API,
-yielding 426 records with structured metadata in Norwegian.
-Victoria and Albert Museum objects were retrieved via the V\&A API (IIIF-compatible),
-yielding 1\,622 records with metadata in English.
+\subsection{Datainnhenting}
 
-Each museum uses different field schemas and naming conventions.
-Records were harmonised into a unified schema of 30 fields (Table~\ref{tab:coverage}).
-Dimensional strings (e.g.\ ``H 95.5 $\times$ B 50.5 $\times$ D 49 cm'')
-were parsed using regular expressions to extract numeric height, width, and depth values.
-Three regex patterns handle the variation in formatting conventions across museums:
-standard Scandinavian (H/B/D), unlabelled (assumes H $\times$ W $\times$ D order),
-and circular objects (H $\times$ diameter).
+Stolpostar vart henta fr\aa{} to opne museum-API-ar.
+Nasjonalmuseet-objekt vart henta via museet sin DAMS REST API,
+som gav 426 postar med strukturert metadata p\aa{} norsk.
+Victoria and Albert Museum-objekt vart henta via V\&A API (IIIF-kompatibel),
+som gav 1\,622 postar med metadata p\aa{} engelsk.
 
-English-language metadata from the V\&A was translated to Nynorsk (Norwegian)
-for structured fields (materials, techniques, style periods, nationalities)
-using a curated translation table of 200+ term pairs.
-This ensures consistent terminology across the combined dataset.
-Style period classification combines museum-assigned categories
-with semi-automated classification for unclassified records,
-producing 15 canonical style periods from Renaissance to contemporary design.
+Kvart museum brukar ulike feltskjema og namnkonvensjonar.
+Postane vart harmoniserte til eit sameint skjema med 30 felt (Tabell~\ref{tab:coverage}).
+Dimensjonsstrenger (t.d.\ ``H 95.5 $\times$ B 50.5 $\times$ D 49 cm'')
+vart tolka med regulere uttrykk for \aa{} trekke ut hogde, breidde og djupn.
+Tre regex-monster handterer variasjonen i formateringskonvensjonar:
+standard skandinavisk (H/B/D), umerka (antek H $\times$ B $\times$ D rekkefolgje),
+og sirkulere objekt (H $\times$ diameter).
 
-\subsection{Image processing}
+Engelsksprekleg metadata fr\aa{} V\&A vart omsett til nynorsk
+for strukturerte felt (materialar, teknikkar, stilperiodar, nasjonalitetar)
+med ei kuratert omsetjingstabell p\aa{} 200+ termpar.
 
-For each chair, the original museum photograph was processed
-to produce a standardised background-removed image.
-The Gemini Vision API (model: gemini-2.5-flash) was used with a prompt specifying
-a sharp subject cutout against a solid white (\texttt{\#ffffff}) background,
-maintaining the original camera angle and proportions.
-Processing ran in parallel with 40 concurrent download workers
-and 15 processing workers.
-Quality control was performed manually on a random sample of 200 images
-to verify cutout accuracy; all passed inspection.
-The pipeline produced 2\,092 background-removed PNG images
-stored in the \texttt{bguw/} directory.
+\subsection{Bileteprosessering}
 
-\subsection{3D reconstruction}
+For kvar stol vart det originale museumsfotografiet prosessert
+til eit standardisert bakgrunnsfjerna bilete.
+Gemini Vision API (modell: gemini-2.5-flash) vart brukt med eit prompt
+som spesifiserte ei skarp utklypping mot solid kvit (\texttt{\#ffffff}) bakgrunn.
+Kvalitetskontroll vart utfort manuelt p\aa{} eit tilfeldig utval av 200 bilete.
+Pipelinen produserte 2\,092 bakgrunnsfjerna PNG-bilete.
 
-Background-removed images served as input to Hunyuan3D-2~\cite{hunyuan3d},
-an open-source image-to-3D generative model run locally on a consumer GPU.
-The model was configured with 50 shape-generation steps and a guidance scale of 5.0,
-producing physically-based rendered (PBR) meshes.
-Generated meshes were automatically decimated to a maximum of 100\,000 faces
-using the \texttt{fast\_simplification} algorithm to ensure manageable file sizes.
+\subsection{3D-rekonstruksjon}
 
-The raw meshes were then calibrated to match the museum-catalogue dimensions.
-For each object with known height, width, and depth,
-the mesh bounding box was read using trimesh~\cite{trimesh},
-and a uniform scale factor was computed to align the largest mesh axis
-with the corresponding catalogue dimension.
-The scale was applied via a $4 \times 4$ transformation matrix
-embedded in the GLB node structure.
+Bakgrunnsfjerna bilete vart brukte som input til Hunyuan3D-2~\cite{hunyuan3d},
+ein open-kjelde bilete-til-3D generativ modell koyrdd lokalt p\aa{} GPU.
+Modellen vart konfigurert med 50 formgenereringssteg og ein rettleiingsskala p\aa{} 5.0.
+Genererte meshar vart automatisk desimerte til maksimalt 100\,000 flater
+med \texttt{fast\_simplification}-algoritmen.
 
-This pipeline produced 2\,205 calibrated GLB files.
-The excess over the 2\,048 catalogue records arises from
-variant images that produced additional meshes;
-duplicate entries are flagged in the metadata.
+R\aa meshane vart s\aa{} kalibrerte mot museumskatalogdimensjonane.
+For kvart objekt med kjende hogde, breidde og djupn
+vart mesh-avgrensningsboksen lesen med trimesh~\cite{trimesh},
+og ein uniform skalafaktor vart utrekna.
+Pipelinen produserte 2\,205 kalibrerte GLB-filer.
 
-\subsection{Mesh feature extraction}
+\subsection{Utvinning av mesh-trekk}
 
-Five geometric shape descriptors were extracted from each calibrated mesh
-using trimesh~\cite{trimesh}:
+Fem geometriske formdeskriptorar vart utvunne fr\aa{} kvar kalibrert mesh
+med trimesh~\cite{trimesh}:
 
 \begin{enumerate}
-\item \textbf{Sphericity}: ratio of surface area of an equal-volume sphere to actual surface area (0--1). A perfect sphere scores 1.0; typical chairs score 0.6--0.9.
-\item \textbf{Fill ratio}: ratio of mesh volume to bounding box volume. Indicates how much of the bounding volume the object actually occupies; a solid cube would score 1.0.
-\item \textbf{Inertia ratio}: ratio of smallest to largest principal moment of inertia (0 = highly elongated along one axis, 1 = isotropic mass distribution).
-\item \textbf{Complexity} ($\log_{10}$ vertices/area): vertex density normalised by surface area. Higher values indicate finer geometric detail.
-\item \textbf{Convex hull volume} (m$^3$): volume of the smallest convex polyhedron enclosing the mesh. Serves as a proxy for visual mass or spatial footprint.
+\item \textbf{Sf\ae risitet}: ratio av overflateareal til ein kule med same volum mot faktisk overflateareal (0--1).
+\item \textbf{Fyllgrad}: ratio av meshvolum til avgrensningsboksvolum.
+\item \textbf{Tregleiksratio}: ratio av minste til storste hovudtregleiksmoment (0 = langstrekt, 1 = isotrop).
+\item \textbf{Kompleksitet} ($\log_{10}$ verteksar/areal): vertekstettleik normalisert etter overflateareal.
+\item \textbf{Konvekst hylstervolum} (m$^3$): volumet av den minste konvekse innhyllinga.
 \end{enumerate}
 
-These five features are available for 2\,029 of 2\,048 chairs (99.1\%).
-The 19 missing records correspond to meshes that failed to load or produced degenerate geometry.
+Desse fem trekka er tilgjengelege for 2\,029 av 2\,048 stolar (99.1\%).
+
+\subsection{Visjonsbasert strukturell annotering}
+\label{sec:enrichment}
+
+I tillegg til mesh-utrekna geometriske trekk
+annoterer me kvar stol med ni strukturelle attributtar
+med Gemini Vision API (modell: gemini-2.5-flash).
+For kvart bakgrunnsfjerna bilete returnerer modellen eit strukturert JSON-objekt
+med: tal komponentar, armlene (ja/nei), polstring (ja/nei),
+ryggtype (open, heiltre, polstra, spiler, ingen),
+tal bein, symmetritype, synleg samansetjingsmetode,
+ornamentniv\aa{} (0--3) og strukturtype
+(fire-bein, frittberande, pidestall, bukk, samanleggbar, stablbar, gyngande, anna).
+
+Per no er 190 av 2\,048 stolar annoterte;
+full beriking p\aa g\aa r.
 
 
-% ═══════════════════════════════════════════════════════════════════════════════
-\section{Data Records}
+% ═══════════════════════════════════════════
+\section{Datapostar}
 
-The database is hosted at \url{https://github.com/lukketsvane/stolar-db}
-and comprises the following files:
+Databasen ligg p\aa{} \url{https://github.com/lukketsvane/stolar-db}
+og omfattar desse filene:
 
 \begin{itemize}
-\item \textbf{STOLAR/api.json}: Full structured JSON API (2\,048 entries) with all metadata fields and mesh features embedded.
-\item \textbf{STOLAR/STOLAR.csv}: CSV export with 30 columns for tabular analysis.
-\item \textbf{STOLAR/glb/}: 2\,205 calibrated 3D meshes in binary glTF 2.0 format.
-\item \textbf{STOLAR/bguw/}: 2\,092 background-removed PNG images.
-\item \textbf{STOLAR/images/}: Original museum photographs (JPG).
-\item \textbf{STOLAR/mesh\_features.csv}: Extended geometric features (20 columns including vertex/face counts, bounding box dimensions, watertightness, and principal inertia moments).
+\item \textbf{STOLAR/api.json}: Fullstendig JSON-API (2\,048 postar).
+\item \textbf{STOLAR/STOLAR.csv}: CSV-eksport med 30 kolonnar.
+\item \textbf{STOLAR/glb/}: 2\,205 kalibrerte 3D-meshar (GLB).
+\item \textbf{STOLAR/bguw/}: 2\,092 bakgrunnsfjerna PNG-bilete.
+\item \textbf{STOLAR/enriched\_chairs.json}: Visjonsbaserte strukturelle annotasjonar (9 felt; sj\aa{} Seksjon~\ref{sec:enrichment}).
 \end{itemize}
 
 \begin{table}[t]
-\caption{Data field coverage across the full dataset.}
+\caption{Feltdekning i det fulle datasettet.}
 \label{tab:coverage}
 \centering\small
 \begin{tabular}{lrr}
 \toprule
-Field & Records & Coverage \\
+Felt & Postar & Dekning \\
 \midrule
-Height (cm)       & 2\,041 & 99.7\% \\
-Width (cm)        & 2\,033 & 99.3\% \\
-Depth (cm)        & 2\,018 & 98.5\% \\
-Materials         & 2\,048 & 100\% \\
-Style period      & 2\,034 & 99.3\% \\
-Origin            & 1\,977 & 96.5\% \\
-Nationality       & 1\,581 & 77.2\% \\
-Designer          & 1\,589 & 77.6\% \\
-Mesh features (5) & 2\,029 & 99.1\% \\
-Technique         & 776    & 37.9\% \\
-Seat height (cm)  & 299    & 14.6\% \\
-Weight (kg)       & 143    & 7.0\% \\
+Hogde (cm)       & 2\,041 & 99.7\% \\
+Breidde (cm)     & 2\,033 & 99.3\% \\
+Djupn (cm)       & 2\,018 & 98.5\% \\
+Materialar       & 2\,048 & 100\% \\
+Stilperiode      & 2\,034 & 99.3\% \\
+Opphav           & 1\,977 & 96.5\% \\
+Mesh-trekk (5)   & 2\,029 & 99.1\% \\
+Teknikk          & 776    & 37.9\% \\
+Setehogde (cm)   & 299    & 14.6\% \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Table~\ref{tab:coverage} summarises the coverage of each field.
-The three primary dimensions achieve $>$98\% coverage.
-Material and style classifications are complete for all 2\,048 records.
-Coverage is lower for secondary fields:
-technique (38\%), seat height (15\%), and estimated weight (7\%).
-The five mesh-derived features maintain 99.1\% coverage.
+\begin{table}[t]
+\caption{Samanlikning med eksisterande 3D-objektdatasett.
+STOLAR er det einaste datasettet som kombinerer historisk proveniens,
+temporalt spenn og utrekna 3D-formdeskriptorar.}
+\label{tab:datasets}
+\centering\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lccccc}
+\toprule
+Datasett & Objekt & 3D & Temporalt & Form- & Ope \\
+         &        &    & spenn     & desk. &     \\
+\midrule
+ShapeNet~\cite{chang2015shapenet}     & 51K stolar & \checkmark & --       & --         & \checkmark \\
+3D-FUTURE~\cite{fu2021future3d}       & 10K mobl.  & \checkmark & --       & --         & \checkmark \\
+Aubry~\cite{aubry2014chairs}          & 1.3K stolar& \checkmark & --       & --         & \checkmark \\
+PartNet~\cite{mo2019partnet}          & 27K obj.   & \checkmark & --       & delar      & \checkmark \\
+SHREC~\cite{sipiran2021shrec}         & 938 artef. & \checkmark & --       & --         & \checkmark \\
+Keramikk~\cite{pottery2022morphometrics}& $\sim$200 & 2D prof. & 12--19h. & landemerke & --         \\
+\textbf{STOLAR}                        & \textbf{2\,048} & \checkmark & \textbf{1280--2024} & \textbf{5 vol.} & \checkmark \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-The database spans 15 style periods from Renaissance to contemporary design,
-with the largest concentrations in Neoclassicism (291 chairs),
-Baroque (229), and Rococo (206).
-Nine chair types are represented, dominated by side chairs (1\,444)
-and armchairs (449), with smaller numbers of stools (86),
-children's chairs (21), and specialised types.
+Databasen spenner over 15 stilperiodar fr\aa{} renessanse til samtidsdesign,
+med dei storste konsentrasjonane i nyklassisisme (291 stolar),
+barokk (229) og rokokko (206).
 
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{fig-03-temporal.pdf}
-\caption{Temporal distribution of chairs by 50-year bins, stratified by source museum. Period brackets indicate major stylistic eras. The V\&A collection dominates the 18th century; Nasjonalmuseet contributes primarily 20th-century Scandinavian design.}
+\caption{Temporal fordeling av stolar i 50-\aa rsbolkar, stratifisert etter kjeldemuseum.}
 \label{fig:temporal}
 \end{figure*}
 
-The temporal distribution (Figure~\ref{fig:temporal}) reveals that
-the dataset is concentrated in the 1700--1900 period,
-reflecting the collecting priorities of the two source institutions.
-The V\&A collection dominates the 18th century,
-while Nasjonalmuseet contributes primarily 20th-century Norwegian and Scandinavian design.
-Pre-1500 records are sparse ($n = 14$), reflecting the rarity of surviving medieval furniture.
 
+% ═══════════════════════════════════════════
+\section{Teknisk validering}
 
-% ═══════════════════════════════════════════════════════════════════════════════
-\section{Technical Validation}
-
-\subsection{Dimensional coverage}
+\subsection{Dimensjonsdekning}
 
 \begin{figure*}[t]
 \centering
 \includegraphics[width=0.88\textwidth]{fig-04-coverage-heatmap.pdf}
-\caption{Data coverage heatmap. Each cell shows the percentage of records with a non-null value for the given field in the given century. The five mesh-derived features maintain $>$98\% coverage across all periods with sufficient data.}
+\caption{Dekningsheatmap. Kvar celle viser prosenten av postar med ein ikkje-null verdi for det gjevne feltet i det gjevne hundre\aa ret.}
 \label{fig:coverage}
 \end{figure*}
 
-Figure~\ref{fig:coverage} shows a field-by-century coverage heatmap.
-The three primary dimensions (height, width, depth) achieve $>$98\% coverage
-across all centuries with sufficient records ($n > 10$).
-Material and style classifications are complete for all records.
-Coverage drops for secondary fields:
-technique (38\%), seat height (15\%), and weight (7\%).
-The five mesh-derived features maintain 99.1\% coverage
-across the entire dataset, with the slight reduction in earlier centuries
-reflecting the small sample sizes (1200s: $n = 1$; 1300s: $n = 1$; 1400s: $n = 2$)
-rather than systematic data quality issues.
+Figur~\ref{fig:coverage} viser eit felt-per-hundre\aa r dekningsheatmap.
+Dei tre hovuddimensjonane (hogde, breidde, djupn) oppn\aa r $>$98\% dekning
+p\aa{} tvers av alle hundre\aa r med tilstrekkelege postar ($n > 10$).
 
-\subsection{Geometric feature analysis}
+\subsection{Geometrisk trekkanalyse}
 
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{fig-05-pca-morphospace.pdf}
-\caption{\textbf{Principal component analysis of five mesh-derived shape descriptors} (n\,=\,2\,029). \textbf{A}: PC1 vs PC2 with KDE density contours (warm colours) and century-coloured scatter. Teal path shows chronological style-centroid trajectory. \textbf{B}: Loading vectors showing feature contributions to each component. \textbf{C}: Scree plot of explained variance per component.}
+\caption{\textbf{Prinsipalkomponentanalyse av fem mesh-utrekna formdeskriptorar} (n\,=\,2\,029). \textbf{A}: PC1 mot PC2 med KDE-tettleikskontourar og hundre\aa rsfarga scatter. Teal sti viser kronologisk stilsentroid-trajektorie. \textbf{B}: Ladningsvektorar. \textbf{C}: Forklart varians per komponent.}
 \label{fig:pca}
 \end{figure*}
 
-Principal component analysis of the five standardised mesh features
-(Figure~\ref{fig:pca}) reveals that two components explain 60.0\% of the total variance.
-PC1 (35.5\%) is driven by inertia ratio (+0.66) and sphericity (+0.57),
-representing a \emph{compactness/roundness} axis:
-chairs that score high on PC1 are geometrically compact and rounded.
-PC2 (24.5\%) is driven by convex hull volume (+0.73)
-and complexity ($-$0.63), representing a \emph{mass-versus-detail} axis:
-chairs with high PC2 scores are volumetrically large but geometrically simple.
+Prinsipalkomponentanalyse av dei fem standardiserte mesh-trekka
+(Figur~\ref{fig:pca}) avslerer at to komponentar forklarar 60.0\% av total varians.
+PC1 (35.5\%) er driven av tregleiksratio (+0.66) og sf\ae risitet (+0.57),
+som representerer ein \emph{kompaktheit/rundingsakse}.
+PC2 (24.5\%) er driven av konvekst hylstervolum (+0.73)
+og kompleksitet ($-$0.63), som representerer ein \emph{masse-mot-detaljakse}.
 
-Style-period centroids in PC space show that pre-industrial styles
-(Baroque, Rococo, Neoclassicism) cluster near the centre of the distribution,
-while Modernism and Functionalism deviate along the compactness axis.
-The chronological centroid trajectory (teal path in Figure~\ref{fig:pca}A)
-shows a systematic drift from lower-left (less compact, more complex)
-to upper-right (more compact, simpler) over the 20th century.
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{fig-15-style-fingerprints.pdf}
+\caption{Stilfingeravtrykk: radardiagram for kvar hovudstilperiode som viser den normaliserte (z-skora) medianen av \aa tte geometriske trekk. Den stipla sirkelen markerer z = 0 (datasettmedianen).}
+\label{fig:fingerprints}
+\end{figure*}
+
+Stilfingeravtrykka (Figur~\ref{fig:fingerprints}) viser at kvar stilperiode
+har ein distinkt geometrisk signatur.
+Renessanse- og barokkstolar avvik langs volumaksen;
+modernistiske stolar er meir kompakte og sf\ae riske;
+samtidsdesign konvergerer mot datasettet sin median.
 
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{fig-06-shape-descriptors.pdf}
-\caption{Distribution of five mesh-derived shape descriptors across major style periods (n\,$\geq$\,30), ordered chronologically. Violin plots show KDE densities; dots show individual chairs. Vertical grey lines mark dataset medians.}
+\caption{Fordeling av fem mesh-utrekna formdeskriptorar p\aa{} tvers av hovudstilperiodar (n\,$\geq$\,30). Fiolinplott viser KDE-tettleikar; prikkar viser einskilde stolar.}
 \label{fig:violins}
 \end{figure*}
 
-The shape descriptors show distinct distributional signatures
-across style periods (Figure~\ref{fig:violins}).
-Sphericity distributions narrow from Renaissance (IQR 0.15) to
-Modernism (IQR 0.08), consistent with increasing geometric standardisation.
-Complexity shows a similar pattern: early styles exhibit wide distributions
-(reflecting both ornate and austere chairs within the same period),
-while 20th-century styles converge toward a narrower complexity band.
+Sf\ae risitetsfordelingane smalnar fr\aa{} renessanse (IQR 0.15) til
+modernisme (IQR 0.08), konsistent med aukande geometrisk standardisering.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{fig-14-correlation-web.pdf}
+\caption{Korrelasjonsmatrise mellom \aa tte dimensjons- og mesh-trekk. Hogde--volum (r = 0.64) og breidde--djupn (r = 0.78) er dei sterkaste koplingane. Mesh-trekka (Sph., Fyll., Tregl., Kompl.) er i stor grad uavhengige av katalogdimensjonane.}
+\label{fig:corrweb}
+\end{figure}
+
+Korrelasjonsmatrisa (Figur~\ref{fig:corrweb}) avslerer at dei mesh-utrekna formtrekka
+er i stor grad uavhengige av katalogdimensjonane (alle $|r| < 0.25$),
+noko som stadfestar at dei fangar distinkt formell informasjon
+utover enkel storleik.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\columnwidth]{fig-08-inertia-tensor.pdf}
-\caption{Inertia ratio vs sphericity, coloured by date. Marginal histograms show univariate distributions. The positive correlation ($r = 0.72$) indicates that compact chairs tend also to be rounder.}
+\caption{Tregleiksratio mot sf\ae risitet, farga etter \aa rstal. Kompakte stolar klyngjer seg oppe til hogre; langstrekte, kantete stolar nede til venstre ($r = 0.72$).}
 \label{fig:inertia}
 \end{figure}
-
-Inertia ratio and sphericity are positively correlated
-($r = 0.72$, $p < 10^{-63}$; Figure~\ref{fig:inertia}),
-indicating that compact chairs tend also to be rounder.
-This correlation defines the dominant axis of chair geometric variation:
-elongated, angular forms (lower left of Figure~\ref{fig:inertia})
-versus compact, rounded forms (upper right).
-The marginal distributions show that most chairs cluster
-in the compact-rounded region (sphericity 0.7--0.9, inertia ratio 0.3--0.7),
-with a long tail of elongated forms.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\columnwidth]{fig-07-proportions.pdf}
-\caption{Proportion ratios over time (25-year bins). Ribbons show interquartile range; lines show medians. Post-industrial chairs converge toward narrower proportional bands.}
+\caption{Proporsjonsratioar over tid (25-\aa rsbolkar). Ribbons viser interkvartilvidde; liner viser medianer.}
 \label{fig:proportions}
 \end{figure}
 
-Proportion ratios (height:width, height:depth, width:depth)
-evolve systematically over time (Figure~\ref{fig:proportions}).
-Early chairs (pre-1600) show high variance in all three ratios,
-reflecting the heterogeneity of pre-industrial furniture production.
-Post-industrial chairs converge toward a narrower proportional band,
-with height:width stabilising near 1.5:1.
-The width:depth ratio remains closest to 1:1 throughout the dataset,
-indicating that chairs have maintained roughly square plan proportions
-even as their height-to-width relationships changed.
-
-\subsection{Shape space}
+\subsection{Morforomevolusjon}
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{fig-10-shape-space.pdf}
-\caption{Shape space: complexity vs sphericity, coloured by date. Teal path shows chronological style-centroid trajectory from Renaissance to contemporary design.}
-\label{fig:shapespace}
+\includegraphics[width=\columnwidth]{fig-16-morphospace-evolution.pdf}
+\caption{Morforomevolusjon: distribusjonen av sf\ae risitet i 50-\aa rsbolkar fr\aa{} 1500 til 2000. Kvar rad er ein KDE-tettleik for den gjevne perioden. Vertikale strekar viser periodemedianer. Fr\aa{} 1800-talet konvergerer fordelinga mot hogre sf\ae risitet.}
+\label{fig:kymograph}
 \end{figure}
 
-The complexity-sphericity scatter (Figure~\ref{fig:shapespace})
-defines a two-dimensional ``shape space'' analogous to Raup's shell morphospace.
-Most chairs occupy a concentrated region (complexity 4.5--6.5, sphericity 0.7--0.9),
-but the distribution has informative tails:
-low-sphericity outliers correspond to elongated or asymmetric forms,
-while high-complexity outliers correspond to meshes with fine surface detail.
-The chronological style-centroid trajectory shows a gradual drift
-from lower sphericity and complexity (Renaissance)
-toward higher sphericity (contemporary design).
+Kymografen (Figur~\ref{fig:kymograph}) viser korleis sf\ae risitetsfordelinga
+endrar seg over tid.
+F\o r 1700 er fordelinga brei og ujamn, med sm\aa{} utval.
+Fr\aa{} 1750 konsentrerer fordelinga seg progressivt
+rundt sf\ae risitet 0.75--0.85, konsistent med industrialiseringa
+og den tilhoyrane standardiseringa av mobelproroduksjonen.
 
-\subsection{Mesh quality}
+\subsection{Mesh-kvalitet}
 
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{fig-11-mesh-quality.pdf}
-\caption{Mesh quality validation. \textbf{A}: Distribution of mesh complexity ($\log_{10}$ vertices/area); unimodal with median 5.29. \textbf{B}: Catalogue bounding-box volume ($H \times W \times D$) vs convex hull volume ($r = 0.39$); the moderate correlation reflects that chairs do not fill their bounding boxes uniformly. \textbf{C}: Z-scored feature distributions; 66 observations (3.3\%) exceed $|z| > 3$, within the expected range for $n = 2\,029$.}
+\caption{Mesh-kvalitetsvalidering. \textbf{A}: Fordeling av mesh-kompleksitet. \textbf{B}: Katalogvolum mot hylstervolum ($r = 0.39$). \textbf{C}: Z-skora trekkfordelingar; 66 observasjonar (3.3\%) overstig $|z| > 3$.}
 \label{fig:quality}
 \end{figure*}
 
-The mesh complexity distribution (Figure~\ref{fig:quality}A) is unimodal
-with median $\log_{10}(v/a) = 5.29$,
-indicating consistent mesh resolution across the corpus.
-The correlation between catalogue bounding-box volume ($H \times W \times D$)
-and convex hull volume is $r = 0.39$ (Figure~\ref{fig:quality}B).
-This moderate correlation is expected:
-catalogue dimensions define a rectangular prism,
-while the convex hull follows the object's actual silhouette.
-Chairs with open backs, splayed legs, or cantilevered seats
-will have convex hull volumes substantially smaller than their bounding boxes.
+Mesh-kompleksitetsfordelinga (Figur~\ref{fig:quality}A) er unimodal
+med median $\log_{10}(v/a) = 5.29$.
+Korrelasjonen mellom katalogvolum og konvekst hylstervolum er $r = 0.39$ (Figur~\ref{fig:quality}B).
 
-Of the five z-scored mesh features,
-66 observations (3.3\%) exceed $|z| > 3$ (Figure~\ref{fig:quality}C),
-within the expected range for a dataset of this size (normal expectation: 0.3\%).
-The elevated rate reflects the non-Gaussian tails of the fill ratio and hull volume distributions
-rather than data quality issues.
-These outliers are retained in the dataset and flagged for user awareness.
+\subsection{Kryssmuseumskonsistens}
 
-\subsection{Cross-museum consistency}
-
-The two source museums contribute records with different
-temporal and geographic distributions:
-V\&A emphasises 18th-century British furniture,
-while Nasjonalmuseet covers 20th-century Scandinavian design (Figure~\ref{fig:temporal}).
-Despite these differences, the mesh feature distributions
-do not differ significantly between museums after controlling for period
-(two-sample Kolmogorov--Smirnov tests, $p > 0.05$
-for all five features within matched half-century bins),
-supporting the validity of pooling the two collections
-for cross-period analyses.
+Dei to kjeldemusea bidrar med postar med ulike temporale og geografiske fordelingar.
+Tr\aa ss desse skilnadene skil ikkje mesh-trekkfordelingane seg signifikant mellom museum
+etter kontroll for periode
+(to-utvals Kolmogorov--Smirnov-testar, $p > 0.05$
+for alle fem trekk innanfor matchande halve hundre\aa rsbolkar).
 
 
-% ═══════════════════════════════════════════════════════════════════════════════
-\section{Usage Notes}
+% ═══════════════════════════════════════════
+\section{Bruksnotat}
 
-The database can be loaded in Python as a CSV or JSON file:
+Databasen kan lastast i Python:
 
 {\small
 \begin{verbatim}
 import pandas as pd
 df = pd.read_csv("STOLAR/STOLAR.csv")
-# 2048 rows, 30 columns
-\end{verbatim}
-}
 
-\noindent 3D meshes can be loaded and analysed with trimesh:
-
-{\small
-\begin{verbatim}
 import trimesh
 mesh = trimesh.load("STOLAR/glb/NMK.2005.0638.glb")
-print(mesh.vertices.shape, mesh.volume)
 \end{verbatim}
 }
 
-\noindent The JSON API provides all metadata and mesh features in a single file suitable for web applications and programmatic access.
+\subsection{Mogelege bruksomr\aa de}
 
-\subsection{Limitations}
+STOLAR mogleggjer fleire forskingsretningar:
 
-The 3D meshes are AI-generated approximations, not photogrammetric scans.
-They capture overall form and proportions but may lack fine surface detail
-(carvings, upholstery texture, joinery).
-The Hunyuan3D-2 model operates from a single image,
-which may introduce view-dependent artefacts for objects
-with significant geometry hidden from the camera.
+\begin{itemize}
+\item \emph{Kvantitativ designhistorie}: teste om stiltransisjonar
+      svarar til m\aa lbare geometriske skifte~\cite{kubler1962shape,thompson1917growth}.
+\item \emph{Formgrammatikkvalidering}: samanlikne grammatikk-genererte former
+      mot den empiriske fordelinga av realiserte stolar~\cite{stiny2006shape,knight1980hepplewhite}.
+\item \emph{Kulturell evolusjonell modellering}: estimere oppst\aa ings- og utdoyingsratar
+      for morfologiske trekk~\cite{kandler2019diversification}.
+\item \emph{Maskinleringsbenchmarks}: trene generative 3D-modellar
+      p\aa{} historisk grunna data.
+\item \emph{Designutdanning}: gje studentar empirisk evidens
+      for korleis form, material og funksjon samhandlar over hundre\aa r.
+\end{itemize}
 
-Style period classifications combine museum assignments
-with semi-automated classification and may not match
-all art-historical taxonomies.
-Users are encouraged to examine the raw \texttt{style} field
-and apply their own classification schemes where appropriate.
+\subsection{Avgrensingar}
 
-Dimensional data was parsed from free-text strings
-and may contain measurement errors from the source catalogues.
-We recommend filtering records with implausible dimension values
-($< 10$ cm or $> 200$ cm in any axis) for sensitive analyses.
+3D-meshane er AI-genererte tilnermingar, ikkje fotogrammetriske skannar.
+Hunyuan3D-2-modellen opererer fr\aa{} eit einaste bilete,
+noko som kan introdusere synsavhengige artefaktar.
 
-The dataset reflects the collecting priorities of two European museums
-and is not representative of global furniture traditions.
-African, Asian, and indigenous seating forms are not represented.
+Stilperiodeklassifiseringar kombinerer museumstildelingar
+med semi-automatisert klassifisering.
+Dimensjonsdata vart tolka fr\aa{} fritekststrenger
+og kan innehalde m\aa lefeil fr\aa{} kjeldekatalogane.
+
+Datasettet speglar innsamlingsprioritetane til to europeiske museum
+og er ikkje representativt for globale mobeltradisjona.
 
 
-% ═══════════════════════════════════════════════════════════════════════════════
-\section{Code Availability}
+% ═══════════════════════════════════════════
+\section{Kodetilgang}
 
-All data, 3D models, and analysis code are available at
+All data, 3D-modellar og analysekode er tilgjengelege p\aa{}
 \url{https://github.com/lukketsvane/stolar-db}.
-The figure-generation scripts for this article are in
-\texttt{writings/data-descriptor/figures/}
-and require Python 3.12 with pandas, numpy, scipy,
-matplotlib, scikit-learn, and trimesh.
-The database is released under the MIT licence.
-Original photographs and metadata are subject to
-the respective museums' terms of use.
+Databasen er frigjeven under MIT-lisensen.
 
+\section*{Takkseiingar}
 
-% ═══════════════════════════════════════════════════════════════════════════════
-\section*{Acknowledgements}
+Forfattaren takkar Nasjonalmuseet for kunst, arkitektur og design
+og Victoria and Albert Museum for \aa{} gjere samlingsdataa sine
+tilgjengelege gjennom opne API-ar.
+Dette arbeidet vart utfort ved Institutt for design,
+Arkitektur- og designhogskolen i Oslo (AHO).
 
-The author thanks Nasjonalmuseet for kunst, arkitektur og design
-and the Victoria and Albert Museum for making their collection data
-available through public APIs.
-This work was carried out at the Institute of Design,
-Oslo School of Architecture and Design (AHO).
+\section*{Forfattarbidrag}
 
-\section*{Author Contributions}
+I.R.F.\ designa studien, samla dataa, bygde pipelinen,
+utforte analysane og skreiv manuskriptet.
 
-I.R.F.\ designed the study, collected the data, built the pipeline,
-performed the analyses, and wrote the manuscript.
+\section*{Konkurrerande interesser}
 
-\section*{Competing Interests}
+Forfattaren erkl\ae rer ingen konkurrerande interesser.
 
-The author declares no competing interests.
-
-
-% ═══════════════════════════════════════════════════════════════════════════════
 \bibliography{references}
 
 \end{document}
