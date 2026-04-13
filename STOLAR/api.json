@@ -5979,7 +5979,16 @@
         "inertia_ratio": 0.4193,
         "complexity": 4.6473,
         "vol_hull": 1.4131
-      }
+      },
+      "tal_komponentar": 6,
+      "har_armlene": false,
+      "har_polstring": false,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 0,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Berlage chair",
@@ -6006,7 +6015,16 @@
         "inertia_ratio": 0.5839,
         "complexity": 4.6452,
         "vol_hull": 2.469
-      }
+      },
+      "tal_komponentar": 6,
+      "har_armlene": false,
+      "har_polstring": false,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 0,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Sexy Relaxy",
@@ -6035,7 +6053,16 @@
         "inertia_ratio": 0.6768,
         "complexity": 6.0401,
         "vol_hull": 0.0238
-      }
+      },
+      "tal_komponentar": 1,
+      "har_armlene": false,
+      "har_polstring": false,
+      "rygg_type": "heiltre",
+      "tal_bein": 2,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "ingen_synleg",
+      "ornament_nivaa": 0,
+      "struktur_type": "anna"
     },
     {
       "name": "Armchair (ukjent)",
@@ -6065,7 +6092,16 @@
         "inertia_ratio": 0.5012,
         "complexity": 5.2649,
         "vol_hull": 0.2218
-      }
+      },
+      "tal_komponentar": 8,
+      "har_armlene": true,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 3,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Armchair (ukjent)",
@@ -6095,7 +6131,16 @@
         "inertia_ratio": 0.463,
         "complexity": 4.5934,
         "vol_hull": 0.1958
-      }
+      },
+      "tal_komponentar": 1,
+      "har_armlene": false,
+      "har_polstring": false,
+      "rygg_type": "ingen",
+      "tal_bein": 0,
+      "symmetri": "asymmetrisk",
+      "synleg_samansetjing": "ingen_synleg",
+      "ornament_nivaa": 3,
+      "struktur_type": "anna"
     },
     {
       "name": "Armchair (ukjent)",
@@ -6125,7 +6170,16 @@
         "inertia_ratio": 0.4785,
         "complexity": 5.2803,
         "vol_hull": 0.2252
-      }
+      },
+      "tal_komponentar": 6,
+      "har_armlene": true,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "ingen_synleg",
+      "ornament_nivaa": 3,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Armchair (ukjent)",
@@ -6155,7 +6209,16 @@
         "inertia_ratio": 0.4643,
         "complexity": 4.6704,
         "vol_hull": 1.5974
-      }
+      },
+      "tal_komponentar": 6,
+      "har_armlene": true,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "ingen_synleg",
+      "ornament_nivaa": 3,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Eames Elephant",
@@ -6184,7 +6247,16 @@
         "inertia_ratio": 0.443,
         "complexity": 5.5982,
         "vol_hull": 0.0593
-      }
+      },
+      "tal_komponentar": 2,
+      "har_armlene": false,
+      "har_polstring": false,
+      "rygg_type": "ingen",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "skruar",
+      "ornament_nivaa": 0,
+      "struktur_type": "anna"
     },
     {
       "name": "Mico",
@@ -6214,7 +6286,16 @@
         "inertia_ratio": 0.5733,
         "complexity": 5.954,
         "vol_hull": 0.0368
-      }
+      },
+      "tal_komponentar": 1,
+      "har_armlene": false,
+      "har_polstring": false,
+      "rygg_type": "ingen",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "ingen_synleg",
+      "ornament_nivaa": 0,
+      "struktur_type": "anna"
     },
     {
       "name": "Chair (Bertoia, Harry)",
@@ -6244,7 +6325,16 @@
         "inertia_ratio": 0.4835,
         "complexity": 5.8858,
         "vol_hull": 0.0296
-      }
+      },
+      "tal_komponentar": 2,
+      "har_armlene": false,
+      "har_polstring": false,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "sveisa",
+      "ornament_nivaa": 0,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Marko",
@@ -6273,7 +6363,16 @@
         "inertia_ratio": 0.5477,
         "complexity": 5.7913,
         "vol_hull": 0.0391
-      }
+      },
+      "tal_komponentar": 2,
+      "har_armlene": false,
+      "har_polstring": false,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "bøygd",
+      "ornament_nivaa": 0,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Chair (ukjent)",
@@ -6301,7 +6400,16 @@
         "inertia_ratio": 0.6727,
         "complexity": 4.714,
         "vol_hull": 3.3232
-      }
+      },
+      "tal_komponentar": 2,
+      "har_armlene": false,
+      "har_polstring": false,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "sveisa",
+      "ornament_nivaa": 1,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Armchair (Modzelewski, Roman)",
@@ -6330,7 +6438,16 @@
         "inertia_ratio": 0.8246,
         "complexity": 5.2097,
         "vol_hull": 0.7598
-      }
+      },
+      "tal_komponentar": 2,
+      "har_armlene": true,
+      "har_polstring": false,
+      "rygg_type": "heiltre",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "ingen_synleg",
+      "ornament_nivaa": 0,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Knotted Chair",
@@ -6358,7 +6475,16 @@
         "inertia_ratio": 0.562,
         "complexity": 4.7294,
         "vol_hull": 2.8698
-      }
+      },
+      "tal_komponentar": 1,
+      "har_armlene": false,
+      "har_polstring": false,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "knytt",
+      "ornament_nivaa": 2,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Chair (Rietveld, Gerrit Thomas)",
@@ -6388,7 +6514,16 @@
         "inertia_ratio": 0.5297,
         "complexity": 5.9761,
         "vol_hull": 0.023
-      }
+      },
+      "tal_komponentar": 2,
+      "har_armlene": false,
+      "har_polstring": false,
+      "rygg_type": "heiltre",
+      "tal_bein": 0,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "skruar",
+      "ornament_nivaa": 0,
+      "struktur_type": "frittberande"
     },
     {
       "name": "Armchair (Linnell, John)",
@@ -6418,7 +6553,16 @@
         "inertia_ratio": 0.5557,
         "complexity": 4.6523,
         "vol_hull": 1.8747
-      }
+      },
+      "tal_komponentar": 8,
+      "har_armlene": true,
+      "har_polstring": false,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 3,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Dining chair (Breuer, Marcel Lajos)",
@@ -6448,7 +6592,16 @@
         "inertia_ratio": 0.5044,
         "complexity": 4.6324,
         "vol_hull": 2.038
-      }
+      },
+      "tal_komponentar": 5,
+      "har_armlene": false,
+      "har_polstring": false,
+      "rygg_type": "heiltre",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "bøygd",
+      "ornament_nivaa": 0,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Dining chair (Breuer, Marcel Lajos)",
@@ -6478,7 +6631,16 @@
         "inertia_ratio": 0.5309,
         "complexity": 3.4765,
         "vol_hull": 114.5953
-      }
+      },
+      "tal_komponentar": 5,
+      "har_armlene": false,
+      "har_polstring": false,
+      "rygg_type": "heiltre",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "bøygd",
+      "ornament_nivaa": 0,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "BA3 chair",
@@ -6507,7 +6669,16 @@
         "inertia_ratio": 0.4901,
         "complexity": 5.4805,
         "vol_hull": 0.1047
-      }
+      },
+      "tal_komponentar": 4,
+      "har_armlene": false,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "sveisa",
+      "ornament_nivaa": 0,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Consumer's Rest Lounge Chair",
@@ -6537,7 +6708,16 @@
         "inertia_ratio": 0.6035,
         "complexity": 4.6989,
         "vol_hull": 2.4271
-      }
+      },
+      "tal_komponentar": 3,
+      "har_armlene": true,
+      "har_polstring": false,
+      "rygg_type": "open",
+      "tal_bein": 0,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "sveisa",
+      "ornament_nivaa": 0,
+      "struktur_type": "anna"
     },
     {
       "name": "Chair",
@@ -6567,7 +6747,16 @@
         "inertia_ratio": 0.3207,
         "complexity": 4.6464,
         "vol_hull": 0.7974
-      }
+      },
+      "tal_komponentar": 10,
+      "har_armlene": false,
+      "har_polstring": false,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "ingen_synleg",
+      "ornament_nivaa": 3,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "SPLAT Chair",
@@ -6597,7 +6786,16 @@
         "inertia_ratio": 0.6185,
         "complexity": 4.6422,
         "vol_hull": 3.5151
-      }
+      },
+      "tal_komponentar": 5,
+      "har_armlene": false,
+      "har_polstring": false,
+      "rygg_type": "heiltre",
+      "tal_bein": 0,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 1,
+      "struktur_type": "anna"
     },
     {
       "name": "'Prism' chair",
@@ -6628,7 +6826,16 @@
         "inertia_ratio": 0.6161,
         "complexity": 5.5858,
         "vol_hull": 0.1508
-      }
+      },
+      "tal_komponentar": 4,
+      "har_armlene": false,
+      "har_polstring": false,
+      "rygg_type": "heiltre",
+      "tal_bein": 0,
+      "symmetri": "asymmetrisk",
+      "synleg_samansetjing": "ingen_synleg",
+      "ornament_nivaa": 1,
+      "struktur_type": "anna"
     },
     {
       "name": "K-Block",
@@ -6658,7 +6865,16 @@
         "inertia_ratio": 0.6225,
         "complexity": 6.2645,
         "vol_hull": 0.0123
-      }
+      },
+      "tal_komponentar": 1,
+      "har_armlene": false,
+      "har_polstring": false,
+      "rygg_type": "ingen",
+      "tal_bein": 0,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "ingen_synleg",
+      "ornament_nivaa": 0,
+      "struktur_type": "anna"
     },
     {
       "name": "Chair (bObles)",
@@ -6688,7 +6904,16 @@
         "inertia_ratio": 0.4034,
         "complexity": 5.7515,
         "vol_hull": 0.0299
-      }
+      },
+      "tal_komponentar": 1,
+      "har_armlene": false,
+      "har_polstring": false,
+      "rygg_type": "ingen",
+      "tal_bein": 0,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "ingen_synleg",
+      "ornament_nivaa": 0,
+      "struktur_type": "anna"
     },
     {
       "name": "Chair (A.W. Pugin)",
@@ -6718,7 +6943,16 @@
         "inertia_ratio": 0.4488,
         "complexity": 4.6498,
         "vol_hull": 1.5855
-      }
+      },
+      "tal_komponentar": 3,
+      "har_armlene": false,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 1,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Chair (A.W. Pugin)",
@@ -6748,7 +6982,16 @@
         "inertia_ratio": 0.4195,
         "complexity": 4.6516,
         "vol_hull": 1.4652
-      }
+      },
+      "tal_komponentar": 3,
+      "har_armlene": false,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 1,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Chair (A.W. Pugin)",
@@ -6778,7 +7021,16 @@
         "inertia_ratio": 0.4271,
         "complexity": 4.6387,
         "vol_hull": 1.5884
-      }
+      },
+      "tal_komponentar": 3,
+      "har_armlene": false,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 1,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "BA-3",
@@ -6808,7 +7060,16 @@
         "inertia_ratio": 0.5163,
         "complexity": 5.4698,
         "vol_hull": 0.1103
-      }
+      },
+      "tal_komponentar": 3,
+      "har_armlene": false,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "sveisa",
+      "ornament_nivaa": 0,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Chair (ukjent)",
@@ -6838,7 +7099,16 @@
         "inertia_ratio": 0.5782,
         "complexity": 4.6664,
         "vol_hull": 2.7526
-      }
+      },
+      "tal_komponentar": 3,
+      "har_armlene": false,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 1,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Chair (ukjent)",
@@ -6868,7 +7138,16 @@
         "inertia_ratio": 0.431,
         "complexity": 4.6462,
         "vol_hull": 1.472
-      }
+      },
+      "tal_komponentar": 6,
+      "har_armlene": false,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 1,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Armchair (ukjent)",
@@ -6898,7 +7177,16 @@
         "inertia_ratio": 0.3916,
         "complexity": 4.6535,
         "vol_hull": 1.3166
-      }
+      },
+      "tal_komponentar": 6,
+      "har_armlene": false,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 1,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Chair (ukjent)",
@@ -6928,7 +7216,16 @@
         "inertia_ratio": 0.4944,
         "complexity": 4.6459,
         "vol_hull": 1.7281
-      }
+      },
+      "tal_komponentar": 6,
+      "har_armlene": false,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 1,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Frenesí (Frenzy)",
@@ -6958,7 +7255,16 @@
         "inertia_ratio": 0.3172,
         "complexity": 4.6633,
         "vol_hull": 1.3731
-      }
+      },
+      "tal_komponentar": 4,
+      "har_armlene": false,
+      "har_polstring": false,
+      "rygg_type": "ingen",
+      "tal_bein": 0,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "sveisa",
+      "ornament_nivaa": 0,
+      "struktur_type": "pidestall"
     },
     {
       "name": "Morning Sun",
@@ -6988,7 +7294,16 @@
         "inertia_ratio": 0.6132,
         "complexity": 5.4993,
         "vol_hull": 0.2187
-      }
+      },
+      "tal_komponentar": 1,
+      "har_armlene": true,
+      "har_polstring": false,
+      "rygg_type": "heiltre",
+      "tal_bein": 0,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "ingen_synleg",
+      "ornament_nivaa": 1,
+      "struktur_type": "anna"
     },
     {
       "name": "Bel Air",
@@ -7017,7 +7332,16 @@
         "inertia_ratio": 0.5958,
         "complexity": 4.9631,
         "vol_hull": 0.8659
-      }
+      },
+      "tal_komponentar": 6,
+      "har_armlene": true,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 0,
+      "symmetri": "asymmetrisk",
+      "synleg_samansetjing": "ingen_synleg",
+      "ornament_nivaa": 1,
+      "struktur_type": "anna"
     },
     {
       "name": "The Denon Chair",
@@ -7048,7 +7372,16 @@
         "inertia_ratio": 0.465,
         "complexity": 4.9441,
         "vol_hull": 0.7143
-      }
+      },
+      "tal_komponentar": 8,
+      "har_armlene": true,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 3,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Nothing Continues to Happen",
@@ -7075,7 +7408,16 @@
         "inertia_ratio": 0.3894,
         "complexity": 5.2484,
         "vol_hull": 0.1149
-      }
+      },
+      "tal_komponentar": 1,
+      "har_armlene": false,
+      "har_polstring": false,
+      "rygg_type": "heiltre",
+      "tal_bein": 4,
+      "symmetri": "asymmetrisk",
+      "synleg_samansetjing": "ingen_synleg",
+      "ornament_nivaa": 2,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "V-leg officer's chair",
@@ -7104,7 +7446,16 @@
         "inertia_ratio": 0.4872,
         "complexity": 5.92,
         "vol_hull": 0.0217
-      }
+      },
+      "tal_komponentar": 5,
+      "har_armlene": false,
+      "har_polstring": false,
+      "rygg_type": "heiltre",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "skruar",
+      "ornament_nivaa": 0,
+      "struktur_type": "samanleggbar"
     },
     {
       "name": "Chair (Le Corbusier)",
@@ -7134,7 +7485,16 @@
         "inertia_ratio": 0.554,
         "complexity": 3.8598,
         "vol_hull": 0.0137
-      }
+      },
+      "tal_komponentar": 5,
+      "har_armlene": true,
+      "har_polstring": false,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 0,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Chair (Christopher Dresser)",
@@ -7164,7 +7524,16 @@
         "inertia_ratio": 0.256,
         "complexity": 4.4337,
         "vol_hull": 0.1494
-      }
+      },
+      "tal_komponentar": 7,
+      "har_armlene": false,
+      "har_polstring": false,
+      "rygg_type": "heiltre",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 3,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Chair (Milne)",
@@ -7192,7 +7561,16 @@
         "inertia_ratio": 0.6766,
         "complexity": 4.6813,
         "vol_hull": 2.7726
-      }
+      },
+      "tal_komponentar": 3,
+      "har_armlene": true,
+      "har_polstring": false,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "sveisa",
+      "ornament_nivaa": 0,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Chair (Milne, Andrew John)",
@@ -7222,7 +7600,16 @@
         "inertia_ratio": 0.64,
         "complexity": 5.1822,
         "vol_hull": 0.0243
-      }
+      },
+      "tal_komponentar": 3,
+      "har_armlene": true,
+      "har_polstring": false,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "sveisa",
+      "ornament_nivaa": 0,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Antelope",
@@ -7253,7 +7640,16 @@
         "inertia_ratio": 0.3762,
         "complexity": 5.0865,
         "vol_hull": 0.091
-      }
+      },
+      "tal_komponentar": 4,
+      "har_armlene": true,
+      "har_polstring": false,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "sveisa",
+      "ornament_nivaa": 0,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Kangaroo",
@@ -7283,7 +7679,16 @@
         "inertia_ratio": 0.6626,
         "complexity": 4.7208,
         "vol_hull": 2.5304
-      }
+      },
+      "tal_komponentar": 3,
+      "har_armlene": false,
+      "har_polstring": false,
+      "rygg_type": "open",
+      "tal_bein": 0,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "sveisa",
+      "ornament_nivaa": 0,
+      "struktur_type": "gyngande"
     },
     {
       "name": "Ad Hoc chair",
@@ -7312,7 +7717,16 @@
         "inertia_ratio": 0.4187,
         "complexity": 3.6372,
         "vol_hull": 0.0487
-      }
+      },
+      "tal_komponentar": 5,
+      "har_armlene": true,
+      "har_polstring": false,
+      "rygg_type": "ingen",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "sveisa",
+      "ornament_nivaa": 0,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Hall chair (Julius Yacoby)",
@@ -7341,7 +7755,16 @@
         "inertia_ratio": 0.3963,
         "complexity": 5.1838,
         "vol_hull": 0.1811
-      }
+      },
+      "tal_komponentar": 5,
+      "har_armlene": false,
+      "har_polstring": false,
+      "rygg_type": "heiltre",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 3,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Sofa (Goerke, Gustav)",
@@ -7371,7 +7794,16 @@
         "inertia_ratio": 0.4914,
         "complexity": 4.643,
         "vol_hull": 2.3393
-      }
+      },
+      "tal_komponentar": 5,
+      "har_armlene": true,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "ingen_synleg",
+      "ornament_nivaa": 1,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Armchair (Goerke)",
@@ -7402,7 +7834,16 @@
         "inertia_ratio": 0.8705,
         "complexity": 5.384,
         "vol_hull": 0.4286
-      }
+      },
+      "tal_komponentar": 5,
+      "har_armlene": true,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "ingen_synleg",
+      "ornament_nivaa": 1,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Armchair (Goerke)",
@@ -7433,7 +7874,16 @@
         "inertia_ratio": 0.8301,
         "complexity": 5.3404,
         "vol_hull": 0.4857
-      }
+      },
+      "tal_komponentar": 5,
+      "har_armlene": true,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "ingen_synleg",
+      "ornament_nivaa": 1,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Stool (Goerke, Gustav)",
@@ -7463,7 +7913,16 @@
         "inertia_ratio": 0.8057,
         "complexity": 4.5846,
         "vol_hull": 5.5674
-      }
+      },
+      "tal_komponentar": 4,
+      "har_armlene": false,
+      "har_polstring": true,
+      "rygg_type": "ingen",
+      "tal_bein": 2,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 1,
+      "struktur_type": "anna"
     },
     {
       "name": "Desk chair (Goerke)",
@@ -7493,7 +7952,16 @@
         "inertia_ratio": 0.6817,
         "complexity": 4.6466,
         "vol_hull": 2.8656
-      }
+      },
+      "tal_komponentar": 4,
+      "har_armlene": true,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "ingen_synleg",
+      "ornament_nivaa": 0,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Vilstolen",
@@ -7522,7 +7990,16 @@
         "inertia_ratio": 0.4686,
         "complexity": 5.3282,
         "vol_hull": 0.2311
-      }
+      },
+      "tal_komponentar": 4,
+      "har_armlene": false,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "skruar",
+      "ornament_nivaa": 0,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Chair (ukjent)",
@@ -7551,7 +8028,16 @@
         "inertia_ratio": 0.5007,
         "complexity": 5.4358,
         "vol_hull": 0.1265
-      }
+      },
+      "tal_komponentar": 8,
+      "har_armlene": true,
+      "har_polstring": false,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 3,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Bench (ukjent)",
@@ -7580,7 +8066,16 @@
         "inertia_ratio": 0.1945,
         "complexity": 4.6712,
         "vol_hull": 0.7203
-      }
+      },
+      "tal_komponentar": 10,
+      "har_armlene": true,
+      "har_polstring": false,
+      "rygg_type": "open",
+      "tal_bein": 6,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 3,
+      "struktur_type": "anna"
     },
     {
       "name": "Chair (ukjent)",
@@ -7610,7 +8105,16 @@
         "inertia_ratio": 0.5162,
         "complexity": 5.5734,
         "vol_hull": 0.0723
-      }
+      },
+      "tal_komponentar": 12,
+      "har_armlene": true,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 1,
+      "struktur_type": "gyngande"
     },
     {
       "name": "Armchair (Gimson, Ernest William)",
@@ -7639,7 +8143,16 @@
         "inertia_ratio": 0.2859,
         "complexity": 5.0869,
         "vol_hull": 0.2053
-      }
+      },
+      "tal_komponentar": 15,
+      "har_armlene": true,
+      "har_polstring": false,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 1,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Armchair (ukjent)",
@@ -7669,7 +8182,16 @@
         "inertia_ratio": 0.5003,
         "complexity": 5.2086,
         "vol_hull": 0.2181
-      }
+      },
+      "tal_komponentar": 10,
+      "har_armlene": true,
+      "har_polstring": false,
+      "rygg_type": "heiltre",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 3,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Armchair (C. F. A. Voysey)",
@@ -7700,7 +8222,16 @@
         "inertia_ratio": 0.3066,
         "complexity": 4.9318,
         "vol_hull": 0.282
-      }
+      },
+      "tal_komponentar": 10,
+      "har_armlene": true,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 1,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Armchair (Punnett, E. G.)",
@@ -7729,7 +8260,16 @@
         "inertia_ratio": 0.6813,
         "complexity": 5.3447,
         "vol_hull": 0.2786
-      }
+      },
+      "tal_komponentar": 12,
+      "har_armlene": true,
+      "har_polstring": false,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 1,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Armchair (ukjent)",
@@ -7759,7 +8299,16 @@
         "inertia_ratio": 0.5926,
         "complexity": 5.4133,
         "vol_hull": 0.2163
-      }
+      },
+      "tal_komponentar": 5,
+      "har_armlene": true,
+      "har_polstring": false,
+      "rygg_type": "heiltre",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "ingen_synleg",
+      "ornament_nivaa": 3,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Armchair (ukjent)",
@@ -7789,7 +8338,16 @@
         "inertia_ratio": 0.4154,
         "complexity": 4.6434,
         "vol_hull": 1.1563
-      }
+      },
+      "tal_komponentar": 10,
+      "har_armlene": true,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 2,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Chair (ukjent)",
@@ -7819,7 +8377,16 @@
         "inertia_ratio": 0.4208,
         "complexity": 4.6257,
         "vol_hull": 1.585
-      }
+      },
+      "tal_komponentar": 8,
+      "har_armlene": false,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 2,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Chair (ukjent)",
@@ -7849,7 +8416,16 @@
         "inertia_ratio": 0.4074,
         "complexity": 5.977,
         "vol_hull": 0.0101
-      }
+      },
+      "tal_komponentar": 10,
+      "har_armlene": false,
+      "har_polstring": false,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 2,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Armchair (ukjent)",
@@ -7879,7 +8455,16 @@
         "inertia_ratio": 0.5119,
         "complexity": 5.2979,
         "vol_hull": 0.208
-      }
+      },
+      "tal_komponentar": 8,
+      "har_armlene": true,
+      "har_polstring": true,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 2,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Chair (ukjent)",
@@ -7909,7 +8494,16 @@
         "inertia_ratio": 0.4104,
         "complexity": 5.2794,
         "vol_hull": 0.1501
-      }
+      },
+      "tal_komponentar": 7,
+      "har_armlene": false,
+      "har_polstring": true,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 1,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Armchair (ukjent)",
@@ -7939,7 +8533,16 @@
         "inertia_ratio": 0.3776,
         "complexity": 4.6739,
         "vol_hull": 1.1157
-      }
+      },
+      "tal_komponentar": 7,
+      "har_armlene": false,
+      "har_polstring": true,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 1,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Chair (ukjent)",
@@ -7969,7 +8572,16 @@
         "inertia_ratio": 0.2752,
         "complexity": 5.9775,
         "vol_hull": 0.0046
-      }
+      },
+      "tal_komponentar": 6,
+      "har_armlene": false,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "ingen_synleg",
+      "ornament_nivaa": 1,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Stool (ukjent)",
@@ -7999,7 +8611,16 @@
         "inertia_ratio": 0.7421,
         "complexity": 6.0463,
         "vol_hull": 0.0417
-      }
+      },
+      "tal_komponentar": 5,
+      "har_armlene": false,
+      "har_polstring": true,
+      "rygg_type": "ingen",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 1,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Chair (ukjent)",
@@ -8029,7 +8650,16 @@
         "inertia_ratio": 0.4249,
         "complexity": 6.027,
         "vol_hull": 0.0124
-      }
+      },
+      "tal_komponentar": 6,
+      "har_armlene": false,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 1,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Stool (ukjent)",
@@ -8059,7 +8689,16 @@
         "inertia_ratio": 0.7715,
         "complexity": 5.9403,
         "vol_hull": 0.0506
-      }
+      },
+      "tal_komponentar": 5,
+      "har_armlene": false,
+      "har_polstring": true,
+      "rygg_type": "ingen",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 1,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Stool (ukjent)",
@@ -8089,7 +8728,16 @@
         "inertia_ratio": 0.4821,
         "complexity": 5.5084,
         "vol_hull": 0.1244
-      }
+      },
+      "tal_komponentar": 5,
+      "har_armlene": false,
+      "har_polstring": true,
+      "rygg_type": "ingen",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 1,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Chair (ukjent)",
@@ -8119,7 +8767,16 @@
         "inertia_ratio": 0.3704,
         "complexity": 4.6523,
         "vol_hull": 1.1101
-      }
+      },
+      "tal_komponentar": 8,
+      "har_armlene": false,
+      "har_polstring": false,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 1,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Chair (ukjent)",
@@ -8148,7 +8805,16 @@
         "inertia_ratio": 0.7088,
         "complexity": 4.6774,
         "vol_hull": 3.4936
-      }
+      },
+      "tal_komponentar": 5,
+      "har_armlene": true,
+      "har_polstring": false,
+      "rygg_type": "heiltre",
+      "tal_bein": 0,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "skruar",
+      "ornament_nivaa": 1,
+      "struktur_type": "anna"
     },
     {
       "name": "Chair (ukjent)",
@@ -8177,7 +8843,16 @@
         "inertia_ratio": 0.7088,
         "complexity": 5.615,
         "vol_hull": 0.134
-      }
+      },
+      "tal_komponentar": 5,
+      "har_armlene": true,
+      "har_polstring": false,
+      "rygg_type": "heiltre",
+      "tal_bein": 0,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "skruar",
+      "ornament_nivaa": 1,
+      "struktur_type": "anna"
     },
     {
       "name": "Pip the Pony fantasy chair",
@@ -8205,7 +8880,16 @@
         "inertia_ratio": 0.5982,
         "complexity": 4.6098,
         "vol_hull": 2.492
-      }
+      },
+      "tal_komponentar": 4,
+      "har_armlene": true,
+      "har_polstring": false,
+      "rygg_type": "heiltre",
+      "tal_bein": 0,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "skruar",
+      "ornament_nivaa": 1,
+      "struktur_type": "gyngande"
     },
     {
       "name": "Pip the Pony (large)",
@@ -8233,7 +8917,16 @@
         "inertia_ratio": 0.5294,
         "complexity": 5.4974,
         "vol_hull": 0.0928
-      }
+      },
+      "tal_komponentar": 4,
+      "har_armlene": true,
+      "har_polstring": false,
+      "rygg_type": "heiltre",
+      "tal_bein": 0,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "skruar",
+      "ornament_nivaa": 1,
+      "struktur_type": "gyngande"
     },
     {
       "name": "Armchair (Thomas E. Warren)",
@@ -8262,7 +8955,16 @@
         "inertia_ratio": 0.47,
         "complexity": 4.696,
         "vol_hull": 1.7434
-      }
+      },
+      "tal_komponentar": 5,
+      "har_armlene": true,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "skruar",
+      "ornament_nivaa": 2,
+      "struktur_type": "pidestall"
     },
     {
       "name": "Armchair (ukjent)",
@@ -8292,7 +8994,16 @@
         "inertia_ratio": 0.5084,
         "complexity": 4.6256,
         "vol_hull": 1.8669
-      }
+      },
+      "tal_komponentar": 10,
+      "har_armlene": true,
+      "har_polstring": false,
+      "rygg_type": "heiltre",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 2,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Model 4130",
@@ -8322,7 +9033,16 @@
         "inertia_ratio": 0.5019,
         "complexity": 4.6859,
         "vol_hull": 1.7876
-      }
+      },
+      "tal_komponentar": 5,
+      "har_armlene": false,
+      "har_polstring": false,
+      "rygg_type": "heiltre",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "skruar",
+      "ornament_nivaa": 0,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Model DKR 2",
@@ -8351,7 +9071,16 @@
         "inertia_ratio": 0.6023,
         "complexity": 4.6926,
         "vol_hull": 2.7736
-      }
+      },
+      "tal_komponentar": 3,
+      "har_armlene": false,
+      "har_polstring": true,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "sveisa",
+      "ornament_nivaa": 0,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Aluminium Group, model 682",
@@ -8382,7 +9111,16 @@
         "inertia_ratio": 0.4128,
         "complexity": 4.6739,
         "vol_hull": 1.3489
-      }
+      },
+      "tal_komponentar": 3,
+      "har_armlene": true,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 0,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "skruar",
+      "ornament_nivaa": 0,
+      "struktur_type": "pidestall"
     },
     {
       "name": "Model FJ 45",
@@ -8412,7 +9150,16 @@
         "inertia_ratio": 0.7422,
         "complexity": 4.6936,
         "vol_hull": 3.8934
-      }
+      },
+      "tal_komponentar": 3,
+      "har_armlene": true,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 0,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Sofa (Hughes, Robert)",
@@ -8442,7 +9189,16 @@
         "inertia_ratio": 0.2052,
         "complexity": 4.6164,
         "vol_hull": 0.7753
-      }
+      },
+      "tal_komponentar": 2,
+      "har_armlene": true,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 8,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "ingen_synleg",
+      "ornament_nivaa": 3,
+      "struktur_type": "anna"
     },
     {
       "name": "Armchair (ukjent)",
@@ -8472,7 +9228,16 @@
         "inertia_ratio": 0.5369,
         "complexity": 5.2673,
         "vol_hull": 0.2716
-      }
+      },
+      "tal_komponentar": 2,
+      "har_armlene": true,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "ingen_synleg",
+      "ornament_nivaa": 2,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Chair (ukjent)",
@@ -8503,7 +9268,16 @@
         "inertia_ratio": 0.3676,
         "complexity": 4.6516,
         "vol_hull": 0.9975
-      }
+      },
+      "tal_komponentar": 2,
+      "har_armlene": false,
+      "har_polstring": false,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 2,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Chair (ukjent)",
@@ -8533,7 +9307,16 @@
         "inertia_ratio": 0.4545,
         "complexity": 5.2588,
         "vol_hull": 0.1774
-      }
+      },
+      "tal_komponentar": 2,
+      "har_armlene": false,
+      "har_polstring": true,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 2,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Armchair (ukjent)",
@@ -8564,7 +9347,16 @@
         "inertia_ratio": 0.4824,
         "complexity": 4.6817,
         "vol_hull": 1.7492
-      }
+      },
+      "tal_komponentar": 2,
+      "har_armlene": true,
+      "har_polstring": false,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 2,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Chair (ukjent)",
@@ -8594,7 +9386,16 @@
         "inertia_ratio": 0.422,
         "complexity": 6.0025,
         "vol_hull": 0.0136
-      }
+      },
+      "tal_komponentar": 2,
+      "har_armlene": false,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "ingen_synleg",
+      "ornament_nivaa": 1,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Chair (ukjent)",
@@ -8624,7 +9425,16 @@
         "inertia_ratio": 0.4388,
         "complexity": 4.6365,
         "vol_hull": 1.4094
-      }
+      },
+      "tal_komponentar": 2,
+      "har_armlene": false,
+      "har_polstring": false,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 1,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Armchair (unknown)",
@@ -8655,7 +9465,16 @@
         "inertia_ratio": 0.4837,
         "complexity": 5.9927,
         "vol_hull": 0.0163
-      }
+      },
+      "tal_komponentar": 2,
+      "har_armlene": true,
+      "har_polstring": true,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 1,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Chair (ukjent)",
@@ -8685,7 +9504,16 @@
         "inertia_ratio": 0.4981,
         "complexity": 6.0151,
         "vol_hull": 0.0167
-      }
+      },
+      "tal_komponentar": 2,
+      "har_armlene": false,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "ingen_synleg",
+      "ornament_nivaa": 2,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Chair (ukjent)",
@@ -8715,7 +9543,16 @@
         "inertia_ratio": 0.4653,
         "complexity": 4.6689,
         "vol_hull": 1.3429
-      }
+      },
+      "tal_komponentar": 1,
+      "har_armlene": false,
+      "har_polstring": false,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 2,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Chair (ukjent)",
@@ -8745,7 +9582,16 @@
         "inertia_ratio": 0.5428,
         "complexity": 5.9895,
         "vol_hull": 0.0211
-      }
+      },
+      "tal_komponentar": 2,
+      "har_armlene": false,
+      "har_polstring": false,
+      "rygg_type": "heiltre",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 2,
+      "struktur_type": "anna"
     },
     {
       "name": "Armchair (William Kent)",
@@ -8776,7 +9622,16 @@
         "inertia_ratio": 0.5338,
         "complexity": 4.6941,
         "vol_hull": 2.24
-      }
+      },
+      "tal_komponentar": 1,
+      "har_armlene": true,
+      "har_polstring": false,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 3,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Armchair (ukjent)",
@@ -8804,7 +9659,16 @@
         "inertia_ratio": 0.2632,
         "complexity": 5.271,
         "vol_hull": 0.0246
-      }
+      },
+      "tal_komponentar": 2,
+      "har_armlene": true,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "ingen_synleg",
+      "ornament_nivaa": 2,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Chair (Pratt (Mr))",
@@ -8834,7 +9698,16 @@
         "inertia_ratio": 0.4347,
         "complexity": 5.2759,
         "vol_hull": 0.0836
-      }
+      },
+      "tal_komponentar": 2,
+      "har_armlene": true,
+      "har_polstring": true,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 2,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Chair (Pratt (Mr))",
@@ -8864,7 +9737,16 @@
         "inertia_ratio": 0.2127,
         "complexity": 5.2446,
         "vol_hull": 0.0022
-      }
+      },
+      "tal_komponentar": 2,
+      "har_armlene": true,
+      "har_polstring": true,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 2,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Moon",
@@ -8893,7 +9775,16 @@
         "inertia_ratio": 0.3217,
         "complexity": 4.6047,
         "vol_hull": 0.9504
-      }
+      },
+      "tal_komponentar": 2,
+      "har_armlene": true,
+      "har_polstring": false,
+      "rygg_type": "heiltre",
+      "tal_bein": 4,
+      "symmetri": "asymmetrisk",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 0,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Corner chair (unknown)",
@@ -8923,7 +9814,16 @@
         "inertia_ratio": 0.5737,
         "complexity": 5.9814,
         "vol_hull": 0.0336
-      }
+      },
+      "tal_komponentar": 2,
+      "har_armlene": true,
+      "har_polstring": true,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 1,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Chair (Unknown)",
@@ -8952,7 +9852,16 @@
         "inertia_ratio": 0.5354,
         "complexity": 5.276,
         "vol_hull": 0.2449
-      }
+      },
+      "tal_komponentar": 2,
+      "har_armlene": false,
+      "har_polstring": true,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 2,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Chair (ukjent)",
@@ -8982,7 +9891,16 @@
         "inertia_ratio": 0.7302,
         "complexity": 5.2517,
         "vol_hull": 0.5619
-      }
+      },
+      "tal_komponentar": 2,
+      "har_armlene": false,
+      "har_polstring": true,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 2,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Chair (ukjent)",
@@ -9012,7 +9930,16 @@
         "inertia_ratio": 0.6651,
         "complexity": 4.6514,
         "vol_hull": 2.9132
-      }
+      },
+      "tal_komponentar": 2,
+      "har_armlene": true,
+      "har_polstring": true,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 2,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Armchair (ukjent)",
@@ -9042,7 +9969,16 @@
         "inertia_ratio": 0.5847,
         "complexity": 4.6488,
         "vol_hull": 2.3363
-      }
+      },
+      "tal_komponentar": 2,
+      "har_armlene": true,
+      "har_polstring": true,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 1,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Settee (Goodison, Benjamin)",
@@ -9072,7 +10008,16 @@
         "inertia_ratio": 0.2432,
         "complexity": 4.6248,
         "vol_hull": 1.0269
-      }
+      },
+      "tal_komponentar": 2,
+      "har_armlene": true,
+      "har_polstring": true,
+      "rygg_type": "open",
+      "tal_bein": 8,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 3,
+      "struktur_type": "anna"
     },
     {
       "name": "Sgabello chair (ukjent)",
@@ -9103,7 +10048,16 @@
         "inertia_ratio": 0.276,
         "complexity": 4.6801,
         "vol_hull": 0.8326
-      }
+      },
+      "tal_komponentar": 4,
+      "har_armlene": false,
+      "har_polstring": false,
+      "rygg_type": "heiltre",
+      "tal_bein": 2,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "ingen_synleg",
+      "ornament_nivaa": 3,
+      "struktur_type": "bukk"
     },
     {
       "name": "Armchair (ukjent)",
@@ -9134,7 +10088,16 @@
         "inertia_ratio": 0.4067,
         "complexity": 4.97,
         "vol_hull": 0.379
-      }
+      },
+      "tal_komponentar": 16,
+      "har_armlene": true,
+      "har_polstring": true,
+      "rygg_type": "open",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 2,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Armchair (ukjent)",
@@ -9164,7 +10127,16 @@
         "inertia_ratio": 0.4345,
         "complexity": 4.7061,
         "vol_hull": 1.5931
-      }
+      },
+      "tal_komponentar": 13,
+      "har_armlene": true,
+      "har_polstring": false,
+      "rygg_type": "spiler",
+      "tal_bein": 3,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "tapp-og-hol",
+      "ornament_nivaa": 1,
+      "struktur_type": "anna"
     },
     {
       "name": "Armchair (ukjent)",
@@ -9194,7 +10166,16 @@
         "inertia_ratio": 0.4751,
         "complexity": 4.6764,
         "vol_hull": 1.7153
-      }
+      },
+      "tal_komponentar": 14,
+      "har_armlene": true,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "ingen_synleg",
+      "ornament_nivaa": 2,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Armchair (ukjent)",
@@ -9222,7 +10203,16 @@
         "inertia_ratio": 0.382,
         "complexity": 5.875,
         "vol_hull": 0.0163
-      }
+      },
+      "tal_komponentar": 14,
+      "har_armlene": true,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "ingen_synleg",
+      "ornament_nivaa": 3,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Armchair (ukjent)",

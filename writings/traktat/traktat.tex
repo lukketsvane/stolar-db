@@ -172,8 +172,9 @@
 %   the text margin and wraps there too — a perfect rectangle.
 %   The number itself is rendered in a heavier weight so it stands out
 %   against the regular body text.
-% Regular proposition
+% Regular proposition — \needspace prevents page break inside a proposition
 \newcommand{\prop}[3]{%
+  \needspace{3\baselineskip}%
   \par\addvspace{6pt}%
   \noindent\llap{\makebox[\propnumwidth][l]{\textbf{#1}\textsuperscript{\textit{#2}}}\hspace{\propnumgap}}%
   #3\par%
@@ -204,13 +205,13 @@
 % Glossary entries — bold term, regular body, with breathing room
 % between entries. Spans up to two pages comfortably.
 \newenvironment{ordliste}{%
-  \begingroup\small\setlength{\parskip}{2pt plus 0.6pt}%
-  \linespread{0.97}\selectfont
+  \begingroup\footnotesize\setlength{\parskip}{0.3pt plus 0.1pt}%
+  \linespread{0.92}\selectfont
 }{%
   \endgroup
 }
 \newcommand{\ordlisteentry}[2]{%
-  \par\addvspace{2.5pt}%
+  \par\addvspace{1.5pt}%
   \noindent\textbf{#1:} #2\par%
 }
 
@@ -242,7 +243,7 @@
 
 % Figures — centred, max width = text width
 \usepackage{graphicx}
-\graphicspath{{../../figures/}{../../analysis/figures/}}
+\graphicspath{{figures/}{../figures/}{../../analysis/figures/}}
 \usepackage{caption}
 \captionsetup{
   font={small,it},
@@ -260,9 +261,10 @@
   \endgroup\par\addvspace{4pt}%
 }
 
-% Avoid widows/orphans
+% Avoid widows/orphans and keep propositions together
 \widowpenalty=10000
 \clubpenalty=10000
+\usepackage{needspace}
 
 % Body paragraph defaults — tight for the small page
 \setlength{\parindent}{0pt}
@@ -308,25 +310,29 @@
     {\footnotesize Arkitektur- og designhøgskolen i Oslo\quad\textperiodcentered\quad 2026}%
   };
 \end{tikzpicture}
-\clearpage
+
+% Føreord
+\input{forord}
 
 % Ordliste
 \silentchapter{Ordliste}{ordliste}
 \begin{widebody}
 \begin{ordliste}
 \ordlisteentry{Affordanse}{Operasjonane eit materiale tillèt og hindrar (Gibson, 1979). Avgjer kva formoperasjonar som er moglege. [2.2]}
-\ordlisteentry{Agent}{Eit system definert av trippelet (mål, måling, justering). Krev berre organisering; verken medvit, intensjon eller nervesystem (Rosenblueth et al., 1943; Wiener, 1948). [5.11]}
+\ordlisteentry{Agent}{Eit system definert av trippelet (måltilstand, avstandsmåling, justeringsmekanisme). Krev berre organisering; verken medvit, intensjon eller nervesystem (Rosenblueth et al., 1943; Wiener, 1948). [5.11]}
 \ordlisteentry{C (tankerommet)}{Alle former som er tenkelege men ikkje avgjorte. Svarar til dei opne regionane i formrommet. [1.44]}
 \ordlisteentry{Formalgebra}{Mengda av former lukka under union, differanse og transformasjon. Grunnlaget for formgrammatikken. [1.32]}
 \ordlisteentry{Formgrammatikk}{Trippelet SG = (S, R, \msym{ω}). Reglar som opererer under innleiring; berre den noverande forma avgjer kva som fyrer. [5.3]}
 \ordlisteentry{Formrom}{Mengda av alle moglege konfigurasjonar innanfor ein klasse. Eit rom der kvar akse er ein målbar eigenskap (Raup, 1966). [1.3]}
+\ordlisteentry{Gradient}{Retninga og styrken til endringa i sannsynsfordeling over formrommet. Seleksjonstrykket er ein gradient, inga regel. [2.1]}
 \ordlisteentry{Innleiring}{Transformasjonen som viser at éi form finst i ei anna. Avgjer kva grammatikkreglar som kan fyre. [1.32]}
 \ordlisteentry{K (kunnskapsrommet)}{Alle former som er kjende å verke eller svikte. Svarar til dei busette og stadfesta forbodne regionane. [1.44]}
 \ordlisteentry{Kanalisering}{Robustheit mot forstyrringar. Bratte dalveggar = stabil form (Waddington, 1957). [3.2]}
+\ordlisteentry{Kapasitet}{Bredda på lyskjegla; kor mange aksar agenten \textit{kan} representere. Skild frå omhug, som er kor mange han faktisk representerer. [5.6]}
 \ordlisteentry{Klasse}{Ei gruppe objekt som deler same affordansestruktur: dei tilbyr same konstellasjon av operasjonar til same konstellasjon av agentar. [1.31]}
 \ordlisteentry{Kognitiv lyskjegle}{Delmengda av formrommet agenten kan representere og manipulere (Fields \& Levin, 2022). [5.2]}
 \ordlisteentry{Multiskala-kompetanse}{Agens opererer samstundes på fleire skalaer, kvar med si eiga lyskjegle og sine eigne grammatikkreglar (Levin, 2022). [6.12]}
-\ordlisteentry{Omsorg}{Mengda av aksar i formrommet agenten aktivt justerer for. Omsorg er intelligensens innhald; intelligens er omsorgas form. [5.6, 5.61]}
+\ordlisteentry{Omhug}{Mengda av aksar i formrommet agenten aktivt justerer for. Omhug er intelligensens innhald; intelligens er omhugen si form. [5.6, 5.61]}
 \ordlisteentry{Seleksjonstrykk}{Ein gradient som endrar sannsynsfordelinga over formrommet (Wright, 1932). [2.1]}
 \ordlisteentry{Substrat}{Det fysiske, algoritmiske eller sosiale systemet som realiserer agensen. Fungerer som ein null-ordens agent (Levin, 2022). [5.4]}
 \ordlisteentry{Tilpassingslandskap}{Vektorsummen av alle verksame seleksjonstrykk over formrommet (Wright, 1932; Waddington, 1957). [3.1]}
@@ -336,6 +342,9 @@
 % Proposisjonar
 \input{proposisjonar}
 
+% Appell
+\input{appell}
+
 % Etterord
 \input{etterord}
 
@@ -344,7 +353,6 @@
 \begin{widebody}
 \refentry{[1] Semper, G. (1860). \textit{Der Stil in den technischen und tektonischen Künsten}. Verlag für Kunst und Wissenschaft.}
 \refentry{[2] Thompson, D'A. W. (1917). \textit{On Growth and Form}. Cambridge University Press.}
-\refentry{[3] Sullivan, L. H. (1896). The tall office building artistically considered. \textit{Lippincott's Magazine}, 57, 403--409.}
 \refentry{[3] Wright, S. (1932). The roles of mutation, inbreeding, crossbreeding, and selection in evolution. \textit{Proc. Sixth Int. Congress of Genetics}, 1, 356--366.}
 \refentry{[4] Rosenblueth, A., Wiener, N. \& Bigelow, J. (1943). Behavior, purpose and teleology. \textit{Philosophy of Science}, 10(1), 18--24.}
 \refentry{[5] Wiener, N. (1948). \textit{Cybernetics}. MIT Press.}
@@ -401,11 +409,11 @@
 
 \textbf{5.2} Kognitiv lyskjegle er Fields \& Levins [21] generalisering av perseptuelle grenser til vilkårlege agentar. Omgrepet generaliserer den fysiske lyskjegla frå relativitetsteorien: det finst ei grense for kor mykje av formrommet ein agent kan representere innanfor sin eigen tidsskala.
 
-\textbf{5.6--5.61} Omsorg som formell eigenskap ved agentar er frå Doctor, Levin et al.\ [23]. Identiteten \textit{omsorg = intelligensens innhald; intelligens = omsorgas form} er vår formulering av deira innsikt: at mengda av dimensjonar eit system aktivt justerer for, er same ting som det me kallar intelligens.
+\textbf{5.6--5.61} Omhug som formell eigenskap ved agentar er frå Doctor, Levin et al.\ [23]. Identiteten \textit{omhug = intelligensens innhald; intelligens = omhugen si form} er vår formulering av deira innsikt: at mengda av dimensjonar eit system aktivt justerer for, er same ting som det me kallar intelligens.
 
 \textbf{6.12} Multiskala-kompetanse er Levins [22] rammeverk for korleis biologiske system opererer agentisk på fleire skalaer samstundes. Me generaliserer det til formverda: celle, materiale, verktøy, handverkar, marknad er alle agentar med eigne lyskjegler. Forma er resultatet av deira samtidige navigasjon.
 
-\textbf{5.61} Proposisjonen er ein definisjon (status d), ikkje eit teorem. Identiteten omsorg = intelligens er eit val av terminologi, ikkje ein empirisk påstand. Eit uavhengig mål på intelligens (til dømes navigasjonseffektivitet som funksjon av dim(C(A))) ville gjort identiteten testbar. Semper [1] var den fyrste som kopla materialteknikk, form og kulturell meining i éin systematisk analyse; omsorgsomgrepet generaliserer denne innsikta. Thompson [2] viste at biologisk form følgjer fysiske krefter; me generaliserer innsikta hans til alle formdomene.
+\textbf{5.61} Proposisjonen er ein definisjon (status d), ikkje eit teorem. Identiteten omhug = intelligens er eit val av terminologi, ikkje ein empirisk påstand. Eit uavhengig mål på intelligens (til dømes navigasjonseffektivitet som funksjon av dim(C(A))) ville gjort identiteten testbar. Semper [1] var den fyrste som kopla materialteknikk, form og kulturell meining i éin systematisk analyse; omhugsomgrepet generaliserer denne innsikta. Thompson [2] viste at biologisk form følgjer fysiske krefter; me generaliserer innsikta hans til alle formdomene.
 
 \bigskip
 \textbf{Falsifiseringsvilkår.} Proposisjonar av type \textit{t} (teorem) og \textit{a} (postulat) er falsifiserbare. Hovudvilkåra:
@@ -429,6 +437,14 @@
 \textbf{6.3} Ingen reint eksperiment testar stileksponering som uavhengig variabel på formvariasjon (per april 2026). Designfiksasjon-litteraturen stadfestar at eksempeleksponering avgrensar kreativ output, men isolerer ikkje stilnivået frå eksempelnivået. Falsifiseringseksperimentet i 6.3-notatet er difor originalt.
 
 \textbf{6.5} Følgjer av 2.13 (motstridande trykk utelukkar permanent likevekt) og 4.1 (trykka kviler aldri). Saman: ingen balanse er stabil over tid; kvar form er gyldig berre for aktualiseringsaugeblikket.
+
+\textbf{5.64} Proposisjonen er eit postulat (status a), ikkje eit teorem. Den normative påstanden følgjer ikkje frå det formelle apparatet åleine; ho krev ein tilleggspremiss om at designhandlinga har konsekvensar for andre agentar. Denne premissen er parallell til Doctor et al.\ [23] si kopling mellom omhug og normativitet. At premissen ikkje er deduserbar, gjer han ikkje vilkårleg; han gjer han eksplisitt.
+
+\textbf{5.6} Distinksjonen mellom omhug og kapasitet er avgjerande. Ein designar med brei kapasitet som likevel berre attenderer til éin akse; til dømes visuell nyheit åleine; viser trong omhug trass i høg kapasitet. Det er omhugen, ikkje kapasiteten, som er leseleg i forma.
+
+\textbf{6.12} Kjerne-likninga Form = SG(\,\msym{∇}\textsubscript{C(A)}\, L(\textit{c},\,\textit{t}\,)) er eit strukturelt skjema, ikkje ein prediksjonsmotor. Ho spesifiserer kva komponentar som er naudsynte og saman tilstrekkelege for å forklare form; grammatikk, landskap, og lyskjegle; men ho spesifiserer ikkje den funksjonelle forma til L, ikkje kva grammatikkreglar som fyrer, og ikkje dimensjonaliteten til C(A) for ein gjeven agent. Analogien er F = ma før kraftlova er kjend.
+
+\textbf{7.1--7.2} Proposisjon 7 rommar to distinkte påstandar. Den deskriptive (7.1) kan testast empirisk: dersom former designa under demonstrerbart trong omhug ikkje presterer dårlegare langs urepresenterte aksar enn former designa under brei omhug, er proposisjonen tilbakevist. Den normative (7.2) gjev den deskriptive retning og relevans, men står ikkje og fell med henne.
 
 \textbf{CK-kritikk.} Den sterkaste innvendinga mot tanke--kunnskapsteorien er at C-rommet er eindimensjonalt og at funksjons- og strukturomgrep manglar. Denne traktaten adresserer begge: formrommet er fleirdimensjonalt (1.3); affordansestrukturen erstattar funksjonsomgrepet (1.31); og formalgebraen gjev struktur (1.32).
 

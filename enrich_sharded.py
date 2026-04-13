@@ -2,18 +2,21 @@ import json
 import os
 import time
 import base64
+import sys
 import concurrent.futures
 from pathlib import Path
 from google import genai
 from google.genai import types
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 # Configuration
 API_KEY = os.environ.get("GEMINI_API_KEY")
 client = genai.Client(api_key=API_KEY)
 PRIMARY_MODEL = "gemini-2.0-flash"
 FALLBACK_MODEL = "gemini-flash-latest"
-JSON_PATH = "STOLAR/enriched_chairs.json"
-API_PATH = "STOLAR/api.json"
 IMAGE_DIR = "STOLAR/bguw"
 MAX_WORKERS = 3 # Parallel requests
 
@@ -90,24 +93,39 @@ def process_chair(chair_id):
         return chair_id, "ERROR"
 
 def main():
+    if len(sys.argv) < 3:
+        print("Usage: python enrich_sharded.py <shard_index> <total_shards>")
+        return
+
+    shard_index = int(sys.argv[1])
+    total_shards = int(sys.argv[2])
+    shard_json_path = f"STOLAR/enriched_chairs_shard_{shard_index}.json"
+    
+    API_PATH = "STOLAR/api.json"
+    JSON_PATH = "STOLAR/enriched_chairs.json"
+    
     api_data = load_data(API_PATH)
-    enriched_data = load_data(JSON_PATH)
+    master_enriched = load_data(JSON_PATH)
+    shard_enriched = load_data(shard_json_path)
     
     missing = []
     for chair in api_data.get('chairs', []):
         obj_id = chair['id']
-        if obj_id not in enriched_data:
+        # If not in master AND not in my shard yet, and has image
+        if obj_id not in master_enriched and obj_id not in shard_enriched:
             image_path = os.path.join(IMAGE_DIR, f"{obj_id}_bguw.png")
             if os.path.exists(image_path):
                 missing.append(obj_id)
     
-    print(f"Found {len(missing)} missing chairs with images.")
+    # Partition based on total_shards
+    my_missing = missing[shard_index::total_shards]
     
-    # Process in batches of 20 to save progress frequently
+    print(f"Shard {shard_index}/{total_shards}: Found {len(my_missing)} missing chairs.")
+    
     batch_size = 20
-    for i in range(0, len(missing), batch_size):
-        batch = missing[i:i+batch_size]
-        print(f"Processing batch {i//batch_size + 1}/{(len(missing)-1)//batch_size + 1}...")
+    for i in range(0, len(my_missing), batch_size):
+        batch = my_missing[i:i+batch_size]
+        print(f"Shard {shard_index}: Processing batch {i//batch_size + 1}/{(len(my_missing)-1)//batch_size + 1}...")
         
         with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
             future_to_id = {executor.submit(process_chair, cid): cid for cid in batch}
@@ -115,20 +133,16 @@ def main():
             for future in concurrent.futures.as_completed(future_to_id):
                 cid, result = future.result()
                 if result and isinstance(result, dict):
-                    enriched_data[cid] = result
+                    shard_enriched[cid] = result
                     batch_results += 1
                 elif result == "RETRY":
-                    # If we hit 429 on both models, we should probably wait
-                    print("Hit quota on both models, sleeping for 60s...")
+                    print(f"Shard {shard_index}: Hit quota on both models, sleeping for 60s...")
                     time.sleep(60)
         
         if batch_results > 0:
-            save_data(JSON_PATH, enriched_data)
-            # Periodic sync with DB
-            os.system("python STOLAR/enrich_db.py")
-            print(f"Saved progress and synced DB. Total enriched: {len(enriched_data)}")
+            save_data(shard_json_path, shard_enriched)
+            print(f"Shard {shard_index}: Saved progress. Total enriched in shard: {len(shard_enriched)}")
         
-        # Rate limit safety between batches
         time.sleep(2)
 
 if __name__ == "__main__":

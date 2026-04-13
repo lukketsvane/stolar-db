@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.25)  12 APR 2026 19:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.25)  12 APR 2026 23:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -860,7 +860,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 9.0pt on input line 42.
-<figures/chairs_top144_16x9.jpg, id=67, 4111.36pt x 2312.64pt>
+<figures/chairs_top144_16x9.jpg, id=75, 4111.36pt x 2312.64pt>
 File: figures/chairs_top144_16x9.jpg Graphic file (type jpg)
 <use figures/chairs_top144_16x9.jpg>
 Package pdftex.def Info: figures/chairs_top144_16x9.jpg  used on input line 42.
@@ -882,256 +882,309 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 87.
+(Font)              scaled to size 8.0pt on input line 79.
  [1{C:/Users/Shadow/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/
 Shadow/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}
 
 
  <./figures/chairs_top144_16x9.jpg>]
 LaTeX Font Info:    Trying to load font information for OT1+minntx on input lin
-e 90.
+e 106.
 
 (C:\Users\Shadow\AppData\Local\Programs\MiKTeX\tex/latex/newtx\ot1minntx.fd
 File: ot1minntx.fd 2023/09/09 v1.1 font definition file for OT1/minntx
 )
 LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 10.0pt on input line 90.
+(Font)              scaled to size 10.0pt on input line 106.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `minntx' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 7.3pt on input line 90.
+(Font)              scaled to size 7.3pt on input line 106.
 LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 5.5pt on input line 90.
+(Font)              scaled to size 5.5pt on input line 106.
 LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 10.0pt on input line 90.
+(Font)              scaled to size 10.0pt on input line 106.
 LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 7.3pt on input line 90.
+(Font)              scaled to size 7.3pt on input line 106.
 LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 5.5pt on input line 90.
+(Font)              scaled to size 5.5pt on input line 106.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 10.0pt on input line 90.
+(Font)              scaled to size 10.0pt on input line 106.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 7.3pt on input line 90.
+(Font)              scaled to size 7.3pt on input line 106.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 5.5pt on input line 90.
+(Font)              scaled to size 5.5pt on input line 106.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 10.0pt on input line 90.
+(Font)              scaled to size 10.0pt on input line 106.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 7.3pt on input line 90.
+(Font)              scaled to size 7.3pt on input line 106.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 5.5pt on input line 90.
+(Font)              scaled to size 5.5pt on input line 106.
 LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 
-90.
+106.
 
 (C:\Users\Shadow\AppData\Local\Programs\MiKTeX\tex/latex/newtx\untxmia.fd
 File: untxmia.fd 2024/04/09 Fontinst v1.933 font definitions for U/ntxmia.
 )
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 10.0pt on input line 90.
+(Font)              scaled to size 10.0pt on input line 106.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 7.3pt on input line 90.
+(Font)              scaled to size 7.3pt on input line 106.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 5.5pt on input line 90.
+(Font)              scaled to size 5.5pt on input line 106.
 LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 
-90.
+106.
 
 (C:\Users\Shadow\AppData\Local\Programs\MiKTeX\tex/latex/newtx\untxsym.fd
 File: untxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/ntxsym.
 )
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 10.0pt on input line 90.
+(Font)              scaled to size 10.0pt on input line 106.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 7.3pt on input line 90.
+(Font)              scaled to size 7.3pt on input line 106.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 5.5pt on input line 90.
+(Font)              scaled to size 5.5pt on input line 106.
 LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 
-90.
+106.
 
 (C:\Users\Shadow\AppData\Local\Programs\MiKTeX\tex/latex/newtx\untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 10.0pt on input line 90.
+(Font)              scaled to size 10.0pt on input line 106.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 7.3pt on input line 90.
+(Font)              scaled to size 7.3pt on input line 106.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 5.5pt on input line 90.
+(Font)              scaled to size 5.5pt on input line 106.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 10.0pt on input line 90.
+(Font)              scaled to size 10.0pt on input line 106.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 7.3pt on input line 90.
+(Font)              scaled to size 7.3pt on input line 106.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 5.5pt on input line 90.
-<figures/pipeline.png, id=110, 2826.56pt x 1541.76pt>
+(Font)              scaled to size 5.5pt on input line 106.
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--127
+[] []\T1/ntxtlf/b/n/10 (+20) Ek-sis-terande 3D--datasett.[] \T1/ntxtlf/m/n/10 (
++20) Fleire storskala 3D-
+ []
+
+<figures/pipeline.png, id=130, 2826.56pt x 1541.76pt>
 File: figures/pipeline.png Graphic file (type png)
 <use figures/pipeline.png>
-Package pdftex.def Info: figures/pipeline.png  used on input line 134.
+Package pdftex.def Info: figures/pipeline.png  used on input line 153.
 (pdftex.def)             Requested size: 506.45908pt x 276.23445pt.
+<figures/fig-02-datakort.pdf, id=132, 485.5036pt x 169.68898pt>
+File: figures/fig-02-datakort.pdf Graphic file (type pdf)
+<use figures/fig-02-datakort.pdf>
+Package pdftex.def Info: figures/fig-02-datakort.pdf  used on input line 160.
+(pdftex.def)             Requested size: 506.45908pt x 177.0135pt.
+
+Underfull \hbox (badness 5064) in paragraph at lines 167--172
+\T1/ntxtlf/m/n/10 (+20) Stolpostar vart henta frå to opne museum-API-ar.
+ []
+
 LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
-(Font)              scaled to size 10.0pt on input line 168.
+(Font)              scaled to size 10.0pt on input line 190.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/sc' will be
-(Font)              scaled to size 8.0pt on input line 193.
+(Font)              scaled to size 8.0pt on input line 201.
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/ntxtlf/m/sc/8'.
 (microtype)             Ignoring protrusion settings for this character.
-
 [2{C:/Users/Shadow/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ec-t
 lf-pc.enc}]
-Underfull \hbox (badness 6758) in paragraph at lines 219--221
-\T1/ntxtlf/m/n/10 (+20) The database is hosted at [][]$\T1/ntxtt/m/n/10 https :
- / / github . com /
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input lin
-e 223.
+e 247.
 
 (C:\Users\Shadow\AppData\Local\Programs\MiKTeX\tex/latex/newtx\ts1ntxtlf.fd
 File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
 )
 LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 223.
+(Font)              scaled to size 10.0pt on input line 247.
 LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 9.0pt on input line 235.
+(Font)              scaled to size 9.0pt on input line 258.
 LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 6.6pt on input line 235.
+(Font)              scaled to size 6.6pt on input line 258.
 LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 9.0pt on input line 235.
+(Font)              scaled to size 9.0pt on input line 258.
 LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 6.6pt on input line 235.
+(Font)              scaled to size 6.6pt on input line 258.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 9.0pt on input line 235.
+(Font)              scaled to size 9.0pt on input line 258.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 6.6pt on input line 235.
+(Font)              scaled to size 6.6pt on input line 258.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 9.0pt on input line 235.
+(Font)              scaled to size 9.0pt on input line 258.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 6.6pt on input line 235.
+(Font)              scaled to size 6.6pt on input line 258.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 9.0pt on input line 235.
+(Font)              scaled to size 9.0pt on input line 258.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 6.6pt on input line 235.
+(Font)              scaled to size 6.6pt on input line 258.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 9.0pt on input line 235.
+(Font)              scaled to size 9.0pt on input line 258.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 6.6pt on input line 235.
+(Font)              scaled to size 6.6pt on input line 258.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 9.0pt on input line 235.
+(Font)              scaled to size 9.0pt on input line 258.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 6.6pt on input line 235.
+(Font)              scaled to size 6.6pt on input line 258.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 9.0pt on input line 235.
+(Font)              scaled to size 9.0pt on input line 258.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 6.6pt on input line 235.
-<figures/fig-03-temporal.pdf, id=147, 471.52951pt x 171.64375pt>
+(Font)              scaled to size 6.6pt on input line 258.
+LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
+(Font)              scaled to size 8.0pt on input line 282.
+LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
+(Font)              scaled to size 6.0pt on input line 282.
+LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
+(Font)              scaled to size 8.0pt on input line 282.
+LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
+(Font)              scaled to size 6.0pt on input line 282.
+LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
+(Font)              scaled to size 8.0pt on input line 282.
+LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
+(Font)              scaled to size 6.0pt on input line 282.
+LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
+(Font)              scaled to size 8.0pt on input line 282.
+LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
+(Font)              scaled to size 6.0pt on input line 282.
+LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
+(Font)              scaled to size 8.0pt on input line 282.
+LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
+(Font)              scaled to size 6.0pt on input line 282.
+LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
+(Font)              scaled to size 8.0pt on input line 282.
+LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
+(Font)              scaled to size 6.0pt on input line 282.
+LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
+(Font)              scaled to size 8.0pt on input line 282.
+LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
+(Font)              scaled to size 6.0pt on input line 282.
+LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
+(Font)              scaled to size 8.0pt on input line 282.
+LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
+(Font)              scaled to size 6.0pt on input line 282.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 8.0pt on input line 293.
+
+Overfull \hbox (0.63303pt too wide) in paragraph at lines 282--296
+ [][] 
+ []
+
+[3{C:/Users/Shadow/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ot1-
+tlf.enc}{C:/Users/Shadow/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/tex-gyre
+/q-ts1.enc} <./figures/pipeline.png>]
+<figures/fig-03-temporal.pdf, id=196, 471.52951pt x 171.64375pt>
 File: figures/fig-03-temporal.pdf Graphic file (type pdf)
 <use figures/fig-03-temporal.pdf>
-Package pdftex.def Info: figures/fig-03-temporal.pdf  used on input line 271.
+Package pdftex.def Info: figures/fig-03-temporal.pdf  used on input line 304.
 (pdftex.def)             Requested size: 506.45908pt x 184.36937pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [3{C:/Users/Shadow/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ot1
--tlf.enc}{C:/Users/Shadow/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/tex-gyr
-e/q-ts1.enc} <./figures/pipeline.png>]
-<figures/fig-04-coverage-heatmap.pdf, id=162, 472.62384pt x 313.56497pt>
+<figures/fig-04-coverage-heatmap.pdf, id=197, 472.62384pt x 313.56497pt>
 File: figures/fig-04-coverage-heatmap.pdf Graphic file (type pdf)
 <use figures/fig-04-coverage-heatmap.pdf>
 Package pdftex.def Info: figures/fig-04-coverage-heatmap.pdf  used on input lin
-e 291.
+e 317.
 (pdftex.def)             Requested size: 445.68645pt x 295.70802pt.
-<figures/fig-05-pca-morphospace.pdf, id=164, 418.93283pt x 221.52376pt>
+<figures/fig-05-pca-morphospace.pdf, id=199, 418.93283pt x 221.52376pt>
 File: figures/fig-05-pca-morphospace.pdf Graphic file (type pdf)
 <use figures/fig-05-pca-morphospace.pdf>
 Package pdftex.def Info: figures/fig-05-pca-morphospace.pdf  used on input line
- 311.
+ 330.
 (pdftex.def)             Requested size: 506.45908pt x 267.82147pt.
-
-Underfull \vbox (badness 7397) has occurred while \output is active []
-
-<figures/fig-06-shape-descriptors.pdf, id=167, 471.41093pt x 244.26207pt>
+<figures/fig-15-style-fingerprints.pdf, id=201, 444.27531pt x 314.90068pt>
+File: figures/fig-15-style-fingerprints.pdf Graphic file (type pdf)
+<use figures/fig-15-style-fingerprints.pdf>
+Package pdftex.def Info: figures/fig-15-style-fingerprints.pdf  used on input l
+ine 344.
+(pdftex.def)             Requested size: 506.45908pt x 358.9953pt.
+<figures/fig-06-shape-descriptors.pdf, id=203, 471.41093pt x 244.26207pt>
 File: figures/fig-06-shape-descriptors.pdf Graphic file (type pdf)
 <use figures/fig-06-shape-descriptors.pdf>
 Package pdftex.def Info: figures/fig-06-shape-descriptors.pdf  used on input li
-ne 334.
+ne 357.
 (pdftex.def)             Requested size: 506.45908pt x 262.42378pt.
-<figures/fig-08-inertia-tensor.pdf, id=169, 395.30598pt x 313.27109pt>
+<figures/fig-14-correlation-web.pdf, id=204, 285.41316pt x 233.09702pt>
+File: figures/fig-14-correlation-web.pdf Graphic file (type pdf)
+<use figures/fig-14-correlation-web.pdf>
+Package pdftex.def Info: figures/fig-14-correlation-web.pdf  used on input line
+ 367.
+(pdftex.def)             Requested size: 243.27107pt x 198.68112pt.
+<figures/fig-08-inertia-tensor.pdf, id=206, 395.30598pt x 313.27109pt>
 File: figures/fig-08-inertia-tensor.pdf Graphic file (type pdf)
 <use figures/fig-08-inertia-tensor.pdf>
 Package pdftex.def Info: figures/fig-08-inertia-tensor.pdf  used on input line 
-349.
+379.
 (pdftex.def)             Requested size: 243.27107pt x 192.78723pt.
-<figures/fig-07-proportions.pdf, id=172, 471.52574pt x 205.50253pt>
+<figures/fig-07-proportions.pdf, id=207, 471.52574pt x 205.50253pt>
 File: figures/fig-07-proportions.pdf Graphic file (type pdf)
 <use figures/fig-07-proportions.pdf>
-Package pdftex.def Info: figures/fig-07-proportions.pdf  used on input line 366
+Package pdftex.def Info: figures/fig-07-proportions.pdf  used on input line 386
 .
 (pdftex.def)             Requested size: 243.27107pt x 106.02469pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [4 <./figures/fig-03-temporal.pdf>]
-<figures/fig-10-shape-space.pdf, id=243, 408.00864pt x 337.6924pt>
-File: figures/fig-10-shape-space.pdf Graphic file (type pdf)
-<use figures/fig-10-shape-space.pdf>
-Package pdftex.def Info: figures/fig-10-shape-space.pdf  used on input line 385
-.
-(pdftex.def)             Requested size: 243.27107pt x 201.34941pt.
-<figures/fig-11-mesh-quality.pdf, id=245, 471.4994pt x 156.32777pt>
+<figures/fig-16-morphospace-evolution.pdf, id=208, 351.02567pt x 423.16612pt>
+File: figures/fig-16-morphospace-evolution.pdf Graphic file (type pdf)
+<use figures/fig-16-morphospace-evolution.pdf>
+Package pdftex.def Info: figures/fig-16-morphospace-evolution.pdf  used on inpu
+t line 395.
+(pdftex.def)             Requested size: 243.27107pt x 293.26987pt.
+<figures/fig-11-mesh-quality.pdf, id=210, 471.4994pt x 156.32777pt>
 File: figures/fig-11-mesh-quality.pdf Graphic file (type pdf)
 <use figures/fig-11-mesh-quality.pdf>
-Package pdftex.def Info: figures/fig-11-mesh-quality.pdf  used on input line 40
-4.
+Package pdftex.def Info: figures/fig-11-mesh-quality.pdf  used on input line 41
+1.
 (pdftex.def)             Requested size: 506.45908pt x 167.92741pt.
- [5 <./figures/fig-04-coverage-heatmap.pdf>]
-Underfull \hbox (badness 2080) in paragraph at lines 494--503
-\T1/ntxtlf/m/n/10 (+20) All data, 3D mod-els, and anal-y-sis code are avail-
+ [4 <./figures/fig-02-datakort.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 479--482
+\T1/ntxtlf/m/n/10 (+20) på [][]$\T1/ntxtt/m/n/10 https : / / github . com / luk
+ketsvane / stolar-[]db$[][]\T1/ntxtlf/m/n/10 (+20) .
  []
 
 
-Underfull \hbox (badness 7869) in paragraph at lines 494--503
-\T1/ntxtlf/m/n/10 (+20) The figure-generation scripts for this ar-ti-cle are
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2150) has occurred while \output is active []
 
  (main.bbl
-[6 <./figures/fig-05-pca-morphospace.pdf>] [7 <./figures/fig-06-shape-descripto
-rs.pdf> <./figures/fig-08-inertia-tensor.pdf> <./figures/fig-07-proportions.pdf
->]) [8 <./figures/fig-10-shape-space.pdf>] [9 <./figures/fig-11-mesh-quality.pd
-f>] (main.aux)
+[5 <./figures/fig-03-temporal.pdf>]
+Underfull \hbox (badness 1521) in paragraph at lines 91--97
+[]\T1/ntxtlf/m/n/9 (+20) Martin Hanik, Ben-jamin Ducke, Hans-Christian Hege,
+ []
+
+[6 <./figures/fig-04-coverage-heatmap.pdf>]) [7
+
+ <./figures/fig-05-pca-morphospace.pdf>] [8 <./figures/fig-15-style-fingerprint
+s.pdf> <./figures/fig-06-shape-descriptors.pdf>] [9 <./figures/fig-14-correlati
+on-web.pdf> <./figures/fig-08-inertia-tensor.pdf> <./figures/fig-07-proportions
+.pdf> <./figures/fig-16-morphospace-evolution.pdf>] [10 <./figures/fig-11-mesh-
+quality.pdf>] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 55583B52640F19DB01E264470491FA11;2204.
+(rerunfilecheck)             Checksum: B1B51A5C6567FBCA204F3702BFF7C3C6;2521.
  ) 
 Here is how much of TeX's memory you used:
- 23468 strings out of 467871
- 434970 string characters out of 5417892
- 833647 words of memory out of 5000000
- 51782 multiletter control sequences out of 15000+600000
- 701247 words of font info for 212 fonts, out of 8000000 for 9000
+ 23584 strings out of 467871
+ 438069 string characters out of 5417892
+ 839327 words of memory out of 5000000
+ 51883 multiletter control sequences out of 15000+600000
+ 710663 words of font info for 226 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,12n,120p,1003b,1375s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 80i,12n,120p,1003b,1273s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Shadow/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/NewTX
 MI.pfb><C:/Users/Shadow/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gy
 re/qtmr.pfb><C:/Users/Shadow/AppData/Local/Programs/MiKTeX/fonts/type1/public/t
 xfonts/t1xtt.pfb><C:/Users/Shadow/AppData/Local/Programs/MiKTeX/fonts/type1/pub
 lic/newtx/txmiaX.pfb><C:/Users/Shadow/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/newtx/txsys.pfb><C:/Users/Shadow/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/newtx/ztmb.pfb><C:/Users/Shadow/AppData/Local/Programs/MiKTeX/fonts/
-type1/public/newtx/ztmr.pfb><C:/Users/Shadow/AppData/Local/Programs/MiKTeX/font
-s/type1/public/newtx/ztmri.pfb>
-Output written on main.pdf (9 pages, 5460632 bytes).
+/public/newtx/txsym.pfb><C:/Users/Shadow/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/newtx/txsys.pfb><C:/Users/Shadow/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/newtx/ztmb.pfb><C:/Users/Shadow/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/newtx/ztmr.pfb><C:/Users/Shadow/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/newtx/ztmri.pfb>
+Output written on main.pdf (10 pages, 5954981 bytes).
 PDF statistics:
- 777 PDF objects out of 1000 (max. 8388607)
- 74 named destinations out of 1000 (max. 500000)
- 30387 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 985 PDF objects out of 1000 (max. 8388607)
+ 93 named destinations out of 1000 (max. 500000)
+ 33490 words of extra memory for PDF output out of 35830 (max. 10000000)
 

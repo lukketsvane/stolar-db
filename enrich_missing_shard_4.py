@@ -6,16 +6,19 @@ import concurrent.futures
 from pathlib import Path
 from google import genai
 from google.genai import types
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 # Configuration
 API_KEY = os.environ.get("GEMINI_API_KEY")
 client = genai.Client(api_key=API_KEY)
 PRIMARY_MODEL = "gemini-2.0-flash"
 FALLBACK_MODEL = "gemini-flash-latest"
-JSON_PATH = "STOLAR/enriched_chairs.json"
-API_PATH = "STOLAR/api.json"
 IMAGE_DIR = "STOLAR/bguw"
-MAX_WORKERS = 3 # Parallel requests
+MAX_WORKERS = 5 # Parallel requests
+OUTPUT_FILE = "STOLAR/enriched_chairs_shard_4.json"
 
 PROMPT = """Analyze this chair image and provide information according to the following schema in JSON format:
 - tal_komponentar (int): Number of main structural components.
@@ -90,20 +93,27 @@ def process_chair(chair_id):
         return chair_id, "ERROR"
 
 def main():
-    api_data = load_data(API_PATH)
-    enriched_data = load_data(JSON_PATH)
+    # Read missing_chairs.txt lines 1181-1475 (1-based index)
+    with open("missing_chairs.txt", "r", encoding='utf-16') as f:
+        all_lines = f.readlines()
+    
+    # 1181 to 1475 inclusive
+    shard_ids = [line.strip() for line in all_lines[1180:1475]]
+    print(f"Loaded {len(shard_ids)} IDs from missing_chairs.txt")
+    
+    enriched_data = load_data(OUTPUT_FILE)
     
     missing = []
-    for chair in api_data.get('chairs', []):
-        obj_id = chair['id']
-        if obj_id not in enriched_data:
-            image_path = os.path.join(IMAGE_DIR, f"{obj_id}_bguw.png")
+    for cid in shard_ids:
+        if cid not in enriched_data:
+            image_path = os.path.join(IMAGE_DIR, f"{cid}_bguw.png")
             if os.path.exists(image_path):
-                missing.append(obj_id)
+                missing.append(cid)
+            else:
+                print(f"Image for {cid} not found.")
     
-    print(f"Found {len(missing)} missing chairs with images.")
+    print(f"Found {len(missing)} missing chairs with images in this shard.")
     
-    # Process in batches of 20 to save progress frequently
     batch_size = 20
     for i in range(0, len(missing), batch_size):
         batch = missing[i:i+batch_size]
@@ -118,17 +128,13 @@ def main():
                     enriched_data[cid] = result
                     batch_results += 1
                 elif result == "RETRY":
-                    # If we hit 429 on both models, we should probably wait
                     print("Hit quota on both models, sleeping for 60s...")
                     time.sleep(60)
         
         if batch_results > 0:
-            save_data(JSON_PATH, enriched_data)
-            # Periodic sync with DB
-            os.system("python STOLAR/enrich_db.py")
-            print(f"Saved progress and synced DB. Total enriched: {len(enriched_data)}")
+            save_data(OUTPUT_FILE, enriched_data)
+            print(f"Saved progress. Total enriched in shard 4: {len(enriched_data)}")
         
-        # Rate limit safety between batches
         time.sleep(2)
 
 if __name__ == "__main__":
