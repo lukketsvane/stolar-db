@@ -2968,5 +2968,27 @@
     "synleg_samansetjing": "ingen_synleg",
     "ornament_nivaa": 3,
     "struktur_type": "fire-bein"
+  },
+  "O120519": {
+    "tal_komponentar": 8,
+    "har_armlene": true,
+    "har_polstring": true,
+    "rygg_type": "polstra",
+    "tal_bein": 4,
+    "symmetri": "bilateral",
+    "synleg_samansetjing": "naglar",
+    "ornament_nivaa": 3,
+    "struktur_type": "fire-bein"
+  },
+  "O120670": {
+    "tal_komponentar": 1,
+    "har_armlene": false,
+    "har_polstring": false,
+    "rygg_type": "heiltre",
+    "tal_bein": 0,
+    "symmetri": "bilateral",
+    "synleg_samansetjing": "ingen_synleg",
+    "ornament_nivaa": 0,
+    "struktur_type": "frittberande"
   }
 }

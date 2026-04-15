@@ -10241,7 +10241,16 @@
         "inertia_ratio": 0.433,
         "complexity": 4.6649,
         "vol_hull": 1.2722
-      }
+      },
+      "tal_komponentar": 8,
+      "har_armlene": true,
+      "har_polstring": true,
+      "rygg_type": "polstra",
+      "tal_bein": 4,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "naglar",
+      "ornament_nivaa": 3,
+      "struktur_type": "fire-bein"
     },
     {
       "name": "Armchair (ukjent)",
@@ -10388,7 +10397,16 @@
         "inertia_ratio": 0.5606,
         "complexity": 5.4792,
         "vol_hull": 0.1312
-      }
+      },
+      "tal_komponentar": 1,
+      "har_armlene": false,
+      "har_polstring": false,
+      "rygg_type": "heiltre",
+      "tal_bein": 0,
+      "symmetri": "bilateral",
+      "synleg_samansetjing": "ingen_synleg",
+      "ornament_nivaa": 0,
+      "struktur_type": "frittberande"
     },
     {
       "name": "LCM Chair",
