@@ -22,10 +22,6 @@ for chair in api_data.get('chairs', []):
         if os.path.exists(image_path):
             missing.append(obj_id)
 
-total_missing = len(missing)
-shard_index = 0
-total_shards = 6
-my_missing = missing[shard_index::total_shards]
-
-print(f"Total missing with images: {total_missing}")
-print(f"Shard {shard_index}/{total_shards} will process: {len(my_missing)} chairs.")
+print(f"Total chairs in API: {len(api_data.get('chairs', []))}")
+print(f"Already enriched: {len(master_enriched)}")
+print(f"Missing with images: {len(missing)}")

@@ -18,7 +18,7 @@ client = genai.Client(api_key=API_KEY)
 PRIMARY_MODEL = "gemini-2.0-flash"
 FALLBACK_MODEL = "gemini-flash-latest"
 IMAGE_DIR = "STOLAR/bguw"
-MAX_WORKERS = 3 # Parallel requests
+MAX_WORKERS = 5 # Parallel requests
 
 PROMPT = """Analyze this chair image and provide information according to the following schema in JSON format:
 - tal_komponentar (int): Number of main structural components.

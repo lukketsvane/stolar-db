@@ -1,0 +1,79 @@
+{
+  "O122269": {
+    "tal_komponentar": 3,
+    "har_armlene": false,
+    "har_polstring": false,
+    "rygg_type": "heiltre",
+    "tal_bein": 0,
+    "symmetri": "bilateral",
+    "synleg_samansetjing": "bøygd",
+    "ornament_nivaa": 0,
+    "struktur_type": "frittberande"
+  },
+  "O121083": {
+    "tal_komponentar": 1,
+    "har_armlene": false,
+    "har_polstring": false,
+    "rygg_type": "heiltre",
+    "tal_bein": 4,
+    "symmetri": "bilateral",
+    "synleg_samansetjing": "ingen_synleg",
+    "ornament_nivaa": 0,
+    "struktur_type": "fire-bein"
+  },
+  "O121254": {
+    "tal_komponentar": 2,
+    "har_armlene": true,
+    "har_polstring": false,
+    "rygg_type": "open",
+    "tal_bein": 4,
+    "symmetri": "bilateral",
+    "synleg_samansetjing": "bøygd",
+    "ornament_nivaa": 0,
+    "struktur_type": "fire-bein"
+  },
+  "O1322039": {
+    "tal_komponentar": 1,
+    "har_armlene": true,
+    "har_polstring": false,
+    "rygg_type": "open",
+    "tal_bein": 4,
+    "symmetri": "bilateral",
+    "synleg_samansetjing": "ingen_synleg",
+    "ornament_nivaa": 1,
+    "struktur_type": "fire-bein"
+  },
+  "O134558": {
+    "tal_komponentar": 9,
+    "har_armlene": false,
+    "har_polstring": false,
+    "rygg_type": "open",
+    "tal_bein": 4,
+    "symmetri": "bilateral",
+    "synleg_samansetjing": "tapp-og-hol",
+    "ornament_nivaa": 3,
+    "struktur_type": "fire-bein"
+  },
+  "O131380": {
+    "tal_komponentar": 2,
+    "har_armlene": false,
+    "har_polstring": false,
+    "rygg_type": "open",
+    "tal_bein": 4,
+    "symmetri": "bilateral",
+    "synleg_samansetjing": "skruar",
+    "ornament_nivaa": 1,
+    "struktur_type": "fire-bein"
+  },
+  "O168294": {
+    "tal_komponentar": 4,
+    "har_armlene": true,
+    "har_polstring": true,
+    "rygg_type": "polstra",
+    "tal_bein": 4,
+    "symmetri": "bilateral",
+    "synleg_samansetjing": "sveisa",
+    "ornament_nivaa": 0,
+    "struktur_type": "fire-bein"
+  }
+}
