@@ -41,6 +41,7 @@
 \usepackage{microtype}
 \usepackage{endnotes}
 \let\footnote=\endnote
+\usepackage{amsmath}
 
 % Math-symbol fallback font — EB Garamond lacks ∀ ∃ ∈ ⊆ ⊃ ≠ etc.,
 % so the Python preprocessor wraps them in \msym{...} which uses
@@ -315,6 +316,9 @@
 % Føreord
 \input{forord}
 
+% Til lesaren (kart over boka)
+\input{til-lesaren}
+
 % Ordliste
 \silentchapter{Ordliste}{ordliste}
 \begin{widebody}
@@ -334,6 +338,8 @@
 \ordlisteentry{Kognitiv lyskjegle}{Delmengda av formrommet agenten kan representere og manipulere (Fields \& Levin, 2022). [5.2]}
 \ordlisteentry{Multiskala-kompetanse}{Agens opererer samstundes på fleire skalaer, kvar med si eiga lyskjegle og sine eigne grammatikkreglar (Levin, 2022). [6.12]}
 \ordlisteentry{Omhug}{Mengda av aksar i formrommet agenten aktivt justerer for. Omhug er intelligensens innhald; intelligens er omhugen si form. [5.6, 5.61]}
+\ordlisteentry{Generativ modell}{Boltzmann-distribusjon over formrommet som sameinar grammatikk, landskap og lyskjegle i éin probabilistisk formalisme. [8.1]}
+\ordlisteentry{Liv}{Den prosessen der eit system opprettheld og utvidar si eiga lyskjegle over tid (Levin, 2022). [5.65]}
 \ordlisteentry{Seleksjonstrykk}{Ein gradient som endrar sannsynsfordelinga over formrommet (Wright, 1932). [2.1]}
 \ordlisteentry{Substrat}{Det fysiske, algoritmiske eller sosiale systemet som realiserer agensen. Fungerer som ein null-ordens agent (Levin, 2022). [5.4]}
 \ordlisteentry{Tilpassingslandskap}{Vektorsummen av alle verksame seleksjonstrykk over formrommet (Wright, 1932; Waddington, 1957). [3.1]}
@@ -343,10 +349,14 @@
 % Proposisjonar
 \input{proposisjonar}
 
-% Appell fjerna
+% Fundament (empirisk grunnlag for den generative modellen)
+\input{fundament}
 
-% Etterord
+% Etterord I og II
 \input{etterord}
+
+% Tre brev til målgruppene
+\input{brev}
 
 % Referansar (nummererte for å korrespondere med superscript i proposisjonane)
 \silentchapter{Referansar}{referansar}
@@ -435,6 +445,28 @@
 \refentry{[82] Seifert, U., Sealander, P., Marzen, S. \& Levin, M. (2024). Reinforcement learning and developmental biology: A shared computational structure. \textit{BioSystems}, 235, 105107.}
 \refentry{[83] Kirchhoff, M., Parr, T., Palacios, E., Friston, K. \& Kiverstein, J. (2018). The Markov blankets of life: Autonomy, active inference and the free energy principle. \textit{Journal of the Royal Society Interface}, 15(138), 20170792.}
 \refentry{[84] Levin, M. (2023). Darwin's agential materials: Evolutionary implications of multiscale competency in developmental biology. \textit{Cellular and Molecular Life Sciences}, 80(6), 142.}
+\refentry{[85] Levin, M. (2023). Bioelectric networks: The cognitive glue enabling evolutionary scaling from physiology to mind. \textit{Animal Cognition}, 26, 1865--1891.}
+\refentry{[86] Chis-Ciure, R. \& Levin, M. (2025). Cognition all the way down 2.0: Neuroscience beyond neurons in the diverse intelligence era. \textit{Synthese}, 206, 257.}
+\refentry{[87] Watson, R. A., Levin, M. \& Buckley, C. L. (2022). Design for an individual: Connectionist approaches to the evolutionary transitions in individuality. \textit{Frontiers in Ecology and Evolution}, 10, 823588.}
+\refentry{[88] Levin, M. (2025). Artificial intelligences: A bridge toward diverse intelligence and humanity's future. \textit{Advanced Intelligent Systems}, 7, 2401034.}
+\refentry{[89] Fields, C. \& Levin, M. (2025). Life, its origin, and its distribution: A perspective from the Conway--Kochen theorem and the Free Energy Principle. \textit{Communicative \& Integrative Biology}, 18(1), 2466017.}
+\refentry{[90] Doctor, T., Witkowski, O., Colognese, P., Ishihara, Y. \& Levin, M. (2025). Selves as perspectives: From biological life to superintelligence and a Bodhisattva project. Manuscript, Center for the Study of Apparent Selves.}
+\refentry{[91] Sol{\'e}, R., Seoane, L. F., Pla-Mauri, J., Bennett, M. T., Hochberg, M. E. \& Levin, M. (2026). Cognition spaces: Natural, artificial, and hybrid. arXiv:2601.12837.}
+\refentry{[92] Hartl, B., Risi, S. \& Levin, M. (2024). Evolutionary implications of multi-scale intelligence. Preprint.}
+\refentry{[93] Levin, M. \& Gitelman, A. (2025). Designing with diverse intelligence: Interfaces, agential materials, and ingressing minds. SUrF interview.}
+\refentry{[94] Haidt, J. (2024). \textit{The Anxious Generation: How the Great Rewiring of Childhood Is Causing an Epidemic of Mental Illness}. Penguin Press. Sjå òg Twenge, J. M. (2017). \textit{iGen}. Atria Books.}
+\refentry{[95] Haugen, F. (2021). Testimony before U.S. Senate Subcommittee on Consumer Protection; \textit{The Facebook Files}, Wall Street Journal investigation series.}
+\refentry{[96] Cadwalladr, C. \& Graham-Harrison, E. (2018). Revealed: 50 million Facebook profiles harvested for Cambridge Analytica in major data breach. \textit{The Guardian}, 17 March.}
+\refentry{[97] Ovid. \textit{Metamorfosar} III: Ekko og Narcissus.}
+\refentry{[98] Rajan, D., Makushok, T., Kalantari, A. et al. (2023). Single-cell analysis of habituation in \textit{Stentor coeruleus}. \textit{Current Biology}, 33, 241--251.}
+\refentry{[99] Boisseau, R. P., Vogel, D. \& Dussutour, A. (2016). Habituation in non-neural organisms: Evidence from slime moulds. \textit{Proceedings of the Royal Society B}, 283, 20160446.}
+\refentry{[100] Netea, M. G., Joosten, L. A. B., Latz, E. et al. (2016). Trained immunity: A program of innate immune memory in health and disease. \textit{Science}, 352(6284), aaf1098.}
+\refentry{[101] Kandel, E. R. (2001). The molecular biology of memory storage: A dialogue between genes and synapses. \textit{Science}, 294(5544), 1030--1038.}
+\refentry{[102] Pavlov, I. P. (1927). \textit{Conditioned Reflexes}. Oxford University Press.}
+\refentry{[103] Friston, K. \& Frith, C. (2015). A duet for one. \textit{Consciousness and Cognition}, 36, 390--405.}
+\refentry{[104] March, J. G. (1991). Exploration and exploitation in organizational learning. \textit{Organization Science}, 2(1), 71--87.}
+\refentry{[105] Kuhn, T. S. (1962). \textit{The Structure of Scientific Revolutions}. University of Chicago Press.}
+\refentry{[106] Wigner, E. P. (1960). The unreasonable effectiveness of mathematics in the natural sciences. \textit{Communications on Pure and Applied Mathematics}, 13(1), 1--14.}
 \end{widebody}
 
 \par\addvspace{14pt}
@@ -449,7 +481,7 @@
 
 \textbf{2.14 (forts.)} Den semiotiske utvidinga av affordansomgrepet [56] har sin teoretiske rot i Hoffmeyer [73] si syntese av Bateson og Peirce. Hoffmeyer plasserer affordans i ei kjede objekt → mønster → teikn → tolking; Brier formaliserer dette for designkontekst. Vår bruk av «affordansestruktur» er nær Gibson [12] (objektivt relasjonell), men opnar for den semiotiske vidareføringa når klassen krev det.
 
-\textbf{1.2} Objektet er udeleleg i den forstand at vidare dekomponering øydelegg den kausale kapasiteten me er interesserte i. Under det nivået finst det framleis fysikk; men ikkje formgjeving. Den klassiske mereologien [71] definerer atomet formelt — det utan eigne deler; vår variant er operasjonell — det utan kausalt verksame deler i den valde klassen. Distinksjonen er substansiell, ikkje terminologisk: same fysisk gjenstand kan vere atom i éin klasse og samansett i ein annan.
+\textbf{1.2} Objektet er udeleleg i den forstand at vidare dekomponering øydelegg den kausale kapasiteten me er interesserte i. Under det nivået finst det framleis fysikk; men ikkje formgjeving. Den klassiske mereologien [71] definerer atomet formelt: det utan eigne deler; vår variant er operasjonell: det utan kausalt verksame deler i den valde klassen. Distinksjonen er substansiell, ikkje terminologisk: same fysisk gjenstand kan vere atom i éin klasse og samansett i ein annan.
 
 \textbf{5.3} Formalgebraen er utvikla av Stiny over fire tiår [11, 13, 18]. Algebraen er ikkje ein modell av form; han er syntaksen til formrommet. Innleiringsoperasjonen (at agenten gjenkjenner ei delform inne i heilforma) er grunnlaget for grammatikkreglane. At formrommet er kontinuerleg langs geometriske aksar og diskret langs materielle, adresserast her for fyrste gong.
 
@@ -469,7 +501,7 @@
 
 \textbf{5.1} Ei klasse utan ein navigerande agent er formelt mogleg men empirisk tom; ho ville ha null realiserte posisjonar og difor ikkje eksistere som observerbar klasse.
 
-\textbf{5.11} Agentdefinisjonen konvergerer frå fire uavhengige tradisjonar: kybernetikk [4, 5, 7], utviklingsbiologi [22, 24, 84], maskinlæring [82], og fri-energi-prinsippet [19, 83]. At fire domene uavhengig definerer same struktur (mål, måling, justering), stadfestar at definisjonen grip noko reelt. Fields \& Levin [21] formulerer det slik: konvergensen «dates back at least to Ashby, and includes Maturana and Varela, Pattee, and Rosen» --- eit historisk kontinuum som strekker seg frå kybernetikken via autopoiesen til den frie energien. Seifert et al.\ [82] viser eksplisitt at forsterkingslæring og utviklingsbiologi deler den same berekningstruktur: belønningssignal er ein avstandsfunksjon d, og politikk-oppdatering er justeringsmekanismen δ. Kirchhoff et al.\ [83] viser at Markov-tepper formaliserer den same strukturen i FEP: det aktive teppet definerer grensa mellom agent og omverd via nettopp dette trippelet. Definisjonen er Turing-komplett [6]; eit kvart system som oppfyller (g, d, \msym{δ}) med konvergensgaranti er ein universell navigator uavhengig av substrat. Formgrammatikken er og Turing-komplett; Stiny (1975) konstruerte to uavhengige simuleringar av Turing-maskiner i formgrammatikk-formalismen.
+\textbf{5.11} Agentdefinisjonen konvergerer frå fire uavhengige tradisjonar: kybernetikk [4, 5, 7], utviklingsbiologi [22, 24, 84], maskinlæring [82], og fri-energi-prinsippet [19, 83]. At fire domene uavhengig definerer same struktur (mål, måling, justering), stadfestar at definisjonen grip noko reelt. Fields \& Levin [21] formulerer det slik: konvergensen «dates back at least to Ashby, and includes Maturana and Varela, Pattee, and Rosen»; eit historisk kontinuum som strekker seg frå kybernetikken via autopoiesen til den frie energien. Seifert et al.\ [82] viser eksplisitt at forsterkingslæring og utviklingsbiologi deler den same berekningstruktur: belønningssignal er ein avstandsfunksjon d, og politikk-oppdatering er justeringsmekanismen δ. Kirchhoff et al.\ [83] viser at Markov-tepper formaliserer den same strukturen i FEP: det aktive teppet definerer grensa mellom agent og omverd via nettopp dette trippelet. Definisjonen er Turing-komplett [6]; eit kvart system som oppfyller (g, d, \msym{δ}) med konvergensgaranti er ein universell navigator uavhengig av substrat. Formgrammatikken er og Turing-komplett; Stiny (1975) konstruerte to uavhengige simuleringar av Turing-maskiner i formgrammatikk-formalismen.
 
 \textbf{5.2} Kognitiv lyskjegle er Fields \& Levins [21] generalisering av perseptuelle grenser til vilkårlege agentar. Omgrepet generaliserer den fysiske lyskjegla frå relativitetsteorien: det finst ei grense for kor mykje av formrommet ein agent kan representere innanfor sin eigen tidsskala.
 
@@ -510,13 +542,13 @@
 
 \textbf{5.72} Reduksjonsteoremet klargjer tilhøvet til dei to kjeldetradisjonane. Stiny-Gips si formgrammatikkteori og Hatchuel-Weil si tanke-kunnskapsteori er ikkje to lesingar av den same prosessen; dei er den same prosessen sett under to ulike kollaps. At begge tradisjonane har utvikla seg uavhengig i fire tiår utan å møta kvarandre er difor naturleg: kvar har gjort sitt grensetilfelle så rikt som det kan bli. Samla gjev dei ikkje éin ny teori; dei gjev formen til den eksisterande.
 
-\textbf{5.72 (forts.)} CK-tradisjonen har modnast gjennom tre tiår: frå dei opphavlege artiklane [16, 17] gjennom den kanoniske boka [74], til refleksive kritikkar av om CK er ein \textit{engineering} eller meir generell teori [75], til moderne dataeksperiment med LLM-agentar [76]. Reduksjonsteoremet relaterer seg til heile denne tradisjonen — kvart steg i CK-modninga er framleis innanfor det same grensetilfellet av kjerne-likninga. Tilsvarande modning på Stiny-sida [11, 13, 18] gjer den parallelle påstanden gyldig: båe tradisjonane utviklar seg innanfor sitt eige grensetilfelle, ikkje på tvers.
+\textbf{5.72 (forts.)} CK-tradisjonen har modnast gjennom tre tiår: frå dei opphavlege artiklane [16, 17] gjennom den kanoniske boka [74], til refleksive kritikkar av om CK er ein \textit{engineering} eller meir generell teori [75], til moderne dataeksperiment med LLM-agentar [76]. Reduksjonsteoremet relaterer seg til heile denne tradisjonen; kvart steg i CK-modninga er framleis innanfor det same grensetilfellet av kjerne-likninga. Tilsvarande modning på Stiny-sida [11, 13, 18] gjer den parallelle påstanden gyldig: båe tradisjonane utviklar seg innanfor sitt eige grensetilfelle, ikkje på tvers.
 
 \textbf{5.722} Eit domene som tidlegare tilhøyrde einten formgrammatikk eller tanke-kunnskap aleine, tilhøyrer no feltet deira ikkje-degenererte skjering. Praktiske konsekvensar: analysar som siterer berre éin av tradisjonane kvalifiserer seg sjølv som grensetilfelle.
 
 \textbf{7.1--7.2} Proposisjon 7 rommar to distinkte påstandar. Den deskriptive (7.1) kan testast empirisk: dersom former designa under demonstrerbart trong omhug ikkje presterer dårlegare langs urepresenterte aksar enn former designa under brei omhug, er proposisjonen tilbakevist. Den normative (7.2) gjev den deskriptive retning og relevans, men står ikkje og fell med henne.
 
-\textbf{7.13} Geologi/biologi/design-parallellen er Bateson [72] sin «pattern that connects» — at same forklaringsmønsteret (mønster i residue ber spor av prosessen som produserte det) gjeld på tvers av domena. Bateson argumenterer for ein «nødvendig einskap» mellom natur og tanke; vi tek ein svakare stilling — same lesningsapparatet kan brukast, utan å hevde ontologisk einskap.
+\textbf{7.13} Geologi/biologi/design-parallellen er Bateson [72] sin «pattern that connects»: at same forklaringsmønsteret (mønster i residue ber spor av prosessen som produserte det) gjeld på tvers av domena. Bateson argumenterer for ein «nødvendig einskap» mellom natur og tanke; vi tek ein svakare stilling: same lesningsapparatet kan brukast, utan å hevde ontologisk einskap.
 
 \textbf{15, 77, 78} Michl-serien dekkjer 25 år: norsk røter [77], kanonisk midtpunkt [15], engelsk konsolidering [78]. Saman utgjer dei den teoretiske basen for traktaten sin form-følger-funksjon-kritikk. Den fulle bibliografien (Michl 1989, 1995, 2002, 2007, 2009, 2014, 2024) er tilgjengeleg i \texttt{references.bib}.
 
@@ -524,7 +556,41 @@
 
 \textbf{CK-kritikk.} Den sterkaste innvendinga mot tanke-kunnskapsteorien er at C-rommet er eindimensjonalt og at funksjons- og strukturomgrep manglar. Denne traktaten adresserer begge: formrommet er fleirdimensjonalt (1.3); affordansestrukturen erstattar funksjonsomgrepet (1.31); og formalgebraen gjev struktur (1.32). Reduksjonsteoremet (5.72) viser at innvendinga ikkje er eit feil ved tanke-kunnskapsteorien, men ein diagnose av grensetilfellet ho representerer.
 
+\bigskip
+\textbf{5.212--5.213} Den presise informasjonstap-definisjonen av lyskjegla følgjer Fields \& Levin [21]: eit system er kognitiv agent for ein variabel dersom det finst ei politikk \(\pi\) slik at KL-divergensen \(D_{\mathrm{KL}}(p_{\mathrm{obs}} \| p_{\pi})\) er under terskelen \(\varepsilon\). Definisjonen er operasjonell og substrat-uavhengig.
+
+\textbf{5.65--5.652} Liv-definisjonen er utleidd frå Levin [22, 24]. Å definere liv som aktiv lyskjegle-oppretthald er konsistent med klassisk homeostase-teori (Cannon, 1932) og med dei nyaste biofysiske rammeverka for levande system (Friston, 2010 [19]). Definisjonen er falsifiserbar: han fell dersom eit system som aktivt opprettheld lyskjegla likevel vert klassifisert som ikkje-levande i alle relevante domene.
+
+\textbf{8.1} Den generative modellen er ein Boltzmann/Gibbs-distribusjon over formrommet. Denne forma er vald fordi ho er den einaste sannsynsfordelinga som maksimerer entropi under energirestriksjonar (jaynes, 1957). At \(\hat{L}_i\) speler rolla til «energi» tyder at kvar agents estimat av «kor god ei form er» fungerer som ein fri-energi-funksjon i Fristons [19] forstand. Fleire agentar vert kombinerte gjennom vekta produktform, som svarer til ein log-lineær kombinasjon av dei individuelle preferansane.
+
+\textbf{8.3--8.31} Grensetilfella i 8.3 samsvarar eksakt med reduksjonsteoremet i 5.72: (i) tilsvarer «rein formgrammatikk» og (ii) tilsvarer «rein gradientnavigasjon». Proposisjon 8.31 er difor ei formell konsolidering av 5.721 med eksplisitt referanse til den probabilistiske formliseringa i 8.1.
+
+\textbf{5.401} Tolagsstrukturen i substratet (struktur- vs.\ funksjonsparametrar) er formalisert i Hartl, Risi \& Levin [92]. Deira simuleringar viser at evolusjon under støy føretek seg signifikant raskare gjennom funksjonelle parametrar (MCA) enn gjennom direkte kodifisering av målforma. For formverda tyder dette at det grammatiske laget (reglar som opererer på konfigurasjonen) er ein adaptiv respons til støy i landskapet; ikkje berre ein ekspressiv konvensjon.
+
+\textbf{5.621} K-metrikken er Chis-Ciure \& Levins [86] kvantitative operasjonalisering av kompetanse. Metrikken er skala-invariant og additiv over uavhengige delproblem. Éi K-eining svarer til ca.\ 3,32 bit sti-informasjon. For formverda: ein designar med K = 3 i eit gjeve formrom sparar tre storleiksordnar av designarbeid samanlikna med tilfeldig utforsking.
+
+\textbf{5.653} Fields \& Levin [89] viser at Conway--Kochen-teoremet (2006) og FEP saman eliminerer ethvert «bright line» mellom kognitive og reint fysiske system. Alle persistente system oppfyller formelt definisjonen av Bayesiansk aktør. For formverda tyder dette at substratets agentstatus ikkje er ein metafor men ein fysisk konsekvens av persistens sjølv.
+
+\textbf{6.121} Watson, Levin \& Buckley [87] formaliserer evolusjonære overgangar i individualitet som djup modellinduksjon: berre djupe, asymmetriske interaksjonar (ikkje berre symmetrisk samspel) produserer kollektive eigenskapar som er ikkje-lineært separable funksjonar av komponentkarakterane. For formverda: tett kopling mellom agentar er ikkje berre ei styrke; ho er det formelle vilkåret for at heilskapen kvalifiserer seg som eigen agent.
+
+\textbf{6.14} Levin \& Gitelman [93] koplar formverda direkte til designpraksis: all design med agentivt materiale krev ei vending frå mikrostyring til samarbeid med kompetente substrat. Geninformasjon er ikkje preskriptiv men «prompts» som vert kreativt tolka på kvar skala. Whiteheads ingression-omgrep [93] gjev eit rammeverk for korleis matematiske strukturar «inngår» i det fysiske gjennom grensesnittet: forma trekk ikkje berre på kontingente seleksjonstrykk, men òg på platoniske regularitetar som vert tilgjengelege ved realisering.
+
+\textbf{7.14} [Flytta frå proposisjonar.] Proposisjon 7.1 er deskriptiv og falsifiserbar uavhengig av den normative 7.2. Testen: dersom former designa under demonstrerbart trong omhug ikkje presterer dårlegare langs urepresenterte aksar enn former designa under brei omhug, er proposisjonen tilbakevist.
+
+\textbf{8.4} [Flytta frå proposisjonar.] Modellen i 8.1 er falsifiserbar. Han fell dersom ei klasse viser formvariasjon som ikkje let seg dekomponere i bidrag frå \(L(\mathrm{SG})\), \(\hat{L}_i\) og \(C(A_i)\) kvar for seg. Spesifikt: dersom ein identifiserer ei klasse der grammatikk, landskap og lyskjegle saman ikkje predikerer den observerte fordelinga betre enn ein enklare modell, er rammeverket overflødig.
+
+\textbf{85--91} Dei nye referansane [85--93] styrker det formelle fundamentet langs fire aksar: (1) Bioelektrikk som kognitiv lim mellom skalaer [85]; (2) K-metrikk for kvantifiserbar kompetanse [86]; (3) ETI som formell mekanisme for skalasprang [87]; (4) Alle persistente system er Bayesianske aktørar [89]. Solé et al.\ [91] gjev den nærmaste parallellen til formrommet frå kognisjonsvitskapen: deira «cognition morphospace» konstruerer aksane spatialitet, komputasjonell kompleksitet og utviklingskompleksitet; same prosjektet som vår 1.3 med andre domenenamn.
+
 }
 \end{widebody}
+
+% Stille teikn på slutten: portal til digital versjon og open kjelde.
+\clearpage
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{center}
+\includegraphics[width=32mm]{qr.png}
+\end{center}
+\vspace*{\fill}
 
 \end{document}
