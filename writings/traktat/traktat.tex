@@ -346,6 +346,11 @@
 \end{ordliste}
 \end{widebody}
 
+\vspace*{\fill}
+\begin{widebody}
+\noindent\includegraphics[width=\linewidth]{fencing.png}
+\end{widebody}
+
 % Proposisjonar
 \input{proposisjonar}
 
@@ -582,15 +587,13 @@
 \textbf{85--91} Dei nye referansane [85--93] styrker det formelle fundamentet langs fire aksar: (1) Bioelektrikk som kognitiv lim mellom skalaer [85]; (2) K-metrikk for kvantifiserbar kompetanse [86]; (3) ETI som formell mekanisme for skalasprang [87]; (4) Alle persistente system er Bayesianske aktørar [89]. Solé et al.\ [91] gjev den nærmaste parallellen til formrommet frå kognisjonsvitskapen: deira «cognition morphospace» konstruerer aksane spatialitet, komputasjonell kompleksitet og utviklingskompleksitet; same prosjektet som vår 1.3 med andre domenenamn.
 
 }
-\end{widebody}
+% Stille teikn på siste side: portal til digital versjon og open kjelde.
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor=south east, inner sep=0] at ([xshift=-12mm, yshift=18mm]current page.south east) {%
+    \includegraphics[width=22mm]{qr.png}%
+  };
+\end{tikzpicture}
 
-% Stille teikn på slutten: portal til digital versjon og open kjelde.
-\clearpage
-\thispagestyle{empty}
-\vspace*{\fill}
-\begin{center}
-\includegraphics[width=32mm]{qr.png}
-\end{center}
-\vspace*{\fill}
+\end{widebody}
 
 \end{document}
