@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.3.27)  18 APR 2026 16:21
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.3.27)  18 APR 2026 19:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -971,7 +971,7 @@ File: figures/png/10_formgrammatikk_reskriving.png Graphic file (type bmp)
 File: figures/grensetilfelle.png Graphic file (type bmp)
 <figures/grensetilfelle.png>
  [14] [15] (formlaere.bbl
-[16] [17] [18])
+[16] [17] [18]) [19]
 Overfull \hbox (7.88821pt too wide) in paragraph at lines 390--391
 []\TU/EBGaramond(0)/b/n/10.95 Teorem 3 \TU/EBGaramond(0)/m/n/10.95 (Ikkje-degen
 erasjon)\TU/EBGaramond(0)/b/n/10.95 . []\TU/EBGaramond(0)/m/it/10.95 For ein ge
@@ -979,10 +979,9 @@ nerisk Formlære-instans der $[]$ er generativ, $\OMS/cmsy/m/n/10.95 L[]$ \TU/EB
 Garamond(0)/m/it/10.95 ikkje-konstant,
  []
 
-[19]
 File: figures/png_empirical/E1_morforom_pca.png Graphic file (type bmp)
 <figures/png_empirical/E1_morforom_pca.png>
- [20]
+[20]
 File: figures/png_empirical/E2_mesh_grid.png Graphic file (type bmp)
 <figures/png_empirical/E2_mesh_grid.png>
 File: figures/png_empirical/E8_silhouette_scatter.png Graphic file (type bmp)
@@ -1005,44 +1004,67 @@ adienten definert som «flukt
 
 File: figures/png_empirical/E15_lande_prediction.png Graphic file (type bmp)
 <figures/png_empirical/E15_lande_prediction.png>
-[25]
 File: figures/png_empirical/E5_stase_brot.png Graphic file (type bmp)
 <figures/png_empirical/E5_stase_brot.png>
- [26]
+[25]
 File: figures/png_empirical/E13_punktuert_likevekt.png Graphic file (type bmp)
 <figures/png_empirical/E13_punktuert_likevekt.png>
+ [26]
 File: figures/png_empirical/E4_kanalisering.png Graphic file (type bmp)
 <figures/png_empirical/E4_kanalisering.png>
- [27]
 File: figures/png_empirical/E12_kanalisering_radar.png Graphic file (type bmp)
 <figures/png_empirical/E12_kanalisering_radar.png>
- [28]
+ [27]
 File: figures/png_empirical/E11_stiavhengigheit.png Graphic file (type bmp)
 <figures/png_empirical/E11_stiavhengigheit.png>
+ [28]
 File: figures/png_empirical/E9_substrat_skift.png Graphic file (type bmp)
 <figures/png_empirical/E9_substrat_skift.png>
+File: figures/png_empirical/E19_karakterforskyving.png Graphic file (type bmp)
+<figures/png_empirical/E19_karakterforskyving.png>
  [29]
 File: figures/png_empirical/E14_agent_hierarki.png Graphic file (type bmp)
 <figures/png_empirical/E14_agent_hierarki.png>
  [30]
+Overfull \hbox (4.65149pt too wide) in paragraph at lines 553--554
+\TU/EBGaramond(0)/m/n/10.95 Dei tre neste figurane (E16, E17, E18) tek i bruk e
+tablerte paleobiologi-metodar direkte på stol-datasettet.
+ []
+
+File: figures/png_empirical/E16_morfologisk_nyskaping.png Graphic file (type bm
+p)
+<figures/png_empirical/E16_morfologisk_nyskaping.png>
+[31]
+Overfull \hbox (19.79088pt too wide) in paragraph at lines 564--565
+\TU/EBGaramond(0)/m/n/10.95 diasjon). Dei to signalperiodane fell saman med Nyk
+lassisisme-Historisme-konsolideringa og postmoderne-
+ []
+
+File: figures/png_empirical/E17_disparity_through_time.png Graphic file (type b
+mp)
+<figures/png_empirical/E17_disparity_through_time.png>
+[32]
+File: figures/png_empirical/E18_prediktiv_landskapsdrift.png Graphic file (type
+ bmp)
+<figures/png_empirical/E18_prediktiv_landskapsdrift.png>
+ [33]
 File: figures/png_empirical/E6_giga_grid_year.png Graphic file (type bmp)
 <figures/png_empirical/E6_giga_grid_year.png>
- [31]
 File: figures/png_empirical/E6_giga_grid_pc1.png Graphic file (type bmp)
 <figures/png_empirical/E6_giga_grid_pc1.png>
- [32] [33] (formlaere.aux)
+ [34] [35] (formlaere.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 23468 strings out of 402987
- 514931 string characters out of 5448317
- 998745 words of memory out of 5000000
- 51733 multiletter control sequences out of 15000+600000
+ 23528 strings out of 402987
+ 517414 string characters out of 5448317
+ 998956 words of memory out of 5000000
+ 51789 multiletter control sequences out of 15000+600000
  635837 words of font info for 100 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  84i,9n,104p,1515b,529s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on formlaere.pdf (33 pages).
+Output written on formlaere.pdf (35 pages).

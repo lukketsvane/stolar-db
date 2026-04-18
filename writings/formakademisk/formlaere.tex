@@ -528,6 +528,17 @@ Figur~\ref{fig:E9} syner korleis fem materialklassar (bøk/ask, mahogni/valnøtt
 \label{fig:E9}
 \end{figure}
 
+Det direkte prediktive funnet er ei form for \textbf{morfologisk karakterforskyving} (figur~\ref{fig:E19}). Eksisterande designteori manglar eit apparat for å predikere korleis nye teknologiar endrar formbanen til dei etablerte; verken formgrammatikk eller C-K-teori modellerer konkurranse mellom substrat. Kjerne-likninga gjer denne prediksjonen eksplisitt: når eit nytt materiale tek over ein nisje, deformerast tilpassingslandskapet slik at etablerte substrat tvingast til å forskyve forma si.
+
+Empirisk er mekanismen tydeleg. Før 1900 spreier tradisjonelt treverk seg breitt over heile morforommet med ei konveks innhylling på $\sim 150$ PC-enheter. Når stål etablerer seg i tiåra etter og okkuperer dei slanke ytterkantane, kollapsar treets innhylling til ein tredel av utgangsverdien. I den siste perioden er spreiinga til trestolane pressa saman i ei tett, kompakt klynge: tre-variansen er redusert med $\sim 85~\%$ i same tidsbandet som stål og plast ekspanderer. Det er ein systematisk forskyving av formvariasjonen til det gamle substratet, predikert av kjerne-likninga men ikkje av noka eksisterande designteori.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{E19_karakterforskyving.png}
+\caption{Morfologisk karakterforskyving. Øvre rad: fordeling av trestolar med konveks innhylling (amber) i fire tidsband, med stål (blå) og plast (raust) overlagt etter 1900. (e) Hylster-areal over tid; tre-hylsteret kollapsar ~75~\% medan stål og plast ekspanderer. (f) Total varians per materiale. (g) Relativ tre-spreiing mot 1600-1800-baseline side-om-side med den samla spreiinga til dei invaderande substrata.}
+\label{fig:E19}
+\end{figure}
+
 Figur~\ref{fig:E14} undersøker agent-skala-hypotesen ved å samanlikne Mahalanobis-spreiing per stilperiode mellom handverk-era (før 1850), overgangsperioden (1850-1950) og industri-era (etter 1950). Skilnaden er liten, men retningen er motsett av den naive hypotesen: handverk-era viser noko \textit{lågare} spreiing enn industri-era, ikkje høgare. Tolking: det er ikkje industri-agenten som absorberer variasjon, men derimot tradisjonskoplinga i handverks-agentar som held variasjonen låg.
 
 \begin{figure}[H]
@@ -537,7 +548,38 @@ Figur~\ref{fig:E14} undersøker agent-skala-hypotesen ved å samanlikne Mahalano
 \label{fig:E14}
 \end{figure}
 
-\subsection*{B.5 Giga-grid over heile datasettet}
+\subsection*{B.5 Biologi-inspirerte prediktive testar}
+
+Dei tre neste figurane (E16, E17, E18) tek i bruk etablerte paleobiologi-metodar direkte på stol-datasettet. Kvar metode er definert for biologiske taxa i litteraturen; implementeringa mot stolar er ein substrat-parameterisering av same matematikk.
+
+Figur~\ref{fig:E16} operasjonaliserer \textit{morfologisk nyskapingsavstand}, eit mål som gjev kvar form dens minste 6D-avstand til alle former som eksisterte før henne (jf.~\citet{foote1997}, \citet{ciampaglio2002}). Målet identifiserer individuelle innovatørar: blant dei 12 mest morfologisk isolerte stolane i datasettet står ein armstol frå 1685 (nyskapingsavstand 24{,}2) og fleire Bauhaus-dining-chairs frå 1936 (avstand 8{,}4) som er mellom dei mest ekstreme outlierane i heile datasettet. Dette gjev kjerne-likninga eit falsifiseringsvilkår: dersom metoden identifiserer kjende designhistoriske brotstolar, er det støtte for at datamålet fangar reell innovasjon.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{E16_morfologisk_nyskaping.png}
+\caption{Morfologisk nyskapingsavstand over tid. (a) Observert 90-persentil og median mot ein Brownian-motion nullmodell (80 permutasjonar av år). Punkt markerer dei 12 individuelt mest isolerte stolane. (b) Eksplisitt liste over dei 12 mest isolerte stolane med nyskapingsavstand.}
+\label{fig:E16}
+\end{figure}
+
+Figur~\ref{fig:E17} implementerer \citet{foote1993} si \textit{disparity through time}-måling direkte: gjennomsnittleg parvis avstand mellom samtidige stolar per 40-års vindauge, samanlikna mot ein Brownian-motion nullmodell med 120 permutasjonar. Observert disparitet er tydeleg \textit{under} nullbandet frå $\sim$1720 til $\sim$1840 (blå skraffering = konsolidering) og \textit{over} nullbandet rundt 1980-2005 (amber skraffering = adaptiv radiasjon). Dei to signalperiodane fell saman med Nyklassisisme-Historisme-konsolideringa og postmoderne-Samtids-bølgja; metoden henta ut dei utan nokon a priori periodisering.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{E17_disparity_through_time.png}
+\caption{Disparity through time etter \citet{foote1993}. Observert gjennomsnittleg parvis avstand (raud) mot Brownian-motion nullmodell 95~\%-band (grå). Skraffering markerer statistisk signifikante avvik: konsolidering (blå) og adaptiv radiasjon (amber). Nedre panel viser utvalstørrelse per vindauge.}
+\label{fig:E17}
+\end{figure}
+
+Figur~\ref{fig:E18} gjer kjerne-likninga si dynamiske komponent til ein direkte prediktiv test. Tilpassingslandskapet blir estimert via kernel-tetthet på pre-1900-stolar; deretter blir post-1900-stolar sine posisjonar samanlikna med den estimerte fordelinga. Log$_2$-forholdet mellom post og pre syner kvar nye regionar er realiserte (raust) og kvar tidlegare okkuperte regionar er forlatne (blå). Metoden er standard i paleobiologi for å teste stabilitet i tilpassingslandskap gjennom massive environmental shifts (t.d.~\citet{hunt2007}); her viser han at post-1900-landskapet ikkje kan reproduserast frå pre-1900-fordelinga aleine. Landskapet er dynamisk, som kjerne-likninga predikerer, og drifta er målbar per region.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{E18_prediktiv_landskapsdrift.png}
+\caption{Prediktiv test av landskaps-drift. (a) KDE-landskap for pre-1900-stolar. (b) KDE for post-1900. (c) log$_2$-forhold post/pre: raudt = ny region, blå = forlaten. Regioner der prediksjonen frå pre-1900 feilar representerer empirisk drift i tilpassingslandskapet.}
+\label{fig:E18}
+\end{figure}
+
+\subsection*{B.6 Giga-grid over heile datasettet}
 
 Til slutt, for å gjere skalaen synleg, er heile silhuett-korpuset presentert i éin figur sortert kronologisk (figur~\ref{fig:E6y}) og ein tilsvarande sortert etter PC1 (figur~\ref{fig:E6pc}). I båe grid er bakgrunnen til kvar celle tinta etter stilperiode. Figurane demonstrerer at det IKKJE er éin stil per tidsband, men kontinuerleg overlapp og substrat-skift.
 

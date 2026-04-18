@@ -350,6 +350,47 @@ def _silhouette_worker(args):
     return oid, np.packbits(img).tobytes()
 
 
+def _silhouette_is_pretty(img):
+    """Quality filter: reject silhouettes that are too thin, too sparse,
+    too fragmented, or have extreme aspect ratio for a chair."""
+    if img is None:
+        return False
+    H, W = img.shape
+    area = int(img.sum())
+    if area < 0.08 * H * W:
+        return False
+    if area > 0.75 * H * W:
+        return False
+    rows = np.any(img, axis=1)
+    cols = np.any(img, axis=0)
+    if not rows.any() or not cols.any():
+        return False
+    r0 = int(np.argmax(rows)); r1 = H - 1 - int(np.argmax(rows[::-1]))
+    c0 = int(np.argmax(cols)); c1 = W - 1 - int(np.argmax(cols[::-1]))
+    bh = r1 - r0 + 1
+    bw = c1 - c0 + 1
+    if bh < 0.40 * H:
+        return False
+    if bw < 0.22 * W:
+        return False
+    ar = bh / max(bw, 1)
+    if ar < 0.60 or ar > 2.6:
+        return False
+    fill = area / (bh * bw)
+    if fill < 0.28 or fill > 0.92:
+        return False
+    from scipy.ndimage import label as _label
+    _, ncomp = _label(img)
+    if ncomp > 3:
+        return False
+    return True
+
+
+def pretty_silhouette_mask(sils):
+    """Return the set of oids whose silhouette passes the beauty filter."""
+    return {oid for oid, img in sils.items() if _silhouette_is_pretty(img)}
+
+
 def build_silhouette_cache(ids, force=False, workers=None):
     """Cache silhouettes for all given Objekt-IDs.
     Parallelised over CPUs. Missing entries are rendered and written back."""
@@ -399,33 +440,34 @@ def fig_E2_mesh_grid(df, pca, sils):
     xs = np.linspace(q1a, q1b, K)
     ys = np.linspace(q2a, q2b, K)
 
-    used = set()
+    pretty = pretty_silhouette_mask(sils)
+    print(f"  E2 pretty silhouettes: {len(pretty)}/{len(sils)}")
+
     cells = {}
     dx = xs[1] - xs[0]; dy = ys[1] - ys[0]
-    
+
     for j, y in enumerate(ys):
         for i, x in enumerate(xs):
-            # mask for chairs in this cell
-            mask = (pc1 >= x - dx/2) & (pc1 < x + dx/2) & \
-                   (pc2 >= y - dy/2) & (pc2 < y + dy/2)
+            mask = (pc1 >= x - dx / 2) & (pc1 < x + dx / 2) & \
+                   (pc2 >= y - dy / 2) & (pc2 < y + dy / 2)
             cell_df = df[mask]
-            
             if len(cell_df) == 0:
                 continue
-            
-            # Robustness Filter: exclude extreme PC3-PC6 outliers to get 'clean' silhuettes
-            pc36_dist = np.sqrt((cell_df[["PC3","PC4","PC5","PC6"]]**2).sum(axis=1))
+            # keep only chairs with a pretty silhouette
+            cell_df = cell_df[cell_df["Objekt-ID"].isin(pretty)]
+            if len(cell_df) == 0:
+                continue
+            # Trim extreme PC3-PC6 outliers (weird poses)
+            pc36_dist = np.sqrt((cell_df[["PC3", "PC4", "PC5", "PC6"]] ** 2).sum(axis=1))
             robust_df = cell_df[pc36_dist < pc36_dist.quantile(0.85)]
-            if len(robust_df) > 0: cell_df = robust_df
-
-            # Medoid Selection: pick chair closest to the cell's own centroid
+            if len(robust_df) > 0:
+                cell_df = robust_df
+            # Medoid: chair closest to the cell's own centroid
             c1, c2 = cell_df["PC1"].mean(), cell_df["PC2"].mean()
-            dist = (cell_df["PC1"] - c1)**2 + (cell_df["PC2"] - c2)**2
+            dist = (cell_df["PC1"] - c1) ** 2 + (cell_df["PC2"] - c2) ** 2
             best_idx = dist.idxmin()
-            
             oid = df.loc[best_idx, "Objekt-ID"]
-            if oid in sils:
-                cells[(i, j)] = (oid, df.loc[best_idx])
+            cells[(i, j)] = (oid, df.loc[best_idx])
 
     fig = plt.figure(figsize=(13.5, 7.5))
     gs = gridspec.GridSpec(1, 2, width_ratios=[1.0, 1.2], wspace=0.10, figure=fig)
@@ -793,97 +835,154 @@ def fig_E5_stase_brot(df, pca):
 # ═════════════════════════════════════════════════════════════════════
 def fig_E15_lande_prediction(df, pca):
     """
-    Formal evolutionary analysis using the Lande equation. 
-    Two panels: (a) G-matrix structure and beta pressure; 
-    (b) Comparison of predicted vs observed response.
+    Landé (1979) breeder's equation applied to chair evolution.
+    G-matrix of the wood ancestral population, beta (selection gradient)
+    pointing away from the steel/plastic centroid. Predicted vs observed
+    response of the 1920-onwards population.
     """
     df_pre = df[(df["mat_class"] == "wood") & (df["år"] < 1920)]
     df_post = df[(df["mat_class"] == "wood") & (df["år"] >= 1920)]
-    df_metal = df[df["mat_class"] == "metal"]
-    
-    if len(df_pre) < 15 or len(df_post) < 15:
-        print("  skipping E15: insufficient wood samples")
+    df_metal = df[df["mat_class"].isin(["metal", "plastic"])]
+
+    if len(df_pre) < 15 or len(df_post) < 15 or len(df_metal) < 15:
+        print("  skipping E15: insufficient samples")
         return
 
     pcs = ["PC1", "PC2"]
     G = df_pre[pcs].cov().values
-    
-    # beta points AWAY from metal
     metal_c = df_metal[pcs].mean().values
     pre_c = df_pre[pcs].mean().values
-    beta = (pre_c - metal_c)
-    beta /= np.linalg.norm(beta)
-    
-    # Lande prediction
+    beta = pre_c - metal_c
+    beta_norm = np.linalg.norm(beta)
+    if beta_norm < 1e-6:
+        print("  skipping E15: degenerate beta")
+        return
+    beta /= beta_norm
     delta_z_pred = G @ beta
     delta_z_obs = df_post[pcs].mean().values - pre_c
 
-    fig = plt.figure(figsize=(13.5, 7))
-    gs = gridspec.GridSpec(1, 2, width_ratios=[1, 1], wspace=0.2)
-    
-    # --- (a) G-matrix & Kanalisering ---
+    # robust axis limits based on all data
+    all_pc1 = df["PC1"].values
+    all_pc2 = df["PC2"].values
+    x_lo, x_hi = np.quantile(all_pc1, [0.01, 0.99])
+    y_lo, y_hi = np.quantile(all_pc2, [0.01, 0.99])
+    x_pad = (x_hi - x_lo) * 0.05
+    y_pad = (y_hi - y_lo) * 0.05
+    x_lo -= x_pad; x_hi += x_pad; y_lo -= y_pad; y_hi += y_pad
+
+    fig = plt.figure(figsize=(13.5, 6.8))
+    gs = gridspec.GridSpec(1, 2, width_ratios=[1, 1], wspace=0.24, figure=fig)
+
     axA = fig.add_subplot(gs[0])
-    axA.scatter(df["PC1"], df["PC2"], s=3, c=OI["grey"], alpha=0.08, zorder=1)
-    axA.scatter(df_pre["PC1"], df_pre["PC2"], s=15, c=AMBER, alpha=0.25, label="Tre (ancestral, <1920)")
-    
-    # G-matrix Ellipse
+    axA.scatter(all_pc1, all_pc2, s=3, c=OI["grey"], alpha=0.12, zorder=1,
+                linewidths=0)
+    axA.scatter(df_pre["PC1"], df_pre["PC2"], s=14, c=AMBER, alpha=0.45,
+                edgecolors="none", label=f"tre, pre-1920 (n={len(df_pre)})",
+                zorder=2)
+    axA.scatter(df_metal["PC1"], df_metal["PC2"], s=14, c=OI["blue"],
+                alpha=0.35, edgecolors="none",
+                label=f"stål/plast (n={len(df_metal)})", zorder=2)
+
     vals, vecs = np.linalg.eigh(G)
-    order = vals.argsort()[::-1]; vals, vecs = vals[order], vecs[:, order]
-    theta = np.degrees(np.arctan2(*vecs[:, 0][::-1]))
-    width, height = 2 * np.sqrt(vals)
+    order = vals.argsort()[::-1]; vals = vals[order]; vecs = vecs[:, order]
+    theta = np.degrees(np.arctan2(vecs[1, 0], vecs[0, 0]))
+    width, height = 2 * np.sqrt(np.maximum(vals, 1e-12))
     for sig in [1, 2]:
-        ell = Ellipse(xy=pre_c, width=sig*width, height=sig*height, angle=theta,
-                      edgecolor=AMBER, facecolor="none", lw=1.2, alpha=0.6/sig, linestyle="--")
+        ell = Ellipse(xy=pre_c, width=sig * width, height=sig * height,
+                      angle=theta, edgecolor=AMBER, facecolor="none",
+                      lw=1.2, alpha=0.85 / sig, linestyle="--", zorder=4)
         axA.add_patch(ell)
-    
-    # Beta arrow (Pressure from steel)
-    axA.annotate("", xy=pre_c, xytext=pre_c - beta*0.8,
-                 arrowprops=dict(arrowstyle="<-", color=OI["blue"], lw=2.5, mutation_scale=20),
-                 zorder=10)
-    axA.text(*(pre_c - beta*0.9), r"$\beta$ (seleksjonstrykk frå stål)", 
-             color=OI["blue"], weight="bold", ha="center", fontsize=10)
 
-    axA.set_title("(a) G-matrise og seleksjonsgradient", loc="left", weight="bold")
-    axA.set_xlabel("PC1"); axA.set_ylabel("PC2")
-    
-    # --- (b) Response comparison ---
+    beta_arrow_len = min((x_hi - x_lo), (y_hi - y_lo)) * 0.18
+    axA.annotate("", xy=pre_c + beta * beta_arrow_len,
+                 xytext=tuple(pre_c),
+                 arrowprops=dict(arrowstyle="-|>", color=OI["blue"],
+                                 lw=2.2, mutation_scale=20), zorder=10)
+    axA.text(*(pre_c + beta * beta_arrow_len * 1.10),
+             r"$\beta$", color=OI["blue"], weight="bold",
+             ha="center", va="center", fontsize=11,
+             bbox=dict(facecolor="white", edgecolor="none", alpha=0.8,
+                       boxstyle="round,pad=0.15"))
+    axA.scatter(*pre_c, s=140, c=AMBER, edgecolors="white",
+                linewidths=1.4, zorder=11)
+    axA.set_xlim(x_lo, x_hi); axA.set_ylim(y_lo, y_hi)
+    axA.set_title("(a) G-matrise (1σ, 2σ ellipsar) og seleksjonsgradient β",
+                  loc="left", weight="bold", fontsize=10.5)
+    axA.set_xlabel(f"PC1 ({pca.explained_variance_ratio_[0]*100:.1f}%)")
+    axA.set_ylabel(f"PC2 ({pca.explained_variance_ratio_[1]*100:.1f}%)")
+    axA.legend(loc="upper right", fontsize=8, frameon=False)
+    axA.grid(alpha=0.12, linewidth=0.4)
+
     axB = fig.add_subplot(gs[1])
-    axB.scatter(df["PC1"], df["PC2"], s=3, c=OI["grey"], alpha=0.08, zorder=1)
-    axB.scatter(df_post["PC1"], df_post["PC2"], s=15, c=OI["rust"], alpha=0.25, label="Tre (modern, >1920)")
-    
-    # Prediction arrow
-    scale = 1.5
-    axB.arrow(pre_c[0], pre_c[1], delta_z_pred[0]*scale, delta_z_pred[1]*scale, 
-              head_width=0.08, head_length=0.1, fc=SLATE, ec=SLATE, lw=2.5, 
-              label=r"Predikert respons ($\Delta \bar{z}$)", zorder=11)
-    # Observed arrow
-    axB.arrow(pre_c[0], pre_c[1], delta_z_obs[0], delta_z_obs[1], 
-              head_width=0.08, head_length=0.1, fc=OI["rust"], ec=OI["rust"], lw=2.5, 
-              label="Observert respons", zorder=11)
-    
-    # Mark optima
-    axB.scatter(*pre_c, s=120, c=AMBER, edgecolors="white", zorder=12)
-    axB.scatter(*(pre_c + delta_z_obs), s=120, c=OI["rust"], edgecolors="white", zorder=12)
-
-    axB.set_title("(b) Prediksjon vs. Observert flukt", loc="left", weight="bold")
-    axB.set_xlabel("PC1"); axB.set_ylabel("PC2")
-    axB.legend(loc="upper right", fontsize=8)
+    axB.scatter(all_pc1, all_pc2, s=3, c=OI["grey"], alpha=0.12, zorder=1,
+                linewidths=0)
+    axB.scatter(df_pre["PC1"], df_pre["PC2"], s=12, c=AMBER, alpha=0.30,
+                edgecolors="none", label="tre, pre-1920")
+    axB.scatter(df_post["PC1"], df_post["PC2"], s=18, c=OI["rust"], alpha=0.55,
+                edgecolors="none", label=f"tre, post-1920 (n={len(df_post)})")
+    # Scale the predicted arrow so it is comparable in visual length
+    obs_norm = np.linalg.norm(delta_z_obs)
+    pred_norm = np.linalg.norm(delta_z_pred)
+    scale = obs_norm / max(pred_norm, 1e-9)
+    axB.annotate("", xy=pre_c + delta_z_pred * scale,
+                 xytext=tuple(pre_c),
+                 arrowprops=dict(arrowstyle="-|>", color=SLATE,
+                                 lw=2.2, mutation_scale=20), zorder=10)
+    axB.annotate("", xy=pre_c + delta_z_obs,
+                 xytext=tuple(pre_c),
+                 arrowprops=dict(arrowstyle="-|>", color=OI["rust"],
+                                 lw=2.2, mutation_scale=20), zorder=10)
+    axB.scatter(*pre_c, s=140, c=AMBER, edgecolors="white",
+                linewidths=1.4, zorder=11)
+    axB.scatter(*(pre_c + delta_z_obs), s=140, c=OI["rust"],
+                edgecolors="white", linewidths=1.4, zorder=11)
+    # angular agreement
+    cosang = float(np.dot(delta_z_pred / (pred_norm + 1e-9),
+                          delta_z_obs / (obs_norm + 1e-9)))
+    ang_deg = float(np.degrees(np.arccos(np.clip(cosang, -1, 1))))
+    txt = (f"‖Δz_pred‖ = {pred_norm:.3f}\n"
+           f"‖Δz_obs‖  = {obs_norm:.3f}\n"
+           f"vinkel(pred, obs) = {ang_deg:.1f}°\n"
+           f"cos(pred, obs) = {cosang:.2f}")
+    axB.text(0.02, 0.98, txt, transform=axB.transAxes,
+             fontsize=8.5, color=SLATE, va="top", ha="left",
+             family="monospace",
+             bbox=dict(facecolor="white", edgecolor="none",
+                       alpha=0.85, boxstyle="round,pad=0.28"))
+    # dummy legend entries
+    axB.plot([], [], color=SLATE, lw=2, label="predikert $\\Delta\\bar z = Gβ$")
+    axB.plot([], [], color=OI["rust"], lw=2, label="observert $\\Delta\\bar z$")
+    axB.set_xlim(x_lo, x_hi); axB.set_ylim(y_lo, y_hi)
+    axB.set_title("(b) predikert vs. observert respons",
+                  loc="left", weight="bold", fontsize=10.5)
+    axB.set_xlabel(f"PC1 ({pca.explained_variance_ratio_[0]*100:.1f}%)")
+    axB.set_ylabel(f"PC2 ({pca.explained_variance_ratio_[1]*100:.1f}%)")
+    axB.legend(loc="upper right", fontsize=8, frameon=False)
+    axB.grid(alpha=0.12, linewidth=0.4)
 
     save(fig, "E15_lande_prediction")
 
 
-# FIG E7 SPLIT: Morforom-trajektorie separert på materiale (Wood vs Metal)
+# FIG E7 SPLIT: Morforom-trajektorie separert på materiale (wood / metal / plastic)
 # ═════════════════════════════════════════════════════════════════════
 def fig_E7_trajektorie_split(df, pca):
-    """Trajectory split by material, with OU-like attraction peaks."""
-    fig = plt.figure(figsize=(14, 7))
-    gs = gridspec.GridSpec(1, 2, wspace=0.15)
-    
+    """Three-panel trajectory: wood, metal, plastic. Arrows connect
+    40-year bins; a star marks the Ornstein-Uhlenbeck adaptive optimum θ
+    (estimated as the mean of the last three bins)."""
+    fig = plt.figure(figsize=(14.5, 6.2))
+    gs = gridspec.GridSpec(1, 3, wspace=0.22, figure=fig)
+
+    all_pc1 = df["PC1"].values; all_pc2 = df["PC2"].values
+    x_lo, x_hi = np.quantile(all_pc1, [0.01, 0.99])
+    y_lo, y_hi = np.quantile(all_pc2, [0.01, 0.99])
+    x_pad = (x_hi - x_lo) * 0.05; y_pad = (y_hi - y_lo) * 0.05
+    x_lo -= x_pad; x_hi += x_pad; y_lo -= y_pad; y_hi += y_pad
+
     def get_traj(sub):
         yr_bins = np.arange(1500, 2040, 40)
         res = []
-        for i in range(len(yr_bins)-1):
-            mask = (sub["år"] >= yr_bins[i]) & (sub["år"] < yr_bins[i+1])
+        for i in range(len(yr_bins) - 1):
+            mask = (sub["år"] >= yr_bins[i]) & (sub["år"] < yr_bins[i + 1])
             chunk = sub[mask]
             if len(chunk) >= 5:
                 res.append({
@@ -891,37 +990,72 @@ def fig_E7_trajektorie_split(df, pca):
                     "cx": chunk["PC1"].mean(),
                     "cy": chunk["PC2"].mean(),
                     "sex": chunk["PC1"].std() / np.sqrt(len(chunk)),
-                    "sey": chunk["PC2"].std() / np.sqrt(len(chunk))
+                    "sey": chunk["PC2"].std() / np.sqrt(len(chunk)),
+                    "n": len(chunk),
                 })
         return pd.DataFrame(res)
 
-    for i, (mcls, title, col) in enumerate([("wood", "Tre-trajektorie", AMBER), 
-                                            ("metal", "Stål/Metall-trajektorie", OI["skyblue"])]):
+    groups = [
+        ("wood",    "tre (bøk/ask/mahogni)", AMBER),
+        ("metal",   "stål / jern / krom",    OI["blue"]),
+        ("plastic", "plast / akryl / poly",  OI["rust"]),
+    ]
+
+    for i, (mcls, title, col) in enumerate(groups):
         ax = fig.add_subplot(gs[i])
-        ax.scatter(df["PC1"], df["PC2"], s=2, c=OI["grey"], alpha=0.08)
-        
+        ax.scatter(all_pc1, all_pc2, s=3, c=OI["grey"], alpha=0.10,
+                   linewidths=0, zorder=1)
+
         sub = df[df["mat_class"] == mcls]
         traj = get_traj(sub)
-        
-        if len(traj) > 1:
-            # Arrows
-            for j in range(len(traj)-1):
-                ax.annotate("", xy=(traj.iloc[j+1]["cx"], traj.iloc[j+1]["cy"]),
-                             xytext=(traj.iloc[j]["cx"], traj.iloc[j]["cy"]),
-                             arrowprops=dict(arrowstyle="-|>", color=col, lw=2, alpha=0.8, mutation_scale=15))
-            
-            # OU-Attraction Peak (Theta)
-            # Simplistic OU estimate: weighted mean of later points
+        n_mat = len(sub)
+
+        if len(traj) >= 2:
+            # arrows coloured along the trajectory (dark → light)
+            cmap = LinearSegmentedColormap.from_list(
+                f"traj_{mcls}",
+                [SLATE, col, "white"],
+                N=max(len(traj) - 1, 2))
+            for j in range(len(traj) - 1):
+                arrow_col = cmap(j / max(len(traj) - 2, 1))
+                ax.annotate("",
+                            xy=(traj.iloc[j + 1]["cx"], traj.iloc[j + 1]["cy"]),
+                            xytext=(traj.iloc[j]["cx"], traj.iloc[j]["cy"]),
+                            arrowprops=dict(arrowstyle="-|>", color=arrow_col,
+                                            lw=1.9, alpha=0.92,
+                                            mutation_scale=15),
+                            zorder=4)
+            # numbered nodes
+            for j, row_ in traj.iterrows():
+                ax.errorbar(row_["cx"], row_["cy"],
+                            xerr=row_["sex"], yerr=row_["sey"],
+                            ecolor=to_rgba(col, 0.4),
+                            elinewidth=0.9, capsize=2, zorder=3)
+                ax.scatter([row_["cx"]], [row_["cy"]],
+                           s=90, c=[col], edgecolors="white",
+                           linewidths=1.1, zorder=5)
+                ax.text(row_["cx"], row_["cy"], str(j + 1),
+                        ha="center", va="center",
+                        fontsize=7.4, color="white", weight="bold", zorder=6)
+            # OU attractor θ
             theta_x = traj.iloc[-3:]["cx"].mean()
             theta_y = traj.iloc[-3:]["cy"].mean()
-            ax.scatter([theta_x], [theta_y], marker="*", s=300, color=col, edgecolors="white", 
-                       label=f"Adaptiv topp (OU θ)", zorder=12)
-            
-        ax.set_title(title, loc="left", weight="bold")
-        ax.set_xlabel("PC1")
-        ax.set_ylabel("PC2")
-        ax.legend()
-        
+            ax.scatter([theta_x], [theta_y], marker="*", s=340,
+                       color=col, edgecolors=SLATE, linewidths=0.9,
+                       label="OU θ (adaptiv topp)", zorder=8)
+
+        ax.set_xlim(x_lo, x_hi); ax.set_ylim(y_lo, y_hi)
+        ax.set_title(f"{title}    n = {n_mat}",
+                     loc="left", weight="bold", fontsize=10.2)
+        ax.set_xlabel(f"PC1")
+        if i == 0:
+            ax.set_ylabel(f"PC2")
+        ax.grid(alpha=0.12, linewidth=0.4)
+        ax.axhline(0, color=OI["grey"], linewidth=0.5, alpha=0.4)
+        ax.axvline(0, color=OI["grey"], linewidth=0.5, alpha=0.4)
+        if len(traj) >= 2:
+            ax.legend(loc="upper right", fontsize=8, frameon=False)
+
     save(fig, "E7_trajektorie_split")
 
 
@@ -955,26 +1089,30 @@ def fig_E8_silhouette_scatter(df, pca, sils, n_show=180):
     xe = np.linspace(lo1, hi1, K + 1)
     ye = np.linspace(lo2, hi2, K + 1)
 
-    chosen = {} 
+    # Only consider chairs whose silhouette passes the beauty filter
+    pretty = pretty_silhouette_mask(sils)
+    print(f"  E8 pretty silhouettes: {len(pretty)}/{len(sils)}")
+
+    chosen = {}
     for k in range(len(df)):
-        if oids[k] not in sils: continue
-        if pc1[k] < lo1 or pc1[k] > hi1 or pc2[k] < lo2 or pc2[k] > hi2: continue
+        if oids[k] not in pretty:
+            continue
+        if pc1[k] < lo1 or pc1[k] > hi1 or pc2[k] < lo2 or pc2[k] > hi2:
+            continue
         i = np.searchsorted(xe, pc1[k]) - 1; i = min(max(i, 0), K - 1)
         j = np.searchsorted(ye, pc2[k]) - 1; j = min(max(j, 0), K - 1)
-        if (i, j) not in chosen: chosen[(i, j)] = []
-        chosen[(i, j)].append(k)
+        chosen.setdefault((i, j), []).append(k)
 
     final = {}
     for (i, j), idxs in chosen.items():
         cell_df = df.iloc[idxs]
-        # Filter for robust mesh (PC3-PC6 distance to origin)
-        d36 = np.sqrt((cell_df[["PC3","PC4","PC5","PC6"]]**2).sum(axis=1))
+        # prefer chairs closest to PC3-PC6 origin (typical shapes)
+        d36 = np.sqrt((cell_df[["PC3", "PC4", "PC5", "PC6"]] ** 2).sum(axis=1))
         robust_cell = cell_df[d36 < d36.quantile(0.85)]
-        if len(robust_cell) > 0: cell_df = robust_cell
-        
-        # Pick medoid in PC1-PC2
+        if len(robust_cell) > 0:
+            cell_df = robust_cell
         c1, c2 = cell_df["PC1"].mean(), cell_df["PC2"].mean()
-        dist = (cell_df["PC1"] - c1)**2 + (cell_df["PC2"] - c2)**2
+        dist = (cell_df["PC1"] - c1) ** 2 + (cell_df["PC2"] - c2) ** 2
         final[(i, j)] = dist.idxmin()
 
     fig = plt.figure(figsize=(14, 9))
@@ -1517,6 +1655,483 @@ def fig_E14_agent_hierarki(df):
 
 
 # ═════════════════════════════════════════════════════════════════════
+# FIG E16: Morfologisk nyskaping over tid (novelty distance)
+# ═════════════════════════════════════════════════════════════════════
+def fig_E16_morfologisk_nyskaping(df, pca, sils=None):
+    """For each chair, compute the minimum 6D distance in PC-space to
+    ANY chair that existed before its year. This is the 'morphological
+    novelty' at birth. Directly analogous to stratigraphic novelty indices
+    in paleobiology (Foote 1997, Ciampaglio 2002).
+
+    Peaks in the per-year max reveal innovation bursts that the observed
+    record would not produce under a Brownian-motion null."""
+    df = df[df["år"].notna()].copy()
+    df = df.sort_values("år").reset_index(drop=True)
+    pc_cols = ["PC1", "PC2", "PC3", "PC4", "PC5", "PC6"]
+    X = df[pc_cols].values
+    yrs = df["år"].values
+
+    N = len(df)
+    novelty = np.full(N, np.nan)
+    for i in range(N):
+        prior = yrs < yrs[i]
+        if not prior.any():
+            continue
+        d = np.linalg.norm(X[prior] - X[i], axis=1)
+        novelty[i] = d.min()
+
+    df["novelty"] = novelty
+
+    # Rolling max and mean per 10-year window
+    years_grid = np.arange(int(np.nanmin(yrs)), int(np.nanmax(yrs)) + 1, 5)
+    med = []; p90 = []; n_in = []
+    for yr in years_grid:
+        m = (yrs >= yr - 15) & (yrs <= yr + 15)
+        if m.sum() < 3:
+            med.append(np.nan); p90.append(np.nan); n_in.append(m.sum())
+        else:
+            v = novelty[m]
+            v = v[~np.isnan(v)]
+            if len(v) == 0:
+                med.append(np.nan); p90.append(np.nan); n_in.append(0)
+            else:
+                med.append(np.median(v))
+                p90.append(np.quantile(v, 0.90))
+                n_in.append(len(v))
+    med = np.array(med); p90 = np.array(p90); n_in = np.array(n_in)
+
+    # Brownian null: shuffle years, recompute novelty statistic
+    rng = np.random.default_rng(0)
+    n_perm = 80
+    null_p90 = np.full((n_perm, len(years_grid)), np.nan)
+    for p in range(n_perm):
+        shuf_yr = rng.permutation(yrs)
+        nov_s = np.full(N, np.nan)
+        ord_ = np.argsort(shuf_yr)
+        Xs = X[ord_]
+        ys = shuf_yr[ord_]
+        for i in range(1, N):
+            d = np.linalg.norm(Xs[:i] - Xs[i], axis=1)
+            nov_s[ord_[i]] = d.min()
+        for gi, yr in enumerate(years_grid):
+            m = (shuf_yr >= yr - 15) & (shuf_yr <= yr + 15)
+            v = nov_s[m]
+            v = v[~np.isnan(v)]
+            if len(v) >= 3:
+                null_p90[p, gi] = np.quantile(v, 0.90)
+    null_hi = np.nanpercentile(null_p90, 95, axis=0)
+    null_med = np.nanmedian(null_p90, axis=0)
+
+    # Identify chairs with the highest novelty for labeling
+    top_idx = np.argsort(novelty)[-12:][::-1]
+    top_chairs = df.iloc[top_idx][["år", "Stilperiode", "Namn", "PC1", "PC2",
+                                   "novelty", "Objekt-ID"]].copy()
+
+    fig = plt.figure(figsize=(13.5, 8.5))
+    gs = gridspec.GridSpec(2, 1, height_ratios=[1.1, 1], hspace=0.32,
+                           figure=fig)
+
+    # --- (a) novelty trajectory with null band ---
+    ax = fig.add_subplot(gs[0])
+    ax.fill_between(years_grid, 0, null_hi, color=OI["grey"], alpha=0.22,
+                     label="nullmodell 95% (år permuterte)")
+    ax.plot(years_grid, null_med, color=OI["grey"], lw=0.9, alpha=0.7,
+             label="nullmodell median")
+    ax.plot(years_grid, p90, color=OI["rust"], lw=1.9,
+             label="observert 90%-perc nyskapingsavstand")
+    ax.plot(years_grid, med, color=SLATE, lw=1.4, alpha=0.85,
+             label="observert median")
+    # mark top-12 individual chairs
+    ax.scatter(df.iloc[top_idx]["år"], df.iloc[top_idx]["novelty"],
+                s=60, c=OI["rust"], edgecolors="white", linewidths=0.9,
+                zorder=5, label="top-12 individuelle innovatørar")
+    ax.set_xlabel("år")
+    ax.set_ylabel("morfologisk nyskapingsavstand (PC1–PC6)")
+    ax.set_title("(a) minimum-avstand til prior stol gjennom tid",
+                  loc="left", weight="bold", fontsize=10.5)
+    ax.grid(alpha=0.12, linewidth=0.4)
+    ax.legend(loc="upper left", fontsize=8, frameon=False)
+    ax.set_xlim(years_grid.min(), years_grid.max())
+
+    # --- (b) top-12 individual innovator labels ---
+    axB = fig.add_subplot(gs[1])
+    axB.axis("off")
+    axB.text(0.0, 1.00,
+             "Dei mest morfologisk isolerte stolane i datasettet  "
+             "(største avstand til alle tidlegare)",
+             transform=axB.transAxes, fontsize=10.5, weight="bold",
+             color=SLATE, va="top")
+    # build a small table with 3 columns
+    top_chairs = top_chairs.reset_index(drop=True)
+    n_rows = (len(top_chairs) + 2) // 3
+    for k, row_ in top_chairs.iterrows():
+        col_idx = k // n_rows
+        row_idx = k % n_rows
+        xp = 0.01 + col_idx * 0.34
+        yp = 0.88 - row_idx * (0.88 / max(n_rows, 1))
+        nm = str(row_.get("Namn", ""))[:35]
+        per = str(row_.get("Stilperiode", ""))[:20]
+        txt = (f"{int(row_['år'])}  ·  {per}\n"
+               f"{nm}\n"
+               f"nyskaping = {row_['novelty']:.2f}")
+        axB.text(xp, yp, txt, transform=axB.transAxes, fontsize=8.4,
+                 color=SLATE, va="top", ha="left",
+                 bbox=dict(facecolor=to_rgba(AMBER, 0.18),
+                           edgecolor=to_rgba(AMBER, 0.5),
+                           linewidth=0.4, boxstyle="round,pad=0.28"))
+
+    save(fig, "E16_morfologisk_nyskaping")
+
+
+# ═════════════════════════════════════════════════════════════════════
+# FIG E17: Disparity Through Time (Foote 1993)
+# ═════════════════════════════════════════════════════════════════════
+def fig_E17_disparity_through_time(df, pca, n_perm=120):
+    """Foote (1993): at each time slice, compute mean pairwise distance
+    between contemporary forms. Compare to a Brownian-motion null where
+    the same chairs have their years permuted. Peaks above the null band =
+    adaptive radiation (many divergent forms at once); troughs = consolidation."""
+    df = df[df["år"].notna()].copy()
+    yrs = df["år"].values
+    pc_cols = ["PC1", "PC2", "PC3", "PC4", "PC5", "PC6"]
+    X = df[pc_cols].values
+
+    years_grid = np.arange(1550, 2025, 10)
+    window = 40
+
+    def disparity(yr_vec):
+        out = np.full(len(years_grid), np.nan)
+        for gi, yr in enumerate(years_grid):
+            m = (yr_vec >= yr - window / 2) & (yr_vec <= yr + window / 2)
+            idx = np.where(m)[0]
+            if len(idx) < 6:
+                continue
+            sub = X[idx]
+            # mean pairwise distance (no self pairs)
+            dmat = np.linalg.norm(sub[:, None, :] - sub[None, :, :], axis=-1)
+            n = len(idx)
+            out[gi] = dmat.sum() / (n * (n - 1))
+        return out
+
+    real = disparity(yrs)
+    rng = np.random.default_rng(0)
+    null = np.full((n_perm, len(years_grid)), np.nan)
+    for i in range(n_perm):
+        null[i] = disparity(rng.permutation(yrs))
+    lo = np.nanpercentile(null, 2.5, axis=0)
+    hi = np.nanpercentile(null, 97.5, axis=0)
+    med = np.nanmedian(null, axis=0)
+
+    # sample size per window
+    nwin = np.array([
+        ((yrs >= yr - window / 2) & (yrs <= yr + window / 2)).sum()
+        for yr in years_grid
+    ])
+
+    fig = plt.figure(figsize=(13.5, 7))
+    gs = gridspec.GridSpec(2, 1, height_ratios=[2.1, 1.0], hspace=0.22,
+                           figure=fig)
+
+    ax = fig.add_subplot(gs[0])
+    ax.fill_between(years_grid, lo, hi, color=OI["grey"], alpha=0.22,
+                     label="Brownian null 95%")
+    ax.plot(years_grid, med, color=OI["grey"], lw=0.9, alpha=0.7,
+             label="Brownian null median")
+    ax.plot(years_grid, real, color=OI["rust"], lw=2.1,
+             label="observert disparitet")
+    # shade regions where observed > null hi (radiation) and < null lo (constraint)
+    ax.fill_between(years_grid, real, hi,
+                     where=(real > hi), alpha=0.3, color=AMBER, zorder=2,
+                     label="over nullbandet (radiasjon)")
+    ax.fill_between(years_grid, real, lo,
+                     where=(real < lo), alpha=0.35, color=OI["blue"], zorder=2,
+                     label="under nullbandet (stase/konsolidering)")
+    # material revolutions
+    for y_rev, lbl in [(1680, "barokk-konsolidering"),
+                        (1830, "industriell revolusjon"),
+                        (1925, "stålrør"),
+                        (1970, "plast-støyping")]:
+        ax.axvline(y_rev, color=SLATE, linewidth=0.7, linestyle=":", alpha=0.7)
+        ax.text(y_rev + 2, ax.get_ylim()[1] * 0.02 if False else 0,
+                 "", fontsize=7)
+    ax.set_xlabel("år")
+    ax.set_ylabel("gjennomsnittleg parvis avstand i 40-års vindauge")
+    ax.set_xlim(years_grid.min(), years_grid.max())
+    ax.grid(alpha=0.14, linewidth=0.4)
+    ax.legend(loc="upper left", fontsize=8.5, frameon=False, ncol=2)
+
+    axB = fig.add_subplot(gs[1], sharex=ax)
+    axB.fill_between(years_grid, 0, nwin, color=SLATE, alpha=0.22, step="mid")
+    axB.set_ylabel("n i vindauge")
+    axB.set_xlabel("år")
+    axB.grid(alpha=0.12, linewidth=0.4)
+    for y_rev, lbl in [(1680, "barokk-konsolidering"),
+                        (1830, "industriell revolusjon"),
+                        (1925, "stålrør"),
+                        (1970, "plast-støyping")]:
+        axB.axvline(y_rev, color=SLATE, linewidth=0.7, linestyle=":",
+                     alpha=0.7)
+        axB.text(y_rev, axB.get_ylim()[1] * 0.90, lbl, rotation=90,
+                  fontsize=7, color=SLATE, ha="right", va="top", alpha=0.85)
+
+    save(fig, "E17_disparity_through_time")
+
+
+# ═════════════════════════════════════════════════════════════════════
+# FIG E18: Prediktiv landskaps-drift (train pre-1900, test post-1900)
+# ═════════════════════════════════════════════════════════════════════
+def fig_E18_prediktiv_landskapsdrift(df, pca):
+    """Fit a KDE-landscape on chairs before 1900; predict where post-1900
+    chairs should sit if the landscape were stationary. Highlight regions
+    where post-1900 density exceeds the pre-1900 prediction (emergent zones)
+    and where post-1900 density falls below (abandoned zones)."""
+    df = df[df["år"].notna()].copy()
+    pre = df[df["år"] < 1900]
+    post = df[df["år"] >= 1900]
+    if len(pre) < 30 or len(post) < 30:
+        print("  skipping E18: insufficient samples")
+        return
+
+    pc1 = df["PC1"].values; pc2 = df["PC2"].values
+    xlo, xhi = np.quantile(pc1, [0.005, 0.995])
+    ylo, yhi = np.quantile(pc2, [0.005, 0.995])
+    xpad = (xhi - xlo) * 0.04; ypad = (yhi - ylo) * 0.04
+    xlo -= xpad; xhi += xpad; ylo -= ypad; yhi += ypad
+
+    xx, yy = np.meshgrid(np.linspace(xlo, xhi, 140),
+                          np.linspace(ylo, yhi, 140))
+    pts = np.vstack([xx.ravel(), yy.ravel()])
+
+    kde_pre = gaussian_kde(pre[["PC1", "PC2"]].values.T, bw_method=0.28)
+    kde_post = gaussian_kde(post[["PC1", "PC2"]].values.T, bw_method=0.28)
+    z_pre = kde_pre(pts).reshape(xx.shape)
+    z_post = kde_post(pts).reshape(xx.shape)
+    # diverging: log2 ratio; smoothed floor to avoid division issues
+    ratio = np.log2((z_post + z_pre.max() * 1e-3) /
+                    (z_pre + z_pre.max() * 1e-3))
+
+    fig = plt.figure(figsize=(14, 6.5))
+    gs = gridspec.GridSpec(1, 3, width_ratios=[1, 1, 1.05], wspace=0.22,
+                           figure=fig)
+
+    dens_cmap = LinearSegmentedColormap.from_list(
+        "amberfade", [(1, 1, 1, 0),
+                      to_rgba(LIGHTAMBER, 0.60),
+                      to_rgba(AMBER, 0.85),
+                      to_rgba(SLATE, 0.98)], N=256)
+    # quota levels for shared visual comparison
+    vmax = max(z_pre.max(), z_post.max())
+    lvs = np.linspace(vmax * 0.02, vmax, 10)
+
+    axA = fig.add_subplot(gs[0])
+    axA.scatter(pc1, pc2, s=3, c=OI["grey"], alpha=0.10, linewidths=0, zorder=1)
+    axA.contourf(xx, yy, z_pre, levels=lvs, cmap=dens_cmap, zorder=2)
+    axA.contour(xx, yy, z_pre, levels=lvs[::2], colors=[SLATE],
+                 linewidths=0.35, alpha=0.55, zorder=3)
+    axA.set_xlim(xlo, xhi); axA.set_ylim(ylo, yhi)
+    axA.set_title(f"(a) pre-1900 landskap   n={len(pre)}",
+                   loc="left", weight="bold", fontsize=10.5)
+    axA.set_xlabel("PC1"); axA.set_ylabel("PC2")
+    axA.grid(alpha=0.10, linewidth=0.4)
+
+    axB = fig.add_subplot(gs[1])
+    axB.scatter(pc1, pc2, s=3, c=OI["grey"], alpha=0.10, linewidths=0, zorder=1)
+    axB.contourf(xx, yy, z_post, levels=lvs, cmap=dens_cmap, zorder=2)
+    axB.contour(xx, yy, z_post, levels=lvs[::2], colors=[SLATE],
+                 linewidths=0.35, alpha=0.55, zorder=3)
+    axB.set_xlim(xlo, xhi); axB.set_ylim(ylo, yhi)
+    axB.set_title(f"(b) post-1900 landskap   n={len(post)}",
+                   loc="left", weight="bold", fontsize=10.5)
+    axB.set_xlabel("PC1"); axB.set_ylabel("PC2")
+    axB.grid(alpha=0.10, linewidth=0.4)
+
+    axC = fig.add_subplot(gs[2])
+    vmax_r = np.nanpercentile(np.abs(ratio), 95)
+    cs = axC.pcolormesh(xx, yy, ratio, cmap="RdBu_r",
+                         vmin=-vmax_r, vmax=vmax_r, shading="auto",
+                         zorder=2)
+    axC.scatter(pc1, pc2, s=3, c=OI["grey"], alpha=0.12, linewidths=0, zorder=1)
+    axC.set_xlim(xlo, xhi); axC.set_ylim(ylo, yhi)
+    axC.set_title("(c) log₂(post / pre) — raudt = ny region, blå = forlaten",
+                   loc="left", weight="bold", fontsize=10.5)
+    axC.set_xlabel("PC1")
+    cb = fig.colorbar(cs, ax=axC, shrink=0.85, pad=0.02)
+    cb.set_label("log₂ forholdstal")
+
+    save(fig, "E18_prediktiv_landskapsdrift")
+
+
+# ═════════════════════════════════════════════════════════════════════
+# FIG E19: Morfologisk karakterforskyving (character displacement)
+# ═════════════════════════════════════════════════════════════════════
+def fig_E19_karakterforskyving(df, pca):
+    """Empirical demonstration of *morphological character displacement*:
+    when a new substrate (steel/plastic) enters the niche, the established
+    substrate (wood) does not simply co-exist; its morphospace collapses.
+
+    Layout:
+      Row 1: wood distribution in four time bands (1600-1800, 1800-1900, 1900-1950, 1950-2024)
+             + convex hull + n, with steel/plastic overlaid from 1900 onward.
+      Row 2: (a) wood hull area over time
+             (b) wood total variance over time
+             (c) log2 ratio of wood variance, baseline = 1600-1800.
+    The same quantity for steel/plastic is included for reference."""
+    df = df[df["år"].notna()].copy()
+
+    windows = [(1600, 1800), (1800, 1900), (1900, 1950), (1950, 2025)]
+    pc_cols = ["PC1", "PC2"]
+    pc1 = df["PC1"].values; pc2 = df["PC2"].values
+    xlo, xhi = np.quantile(pc1, [0.005, 0.995])
+    ylo, yhi = np.quantile(pc2, [0.005, 0.995])
+
+    def hull_area(points):
+        if len(points) < 3:
+            return np.nan
+        try:
+            h = ConvexHull(points)
+            return float(h.volume)
+        except Exception:
+            return np.nan
+
+    def tot_var(points):
+        if len(points) < 2:
+            return np.nan
+        return float(np.trace(np.cov(points.T)))
+
+    # --- per-window stats ---
+    wood_area = []; steel_area = []; plastic_area = []
+    wood_var  = []; steel_var  = []; plastic_var  = []
+    for (a, b) in windows:
+        w = df[(df["mat_class"] == "wood") & (df["år"] >= a) & (df["år"] < b)][pc_cols].values
+        s = df[(df["mat_class"] == "metal") & (df["år"] >= a) & (df["år"] < b)][pc_cols].values
+        p = df[(df["mat_class"] == "plastic") & (df["år"] >= a) & (df["år"] < b)][pc_cols].values
+        wood_area.append(hull_area(w)); steel_area.append(hull_area(s)); plastic_area.append(hull_area(p))
+        wood_var.append(tot_var(w));   steel_var.append(tot_var(s));   plastic_var.append(tot_var(p))
+
+    # --- figure layout ---
+    fig = plt.figure(figsize=(15, 10.5))
+    gs = gridspec.GridSpec(3, 4, height_ratios=[1.3, 1.0, 1.0],
+                           hspace=0.42, wspace=0.16, figure=fig)
+
+    # Row 1: wood distribution per window, with steel+plastic overlaid
+    for i, (a, b) in enumerate(windows):
+        ax = fig.add_subplot(gs[0, i])
+        ax.scatter(pc1, pc2, s=3, c=OI["grey"], alpha=0.08,
+                   linewidths=0, zorder=1)
+        wsub = df[(df["mat_class"] == "wood") & (df["år"] >= a) & (df["år"] < b)]
+        ssub = df[(df["mat_class"] == "metal") & (df["år"] >= a) & (df["år"] < b)]
+        psub = df[(df["mat_class"] == "plastic") & (df["år"] >= a) & (df["år"] < b)]
+        # wood
+        if len(wsub) >= 3:
+            ax.scatter(wsub["PC1"], wsub["PC2"], s=14, c=AMBER, alpha=0.55,
+                       edgecolors="none", zorder=2, label=f"tre n={len(wsub)}")
+            try:
+                h = ConvexHull(wsub[pc_cols].values)
+                pts = wsub[pc_cols].values[h.vertices]
+                pts = np.r_[pts, pts[:1]]
+                ax.plot(pts[:, 0], pts[:, 1],
+                        color=AMBER, lw=1.6, alpha=0.9, zorder=3)
+                ax.fill(pts[:, 0], pts[:, 1],
+                        color=to_rgba(AMBER, 0.10), zorder=2)
+            except Exception:
+                pass
+        # steel
+        if len(ssub) >= 3:
+            ax.scatter(ssub["PC1"], ssub["PC2"], s=18, c=OI["blue"],
+                       alpha=0.65, edgecolors="white", linewidths=0.3,
+                       zorder=4, label=f"stål n={len(ssub)}")
+        # plastic
+        if len(psub) >= 3:
+            ax.scatter(psub["PC1"], psub["PC2"], s=18, c=OI["rust"],
+                       alpha=0.65, edgecolors="white", linewidths=0.3,
+                       zorder=4, label=f"plast n={len(psub)}")
+        ax.set_xlim(xlo, xhi); ax.set_ylim(ylo, yhi)
+        ax.set_title(f"{a}–{b}", loc="left", fontsize=10.5, weight="bold")
+        ax.grid(alpha=0.12, linewidth=0.4)
+        ax.set_xlabel("PC1")
+        if i == 0: ax.set_ylabel("PC2")
+        if len(wsub) >= 3:
+            ax.legend(loc="lower right", fontsize=7.5, frameon=False)
+
+    # Row 2: hull area over time, variance over time, compression ratio
+    band_centers = [(a + b) / 2 for (a, b) in windows]
+    x_labels = [f"{a}–{b}" for (a, b) in windows]
+
+    ax2 = fig.add_subplot(gs[1, :2])
+    ax2.plot(band_centers, wood_area, marker="o", color=AMBER, lw=2.2,
+             label="tre")
+    ax2.plot(band_centers, steel_area, marker="s", color=OI["blue"], lw=1.8,
+             label="stål")
+    ax2.plot(band_centers, plastic_area, marker="^", color=OI["rust"], lw=1.8,
+             label="plast")
+    ax2.set_xticks(band_centers); ax2.set_xticklabels(x_labels, fontsize=9)
+    ax2.set_ylabel("konveks hylster-areal (PC1–PC2)")
+    ax2.set_title("(e) morforom-areal per materiale over tid",
+                   loc="left", fontsize=10.5, weight="bold")
+    ax2.grid(alpha=0.14, linewidth=0.4)
+    ax2.legend(loc="upper right", frameon=False, fontsize=9)
+    # annotate wood collapse
+    if not np.isnan(wood_area[0]) and not np.isnan(wood_area[-1]) and wood_area[0] > 0:
+        pct = 100 * (wood_area[-1] / wood_area[0] - 1)
+        ax2.annotate(f"tre-hylster {pct:+.0f}%",
+                     xy=(band_centers[-1], wood_area[-1]),
+                     xytext=(band_centers[-1] - 60, wood_area[-1] + 0.4),
+                     fontsize=9, color=AMBER, weight="bold",
+                     arrowprops=dict(arrowstyle="->", color=AMBER, lw=1))
+
+    ax3 = fig.add_subplot(gs[1, 2:])
+    ax3.plot(band_centers, wood_var, marker="o", color=AMBER, lw=2.2,
+             label="tre")
+    ax3.plot(band_centers, steel_var, marker="s", color=OI["blue"], lw=1.8,
+             label="stål")
+    ax3.plot(band_centers, plastic_var, marker="^", color=OI["rust"], lw=1.8,
+             label="plast")
+    ax3.set_xticks(band_centers); ax3.set_xticklabels(x_labels, fontsize=9)
+    ax3.set_ylabel("total varians tr(Σ) i PC1–PC2")
+    ax3.set_title("(f) morfologisk spreiing per materiale",
+                   loc="left", fontsize=10.5, weight="bold")
+    ax3.grid(alpha=0.14, linewidth=0.4)
+    ax3.legend(loc="upper right", frameon=False, fontsize=9)
+
+    ax4 = fig.add_subplot(gs[2, :])
+    # steel/plastic hull area ratio over time vs wood's response
+    # Compute wood's compression coefficient: wood_var[t] / wood_var[0]
+    w0 = wood_var[0] if (wood_var[0] and not np.isnan(wood_var[0])) else np.nan
+    comp = np.array(wood_var) / w0 if not np.isnan(w0) else np.array([np.nan] * 4)
+    # intruder presence: (steel + plastic) variance per band
+    intruder = np.array([
+        (0 if np.isnan(s) else s) + (0 if np.isnan(p) else p)
+        for s, p in zip(steel_var, plastic_var)
+    ])
+
+    ax4b = ax4.twinx()
+    ax4.bar(np.arange(4) - 0.15, comp, width=0.3, color=AMBER, alpha=0.8,
+             edgecolor=SLATE, linewidth=0.5,
+             label="tre-spreiing relativ til 1600-1800")
+    ax4b.bar(np.arange(4) + 0.15, intruder, width=0.3, color=OI["blue"],
+              alpha=0.85, edgecolor=SLATE, linewidth=0.5,
+              label="stål+plast total varians")
+    ax4.axhline(1.0, color=SLATE, lw=0.7, linestyle="--", alpha=0.8)
+    ax4.set_xticks(range(4)); ax4.set_xticklabels(x_labels, fontsize=9)
+    ax4.set_ylabel("tre-spreiing / baseline", color=AMBER)
+    ax4b.set_ylabel("total varians stål + plast", color=OI["blue"])
+    ax4.tick_params(axis="y", labelcolor=AMBER)
+    ax4b.tick_params(axis="y", labelcolor=OI["blue"])
+    ax4.set_title(
+        "(g) karakterforskyving: tre kollapsar i same tidsbandet som stål og plast ekspanderer",
+        loc="left", fontsize=10.5, weight="bold")
+    ax4.grid(axis="y", alpha=0.14, linewidth=0.4)
+
+    # combined legend
+    lines1, labels1 = ax4.get_legend_handles_labels()
+    lines2, labels2 = ax4b.get_legend_handles_labels()
+    ax4.legend(lines1 + lines2, labels1 + labels2, loc="upper left",
+               fontsize=9, frameon=False)
+
+    save(fig, "E19_karakterforskyving")
+
+
+# ═════════════════════════════════════════════════════════════════════
 # Main
 # ═════════════════════════════════════════════════════════════════════
 def main():
@@ -1585,11 +2200,23 @@ def main():
     print("[16/18] E12 kanalisering radar (H12)...")
     fig_E12_kanalisering_radar(df)
 
-    print("[17/18] E13 punktuert likevekt (H13)...")
+    print("[17/22] E13 punktuert likevekt (H13)...")
     fig_E13_punktuert_likevekt(df_yr, pca)
 
-    print("[18/18] E14 agent-hierarki (H14)...")
+    print("[18/22] E14 agent-hierarki (H14)...")
     fig_E14_agent_hierarki(df_yr)
+
+    print("[19/22] E16 morfologisk nyskaping over tid...")
+    fig_E16_morfologisk_nyskaping(df_yr, pca, sils)
+
+    print("[20/22] E17 disparity through time (Foote 1993)...")
+    fig_E17_disparity_through_time(df_yr, pca)
+
+    print("[21/22] E18 prediktiv landskaps-drift...")
+    fig_E18_prediktiv_landskapsdrift(df_yr, pca)
+
+    print("[22/22] E19 morfologisk karakterforskyving...")
+    fig_E19_karakterforskyving(df_yr, pca)
 
     for t in ("_sil_test.png", "_sil_test2.png", "_fonttest.png"):
         p = os.path.join(OUT, t)
