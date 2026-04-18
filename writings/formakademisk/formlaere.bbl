@@ -1,5 +1,10 @@
 \begin{thebibliography}{}
 
+\bibitem[Alexander, 1964]{alexander1964}
+Alexander, C. (1964).
+\newblock {\em Notes on the Synthesis of Form}.
+\newblock Harvard University Press, Cambridge, MA.
+
 \bibitem[Arnold et~al., 2001]{arnold2001}
 Arnold, S.~J., Pfrender, M.~E., and Jones, A.~G. (2001).
 \newblock The adaptive landscape as a conceptual bridge between micro- and
@@ -16,21 +21,37 @@ Arthur, W.~B. (1994).
 \newblock {\em Increasing Returns and Path Dependence in the Economy}.
 \newblock University of Michigan Press, Ann Arbor.
 
+\bibitem[Arthur, 2009]{wbarthur2009}
+Arthur, W.~B. (2009).
+\newblock {\em The Nature of Technology: What It Is and How It Evolves}.
+\newblock Free Press, New York.
+
 \bibitem[Ashby, 1956]{ashby1956}
 Ashby, W.~R. (1956).
 \newblock {\em An Introduction to Cybernetics}.
 \newblock Chapman \& Hall, London.
+
+\bibitem[Basalla, 1988]{basalla1988}
+Basalla, G. (1988).
+\newblock {\em The Evolution of Technology}.
+\newblock Cambridge University Press, Cambridge.
+
+\bibitem[Campbell, 1974]{campbell1974}
+Campbell, D.~T. (1974).
+\newblock Evolutionary epistemology.
+\newblock In Schilpp, P.~A., editor, {\em The Philosophy of Karl Popper}, pages
+  412--463. Open Court, La Salle, IL.
+
+\bibitem[Dorst and Cross, 2001]{dorstcross2001}
+Dorst, K. and Cross, N. (2001).
+\newblock Creativity in the design process: Co-evolution of problem--solution.
+\newblock {\em Design Studies}, 22(5):425--437.
 
 \bibitem[Fields and Levin, 2022]{fieldslevin2022}
 Fields, C. and Levin, M. (2022).
 \newblock Competency in navigating arbitrary spaces as an invariant for
   analyzing cognition in diverse embodiments.
 \newblock {\em Entropy}, 24(6):819.
-
-\bibitem[Friston, 2010]{friston2010}
-Friston, K. (2010).
-\newblock The free-energy principle: A unified brain theory?
-\newblock {\em Nature Reviews Neuroscience}, 11(2):127--138.
 
 \bibitem[Gould, 1977]{gould1977}
 Gould, S.~J. (1977).
@@ -47,6 +68,11 @@ Hatchuel, A. and Weil, B. (2003).
 Hatchuel, A. and Weil, B. (2009).
 \newblock C-k design theory: An advanced formulation.
 \newblock {\em Research in Engineering Design}, 19(4):181--192.
+
+\bibitem[Heylighen, 2007]{heylighen2007}
+Heylighen, F. (2007).
+\newblock The global brain as a new utopia.
+\newblock {\em Journal of Sociocybernetics}, 5:35--57.
 
 \bibitem[Jaynes, 1957]{jaynes1957}
 Jaynes, E.~T. (1957).
@@ -65,11 +91,6 @@ Kazakçi, A.~O. (2015).
   epistemological grounds.
 \newblock In {\em Proceedings of the 20th International Conference on
   Engineering Design}, Milan.
-
-\bibitem[Kubler, 1962]{kubler1962}
-Kubler, G. (1962).
-\newblock {\em The Shape of Time: Remarks on the History of Things}.
-\newblock Yale University Press, New Haven.
 
 \bibitem[Lande, 1979]{lande1979}
 Lande, R. (1979).
@@ -104,6 +125,21 @@ Mitteroecker, P. and Huttegger, S.~M. (2009).
 Odling-Smee, F.~J., Laland, K.~N., and Feldman, M.~W. (2003).
 \newblock Niche construction: The neglected process in evolution.
 
+\bibitem[Petroski, 1992]{petroski1992}
+Petroski, H. (1992).
+\newblock {\em The Evolution of Useful Things}.
+\newblock Alfred A. Knopf, New York.
+
+\bibitem[Popper, 1972]{popper1972}
+Popper, K.~R. (1972).
+\newblock {\em Objective Knowledge: An Evolutionary Approach}.
+\newblock Oxford University Press, Oxford.
+
+\bibitem[Pye, 1968]{pye1968}
+Pye, D. (1968).
+\newblock {\em The Nature and Art of Workmanship}.
+\newblock Cambridge University Press, Cambridge.
+
 \bibitem[Raup, 1966]{raup1966}
 Raup, D.~M. (1966).
 \newblock Geometric analysis of shell coiling: General problems.
@@ -114,10 +150,17 @@ Rosenblueth, A., Wiener, N., and Bigelow, J. (1943).
 \newblock Behavior, purpose and teleology.
 \newblock {\em Philosophy of Science}, 10(1):18--24.
 
-\bibitem[Semper, 1860]{semper1860}
-Semper, G. (1860).
-\newblock {\em Der Stil in den technischen und tektonischen Künsten}.
-\newblock Verlag für Kunst und Wissenschaft, Frankfurt am Main.
+\bibitem[Simon, 1969]{simon1969}
+Simon, H.~A. (1969).
+\newblock {\em The Sciences of the Artificial}.
+\newblock MIT Press, Cambridge, MA.
+
+\bibitem[Steadman, 2008]{steadman1979}
+Steadman, P. (2008).
+\newblock {\em The Evolution of Designs: Biological Analogy in Architecture and
+  the Applied Arts}.
+\newblock Routledge, London.
+\newblock Fyrste utgåve 1979.
 
 \bibitem[Stiny, 2006]{stiny2006}
 Stiny, G. (2006).
