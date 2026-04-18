@@ -401,7 +401,18 @@ Konsekvensen er at Formlære ikkje er erstattbar med nokon av dei to eksisterand
 % ═════════════════════════════════════════════════════════════════════
 \label{sec:empiri}
 
-Dette appendikset illustrerer kjerne-likninga sine tre komponentar operasjonelt på eit eigedomeleg datasett av 1997 stolar henta frå Nasjonalmuseet si samling med komplett tabellgeometri og mesh-avleidde trekk (dimensjonar 1300–2024). Kvar stol er eit punkt i eit seks-dimensjonalt formrom med aksane Høgde, Breidde, Djupn, Sphericity, Fill-ratio og Inertia-ratio. Dei tre første er direkte målte; dei tre siste er utrekna frå 3D-meshar av typen GLB. Av dei 1997 med komplett geometri har 1984 ei nytteverdig dateringsverdi. Framstillinga er visuell og forklarande; formelle statistiske tester høyrer til ei separat publikasjon.
+Dette appendikset arbeider direkte på geometri. Datasettet er 1997 stolar henta frå Nasjonalmuseet si samling med komplett tabellgeometri og 3D-meshar (dimensjonar 1300–2024); 1984 har eit nytteverdig år. Analysane bryt med stilperiode-logikken i design\-historiografi: stilperiodar er ikkje geometriske klassar, og den adjusted rand-indeksen mellom stilperiode og rein geometrisk klyngeinndeling er 0,057 (sjå B.2) — dei to taksonomi\-ane er tilnærma ortogonale. Appendikset lever difor på form aleine, og brukar stil\-periodar berre som tilleggs\-informasjon.
+
+Arbeidsmetodane er importerte direkte frå evolusjonær paleobiologi og morfometri: \citet{raup1966} morforom-konstruksjon, \citet{foote1993, foote1997} disparity-through-time, \citet{gingerich1983} haldane-rate, \citet{harmon2010} makroevolusjonsmodellar, \citet{butlerking2004} OU multi-optima, \citet{sidlauskas2008} phylomorphospace, \citet{goswami2007} modularitet, \citet{stayton2015} konvergens-indekser, \citet{ciampaglio2002} nyhetsavstand. Så langt vi veit har ingen av desse tidlegare vore brukt systematisk på eit fullstendig designhistorisk korpus med 3D-geometri. Kvar figur er identifisert med metoden og kjelda.
+
+Figur~\ref{fig:E35} er ein synopsis av dei fire sterkaste empiriske funna: (a) at reint geometri-baserte shape-PC-aksar kan rekonstruerast direkte frå voxel-meshar og renderast som faktiske former; (b) at evolusjonsraten i haldanar ligg konsekvent i domestiserings-regimet, ikkje i vill-makroevolusjons-regimet; (c) at ulike materialklassar har formelt verifiserbart distinkte adaptive optima med ΔAIC > 30{\,}000; og (d) at tallet på levande formtypar har kollapsa etter 1950 med ein mass-extinction-signatur.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{E35_synopsis.png}
+\caption{Synopsis av dei empiriske funna. (a) Shape-PCA-deformasjonar rendra som 3D-meshar. (b) Haldane-rate mot biologiske referanseverdiar. (c) Materialspesifikke OU-optima. (d) Biodiversitets-kurve for formtypar over tid. Alle fire rammeverk fungerer på det same datasettet og gir samansvarande konklusjonar.}
+\label{fig:E35}
+\end{figure}
 
 \subsection*{B.1 Morforommet, med og utan stolar}
 
@@ -439,7 +450,56 @@ Figur~\ref{fig:E10} kvantifiserer kor mykje av det morforommet som faktisk er ok
 \label{fig:E10}
 \end{figure}
 
-\subsection*{B.2 Landskaps-drift og evolusjonær respons}
+\subsection*{B.2 Deformasjonsrommet — dei rein geometriske aksane}
+
+Dei seks aksane i B.1 er målingar over meshen (høgde, breidde, djupn, sphericity, fill-ratio, inertia-ratio). Dei er informative, men dei er oppsummerings\-skalar\-trekk. Ein meir direkte tilgang til formhistoria er å køyre PCA på dei voxeliserte meshane sjølv: 1997 stolar $\times$ $24^3 = 13{\,}824$ voxel-dimensjonar. Slik PCA gir oss \textit{deformasjons\-modusar}, ikkje stat\-istiske samansett\-vektorar: kvar shape-PC er ein einskapleg geometrisk retning som heile korpuset varierer langs.
+
+Figur~\ref{fig:E30} viser dei fem første shape-PC-ane. Kvar rad er ein modus; kolonnane er middel\-forma forskuva $-2\sigma, -1\sigma, 0, +1\sigma, +2\sigma$ langs den gjeldande PC-en. ShapePC1 (7{,}4~\% av voxel-variansen) er ein \textit{seate-breidde} modus. ShapePC2 (6{,}0~\%) er ein \textit{sete-hogde} modus. ShapePC3 bestemmer om ein har eit distinkt sete; ShapePC4 plasserer armlen; ShapePC5 styrer djupn. Dette er dei reelle uavhengige akser i formhistoria; dei er ikkje lesbare frå stilperioden aleine.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{E30_shape_pca_modes.png}
+\caption{Shape-PCA på voxeliserte meshar ($24^3$). Kvar rad er ein deformasjons\-modus, kolonnane er middel\-forma forskuva $\pm k\sigma$. Amber = positivt utslag, blå = negativt, grå = middel. Rekkjefølgd etter voxel-varians: ShapePC1 er den dominerande deformasjonen i heile korpuset.}
+\label{fig:E30}
+\end{figure}
+
+Figur~\ref{fig:E31} tek shape-PC-rommet som basis og gjer uovervaka klyngj\-ing (KMeans på dei første ti shape-PC-ane) for å finne eit data-drive ``genus''-system. Åtte klyngjer dekker 85~\% av silhouette-toppen (best $K=6$, men $K=8$ valt for ein stabil framstilling). Kvart genus blir rendra som isometrisk middel\-form: genus 1 er ein kompakt armstol, genus 3 er ein høg smal stol, genus 5 er ein lang benk, osv. Adjusted Rand-indeksen mellom genus-tilordninga og stilperiode-tilordninga er 0{,}057 — tilnærma null. \textbf{Geometrisk klassifisering avviker signifikant frå stilperiode-klassifisering}: dei to taksonomi\-ane er uavhengige. Stilperiode er ikkje eit geometrisk klassifiseringssystem.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{E31_geometrisk_genus.png}
+\caption{Geometrisk genus-klassifisering. Øvre rad: isometrisk middel\-form per genus (KMeans på dei første ti shape-PC-ane, $K = 8$). Midtrad: tids\-histogram per genus — kvart genus er spreidd over fleire hundre\-år, ikkje knytt til éin stilperiode. (c) Silhouette-skår mot $K$. Adjusted Rand Index = 0{,}057 (dei ti shape-PC-ane forklarar ikkje stilperiode\-innd\-elinga).}
+\label{fig:E31}
+\end{figure}
+
+Figur~\ref{fig:E32} tek det eine skrittet lenger: gjer PCA på dei \textit{tids\-differansiale} sentroide\-skifta i shape-PC-rommet, og rendrar kvar av dei dominerande ``evolusjonsretningane'' som ein faktisk deformasjon. EvoDir1 dekkjer 44~\% av evolusjons\-variasjonen: skiftet frå kompakte former til høge slanke former med armlen, det som i design\-historia fell ca på Rokokko $\to$ Nyklassisisme og på Modernism → Samtidsdesign. Tidskurvene til venstre viser at EvoDir1 har skift retning fleire gonger. Metoden gir oss eit reint geometrisk narrativ over kva form har bevegd seg langs, som kan samanliknast direkte med det stil\-periode\-baserte.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{E32_evolusjonsretningar.png}
+\caption{Evolusjonsretningar: PCA på $\Delta$sentroide i shape-PC-rommet mellom 40-års bin. Kvar rad er ein evolusjons\-retning rendra som deformasjon av middel\-forma; høgre kolonne viser kor mykje den valde retninga blei aktivert per tidsperiode. EvoDir1 dekkjer 44~\% av evolusjons\-variasjonen og er skiftet mellom kompakt og slank-med-armlen.}
+\label{fig:E32}
+\end{figure}
+
+Figur~\ref{fig:E34} gjer ein data-drive ancestral-state-rekonstruksjon: innan kvart av dei åtte geometriske genera blir den tidlege og seine gjennomsnitts\-forma rendra som fotorealistiske mesh-renderingar. Kolonnen i midten viser \textit{netto tilvekst} — regionar av formrommet som den seine mem\-ming\-en har okkupert men ikkje den tidlege. For genus~1 (393 medlemmar) forskuvast forma frå eit 1666 barokk-arm\-stol-arketype mot eit 1937 minimal-modernistisk rektangel — ‖$\Delta$form‖$_2$~=~13{,}85 i voxel-rommet. Genus~3 går frå kompakt 1676-stol til heilt andre form i 1993 (‖$\Delta$form‖~=~14{,}42). Lengste transformasjon: genus~6, ‖$\Delta$form‖~=~21{,}1 over 234 år.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{E34_ancestor_reconstruction.png}
+\caption{Ancestral-state-rekonstruksjon per geometrisk genus. Venstre kolonne: voxel-gjennomsnitt av dei tidlegaste 20~\% medlemmene. Midten: netto tilvekst (sein $-$ tidleg) rendra som eigen form. Høgre: voxel-gjennomsnitt av dei seinaste 20~\%. Ratio-tal viser tids\-spennet og $L_2$-avstanden i voxel-rommet.}
+\label{fig:E34}
+\end{figure}
+
+Figur~\ref{fig:E33} gjer det prediktive skrittet: tren ein Ornstein-Uhlenbeck-dynamikk på sentroide-trajektorien i shape-PC-rommet med berre data frå 1500-1960, forec\-ast forover til 2040, samanlikn mot den held-ut observerte 2000-2024-trajektorien. Parametrane $\alpha$ og $\theta$ estimerast per shape-PC-akse via OLS på $\dot{\mu} \sim -\alpha (\mu - \theta)$. Halveringstider $\tau_{1/2} = \ln 2 / \alpha$ ligg mellom 39 og 303 år, konsistent med haldane-ratane i figur~\ref{fig:E21}. Forecast-forma for 2040 blir rendra direkte frå den rekonstruerte voxel-grid-representasjonen; panelet (c) viser den observerte sentroide-forma for 2000 som referanse. Metoden gir eit prediktivt rammeverk der framtidige former kan estimerast og testast \textit{før} dei blir designa, ikkje berre forklart i etterkant.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{E33_forecast.png}
+\caption{Prediktiv forecasting av formframtid. (a) Rekonstruert sentroide-form ved slutten av trenings\-vindauget (1960). (b) OU-forecast 80 år fram (2040). (c) Observert sentroide-form 2000 (held ute under trening). (d1)-(d2) Trajektorien for shape-PC1 og shape-PC2 med OU-forecast og $\theta$-stipla linje; vertikal svart linje markerer trening/test-skiljet.}
+\label{fig:E33}
+\end{figure}
+
+\subsection*{B.3 Landskaps-drift og evolusjonær respons}
 
 Figur~\ref{fig:E7} viser sentroide-banen splitta på materiale. I staden for éin felles trajektorie ser vi korleis tre, stål og plast søker mot fundamentalt ulike adaptive toppar (markerte som OU-optima $\theta$). Stålet okkuperer ein ny nisje prega av slankheit og låg fill-ratio; plasten ein tredje region. Modellen viser at dette ikkje berre legg til nye former, men deformerer landskapet for eksisterande teknologiar.
 
@@ -514,6 +574,15 @@ Figur~\ref{fig:E16} operasjonaliserer \textit{morfologisk nyskapingsavstand}, ei
 \includegraphics[width=\textwidth]{E16_morfologisk_nyskaping.png}
 \caption{Morfologisk nyskapingsavstand over tid. (a) Observert 90-persentil og median mot ein Brownian-motion nullmodell (80 permutasjonar av år). Punkt markerer dei 12 individuelt mest isolerte stolane. (b) Eksplisitt liste over dei 12 mest isolerte stolane med nyskapingsavstand.}
 \label{fig:E16}
+\end{figure}
+
+Dei same 12 mest isolerte stolane er rendra frå 3D-meshane som isometriske 3/4-projeksjonar i figur~\ref{fig:E29}. Geometrien gir dei konkrete: \#1 1685 (Barokk-armstol, nyskapingsavstand 24{,}2), \#4 1946 (DA~1, 11{,}7), \#8-\#9 1936 (Breuer Bauhaus-dining-chairs, 8{,}4), \#7 1982 (Media Chair, 8{,}6), \#10 1998 (Celle VIII, 7{,}1). Det er ein data-drive, ikkje-kuratert kanon av dei geometrisk mest avvikande stolane i det norske musé-korpuset.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{E29_innovator_atlas.png}
+\caption{Isometrisk atlas av dei 12 mest morfologisk isolerte stolane (rangering frå E16). Kvar stol er rendra frå si voxeliserte mesh med orthografisk 3/4-projeksjon og djupn-basert skygging. Fargen graderer nyskapings-rangen (rust → slate).}
+\label{fig:E29}
 \end{figure}
 
 Figur~\ref{fig:E17} implementerer \citet{foote1993} si \textit{disparity through time}-måling direkte: gjennomsnittleg parvis avstand mellom samtidige stolar per 40-års vindauge, samanlikna mot ein Brownian-motion nullmodell med 120 permutasjonar. Observert disparitet er tydeleg \textit{under} nullbandet frå $\sim$1720 til $\sim$1840 (blå skraffering = konsolidering) og \textit{over} nullbandet rundt 1980-2005 (amber skraffering = adaptiv radiasjon). Dei to signalperiodane fell saman med Nyklassisisme-Historisme-konsolideringa og postmoderne-Samtids-bølgja; metoden henta ut dei utan nokon a priori periodisering.

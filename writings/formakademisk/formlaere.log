@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.3.27)  18 APR 2026 21:10
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.3.27)  18 APR 2026 22:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -987,20 +987,46 @@ Garamond(0)/m/it/10.95 ikkje-konstant,
  []
 
 [20]
+File: figures/png_empirical/E35_synopsis.png Graphic file (type bmp)
+<figures/png_empirical/E35_synopsis.png>
+ [21]
 File: figures/png_empirical/E1_morforom_pca.png Graphic file (type bmp)
 <figures/png_empirical/E1_morforom_pca.png>
 File: figures/png_empirical/E2_mesh_grid.png Graphic file (type bmp)
 <figures/png_empirical/E2_mesh_grid.png>
- [21]
+ [22]
 File: figures/png_empirical/E8_silhouette_scatter.png Graphic file (type bmp)
 <figures/png_empirical/E8_silhouette_scatter.png>
- [22]
+ [23]
 File: figures/png_empirical/E10_realiseringsgrad.png Graphic file (type bmp)
 <figures/png_empirical/E10_realiseringsgrad.png>
+File: figures/png_empirical/E30_shape_pca_modes.png Graphic file (type bmp)
+<figures/png_empirical/E30_shape_pca_modes.png>
+ [24]
+File: figures/png_empirical/E31_geometrisk_genus.png Graphic file (type bmp)
+<figures/png_empirical/E31_geometrisk_genus.png>
+ [25]
+Overfull \hbox (6.45822pt too wide) in paragraph at lines 475--476
+[]\TU/EBGaramond(0)/m/n/10.95 Figur 19[] tek det eine skrittet lenger: gjer PCA
+ på dei \TU/EBGaramond(0)/m/it/10.95 tidsdifferansiale \TU/EBGaramond(0)/m/n/10
+.95 sentroideskifta i shape-PC-rommet,
+ []
+
+File: figures/png_empirical/E32_evolusjonsretningar.png Graphic file (type bmp)
+
+<figures/png_empirical/E32_evolusjonsretningar.png>
+[26]
+File: figures/png_empirical/E34_ancestor_reconstruction.png Graphic file (type 
+bmp)
+<figures/png_empirical/E34_ancestor_reconstruction.png>
+ [27]
+File: figures/png_empirical/E33_forecast.png Graphic file (type bmp)
+<figures/png_empirical/E33_forecast.png>
+ [28]
 File: figures/png_empirical/E7_trajektorie_split.png Graphic file (type bmp)
 <figures/png_empirical/E7_trajektorie_split.png>
- [23]
-Overfull \hbox (4.11131pt too wide) in paragraph at lines 455--456
+ [29]
+Overfull \hbox (4.11131pt too wide) in paragraph at lines 515--516
 \TU/EBGaramond(0)/m/n/10.95 kovarians-matrisa for trestolar før 1920 (kanaliser
 inga), og $\OML/cmm/m/it/10.95 ^^L$ \TU/EBGaramond(0)/m/n/10.95 er seleksjonsgr
 adienten definert som «flukt
@@ -1008,19 +1034,18 @@ adienten definert som «flukt
 
 File: figures/png_empirical/E15_lande_prediction.png Graphic file (type bmp)
 <figures/png_empirical/E15_lande_prediction.png>
-[24]
 File: figures/png_empirical/E13_punktuert_likevekt.png Graphic file (type bmp)
 <figures/png_empirical/E13_punktuert_likevekt.png>
- [25]
+[30]
 File: figures/png_empirical/E12_kanalisering_radar.png Graphic file (type bmp)
 <figures/png_empirical/E12_kanalisering_radar.png>
+ [31]
 File: figures/png_empirical/E11_stiavhengigheit.png Graphic file (type bmp)
 <figures/png_empirical/E11_stiavhengigheit.png>
- [26]
 File: figures/png_empirical/E19_karakterforskyving.png Graphic file (type bmp)
 <figures/png_empirical/E19_karakterforskyving.png>
- [27]
-Overfull \hbox (4.65149pt too wide) in paragraph at lines 508--509
+ [32]
+Overfull \hbox (4.65149pt too wide) in paragraph at lines 568--569
 \TU/EBGaramond(0)/m/n/10.95 Dei tre neste figurane (E16, E17, E18) tek i bruk e
 tablerte paleobiologi-metodar direkte på stol-datasettet.
  []
@@ -1028,8 +1053,11 @@ tablerte paleobiologi-metodar direkte på stol-datasettet.
 File: figures/png_empirical/E16_morfologisk_nyskaping.png Graphic file (type bm
 p)
 <figures/png_empirical/E16_morfologisk_nyskaping.png>
-[28]
-Overfull \hbox (19.79088pt too wide) in paragraph at lines 519--520
+[33]
+File: figures/png_empirical/E29_innovator_atlas.png Graphic file (type bmp)
+<figures/png_empirical/E29_innovator_atlas.png>
+ [34]
+Overfull \hbox (19.79088pt too wide) in paragraph at lines 588--589
 \TU/EBGaramond(0)/m/n/10.95 diasjon). Dei to signalperiodane fell saman med Nyk
 lassisisme-Historisme-konsolideringa og postmoderne-
  []
@@ -1037,54 +1065,54 @@ lassisisme-Historisme-konsolideringa og postmoderne-
 File: figures/png_empirical/E17_disparity_through_time.png Graphic file (type b
 mp)
 <figures/png_empirical/E17_disparity_through_time.png>
-[29]
+[35]
 File: figures/png_empirical/E18_prediktiv_landskapsdrift.png Graphic file (type
  bmp)
 <figures/png_empirical/E18_prediktiv_landskapsdrift.png>
- [30]
+ [36]
 File: figures/png_empirical/E20_phylomorphospace.png Graphic file (type bmp)
 <figures/png_empirical/E20_phylomorphospace.png>
 File: figures/png_empirical/E21_tempo_gingerich.png Graphic file (type bmp)
 <figures/png_empirical/E21_tempo_gingerich.png>
- [31]
-Overfull \hbox (13.17351pt too wide) in paragraph at lines 559--560
+ [37]
+Overfull \hbox (13.17351pt too wide) in paragraph at lines 628--629
 \TU/EBGaramond(0)/m/n/10.95 domenet. For kvar av dei seks PC-aksane tilpassar v
 i tre modellar til den parvise trait-differensial-fordelinga
  []
 
 File: figures/png_empirical/E22_makroevo_modellar.png Graphic file (type bmp)
 <figures/png_empirical/E22_makroevo_modellar.png>
-[32]
+[38]
 File: figures/png_empirical/E23_konvergens.png Graphic file (type bmp)
 <figures/png_empirical/E23_konvergens.png>
- [33]
+ [39]
 File: figures/png_empirical/E24_ou_multi_optima.png Graphic file (type bmp)
 <figures/png_empirical/E24_ou_multi_optima.png>
- [34]
+ [40]
 File: figures/png_empirical/E25_modularitet.png Graphic file (type bmp)
 <figures/png_empirical/E25_modularitet.png>
- [35]
+ [41]
 File: figures/png_empirical/E26_range_through.png Graphic file (type bmp)
 <figures/png_empirical/E26_range_through.png>
- [36]
+ [42]
 File: figures/png_empirical/E6_giga_grid_year.png Graphic file (type bmp)
 <figures/png_empirical/E6_giga_grid_year.png>
- [37]
+ [43]
 File: figures/png_empirical/E6_giga_grid_pc1.png Graphic file (type bmp)
 <figures/png_empirical/E6_giga_grid_pc1.png>
- [38] [39] (formlaere.aux)
+ [44] [45] (formlaere.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 23575 strings out of 402987
- 518995 string characters out of 5448317
- 1000216 words of memory out of 5000000
- 51834 multiletter control sequences out of 15000+600000
+ 23659 strings out of 402987
+ 522470 string characters out of 5448317
+ 1000429 words of memory out of 5000000
+ 51911 multiletter control sequences out of 15000+600000
  635837 words of font info for 100 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  84i,12n,104p,1515b,529s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on formlaere.pdf (39 pages).
+Output written on formlaere.pdf (45 pages).
