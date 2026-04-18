@@ -6,45 +6,45 @@ The style file: apalike.bst
 Reallocating 'name_of_file' (item size: 1) to 10 items.
 Database file #1: formlaere.bib
 Warning--empty journal in odlingsmee2003
-You've used 29 entries,
+You've used 37 entries,
             1935 wiz_defined-function locations,
-            644 strings with 7401 characters,
-and the built_in function-call counts, 9968 in all, are:
-= -- 983
-> -- 277
-< -- 28
-+ -- 104
-- -- 84
-* -- 752
-:= -- 1741
-add.period$ -- 87
-call.type$ -- 29
-change.case$ -- 175
-chr.to.int$ -- 29
-cite$ -- 30
-duplicate$ -- 441
-empty$ -- 785
-format.name$ -- 123
-if$ -- 1972
+            681 strings with 8022 characters,
+and the built_in function-call counts, 12576 in all, are:
+= -- 1237
+> -- 343
+< -- 37
++ -- 133
+- -- 103
+* -- 926
+:= -- 2201
+add.period$ -- 113
+call.type$ -- 37
+change.case$ -- 218
+chr.to.int$ -- 37
+cite$ -- 38
+duplicate$ -- 566
+empty$ -- 995
+format.name$ -- 152
+if$ -- 2496
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 41
-newline$ -- 147
-num.names$ -- 87
-pop$ -- 177
+missing$ -- 55
+newline$ -- 188
+num.names$ -- 113
+pop$ -- 229
 preamble$ -- 1
-purify$ -- 187
+purify$ -- 236
 quote$ -- 0
-skip$ -- 326
+skip$ -- 419
 stack$ -- 0
-substring$ -- 693
-swap$ -- 49
-text.length$ -- 3
+substring$ -- 850
+swap$ -- 66
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 150
+type$ -- 186
 warning$ -- 1
-while$ -- 86
+while$ -- 108
 width$ -- 0
-write$ -- 379
+write$ -- 487
 (There was 1 warning)
