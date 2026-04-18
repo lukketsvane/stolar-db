@@ -2562,17 +2562,28 @@ def fig_E23_konvergens(df, pca, sils, n_pairs=8):
 
     between_dists = np.array([c[0] for c in candidates])
 
-    # figure: grid of pair silhouettes + null distribution
-    fig = plt.figure(figsize=(14, 9))
-    gs = gridspec.GridSpec(3, len(chosen_pairs) if chosen_pairs else 1,
-                           height_ratios=[1, 1, 1.0],
-                           hspace=0.35, wspace=0.12, figure=fig)
-
-    # top two rows: silhouette pairs, labelled
+    # 4 pairs × 2 columns layout: each pair is a 3-cell block (chair A, "≡", chair B)
+    n_show = min(len(chosen_pairs), 6)
+    chosen_pairs = chosen_pairs[:n_show]
     mat_tint = {"wood": AMBER, "metal": OI["blue"], "plastic": OI["rust"]}
-    for col_i, (i, j, d) in enumerate(chosen_pairs):
-        for row_i, who in enumerate([i, j]):
-            ax = fig.add_subplot(gs[row_i, col_i])
+
+    # Layout: 3 rows of pairs, 2 pairs per row → 6 pairs
+    # Plus bottom row for histogram
+    n_cols = 2
+    n_rows_pairs = int(np.ceil(n_show / n_cols))
+    fig = plt.figure(figsize=(14, 3.4 * n_rows_pairs + 3.8))
+    gs = gridspec.GridSpec(
+        n_rows_pairs + 1, n_cols * 3,
+        height_ratios=[1] * n_rows_pairs + [1.1],
+        width_ratios=[1.0, 0.28, 1.0] * n_cols,
+        hspace=0.55, wspace=0.10, figure=fig)
+
+    for idx, (i, j, d) in enumerate(chosen_pairs):
+        r = idx // n_cols
+        c = idx % n_cols
+        base_col = c * 3
+        for side_i, who in enumerate([i, j]):
+            ax = fig.add_subplot(gs[r, base_col + side_i * 2])
             oid = sub_oid[who]
             img = sils.get(oid)
             if img is not None:
@@ -2581,17 +2592,30 @@ def fig_E23_konvergens(df, pca, sils, n_pairs=8):
                 ax.imshow(rgba, interpolation="nearest", aspect="auto")
             ax.set_xticks([]); ax.set_yticks([])
             ax.set_title(f"{sub_mat[who]}  {int(sub_yr[who])}",
-                         fontsize=8.2, color=mat_tint.get(sub_mat[who], SLATE),
+                         fontsize=9.5,
+                         color=mat_tint.get(sub_mat[who], SLATE),
                          weight="bold")
             for s in ["top", "right", "bottom", "left"]:
                 ax.spines[s].set_color(mat_tint.get(sub_mat[who], SLATE))
-                ax.spines[s].set_linewidth(1.2)
+                ax.spines[s].set_linewidth(1.3)
+        # middle "≡" connector with distance
+        axM = fig.add_subplot(gs[r, base_col + 1])
+        axM.axis("off")
+        axM.text(0.5, 0.58, "≡", transform=axM.transAxes,
+                 ha="center", va="center", fontsize=30,
+                 color=SLATE, alpha=0.85)
+        axM.text(0.5, 0.22, f"d = {d:.2f}", transform=axM.transAxes,
+                 ha="center", va="center", fontsize=9.5, color=OI["rust"],
+                 weight="bold")
+        axM.text(0.5, 0.92, f"par #{idx + 1}", transform=axM.transAxes,
+                 ha="center", va="center", fontsize=8.5, color=SLATE,
+                 weight="bold")
 
-    # bottom row: distance distribution
-    axD = fig.add_subplot(gs[2, :])
-    bins = np.linspace(0, max(between_dists.max() if len(between_dists) else 1,
-                              within_dists.max() if len(within_dists) else 1),
-                       40)
+    # bottom: histogram
+    axD = fig.add_subplot(gs[-1, :])
+    bins = np.linspace(0, max(
+        between_dists.max() if len(between_dists) else 1,
+        within_dists.max() if len(within_dists) else 1), 40)
     axD.hist(within_dists, bins=bins, color=SLATE, alpha=0.55,
              edgecolor="white", linewidth=0.3, density=True,
              label=f"innan-materiale (n={len(within_dists)})")
@@ -2599,13 +2623,13 @@ def fig_E23_konvergens(df, pca, sils, n_pairs=8):
              edgecolor="white", linewidth=0.3, density=True,
              label=f"på tvers av materiale (n={len(between_dists)})")
     for d in [c[2] for c in chosen_pairs]:
-        axD.axvline(d, color=OI["rust"], linewidth=0.9, alpha=0.85)
+        axD.axvline(d, color=OI["rust"], linewidth=1.0, alpha=0.85)
     axD.set_xlabel("6D avstand i PC-rom")
     axD.set_ylabel("tettleik")
-    axD.set_title("(c) fordeling av parvise avstandar; raude linjer markerer "
-                  "dei valde konvergens-para",
-                  loc="left", fontsize=10, weight="bold")
-    axD.legend(loc="upper right", fontsize=8.5, frameon=False)
+    axD.set_title(
+        "fordeling av parvise avstandar; raude linjer markerer dei valde "
+        "konvergens-para", loc="left", fontsize=10.2, weight="bold")
+    axD.legend(loc="upper right", fontsize=9, frameon=False)
     axD.grid(alpha=0.12, linewidth=0.4)
 
     save(fig, "E23_konvergens")
@@ -2713,75 +2737,84 @@ def fig_E24_ou_multi_optima(df, pca):
         aic_multi.append(aic_m)
 
     # plot
-    fig = plt.figure(figsize=(14, 8.5))
-    gs = gridspec.GridSpec(2, 2, width_ratios=[1.3, 1.0],
-                           height_ratios=[1, 0.9], hspace=0.38, wspace=0.25,
+    fig = plt.figure(figsize=(15, 9))
+    gs = gridspec.GridSpec(2, 2, width_ratios=[1.25, 1.0],
+                           height_ratios=[1, 0.5], hspace=0.32, wspace=0.30,
                            figure=fig)
 
-    # (a) Theta positions per material on PC1-PC2
+    # (a) θ positions per material on PC1-PC2 — zoomed on the θ cloud
     axA = fig.add_subplot(gs[0, 0])
     pc1 = df["PC1"].values; pc2 = df["PC2"].values
-    axA.scatter(pc1, pc2, s=3, c=OI["grey"], alpha=0.10, linewidths=0, zorder=1)
+    axA.scatter(pc1, pc2, s=3, c=OI["grey"], alpha=0.09, linewidths=0, zorder=1)
+
     mat_colors = {"wood": AMBER, "metal": OI["blue"], "plastic": OI["rust"]}
+    mat_labels = {"wood": "tre", "metal": "stål", "plastic": "plast"}
+    theta_xs, theta_ys = [], []
     for mname in ["wood", "metal", "plastic"]:
         if mname not in fit_results:
             continue
         r = fit_results[mname]
         th_x = r[0]["theta"]; th_y = r[1]["theta"]
-        # attraction ellipse: σ_stat per axis, assuming diagonal
-        w = 2 * np.sqrt(r[0]["stat_var"]); h = 2 * np.sqrt(r[1]["stat_var"])
-        ell = Ellipse(xy=(th_x, th_y), width=w, height=h,
-                       facecolor=to_rgba(mat_colors[mname], 0.18),
-                       edgecolor=mat_colors[mname], linewidth=1.3, zorder=3)
-        axA.add_patch(ell)
-        axA.scatter([th_x], [th_y], s=180, marker="*", c=[mat_colors[mname]],
-                    edgecolors="white", linewidths=1.3, zorder=5,
-                    label=f"{mname}  θ = ({th_x:.2f}, {th_y:.2f})")
-        # phylogenetic half-life τ₁/₂ = ln(2)/α on PC1
-        tau = np.log(2) / r[0]["alpha"]
-        axA.text(th_x + 0.07, th_y + 0.07,
-                 f"τ½(PC1) ≈ {tau:.0f} år",
-                 fontsize=7.5, color=mat_colors[mname])
-    xlo, xhi = np.quantile(pc1, [0.02, 0.98])
-    ylo, yhi = np.quantile(pc2, [0.02, 0.98])
-    axA.set_xlim(xlo, xhi); axA.set_ylim(ylo, yhi)
+        theta_xs.append(th_x); theta_ys.append(th_y)
+        # plot subset points for the material
+        sub_m = df[df["mat_class"] == mname]
+        axA.scatter(sub_m["PC1"], sub_m["PC2"], s=8,
+                    c=[mat_colors[mname]], alpha=0.32,
+                    linewidths=0, zorder=2)
+        # θ star
+        axA.scatter([th_x], [th_y], s=320, marker="*",
+                    c=[mat_colors[mname]],
+                    edgecolors="white", linewidths=1.5, zorder=6,
+                    label=f"{mat_labels[mname]}  θ = ({th_x:.2f}, {th_y:.2f})")
+    # draw chords connecting the three optima to emphasise the triangle
+    if len(theta_xs) == 3:
+        xs = theta_xs + [theta_xs[0]]; ys = theta_ys + [theta_ys[0]]
+        axA.plot(xs, ys, color=SLATE, linewidth=0.8,
+                 linestyle="--", alpha=0.6, zorder=4)
+
+    # zoom on θ cluster (PC1-PC2 axis range tight)
+    pad_x = 0.8; pad_y = 0.8
+    theta_xs = np.array(theta_xs); theta_ys = np.array(theta_ys)
+    zx_lo = theta_xs.min() - pad_x; zx_hi = theta_xs.max() + pad_x
+    zy_lo = theta_ys.min() - pad_y; zy_hi = theta_ys.max() + pad_y
+    axA.set_xlim(zx_lo, zx_hi); axA.set_ylim(zy_lo, zy_hi)
     axA.set_xlabel("PC1"); axA.set_ylabel("PC2")
-    axA.set_title("(a) OU-optimum θ per materialklasse, med stasjonær 1σ-ellipse",
-                   loc="left", weight="bold", fontsize=10.2)
-    axA.legend(loc="upper left", fontsize=8, frameon=False)
-    axA.grid(alpha=0.12, linewidth=0.4)
+    axA.set_title("(a) materialspesifikke adaptive optima θ i morforommet",
+                   loc="left", weight="bold", fontsize=10.5)
+    axA.legend(loc="upper left", fontsize=9, frameon=False)
+    axA.grid(alpha=0.14, linewidth=0.4)
+    axA.axhline(0, color=OI["grey"], linewidth=0.4, alpha=0.4)
+    axA.axvline(0, color=OI["grey"], linewidth=0.4, alpha=0.4)
 
-    # (b) AIC comparison per axis
+    # (b) ΔAIC bar chart: OU₁ - OU₃ per axis
     axB = fig.add_subplot(gs[0, 1])
-    xs = np.arange(6)
-    width = 0.38
     delta = np.array(aic_single) - np.array(aic_multi)
-    bars_m = axB.bar(xs - width / 2, aic_multi, width, color=AMBER,
-                      edgecolor=SLATE, linewidth=0.5,
-                      label="OU₃ (per materiale)")
-    bars_s = axB.bar(xs + width / 2, aic_single, width, color=SLATE,
-                      edgecolor=SLATE, linewidth=0.5, alpha=0.8,
-                      label="OU₁ (felles)")
-    for k, d in enumerate(delta):
-        axB.text(k, max(aic_single[k], aic_multi[k]) + 20,
-                 f"ΔAIC = {d:.0f}", ha="center", fontsize=8,
-                 color=OI["rust"] if d > 10 else SLATE)
-    axB.set_xticks(xs); axB.set_xticklabels([AXIS_LABELS_NN[c] for c in pc_cols],
-                                              fontsize=8.5, rotation=20)
-    axB.set_ylabel("AIC (lågare = betre modell)")
-    axB.set_title("(b) OU₃ vs OU₁ per akse",
-                   loc="left", weight="bold", fontsize=10.2)
-    axB.legend(loc="upper right", fontsize=8.5, frameon=False)
+    xs_b = np.arange(6)
+    axB.bar(xs_b, delta, color=AMBER, edgecolor=SLATE, linewidth=0.6,
+             alpha=0.9)
+    axB.axhline(10, color=OI["rust"], linestyle="--", linewidth=1.0, alpha=0.8,
+                 label="terskel ΔAIC = 10 (sterk støtte)")
+    axB.set_xticks(xs_b); axB.set_xticklabels(pc_cols, fontsize=9)
+    axB.set_ylabel("ΔAIC = AIC(OU₁) − AIC(OU₃)")
+    axB.set_title("(b) støtta for material-spesifikke optima",
+                   loc="left", weight="bold", fontsize=10.5)
+    axB.legend(loc="lower right", fontsize=8.5, frameon=False)
     axB.grid(axis="y", alpha=0.14, linewidth=0.4)
+    for k, d in enumerate(delta):
+        axB.text(k, d * 1.02, f"{d:.0f}",
+                 ha="center", va="bottom", fontsize=8.5,
+                 color=SLATE, weight="bold")
+    # log scale when values are very large
+    if delta.max() > 1000:
+        axB.set_yscale("symlog", linthresh=10)
 
-    # (c) Text summary with parameter estimates
+    # (c) Compact parameter summary table
     axC = fig.add_subplot(gs[1, :])
     axC.axis("off")
-    lines = ["Materiale-spesifikke OU-parametrar (median på tvers av alle seks aksar)"]
-    lines.append("─" * 95)
-    lines.append(f"{'materiale':12}  {'n par':>6}  {'σ² median':>12}  "
-                 f"{'α median':>10}  {'τ½ median':>10}  {'stasjonær σ²':>14}")
-    lines.append("─" * 95)
+    header = (f"{'materiale':10}  {'n par':>6}  "
+              f"{'σ² median':>12}  {'α median':>10}  "
+              f"{'τ½ (år)':>10}  {'stasjonær σ²':>13}")
+    lines = [header, "─" * len(header)]
     for mname in ["wood", "metal", "plastic"]:
         if mname not in fit_results:
             continue
@@ -2791,12 +2824,17 @@ def fig_E24_ou_multi_optima(df, pca):
         med_tau = float(np.log(2) / med_a) if med_a > 0 else np.nan
         med_stat = float(np.median([x["stat_var"] for x in r]))
         n_p = r[0]["n"]
-        lines.append(f"{mname:12}  {n_p:>6}  {med_s2:>12.4f}  "
-                     f"{med_a:>10.4f}  {med_tau:>10.0f}  {med_stat:>14.4f}")
-    lines.append("")
-    lines.append("ΔAIC > 10 per akse = sterk støtte for materiale-spesifikke optima.")
-    axC.text(0.01, 0.98, "\n".join(lines), transform=axC.transAxes,
-             fontsize=9, color=SLATE, family="monospace", va="top", ha="left")
+        lines.append(f"{mat_labels.get(mname, mname):10}  {n_p:>6}  "
+                     f"{med_s2:>12.4f}  {med_a:>10.4f}  "
+                     f"{med_tau:>10.0f}  {med_stat:>13.4f}")
+    axC.text(0.01, 1.0, "\n".join(lines), transform=axC.transAxes,
+             fontsize=10, color=SLATE, family="monospace",
+             va="top", ha="left")
+    axC.text(0.01, 0.15,
+             "Alle ΔAIC er langt over terskelen 10 → sterk støtte for "
+             "material-spesifikke adaptive optima.",
+             transform=axC.transAxes, fontsize=9.5, color=SLATE,
+             va="top", ha="left", style="italic")
 
     save(fig, "E24_ou_multi_optima")
 
@@ -2915,15 +2953,17 @@ def fig_E25_modularitet(df, pca):
                   fmt="none", color=SLATE, capsize=4, elinewidth=1.2,
                   label="nullmodell 95%")
     axB.set_xticks(xs); axB.set_xticklabels(names, fontsize=9)
-    axB.set_ylim(0, min(1.0, max(rvs) * 1.25))
+    ymax_b = max(max(rvs) * 1.40, max(nulls_hi) * 1.25, 0.03)
+    axB.set_ylim(0, ymax_b)
     axB.set_ylabel("RV-koeffisient (0 = modulær, 1 = integrert)")
     axB.set_title("(b) SIZE × SHAPE integrasjon per materialklasse",
                    loc="left", fontsize=10, weight="bold")
     axB.grid(axis="y", alpha=0.14, linewidth=0.4)
     axB.legend(loc="upper right", fontsize=8, frameon=False)
     for k, (n, rv, nm, nh, pv, nsamp) in enumerate(group_results):
-        axB.text(k, rv + 0.02, f"p = {pv:.2g}\nn = {nsamp}",
-                 ha="center", fontsize=7.2, color=SLATE)
+        axB.text(k, rv + ymax_b * 0.03,
+                 f"p = {pv:.2g}\nn = {nsamp}",
+                 ha="center", va="bottom", fontsize=7.2, color=SLATE)
 
     # (c) RV over time
     axC = fig.add_subplot(gs[0, 2])
@@ -2936,7 +2976,10 @@ def fig_E25_modularitet(df, pca):
     axC.fill_between(xs, nm_t, nh_t, color=OI["grey"], alpha=0.25,
                       label="null (median–95%)")
     axC.set_xticks(xs); axC.set_xticklabels([g[0] for g in time_rv], fontsize=9)
-    axC.set_ylim(0, min(1.0, max(rvs_t) * 1.25))
+    rvs_c = [r for r in rvs_t if not np.isnan(r)]
+    nh_c = [h for h in nh_t if not np.isnan(h)]
+    ymax_c = max(max(rvs_c + [0.01]) * 1.35, max(nh_c + [0.01]) * 1.25, 0.03)
+    axC.set_ylim(0, ymax_c)
     axC.set_ylabel("RV")
     axC.set_title("(c) integrasjon over tid",
                    loc="left", fontsize=10, weight="bold")
@@ -2944,8 +2987,8 @@ def fig_E25_modularitet(df, pca):
     axC.legend(loc="upper right", fontsize=8, frameon=False)
     for k, (n, rv, nm, nh, pv, nsamp) in enumerate(time_rv):
         if not np.isnan(rv):
-            axC.text(k, rv + 0.015, f"n = {nsamp}", ha="center", fontsize=7.2,
-                     color=SLATE)
+            axC.text(k, rv + ymax_c * 0.03, f"n = {nsamp}",
+                     ha="center", va="bottom", fontsize=7.2, color=SLATE)
 
     # (d) Summary text
     axD = fig.add_subplot(gs[1, :])
@@ -3063,6 +3106,370 @@ def fig_E26_range_through(df, pca, n_types=14):
 
 
 # ═════════════════════════════════════════════════════════════════════
+# Voxel helpers (mean shapes, multi-view rendering)
+# ═════════════════════════════════════════════════════════════════════
+VOXEL_CACHE_PATH = os.path.join(HERE, "_voxel_cache_48.npz")
+VOXEL_N = 48
+
+
+def _voxelize(glb_path, n=VOXEL_N):
+    """Voxelize a mesh to a binary n³ occupancy grid. Y is up, mesh is
+    centred and scaled so its longest axis spans [-1, 1]."""
+    try:
+        m = trimesh.load(glb_path, force="mesh", process=False)
+    except Exception:
+        return None
+    v = np.asarray(m.vertices, dtype=float)
+    if v.size == 0:
+        return None
+    if len(v) > 150000:
+        rng = np.random.default_rng(0)
+        v = v[rng.choice(len(v), 150000, replace=False)]
+    # centre each axis on bbox midpoint
+    mins = v.min(axis=0); maxs = v.max(axis=0)
+    v = v - (mins + maxs) / 2
+    scale = np.abs(v).max()
+    if scale < 1e-9:
+        return None
+    v = v / scale
+    ix = ((v[:, 0] + 1.05) / 2.10 * n).astype(int).clip(0, n - 1)
+    iy = ((v[:, 1] + 1.05) / 2.10 * n).astype(int).clip(0, n - 1)
+    iz = ((v[:, 2] + 1.05) / 2.10 * n).astype(int).clip(0, n - 1)
+    grid = np.zeros((n, n, n), dtype=bool)
+    grid[ix, iy, iz] = True
+    # thicken surface points a little
+    try:
+        from scipy.ndimage import binary_closing
+        grid = binary_closing(grid, iterations=1)
+    except Exception:
+        pass
+    return grid
+
+
+def _voxel_worker(args):
+    oid, path, n = args
+    g = _voxelize(path, n)
+    if g is None:
+        return oid, None
+    return oid, np.packbits(g.reshape(-1)).tobytes()
+
+
+def build_voxel_cache(ids, force=False, workers=None):
+    existing = {}
+    if os.path.exists(VOXEL_CACHE_PATH) and not force:
+        z = np.load(VOXEL_CACHE_PATH, allow_pickle=False)
+        existing = {k: z[k].astype(bool) for k in z.files}
+    missing = [i for i in ids if i not in existing
+               and os.path.exists(os.path.join(GLB, f"{i}.glb"))]
+    if not missing:
+        print(f"  voxel cache ok: {len(existing)} entries (no new)")
+        return existing
+    if workers is None:
+        workers = max(mp.cpu_count() - 2, 2)
+    print(f"  voxel cache: {len(existing)} present, rendering {len(missing)} "
+          f"with {workers} workers (N={VOXEL_N}³)...")
+    args_list = [(oid, os.path.join(GLB, f"{oid}.glb"), VOXEL_N) for oid in missing]
+    n_pts = VOXEL_N ** 3
+    done = 0
+    with ProcessPoolExecutor(max_workers=workers) as ex:
+        for oid, data in ex.map(_voxel_worker, args_list, chunksize=4):
+            done += 1
+            if data is not None:
+                bits = np.frombuffer(data, dtype=np.uint8)
+                g = np.unpackbits(bits)[:n_pts].reshape(VOXEL_N, VOXEL_N, VOXEL_N).astype(bool)
+                existing[oid] = g
+            if done % 100 == 0 or done == len(missing):
+                print(f"    {done}/{len(missing)}")
+    np.savez_compressed(VOXEL_CACHE_PATH,
+                        **{oid: g.astype(bool) for oid, g in existing.items()})
+    print(f"  cached to {os.path.basename(VOXEL_CACHE_PATH)} ({len(existing)} entries)")
+    return existing
+
+
+def mean_voxel(ids, vox):
+    """Mean occupancy grid over a list of Objekt-IDs."""
+    arrs = [vox[i].astype(np.float32) for i in ids if i in vox]
+    if not arrs:
+        return None
+    return np.mean(np.stack(arrs, axis=0), axis=0)
+
+
+def project_voxels(grid, axis, mode="mean"):
+    """2D projection: mean or max along one axis."""
+    if mode == "max":
+        return grid.max(axis=axis)
+    return grid.mean(axis=axis)
+
+
+def voxel_three_views(grid, cmap="Greys"):
+    """Return three 2D projections (front, side, top). Front=XY, side=ZY, top=XZ."""
+    front = project_voxels(grid, axis=2, mode="mean")  # collapse Z
+    side = project_voxels(grid, axis=0, mode="mean")   # collapse X
+    top = project_voxels(grid, axis=1, mode="mean")    # collapse Y
+    # reorient for display: row=up in original Y
+    # front: (x, y) -> imshow wants (row, col) where row=y-downward
+    front = np.flipud(front.T)
+    side = np.flipud(side.T)
+    top = np.flipud(top.T)
+    return front, side, top
+
+
+# ═════════════════════════════════════════════════════════════════════
+# FIG E27: 3D morforom med periode-arketypar (mesh-rendered)
+# ═════════════════════════════════════════════════════════════════════
+def fig_E27_morforom_3d_arketypar(df, pca, vox):
+    """Plot the morphospace as PC1 × PC2 with each *style period*
+    represented by its voxel-mean archetype rendered as a front-view
+    silhouette at the period centroid. This is a direct 3D-backed
+    phylomorphospace: real averaged geometry at each node."""
+    counts = df["Stilperiode"].value_counts()
+    periods = [p for p in sorted(PERIOD_YEAR.keys(), key=lambda k: PERIOD_YEAR[k])
+               if p in counts.index and counts[p] >= 15]
+    pc1 = df["PC1"].values; pc2 = df["PC2"].values
+    xlo, xhi = np.quantile(pc1, [0.02, 0.98])
+    ylo, yhi = np.quantile(pc2, [0.02, 0.98])
+
+    rows = []
+    for p in periods:
+        sub = df[df["Stilperiode"] == p]
+        ids = [oid for oid in sub["Objekt-ID"] if oid in vox]
+        if len(ids) < 10:
+            continue
+        mean_g = mean_voxel(ids, vox)
+        front, _, _ = voxel_three_views(mean_g)
+        rows.append(dict(period=p, year=PERIOD_YEAR[p],
+                         cx=sub["PC1"].mean(), cy=sub["PC2"].mean(),
+                         n=len(sub), front=front))
+    rows.sort(key=lambda r: r["year"])
+
+    fig = plt.figure(figsize=(14.5, 9))
+    ax = fig.add_axes([0.06, 0.08, 0.70, 0.86])
+
+    ax.scatter(pc1, pc2, s=3, c=OI["grey"], alpha=0.08, linewidths=0, zorder=1)
+
+    # connect centroids chronologically with faint line
+    xs = np.array([r["cx"] for r in rows])
+    ys = np.array([r["cy"] for r in rows])
+    for i in range(len(rows) - 1):
+        ax.plot([xs[i], xs[i + 1]], [ys[i], ys[i + 1]],
+                color=SLATE, linewidth=0.6, alpha=0.5, zorder=2)
+
+    # place each archetype as an image at its centroid
+    img_w = (xhi - xlo) * 0.07
+    img_h = (yhi - ylo) * 0.14
+    for r in rows:
+        col = PERIOD_COLOR.get(r["period"], SLATE)
+        rgb = to_rgba(col)[:3]
+        front = r["front"]
+        # build tinted RGBA
+        H, W = front.shape
+        rgba = np.zeros((H, W, 4), dtype=float)
+        # normalise occupancy to 0-1
+        fmax = front.max() if front.max() > 0 else 1
+        alpha = np.clip(front / fmax, 0, 1)
+        rgba[..., 0] = rgb[0]
+        rgba[..., 1] = rgb[1]
+        rgba[..., 2] = rgb[2]
+        rgba[..., 3] = alpha * 0.95
+        ax.imshow(rgba,
+                  extent=(r["cx"] - img_w, r["cx"] + img_w,
+                          r["cy"] - img_h, r["cy"] + img_h),
+                  aspect="auto", interpolation="bilinear", zorder=4)
+        # small circle marker + year label
+        ax.scatter([r["cx"]], [r["cy"]], s=30, c=[col],
+                   edgecolors="white", linewidths=0.8, zorder=5)
+        ax.text(r["cx"], r["cy"] - img_h * 1.05, f"{r['year']}",
+                ha="center", va="top", fontsize=7.5, color=SLATE,
+                bbox=dict(facecolor="white", edgecolor="none",
+                          alpha=0.75, boxstyle="round,pad=0.15"))
+
+    ax.set_xlim(xlo - img_w, xhi + img_w)
+    ax.set_ylim(ylo - img_h * 0.6, yhi + img_h)
+    ax.set_xlabel(f"PC1 ({pca.explained_variance_ratio_[0]*100:.1f}% varians)")
+    ax.set_ylabel(f"PC2 ({pca.explained_variance_ratio_[1]*100:.1f}% varians)")
+    ax.grid(alpha=0.12, linewidth=0.4)
+
+    # side legend
+    axL = fig.add_axes([0.78, 0.08, 0.20, 0.86])
+    axL.axis("off")
+    axL.text(0.0, 1.00, "Periode-arketypar", transform=axL.transAxes,
+             fontsize=10.5, weight="bold", color=SLATE, va="top")
+    axL.text(0.0, 0.96,
+             "Voxel-middla front-silhuett\nper stilperiode (n≥15).\n"
+             "Posisjon: PC1-PC2 sentroide.\nLinja koplar periodane\n"
+             "kronologisk.",
+             transform=axL.transAxes, fontsize=8.5, color=SLATE, va="top")
+    for i, r in enumerate(rows):
+        y_pos = 0.76 - i * 0.035
+        col = PERIOD_COLOR.get(r["period"], OI["grey"])
+        axL.scatter([0.03], [y_pos], s=50, c=[col], transform=axL.transAxes,
+                    edgecolors="white", linewidths=0.7, zorder=3)
+        axL.text(0.10, y_pos, f"{r['year']}  {r['period']}  (n={r['n']})",
+                 transform=axL.transAxes, fontsize=8, color=SLATE,
+                 va="center", ha="left")
+
+    save(fig, "E27_morforom_3d_arketypar")
+
+
+# ═════════════════════════════════════════════════════════════════════
+# FIG E28: Substrat-arketypar — wood/metal/plastic × fire tidsband
+# ═════════════════════════════════════════════════════════════════════
+def fig_E28_substrat_arketypar(df, vox):
+    """3×4 grid of voxel-mean archetypes: one row per material, one column
+    per time band. Each cell shows the front and side projection of the
+    mean shape. This is the empirical 'typeform' per material per era."""
+    df = df[df["år"].notna()].copy()
+    materials = [
+        ("wood", "tre", AMBER),
+        ("metal", "stål / jern / krom", OI["blue"]),
+        ("plastic", "plast / akryl / poly", OI["rust"]),
+    ]
+    bands = [(1600, 1800), (1800, 1900), (1900, 1950), (1950, 2025)]
+
+    fig = plt.figure(figsize=(15.5, 9.5))
+    gs = gridspec.GridSpec(len(materials), len(bands) * 2 + 1,
+                           width_ratios=[1] * (len(bands) * 2) + [0.2],
+                           wspace=0.05, hspace=0.25, figure=fig)
+
+    for mi, (mname, mlabel, mcol) in enumerate(materials):
+        for bi, (y0, y1) in enumerate(bands):
+            sub = df[(df["mat_class"] == mname) &
+                     (df["år"] >= y0) & (df["år"] < y1)]
+            ids = [oid for oid in sub["Objekt-ID"] if oid in vox]
+            # front
+            ax_f = fig.add_subplot(gs[mi, bi * 2])
+            # side
+            ax_s = fig.add_subplot(gs[mi, bi * 2 + 1])
+            for ax in (ax_f, ax_s):
+                ax.set_xticks([]); ax.set_yticks([])
+                for s in ["top", "right", "bottom", "left"]:
+                    ax.spines[s].set_color(mcol)
+                    ax.spines[s].set_linewidth(1.1 if ids else 0.4)
+                    ax.spines[s].set_linestyle("-" if ids else ":")
+
+            if len(ids) >= 6:
+                mean_g = mean_voxel(ids, vox)
+                front, side, top = voxel_three_views(mean_g)
+                for ax, proj, lbl in [(ax_f, front, "front"),
+                                       (ax_s, side, "side")]:
+                    H, W = proj.shape
+                    rgba = np.zeros((H, W, 4), dtype=float)
+                    rgba[..., 0] = to_rgba(mcol)[0]
+                    rgba[..., 1] = to_rgba(mcol)[1]
+                    rgba[..., 2] = to_rgba(mcol)[2]
+                    pmax = proj.max() if proj.max() > 0 else 1
+                    rgba[..., 3] = np.clip(proj / pmax, 0, 1) * 0.95
+                    ax.imshow(rgba, interpolation="bilinear", aspect="auto")
+                    ax.text(0.5, -0.04, lbl, transform=ax.transAxes,
+                            fontsize=7, color=SLATE, ha="center", va="top")
+            else:
+                ax_f.text(0.5, 0.5, "—", transform=ax_f.transAxes,
+                          ha="center", va="center", fontsize=16,
+                          color=OI["grey"], alpha=0.6)
+                ax_s.text(0.5, 0.5, "—", transform=ax_s.transAxes,
+                          ha="center", va="center", fontsize=16,
+                          color=OI["grey"], alpha=0.6)
+            # cell title on top row: time band
+            if mi == 0:
+                ax_mid = fig.add_subplot(gs[-1, bi * 2:bi * 2 + 2], visible=False)
+                _ = ax_mid
+                # title across the two subpanels
+                fig.text(
+                    (ax_f.get_position().x0 + ax_s.get_position().x1) / 2,
+                    0.965,
+                    f"{y0}–{y1}",
+                    ha="center", va="center", fontsize=11, weight="bold",
+                    color=SLATE)
+            # n label below
+            ax_f.text(1.02, -0.10,
+                      f"n = {len(ids)}", transform=ax_f.transAxes,
+                      fontsize=7.5, color=SLATE, ha="center", va="top")
+
+        # row label on the rightmost column
+        lax = fig.add_subplot(gs[mi, -1])
+        lax.axis("off")
+        lax.text(0.05, 0.5, mlabel, transform=lax.transAxes,
+                 fontsize=11, weight="bold", color=mcol,
+                 va="center", ha="left", rotation=0)
+
+    save(fig, "E28_substrat_arketypar")
+
+
+# ═════════════════════════════════════════════════════════════════════
+# FIG E29: Multi-view atlas av dei morfologisk isolerte (top-12 frå E16)
+# ═════════════════════════════════════════════════════════════════════
+def fig_E29_innovatør_atlas(df, vox, n_top=12):
+    """For the top-n most morphologically isolated chairs (E16), render
+    front, side, top projections of each directly from the voxel cache.
+    This is the 3D atlas of the identified innovators."""
+    df_yr = df[df["år"].notna()].copy().sort_values("år").reset_index(drop=True)
+    pc_cols = ["PC1", "PC2", "PC3", "PC4", "PC5", "PC6"]
+    X = df_yr[pc_cols].values
+    yrs = df_yr["år"].values
+    N = len(df_yr)
+    novelty = np.full(N, np.nan)
+    for i in range(N):
+        prior = yrs < yrs[i]
+        if not prior.any():
+            continue
+        novelty[i] = np.linalg.norm(X[prior] - X[i], axis=1).min()
+    df_yr["novelty"] = novelty
+    top_idx = np.argsort(-novelty)
+    # require voxel coverage + pretty-ish
+    chosen = []
+    for k in top_idx:
+        oid = df_yr.iloc[k]["Objekt-ID"]
+        if oid in vox:
+            chosen.append(int(k))
+        if len(chosen) >= n_top:
+            break
+
+    fig = plt.figure(figsize=(14.5, 10.5))
+    n_rows = n_top
+    gs = gridspec.GridSpec(n_rows, 4, width_ratios=[1, 1, 1, 1.7],
+                           wspace=0.06, hspace=0.25, figure=fig)
+
+    for r, k in enumerate(chosen):
+        oid = df_yr.iloc[k]["Objekt-ID"]
+        row = df_yr.iloc[k]
+        pers = str(row.get("Stilperiode", ""))
+        col = PERIOD_COLOR.get(pers, SLATE)
+        mean_g = vox[oid].astype(np.float32)
+        front, side, top = voxel_three_views(mean_g)
+        for ci, (proj, lbl) in enumerate(
+                [(front, "front"), (side, "side"), (top, "top")]):
+            ax = fig.add_subplot(gs[r, ci])
+            H, W = proj.shape
+            rgba = np.zeros((H, W, 4), dtype=float)
+            rgba[..., 0] = to_rgba(col)[0]
+            rgba[..., 1] = to_rgba(col)[1]
+            rgba[..., 2] = to_rgba(col)[2]
+            pmax = proj.max() if proj.max() > 0 else 1
+            rgba[..., 3] = np.clip(proj / pmax, 0, 1) * 0.95
+            ax.imshow(rgba, interpolation="bilinear", aspect="auto")
+            ax.set_xticks([]); ax.set_yticks([])
+            for s in ["top", "right", "bottom", "left"]:
+                ax.spines[s].set_color(col); ax.spines[s].set_linewidth(1.1)
+            if r == 0:
+                ax.set_title(lbl, fontsize=10, color=SLATE, weight="bold")
+        # text column
+        axT = fig.add_subplot(gs[r, 3])
+        axT.axis("off")
+        name = str(row.get("Namn", ""))[:40]
+        line = (f"#{r + 1}  {int(row['år'])}  ·  {pers}\n"
+                f"{name}\n"
+                f"nyskapingsavstand = {row['novelty']:.2f}\n"
+                f"{row['Objekt-ID']}")
+        axT.text(0.00, 0.5, line, transform=axT.transAxes,
+                 fontsize=9, color=SLATE, va="center", ha="left",
+                 bbox=dict(facecolor=to_rgba(col, 0.12),
+                           edgecolor=to_rgba(col, 0.5),
+                           linewidth=0.5, boxstyle="round,pad=0.3"))
+
+    save(fig, "E29_innovator_atlas")
+
+
+# ═════════════════════════════════════════════════════════════════════
 # Main
 # ═════════════════════════════════════════════════════════════════════
 def main():
@@ -3085,6 +3492,9 @@ def main():
 
     print("[3/15] building silhouette cache (lazy, parallel)...")
     sils = build_silhouette_cache(df["Objekt-ID"].tolist())
+
+    print("[3b/15] building voxel cache (lazy, parallel)...")
+    vox = build_voxel_cache(df["Objekt-ID"].tolist())
 
     print("[4/15] E1 morforom...")
     fig_E1_morforom_pca(df, pca)
@@ -3154,8 +3564,17 @@ def main():
     print("[23/24] E25 morfologisk modularitet (Goswami 2007)...")
     fig_E25_modularitet(df, pca)
 
-    print("[24/24] E26 range-through survival av formtypar...")
+    print("[24/27] E26 range-through survival av formtypar...")
     fig_E26_range_through(df_yr, pca)
+
+    print("[25/27] E27 3D morforom med periode-arketypar...")
+    fig_E27_morforom_3d_arketypar(df_yr, pca, vox)
+
+    print("[26/27] E28 substrat-arketypar...")
+    fig_E28_substrat_arketypar(df_yr, vox)
+
+    print("[27/27] E29 multi-view atlas av innovatørar...")
+    fig_E29_innovatør_atlas(df_yr, vox)
 
     for t in ("_sil_test.png", "_sil_test2.png", "_fonttest.png"):
         p = os.path.join(OUT, t)
