@@ -4237,49 +4237,35 @@ def fig_E35_synopsis(df, pca, vox):
     # ----- (a) shape-PC1 × shape-PC2 grid with mesh archetypes -----
     axA = fig.add_subplot(gs[0, 0])
     # 3x3 sample grid on PC1, PC2
-    xs = [-2, 0, 2]; ys = [-2, 0, 2]
+    xs = [-2.0, 0.0, 2.0]; ys = [-2.0, 0.0, 2.0]
     sd1 = float(scores[:, 0].std()); sd2 = float(scores[:, 1].std())
-    img_extent = 0.75
+    img_extent = 1.0  # bigger chairs
+    # smooth gradient based on (PC1, PC2) angle: northwest=cool, southeast=warm
+    cmap_grad = LinearSegmentedColormap.from_list(
+        "pc_quad", ["#0072B2", "#56B4E9", "#F2F2F2",
+                     "#E69F00", "#D55E00"], N=256)
     for i, sx in enumerate(xs):
         for j, sy in enumerate(ys):
             shape = mean_flat + sx * sd1 * comps[0] + sy * sd2 * comps[1]
             grid = np.clip(shape.reshape(nd, nd, nd), 0, 1)
-            # tint by quadrant
-            if sx == 0 and sy == 0:
-                tint = (0.42, 0.46, 0.55)
-            else:
-                t = (sx + sy + 4) / 8  # 0..1
-                tint = list(to_rgba(SLATE)[:3])
-                if sx > 0 or sy > 0:
-                    tint = list(to_rgba(AMBER)[:3])
-                if sx < 0 and sy < 0:
-                    tint = list(to_rgba(OI["blue"])[:3])
+            # smooth gradient — PC1 sum determines warmth
+            t = (sx + sy + 4) / 8  # 0..1
+            tint = cmap_grad(t)[:3]
             rgba = render_shaded_mesh_to_array(
-                grid, size=170, base_color=tint, ambient=0.35,
-                level=0.25, edge_rim=True)
+                grid, size=190, base_color=tint, ambient=0.24,
+                level=0.24, edge_rim=False)
             axA.imshow(rgba,
                         extent=(sx - img_extent, sx + img_extent,
                                 sy - img_extent, sy + img_extent),
                         aspect="auto", interpolation="bilinear", zorder=3)
-    # axis lines
     axA.axhline(0, color=OI["grey"], linewidth=0.5, alpha=0.6, zorder=1)
     axA.axvline(0, color=OI["grey"], linewidth=0.5, alpha=0.6, zorder=1)
-    axA.set_xlim(-3.5, 3.5); axA.set_ylim(-3.5, 3.5)
-    axA.set_xlabel(f"shape-PC1 ({evr[0]*100:.1f}%)",
-                    fontsize=11)
-    axA.set_ylabel(f"shape-PC2 ({evr[1]*100:.1f}%)",
-                    fontsize=11)
+    axA.set_xlim(-3.4, 3.4); axA.set_ylim(-3.4, 3.4)
+    axA.set_xlabel(f"shape-PC1 ({evr[0]*100:.1f}% varians)", fontsize=11)
+    axA.set_ylabel(f"shape-PC2 ({evr[1]*100:.1f}% varians)", fontsize=11)
     axA.set_title("(a) geometri-basert morforom",
                    loc="left", fontsize=12.5, weight="bold")
-    axA.grid(alpha=0.12, linewidth=0.4)
-    axA.text(0.02, 0.97,
-              "Shape-PCA rett frå voxel-meshar. Kvar celle\n"
-              "er middelforma skifta langs to hovud-\n"
-              "deformasjonsaksar.",
-              transform=axA.transAxes, fontsize=9, color=SLATE,
-              va="top", ha="left",
-              bbox=dict(facecolor="white", edgecolor="none",
-                        alpha=0.80, boxstyle="round,pad=0.3"))
+    axA.grid(alpha=0.10, linewidth=0.3)
 
     # ----- (b) haldane-rate timeline -----
     axB = fig.add_subplot(gs[0, 1])
@@ -4321,14 +4307,6 @@ def fig_E35_synopsis(df, pca, vox):
     axB.set_title("(b) evolusjonsrate i haldanar",
                    loc="left", fontsize=12.5, weight="bold")
     axB.grid(alpha=0.14, linewidth=0.4, which="both")
-    axB.text(0.02, 0.97,
-              "Chair evolution ligg i domestiserings-\n"
-              "regimet ($10^{-1}$), to størrelses-\n"
-              "ordenar raskare enn vill makroevolusjon.",
-              transform=axB.transAxes, fontsize=9, color=SLATE,
-              va="top", ha="left",
-              bbox=dict(facecolor="white", edgecolor="none",
-                        alpha=0.80, boxstyle="round,pad=0.3"))
 
     # ----- (c) material OU optima triangle -----
     axC = fig.add_subplot(gs[1, 0])
@@ -4363,14 +4341,6 @@ def fig_E35_synopsis(df, pca, vox):
                    loc="left", fontsize=12.5, weight="bold")
     axC.legend(loc="upper left", fontsize=9, frameon=False)
     axC.grid(alpha=0.12, linewidth=0.4)
-    axC.text(0.98, 0.03,
-              "ΔAIC (OU$_3$ vs OU$_1$) $> 30{\\,}000$\n"
-              "per akse. Sterk støtte for\n"
-              "distinkte material-θ.",
-              transform=axC.transAxes, fontsize=9, color=SLATE,
-              va="bottom", ha="right",
-              bbox=dict(facecolor="white", edgecolor="none",
-                        alpha=0.80, boxstyle="round,pad=0.3"))
 
     # ----- (d) biodiversity curve -----
     axD = fig.add_subplot(gs[1, 1])
@@ -4403,17 +4373,167 @@ def fig_E35_synopsis(df, pca, vox):
     axD.set_title("(d) biodiversitets-kurve over formtypar",
                    loc="left", fontsize=12.5, weight="bold")
     axD.grid(alpha=0.14, linewidth=0.4)
-    axD.text(0.02, 0.97,
-              "Stabilt 11–12 typar 1700–1950;\n"
-              "kollaps til 5–6 etter 1950.\n"
-              "Mass-extinction-signatur for\n"
-              "formtypar i industriera.",
-              transform=axD.transAxes, fontsize=9, color=SLATE,
-              va="top", ha="left",
-              bbox=dict(facecolor="white", edgecolor="none",
-                        alpha=0.80, boxstyle="round,pad=0.3"))
 
     save(fig, "E35_synopsis")
+
+
+# ═════════════════════════════════════════════════════════════════════
+# Thumbnail-cache + E37 shaded-mesh giga-grid
+# ═════════════════════════════════════════════════════════════════════
+THUMB_CACHE_PATH = os.path.join(HERE, "_thumb_rgba_lum_112.npz")
+THUMB_SIZE = 112
+
+
+def _thumb_worker(args):
+    """Render a single chair as a bright, near-white shaded mesh. The
+    result is a LUMINANCE thumbnail (grayscale+alpha) that can be tinted
+    at compose time with any colour scheme."""
+    import numpy as _np
+    from matplotlib.figure import Figure
+    from matplotlib.backends.backend_agg import FigureCanvasAgg
+    oid, grid_bytes, shape, size = args
+    grid = _np.unpackbits(_np.frombuffer(grid_bytes, dtype=_np.uint8))[: int(_np.prod(shape))].reshape(shape).astype(bool)
+    fig = Figure(figsize=(size / 100.0, size / 100.0), dpi=100, facecolor="none")
+    canvas = FigureCanvasAgg(fig)
+    ax = fig.add_axes([0.0, 0.0, 1.0, 1.0])
+    ax.patch.set_alpha(0)
+    # white-ish base so the tint multiplies cleanly at compose time
+    draw_shaded_mesh(ax, grid, rot_y=35, rot_x=22,
+                      base_color=(0.85, 0.85, 0.88),
+                      shadow_color=(0.20, 0.22, 0.28),
+                      highlight_color=(1.0, 1.0, 1.0),
+                      ambient=0.28, smooth_sigma=0.40,
+                      edge_rim=False,
+                      specular_strength=0.20)
+    canvas.draw()
+    buf = _np.asarray(canvas.buffer_rgba()).copy()
+    return oid, buf.tobytes(), buf.shape
+
+
+def build_thumb_cache(df, vox, size=THUMB_SIZE, force=False, workers=None):
+    """Cache bright grayscale+alpha thumbnails per chair. Tint applied at
+    compose time so one cache fuels any colouring scheme."""
+    existing = {}
+    if os.path.exists(THUMB_CACHE_PATH) and not force:
+        z = np.load(THUMB_CACHE_PATH, allow_pickle=False)
+        for k in z.files:
+            existing[k] = z[k]
+    missing_ids = [oid for oid in df["Objekt-ID"]
+                    if oid in vox and oid not in existing]
+    if not missing_ids:
+        print(f"  thumb cache ok: {len(existing)}")
+        return existing
+    if workers is None:
+        workers = max(mp.cpu_count() - 2, 2)
+    print(f"  thumb cache: {len(existing)} present, rendering {len(missing_ids)} "
+          f"with {workers} workers (size={size})...")
+
+    args_list = []
+    for oid in missing_ids:
+        g = vox[oid].astype(bool)
+        packed = np.packbits(g.reshape(-1)).tobytes()
+        args_list.append((oid, packed, g.shape, size))
+
+    done = 0
+    with ProcessPoolExecutor(max_workers=workers) as ex:
+        for oid, buf_bytes, shape in ex.map(_thumb_worker, args_list, chunksize=2):
+            arr = np.frombuffer(buf_bytes, dtype=np.uint8).reshape(shape)
+            existing[oid] = arr
+            done += 1
+            if done % 200 == 0 or done == len(missing_ids):
+                print(f"    {done}/{len(missing_ids)}")
+    np.savez_compressed(THUMB_CACHE_PATH,
+                         **{oid: arr for oid, arr in existing.items()})
+    print(f"  cached to {os.path.basename(THUMB_CACHE_PATH)}")
+    return existing
+
+
+def _tint_thumb(th, tint_rgb):
+    """Apply colour tint (multiplicative) to a grayscale thumbnail.
+    Returns a composited uint8 RGB over white background."""
+    alpha = th[..., 3:4].astype(np.float32) / 255.0
+    # luminance: mean of RGB (grayscale render)
+    lum = th[..., :3].astype(np.float32) / 255.0  # 0..1
+    tint = np.asarray(tint_rgb, dtype=np.float32)
+    # tint is the MID tone; luminance scales between shadow(black-tint) and
+    # highlight(white). Multiplicative with a tone-map:
+    shadow = tint * 0.28
+    highlight = np.array([1.0, 1.0, 1.0])
+    t = np.clip(lum, 0, 1)
+    # two-segment: shadow → tint at t=0.55 → highlight at t=1.0
+    tlo = np.clip(t / 0.55, 0, 1)[..., None]
+    mid = shadow[None, None, :] * (1 - tlo) + tint[None, None, :] * tlo
+    thi = np.clip((t - 0.55) / 0.45, 0, 1)[..., None]
+    out_rgb = mid * (1 - thi) + highlight[None, None, :] * thi
+    out_rgb = np.clip(out_rgb[..., 0, :], 0, 1) * 255
+    white = np.full_like(out_rgb, 255)
+    comp = out_rgb * alpha + white * (1 - alpha)
+    return comp.astype(np.uint8)
+
+
+def fig_E37_giga_grid_3d(df, vox, thumbs=None, mode="year"):
+    """Ultra-tight giga-grid of every chair as a bright shaded-mesh
+    thumbnail. Sort and colour reflect a meaningful gradient so the
+    sort direction is visually legible as a smooth colour sweep."""
+    from matplotlib.cm import ScalarMappable
+    from matplotlib.colors import Normalize
+
+    if thumbs is None:
+        thumbs = build_thumb_cache(df, vox, size=THUMB_SIZE)
+
+    rows = df[df["Objekt-ID"].isin(thumbs)].copy()
+    # chronological gradient colour map (cool → warm)
+    year_cmap = LinearSegmentedColormap.from_list(
+        "year_grad", ["#2C3E50", "#3C4B5F", "#6B7080",
+                      "#B47332", "#E69F00", "#D55E00"], N=256)
+    # PC-PC1 gradient colour map
+    pc_cmap = LinearSegmentedColormap.from_list(
+        "pc_grad", ["#0072B2", "#56B4E9", "#FAF6EE",
+                     "#E69F00", "#D55E00"], N=256)
+
+    if mode == "pc1":
+        rows = rows.sort_values("PC1")
+        values = rows["PC1"].values
+        cmap = pc_cmap
+        suffix = "pc1"
+    else:
+        rows = rows[rows["år"].notna()].sort_values("år")
+        values = rows["år"].values
+        cmap = year_cmap
+        suffix = "year"
+    norm = Normalize(vmin=np.quantile(values, 0.01),
+                     vmax=np.quantile(values, 0.99))
+    N = len(rows)
+    cols = int(np.ceil(np.sqrt(N * 1.18)))
+    grid_rows = int(np.ceil(N / cols))
+    print(f"  E37 giga ({mode}): {N} stolar in {grid_rows}x{cols}")
+
+    tile = THUMB_SIZE
+    pad = 0  # tight packing
+    W = cols * tile
+    H = grid_rows * tile
+    canvas = np.full((H, W, 3), 255, dtype=np.uint8)
+
+    oids = rows["Objekt-ID"].values
+    for k in range(N):
+        r = k // cols; c = k % cols
+        x0 = c * tile; y0 = r * tile
+        th = thumbs.get(oids[k])
+        if th is None:
+            continue
+        tint = cmap(norm(values[k]))[:3]
+        comp = _tint_thumb(th, tint)
+        canvas[y0:y0 + tile, x0:x0 + tile] = comp
+
+    fig_w = min(22, cols * 0.22)
+    fig_h = fig_w * (H / W)
+    fig = plt.figure(figsize=(fig_w, fig_h))
+    ax = fig.add_axes([0.002, 0.002, 0.996, 0.996])
+    ax.imshow(canvas, interpolation="nearest")
+    ax.set_xticks([]); ax.set_yticks([])
+    for s in ["top", "right", "bottom", "left"]:
+        ax.spines[s].set_visible(False)
+    save(fig, f"E37_giga_grid_3d_{suffix}")
 
 
 # ═════════════════════════════════════════════════════════════════════
@@ -4653,8 +4773,15 @@ def main():
     print("[33/34] E35 synopsis hero figur...")
     fig_E35_synopsis(df, pca, vox)
 
-    print("[34/34] E36 allometri...")
+    print("[34/36] E36 allometri...")
     fig_E36_allometri(df, vox)
+
+    print("[35/36] thumb cache + E37 giga-grid (year)...")
+    thumbs = build_thumb_cache(df, vox)
+    fig_E37_giga_grid_3d(df, vox, thumbs=thumbs, mode="year")
+
+    print("[36/36] E37 giga-grid (pc1)...")
+    fig_E37_giga_grid_3d(df, vox, thumbs=thumbs, mode="pc1")
 
     for t in ("_sil_test.png", "_sil_test2.png", "_fonttest.png"):
         p = os.path.join(OUT, t)

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.3.27)  18 APR 2026 22:39
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.3.27)  18 APR 2026 23:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -8,8 +8,8 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
 (C:\Users\Shadow\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
 Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
-(C:\Users\Shadow\AppData\Local\Programs\MiKTeX\tex/latex/base\size11.clo
-File: size11.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+(C:\Users\Shadow\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo
+File: size10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count271
 \c@section=\count272
@@ -756,6 +756,40 @@ Package: titlesec 2025/01/04 v2.17 Sectioning titles
 )
 \c@theorem=\count349
 \c@proposition=\count350
+
+(C:\Users\Shadow\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcolorbox.st
+y
+Package: tcolorbox 2025/11/28 version 6.9.0 text color boxes
+ (C:\Users\Shadow\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim.sty
+Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks48
+\verbatim@line=\toks49
+\verbatim@in@stream=\read3
+)
+(C:\Users\Shadow\AppData\Local\Programs\MiKTeX\tex/latex/environ\environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(C:\Users\Shadow\AppData\Local\Programs\MiKTeX\tex/latex/trimspaces\trimspaces.
+sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\tcb@titlebox=\box73
+\tcb@upperbox=\box74
+\tcb@lowerbox=\box75
+\tcb@phantombox=\box76
+\c@tcbbreakpart=\count351
+\c@tcblayer=\count352
+\c@tcolorbox@number=\count353
+\l__tcobox_tmpa_box=\box77
+\l__tcobox_tmpa_dim=\dimen315
+\tcb@temp=\box78
+\tcb@temp=\box79
+\tcb@temp=\box80
+\tcb@temp=\box81
+)
+(C:\Users\Shadow\AppData\Local\Programs\MiKTeX\tex/latex/placeins\placeins.sty
+Package: placeins 2005/04/18  v 2.2
+)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'polyglossia' package.
 Package csquotes Info: Adjusting default style.
@@ -763,22 +797,22 @@ Package csquotes Info: Redefining alias 'default' -> 'nynorsk'.
 (formlaere.aux)
 \openout1 = `formlaere.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -788,27 +822,27 @@ LaTeX Font Info:    ... okay on input line 55.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(91.04881pt, 415.41025pt, 91.04881pt)
-* v-part:(T,H,B)=(79.66771pt, 685.71143pt, 79.66771pt)
+* h-part:(L,W,R)=(39.83385pt, 517.84018pt, 39.83385pt)
+* v-part:(T,H,B)=(45.5244pt, 748.3075pt, 51.21495pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=415.41025pt
-* \textheight=685.71143pt
-* \oddsidemargin=18.77882pt
-* \evensidemargin=18.77882pt
-* \topmargin=-29.60228pt
+* \textwidth=517.84018pt
+* \textheight=748.3075pt
+* \oddsidemargin=-32.43614pt
+* \evensidemargin=-32.43614pt
+* \topmargin=-63.74559pt
 * \headheight=12.0pt
 * \headsep=25.0pt
-* \topskip=11.0pt
+* \topskip=10.0pt
 * \footskip=30.0pt
-* \marginparwidth=50.0pt
+* \marginparwidth=4.0pt
 * \marginparsep=10.0pt
-* \columnsep=10.0pt
-* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \columnsep=17.07164pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
-* \@twocolumnfalse
+* \@twocolumntrue
 * \@twosidefalse
 * \@mparswitchfalse
 * \@reversemarginfalse
@@ -821,69 +855,69 @@ Package fontspec Info:
 
 \symlegacymaths=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 55.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 55.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 55.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 55.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 55.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 55.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 55.
-LaTeX Font Info:    Redeclaring math accent \check on input line 55.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 55.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 55.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 55.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 55.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 55.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 55.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 55.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 55.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 55.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 55.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 55.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 55.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 55.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 55.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 55.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 55.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 71.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 71.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 71.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 71.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 71.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 71.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 71.
+LaTeX Font Info:    Redeclaring math accent \check on input line 71.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 71.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 71.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 71.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 71.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 71.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 71.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 71.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 71.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 71.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 71.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 71.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 71.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 71.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 71.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 71.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 71.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 55.
+(Font)              `operators' in the math version `normal' on input line 71.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/EBGaramond(0)/m/n on input line 55.
+(Font)                  OT1/cmr/m/n --> TU/EBGaramond(0)/m/n on input line 71.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 55.
+(Font)              `operators' in the math version `bold' on input line 71.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/EBGaramond(0)/m/n on input line 55.
+(Font)                  OT1/cmr/bx/n --> TU/EBGaramond(0)/m/n on input line 71.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  TU/EBGaramond(0)/m/n --> TU/EBGaramond(0)/m/n on input 
-line 55.
+line 71.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/EBGaramond(0)/m/it on input line 55
+(Font)                  OT1/cmr/m/it --> TU/EBGaramond(0)/m/it on input line 71
 .
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/EBGaramond(0)/b/n on input line 55.
+(Font)                  OT1/cmr/bx/n --> TU/EBGaramond(0)/b/n on input line 71.
 
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 55.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 71.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 55.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 71.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  TU/EBGaramond(0)/m/n --> TU/EBGaramond(0)/b/n on input 
-line 55.
+line 71.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/EBGaramond(0)/b/it on input line 5
-5.
+(Font)                  OT1/cmr/bx/it --> TU/EBGaramond(0)/b/it on input line 7
+1.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 55.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 71.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 55.
-LaTeX Info: Redefining \microtypecontext on input line 55.
-Package microtype Info: Applying patch `item' on input line 55.
-Package microtype Info: Applying patch `toc' on input line 55.
-Package microtype Info: Applying patch `eqnum' on input line 55.
-Package microtype Info: Applying patch `footnote' on input line 55.
-Package microtype Info: Applying patch `verbatim' on input line 55.
-LaTeX Info: Redefining \microtypesetup on input line 55.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 71.
+LaTeX Info: Redefining \microtypecontext on input line 71.
+Package microtype Info: Applying patch `item' on input line 71.
+Package microtype Info: Applying patch `toc' on input line 71.
+Package microtype Info: Applying patch `eqnum' on input line 71.
+Package microtype Info: Applying patch `footnote' on input line 71.
+Package microtype Info: Applying patch `verbatim' on input line 71.
+LaTeX Info: Redefining \microtypesetup on input line 71.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: No adjustment of tracking.
@@ -898,8 +932,33 @@ dobe Garamond (RS)
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 56.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+Package microtype Info: Character `156' is missing
+(microtype)             in font `\TU/EBGaramond(0)/m/it/9'.
+(microtype)             Ignoring protrusion settings for this character.
+File: figures/png/17_tre_tradisjonar_konvergens.png Graphic file (type bmp)
+<figures/png/17_tre_tradisjonar_konvergens.png>
+Package microtype Info: Character `156' is missing
+(microtype)             in font `\TU/EBGaramond(0)/m/it/10'.
+(microtype)             Ignoring protrusion settings for this character.
 
+Underfull \hbox (badness 3428) in paragraph at lines 117--118
+[]\TU/EBGaramond(0)/m/n/10 Alexander (1964) formulerte design som reduksjon av 
+misfit-
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1
+
+
+]
+LaTeX Font Info:    Trying to load font information for U+msa on input line 139
+.
 
 (C:\Users\Shadow\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -907,8 +966,8 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (C:\Users\Shadow\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 56.
-
+LaTeX Font Info:    Trying to load font information for U+msb on input line 139
+.
 
 (C:\Users\Shadow\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -920,199 +979,278 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmtt' (encoding: TU).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-Package microtype Info: Character `156' is missing
-(microtype)             in font `\TU/EBGaramond(0)/m/it/10'.
-(microtype)             Ignoring protrusion settings for this character.
-File: figures/png/17_tre_tradisjonar_konvergens.png Graphic file (type bmp)
-<figures/png/17_tre_tradisjonar_konvergens.png>
-
-[1
-
-]
-Package microtype Info: Character `156' is missing
-(microtype)             in font `\TU/EBGaramond(0)/m/it/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
- [2]
-Overfull \hbox (8.24959pt too wide) in paragraph at lines 89--90
-\TU/EBGaramond(0)/m/n/10.95 formell struktur nær eit tilpassingslandskap, men u
-tan eit generativt grammatikk-lag og utan ein substrat-
- []
-
-[3]
 File: figures/png/01_formrom_raup.png Graphic file (type bmp)
 <figures/png/01_formrom_raup.png>
- [4]
-File: figures/png/02_tilpassingslandskap_3d.png Graphic file (type bmp)
-<figures/png/02_tilpassingslandskap_3d.png>
- [5]
-File: figures/png/20_kanalisering.png Graphic file (type bmp)
-<figures/png/20_kanalisering.png>
- [6]
-File: figures/png/04_multiskala_landskap.png Graphic file (type bmp)
-<figures/png/04_multiskala_landskap.png>
- [7]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2]
 File: figures/png/05_gradient_navigasjon.png Graphic file (type bmp)
 <figures/png/05_gradient_navigasjon.png>
 File: figures/png/18_komponent_diagram.png Graphic file (type bmp)
 <figures/png/18_komponent_diagram.png>
- [8] [9]
-File: figures/png/09_boltzmann_fordeling.png Graphic file (type bmp)
-<figures/png/09_boltzmann_fordeling.png>
-File: figures/png/16_fordeling_alternativ.png Graphic file (type bmp)
-<figures/png/16_fordeling_alternativ.png>
- [10] [11] [12]
-File: figures/png/10_formgrammatikk_reskriving.png Graphic file (type bmp)
-<figures/png/10_formgrammatikk_reskriving.png>
- [13]
+
+Underfull \hbox (badness 4403) in paragraph at lines 208--209
+[]\TU/EBGaramond(0)/m/n/10 Boltzmann er ikkje det einaste valet. Alternativ som
+ Pareto-
+ []
+
+[3]
+Underfull \hbox (badness 1132) in paragraph at lines 224--225
+[]$\OMS/cmsy/m/n/10 L[]$ \TU/EBGaramond(0)/m/n/10 for ulike $\OML/cmm/m/it/10 k
+$ \TU/EBGaramond(0)/m/n/10 treng ein felles skala for at summen $[] \OML/cmm/m/
+it/10 w[]\OMS/cmsy/m/n/10 L[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 236--237
+[]\TU/EBGaramond(0)/m/n/10 Koplinga er formell fordi den substrat-uavhengige ag
+ent-
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4]
 File: figures/grensetilfelle.png Graphic file (type bmp)
 <figures/grensetilfelle.png>
- [14] [15] (formlaere.bbl
-[16]
-Underfull \hbox (badness 1158) in paragraph at lines 90--93
-[]\TU/EBGaramond(0)/m/n/10.95 Gingerich, P. D. (1983).  Rates of evolution: Eff
-ects of time and temporal scaling.  \TU/EBGaramond(0)/m/it/10.95 Science\TU/EBG
-aramond(0)/m/n/10.95 ,
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5]
+Underfull \hbox (badness 1028) in paragraph at lines 327--328
+\TU/EBGaramond(0)/m/n/10 sjonsgenetikk (Lande, 1979; Arnold et al., 2001) predi
+kerer se-
  []
 
-[17] [18]) [19]
-Overfull \hbox (7.88821pt too wide) in paragraph at lines 390--391
-[]\TU/EBGaramond(0)/b/n/10.95 Teorem 3 \TU/EBGaramond(0)/m/n/10.95 (Ikkje-degen
-erasjon)\TU/EBGaramond(0)/b/n/10.95 . []\TU/EBGaramond(0)/m/it/10.95 For ein ge
-nerisk Formlære-instans der $[]$ er generativ, $\OMS/cmsy/m/n/10.95 L[]$ \TU/EB
-Garamond(0)/m/it/10.95 ikkje-konstant,
+
+Underfull \hbox (badness 1168) in paragraph at lines 331--332
+[]\TU/EBGaramond(0)/m/n/10 Multi-agent-utviding av formgrammatikken er eit tred
+je. Stiny-
  []
 
-[20]
+
+Underfull \hbox (badness 2310) in paragraph at lines 331--332
+\TU/EBGaramond(0)/m/n/10 agent formgrammatikkar krev utviding som truleg har lø
+ysin-
+ []
+
+(formlaere.bbl [6]
+Underfull \hbox (badness 1142) in paragraph at lines 179--183
+[]\TU/EBGaramond(0)/m/n/10 Mitteroecker, P. and Huttegger, S. M. (2009).  The c
+oncept
+ []
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 352--353
+[]\TU/EBGaramond(0)/b/n/10 Teorem 1 \TU/EBGaramond(0)/m/n/10 (Reduksjon til for
+mgrammatikk)\TU/EBGaramond(0)/b/n/10 . []\TU/EBGaramond(0)/m/it/10 La $\OMS/cms
+y/m/n/10 D \OT1/cmr/m/n/10 =
+ []
+
+
+Underfull \hbox (badness 1515) in paragraph at lines 359--360
+\OML/cmm/m/it/10 L\OT1/cmr/m/n/10 ([])$ \TU/EBGaramond(0)/m/n/10 spesifiserer i
+kkje korleis $\OML/cmm/m/it/10 L\OT1/cmr/m/n/10 ([])$ \TU/EBGaramond(0)/m/n/10 
+er avgrensa av landska-
+ []
+
+[7]
+Underfull \hbox (badness 1546) in paragraph at lines 383--384
+\TU/EBGaramond(0)/m/n/10 dei to eksisterande tradisjonane når designsituasjonen
+ er ikkje-
+ []
+
+
+Underfull \hbox (badness 1603) in paragraph at lines 392--393
+\TU/EBGaramond(0)/m/n/10 King (2004) OU multi-optima, Sidlauskas (2008) phylomo
+rp-
+ []
+
 File: figures/png_empirical/E35_synopsis.png Graphic file (type bmp)
 <figures/png_empirical/E35_synopsis.png>
- [21]
 File: figures/png_empirical/E1_morforom_pca.png Graphic file (type bmp)
 <figures/png_empirical/E1_morforom_pca.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 File: figures/png_empirical/E2_mesh_grid.png Graphic file (type bmp)
 <figures/png_empirical/E2_mesh_grid.png>
- [22]
 File: figures/png_empirical/E8_silhouette_scatter.png Graphic file (type bmp)
 <figures/png_empirical/E8_silhouette_scatter.png>
- [23]
+ [8]
 File: figures/png_empirical/E10_realiseringsgrad.png Graphic file (type bmp)
 <figures/png_empirical/E10_realiseringsgrad.png>
 File: figures/png_empirical/E30_shape_pca_modes.png Graphic file (type bmp)
 <figures/png_empirical/E30_shape_pca_modes.png>
- [24]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9]
 File: figures/png_empirical/E31_geometrisk_genus.png Graphic file (type bmp)
 <figures/png_empirical/E31_geometrisk_genus.png>
- [25]
-Overfull \hbox (6.45822pt too wide) in paragraph at lines 475--476
-[]\TU/EBGaramond(0)/m/n/10.95 Figur 19[] tek det eine skrittet lenger: gjer PCA
- på dei \TU/EBGaramond(0)/m/it/10.95 tidsdifferansiale \TU/EBGaramond(0)/m/n/10
-.95 sentroideskifta i shape-PC-rommet,
+
+Underfull \hbox (badness 4108) in paragraph at lines 461--462
+[]\TU/EBGaramond(0)/m/n/10 Figur 13[] tek det eine skrittet lenger: gjer PCA på
+ dei \TU/EBGaramond(0)/m/it/10 tids-
  []
 
 File: figures/png_empirical/E32_evolusjonsretningar.png Graphic file (type bmp)
 
 <figures/png_empirical/E32_evolusjonsretningar.png>
-[26]
+
+Underfull \hbox (badness 1810) in paragraph at lines 470--471
+\TU/EBGaramond(0)/m/n/10 kvart av dei åtte geometriske genera blir den tidlege 
+og seine
+ []
+
 File: figures/png_empirical/E34_ancestor_reconstruction.png Graphic file (type 
 bmp)
 <figures/png_empirical/E34_ancestor_reconstruction.png>
- [27]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10]
 File: figures/png_empirical/E33_forecast.png Graphic file (type bmp)
 <figures/png_empirical/E33_forecast.png>
- [28]
 File: figures/png_empirical/E7_trajektorie_split.png Graphic file (type bmp)
 <figures/png_empirical/E7_trajektorie_split.png>
- [29]
-Overfull \hbox (4.11131pt too wide) in paragraph at lines 515--516
-\TU/EBGaramond(0)/m/n/10.95 kovarians-matrisa for trestolar før 1920 (kanaliser
-inga), og $\OML/cmm/m/it/10.95 ^^L$ \TU/EBGaramond(0)/m/n/10.95 er seleksjonsgr
-adienten definert som «flukt
+
+Underfull \hbox (badness 2644) in paragraph at lines 501--502
+[]\TU/EBGaramond(0)/m/n/10 Figur 17[] testar denne hypotesen formelt ved bruk a
+v Lande-
  []
 
 File: figures/png_empirical/E15_lande_prediction.png Graphic file (type bmp)
 <figures/png_empirical/E15_lande_prediction.png>
 File: figures/png_empirical/E13_punktuert_likevekt.png Graphic file (type bmp)
 <figures/png_empirical/E13_punktuert_likevekt.png>
-[30]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11]
 File: figures/png_empirical/E12_kanalisering_radar.png Graphic file (type bmp)
 <figures/png_empirical/E12_kanalisering_radar.png>
- [31]
 File: figures/png_empirical/E11_stiavhengigheit.png Graphic file (type bmp)
 <figures/png_empirical/E11_stiavhengigheit.png>
 File: figures/png_empirical/E19_karakterforskyving.png Graphic file (type bmp)
 <figures/png_empirical/E19_karakterforskyving.png>
- [32]
-Overfull \hbox (4.65149pt too wide) in paragraph at lines 568--569
-\TU/EBGaramond(0)/m/n/10.95 Dei tre neste figurane (E16, E17, E18) tek i bruk e
-tablerte paleobiologi-metodar direkte på stol-datasettet.
+
+Underfull \hbox (badness 4779) in paragraph at lines 554--555
+\TU/EBGaramond(0)/m/n/10 Dei tre neste figurane (E16, E17, E18) tek i bruk etab
+lerte
  []
 
 File: figures/png_empirical/E16_morfologisk_nyskaping.png Graphic file (type bm
 p)
 <figures/png_empirical/E16_morfologisk_nyskaping.png>
-[33]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12]
 File: figures/png_empirical/E29_innovator_atlas.png Graphic file (type bmp)
 <figures/png_empirical/E29_innovator_atlas.png>
- [34]
-Overfull \hbox (19.79088pt too wide) in paragraph at lines 588--589
-\TU/EBGaramond(0)/m/n/10.95 diasjon). Dei to signalperiodane fell saman med Nyk
-lassisisme-Historisme-konsolideringa og postmoderne-
+
+Underfull \hbox (badness 2261) in paragraph at lines 574--575
+\TU/EBGaramond(0)/m/n/10 ge stolar per 40-års vindauge, samanlikna mot ein Brow
+nian-
+ []
+
+
+Underfull \hbox (badness 1389) in paragraph at lines 574--575
+\TU/EBGaramond(0)/m/n/10 er tydeleg \TU/EBGaramond(0)/m/it/10 under \TU/EBGaram
+ond(0)/m/n/10 nullbandet frå $\OMS/cmsy/m/n/10 ^^X$\TU/EBGaramond(0)/m/n/10 172
+0 til $\OMS/cmsy/m/n/10 ^^X$\TU/EBGaramond(0)/m/n/10 1840 (blå skraffe-
+ []
+
+
+Underfull \hbox (badness 2932) in paragraph at lines 574--575
+\TU/EBGaramond(0)/m/n/10 med Nyklassisisme-Historisme-konsolideringa og postmod
+erne-
  []
 
 File: figures/png_empirical/E17_disparity_through_time.png Graphic file (type b
 mp)
 <figures/png_empirical/E17_disparity_through_time.png>
-[35]
 File: figures/png_empirical/E18_prediktiv_landskapsdrift.png Graphic file (type
  bmp)
 <figures/png_empirical/E18_prediktiv_landskapsdrift.png>
- [36]
+
+Underfull \hbox (badness 4001) in paragraph at lines 596--597
+\TU/EBGaramond(0)/m/n/10 Metoden blei utvikla for fisk: plasser taxa-sentroider
+ i PCA-
+ []
+
 File: figures/png_empirical/E20_phylomorphospace.png Graphic file (type bmp)
 <figures/png_empirical/E20_phylomorphospace.png>
+[13]
 File: figures/png_empirical/E21_tempo_gingerich.png Graphic file (type bmp)
 <figures/png_empirical/E21_tempo_gingerich.png>
- [37]
-Overfull \hbox (13.17351pt too wide) in paragraph at lines 628--629
-\TU/EBGaramond(0)/m/n/10.95 domenet. For kvar av dei seks PC-aksane tilpassar v
-i tre modellar til den parvise trait-differensial-fordelinga
+
+Underfull \hbox (badness 1205) in paragraph at lines 614--615
+[]\TU/EBGaramond(0)/m/n/10 Figur 28[] fører Harmon et al. (2010) sin direkte sa
+manlikning
+ []
+
+
+Underfull \hbox (badness 1924) in paragraph at lines 619--621
+\TU/EBGaramond(0)/b/n/10 modellen katastrofalt avvist \TU/EBGaramond(0)/m/n/10 
+($\OT1/cmr/m/n/10 ^^A[] \OML/cmm/m/it/10 > \OT1/cmr/m/n/10 30[]000$\TU/EBGaramo
+nd(0)/m/n/10 ) til fordel
  []
 
 File: figures/png_empirical/E22_makroevo_modellar.png Graphic file (type bmp)
 <figures/png_empirical/E22_makroevo_modellar.png>
-[38]
 File: figures/png_empirical/E23_konvergens.png Graphic file (type bmp)
 <figures/png_empirical/E23_konvergens.png>
- [39]
+[14]
 File: figures/png_empirical/E24_ou_multi_optima.png Graphic file (type bmp)
 <figures/png_empirical/E24_ou_multi_optima.png>
- [40]
+
+Underfull \hbox (badness 1430) in paragraph at lines 643--643
+[]\TU/EBGaramond(0)/b/n/8 Figur 30. |\TU/EBGaramond(0)/m/n/8 OU-modell med mate
+riale-spesifikke optima etter Butler and King
+ []
+
+
+Underfull \hbox (badness 1755) in paragraph at lines 647--648
+\TU/EBGaramond(0)/m/n/10 Korrelasjonsmatrisa viser direkte kvifor: innan SIZE o
+g innan
+ []
+
+
+Underfull \hbox (badness 1286) in paragraph at lines 647--648
+\TU/EBGaramond(0)/m/n/10 kryss-korrelasjonane mellom blokkene er nesten null. R
+esultat:
+ []
+
 File: figures/png_empirical/E25_modularitet.png Graphic file (type bmp)
 <figures/png_empirical/E25_modularitet.png>
- [41]
+
+Underfull \hbox (badness 1622) in paragraph at lines 656--657
+[]\TU/EBGaramond(0)/m/n/10 Figur 32[] bygg eit paleobiologisk range-through-dia
+gram på 14
+ []
+
 File: figures/png_empirical/E26_range_through.png Graphic file (type bmp)
 <figures/png_empirical/E26_range_through.png>
- [42]
-File: figures/png_empirical/E6_giga_grid_year.png Graphic file (type bmp)
-<figures/png_empirical/E6_giga_grid_year.png>
- [43]
-File: figures/png_empirical/E6_giga_grid_pc1.png Graphic file (type bmp)
-<figures/png_empirical/E6_giga_grid_pc1.png>
- [44] [45] (formlaere.aux)
+File: figures/png_empirical/E37_giga_grid_3d_year.png Graphic file (type bmp)
+<figures/png_empirical/E37_giga_grid_3d_year.png>
+File: figures/png_empirical/E37_giga_grid_3d_pc1.png Graphic file (type bmp)
+<figures/png_empirical/E37_giga_grid_3d_pc1.png>
+[15] [16] [17] (formlaere.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 23659 strings out of 402987
- 522470 string characters out of 5448317
- 1000429 words of memory out of 5000000
- 51911 multiletter control sequences out of 15000+600000
- 635837 words of font info for 100 fonts, out of 8000000 for 9000
+ 25721 strings out of 402987
+ 576481 string characters out of 5448317
+ 1065975 words of memory out of 5000000
+ 53966 multiletter control sequences out of 15000+600000
+ 632752 words of font info for 89 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 84i,12n,104p,1515b,529s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,12n,104p,1452b,615s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on formlaere.pdf (45 pages).
+Output written on formlaere.pdf (17 pages).
