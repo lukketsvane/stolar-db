@@ -44,9 +44,6 @@
 \setlength{\parskip}{0.6\baselineskip}
 \linespread{1.15}
 
-\newfontfamily{\mathfbfont}{Cambria Math}[Scale=0.95]
-\newcommand{\msym}[1]{{\mathfbfont #1}}
-
 \newtheorem{theorem}{Teorem}
 \newtheorem{proposition}{Påstand}
 \newtheorem*{proof*}{Bevisskisse}
@@ -68,30 +65,8 @@
 % ─── Figur 1: tre tradisjonar som konvergerer ─────────────────────────
 \begin{figure}[H]
 \centering
-\begin{tikzpicture}[scale=0.92, every node/.style={font=\small}]
-  % Top: three source traditions
-  \node[draw, rounded corners=2pt, fill=lightslate, text width=3.4cm, align=center, inner sep=4pt] (syn) at (-5, 3) {\textbf{Syntaks}\\[2pt]\scriptsize Stiny \& Gips (1972)\\\scriptsize formgrammatikk};
-  \node[draw, rounded corners=2pt, fill=lightaccent2, text width=3.4cm, align=center, inner sep=4pt] (log) at (0, 3) {\textbf{Logikk}\\[2pt]\scriptsize Hatchuel \& Weil (2003)\\\scriptsize C-K-teori};
-  \node[draw, rounded corners=2pt, fill=lightaccent, text width=3.4cm, align=center, inner sep=4pt] (dyn) at (5, 3) {\textbf{Dynamikk}\\[2pt]\scriptsize Levin (2022)\\\scriptsize substrat-agens};
-
-  % Central equation box
-  \node[draw, very thick, accentcol, rounded corners=3pt, fill=accentcol!8, text width=10cm, align=center, inner sep=6pt] (eq) at (0, 0.8) {\textbf{Formlære} \\[4pt] $\displaystyle \mathrm{Form} = \mathrm{SG}\!\left( \sum_{k=0}^{n} \nabla_{C(A_k)} \mathcal{L}_k(c,t) \right)$};
-
-  % Arrows top to central
-  \draw[->, thick, slatecol] (syn) -- (eq);
-  \draw[->, thick, slatecol] (log) -- (eq);
-  \draw[->, thick, slatecol] (dyn) -- (eq);
-
-  % Bottom: three components
-  \node[draw, rounded corners=2pt, fill=lightslate, text width=3cm, align=center, inner sep=4pt] (sg) at (-4.2, -1.8) {$\mathrm{SG}$\\[1pt]\scriptsize grammatikk};
-  \node[draw, rounded corners=2pt, fill=lightaccent, text width=3cm, align=center, inner sep=4pt] (ll) at (0, -1.8) {$\mathcal{L}_k$\\[1pt]\scriptsize landskap};
-  \node[draw, rounded corners=2pt, fill=lightaccent2, text width=3cm, align=center, inner sep=4pt] (ca) at (4.2, -1.8) {$C(A_k)$\\[1pt]\scriptsize representasjonsrom};
-
-  \draw[->, thick, slatecol] (eq) -- (sg);
-  \draw[->, thick, slatecol] (eq) -- (ll);
-  \draw[->, thick, slatecol] (eq) -- (ca);
-\end{tikzpicture}
-\caption{Tre formelle tradisjonar som konvergerer i kjerne-likninga. Stiny og Gips sin formgrammatikk leverer den syntaktiske algebraen; Hatchuel og Weil sin C-K-teori leverer den epistemiske navigasjonen; Levin og kollegaer sitt arbeid på substrat-uavhengig agens leverer den dynamiske navigasjonsmekanikken. Likninga bryt så ut i dei tre komponentane ingen av tradisjonane åleine har hatt alle av.}
+\includegraphics[width=0.92\textwidth]{17_tre_tradisjonar_konvergens.png}
+\caption{Tre formelle tradisjonar som konvergerer i kjerne-likninga. \citet{stinygips1972} leverer den syntaktiske algebraen gjennom formgrammatikken; \citet{hatchuelweil2003} leverer den epistemiske navigasjonen gjennom C-K-teorien; \citet{levin2022} leverer den dynamiske navigasjonsmekanikken gjennom substrat-uavhengig agens. Likninga bryt så ut i dei tre komponentane ingen av tradisjonane åleine har hatt alle av.}
 \label{fig:konvergens}
 \end{figure}
 
@@ -103,15 +78,15 @@ Biologien har hatt ei formvitskap i over hundre år. Designfaget har aldri etabl
 
 \subsection{Biologiens formvitskap}
 
-\citet{thompson1917} viste i \textit{On Growth and Form} at biologisk form følgjer fysiske krefter som overflatespenning, turgortrykk og vekstrater. \citet{raup1966} demonstrerte at den totale morfologiske variasjonen blant alle realiserte skjell i evolusjonen ligg innanfor eit tredimensjonalt parameterrom; skjell som aldri er funne, kan karakteriserast som punkt i dei uaktualiserte regionane. \citet{wright1932} formaliserte tilpassingslandskapet som vektorsummen av alle verksame seleksjonstrykk. \citet{waddington1957} introduserte det epigenetiske landskapet og omgrepet kanalisering: robustheit mot forstyrringar som er målbart bunde til brattleiken på dalveggane. \citet{mitteroecker2009} har utvida formrommet til eit allment teoretisk verktøy, substrat-uavhengig definert gjennom målbare eigenskapar heller enn artsspesifikke detaljar.
+\citet{thompson1917} viste i \textit{On Growth and Form} at biologisk form følgjer fysiske krefter som overflatespenning, turgortrykk og vekstrater. \citet{raup1966} demonstrerte at den totale morfologiske variasjonen blant alle realiserte skjell i evolusjonen ligg innanfor eit tredimensjonalt parameterrom; skjell som aldri er funne, kan karakteriserast som punkt i dei uaktualiserte regionane. \citet{wright1932} formaliserte tilpassingslandskapet som vektorsummen av alle verksame seleksjonstrykk. \citet{waddington1957} introduserte det epigenetiske landskapet og omgrepet kanalisering: robustheit mot forstyrringar som er målbart bunde til brattleiken på dalveggane. \citet{mitteroecker2009} har utvida formrommet til eit allment teoretisk verktøy, substrat-uavhengig definert gjennom målbare eigenskapar heller enn artsspesifikke detaljar. \citet{mcghee2007} har samla formrom og tilpassingslandskap i eitt rammeverk og vist at teoretisk morfometri er blitt ein operasjonell syntese.
 
-Tradisjonen har gjort formspørsmålet operasjonelt: ein biolog kan måle forma, plassere ho i eit formrom, identifisere seleksjonstrykk, rekonstruere utviklingshistorie, og prediktere kva former som vil realiserast under gjevne vilkår \citep{arnold2001, wagner2005}.
+Tradisjonen har gjort formspørsmålet operasjonelt: ein biolog kan måle forma, plassere ho i eit formrom, identifisere seleksjonstrykk, rekonstruere utviklingshistorie, og prediktere kva former som vil realiserast under gjevne vilkår \citep{arnold2001, wagner2005}. Nyare arbeid som \citet{polly2016} har vidareutvikla syntesen gjennom kombinasjon av geometrisk morfometri og finite-element-analyse, og \citet{contrerasfigueroa2023} har demonstrert at operasjonell morforom-konstruksjon med måling direkte på fotografiske spesimen er gjennomførbar for komplekse strukturklassar som bløtdyrskal.
 
 \subsection{Designfagets fråvær og dei partielle føregangarane}
 
 Designfaget har aldri etablert ei tilsvarande operasjonell disiplin. \citet{sullivan1896} si aforisme \textit{form ever follows function} har \citet{michl1995} dokumentert forklarer alt og difor ingenting. Men det vil vere vilkårleg å påstå at designfaget ikkje har rekt etter ein slik vitskap. Fleire tenkjarar har teke delar av vegen utan å samle komponentane.
 
-\citet{alexander1964} formulerte design som reduksjon av misfit-vektorar i eit vilkårsrom; apparatet har formell struktur nær eit tilpassingslandskap, men utan eit generativt grammatikk-lag og utan ein substrat-uavhengig agent-formalisme. \citet{simon1969} definerte designvitskapen som ein systematisk disiplin for det artificielle, med indre og ytre miljø i dialog; eit ambisiøst program som mangla formell algebra over formrommet. \citet{steadman1979} overførte biologiske formmodellar direkte på artefakter i \textit{The Evolution of Designs}; overføringa var analogisk, ikkje substrat-uavhengig, og mangla representasjonsrom-omgrepet. \citet{basalla1988} skildra den teknologiske evolusjonen som ein darwinistisk prosess; skildringa er deskriptiv, ikkje generativ. \citet{petroski1992} viste at svikt fungerer som seleksjon for nyttige ting; innsikta er i landskapstermar, men utan formalisme. \citet{wbarthur2009} formaliserte teknologi som kombinatorisk evolusjon der nye teknologiar er strukturerte kombinasjonar av eksisterande; ein generativ grammatikk i realiteten, men utan eksplisitt kopling mot landskap. \citet{pye1968} skilde mellom risikohandverk og vissheitshandverk; eit substrat-argument avant la lettre, men på eitt nivå av agens. \citet{kauffman1993} arbeidde på NK-landskap for kultur; landskapet var kollektivt, ikkje posisjonert i eit formrom med realiserte punkt.
+\citet{alexander1964} formulerte design som reduksjon av misfit-vektorar i eit vilkårsrom; apparatet har formell struktur nær eit tilpassingslandskap, men utan eit generativt grammatikk-lag og utan ein substrat-uavhengig agent-formalisme. \citet{simon1969} definerte designvitskapen som ein systematisk disiplin for det artificielle, med indre og ytre miljø i dialog; eit ambisiøst program som mangla formell algebra over formrommet. \citet{steadman1979} overførte biologiske formmodellar direkte på artefakter i \textit{The Evolution of Designs}; overføringa var analogisk, ikkje substrat-uavhengig, og mangla representasjonsrom-omgrepet. \citet{basalla1988} skildra den teknologiske evolusjonen som ein darwinistisk prosess; skildringa er deskriptiv, ikkje generativ. \citet{petroski1992} viste at svikt fungerer som seleksjon for nyttige ting; innsikta er i landskapstermar, men utan formalisme. \citet{wbarthur2009} formaliserte teknologi som kombinatorisk evolusjon der nye teknologiar er strukturerte kombinasjonar av eksisterande; ein generativ grammatikk i realiteten, men utan eksplisitt kopling mot landskap. \citet{pye1968} skilde mellom risikohandverk og vissheitshandverk; eit substrat-argument \textit{avant la lettre}, men på eitt nivå av agens. \citet{kauffman1993} arbeidde på NK-landskap for kultur; landskapet var kollektivt, ikkje posisjonert i eit formrom med realiserte punkt.
 
 Dei to formelle tradisjonane som seinare er utvikla innanfor designteorien, har modnast utan eksplisitt forhold til landskapsomgrepet. Formgrammatikken til \citet{stinygips1972} er ein presis generativ algebra for kva former som kan genererast frå gjevne reglar, men spesifiserer inga teori om kva av dei genererte formene som er sannsynlege. Tanke-kunnskapsteorien til \citet{hatchuelweil2003, hatchuelweil2009} er ein presis epistemisk dynamikk mellom konseptrom og kunnskapsrom, men spesifiserer inga generativ algebra over formrommet. Kvar av dei to tradisjonane har gjort sitt grensetilfelle så rikt som det kan bli, utan at dei to møtest i eit felles rammeverk.
 
@@ -135,9 +110,23 @@ Formlære kviler på tre grunnomgrep, alle etablerte i andre vitskapar. Dei tre 
 
 La $M$ vere mengda av alle moglege konfigurasjonar for objekt i ein gjeven klasse. Kvar akse i $M$ er ein målbar eigenskap. Omgrepet er innført av \citet{raup1966} og vidareutvikla som eit substrat-uavhengig teoretisk verktøy av \citet{mitteroecker2009}. Kvar realisert form $F$ er eit eksakt punkt i $M$; kvar uaktualisert men mogeleg form er òg eit punkt. Det empiriske formrommet er alltid ein projeksjon; inga endeleg mengd parametrar fangar den latente kompleksiteten fullt ut. Formrommet deler seg i realiserte posisjonar, uaktualiserte men tilgjengelege posisjonar, og posisjonar utelukka av materielle vilkår. Grensa mellom dei to siste er materiell, ikkje logisk, og kvar ny materialkunnskap kan forskyve henne.
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.72\textwidth]{01_formrom_raup.png}
+\caption{Formrom $M$ for bløtdyrskal etter \citet{raup1966}. Dei tre aksane er spiralutviding $W$, spiraltranslasjon $T$ og avstand frå akse $D$. Fylte punkt markerer realiserte taxa; opne punkt markerer posisjonar som er geometrisk og materielt moglege, men som ikkje er realiserte i evolusjonshistoria. Same operasjon er gjennomførbar for artefaktklassar; \citet{contrerasfigueroa2023} demonstrerer dette for bløtdyrskal med direkte parametermåling frå fotografiske spesimen.}
+\label{fig:formrom}
+\end{figure}
+
 \subsection{Tilpassingslandskap}
 
 La $\mathcal{L}: M \to \mathbb{R}$ vere ein funksjon som tilordnar kvar posisjon i formrommet ein skalar verdi, tolka som graden av samtidig løysing for alle verksame seleksjonstrykk. Omgrepet er frå \citet{wright1932}, utvida av \citet{waddington1957} til utviklingsprosessar og formalisert vidare av \citet{arnold2001}. Landskapet er ikkje deterministisk; det endrar sannsynsfordelinga over realiserte former utan å tvinge ein spesifikk geometri. Fleire seleksjonstrykk verkar samstundes, og minst to peikar typisk i motstridande retningar; kvar realisert form er difor eit kompromiss.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.68\textwidth]{02_tilpassingslandskap_3d.png}
+\caption{Tilpassingslandskap $\hat{\mathcal{L}}$ over to formdimensjonar. Haugar markerer regionar av høg tilpassingsgrad; dalar markerer låg. Fleire lokale toppar er typisk når fleire seleksjonstrykk verkar motstridande; globalt optimum er sjeldan når landskapet er rugget. Høgdekartet er ei projeksjon av eit langt høgare-dimensjonalt landskap, og visualiseringa er pedagogisk, ikkje eksakt.}
+\label{fig:landskap3d}
+\end{figure}
 
 Landskapet er agent-spesifikt. Kvar agent $A_k$ har sitt eige estimat $\mathcal{L}_k$, og det totale landskapet agent $k$ navigerer kan dekomponerast:
 \begin{equation}
@@ -148,6 +137,22 @@ der $\mathcal{L}_{\mathrm{ext}}$ er dei substrat-uavhengige, eksterne seleksjons
 
 Landskapet er dynamisk. Trykka kviler aldri; haugar stig, søkk, flyttar seg, deler seg og smeltar saman. Landskapet har minne: kvar realisert form endrar seleksjonstrykka for den neste \citep{arthurbrian1994}. All formgjeving er omformgjeving, og stiavhengigheit er eit fundamentalt trekk. Nisjekonstruksjon \citep{odlingsmee2003} gjer den same innsikta eksplisitt for biologi: kvar realisert konfigurasjon deformerer landskapet rundt seg.
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{20_kanalisering.png}
+\caption{Kanalisering etter \citet{waddington1957}: brattleiken på dalveggane gjev robustheit mot forstyrring. Venstre: bratte kanalar held realiserte former nær eit lokalt optimum trass i varierande initialtilstand og påverknad. Høgre: grunne kanalar gjev drift og stor formvariasjon. Kanalisering er målbar og kan estimerast empirisk frå formdata.}
+\label{fig:kanalisering}
+\end{figure}
+
+Landskapet opererer på fleire abstraksjonsskalaer samstundes. Eit enkelt formgjevingsproblem involverer typisk trykk frå molekylnivå (material-affordansar), individnivå (ergonomi), samfunnsnivå (kulturell preferanse) og biosfære (ressurs-tilgjenge), alle med ulike tidsskalaer.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.62\textwidth]{04_multiskala_landskap.png}
+\caption{Tilpassingslandskap på ulike abstraksjonsskalaer. Kvar skala har sitt eige landskap med eigne tidsskalaer, frå mikrosekund på molekylnivå til hundreår på biosfære-nivå. Kjerne-likninga er skala-fri: same formelle struktur gjeld på alle nivå, men med ulike parameteriseringar. Dette er grunnlaget for den substrat-uavhengige koplinga i seksjon~4.}
+\label{fig:multiskala}
+\end{figure}
+
 \subsection{Agent og representasjonsrom}
 
 La $A$ vere ein operator definert av trippelet måltilstand, avstandsmåling, justeringsmekanisme \citep{rosenblueth1943, ashby1956}. Agens krev berre organisering; verken medvit, intensjon eller nervesystem. Formelt er $A := (g, d, \delta)$, og konvergenskravet kan formulerast som at avstanden $d(x_n, g)$ er ikkje-aukande i forventning langs iterasjonen $x_{n+1} = \delta(x_n)$. Den svake konvergensforma er viktig: prøve-og-feile-navigasjon der avstanden aukar mellombels men minskar i forventning, er tillate. Eit kvart system som oppfyller vilkåra er ein agent, uavhengig av substrat \citep{levin2022}.
@@ -156,37 +161,16 @@ Kvar agent $A$ har eit representasjonsrom $C(A) \subseteq M$: delmengda av formr
 
 \begin{figure}[H]
 \centering
-\begin{tikzpicture}[
-  scale=1,
-  every node/.style={font=\small},
-  box/.style={draw, rectangle, rounded corners=2pt, thick, slatecol, fill=lightslate, text width=2.6cm, align=center, inner sep=5pt},
-  landbox/.style={draw, rectangle, rounded corners=2pt, thick, accentcol, fill=lightaccent, text width=2.6cm, align=center, inner sep=5pt},
-  flow/.style={->, thick, slatecol, >=Latex},
-  edgelbl/.style={font=\scriptsize, inner sep=1pt, fill=white}
-]
-  % Top: M
-  \node[box, text width=3.4cm] (M) at (0, 3.0) {\textbf{Formrom $M$}\\[1pt]\scriptsize moglege konfigurasjonar};
+\includegraphics[width=0.92\textwidth]{05_gradient_navigasjon.png}
+\caption{Agent-navigasjon som gradient-følgjing. Venstre: ein agent startar i ein suboptimal region av representasjonsrommet $C(A)$ og følgjer gradienten $\nabla_{C(A)} \hat{\mathcal{L}}$ til eit lokalt optimum. Høgre: gradientfeltet $-\nabla \hat{\mathcal{L}}$ over heile formrommet. Agenten ser berre sin eigen del av feltet; det er dette som gjer representasjonsrommet avgrensande for navigasjonen.}
+\label{fig:gradient}
+\end{figure}
 
-  % Middle row: Π · SG · L
-  \node[box] (Pi) at (-5.2, 0.3) {\textbf{Partisjon $\Pi$}\\[1pt]\scriptsize $(K,\,C,\,F)$};
-  \node[box] (SG) at (0, 0.3) {\textbf{Grammatikk $\mathrm{SG}$}\\[1pt]\scriptsize $(S,\,R,\,\omega)$};
-  \node[landbox] (L) at (5.2, 0.3) {\textbf{Landskap $\mathcal{L}_k$}\\[1pt]\scriptsize seleksjonstrykk};
-
-  % Bottom: A
-  \node[box, text width=6.2cm] (A) at (0, -2.5) {\textbf{Agenthierarki $\mathcal{A} = \{A_0,\,\ldots,\,A_n\}$}};
-
-  % Upper arrows: Π/SG/L → M
-  \draw[flow] (Pi) -- node[edgelbl, pos=0.55] {partisjonerer} (M);
-  \draw[flow] (SG) -- node[edgelbl, pos=0.5] {genererer $L(\mathrm{SG})$} (M);
-  \draw[flow] (L)  -- node[edgelbl, pos=0.55] {vektar sannsyn} (M);
-
-  % Lower arrows: A → Π/SG/L
-  \draw[flow] (A) -- node[edgelbl, pos=0.55] {strukturerer} (Pi);
-  \draw[flow] (A) -- node[edgelbl, pos=0.5] {realiserer} (SG);
-  \draw[flow] (A) -- node[edgelbl, pos=0.55] {$\nabla_{C(A_k)}$-navigerer} (L);
-\end{tikzpicture}
-\caption{Formlære som strukturell tuppel $\mathcal{D} = (M, \Pi, \mathrm{SG}, \mathcal{L}, \mathcal{A})$. Formrommet $M$ er det felles arenaet. Grammatikken genererer kva som er mogeleg. Landskapet vektar kva som er sannsynleg. Partisjonen skil det kjende frå det tenkelege. Agenthierarkiet navigerer landskapet (via gradienten på eige representasjonsrom), realiserer grammatiske operasjonar, og strukturerer partisjonen.}
-\label{fig:komponentar}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.78\textwidth]{18_komponent_diagram.png}
+\caption{Formlære som strukturell tuppel $\mathcal{D} = (M, \Pi, \mathrm{SG}, \mathcal{L}, \mathcal{A})$. Formrommet $M$ er det felles arenaet. Grammatikken genererer kva som er mogeleg gjennom $L(\mathrm{SG})$. Landskapet vektar kva som er sannsynleg. Partisjonen skil det kjende frå det tenkelege. Agenthierarkiet navigerer landskapet via gradienten på eige representasjonsrom, realiserer grammatiske operasjonar, og strukturerer partisjonen.}
+\label{fig:tuppel}
 \end{figure}
 
 Tre-omgrepet agent-formrom-landskap har ein viktig asymmetri. Formrommet er objektivt gjeve av klasseval og aksemåling. Landskapet er òg objektivt, gjeve av dei verksame seleksjonstrykka, men kvar agent har berre sitt eige estimat $\mathcal{L}_k$ av det. Representasjonsrommet er agent-spesifikt og avgrensar både kor presist agenten kan estimere $\mathcal{L}$ og kva regionar av $M$ estimatet er definert over. Kjerne-likninga bind desse tre saman.
@@ -197,27 +181,44 @@ Tre-omgrepet agent-formrom-landskap har ein viktig asymmetri. Formrommet er obje
 
 Med dei tre grunnomgrepa etablerte står likninga åleine.
 
-La $\{A_k\}_{k=0}^{n}$ vere eit agenthierarki som opererer på formrommet $M$, kvar med sitt eige estimat $\mathcal{L}_k$ av tilpassingslandskapet og sitt eige representasjonsrom $C(A_k)$. La $\mathrm{SG} = (S, R, \omega)$ vere ein formgrammatikk som definerer det genererte formspråket $L(\mathrm{SG}) \subseteq M$. Den generative dynamikken for ei form $F$ er då:
+La $\{A_k\}_{k=0}^n$ vere eit agenthierarki som opererer på formrommet $M$, kvar med sitt eige estimat $\mathcal{L}_k$ av tilpassingslandskapet og sitt eige representasjonsrom $C(A_k)$. La $\mathrm{SG} = (S, R, \omega)$ vere ein formgrammatikk som definerer det genererte formspråket $L(\mathrm{SG}) \subseteq M$. Den generative dynamikken for ei form $F$ er då:
 \begin{align}
 \mathrm{Form} &= \mathrm{SG}\!\left( \sum_{k=0}^{n} \nabla_{C(A_k)} \mathcal{L}_k(c, t) \right) \label{eq:kjerne}\\
-F &\in L(\mathrm{SG}) \cap \bigcap_{k=0}^{n} C(A_k) \label{eq:domene}
+F &\in L(\mathrm{SG}) \cap \bigcap_{k=0}^n C(A_k) \label{eq:domene}
 \end{align}
+
 Likning~\ref{eq:kjerne} seier at form er grammatikken sin operasjon på den vekta gradienten av agent-spesifikke landskapsestimat, projisert gjennom kvar agent sitt representasjonsrom. Domenevilkåret~\ref{eq:domene} krev at realiseringa ligg både i det grammatikken kan generere og i skjeringa av alle agentar sine representasjonsrom.
 
 \subsection{Stasjonær fordeling og MaxEnt-konsistens}
 
 Under kravet om stasjonær likevekt og konsistens med ei gjeven forventa verdi av $\mathcal{L}$, er Boltzmann-fordelinga den unike sannsynsfordelinga som maksimerer entropi \citep{jaynes1957}:
 \begin{equation}
-P(F \mid \{A_k\}, \mathcal{L}, \mathrm{SG}) \propto \exp\!\left(-\beta \sum_{k} w_k \mathcal{L}_k(F)\right)
+P(F \mid \{A_k\}, \mathcal{L}, \mathrm{SG}) \propto \exp\!\left(-\beta \sum_k w_k \mathcal{L}_k(F)\right)
 \label{eq:boltzmann}
 \end{equation}
 for $F$ i domenet~\ref{eq:domene}, der $\beta > 0$ er ein invers temperatur og $w_k$ er agent-spesifikke vekter. Fordelinga er den stasjonære konsekvensen av den dynamiske likninga~\ref{eq:kjerne} når systemet har nådd likevekt; ho er ikkje ein alternativ formulering, men den sannsynsforma av den same dynamikken.
 
-Boltzmann er ikkje det einaste valet. Alternativ som Pareto-fordelingar eller multiplikative former gjer andre antakingar om halar og aggregering. Boltzmann vel vi fordi han er konsistent med MaxEnt under éin avgrensing (kjent forventa $\mathcal{L}$), som er den minimalt informative antakinga. Alternativa krev sterkare antakingar om den underliggjande fordelinga.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{09_boltzmann_fordeling.png}
+\caption{Boltzmann-fordeling $P(F) \propto \exp(-\beta \hat{\mathcal{L}}(F))$ over eit to-dimensjonalt formrom, ved tre verdiar av den inverse temperaturen $\beta$. Låg $\beta$ (varmt) gjev brei spreiing over fleire haugar; høg $\beta$ (kaldt) konsentrerer sannsynet rundt dei globale toppane. $\beta$ tolkast som styrken av seleksjon i forhold til stokastisk variasjon.}
+\label{fig:boltzmann}
+\end{figure}
+
+Boltzmann er ikkje det einaste valet. Alternativ som Pareto-fordelingar eller multiplikative former gjer andre antakingar om halar og aggregering.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{16_fordeling_alternativ.png}
+\caption{Tre kandidatar til stasjonær fordeling. Boltzmann (venstre) har stramme halar og ein modus; Pareto (midten) har tunge halar og konsentrerer mest masse nær null; lognormal (høgre) er høgreskeiv med moderate halar. Formlære vel Boltzmann fordi han er MaxEnt-konsistent under éin avgrensing (kjent forventa $\mathcal{L}$). Alternativa krev sterkare antakingar om den underliggjande fordelinga.}
+\label{fig:alternativ}
+\end{figure}
+
+Boltzmann vel vi fordi han er konsistent med MaxEnt under éin avgrensing (kjent forventa $\mathcal{L}$), som er den minimalt informative antakinga.
 
 \subsection{Avgrensingar og caveats}
 
-Likning~\ref{eq:kjerne} og \ref{eq:boltzmann} kviler på antakingar som må namngjevast.
+Likning~\ref{eq:kjerne} og~\ref{eq:boltzmann} kviler på antakingar som må namngjevast.
 
 Fyrst: for kontinuerleg $M$ krev normaliseringa i~\ref{eq:boltzmann} eit basemål $\mu$ over $M$. Dette er ein standard målteoretisk konstruksjon, men det valet av basemål er ikkje triviell; ulike mål gjev ulike fordelingar.
 
@@ -225,11 +226,11 @@ Deretter: domenet $L(\mathrm{SG}) \cap \bigcap_k C(A_k)$ kan vere tomt. Sjølv o
 
 MaxEnt-argumentet krev kjent forventa $\mathcal{L}$ \citep{jaynes1957}. I design er den forventa verdien sjeldan eksplisitt kjent og må estimerast empirisk. Utan slik estimering er parameteren $\beta$ udefinert.
 
-Vektene $w_k$ er i \ref{eq:boltzmann} positive ved konstruksjon. Men interaksjonstermane $\phi_{jk}$ i landskapdekomposisjonen~\ref{eq:landskapdekomp} kan ha vilkårleg fortegn, og det er der antagonisme mellom agentar er formelt representert. Negative $\phi_{jk}$ tilsvarer ein agent $j$ som aktivt modifiserer $\mathcal{L}_k$ slik at agent $k$ sin gradient-navigasjon vert omdirigert.
+Vektene $w_k$ er i~\ref{eq:boltzmann} positive ved konstruksjon. Men interaksjonstermane $\phi_{jk}$ i landskapdekomposisjonen~\ref{eq:landskapdekomp} kan ha vilkårleg fortegn, og det er der antagonisme mellom agentar er formelt representert. Negative $\phi_{jk}$ tilsvarer ein agent $j$ som aktivt modifiserer $\mathcal{L}_k$ slik at agent $k$ sin gradient-navigasjon vert omdirigert.
 
 $\mathcal{L}_k$ for ulike $k$ treng ein felles skala for at summen $\sum w_k \mathcal{L}_k$ skal vere veldefinert. Normaliseringa kan gjerast per agent (dele på $|\nabla \mathcal{L}_k|$ lokalt) eller gjennom ein eksplisitt vekting som del av modellen. Dette er eit kommensurabilitetsval som må gjerast ved applikasjon.
 
-Endeleg: det svake Lyapunov-kravet i seksjon 2.3 tillèt prøve-og-feile og mellombels avvik. Det gjer agent-definisjonen robust mot praktisk design-åtferd der avstanden til målet går opp og ned, så lenge tendensen over tid er konvergent.
+Endeleg: det svake Lyapunov-kravet i seksjon~2.3 tillèt prøve-og-feile og mellombels avvik. Det gjer agent-definisjonen robust mot praktisk design-åtferd der avstanden til målet går opp og ned, så lenge tendensen over tid er konvergent.
 
 % ═════════════════════════════════════════════════════════════════════
 \section{Kopling til biologien}
@@ -241,7 +242,7 @@ Artefakter er fysiske objekt. Biologiske organismar er fysiske objekt. I begge d
 
 Koplinga er formell fordi den substrat-uavhengige agent-formalismen i \citet{fieldslevin2022} er matematisk definert over vilkårlege tilstandsrom, ikkje over biologiske spesifikasjonar. Kvar persistent, organisert system som kan representere ein måltilstand og redusere avstanden til han, tel som agent i formalismen. Det dekkjer celler, slimsoppar, handverkarar, ingeniørar og språkmodellar i éi handvending.
 
-Konsekvensen er at ein formvitskap på artefakter ikkje treng å utvikle sine eigne metodar frå grunnen av. Ho kan importere eit apparat som har nitti år med empirisk validering. Metodane for å estimere tilpassingslandskap \citep{wright1932, lande1979, arnold2001}, for å identifisere kanaliseringar og utviklingsrobustheit \citep{waddington1957, wagner2005}, for å måle formrom \citep{raup1966, mitteroecker2009}, og for å rekonstruere utviklingstrajektoriar \citep{gould1977, arthur2004}, er alle tilgjengelege for tilpassing til artefakt-domene. Dette er ikkje analogisk tenking, som hjå \citet{steadman1979}; det er direkte matematisk overføring: same likning, ny parameterisering.
+Konsekvensen er at ein formvitskap på artefakter ikkje treng å utvikle sine eigne metodar frå grunnen av. Ho kan importere eit apparat som har nitti år med empirisk validering. Metodane for å estimere tilpassingslandskap \citep{wright1932, lande1979, arnold2001}, for å identifisere kanaliseringar og utviklingsrobustheit \citep{waddington1957, wagner2005}, for å måle formrom \citep{raup1966, mitteroecker2009, mcghee2007}, og for å rekonstruere utviklingstrajektoriar \citep{gould1977, arthur2004}, er alle tilgjengelege for tilpassing til artefakt-domene. Nyare arbeid har vidareutvikla syntesen gjennom finite element-analyse kombinert med geometrisk morfometri \citep{polly2016}, og har demonstrert at operasjonell morforom-konstruksjon med direkte parametermåling frå fotografiske spesimen er gjennomførbar for komplekse strukturklassar \citep{contrerasfigueroa2023}. Dette er ikkje analogisk tenking, som hjå \citet{steadman1979}; det er direkte matematisk overføring: same likning, ny parameterisering.
 
 Samstundes er koplinga ikkje eittvegs. Artefakter har eit særskilt trekk biologiske organismar ikkje har i same form: dei blir skapte av agentar med representasjonsrom som strekkjer seg forbi deira eigne umiddelbare behov. Ein celle navigerer på sine eigne vegner; ho representerer ikkje sine framtidige brukarar fordi ho ikkje har slike. Ein designar gjer nettopp det. Designaren er ein formgjevar der måltilstanden inkluderer måla til agentar som sjølv ikkje har tilgang til navigasjonsrommet. Det særskilde trekket er den stilte tilliten; designaren navigerer på vegne av andre som vil leve med forma.
 
@@ -258,6 +259,13 @@ Med den substrat-uavhengige koplinga etablert kan kjerne-likninga brukast til å
 \subsection{Formgrammatikken som grensetilfelle}
 
 \citet{stinygips1972} definerer ein formgrammatikk som eit trippel $\mathrm{SG} = (S, R, \omega)$ der reglar $r: a \to b$ fyrer på ei form $s$ ved innleiring. Språket $L(\mathrm{SG})$ er mengda av alle former som kan nåast frå $\omega$ gjennom endelege sekvensar av regelapplikasjonar \citep{stiny2006}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{10_formgrammatikk_reskriving.png}
+\caption{Formgrammatikk-reskriving: reglar $r_1, r_2 \in R$ fyrer på ei form $s$ ved innleiring, og genererer nye former. Startforma $\omega$ er kvadratet til venstre; etter to regelapplikasjonar ligg forma $s_2$ i det genererte språket $L(\mathrm{SG})$. Formgrammatikken spesifiserer kva som er mogeleg, men seier ingenting om kva som er sannsynleg innanfor det mogelege.}
+\label{fig:formgrammatikk}
+\end{figure}
 
 \begin{proposition}
 Formgrammatikken tilsvarer kjerne-likninga når landskapet er flatt og representasjonsrommet er universelt, og fordelinga over $L(\mathrm{SG})$ er uniform.
@@ -281,6 +289,13 @@ Set $\mathrm{SG} = \mathrm{id}_M$ slik at $L(\mathrm{SG}) = \{\omega\}$; grammat
 
 Kvar av dei to tradisjonane inneheld to av dei tre komponentane. Formgrammatikken har rik grammatikk og rik (universell) representasjon, men trivielt landskap. C-K-teorien har rik representasjon og eit strukturert landskap gjennom K/C-partisjonen, men triviell grammatikk. Ingen har eit strukturert tilpassingslandskap \textit{og} ein generativ formalgebra samstundes.
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{grensetilfelle.png}
+\caption{Grensetilfelle-plott. Den vertikale aksen måler grammatikkens rikdom (triviell til rik); den horisontale måler tilpassingslandskapets struktur (flatt til strukturert). Formgrammatikken \citep{stinygips1972} okkuperer øvre venstre: rik grammatikk, flatt landskap. C-K-teorien \citep{hatchuelweil2003} okkuperer nedre høgre: triviell grammatikk, strukturert landskap (gjennom partisjonen). Formlære med full kjerne-likning okkuperer øvre høgre, der begge er aktive samstundes. Nedre venstre er utelukka: verken grammatikk eller landskap gjev inga formell formvitskap.}
+\label{fig:grensetilfelle}
+\end{figure}
+
 Tilpassingslandskapet er det nye laget. Det er ikkje ein syntese av dei to tradisjonane; det er eit tredje element, importert frå biologien gjennom den substrat-uavhengige agent-formalismen. Formvitskapens bidrag er å plassere dei to tradisjonane i eit koordinatsystem som har rom for eit element ingen av dei har inkludert, og vise at den ikkje-degenererte kombinasjonen av alle tre har ein presis matematisk form.
 
 Historiske designsituasjonar er sjeldan fullt degenererte: material-affordansar er sjeldan flate, agentar har sjeldan universell representasjon, og grammatikken er sjeldan triviell. Kvar av dei to tradisjonane åleine er difor ofte utilstrekkeleg for dei situasjonane designforskinga arbeider med empirisk. Dei manglar ikkje detaljar; dei manglar eit lag.
@@ -299,7 +314,7 @@ Operasjonelt: for ein gjeven klasse, estimer dei tre komponentane separat, bygg 
 
 \subsection{Grensetilfelle-nivå}
 
-Reduksjonsteorema i seksjon 5 er formelle under spesifikke degenereringar. Testen er empirisk: finn ein ikkje-degenerert klasse der éin av dei to tradisjonane åleine predikerer formvariasjonen like godt som den fulle kjerne-likninga. Dersom ei slik klasse eksisterer, er den korresponderande komponenten overflødig for den klassen i praksis, sjølv om grensetilfelle-teoremet formelt held.
+Reduksjonsteorema i seksjon~5 er formelle under spesifikke degenereringar. Testen er empirisk: finn ein ikkje-degenerert klasse der éin av dei to tradisjonane åleine predikerer formvariasjonen like godt som den fulle kjerne-likninga. Dersom ei slik klasse eksisterer, er den korresponderande komponenten overflødig for den klassen i praksis, sjølv om grensetilfelle-teoremet formelt held.
 
 Merk at dette ikkje er sirkulært. Reduksjonsteoremet seier \textit{viss landskapet er flatt, då} reduserer kjerne-likninga til formgrammatikken. Falsifiseringsvilkåret seier: \textit{viss vi finn ein klasse der landskapet empirisk ikkje er flatt, men formgrammatikken likevel predikerer like godt som den fulle modellen}, då har den fulle modellen ingen prediktiv meirverdi for klassen.
 
@@ -315,7 +330,7 @@ Ein meir fundamental falsifisering vil vere å identifisere eit fysisk system me
 \section{Implikasjonar for designforskinga}
 % ═════════════════════════════════════════════════════════════════════
 
-Formvitskapen, slik ho er skissert her, har tre konsekvensar. Fyrst får feltet eit positivt rammeverk der kritikken av Sullivan-formelen kan erstattast av noko meir enn eit fråvær; kjerne-likninga gjev kritikken ein operativ erstatning. For det andre kvalifiserer analysar som siterer berre éin av dei to eksisterande formelle tradisjonane seg sjølv som grensetilfelle, og slik siteringspraksis bør difor grunngjevast eksplisitt. For det tredje opnar koplinga mot biologien for metodologiske overføringar: kvantitativ morfometri, kanalisering-analyse, rekonstruksjon av utviklingstrajektoriar, og NK-modellering på kulturelle artefakter er alle direkte tilgjengelege \citep{wright1932, lande1979, arnold2001, wagner2005}.
+Formvitskapen, slik ho er skissert her, har tre konsekvensar. Fyrst får feltet eit positivt rammeverk der kritikken av Sullivan-formelen kan erstattast av noko meir enn eit fråvær; kjerne-likninga gjev kritikken ein operativ erstatning. For det andre kvalifiserer analysar som siterer berre éin av dei to eksisterande formelle tradisjonane seg sjølv som grensetilfelle, og slik siteringspraksis bør difor grunngjevast eksplisitt. For det tredje opnar koplinga mot biologien for metodologiske overføringar: kvantitativ morfometri, kanalisering-analyse, rekonstruksjon av utviklingstrajektoriar, og NK-modellering på kulturelle artefakter er alle direkte tilgjengelege \citep{wright1932, lande1979, arnold2001, wagner2005, mcghee2007, polly2016}. \citet{contrerasfigueroa2023} har demonstrert at operasjonell morforom-konstruksjon for komplekse formklassar med direkte parametermåling frå fotografi er gjennomførbar i dag; same pipeline kan applisere på designhistoriske arkiv av stolar, handverktøy og arkitektoniske element.
 
 % ═════════════════════════════════════════════════════════════════════
 \section{Opne spørsmål}
@@ -381,4 +396,4 @@ Den fulle modellen spesifiserer $P(F)$ som ein funksjon av alle tre komponentar.
 
 Konsekvensen er at Formlære ikkje er erstattbar med nokon av dei to eksisterande tradisjonane når designsituasjonen er ikkje-degenerert.
 
-\end{document}
+\end{document}w
