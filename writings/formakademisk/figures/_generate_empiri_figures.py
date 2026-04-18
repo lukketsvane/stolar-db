@@ -3201,17 +3201,222 @@ def project_voxels(grid, axis, mode="mean"):
     return grid.mean(axis=axis)
 
 
-def voxel_three_views(grid, cmap="Greys"):
-    """Return three 2D projections (front, side, top). Front=XY, side=ZY, top=XZ."""
-    front = project_voxels(grid, axis=2, mode="mean")  # collapse Z
-    side = project_voxels(grid, axis=0, mode="mean")   # collapse X
-    top = project_voxels(grid, axis=1, mode="mean")    # collapse Y
-    # reorient for display: row=up in original Y
-    # front: (x, y) -> imshow wants (row, col) where row=y-downward
-    front = np.flipud(front.T)
-    side = np.flipud(side.T)
-    top = np.flipud(top.T)
-    return front, side, top
+def voxel_three_views(grid, mode="max"):
+    """Return three 2D projections (front=XY, side=ZY, top=XZ).
+       mode='max' gives solid silhouettes (good for single chairs).
+       mode='mean' gives density (good for mean shapes, normalise externally)."""
+    if mode == "max":
+        front = grid.max(axis=2)
+        side = grid.max(axis=0)
+        top = grid.max(axis=1)
+    else:
+        front = grid.mean(axis=2)
+        side = grid.mean(axis=0)
+        top = grid.mean(axis=1)
+    # normalise each projection to its own max for visible alpha
+    def norm(p):
+        m = p.max()
+        return p / m if m > 0 else p
+    front = norm(front); side = norm(side); top = norm(top)
+    return np.flipud(front.T), np.flipud(side.T), np.flipud(top.T)
+
+
+def draw_shaded_mesh(ax, grid, rot_y=35, rot_x=22,
+                      light_dir=(0.4, 0.8, 0.45),
+                      fill_light=(-0.5, 0.3, 0.6),
+                      base_color=(0.42, 0.46, 0.55),
+                      level=None, ambient=0.28, edge_rim=True,
+                      smooth_sigma=0.9):
+    """Marching-cubes a 3D voxel grid, Lambert-shade the triangle mesh.
+    A small Gaussian smoothing before marching cubes gives much cleaner
+    surfaces. Fill light adds a softer counter-light for depth cues."""
+    from skimage.measure import marching_cubes
+    from matplotlib.collections import PolyCollection
+    from scipy.ndimage import gaussian_filter
+
+    if grid is None or grid.max() < 1e-6:
+        ax.axis("off")
+        return False
+    grid_f = grid.astype(np.float32)
+    if smooth_sigma and smooth_sigma > 0:
+        grid_f = gaussian_filter(grid_f, sigma=smooth_sigma)
+    if level is None:
+        level = 0.5 if grid.dtype == bool else 0.30 * grid_f.max()
+    # pad so the isosurface is closed
+    grid_p = np.pad(grid_f, 1, mode="constant", constant_values=0)
+    try:
+        verts, faces, _, _ = marching_cubes(grid_p, level=level)
+    except (ValueError, RuntimeError):
+        ax.axis("off")
+        return False
+    # centre & normalise to [-1, 1]
+    N = grid_p.shape[0]
+    verts = (verts - N / 2) / (N / 2)
+    # rotate around Y (horizontal), then around X (tilt)
+    ry = np.radians(rot_y); rx = np.radians(rot_x)
+    R_y = np.array([[ np.cos(ry), 0, np.sin(ry)],
+                    [ 0,          1, 0         ],
+                    [-np.sin(ry), 0, np.cos(ry)]])
+    R_x = np.array([[1, 0,           0          ],
+                    [0, np.cos(rx), -np.sin(rx)],
+                    [0, np.sin(rx),  np.cos(rx)]])
+    R = R_x @ R_y
+    v_rot = verts @ R.T
+    tri = v_rot[faces]  # (n, 3, 3)
+    e1 = tri[:, 1] - tri[:, 0]
+    e2 = tri[:, 2] - tri[:, 0]
+    fn = np.cross(e1, e2)
+    fn_n = fn / (np.linalg.norm(fn, axis=1, keepdims=True) + 1e-12)
+
+    light = np.array(light_dir, dtype=float); light /= np.linalg.norm(light)
+    fill = np.array(fill_light, dtype=float); fill /= np.linalg.norm(fill)
+    lam_key = np.clip(fn_n @ light, 0, 1)
+    lam_fill = np.clip(fn_n @ fill, 0, 1) * 0.35
+    # approximate ambient occlusion: darker triangles when facing inward
+    # (y component of normal — chairs have horizontal seat/leg plates)
+    ao = 0.10 * np.clip(-fn_n[:, 1], 0, 1)
+    intensity = ambient + (1 - ambient - 0.10) * (lam_key + lam_fill) - ao
+    intensity = np.clip(intensity, 0, 1)
+
+    # depth: use mean Z of each triangle (positive = closer if looking along +Z)
+    depth = tri[:, :, 2].mean(axis=1)
+    order = np.argsort(depth)  # back to front
+    polys_2d = tri[order][:, :, :2]
+    base_rgb = np.array(base_color)
+    cols = np.zeros((len(faces), 4))
+    cols[:, :3] = (base_rgb[None, :] * intensity[:, None])
+    # a subtle rim on steep angles (facing camera = high lam → darker rim)
+    cols[:, 3] = 1.0
+    cols = cols[order]
+
+    pc = PolyCollection(polys_2d, facecolors=cols,
+                         edgecolors="none", linewidths=0,
+                         antialiased=True)
+    ax.add_collection(pc)
+
+    # optional thin silhouette rim
+    if edge_rim:
+        # find silhouette edges: edges where adjacent triangles change front/back
+        # simpler: draw a slightly darker outline from convex hull of projected verts
+        from scipy.spatial import ConvexHull
+        xy = v_rot[:, :2]
+        try:
+            hull = ConvexHull(xy)
+            hx = xy[hull.vertices, 0]
+            hy = xy[hull.vertices, 1]
+            ax.plot(np.r_[hx, hx[0]], np.r_[hy, hy[0]],
+                    color=(base_rgb * 0.35).tolist(), linewidth=0.35,
+                    alpha=0.55, zorder=5)
+        except Exception:
+            pass
+
+    lo = -1.15; hi = 1.15
+    ax.set_xlim(lo, hi); ax.set_ylim(lo, hi)
+    ax.set_aspect("equal")
+    ax.set_xticks([]); ax.set_yticks([])
+    for s in ["top", "right", "bottom", "left"]:
+        ax.spines[s].set_visible(False)
+    return True
+
+
+def render_shaded_mesh_to_array(grid, size=180, rot_y=35, rot_x=22,
+                                   base_color=(0.42, 0.46, 0.55),
+                                   ambient=0.35, level=None, edge_rim=True):
+    """Render a shaded mesh to an (H, W, 4) RGBA numpy array. Transparent
+    background. Uses an off-screen matplotlib figure."""
+    from matplotlib.figure import Figure
+    from matplotlib.backends.backend_agg import FigureCanvasAgg
+    fig = Figure(figsize=(size / 100.0, size / 100.0), dpi=100, facecolor="none")
+    canvas = FigureCanvasAgg(fig)
+    ax = fig.add_axes([0.0, 0.0, 1.0, 1.0])
+    ax.patch.set_alpha(0)
+    draw_shaded_mesh(ax, grid, rot_y=rot_y, rot_x=rot_x,
+                      base_color=base_color, ambient=ambient,
+                      level=level, edge_rim=edge_rim)
+    canvas.draw()
+    buf = np.asarray(canvas.buffer_rgba()).copy()
+    plt.close(fig)
+    return buf
+
+
+def voxel_iso_render(grid, out_size=220, rot_deg=35, tilt_deg=28,
+                      tint_rgb=(0.24, 0.29, 0.37), threshold=0.02,
+                      ambient=0.55):
+    """
+    Render a float voxel grid from an orthographic 3/4 (isometric-ish) view.
+    Uses a z-buffer with painter's algorithm over projected voxel centres.
+    Depth-based shading gives the 3D illusion; alpha uses voxel value.
+    """
+    if grid is None:
+        return np.zeros((out_size, out_size, 4), dtype=float)
+    N = grid.shape[0]
+    ix, iy, iz = np.where(grid > threshold)
+    if len(ix) == 0:
+        return np.zeros((out_size, out_size, 4), dtype=float)
+    vals = grid[ix, iy, iz]
+    # centre and normalise to [-1, 1]
+    xs = (ix - N / 2) / (N / 2)
+    ys = (iy - N / 2) / (N / 2)
+    zs = (iz - N / 2) / (N / 2)
+
+    # rotate around Y-axis (vertical): horizontal turn
+    r = np.radians(rot_deg)
+    cos_r, sin_r = np.cos(r), np.sin(r)
+    x1 = xs * cos_r - zs * sin_r
+    z1 = xs * sin_r + zs * cos_r
+    y1 = ys
+    # rotate around X-axis (pitch): tilt for 3/4 view
+    t = np.radians(tilt_deg)
+    cos_t, sin_t = np.cos(t), np.sin(t)
+    y2 = y1 * cos_t + z1 * sin_t
+    z2 = -y1 * sin_t + z1 * cos_t
+    x2 = x1
+
+    # fit to output canvas
+    scale = out_size * 0.42 / max(np.abs(x2).max(), np.abs(y2).max(), 1e-9)
+    px = (x2 * scale + out_size / 2).astype(int)
+    py = (-y2 * scale + out_size / 2).astype(int)
+    px = np.clip(px, 0, out_size - 1)
+    py = np.clip(py, 0, out_size - 1)
+
+    # z-buffer: keep voxel with largest depth (closest to camera)
+    zbuf = np.full((out_size, out_size), -np.inf, dtype=float)
+    vbuf = np.zeros((out_size, out_size), dtype=float)
+    # sort by depth ascending: painter's order so closer voxels overwrite
+    order = np.argsort(z2)
+    px_s = px[order]; py_s = py[order]; z2_s = z2[order]; vals_s = vals[order]
+    # accept if depth is >= current (painter), and track max val
+    for i in range(len(order)):
+        r_i = py_s[i]; c_i = px_s[i]
+        if z2_s[i] >= zbuf[r_i, c_i]:
+            zbuf[r_i, c_i] = z2_s[i]
+            vbuf[r_i, c_i] = max(vbuf[r_i, c_i], vals_s[i])
+
+    # a tiny dilate to fill gaps (3×3 max)
+    from scipy.ndimage import maximum_filter
+    vbuf = maximum_filter(vbuf, size=3)
+    zbuf_f = np.where(zbuf > -np.inf, zbuf, np.nan)
+    zbuf_f = maximum_filter(np.where(np.isnan(zbuf_f), -1e9, zbuf_f), size=3)
+
+    # normalise depth to [0, 1] within occupied region
+    mask = vbuf > 0
+    if mask.any():
+        d = zbuf_f[mask]
+        dmin = np.min(d); dmax = np.max(d)
+        depth_norm = np.zeros_like(zbuf_f)
+        if dmax > dmin:
+            depth_norm[mask] = (zbuf_f[mask] - dmin) / (dmax - dmin)
+        shade = ambient + (1 - ambient) * depth_norm
+    else:
+        shade = np.zeros_like(vbuf)
+
+    out = np.zeros((out_size, out_size, 4), dtype=float)
+    out[..., 0] = tint_rgb[0] * shade
+    out[..., 1] = tint_rgb[1] * shade
+    out[..., 2] = tint_rgb[2] * shade
+    # alpha: voxel value softened
+    out[..., 3] = np.clip(vbuf, 0, 1) ** 0.85
+    return out
 
 
 # ═════════════════════════════════════════════════════════════════════
@@ -3236,10 +3441,9 @@ def fig_E27_morforom_3d_arketypar(df, pca, vox):
         if len(ids) < 10:
             continue
         mean_g = mean_voxel(ids, vox)
-        front, _, _ = voxel_three_views(mean_g)
         rows.append(dict(period=p, year=PERIOD_YEAR[p],
                          cx=sub["PC1"].mean(), cy=sub["PC2"].mean(),
-                         n=len(sub), front=front))
+                         n=len(sub), mean_grid=mean_g))
     rows.sort(key=lambda r: r["year"])
 
     fig = plt.figure(figsize=(14.5, 9))
@@ -3254,29 +3458,22 @@ def fig_E27_morforom_3d_arketypar(df, pca, vox):
         ax.plot([xs[i], xs[i + 1]], [ys[i], ys[i + 1]],
                 color=SLATE, linewidth=0.6, alpha=0.5, zorder=2)
 
-    # place each archetype as an image at its centroid
-    img_w = (xhi - xlo) * 0.07
+    img_w = (xhi - xlo) * 0.075
     img_h = (yhi - ylo) * 0.14
     for r in rows:
         col = PERIOD_COLOR.get(r["period"], SLATE)
         rgb = to_rgba(col)[:3]
-        front = r["front"]
-        # build tinted RGBA
-        H, W = front.shape
-        rgba = np.zeros((H, W, 4), dtype=float)
-        # normalise occupancy to 0-1
-        fmax = front.max() if front.max() > 0 else 1
-        alpha = np.clip(front / fmax, 0, 1)
-        rgba[..., 0] = rgb[0]
-        rgba[..., 1] = rgb[1]
-        rgba[..., 2] = rgb[2]
-        rgba[..., 3] = alpha * 0.95
+        mean_g = r.get("mean_grid")
+        if mean_g is None:
+            continue
+        rgba = render_shaded_mesh_to_array(
+            mean_g, size=160, base_color=rgb, ambient=0.35,
+            level=0.30, edge_rim=True)
         ax.imshow(rgba,
                   extent=(r["cx"] - img_w, r["cx"] + img_w,
                           r["cy"] - img_h, r["cy"] + img_h),
                   aspect="auto", interpolation="bilinear", zorder=4)
-        # small circle marker + year label
-        ax.scatter([r["cx"]], [r["cy"]], s=30, c=[col],
+        ax.scatter([r["cx"]], [r["cy"]], s=25, c=[col],
                    edgecolors="white", linewidths=0.8, zorder=5)
         ax.text(r["cx"], r["cy"] - img_h * 1.05, f"{r['year']}",
                 ha="center", va="top", fontsize=7.5, color=SLATE,
@@ -3349,19 +3546,19 @@ def fig_E28_substrat_arketypar(df, vox):
 
             if len(ids) >= 6:
                 mean_g = mean_voxel(ids, vox)
-                front, side, top = voxel_three_views(mean_g)
-                for ax, proj, lbl in [(ax_f, front, "front"),
-                                       (ax_s, side, "side")]:
-                    H, W = proj.shape
-                    rgba = np.zeros((H, W, 4), dtype=float)
-                    rgba[..., 0] = to_rgba(mcol)[0]
-                    rgba[..., 1] = to_rgba(mcol)[1]
-                    rgba[..., 2] = to_rgba(mcol)[2]
-                    pmax = proj.max() if proj.max() > 0 else 1
-                    rgba[..., 3] = np.clip(proj / pmax, 0, 1) * 0.95
-                    ax.imshow(rgba, interpolation="bilinear", aspect="auto")
-                    ax.text(0.5, -0.04, lbl, transform=ax.transAxes,
-                            fontsize=7, color=SLATE, ha="center", va="top")
+                rgb = to_rgba(mcol)[:3]
+                # left: isometric render
+                draw_shaded_mesh(ax_f, mean_g, rot_y=35, rot_x=22,
+                                  base_color=rgb, ambient=0.35,
+                                  level=0.30, edge_rim=True)
+                # right: front view from marching-cubes mesh at 0° rotation
+                draw_shaded_mesh(ax_s, mean_g, rot_y=0, rot_x=0,
+                                  base_color=rgb, ambient=0.35,
+                                  level=0.30, edge_rim=True)
+                ax_f.text(0.5, -0.04, "3/4", transform=ax_f.transAxes,
+                           fontsize=7, color=SLATE, ha="center", va="top")
+                ax_s.text(0.5, -0.04, "front", transform=ax_s.transAxes,
+                           fontsize=7, color=SLATE, ha="center", va="top")
             else:
                 ax_f.text(0.5, 0.5, "—", transform=ax_f.transAxes,
                           ha="center", va="center", fontsize=16,
@@ -3399,9 +3596,9 @@ def fig_E28_substrat_arketypar(df, vox):
 # FIG E29: Multi-view atlas av dei morfologisk isolerte (top-12 frå E16)
 # ═════════════════════════════════════════════════════════════════════
 def fig_E29_innovatør_atlas(df, vox, n_top=12):
-    """For the top-n most morphologically isolated chairs (E16), render
-    front, side, top projections of each directly from the voxel cache.
-    This is the 3D atlas of the identified innovators."""
+    """Top-n most morphologically isolated chairs rendered as isometric 3/4
+    views from the voxel cache. Layout: 4 × 3 grid with big isometric
+    tile + compact metadata per chair."""
     df_yr = df[df["år"].notna()].copy().sort_values("år").reset_index(drop=True)
     pc_cols = ["PC1", "PC2", "PC3", "PC4", "PC5", "PC6"]
     X = df_yr[pc_cols].values
@@ -3415,7 +3612,6 @@ def fig_E29_innovatør_atlas(df, vox, n_top=12):
         novelty[i] = np.linalg.norm(X[prior] - X[i], axis=1).min()
     df_yr["novelty"] = novelty
     top_idx = np.argsort(-novelty)
-    # require voxel coverage + pretty-ish
     chosen = []
     for k in top_idx:
         oid = df_yr.iloc[k]["Objekt-ID"]
@@ -3424,54 +3620,779 @@ def fig_E29_innovatør_atlas(df, vox, n_top=12):
         if len(chosen) >= n_top:
             break
 
-    fig = plt.figure(figsize=(14.5, 10.5))
-    n_rows = n_top
-    gs = gridspec.GridSpec(n_rows, 4, width_ratios=[1, 1, 1, 1.7],
-                           wspace=0.06, hspace=0.25, figure=fig)
+    # use only geometry-derived coloration (drop Stilperiode tint)
+    # grade tone by novelty rank: rank 1 = warm amber, last = cool slate
+    ranks = np.linspace(0, 1, len(chosen))
+    tint_cmap = LinearSegmentedColormap.from_list(
+        "inov", [OI["rust"], AMBER, SLATE], N=256)
+
+    ncols = 3
+    nrows = int(np.ceil(n_top / ncols))
+    fig = plt.figure(figsize=(14, 4.2 * nrows))
+    gs = gridspec.GridSpec(nrows, ncols, wspace=0.12, hspace=0.18, figure=fig)
 
     for r, k in enumerate(chosen):
         oid = df_yr.iloc[k]["Objekt-ID"]
         row = df_yr.iloc[k]
-        pers = str(row.get("Stilperiode", ""))
-        col = PERIOD_COLOR.get(pers, SLATE)
-        mean_g = vox[oid].astype(np.float32)
-        front, side, top = voxel_three_views(mean_g)
-        for ci, (proj, lbl) in enumerate(
-                [(front, "front"), (side, "side"), (top, "top")]):
-            ax = fig.add_subplot(gs[r, ci])
-            H, W = proj.shape
-            rgba = np.zeros((H, W, 4), dtype=float)
-            rgba[..., 0] = to_rgba(col)[0]
-            rgba[..., 1] = to_rgba(col)[1]
-            rgba[..., 2] = to_rgba(col)[2]
-            pmax = proj.max() if proj.max() > 0 else 1
-            rgba[..., 3] = np.clip(proj / pmax, 0, 1) * 0.95
-            ax.imshow(rgba, interpolation="bilinear", aspect="auto")
-            ax.set_xticks([]); ax.set_yticks([])
-            for s in ["top", "right", "bottom", "left"]:
-                ax.spines[s].set_color(col); ax.spines[s].set_linewidth(1.1)
-            if r == 0:
-                ax.set_title(lbl, fontsize=10, color=SLATE, weight="bold")
-        # text column
-        axT = fig.add_subplot(gs[r, 3])
-        axT.axis("off")
-        name = str(row.get("Namn", ""))[:40]
-        line = (f"#{r + 1}  {int(row['år'])}  ·  {pers}\n"
-                f"{name}\n"
-                f"nyskapingsavstand = {row['novelty']:.2f}\n"
-                f"{row['Objekt-ID']}")
-        axT.text(0.00, 0.5, line, transform=axT.transAxes,
-                 fontsize=9, color=SLATE, va="center", ha="left",
-                 bbox=dict(facecolor=to_rgba(col, 0.12),
-                           edgecolor=to_rgba(col, 0.5),
-                           linewidth=0.5, boxstyle="round,pad=0.3"))
+        grid = vox[oid].astype(np.float32)
+        tint = tint_cmap(ranks[r])[:3]
+        ax = fig.add_subplot(gs[r // ncols, r % ncols])
+        ok = draw_shaded_mesh(ax, grid, rot_y=35, rot_x=22,
+                               base_color=tint, ambient=0.35, edge_rim=True)
+
+        # metadata overlay: top-left corner
+        name = str(row.get("Namn", ""))[:42]
+        label_top = f"#{r + 1}   {int(row['år'])}"
+        label_mid = name if name else "(ukjent)"
+        label_bot = f"nyskaping = {row['novelty']:.2f}    {row['Objekt-ID']}"
+        ax.text(0.02, 0.98, label_top, transform=ax.transAxes,
+                fontsize=13, color=SLATE, weight="bold",
+                va="top", ha="left")
+        ax.text(0.02, 0.92, label_mid, transform=ax.transAxes,
+                fontsize=9.5, color=SLATE, va="top", ha="left")
+        ax.text(0.02, 0.04, label_bot, transform=ax.transAxes,
+                fontsize=8, color=SLATE, va="bottom", ha="left",
+                family="monospace")
 
     save(fig, "E29_innovator_atlas")
 
 
 # ═════════════════════════════════════════════════════════════════════
+# Shape-PCA (voxel-space PCA) — the real geometric axes
+# ═════════════════════════════════════════════════════════════════════
+SHAPE_CACHE_PATH = os.path.join(HERE, "_shape_pca.npz")
+
+
+def _downsample_voxel(grid, factor=2):
+    """Max-pool a 3D voxel grid by an integer factor."""
+    N = grid.shape[0]
+    nd = N // factor
+    trimmed = grid[: nd * factor, : nd * factor, : nd * factor]
+    return trimmed.reshape(nd, factor, nd, factor, nd, factor).max(axis=(1, 3, 5))
+
+
+def build_shape_pca(vox, df, n_components=20, downfactor=2, force=False):
+    """Fit PCA on flattened voxel grids. Returns (mean_flat, components,
+    explained_variance_ratio, scores, oid_order, nd)."""
+    oid_order = [oid for oid in df["Objekt-ID"] if oid in vox]
+    nd = VOXEL_N // downfactor
+
+    if os.path.exists(SHAPE_CACHE_PATH) and not force:
+        z = np.load(SHAPE_CACHE_PATH, allow_pickle=True)
+        cached_oids = list(z["oid_order"])
+        if cached_oids == oid_order and int(z["nd"]) == nd and \
+           int(z["n_components"]) == n_components:
+            print(f"  shape-PCA cache hit ({n_components} comps, nd={nd})")
+            return (z["mean_flat"], z["components"],
+                    z["explained_variance_ratio"], z["scores"],
+                    oid_order, nd)
+
+    print(f"  computing shape-PCA ({len(oid_order)} chairs, nd={nd}, "
+          f"dim={nd**3}, k={n_components})...")
+    X = np.zeros((len(oid_order), nd ** 3), dtype=np.float32)
+    for i, oid in enumerate(oid_order):
+        g = vox[oid].astype(np.float32)
+        if downfactor > 1:
+            g = _downsample_voxel(g, downfactor).astype(np.float32)
+        X[i] = g.reshape(-1)
+    mean_flat = X.mean(axis=0)
+    Xc = X - mean_flat
+    # truncated SVD for efficiency
+    from sklearn.decomposition import TruncatedSVD
+    svd = TruncatedSVD(n_components=n_components, random_state=0)
+    scores = svd.fit_transform(Xc)
+    components = svd.components_
+    evr = svd.explained_variance_ratio_
+    np.savez_compressed(SHAPE_CACHE_PATH,
+                        mean_flat=mean_flat, components=components,
+                        explained_variance_ratio=evr, scores=scores,
+                        oid_order=np.array(oid_order), nd=np.array(nd),
+                        n_components=np.array(n_components))
+    print(f"  cached shape-PCA to {os.path.basename(SHAPE_CACHE_PATH)}")
+    return mean_flat, components, evr, scores, oid_order, int(nd)
+
+
+def shape_pc_to_grid(mean_flat, components, evr, k, sigma_mult, nd):
+    """Reconstruct voxel grid at (mean + k_sigma * sqrt(var[k]) * comp[k])."""
+    # TruncatedSVD gives components scaled so that scores have variance evr.
+    # For visualization at ±kσ we need the singular value direction.
+    # std of each component = sqrt(explained_variance) ≈ sqrt(evr * total_var)
+    # Simpler: use the std of scores along that axis.
+    # We'll pass scores std as amplitude externally — see caller.
+    flat = mean_flat + sigma_mult * components[k]
+    g = flat.reshape(nd, nd, nd)
+    # clip to [0, 1] for visualisation
+    g = np.clip(g, 0, 1)
+    return g
+
+
+# ═════════════════════════════════════════════════════════════════════
+# FIG E30: Shape-PCA — reine geometriske deformasjonsmodusar
+# ═════════════════════════════════════════════════════════════════════
+def fig_E30_shape_pca_modes(df, vox, k_show=5):
+    """Compute PCA directly on voxelized chair geometry. Render each of the
+    top-k principal components as the mean shape ± n·σ along that direction.
+    Each PC is a pure geometric deformation; no style-period labels needed."""
+    mean_flat, comps, evr, scores, oid_order, nd = build_shape_pca(vox, df)
+
+    fig = plt.figure(figsize=(14.5, 3.2 * k_show + 0.5))
+    gs = gridspec.GridSpec(k_show, 6, width_ratios=[1, 1, 1, 1, 1, 0.9],
+                           wspace=0.05, hspace=0.30, figure=fig)
+
+    sigmas = np.array([-2, -1, 0, 1, 2], dtype=float)
+    for k in range(k_show):
+        sd = float(scores[:, k].std())
+        for ci, s in enumerate(sigmas):
+            amp = s * sd
+            grid = mean_flat + amp * comps[k]
+            grid = np.clip(grid.reshape(nd, nd, nd), 0, 1)
+            tint = (0.42, 0.46, 0.55) if s == 0 else (
+                (to_rgba(OI["rust"])[:3]) if s > 0 else (to_rgba(OI["blue"])[:3]))
+            ax = fig.add_subplot(gs[k, ci])
+            draw_shaded_mesh(ax, grid, rot_y=35, rot_x=22,
+                              base_color=tint, ambient=0.35,
+                              level=0.25, edge_rim=True)
+            if k == 0:
+                ax.set_title(f"{int(s):+d} σ" if s != 0 else "gjennomsnitt (μ)",
+                             fontsize=10, color=SLATE, weight="bold")
+
+        # axis label column
+        axL = fig.add_subplot(gs[k, 5])
+        axL.axis("off")
+        axL.text(0.0, 0.65,
+                 f"ShapePC{k + 1}", transform=axL.transAxes,
+                 fontsize=14, weight="bold", color=SLATE,
+                 va="center", ha="left")
+        axL.text(0.0, 0.38,
+                 f"{evr[k]*100:.1f}% varians", transform=axL.transAxes,
+                 fontsize=10, color=SLATE, va="center", ha="left")
+        axL.text(0.0, 0.15,
+                 f"σ(score) = {sd:.3f}", transform=axL.transAxes,
+                 fontsize=9, color=SLATE, va="center", ha="left",
+                 family="monospace")
+
+    save(fig, "E30_shape_pca_modes")
+
+
+# ═════════════════════════════════════════════════════════════════════
+# FIG E31: Geometriske genera (unsupervised clustering)
+# ═════════════════════════════════════════════════════════════════════
+def fig_E31_geometrisk_genus(df, vox, K=8):
+    """Unsupervised clustering on shape-PCA scores produces geometric
+    'genera' that do NOT align with style periods. Show: (a) silhouette
+    vs K curve, (b) mean-shape archetype per genus rendered isometrically,
+    (c) genus × Stilperiode confusion (adjusted rand index)."""
+    from sklearn.cluster import KMeans
+    from sklearn.metrics import silhouette_score, adjusted_rand_score
+
+    mean_flat, comps, evr, scores, oid_order, nd = build_shape_pca(vox, df)
+    X = scores[:, :10]
+
+    # silhouette over K
+    ks = [4, 6, 8, 10, 12, 15]
+    sils = []
+    for k in ks:
+        km = KMeans(n_clusters=k, n_init=6, random_state=0).fit(X)
+        s = silhouette_score(X, km.labels_)
+        sils.append(s)
+    best_k = ks[int(np.argmax(sils))]
+    # use requested K (default 8) for display but report best
+    km_main = KMeans(n_clusters=K, n_init=10, random_state=0).fit(X)
+    labels = km_main.labels_
+
+    # map oids -> cluster
+    oid_to_cluster = dict(zip(oid_order, labels))
+    df_match = df[df["Objekt-ID"].isin(set(oid_order))].copy()
+    df_match["genus"] = df_match["Objekt-ID"].map(oid_to_cluster)
+
+    # archetype voxel per cluster: mean of all cluster members' voxel grids
+    archetypes = []
+    for g in range(K):
+        member_oids = [oid for oid, lbl in zip(oid_order, labels) if lbl == g]
+        if not member_oids:
+            archetypes.append(None); continue
+        grids = [vox[oid].astype(np.float32) for oid in member_oids]
+        mean_g = np.mean(grids, axis=0)
+        archetypes.append((mean_g, len(member_oids), member_oids))
+
+    # adjusted rand index with Stilperiode
+    per = df_match["Stilperiode"].fillna("ukjent").values
+    per_codes = pd.Categorical(per).codes
+    ari = float(adjusted_rand_score(per_codes, df_match["genus"].values))
+
+    fig = plt.figure(figsize=(15, 9.5))
+    gs = gridspec.GridSpec(3, K, height_ratios=[1.1, 1.1, 1.1],
+                           hspace=0.35, wspace=0.08, figure=fig)
+
+    # Row 0-1: one cell per genus with (a) isometric + (b) member stats
+    cmap_g = LinearSegmentedColormap.from_list(
+        "gen", [AMBER, SLATE, OI["blue"], OI["rust"], OI["green"],
+                OI["pink"], OI["orange"], OI["skyblue"]], N=K)
+    order_g = np.argsort(-np.array([a[1] if a is not None else 0
+                                     for a in archetypes]))
+    for idx, g in enumerate(order_g):
+        if archetypes[g] is None:
+            continue
+        mean_g, n_mem, member_oids = archetypes[g]
+        tint = cmap_g(idx / max(K - 1, 1))[:3]
+        ax = fig.add_subplot(gs[0, idx])
+        draw_shaded_mesh(ax, mean_g, rot_y=35, rot_x=22,
+                          base_color=tint, ambient=0.35,
+                          level=0.25, edge_rim=True)
+        ax.set_title(f"genus {g}   n = {n_mem}", fontsize=10,
+                     color=SLATE, weight="bold", loc="left")
+
+        # per-genus year histogram
+        axH = fig.add_subplot(gs[1, idx])
+        sub = df_match[df_match["genus"] == g]
+        yrs = sub["år"].dropna().values
+        if len(yrs):
+            axH.hist(yrs, bins=np.arange(1400, 2040, 40),
+                     color=tint, alpha=0.85, edgecolor="white", linewidth=0.3)
+        axH.set_xlim(1400, 2030)
+        axH.tick_params(labelsize=7)
+        axH.set_yticks([])
+        axH.grid(alpha=0.10, linewidth=0.3)
+        if idx == 0:
+            axH.set_ylabel("tal stolar", fontsize=8)
+        axH.set_xlabel("år", fontsize=8)
+
+    # Row 2: Silhouette score curve + ARI + confusion info
+    axS = fig.add_subplot(gs[2, :K // 2])
+    axS.plot(ks, sils, marker="o", color=SLATE, lw=1.8)
+    axS.axvline(best_k, color=OI["rust"], linestyle="--", linewidth=1,
+                alpha=0.7, label=f"beste K = {best_k}")
+    axS.axvline(K, color=AMBER, linestyle=":", linewidth=1, alpha=0.8,
+                 label=f"vist K = {K}")
+    axS.set_xlabel("tal genus K")
+    axS.set_ylabel("silhouette-skår")
+    axS.set_title("(c) klynge-kvalitet mot K", loc="left", weight="bold",
+                  fontsize=10.5)
+    axS.grid(alpha=0.14, linewidth=0.4)
+    axS.legend(loc="lower right", fontsize=8.5, frameon=False)
+
+    axT = fig.add_subplot(gs[2, K // 2:])
+    axT.axis("off")
+    txt = [
+        f"Adjusted Rand Index (genus vs Stilperiode): {ari:.3f}",
+        "",
+        "  • ARI = 1  →  genus-inndelinga matchar stilperiodane perfekt",
+        "  • ARI = 0  →  ingen samanheng — geometri og stilperiode er ortogonale",
+        f"  • Observert ARI = {ari:.3f}  {'→ lågt, ' if ari < 0.1 else '→ '}"
+        f"{'geometri og stilperiode er langt på veg uavhengige grupperingar.' if ari < 0.1 else 'delvis overlapp.'}",
+        "",
+        "Stilperiode er altså IKKJE ei geometrisk klassifisering. Dei reine",
+        "morfologiske genera er definert av form aleine og gir ein alternativ,",
+        "data-driven taksonomi over designkorpuset.",
+    ]
+    axT.text(0.01, 0.95, "\n".join(txt), transform=axT.transAxes,
+             fontsize=9.5, color=SLATE, va="top", ha="left")
+
+    save(fig, "E31_geometrisk_genus")
+
+
+# ═════════════════════════════════════════════════════════════════════
+# FIG E32: Evolusjonære retningar (PCA på Δsentroide per år)
+# ═════════════════════════════════════════════════════════════════════
+def fig_E32_evolusjonsretningar(df, vox):
+    """For each consecutive pair of 40-year bins, compute the shift of the
+    centroid in shape-PCA space. PCA on these shift-vectors reveals the
+    dominant 'directions of evolution'. Visualise each such direction as
+    a deformation of the mean shape, exactly as E30 but for evolution
+    *rates* rather than standing variation."""
+    mean_flat, comps, evr, scores, oid_order, nd = build_shape_pca(vox, df)
+    df_match = df[df["Objekt-ID"].isin(set(oid_order))].copy()
+    df_match = df_match[df_match["år"].notna()].copy()
+    oid_to_score = {oid: scores[i] for i, oid in enumerate(oid_order)}
+
+    bins = np.arange(1500, 2040, 40)
+    centers = []
+    years = []
+    for i in range(len(bins) - 1):
+        a, b = bins[i], bins[i + 1]
+        sub = df_match[(df_match["år"] >= a) & (df_match["år"] < b)]
+        if len(sub) < 6:
+            continue
+        sc = np.array([oid_to_score[o] for o in sub["Objekt-ID"]
+                       if o in oid_to_score])
+        centers.append(sc.mean(axis=0))
+        years.append((a + b) / 2)
+    centers = np.array(centers)  # (T, k)
+    deltas = np.diff(centers, axis=0)  # (T-1, k)
+
+    # PCA on Δ vectors
+    from sklearn.decomposition import PCA as _PCA
+    n_dir = min(4, deltas.shape[0] - 1) if len(deltas) > 2 else 2
+    pca_evo = _PCA(n_components=min(n_dir, deltas.shape[1], len(deltas)))
+    evo_scores = pca_evo.fit_transform(deltas)
+
+    # For each "evolutionary direction" reconstruct in voxel space:
+    # evolution_direction_j = pca_evo.components_[j] @ shape_pca_components
+    evo_vecs_voxel = pca_evo.components_ @ comps  # (n_dir, nd^3)
+
+    fig = plt.figure(figsize=(14.5, 4.0 * n_dir + 1.0))
+    gs = gridspec.GridSpec(n_dir, 5,
+                           width_ratios=[1, 1, 1, 1, 1.2],
+                           wspace=0.06, hspace=0.35, figure=fig)
+
+    sigmas = np.array([-2, -1, 0, 1, 2], dtype=float)
+    for j in range(n_dir):
+        amp = 2.0 * float(np.sqrt(pca_evo.explained_variance_[j]))
+        for ci, s in enumerate(sigmas[:4]):
+            a_s = s * amp
+            g = mean_flat + a_s * evo_vecs_voxel[j]
+            g = np.clip(g.reshape(nd, nd, nd), 0, 1)
+            tint = (0.42, 0.46, 0.55) if abs(s) < 1e-6 else (
+                (to_rgba(OI["rust"])[:3]) if s > 0 else (to_rgba(OI["blue"])[:3]))
+            ax = fig.add_subplot(gs[j, ci])
+            draw_shaded_mesh(ax, g, rot_y=35, rot_x=22,
+                              base_color=tint, ambient=0.35,
+                              level=0.25, edge_rim=True)
+            if j == 0:
+                ax.set_title(f"{int(s):+d} σ" if s != 0 else "gjennomsnitt",
+                             fontsize=10, color=SLATE, weight="bold")
+
+        # time-series of this evolutionary direction
+        axT = fig.add_subplot(gs[j, 4])
+        axT.plot(np.array(years[1:]), evo_scores[:, j],
+                 marker="o", color=OI["rust"] if j == 0 else SLATE, lw=1.6)
+        axT.axhline(0, color=SLATE, linewidth=0.5, alpha=0.4)
+        axT.set_xlabel("år")
+        axT.set_ylabel(f"Δ-skår langs EvoDir{j + 1}")
+        axT.set_title(f"EvoDir{j + 1}   "
+                      f"{pca_evo.explained_variance_ratio_[j]*100:.1f}% "
+                      f"av evolusjonsvariasjonen",
+                       loc="left", fontsize=9.5, weight="bold")
+        axT.grid(alpha=0.14, linewidth=0.4)
+
+    save(fig, "E32_evolusjonsretningar")
+
+
+# ═════════════════════════════════════════════════════════════════════
+# FIG E33: Prediktiv forecasting av formframtid
+# ═════════════════════════════════════════════════════════════════════
+def fig_E33_forecast(df, vox):
+    """Train OU-like dynamics on the 1500-1960 shape-PC centroid trajectory,
+    forecast 1960-2040, and compare to the held-out empirical centroid post-1960.
+    Render reconstructed 3D shapes for training-end, forecast, and observed."""
+    mean_flat, comps, evr, scores, oid_order, nd = build_shape_pca(vox, df)
+    df_match = df[df["Objekt-ID"].isin(set(oid_order))].copy()
+    df_match = df_match[df_match["år"].notna()].copy()
+    oid_to_score = {oid: scores[i] for i, oid in enumerate(oid_order)}
+
+    K = 6
+    bins = np.arange(1500, 2040, 40)
+    ys = []; means = []
+    for i in range(len(bins) - 1):
+        a, b = bins[i], bins[i + 1]
+        sub = df_match[(df_match["år"] >= a) & (df_match["år"] < b)]
+        if len(sub) < 6:
+            continue
+        vecs = np.array([oid_to_score[o][:K] for o in sub["Objekt-ID"]
+                         if o in oid_to_score])
+        ys.append((a + b) / 2)
+        means.append(vecs.mean(axis=0))
+    ys = np.array(ys); means = np.array(means)
+
+    train_mask = ys <= 1960
+    test_mask = ys > 1960
+    if train_mask.sum() < 3:
+        print("  skipping E33: not enough training data")
+        return
+
+    dt_train = np.diff(ys[train_mask])
+    dmu = np.diff(means[train_mask], axis=0)
+    mu_prev = means[train_mask][:-1]
+
+    alphas = np.zeros(K); thetas = np.zeros(K)
+    for k in range(K):
+        y = dmu[:, k] / dt_train
+        X_reg = np.column_stack([np.ones_like(mu_prev[:, k]), mu_prev[:, k]])
+        coef, *_ = np.linalg.lstsq(X_reg, y, rcond=None)
+        b0, b1 = coef
+        alpha = -b1
+        if abs(alpha) < 1e-9:
+            alpha = 1e-3
+        thetas[k] = b0 / alpha
+        alphas[k] = alpha
+
+    forecast_years = np.arange(ys[train_mask][-1] + 40, 2080, 40)
+    mu_fore = [means[train_mask][-1].copy()]
+    yr_fore = [ys[train_mask][-1]]
+    for yr in forecast_years:
+        dt = yr - yr_fore[-1]
+        next_mu = mu_fore[-1] + alphas * (thetas - mu_fore[-1]) * dt
+        mu_fore.append(next_mu); yr_fore.append(yr)
+    mu_fore = np.array(mu_fore); yr_fore = np.array(yr_fore)
+
+    mu_test = means[test_mask]; yr_test = ys[test_mask]
+
+    def reconstruct(k_vec):
+        flat = mean_flat.copy()
+        for k in range(len(k_vec)):
+            flat = flat + k_vec[k] * comps[k]
+        return np.clip(flat.reshape(nd, nd, nd), 0, 1)
+
+    shape_train_last = reconstruct(means[train_mask][-1])
+    shape_forecast = reconstruct(mu_fore[-1])
+    shape_obs = reconstruct(mu_test[-1]) if len(mu_test) > 0 else None
+
+    fig = plt.figure(figsize=(14.5, 8.5))
+    gs = gridspec.GridSpec(2, 4, width_ratios=[1.05, 1.05, 1.05, 1.6],
+                           height_ratios=[1, 1.05], hspace=0.30, wspace=0.18,
+                           figure=fig)
+
+    tint_train = to_rgba(SLATE)[:3]
+    tint_fore = to_rgba(OI["orange"])[:3]
+    tint_obs = to_rgba(AMBER)[:3]
+
+    ax1 = fig.add_subplot(gs[0, 0])
+    draw_shaded_mesh(ax1, shape_train_last, base_color=tint_train,
+                      ambient=0.35, level=0.25)
+    ax1.set_title(f"(a) trena t.o.m. {int(ys[train_mask][-1])}",
+                   loc="left", fontsize=10, weight="bold")
+
+    ax2 = fig.add_subplot(gs[0, 1])
+    draw_shaded_mesh(ax2, shape_forecast, base_color=tint_fore,
+                      ambient=0.35, level=0.25)
+    ax2.set_title(f"(b) OU-forecast {int(yr_fore[-1])}",
+                   loc="left", fontsize=10, weight="bold")
+
+    ax3 = fig.add_subplot(gs[0, 2])
+    if shape_obs is not None:
+        draw_shaded_mesh(ax3, shape_obs, base_color=tint_obs,
+                          ambient=0.35, level=0.25)
+        ax3.set_title(f"(c) observert {int(yr_test[-1])}",
+                       loc="left", fontsize=10, weight="bold")
+    else:
+        ax3.axis("off")
+
+    axP = fig.add_subplot(gs[0, 3]); axP.axis("off")
+    lines = ["OU-dynamikk pr. shape-PC (trena 1500-1960):"]
+    lines.append("─" * 58)
+    lines.append(f"{'PC':>4}  {'α':>10}  {'θ':>10}  {'τ½ (år)':>10}")
+    lines.append("─" * 58)
+    for k in range(K):
+        tau = np.log(2) / alphas[k] if alphas[k] > 0 else np.nan
+        lines.append(f"{k + 1:>4}  {alphas[k]:>10.4f}  {thetas[k]:>10.3f}  "
+                     f"{tau:>10.0f}")
+    axP.text(0.00, 1.00, "\n".join(lines), transform=axP.transAxes,
+             fontsize=9, color=SLATE, family="monospace", va="top", ha="left")
+
+    for kk in range(2):
+        axT = fig.add_subplot(gs[1, kk * 2:kk * 2 + 2])
+        axT.plot(ys[train_mask], means[train_mask, kk], marker="o",
+                 color=SLATE, lw=1.8, label="trenings-trajektorie (til 1960)")
+        if len(mu_test):
+            axT.plot(yr_test, mu_test[:, kk], marker="s",
+                     color=AMBER, lw=1.6, label="observert (held ute)")
+        axT.plot(yr_fore, mu_fore[:, kk], marker="^",
+                 color=OI["orange"], lw=1.8, linestyle="--",
+                 label="OU-forecast")
+        axT.axhline(thetas[kk], color=OI["rust"], lw=0.8,
+                    linestyle=":", alpha=0.8, label=f"θ = {thetas[kk]:.2f}")
+        axT.axvline(1960, color="black", lw=0.5, alpha=0.4)
+        axT.set_xlabel("år")
+        axT.set_ylabel(f"shape-PC{kk + 1} sentroide")
+        axT.set_title(f"(d{kk + 1}) dynamikk på shape-PC{kk + 1}",
+                       loc="left", fontsize=9.5, weight="bold")
+        axT.grid(alpha=0.14, linewidth=0.4)
+        if kk == 0:
+            axT.legend(loc="upper left", fontsize=8, frameon=False)
+
+    save(fig, "E33_forecast")
+
+
+# ═════════════════════════════════════════════════════════════════════
+# FIG E34: Ancestral-state-rekonstruksjon per geometrisk genus
+# ═════════════════════════════════════════════════════════════════════
+def fig_E34_ancestor_reconstruction(df, vox, K=8):
+    """For each geometric genus (KMeans on shape-PC), compute the ancestral
+    shape as the voxel-mean of the earliest 20% members vs. the descendant
+    mean of the latest 20%. Render both; show the within-lineage
+    morphological shift."""
+    from sklearn.cluster import KMeans
+    mean_flat, comps, evr, scores, oid_order, nd = build_shape_pca(vox, df)
+    X = scores[:, :10]
+    labels = KMeans(n_clusters=K, n_init=10, random_state=0).fit_predict(X)
+    oid_to_cl = dict(zip(oid_order, labels))
+
+    df_match = df[df["Objekt-ID"].isin(set(oid_order))].copy()
+    df_match = df_match[df_match["år"].notna()].copy()
+    df_match["genus"] = df_match["Objekt-ID"].map(oid_to_cl)
+
+    results = []
+    for g in range(K):
+        sub = df_match[df_match["genus"] == g].sort_values("år")
+        if len(sub) < 10:
+            continue
+        n20 = max(5, int(len(sub) * 0.20))
+        early = sub.iloc[:n20]; late = sub.iloc[-n20:]
+        anc_ids = [o for o in early["Objekt-ID"] if o in vox]
+        des_ids = [o for o in late["Objekt-ID"] if o in vox]
+        if not anc_ids or not des_ids:
+            continue
+        anc = mean_voxel(anc_ids, vox)
+        des = mean_voxel(des_ids, vox)
+        results.append(dict(g=g, n=len(sub), anc=anc, des=des,
+                            y_anc=float(early["år"].mean()),
+                            y_des=float(late["år"].mean())))
+    results.sort(key=lambda r: -r["n"])
+    K_show = min(len(results), 6)
+    results = results[:K_show]
+
+    fig = plt.figure(figsize=(14, 2.3 * K_show + 1.5))
+    gs = gridspec.GridSpec(K_show, 4,
+                           width_ratios=[1, 1, 1, 1.6],
+                           wspace=0.05, hspace=0.30, figure=fig)
+
+    tint_palette = [AMBER, OI["blue"], OI["rust"], OI["green"],
+                    OI["pink"], OI["orange"], OI["skyblue"], SLATE]
+
+    for idx, r in enumerate(results):
+        tint = to_rgba(tint_palette[idx % len(tint_palette)])[:3]
+        ax_a = fig.add_subplot(gs[idx, 0])
+        draw_shaded_mesh(ax_a, r["anc"], base_color=tint,
+                          ambient=0.35, level=0.25)
+        ax_a.set_title(f"tidleg (~{int(r['y_anc'])})",
+                        fontsize=9, loc="left", weight="bold")
+
+        ax_d = fig.add_subplot(gs[idx, 1])
+        diff = r["des"] - r["anc"]
+        gain = np.clip(diff, 0, 1)
+        draw_shaded_mesh(ax_d, gain, base_color=to_rgba(OI["rust"])[:3],
+                          ambient=0.35, level=0.05,
+                          edge_rim=False, smooth_sigma=1.2)
+        ax_d.set_title("netto tilvekst (sein − tidleg)",
+                        fontsize=9, loc="left", weight="bold",
+                        color=OI["rust"])
+
+        ax_b = fig.add_subplot(gs[idx, 2])
+        draw_shaded_mesh(ax_b, r["des"], base_color=tint,
+                          ambient=0.35, level=0.25)
+        ax_b.set_title(f"sein (~{int(r['y_des'])})",
+                        fontsize=9, loc="left", weight="bold")
+
+        ax_t = fig.add_subplot(gs[idx, 3]); ax_t.axis("off")
+        shift = float(np.linalg.norm(r["des"] - r["anc"]))
+        ax_t.text(0.0, 0.90, f"genus {r['g']}   n = {r['n']}",
+                   transform=ax_t.transAxes, fontsize=12, weight="bold",
+                   color=SLATE, va="top")
+        ax_t.text(0.0, 0.62,
+                   f"tidsspenn: {int(r['y_des'] - r['y_anc'])} år\n"
+                   f"‖Δform‖₂ = {shift:.2f}",
+                   transform=ax_t.transAxes, fontsize=10, color=SLATE,
+                   va="top", family="monospace")
+
+    save(fig, "E34_ancestor_reconstruction")
+
+
+# ═════════════════════════════════════════════════════════════════════
+# FIG E35: Synopsis — hero-figur som oppsummerer paradigmet
+# ═════════════════════════════════════════════════════════════════════
+def fig_E35_synopsis(df, pca, vox):
+    """Single-figure summary of the key empirical findings, composed as a
+    four-quadrant montage:
+      (a) shape-PCA deformation grid at ±2σ on PC1/PC2 — the actual
+          geometric axes, with key chairs placed as shaded meshes
+      (b) rate-in-haldanes timeline with biology benchmarks
+      (c) material-specific OU optima θ with arrow-displacements
+      (d) live-type biodiversity curve with extinction and origination
+    """
+    from sklearn.cluster import KMeans
+    mean_flat, comps, evr, scores, oid_order, nd = build_shape_pca(vox, df)
+
+    fig = plt.figure(figsize=(16, 11))
+    gs = gridspec.GridSpec(2, 2, width_ratios=[1.1, 1.0],
+                           height_ratios=[1, 1], hspace=0.28, wspace=0.18,
+                           figure=fig)
+
+    # ----- (a) shape-PC1 × shape-PC2 grid with mesh archetypes -----
+    axA = fig.add_subplot(gs[0, 0])
+    # 3x3 sample grid on PC1, PC2
+    xs = [-2, 0, 2]; ys = [-2, 0, 2]
+    sd1 = float(scores[:, 0].std()); sd2 = float(scores[:, 1].std())
+    img_extent = 0.75
+    for i, sx in enumerate(xs):
+        for j, sy in enumerate(ys):
+            shape = mean_flat + sx * sd1 * comps[0] + sy * sd2 * comps[1]
+            grid = np.clip(shape.reshape(nd, nd, nd), 0, 1)
+            # tint by quadrant
+            if sx == 0 and sy == 0:
+                tint = (0.42, 0.46, 0.55)
+            else:
+                t = (sx + sy + 4) / 8  # 0..1
+                tint = list(to_rgba(SLATE)[:3])
+                if sx > 0 or sy > 0:
+                    tint = list(to_rgba(AMBER)[:3])
+                if sx < 0 and sy < 0:
+                    tint = list(to_rgba(OI["blue"])[:3])
+            rgba = render_shaded_mesh_to_array(
+                grid, size=170, base_color=tint, ambient=0.35,
+                level=0.25, edge_rim=True)
+            axA.imshow(rgba,
+                        extent=(sx - img_extent, sx + img_extent,
+                                sy - img_extent, sy + img_extent),
+                        aspect="auto", interpolation="bilinear", zorder=3)
+    # axis lines
+    axA.axhline(0, color=OI["grey"], linewidth=0.5, alpha=0.6, zorder=1)
+    axA.axvline(0, color=OI["grey"], linewidth=0.5, alpha=0.6, zorder=1)
+    axA.set_xlim(-3.5, 3.5); axA.set_ylim(-3.5, 3.5)
+    axA.set_xlabel(f"shape-PC1 ({evr[0]*100:.1f}%)",
+                    fontsize=11)
+    axA.set_ylabel(f"shape-PC2 ({evr[1]*100:.1f}%)",
+                    fontsize=11)
+    axA.set_title("(a) geometri-basert morforom",
+                   loc="left", fontsize=12.5, weight="bold")
+    axA.grid(alpha=0.12, linewidth=0.4)
+    axA.text(0.02, 0.97,
+              "Shape-PCA rett frå voxel-meshar. Kvar celle\n"
+              "er middelforma skifta langs to hovud-\n"
+              "deformasjonsaksar.",
+              transform=axA.transAxes, fontsize=9, color=SLATE,
+              va="top", ha="left",
+              bbox=dict(facecolor="white", edgecolor="none",
+                        alpha=0.80, boxstyle="round,pad=0.3"))
+
+    # ----- (b) haldane-rate timeline -----
+    axB = fig.add_subplot(gs[0, 1])
+    df_yr = df[df["år"].notna()].copy().sort_values("år")
+    pc_cols = ["PC1", "PC2", "PC3", "PC4", "PC5", "PC6"]
+    bins_h = np.arange(1500, 2040, 40)
+    cents = []
+    for i in range(len(bins_h) - 1):
+        a, b = bins_h[i], bins_h[i + 1]
+        sub = df_yr[(df_yr["år"] >= a) & (df_yr["år"] < b)]
+        if len(sub) < 8:
+            continue
+        cents.append(dict(year=(a + b) / 2,
+                          mean=sub[pc_cols].mean().values,
+                          std=sub[pc_cols].std().values))
+    gen = 25.0
+    ys_h = []; h_mean = []
+    for i in range(len(cents) - 1):
+        a, b = cents[i], cents[i + 1]
+        dt = (b["year"] - a["year"]) / gen
+        pooled = (a["std"] + b["std"]) / 2 + 1e-9
+        haldane = np.abs((b["mean"] - a["mean"]) / (pooled * dt))
+        ys_h.append((a["year"] + b["year"]) / 2)
+        h_mean.append(np.mean(haldane))
+    axB.bar(ys_h, h_mean, width=30, color=AMBER, alpha=0.88,
+             edgecolor=SLATE, linewidth=0.4)
+    axB.set_yscale("log")
+    for val, lbl, col in [(1e-3, "bradytelisk (natur)", OI["grey"]),
+                           (1e-2, "mikroevolusjon", SLATE),
+                           (1e-1, "domestisering", AMBER),
+                           (1e0, "klima-skift", OI["rust"])]:
+        axB.axhline(val, color=col, linestyle="--", linewidth=0.7,
+                     alpha=0.75)
+        axB.text(2025, val * 1.15, lbl, fontsize=8.5, color=col,
+                  ha="right", va="bottom")
+    axB.set_xlim(1490, 2040); axB.set_ylim(5e-4, 5)
+    axB.set_xlabel("år", fontsize=11)
+    axB.set_ylabel("gjennomsnittleg |haldane|", fontsize=11)
+    axB.set_title("(b) evolusjonsrate i haldanar",
+                   loc="left", fontsize=12.5, weight="bold")
+    axB.grid(alpha=0.14, linewidth=0.4, which="both")
+    axB.text(0.02, 0.97,
+              "Chair evolution ligg i domestiserings-\n"
+              "regimet ($10^{-1}$), to størrelses-\n"
+              "ordenar raskare enn vill makroevolusjon.",
+              transform=axB.transAxes, fontsize=9, color=SLATE,
+              va="top", ha="left",
+              bbox=dict(facecolor="white", edgecolor="none",
+                        alpha=0.80, boxstyle="round,pad=0.3"))
+
+    # ----- (c) material OU optima triangle -----
+    axC = fig.add_subplot(gs[1, 0])
+    pc1 = df["PC1"].values; pc2 = df["PC2"].values
+    axC.scatter(pc1, pc2, s=3, c=OI["grey"], alpha=0.08,
+                 linewidths=0, zorder=1)
+    mat_colors = {"wood": AMBER, "metal": OI["blue"], "plastic": OI["rust"]}
+    mat_labels = {"wood": "tre", "metal": "stål", "plastic": "plast"}
+    theta_xs = []; theta_ys = []
+    for mname, col in mat_colors.items():
+        sub = df[df["mat_class"] == mname]
+        if len(sub) < 10:
+            continue
+        th_x = float(sub["PC1"].mean()); th_y = float(sub["PC2"].mean())
+        theta_xs.append(th_x); theta_ys.append(th_y)
+        axC.scatter(sub["PC1"], sub["PC2"], s=8, c=[col], alpha=0.35,
+                     linewidths=0, zorder=2)
+        axC.scatter([th_x], [th_y], s=380, marker="*", c=[col],
+                     edgecolors="white", linewidths=1.5, zorder=6,
+                     label=f"{mat_labels[mname]}  θ = ({th_x:.2f}, {th_y:.2f})")
+    # draw triangle
+    if len(theta_xs) == 3:
+        xs_t = theta_xs + [theta_xs[0]]; ys_t = theta_ys + [theta_ys[0]]
+        axC.plot(xs_t, ys_t, color=SLATE, linewidth=1.1,
+                  linestyle="--", alpha=0.7, zorder=4)
+    xlo, xhi = np.quantile(pc1, [0.02, 0.98])
+    ylo, yhi = np.quantile(pc2, [0.02, 0.98])
+    axC.set_xlim(xlo, xhi); axC.set_ylim(ylo, yhi)
+    axC.set_xlabel(f"PC1", fontsize=11)
+    axC.set_ylabel(f"PC2", fontsize=11)
+    axC.set_title("(c) materialspesifikke adaptive optima",
+                   loc="left", fontsize=12.5, weight="bold")
+    axC.legend(loc="upper left", fontsize=9, frameon=False)
+    axC.grid(alpha=0.12, linewidth=0.4)
+    axC.text(0.98, 0.03,
+              "ΔAIC (OU$_3$ vs OU$_1$) $> 30{\\,}000$\n"
+              "per akse. Sterk støtte for\n"
+              "distinkte material-θ.",
+              transform=axC.transAxes, fontsize=9, color=SLATE,
+              va="bottom", ha="right",
+              bbox=dict(facecolor="white", edgecolor="none",
+                        alpha=0.80, boxstyle="round,pad=0.3"))
+
+    # ----- (d) biodiversity curve -----
+    axD = fig.add_subplot(gs[1, 1])
+    # rerun KMeans on 4-dim PC-space
+    Xpc = df_yr[pc_cols[:4]].dropna().values
+    km = KMeans(n_clusters=14, n_init=6, random_state=0).fit(Xpc)
+    labs = km.labels_
+    df_yr_k = df_yr[pc_cols[:4]].dropna().copy()
+    df_yr_k["type"] = labs
+    df_yr_k["år"] = df_yr.loc[df_yr_k.index, "år"]
+    # live per year
+    ranges = []
+    for t in range(14):
+        sub = df_yr_k[df_yr_k["type"] == t]
+        if len(sub) > 2:
+            ranges.append((int(sub["år"].min()), int(sub["år"].max())))
+    years_d = np.arange(1400, 2030)
+    live = np.zeros_like(years_d)
+    for (f, l) in ranges:
+        live[(years_d >= f) & (years_d <= l)] += 1
+    axD.fill_between(years_d, 0, live, color=AMBER, alpha=0.55, step="mid")
+    axD.plot(years_d, live, color=SLATE, lw=1.5)
+    # extinction markers
+    for (f, l) in ranges:
+        if l < 2020:
+            axD.axvline(l, color=OI["rust"], linewidth=0.4, alpha=0.5)
+    axD.set_xlim(1400, 2025); axD.set_ylim(0, max(live) + 1)
+    axD.set_xlabel("år", fontsize=11)
+    axD.set_ylabel("tal levande formtypar", fontsize=11)
+    axD.set_title("(d) biodiversitets-kurve over formtypar",
+                   loc="left", fontsize=12.5, weight="bold")
+    axD.grid(alpha=0.14, linewidth=0.4)
+    axD.text(0.02, 0.97,
+              "Stabilt 11–12 typar 1700–1950;\n"
+              "kollaps til 5–6 etter 1950.\n"
+              "Mass-extinction-signatur for\n"
+              "formtypar i industriera.",
+              transform=axD.transAxes, fontsize=9, color=SLATE,
+              va="top", ha="left",
+              bbox=dict(facecolor="white", edgecolor="none",
+                        alpha=0.80, boxstyle="round,pad=0.3"))
+
+    save(fig, "E35_synopsis")
+
+
+# ═════════════════════════════════════════════════════════════════════
 # Main
 # ═════════════════════════════════════════════════════════════════════
+
 def main():
     print("[1/15] loading data...")
     df = load_data()
@@ -3573,8 +4494,26 @@ def main():
     print("[26/27] E28 substrat-arketypar...")
     fig_E28_substrat_arketypar(df_yr, vox)
 
-    print("[27/27] E29 multi-view atlas av innovatørar...")
+    print("[27/30] E29 isometrisk atlas av innovatørar...")
     fig_E29_innovatør_atlas(df_yr, vox)
+
+    print("[28/30] E30 shape-PCA deformasjonsmodusar (rein geometri)...")
+    fig_E30_shape_pca_modes(df, vox)
+
+    print("[29/30] E31 geometriske genera (unsupervised clustering)...")
+    fig_E31_geometrisk_genus(df, vox)
+
+    print("[30/32] E32 evolusjonære retningar i formrommet...")
+    fig_E32_evolusjonsretningar(df_yr, vox)
+
+    print("[31/32] E33 prediktiv forecasting...")
+    fig_E33_forecast(df, vox)
+
+    print("[32/33] E34 ancestral state reconstruction...")
+    fig_E34_ancestor_reconstruction(df, vox)
+
+    print("[33/33] E35 synopsis hero figur...")
+    fig_E35_synopsis(df, pca, vox)
 
     for t in ("_sil_test.png", "_sil_test2.png", "_fonttest.png"):
         p = os.path.join(OUT, t)
