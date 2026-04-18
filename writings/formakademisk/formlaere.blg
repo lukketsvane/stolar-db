@@ -5,46 +5,49 @@ Reallocating 'name_of_file' (item size: 1) to 8 items.
 The style file: apalike.bst
 Reallocating 'name_of_file' (item size: 1) to 10 items.
 Database file #1: formlaere.bib
-Warning--empty journal in odlingsmee2003
-You've used 37 entries,
+Warning--empty journal in hatchuelweil2003
+Warning--empty journal in kazakci2015
+Warning--empty journal in stinygips1972
+Warning--empty journal in thompson1917
+You've used 40 entries,
             1935 wiz_defined-function locations,
-            681 strings with 8022 characters,
-and the built_in function-call counts, 12576 in all, are:
-= -- 1237
-> -- 343
+            692 strings with 8529 characters,
+and the built_in function-call counts, 13467 in all, are:
+= -- 1309
+> -- 396
 < -- 37
-+ -- 133
-- -- 103
-* -- 926
-:= -- 2201
-add.period$ -- 113
-call.type$ -- 37
-change.case$ -- 218
-chr.to.int$ -- 37
-cite$ -- 38
-duplicate$ -- 566
-empty$ -- 995
-format.name$ -- 152
-if$ -- 2496
++ -- 155
+- -- 121
+* -- 1020
+:= -- 2385
+add.period$ -- 118
+call.type$ -- 40
+change.case$ -- 241
+chr.to.int$ -- 40
+cite$ -- 44
+duplicate$ -- 581
+empty$ -- 1037
+format.name$ -- 175
+if$ -- 2632
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 55
-newline$ -- 188
-num.names$ -- 113
-pop$ -- 229
+missing$ -- 59
+newline$ -- 200
+num.names$ -- 122
+pop$ -- 241
 preamble$ -- 1
-purify$ -- 236
+purify$ -- 260
 quote$ -- 0
-skip$ -- 419
+skip$ -- 443
 stack$ -- 0
-substring$ -- 850
-swap$ -- 66
-text.length$ -- 4
+substring$ -- 916
+swap$ -- 56
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 186
-warning$ -- 1
-while$ -- 108
+type$ -- 202
+warning$ -- 4
+while$ -- 115
 width$ -- 0
-write$ -- 487
-(There was 1 warning)
+write$ -- 514
+(There were 4 warnings)

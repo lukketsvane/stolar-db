@@ -14,7 +14,7 @@
 \usepackage{microtype}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{graphicx}
-\graphicspath{{figures/}}
+\graphicspath{{figures/}{figures/png/}{figures/png_empirical/}}
 \usepackage{caption}
 \captionsetup{font=small,labelfont=bf,labelsep=period,justification=justified}
 \usepackage{booktabs}
@@ -86,7 +86,7 @@ Tradisjonen har gjort formspørsmålet operasjonelt: ein biolog kan måle forma,
 
 Designfaget har aldri etablert ei tilsvarande operasjonell disiplin. \citet{sullivan1896} si aforisme \textit{form ever follows function} har \citet{michl1995} dokumentert forklarer alt og difor ingenting. Men det vil vere vilkårleg å påstå at designfaget ikkje har rekt etter ein slik vitskap. Fleire tenkjarar har teke delar av vegen utan å samle komponentane.
 
-\citet{alexander1964} formulerte design som reduksjon av misfit-vektorar i eit vilkårsrom; apparatet har formell struktur nær eit tilpassingslandskap, men utan eit generativt grammatikk-lag og utan ein substrat-uavhengig agent-formalisme. \citet{simon1969} definerte designvitskapen som ein systematisk disiplin for det artificielle, med indre og ytre miljø i dialog; eit ambisiøst program som mangla formell algebra over formrommet. \citet{steadman1979} overførte biologiske formmodellar direkte på artefakter i \textit{The Evolution of Designs}; overføringa var analogisk, ikkje substrat-uavhengig, og mangla representasjonsrom-omgrepet. \citet{basalla1988} skildra den teknologiske evolusjonen som ein darwinistisk prosess; skildringa er deskriptiv, ikkje generativ. \citet{petroski1992} viste at svikt fungerer som seleksjon for nyttige ting; innsikta er i landskapstermar, men utan formalisme. \citet{wbarthur2009} formaliserte teknologi som kombinatorisk evolusjon der nye teknologiar er strukturerte kombinasjonar av eksisterande; ein generativ grammatikk i realiteten, men utan eksplisitt kopling mot landskap. \citet{pye1968} skilde mellom risikohandverk og vissheitshandverk; eit substrat-argument \textit{avant la lettre}, men på eitt nivå av agens. \citet{kauffman1993} arbeidde på NK-landskap for kultur; landskapet var kollektivt, ikkje posisjonert i eit formrom med realiserte punkt.
+\citet{alexander1964} formulerte design som reduksjon av misfit-vektorar i eit vilkårsrom; apparatet har formell struktur nær eit tilpassingslandskap, men utan eit generativt grammatikk-lag og utan ein substrat-uavhengig agent-formalisme. \citet{simon1969} definerte designvitskapen som ein systematisk disiplin for det artificielle, med indre og ytre miljø i dialog; eit ambisiøst program som mangla formell algebra over formrommet. \citet{steadman1979} overførte biologiske formmodellar direkte på artefakter i \textit{The Evolution of Designs}; overføringa var ana\-logisk, ikkje substrat-uavhengig, og mangla representasjonsrom-omgrepet. \citet{basalla1988} skildra den teknologiske evolusjonen som ein darwinistisk prosess; skildringa er deskriptiv, ikkje generativ. \citet{petroski1992} viste at svikt fungerer som seleksjon for nyttige ting; innsikta er i landskapstermar, men utan formalisme. \citet{wbarthur2009} formaliserte teknologi som kombinatorisk evolusjon der nye teknologiar er strukturerte kombinasjonar av eksisterande; ein generativ grammatikk i realiteten, men utan eksplisitt kopling mot landskap. \citet{pye1968} skilde mellom risikohandverk og vissheitshandverk; eit substrat-argument \textit{avant la lettre}, men på eitt nivå av agens. \citet{kauffman1993} arbeidde på NK-landskap for kultur; landskapet var kollektivt, ikkje posisjonert i eit formrom med realiserte punkt.
 
 Dei to formelle tradisjonane som seinare er utvikla innanfor designteorien, har modnast utan eksplisitt forhold til landskapsomgrepet. Formgrammatikken til \citet{stinygips1972} er ein presis generativ algebra for kva former som kan genererast frå gjevne reglar, men spesifiserer inga teori om kva av dei genererte formene som er sannsynlege. Tanke-kunnskapsteorien til \citet{hatchuelweil2003, hatchuelweil2009} er ein presis epistemisk dynamikk mellom konseptrom og kunnskapsrom, men spesifiserer inga generativ algebra over formrommet. Kvar av dei to tradisjonane har gjort sitt grensetilfelle så rikt som det kan bli, utan at dei to møtest i eit felles rammeverk.
 
@@ -386,14 +386,173 @@ Den motsette retninga held ikkje: partisjon-operasjonar åleine spesifiserer ikk
 
 \subsection*{A.3 Kjerne-likninga som ikkje-degenerert syntese}
 
-\begin{theorem}[Ikkje-degenerasjon]
-For ein generisk Formlære-instans der $\mathrm{SG}$ er generativ, $\mathcal{L}_k$ ikkje-konstant, og $|\mathcal{A}| > 1$, kan ingen av dei to reduksjonane over haldast utan tap av informasjon.
+\begin{theorem}[Ikkje-de\-ge\-ne\-ra\-sjon]
+For ein ge\-ne\-risk Form\-læ\-re-in\-stans der $\mathrm{SG}$ er ge\-ne\-ra\-tiv, $\mathcal{L}_k$ ikkje-konstant, og $|\mathcal{A}| > 1$, kan ingen av dei to re\-duk\-sjo\-na\-ne over haldast utan tap av in\-for\-ma\-sjon.
 \end{theorem}
 
 \begin{proof*}
-Den fulle modellen spesifiserer $P(F)$ som ein funksjon av alle tre komponentar. Formgrammatikk-reduksjonen mistar informasjon om relative sannsyn innanfor $L(\mathrm{SG})$. CK-reduksjonen mistar informasjon om kva som er genererbart utanfor $K$. Begge tap er ikkje-trivielle når dei tre komponentane er uavhengige.
+Den fulle modellen spesifiserer $P(F)$ som ein funksjon av alle tre komponentar. Form\-gram\-ma\-tikk-reduksjonen mistar informasjon om relative sannsyn innanfor $L(\mathrm{SG})$. CK-reduksjonen mistar informasjon om kva som er genererbart utanfor $K$. Begge tap er ikkje-trivielle når dei tre komponentane er uavhengige.
 \end{proof*}
 
 Konsekvensen er at Formlære ikkje er erstattbar med nokon av dei to eksisterande tradisjonane når designsituasjonen er ikkje-degenerert.
 
-\end{document}w
+% ═════════════════════════════════════════════════════════════════════
+\section{Empirisk illustrasjon: stol-datasettet}
+% ═════════════════════════════════════════════════════════════════════
+\label{sec:empiri}
+
+Dette appendikset illustrerer kjerne-likninga sine tre komponentar operasjonelt på eit eigedomeleg datasett av 1997 stolar henta frå Nasjonalmuseet si samling med komplett tabellgeometri og mesh-avleidde trekk (dimensjonar 1300–2024). Kvar stol er eit punkt i eit seks-dimensjonalt formrom med aksane Høgde, Breidde, Djupn, Sphericity, Fill-ratio og Inertia-ratio. Dei tre første er direkte målte; dei tre siste er utrekna frå 3D-meshar av typen GLB. Av dei 1997 med komplett geometri har 1984 ei nytteverdig dateringsverdi. Framstillinga er visuell og forklarande; formelle statistiske tester høyrer til ei separat publikasjon.
+
+\subsection*{B.1 Morforommet, med og utan stolar}
+
+Figur~\ref{fig:E1} presenterer PCA over dei seks standardiserte aksane. Første to komponentar forklarer 67{,}5~\%; tre komponentar forklarer 82{,}5~\%. Biplot-pilene viser at PC1 er dominert av storleiks-aksane (Høgde, Djupn, Breidde), medan PC2 er dominert av form-aksane (Sphericity og Fill-ratio). Skilnaden er substantiv: storleiken varierer i ein retning; kompaktheita varierer i ein annan.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{E1_morforom_pca.png}
+\caption{Empirisk morforom over 1997 stolar. (a) PC1-PC2 med biplot-piler som viser kvar av dei seks aksane bidreg. (b) PC1-PC3 som sekundær projeksjon. Punkt er farga kronologisk frå slate (tidleg) til amber (sein), og grå punkt er underliggjande periodar som ikkje er framheva.}
+\label{fig:E1}
+\end{figure}
+
+Figur~\ref{fig:E2} og figur~\ref{fig:E8} er to måtar å gjere morforommet konkret. I figur~\ref{fig:E2} er eit $7\times7$ rutenett lagt over PC1-PC2, og næraste mesh til kvar cellesenter er rendra som silhuett. I figur~\ref{fig:E8} er same prinsipp utvida til heile datasettet: stolar er snapt til ei fin grid der kvar celle blir representert av éi faktisk form. Begge figurane er direkte empirisk paralleller til \citet{raup1966} sitt formrom-prinsipp, men realisert på digitale 3D-målingar heller enn parametrerte rekonstruksjonar som hjå \citet{contrerasfigueroa2023}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{E2_mesh_grid.png}
+\caption{$7\times7$ mesh-silhuettar plassert etter nærleik til cellesenter i PC1-PC2. Kvar silhuett er sidesett på den faktiske meshen; bakgrunnen er tinta etter stilperiode.}
+\label{fig:E2}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{E8_silhouette_scatter.png}
+\caption{Silhuett-scatter: om lag 180 stolar snapte til ei grid i PC1-PC2, kvar representert av sidesilhuetten av den faktiske meshen, tinta etter stilperiode. Ingen scatter-markering dekkjer ein annan; morforommet er lesbart direkte som form og ikkje berre som koordinat.}
+\label{fig:E8}
+\end{figure}
+
+Figur~\ref{fig:E10} kvantifiserer kor mykje av det morforommet som faktisk er okkupert. Konveks innhylling dekkjer 75{,}4~\% av bounding-boksen, og berre 56{,}5~\% av cellene i hylsteret inneheld minst éin stol. Resten er regionar som er materielt og geometrisk tilgjengelege, men aldri realiserte; i FORMLÆRE-terminologien er dei den uaktualiserte tenkelege mengda $C \setminus K$.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{E10_realiseringsgrad.png}
+\caption{Realiseringsgrad. (a) Tetthetsrutenett $28\times28$ med konveks innhylling i amber og uaktualiserte celler i raud. (b) Andel okkuperte PC2-celler per PC1-desil: relativt jamn fordeling. (c) Log-fordeling av tal stolar per celle. (d) Nøkkeltal.}
+\label{fig:E10}
+\end{figure}
+
+\subsection*{B.2 Landskaps-drift og evolusjonær respons}
+
+Figur~\ref{fig:E3} viser tetthetsprofilar i PC1-PC2 for seks historiske epokar, alle skalerte mot ein felles toppverdi slik at relative haugar kan samanliknast direkte. Pila frå globalsentroiden til epoke-sentroiden visualiserer drift; driftsavstanden er lita (alle $\Delta < 1$ i PCA-koordinatar), men systematisk.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{E3_landskap_tid.png}
+\caption{Tilpassingslandskap som tetthet per epoke. Raud pil markerer drift frå globalsentroiden til epoke-sentroiden; $\Delta$ er euklidsk avstand.}
+\label{fig:E3}
+\end{figure}
+
+Figur~\ref{fig:E7} viser sentroide-banen splitta på materiale. I staden for éin felles trajektorie, ser vi korleis tre og metall søker mot fundamentalt ulike adaptive toppar (markerte som OU-optima $\theta$). Medan stålet okkuperer ein ny nisje prega av slankheit og låg fill-ratio, viser modellen at dette ikkje berre legg til nye former, men reint faktisk deformerer landskapet for eksisterande teknologiar.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{E7_trajektorie_split.png}
+\caption{Splitta sentroide-trajektórie for tre og metall. Stjernene markerer estimerte adaptive optima basert på Ornstein-Uhlenbeck (OU)-modellering. Dei to materialklassane okkuperer og blir trekt mot ulike regionar av morforommet.}
+\label{fig:E7}
+\end{figure}
+
+Gjennom kjerne-likninga, der C-K-kunnskap utløyser SG-reglar i eit delt tilpassingslandskap, får vi eit genuint prediktivt nyfunn: \textbf{Konseptuell introduksjon skapar morfologisk fråstøyting.} Når stål-agenten realiserer slanke former (ein ny SG-kapasitet utløyst av $C \rightarrow K$-spranget), deformerer dette landskapet for tre-agenten. 
+
+Figur~\ref{fig:E15} testar denne hypotesen formelt ved bruk av Lande-likninga: $\Delta \bar{z} = G \beta$. Her er $G$ varians-kovarians-matrisa for trestolar før 1920 (kanaliseringa), og $\beta$ er seleksjons\-gradien\-ten definert som «flukt frå stål-nisjen». Modellen predikerer at tre-design vil forskyve seg mot høgare fill-ratio (karakterforskyving) som ein direkte respons på stålets tilstadevere. Den observerte responsen korrelerer med prediksjonen: trestolar blei systematisk «meir tre-aktige» etter stålet sitt inntog.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{E15_lande_prediction.png}
+\caption{Evolusjonær respons i trestolar etter 1920. (a) G-matrise (ellipsar) og seleksjonstrykket $\beta$ frå stål-konkurranse. (b) Samanlikning av predikert respons ($\Delta \bar{z}$) og faktisk observert morfologisk skift. Tre-agentane flyktar frå stål-nisjen langs minste motstands veg i morforommet.}
+\label{fig:E15}
+\end{figure}
+
+Figur~\ref{fig:E5} ser på same dynamikk som rullande statistikk: sentroiden, spreiinga og endringsraten i 30-års vindauge. Tre skjeringsår ($1680$, $1830$, $1920$) er markerte: alle tre fell saman med kjende konsolideringsperiodar i designhistoria og med tydelege skift i endringsraten.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{E5_stase_brot.png}
+\caption{Rullande statistikk over tid. (a) Sentroide på PC1 og PC2 med $\pm\sigma$-bånd. (b) Spreiing per vindauge. (c) Endrings-rate $\|\Delta\mathrm{sentroide}\|$ og utvalstørrelse.}
+\label{fig:E5}
+\end{figure}
+
+Figur~\ref{fig:E13} testar påstanden om punktert likevekt formelt: den observerte endringsraten blir samanlikna med ein nullmodell der datoane er permuterte. Observerte toppar som ligg over 95~\%-bandet er kandidatar til brot-punkt. Ein tydeleg topp rundt 1920 fell saman med stålrør-revolusjonen (Breuer, Mies).
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{E13_punktuert_likevekt.png}
+\caption{Observert $\|\Delta\mathrm{sentroide}\|$ versus ein nullmodell med 200 permutasjonar der datoane er blanda. Grå band = 95~\% nullkonfidens. Vertikale stipla linjer markerer kjende teknologiske skifte.}
+\label{fig:E13}
+\end{figure}
+
+\subsection*{B.3 Kanalisering og stiavhengigheit}
+
+Figur~\ref{fig:E4} viser z-standardisert fordeling per akse per periode. Ulike aksar har tydeleg ulik adferd: Høgde held seg relativt stramt rundt sitt normerte middel; Sphericity og Inertia-ratio har breiare fordelingar med periode-spesifikke forskuvingar.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{E4_kanalisering.png}
+\caption{Z-standardiserte fiolinar per akse per periode med standardavvik som overlagd linje. Stipla horisontal linje er totalstandardavviket.}
+\label{fig:E4}
+\end{figure}
+
+Figur~\ref{fig:E12} samlar dette i éin målbar indeks per akse. Ratioen innan-stilperiode-varians / total-varians måler kor mykje av variasjonen som skjer mellom periodar versus innanfor. Sphericity er den einaste aksen som ligg under den konvensjonelle kanaliserings-terskelen 0{,}4; resten varierer fritt.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{E12_kanalisering_radar.png}
+\caption{Kanaliseringssignatur på tvers av dei seks aksane. (a) Variasjonskoeffisient CV per akse. (b) Innan-stilperiode-varians delt på total-varians; låg verdi = sterkt kanalisert.}
+\label{fig:E12}
+\end{figure}
+
+Figur~\ref{fig:E11} testar stiavhengigheit direkte: for kvar periode blir middelavstanden frå stolane til (a) eigen sentroide, (b) førre periode si sentroide, og (c) globalsentroiden rekna i 6D PC-rommet. Ratioen (b)/(a) skal vere over 1{,}0 dersom forma arvar posisjon frå si eiga periode meir enn frå den føregåande. Observerte verdiar ligg systematisk over 1{,}0 frå 1680 og framover, med klart størst utslag rundt Rokokko (1720-1755) der ratioen når 2{,}3.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{E11_stiavhengigheit.png}
+\caption{Arvsavstand. (a) Middelavstand til eigen, føregåande og globalsentroide per periode. (b) Ratio føregåande/eigen: verdi over 1 = stiavhengigheit, forma arvar posisjon frå si eiga periode.}
+\label{fig:E11}
+\end{figure}
+
+\subsection*{B.4 Substrat-skift og agent-hierarki}
+
+Figur~\ref{fig:E9} syner korleis fem materialklassar (bøk/ask, mahogni/valnøtt, stål/jern/krom, plast, aluminium) har okkupert morforommet gjennom fire tidsband. Substrat-skiftet 1900 er direkte synleg: mahogni kollapsar frå 244 eksemplarar i 1600-1800 til 2 i 1960-2025, medan stål og plast dukkar opp frå null. Det viktige formlære-poenget er at kvar materialklasse okkuperer ulike delar av PC1-PC2-planet.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{E9_substrat_skift.png}
+\caption{Materialskifte i morforommet. Rader = materialklasse; kolonnar = tidsband. Amber-punkt = stolar med den gjeldande materialklassen; grå bakgrunn = alle stolar. Utvalstørrelse oppgjeven i kvar panel.}
+\label{fig:E9}
+\end{figure}
+
+Figur~\ref{fig:E14} undersøker agent-skala-hypotesen ved å samanlikne Mahalanobis-spreiing per stilperiode mellom handverk-era (før 1850), overgangsperioden (1850-1950) og industri-era (etter 1950). Skilnaden er liten, men retningen er motsett av den naive hypotesen: handverk-era viser noko \textit{lågare} spreiing enn industri-era, ikkje høgare. Tolking: det er ikkje industri-agenten som absorberer variasjon, men derimot tradisjonskoplinga i handverks-agentar som held variasjonen låg.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{E14_agent_hierarki.png}
+\caption{Intra-periode Mahalanobis-spreiing per stilperiode, gruppert etter agent-skala. (a) Scatterplott med punkt-storleik proporsjonal med periodeutvalet. (b) Aggregert boksplott per gruppe.}
+\label{fig:E14}
+\end{figure}
+
+\subsection*{B.5 Giga-grid over heile datasettet}
+
+Til slutt, for å gjere skalaen synleg, er heile silhuett-korpuset presentert i éin figur sortert kronologisk (figur~\ref{fig:E6y}) og ein tilsvarande sortert etter PC1 (figur~\ref{fig:E6pc}). I båe grid er bakgrunnen til kvar celle tinta etter stilperiode. Figurane demonstrerer at det IKKJE er éin stil per tidsband, men kontinuerleg overlapp og substrat-skift.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{E6_giga_grid_year.png}
+\caption{Alle 1984 stolar med kjent år, sorterte kronologisk (venstre-til-høgre, oppstå-til-nede). Kvar bakgrunn er tinta etter stilperiode. 41 rader $\times$ 49 kolonnar.}
+\label{fig:E6y}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{E6_giga_grid_pc1.png}
+\caption{Same korpus sortert etter PC1 i staden for år. Gradienten gjer PC1-aksen konkret som skift frå kompakte sofaar (venstre) til høge slanke stolar (høgre).}
+\label{fig:E6pc}
+\end{figure}
+
+\end{document}

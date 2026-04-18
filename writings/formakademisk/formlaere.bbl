@@ -42,6 +42,12 @@ Campbell, D.~T. (1974).
 \newblock In Schilpp, P.~A., editor, {\em The Philosophy of Karl Popper}, pages
   412--463. Open Court, La Salle, IL.
 
+\bibitem[Contreras-Figueroa and Arag{\'o}n, 2023]{contrerasfigueroa2023}
+Contreras-Figueroa, G. and Arag{\'o}n, J.~L. (2023).
+\newblock A mathematical model for mollusc shells based on parametric surfaces
+  and the construction of theoretical morphospaces.
+\newblock {\em Diversity}, 15(3):431.
+
 \bibitem[Dorst and Cross, 2001]{dorstcross2001}
 Dorst, K. and Cross, N. (2001).
 \newblock Creativity in the design process: Co-evolution of problem--solution.
@@ -60,13 +66,11 @@ Gould, S.~J. (1977).
 
 \bibitem[Hatchuel and Weil, 2003]{hatchuelweil2003}
 Hatchuel, A. and Weil, B. (2003).
-\newblock A new approach of innovative design: An introduction to c-k theory.
-\newblock In {\em Proceedings of ICED 2003, the 14th International Conference
-  on Engineering Design}, Stockholm.
+\newblock A new approach of innovative design: An introduction to {C-K} theory.
 
 \bibitem[Hatchuel and Weil, 2009]{hatchuelweil2009}
 Hatchuel, A. and Weil, B. (2009).
-\newblock C-k design theory: An advanced formulation.
+\newblock {C-K} design theory: An advanced formulation.
 \newblock {\em Research in Engineering Design}, 19(4):181--192.
 
 \bibitem[Heylighen, 2007]{heylighen2007}
@@ -85,12 +89,10 @@ Kauffman, S.~A. (1993).
   Evolution}.
 \newblock Oxford University Press, New York.
 
-\bibitem[Kazakçi, 2015]{kazakci2015}
-Kazakçi, A.~O. (2015).
+\bibitem[Kazak{\c{c}}{\i}, 2015]{kazakci2015}
+Kazak{\c{c}}{\i}, A.~O. (2015).
 \newblock {C-K}, an engineering design theory? a reflection on its
   epistemological grounds.
-\newblock In {\em Proceedings of the 20th International Conference on
-  Engineering Design}, Milan.
 
 \bibitem[Lande, 1979]{lande1979}
 Lande, R. (1979).
@@ -109,11 +111,17 @@ Levin, M. (2022).
   framework for understanding diverse bodies and minds.
 \newblock {\em Frontiers in Systems Neuroscience}, 16:768201.
 
+\bibitem[McGhee, 2007]{mcghee2007}
+McGhee, G.~R. (2007).
+\newblock {\em The Geometry of Evolution: Adaptive Landscapes and Theoretical
+  Morphospaces}.
+\newblock Cambridge University Press, Cambridge.
+
 \bibitem[Michl, 1995]{michl1995}
 Michl, J. (1995).
 \newblock Form follows what? the modernist notion of function as a carte
   blanche.
-\newblock {\em 1. Designforum Finland Magazine}, 1:5--15.
+\newblock {\em Designforum Finland Magazine}, 1:5--15.
 
 \bibitem[Mitteroecker and Huttegger, 2009]{mitteroecker2009}
 Mitteroecker, P. and Huttegger, S.~M. (2009).
@@ -123,12 +131,20 @@ Mitteroecker, P. and Huttegger, S.~M. (2009).
 
 \bibitem[Odling-Smee et~al., 2003]{odlingsmee2003}
 Odling-Smee, F.~J., Laland, K.~N., and Feldman, M.~W. (2003).
-\newblock Niche construction: The neglected process in evolution.
+\newblock {\em Niche Construction: The Neglected Process in Evolution}.
+\newblock Princeton University Press, Princeton.
 
 \bibitem[Petroski, 1992]{petroski1992}
 Petroski, H. (1992).
 \newblock {\em The Evolution of Useful Things}.
 \newblock Alfred A. Knopf, New York.
+
+\bibitem[Polly et~al., 2016]{polly2016}
+Polly, P.~D., Stayton, C.~T., Dumont, E.~R., Pierce, S.~E., Rayfield, E.~J.,
+  and Angielczyk, K.~D. (2016).
+\newblock Combining geometric morphometrics and finite element analysis with
+  evolutionary modeling: towards a synthesis.
+\newblock {\em Journal of Vertebrate Paleontology}, 36(4):e1111225.
 
 \bibitem[Popper, 1972]{popper1972}
 Popper, K.~R. (1972).
@@ -155,12 +171,11 @@ Simon, H.~A. (1969).
 \newblock {\em The Sciences of the Artificial}.
 \newblock MIT Press, Cambridge, MA.
 
-\bibitem[Steadman, 2008]{steadman1979}
-Steadman, P. (2008).
+\bibitem[Steadman, 1979]{steadman1979}
+Steadman, P. (1979).
 \newblock {\em The Evolution of Designs: Biological Analogy in Architecture and
   the Applied Arts}.
-\newblock Routledge, London.
-\newblock Fyrste utgåve 1979.
+\newblock Cambridge University Press, Cambridge.
 
 \bibitem[Stiny, 2006]{stiny2006}
 Stiny, G. (2006).
@@ -171,8 +186,7 @@ Stiny, G. (2006).
 Stiny, G. and Gips, J. (1972).
 \newblock Shape grammars and the generative specification of painting and
   sculpture.
-\newblock In {\em Information Processing 71}, pages 1460--1465, Amsterdam.
-  North-Holland.
+\newblock pages 1460--1465.
 
 \bibitem[Sullivan, 1896]{sullivan1896}
 Sullivan, L.~H. (1896).
@@ -181,8 +195,7 @@ Sullivan, L.~H. (1896).
 
 \bibitem[Thompson, 1917]{thompson1917}
 Thompson, D.~W. (1917).
-\newblock {\em On Growth and Form}.
-\newblock Cambridge University Press, Cambridge.
+\newblock On growth and form.
 
 \bibitem[Waddington, 1957]{waddington1957}
 Waddington, C.~H. (1957).
@@ -198,7 +211,7 @@ Wagner, A. (2005).
 Wright, S. (1932).
 \newblock The roles of mutation, inbreeding, crossbreeding, and selection in
   evolution.
-\newblock In {\em Proceedings of the Sixth International Congress of Genetics},
-  volume~1, pages 356--366.
+\newblock {\em Proceedings of the Sixth International Congress of Genetics},
+  1:356--366.
 
 \end{thebibliography}
