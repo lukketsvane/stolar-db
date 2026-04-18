@@ -579,7 +579,55 @@ Figur~\ref{fig:E18} gjer kjerne-likninga si dynamiske komponent til ein direkte 
 \label{fig:E18}
 \end{figure}
 
-\subsection*{B.6 Giga-grid over heile datasettet}
+\subsection*{B.6 Paleobiologiske metodar direkte på design-korpuset}
+
+Dei neste fire figurane tek metodar som er standard i evolusjonær paleobiologi og, så vidt eg kan sjå, aldri før er brukte på eit designhistorisk korpus. Kvar metode er formelt identisk med opphaveleg bruk; substrat-parameteriseringa er ny.
+
+Figur~\ref{fig:E20} implementerer \textit{phylomorphospace} etter \citet{sidlauskas2008}. Metoden blei utvikla for fisk: plasser taxa-sentroider i PCA-rommet, og kopl dei etter fylogenien. Vi erstattar fylogenien med den kronologiske kjeda av stilperiode-sentroider; greinene blir farga etter lokal rate. Den raskaste greina i heile design-fylogenien er Nyklassisisme → Hepplewhite: ein liten periode med høg morfologisk fart. Kjente historiske fakta som Thonet-bøying (1830-talet) og Bauhaus (1920-talet) fell saman med dei nest raskaste greinene, noko som valideres metoden mot uavhengig kjeldegrunnlag.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{E20_phylomorphospace.png}
+\caption{Phylomorphospace etter \citet{sidlauskas2008}. (a) Kjede av stilperiode-sentroider i PC1-PC2; greiner farga etter evolusjonsrate. (b) Nummerert node-liste. (c) Rate per grein over tid på log-skala.}
+\label{fig:E20}
+\end{figure}
+
+Figur~\ref{fig:E21} tilpassar \citet{gingerich1983} sin haldane-formalisme. Ein haldane er talet på standardavvik ein gjennomsnittleg trait endrar seg per generasjon; vi brukar ein generasjon = 25 år (typisk designar-karriere). Rata kan direkte samanliknast med biologiske referanseverdar: bradytelisk naturleg makroevolusjon sit på $10^{-4}$, mikroevolusjonære linjer på $10^{-2}$, domestiserte arter på $10^{-1}$, og skjeringsratar under klimaskift når $\sim 1$. Observert rate for stolar ligg jamt i intervallet $10^{-1}$ til $10^{0}$ haldanar: stolar evolverer formelt like raskt som domestiserte arter under aktiv seleksjon, og to-tre størrelses\-ordenar raskare enn vill makroevolusjon. Dette er eit direkte fallsifiserbart funn som ikkje har vore plasserte på den skalaen før.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{E21_tempo_gingerich.png}
+\caption{Haldane-rate \citep{gingerich1983} per 40-års intervall. (a) Absolutt |haldane| per PC-akse med biologiske referanseverdar som stipla linjer. (b) Samla gjennomsnittleg rate per intervall. Design ligg mellom domestisering og Bergmann-skift; to størrelsesordenar raskare enn naturleg makroevolusjon.}
+\label{fig:E21}
+\end{figure}
+
+Figur~\ref{fig:E22} fører \citet{harmon2010} sin direkte samanlikning av makroevolusjonsmodellar inn i design-domenet. For kvar av dei seks PC-aksane tilpassar vi tre modellar til den parvise trait-differensial-fordelinga via maksimum likelihood:
+\begin{align*}
+\text{BM} &\quad \mathrm{Var}(\Delta) = \sigma^2 \Delta t \\
+\text{OU} &\quad \mathrm{Var}(\Delta) = \frac{\sigma^2}{2\alpha}\bigl(1 - e^{-2\alpha \Delta t}\bigr) \\
+\text{EB} &\quad \sigma^2(t) = \sigma_0^2 \exp(rt)
+\end{align*}
+Resultatet er entydig: for alle seks aksar er \textbf{Brownian motion-modellen katastrofalt avvist} ($\Delta\mathrm{AIC} > 30{,}000$) til fordel for Ornstein-Uhlenbeck (stabiliserande seleksjon) eller Early-Burst (tidleg radiasjon med ratebremse). Dette er direkte empirisk testa og sterk støtte for kjerne-likninga si fundamentale påstand: stol-evolusjonen er \textit{ikkje} ein tilfeldig kulturell drift, men ein prosess med attraktorar. Naive kulturelle drift-modellar er empirisk falsifiserte for dette korpuset.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{E22_makroevo_modellar.png}
+\caption{Makroevolusjonsmodellar etter \citet{harmon2010}. Empirisk $\mathrm{Var}(\Delta)$ mot $\Delta t$ for kvar PC-akse, med tilpassa kurver for BM, OU og EB. $\Delta\mathrm{AIC}$-verdiar oppgitt per modell. Alle seks aksar foretrekkjer OU eller EB; BM blir falsifisert med margen $>30{,}000$ AIC-poeng.}
+\label{fig:E22}
+\end{figure}
+
+Figur~\ref{fig:E23} tek konvergent evolusjon-analyse frå \citet{stayton2015} og brukar han for fyrste gong til å identifisere spesifikke par av stolar der forma har konvergert på tvers av substratet. Eit par er plukka ut dersom: (i) stolane har ulik materialklasse, (ii) minst 40 års separasjon, (iii) 6D-avstanden deira er mindre enn 0{,}5 PC-einingar. Dei valde para ligg i venstre hale av avstandsfordelinga, tydeleg lågare enn typisk innan-materiale-avstand. Silhuettane viser direkte at funksjonelle løysingar er substrat-uavhengige: ein Breuer-stol frå 1926 (stål) har same morfometriske signatur som ein Empire-armstol frå 1805 (tre), berre distribuert i eit anna materiale. Dette er ein direkte empirisk konfirmasjon av substrat-uavhengigheita som kjerne-likninga postulerer i seksjon~4.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{E23_konvergens.png}
+\caption{Konvergent evolusjon etter \citet{stayton2015}. Øvre rader: åtte konvergens-par der stolar frå ulike materialklassar sit svært nære i 6D PC-rommet; ramme-fargen viser materialklasse. (c) Fordeling av parvise avstandar: på tvers-av-materiale (amber) overlappar innan-materiale (grå), men dei valde konvergens-para (raude linjer) er i ytre venstre hale — nærare kvarandre enn typiske par innan eit materiale.}
+\label{fig:E23}
+\end{figure}
+
+Dei fire analysane deler éin ting: dei brukar matematikk som er tjue til sytti år gammal i biologien, men som ikkje tidlegare har fått eit designhistorisk korpus stort nok og systematisk nok til å køyre på. Resultata validerer kjerne-likninga på måtar som formgrammatikk og C-K-teori ikkje er utstyrte for: rate-målingar i haldanar, modelkomparasjon mot BM, fylogenetisk rekonstruksjon på tvers av stilperiodar, og identifikasjon av konkrete konvergens-par.
+
+\subsection*{B.7 Giga-grid over heile datasettet}
 
 Til slutt, for å gjere skalaen synleg, er heile silhuett-korpuset presentert i éin figur sortert kronologisk (figur~\ref{fig:E6y}) og ein tilsvarande sortert etter PC1 (figur~\ref{fig:E6pc}). I båe grid er bakgrunnen til kvar celle tinta etter stilperiode. Figurane demonstrerer at det IKKJE er éin stil per tidsband, men kontinuerleg overlapp og substrat-skift.
 
