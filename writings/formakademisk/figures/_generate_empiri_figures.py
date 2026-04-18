@@ -1040,7 +1040,7 @@ def fig_E7_trajektorie_split(df, pca):
             # OU attractor θ
             theta_x = traj.iloc[-3:]["cx"].mean()
             theta_y = traj.iloc[-3:]["cy"].mean()
-            ax.scatter([theta_x], [theta_y], marker="*", s=340,
+            ax.scatter([theta_x], [theta_y], marker="D", s=340,
                        color=col, edgecolors=SLATE, linewidths=0.9,
                        label="OU θ (adaptiv topp)", zorder=8)
 
@@ -2762,7 +2762,7 @@ def fig_E24_ou_multi_optima(df, pca):
                     c=[mat_colors[mname]], alpha=0.32,
                     linewidths=0, zorder=2)
         # θ star
-        axA.scatter([th_x], [th_y], s=320, marker="*",
+        axA.scatter([th_x], [th_y], s=200, marker="D",
                     c=[mat_colors[mname]],
                     edgecolors="white", linewidths=1.5, zorder=6,
                     label=f"{mat_labels[mname]}  θ = ({th_x:.2f}, {th_y:.2f})")
@@ -3222,14 +3222,17 @@ def voxel_three_views(grid, mode="max"):
 
 
 def draw_shaded_mesh(ax, grid, rot_y=35, rot_x=22,
-                      light_dir=(0.4, 0.8, 0.45),
-                      fill_light=(-0.5, 0.3, 0.6),
-                      base_color=(0.42, 0.46, 0.55),
-                      level=None, ambient=0.28, edge_rim=True,
-                      smooth_sigma=0.9):
-    """Marching-cubes a 3D voxel grid, Lambert-shade the triangle mesh.
-    A small Gaussian smoothing before marching cubes gives much cleaner
-    surfaces. Fill light adds a softer counter-light for depth cues."""
+                      light_dir=(0.45, 0.80, 0.45),
+                      fill_light=(-0.55, 0.25, -0.35),
+                      base_color=(0.52, 0.56, 0.64),
+                      shadow_color=None,
+                      highlight_color=None,
+                      level=None, ambient=0.14, edge_rim=True,
+                      smooth_sigma=0.4, specular_strength=0.22,
+                      specular_exponent=24):
+    """Marching-cubes + Blinn-Phong shaded mesh with tone-mapped colour.
+    A key+fill lighting rig, toned shadow/highlight colours, and a
+    specular highlight give a genuine studio-render feel. Runs CPU-only."""
     from skimage.measure import marching_cubes
     from matplotlib.collections import PolyCollection
     from scipy.ndimage import gaussian_filter
@@ -3242,7 +3245,6 @@ def draw_shaded_mesh(ax, grid, rot_y=35, rot_x=22,
         grid_f = gaussian_filter(grid_f, sigma=smooth_sigma)
     if level is None:
         level = 0.5 if grid.dtype == bool else 0.30 * grid_f.max()
-    # pad so the isosurface is closed
     grid_p = np.pad(grid_f, 1, mode="constant", constant_values=0)
     try:
         verts, faces, _, _ = marching_cubes(grid_p, level=level)
@@ -3270,22 +3272,49 @@ def draw_shaded_mesh(ax, grid, rot_y=35, rot_x=22,
 
     light = np.array(light_dir, dtype=float); light /= np.linalg.norm(light)
     fill = np.array(fill_light, dtype=float); fill /= np.linalg.norm(fill)
-    lam_key = np.clip(fn_n @ light, 0, 1)
-    lam_fill = np.clip(fn_n @ fill, 0, 1) * 0.35
-    # approximate ambient occlusion: darker triangles when facing inward
-    # (y component of normal — chairs have horizontal seat/leg plates)
-    ao = 0.10 * np.clip(-fn_n[:, 1], 0, 1)
-    intensity = ambient + (1 - ambient - 0.10) * (lam_key + lam_fill) - ao
-    intensity = np.clip(intensity, 0, 1)
+    view = np.array([0.0, 0.0, 1.0])  # camera looks along +Z
 
-    # depth: use mean Z of each triangle (positive = closer if looking along +Z)
+    # Lambert diffuse: key + fill
+    lam_key = np.clip(fn_n @ light, 0, 1)
+    lam_fill = np.clip(fn_n @ fill, 0, 1)
+    diffuse = 0.78 * lam_key + 0.22 * lam_fill
+
+    # Blinn-Phong specular
+    half = (light + view); half /= np.linalg.norm(half)
+    spec = np.clip(fn_n @ half, 0, 1) ** specular_exponent
+
+    # approximate ambient occlusion: downward-facing faces (under seat) darker
+    ao = 0.22 * np.clip(-fn_n[:, 1], 0, 1)
+
+    intensity = np.clip(ambient + diffuse - ao, 0, 1.3)
+
+    base_rgb = np.asarray(base_color, dtype=float)
+    if shadow_color is None:
+        shadow_rgb = base_rgb * 0.32
+    else:
+        shadow_rgb = np.asarray(shadow_color, dtype=float)
+    if highlight_color is None:
+        highlight_rgb = np.clip(base_rgb * 0.40 + np.array([0.80, 0.80, 0.80]),
+                                 0, 1)
+    else:
+        highlight_rgb = np.asarray(highlight_color, dtype=float)
+
+    # two-segment tone mapping: 0 → shadow, 0.5 → base, 1 → highlight
+    t_lo = np.clip(intensity / 0.55, 0, 1)[:, None]
+    mid = shadow_rgb[None, :] * (1 - t_lo) + base_rgb[None, :] * t_lo
+    t_hi = np.clip((intensity - 0.55) / 0.45, 0, 1)[:, None]
+    surface_col = mid * (1 - t_hi) + highlight_rgb[None, :] * t_hi
+    # additive specular on top
+    surface_col = np.clip(
+        surface_col + specular_strength * spec[:, None] * np.array([1, 1, 1]),
+        0, 1)
+
+    # depth-sort (back to front)
     depth = tri[:, :, 2].mean(axis=1)
-    order = np.argsort(depth)  # back to front
+    order = np.argsort(depth)
     polys_2d = tri[order][:, :, :2]
-    base_rgb = np.array(base_color)
     cols = np.zeros((len(faces), 4))
-    cols[:, :3] = (base_rgb[None, :] * intensity[:, None])
-    # a subtle rim on steep angles (facing camera = high lam → darker rim)
+    cols[:, :3] = surface_col
     cols[:, 3] = 1.0
     cols = cols[order]
 
@@ -3296,8 +3325,6 @@ def draw_shaded_mesh(ax, grid, rot_y=35, rot_x=22,
 
     # optional thin silhouette rim
     if edge_rim:
-        # find silhouette edges: edges where adjacent triangles change front/back
-        # simpler: draw a slightly darker outline from convex hull of projected verts
         from scipy.spatial import ConvexHull
         xy = v_rot[:, :2]
         try:
@@ -3305,8 +3332,8 @@ def draw_shaded_mesh(ax, grid, rot_y=35, rot_x=22,
             hx = xy[hull.vertices, 0]
             hy = xy[hull.vertices, 1]
             ax.plot(np.r_[hx, hx[0]], np.r_[hy, hy[0]],
-                    color=(base_rgb * 0.35).tolist(), linewidth=0.35,
-                    alpha=0.55, zorder=5)
+                    color=(shadow_rgb * 0.55).tolist(), linewidth=0.45,
+                    alpha=0.45, zorder=5)
         except Exception:
             pass
 
@@ -4319,7 +4346,7 @@ def fig_E35_synopsis(df, pca, vox):
         theta_xs.append(th_x); theta_ys.append(th_y)
         axC.scatter(sub["PC1"], sub["PC2"], s=8, c=[col], alpha=0.35,
                      linewidths=0, zorder=2)
-        axC.scatter([th_x], [th_y], s=380, marker="*", c=[col],
+        axC.scatter([th_x], [th_y], s=220, marker="D", c=[col],
                      edgecolors="white", linewidths=1.5, zorder=6,
                      label=f"{mat_labels[mname]}  θ = ({th_x:.2f}, {th_y:.2f})")
     # draw triangle
@@ -4387,6 +4414,117 @@ def fig_E35_synopsis(df, pca, vox):
                         alpha=0.80, boxstyle="round,pad=0.3"))
 
     save(fig, "E35_synopsis")
+
+
+# ═════════════════════════════════════════════════════════════════════
+# FIG E36: Allometri — testar om form er skala-avhengig
+# ═════════════════════════════════════════════════════════════════════
+def fig_E36_allometri(df, vox):
+    """Classical allometric scaling test. For each of the shape-only axes
+    (Sphericity, Fill-ratio, Inertia-ratio), regress on log(Høgde). Under
+    pure scaling (isometry) the slope is 0; nonzero slope = allometric
+    growth, i.e. shape changes systematically with size. Additionally,
+    regress each shape-PC on log(Høgde) to find if the data-driven
+    deformation axes are size-dependent or size-independent."""
+    df_u = df.copy()
+    df_u = df_u[df_u["Høgde (cm)"].notna() & (df_u["Høgde (cm)"] > 20)].copy()
+    df_u["log_h"] = np.log(df_u["Høgde (cm)"])
+    shape_cols = ["Sphericity (mesh)", "Fill-ratio (mesh)", "Inertia-ratio (mesh)"]
+
+    # linear regression stats per axis
+    from scipy import stats as sstats
+    rows = []
+    for c in shape_cols:
+        sub = df_u[df_u[c].notna()]
+        x = sub["log_h"].values; y = sub[c].values
+        slope, intercept, r, p, se = sstats.linregress(x, y)
+        rows.append(dict(trait=c, slope=slope, r2=r * r, p=p,
+                         r=r, n=len(sub)))
+
+    # shape-PCA scores — allometric regression
+    mean_flat, comps, evr, scores, oid_order, nd = build_shape_pca(vox, df)
+    oid_to_sc = dict(zip(oid_order, scores))
+    df_u["_has_shape"] = df_u["Objekt-ID"].isin(oid_to_sc.keys())
+    df_shape = df_u[df_u["_has_shape"]].copy()
+    for k in range(6):
+        df_shape[f"spc{k+1}"] = df_shape["Objekt-ID"].map(
+            lambda o: oid_to_sc[o][k])
+    pc_rows = []
+    for k in range(6):
+        sub = df_shape[df_shape[f"spc{k+1}"].notna()]
+        x = sub["log_h"].values; y = sub[f"spc{k+1}"].values
+        slope, intercept, r, p, se = sstats.linregress(x, y)
+        pc_rows.append(dict(pc=k + 1, slope=slope, r2=r * r, p=p, r=r,
+                            n=len(sub)))
+
+    fig = plt.figure(figsize=(14.5, 9))
+    gs = gridspec.GridSpec(2, 3, height_ratios=[1.15, 1], hspace=0.38,
+                           wspace=0.30, figure=fig)
+
+    # Row 1: 3 scatter panels — form-aksar vs log(H)
+    trait_labels = {"Sphericity (mesh)": "Sphericity",
+                    "Fill-ratio (mesh)": "Fill-ratio",
+                    "Inertia-ratio (mesh)": "Inertia-ratio"}
+    for i, c in enumerate(shape_cols):
+        ax = fig.add_subplot(gs[0, i])
+        sub = df_u[df_u[c].notna()]
+        ax.scatter(sub["log_h"], sub[c], s=7, c=SLATE, alpha=0.30,
+                    linewidths=0)
+        # fit line
+        r_ = rows[i]
+        xs_ = np.linspace(sub["log_h"].min(), sub["log_h"].max(), 50)
+        slope = r_["slope"]
+        intercept = sub[c].mean() - slope * sub["log_h"].mean()
+        ax.plot(xs_, intercept + slope * xs_, color=OI["rust"], lw=1.6,
+                 label=f"slope = {slope:+.3f}")
+        ax.set_xlabel("log(Høgde [cm])")
+        ax.set_ylabel(trait_labels[c])
+        significance = "p < 0,001" if r_["p"] < 1e-3 else f"p = {r_['p']:.3g}"
+        ax.set_title(f"{trait_labels[c]}   R² = {r_['r2']:.3f}   {significance}",
+                      loc="left", fontsize=10, weight="bold")
+        ax.legend(loc="upper left", fontsize=8.5, frameon=False)
+        ax.grid(alpha=0.14, linewidth=0.4)
+
+    # Bottom row: shape-PCA allometry as a coefficient bar chart
+    axB = fig.add_subplot(gs[1, :2])
+    xs_b = np.arange(6)
+    cols_ = [AMBER if r_["p"] < 0.01 else OI["grey"] for r_ in pc_rows]
+    axB.bar(xs_b, [r_["r"] for r_ in pc_rows], color=cols_,
+             edgecolor=SLATE, linewidth=0.5)
+    for k, r_ in enumerate(pc_rows):
+        axB.text(k, r_["r"] + (0.03 if r_["r"] > 0 else -0.08),
+                  f"R² = {r_['r2']:.2f}", ha="center", fontsize=8, color=SLATE)
+    axB.axhline(0, color=SLATE, lw=0.6)
+    axB.set_xticks(xs_b)
+    axB.set_xticklabels([f"shape-PC{k+1}" for k in range(6)], fontsize=9)
+    axB.set_ylabel("Pearson r mot log(Høgde)")
+    axB.set_ylim(-1, 1)
+    axB.set_title("(d) shape-PCs si samvariasjon med log-storleik",
+                   loc="left", fontsize=10.2, weight="bold")
+    axB.grid(axis="y", alpha=0.14, linewidth=0.4)
+
+    # summary text panel
+    axT = fig.add_subplot(gs[1, 2])
+    axT.axis("off")
+    header = f"{'akse':<16}  {'R²':>6}  {'p':>10}  {'n':>5}"
+    lines = ["Allometri-regresjonar:", "",
+              "Form-aksar vs log(Høgde):", header, "─" * 44]
+    for r_ in rows:
+        nm = trait_labels[r_["trait"]]
+        lines.append(f"{nm:<16}  {r_['r2']:>6.3f}  "
+                     f"{r_['p']:>10.2e}  {r_['n']:>5}")
+    lines.append("")
+    lines.append("Shape-PCs vs log(Høgde):")
+    lines.append(header.replace("akse", "shape-PC"))
+    lines.append("─" * 44)
+    for r_ in pc_rows:
+        lines.append(f"shape-PC{r_['pc']:<8} {r_['r2']:>6.3f}  "
+                     f"{r_['p']:>10.2e}  {r_['n']:>5}")
+    axT.text(0.0, 1.0, "\n".join(lines), transform=axT.transAxes,
+             fontsize=8.8, color=SLATE, family="monospace",
+             va="top", ha="left")
+
+    save(fig, "E36_allometri")
 
 
 # ═════════════════════════════════════════════════════════════════════
@@ -4512,8 +4650,11 @@ def main():
     print("[32/33] E34 ancestral state reconstruction...")
     fig_E34_ancestor_reconstruction(df, vox)
 
-    print("[33/33] E35 synopsis hero figur...")
+    print("[33/34] E35 synopsis hero figur...")
     fig_E35_synopsis(df, pca, vox)
+
+    print("[34/34] E36 allometri...")
+    fig_E36_allometri(df, vox)
 
     for t in ("_sil_test.png", "_sil_test2.png", "_fonttest.png"):
         p = os.path.join(OUT, t)
