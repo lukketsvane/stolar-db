@@ -46,7 +46,7 @@ LIGHTAMBER = "#F3E4CD"
 
 mpl.rcParams.update({
     "font.family": "sans-serif",
-    "font.sans-serif": ["Helvetica", "Arial", "DejaVu Sans"],
+    "font.sans-serif": ["DejaVu Sans", "Helvetica", "Arial"],
     "font.size": 10,
     "axes.labelsize": 10,
     "axes.titlesize": 11,
@@ -1075,14 +1075,14 @@ def fig_component_diagram():
     # M at top
     ax.add_patch(FancyBboxPatch((3.5, 6.5), 3.0, 1.2, boxstyle="round,pad=0.05",
                                 facecolor=LIGHTSLATE, edgecolor=SLATE, linewidth=1.5))
-    ax.text(5, 7.3, "Formrom $M$", ha="center", fontsize=11.5, fontweight="bold", color=SLATE)
+    ax.text(5, 7.3, r"Formrom $M$", ha="center", fontsize=11.5, fontweight="bold", color=SLATE)
     ax.text(5, 6.9, "moglege konfigurasjonar", ha="center", fontsize=8.5, color=SLATE, style="italic")
 
     # Middle row: Π (left), SG (center), L (right)
     middle_boxes = [
-        (1.5, 4.0, "Partisjon $\\Pi$", "$(K, C, F)$", LIGHTSLATE, SLATE),
-        (5.0, 4.0, "Grammatikk $\\mathrm{SG}$", "$(S, R, \\omega)$", LIGHTSLATE, SLATE),
-        (8.5, 4.0, "Landskap $\\mathcal{L}_k$", "seleksjonstrykk", LIGHTAMBER, AMBER),
+        (1.5, 4.0, r"Partisjon $\Pi$", r"$(K, C, F)$", LIGHTSLATE, SLATE),
+        (5.0, 4.0, r"Grammatikk $\mathrm{SG}$", r"$(S, R, \omega)$", LIGHTSLATE, SLATE),
+        (8.5, 4.0, r"Landskap $\mathcal{L}_k$", "seleksjonstrykk", LIGHTAMBER, AMBER),
     ]
     for x, y, title, sub, bg, ec in middle_boxes:
         ax.add_patch(FancyBboxPatch((x - 1.2, y - 0.55), 2.4, 1.1, boxstyle="round,pad=0.05",
@@ -1093,7 +1093,7 @@ def fig_component_diagram():
     # Bottom: A
     ax.add_patch(FancyBboxPatch((2.5, 1.0), 5.0, 1.0, boxstyle="round,pad=0.05",
                                 facecolor=LIGHTSLATE, edgecolor=SLATE, linewidth=1.5))
-    ax.text(5, 1.5, "Agenthierarki $\\mathcal{A} = \\{A_0, \\ldots, A_n\\}$",
+    ax.text(5, 1.5, r"Agenthierarki $\mathcal{A} = \{A_0, \dots, A_n\}$",
             ha="center", fontsize=11.5, fontweight="bold", color=SLATE)
 
     # Arrows: middle → M
@@ -1106,14 +1106,14 @@ def fig_component_diagram():
                 bbox=dict(boxstyle="round,pad=0.15", facecolor="white", edgecolor="none"))
 
     arrow(1.5, 4.55, 3.7, 6.5, "partisjonerer")
-    arrow(5.0, 4.55, 5.0, 6.5, "genererer $L(\\mathrm{SG})$")
+    arrow(5.0, 4.55, 5.0, 6.5, r"genererer $L(\mathrm{SG})$")
     arrow(8.5, 4.55, 6.3, 6.5, "vektar sannsyn")
 
     arrow(3.0, 2.0, 1.8, 3.45, "strukturerer")
     arrow(5.0, 2.0, 5.0, 3.45, "realiserer")
-    arrow(7.0, 2.0, 8.2, 3.45, "$\\nabla_{C(A_k)}$-navigerer")
+    arrow(7.0, 2.0, 8.2, 3.45, r"$\nabla_{C(A_k)}$-navigerer")
 
-    ax.text(5, 7.9, "Formlære-tuppel: $\\mathcal{D} = (M, \\Pi, \\mathrm{SG}, \\mathcal{L}, \\mathcal{A})$",
+    ax.text(5, 7.9, r"Formlære-tuppel: $\mathcal{D} = (M, \Pi, \mathrm{SG}, \mathcal{L}, \mathcal{A})$",
             ha="center", fontsize=12, fontweight="bold", color=SLATE)
 
     save(fig, "18_komponent_diagram")
