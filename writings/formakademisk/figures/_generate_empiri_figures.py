@@ -1040,7 +1040,7 @@ def fig_E7_trajektorie_split(df, pca):
             # OU attractor θ
             theta_x = traj.iloc[-3:]["cx"].mean()
             theta_y = traj.iloc[-3:]["cy"].mean()
-            ax.scatter([theta_x], [theta_y], marker="D", s=340,
+            ax.scatter([theta_x], [theta_y], marker="o", s=150,
                        color=col, edgecolors=SLATE, linewidths=0.9,
                        label="OU θ (adaptiv topp)", zorder=8)
 
@@ -2762,7 +2762,7 @@ def fig_E24_ou_multi_optima(df, pca):
                     c=[mat_colors[mname]], alpha=0.32,
                     linewidths=0, zorder=2)
         # θ star
-        axA.scatter([th_x], [th_y], s=200, marker="D",
+        axA.scatter([th_x], [th_y], s=130, marker="o",
                     c=[mat_colors[mname]],
                     edgecolors="white", linewidths=1.5, zorder=6,
                     label=f"{mat_labels[mname]}  θ = ({th_x:.2f}, {th_y:.2f})")
@@ -4346,7 +4346,7 @@ def fig_E35_synopsis(df, pca, vox):
         theta_xs.append(th_x); theta_ys.append(th_y)
         axC.scatter(sub["PC1"], sub["PC2"], s=8, c=[col], alpha=0.35,
                      linewidths=0, zorder=2)
-        axC.scatter([th_x], [th_y], s=220, marker="D", c=[col],
+        axC.scatter([th_x], [th_y], s=140, marker="o", c=[col],
                      edgecolors="white", linewidths=1.5, zorder=6,
                      label=f"{mat_labels[mname]}  θ = ({th_x:.2f}, {th_y:.2f})")
     # draw triangle
