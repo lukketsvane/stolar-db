@@ -30,3 +30,5 @@ research/temp/
 .env
 *_local.env
 *env.local
+# Reference PDF storage
+writings/references/referansar/
