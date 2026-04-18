@@ -2612,6 +2612,457 @@ def fig_E23_konvergens(df, pca, sils, n_pairs=8):
 
 
 # ═════════════════════════════════════════════════════════════════════
+# FIG E24: OU multi-optima per materiale (Butler & King 2004)
+# ═════════════════════════════════════════════════════════════════════
+def fig_E24_ou_multi_optima(df, pca):
+    """Butler & King (2004) introduced the OU-multiple-optimum model:
+    each phylogenetic subclade can have its own adaptive optimum θᵢ.
+    We transpose this to design by letting each material class have its
+    own OU-optimum per axis. Compare:
+      OU₁  — single optimum (all materials converge on one θ)
+      OU₃  — three optima (wood / metal / plastic have independent θ)
+    Strong support for OU₃ = each substrate has its own adaptive peak,
+    which is exactly the character-displacement prediction in a formal
+    evolutionary-model framework."""
+    from scipy.optimize import minimize
+
+    df_use = df[df["mat_class"].isin(["wood", "metal", "plastic"])].copy()
+    df_use = df_use[df_use["år"].notna()].copy()
+    pc_cols = ["PC1", "PC2", "PC3", "PC4", "PC5", "PC6"]
+
+    # For each material, collect pair samples the same way as E22
+    rng = np.random.default_rng(1)
+    n = len(df_use)
+    idx = rng.choice(n, min(900, n), replace=False)
+    sub = df_use.iloc[idx].sort_values("år").reset_index(drop=True)
+
+    # Pair (i,j) within or across material classes
+    mat = sub["mat_class"].values
+    yrs = sub["år"].values
+    X = sub[pc_cols].values
+    nsub = len(sub)
+
+    # build pair lists (dt, dx per axis) per material
+    pairs = {"wood": [], "metal": [], "plastic": [], "all": []}
+    for i in range(nsub - 1):
+        js = np.arange(i + 1, nsub)
+        dts = yrs[js] - yrs[i]
+        mask = dts > 0
+        js = js[mask]; dts = dts[mask]
+        if len(js) > 40:
+            keep = rng.choice(len(js), 40, replace=False)
+            js = js[keep]; dts = dts[keep]
+        dxs = X[js] - X[i]
+        for jj, dt in zip(js, dts):
+            pairs["all"].append((dt, X[jj] - X[i], mat[i], mat[jj]))
+            if mat[i] == mat[jj]:
+                pairs[mat[i]].append((dt, X[jj] - X[i]))
+
+    def pack_same_material(pair_list):
+        dts = np.array([p[0] for p in pair_list])
+        dxs = np.array([p[1] for p in pair_list])
+        return dts, dxs
+
+    fit_results = {}
+    for m_name in ["wood", "metal", "plastic", "all"]:
+        if m_name == "all":
+            # treat as pool for single-OU comparison
+            dts = np.array([p[0] for p in pairs["all"]])
+            dxs = np.array([p[1] for p in pairs["all"]])
+        else:
+            dts, dxs = pack_same_material(pairs[m_name])
+        if len(dts) < 30:
+            continue
+        axis_results = []
+        for k in range(6):
+            dx = dxs[:, k]
+            # OU variance under stationarity: Var(Δ) = (σ²/α)(1-e^{-2α Δt})
+            def nll(params):
+                sigma2 = np.exp(params[0])
+                alpha = np.exp(params[1])
+                var_t = (sigma2 / (2 * alpha)) * (1 - np.exp(-2 * alpha * dts))
+                var_t = np.maximum(var_t, 1e-12)
+                return 0.5 * np.sum(np.log(2 * np.pi * var_t) + dx ** 2 / var_t)
+            r = minimize(nll, [0.0, -2.0], method="Nelder-Mead")
+            sigma2 = float(np.exp(r.x[0]))
+            alpha = float(np.exp(r.x[1]))
+            # OU stationary mean = trait mean; stationary variance = σ²/(2α)
+            stat_var = sigma2 / (2 * alpha)
+            # implicit θ = empirical mean of this material on this axis
+            if m_name == "all":
+                theta = float(sub[pc_cols[k]].mean())
+            else:
+                theta = float(sub[sub["mat_class"] == m_name][pc_cols[k]].mean())
+            axis_results.append(dict(
+                sigma2=sigma2, alpha=alpha, stat_var=stat_var, theta=theta,
+                nll=float(r.fun), n=len(dts)))
+        fit_results[m_name] = axis_results
+
+    # AIC: single-OU has 2 params per axis; multi-OU has 2 params × 3 materials + 3 θ per axis
+    # We compute likelihood via the single-pooled fit vs sum of per-material fits
+    aic_single = []
+    aic_multi = []
+    for k in range(6):
+        # single: use 'all' fit. k=2 params
+        nll_s = fit_results["all"][k]["nll"]
+        aic_s = 2 * 2 + 2 * nll_s
+        nll_m = sum(fit_results[m][k]["nll"] for m in ["wood", "metal", "plastic"]
+                    if m in fit_results)
+        aic_m = 2 * 6 + 2 * nll_m  # 2 params per material × 3 materials
+        aic_single.append(aic_s)
+        aic_multi.append(aic_m)
+
+    # plot
+    fig = plt.figure(figsize=(14, 8.5))
+    gs = gridspec.GridSpec(2, 2, width_ratios=[1.3, 1.0],
+                           height_ratios=[1, 0.9], hspace=0.38, wspace=0.25,
+                           figure=fig)
+
+    # (a) Theta positions per material on PC1-PC2
+    axA = fig.add_subplot(gs[0, 0])
+    pc1 = df["PC1"].values; pc2 = df["PC2"].values
+    axA.scatter(pc1, pc2, s=3, c=OI["grey"], alpha=0.10, linewidths=0, zorder=1)
+    mat_colors = {"wood": AMBER, "metal": OI["blue"], "plastic": OI["rust"]}
+    for mname in ["wood", "metal", "plastic"]:
+        if mname not in fit_results:
+            continue
+        r = fit_results[mname]
+        th_x = r[0]["theta"]; th_y = r[1]["theta"]
+        # attraction ellipse: σ_stat per axis, assuming diagonal
+        w = 2 * np.sqrt(r[0]["stat_var"]); h = 2 * np.sqrt(r[1]["stat_var"])
+        ell = Ellipse(xy=(th_x, th_y), width=w, height=h,
+                       facecolor=to_rgba(mat_colors[mname], 0.18),
+                       edgecolor=mat_colors[mname], linewidth=1.3, zorder=3)
+        axA.add_patch(ell)
+        axA.scatter([th_x], [th_y], s=180, marker="*", c=[mat_colors[mname]],
+                    edgecolors="white", linewidths=1.3, zorder=5,
+                    label=f"{mname}  θ = ({th_x:.2f}, {th_y:.2f})")
+        # phylogenetic half-life τ₁/₂ = ln(2)/α on PC1
+        tau = np.log(2) / r[0]["alpha"]
+        axA.text(th_x + 0.07, th_y + 0.07,
+                 f"τ½(PC1) ≈ {tau:.0f} år",
+                 fontsize=7.5, color=mat_colors[mname])
+    xlo, xhi = np.quantile(pc1, [0.02, 0.98])
+    ylo, yhi = np.quantile(pc2, [0.02, 0.98])
+    axA.set_xlim(xlo, xhi); axA.set_ylim(ylo, yhi)
+    axA.set_xlabel("PC1"); axA.set_ylabel("PC2")
+    axA.set_title("(a) OU-optimum θ per materialklasse, med stasjonær 1σ-ellipse",
+                   loc="left", weight="bold", fontsize=10.2)
+    axA.legend(loc="upper left", fontsize=8, frameon=False)
+    axA.grid(alpha=0.12, linewidth=0.4)
+
+    # (b) AIC comparison per axis
+    axB = fig.add_subplot(gs[0, 1])
+    xs = np.arange(6)
+    width = 0.38
+    delta = np.array(aic_single) - np.array(aic_multi)
+    bars_m = axB.bar(xs - width / 2, aic_multi, width, color=AMBER,
+                      edgecolor=SLATE, linewidth=0.5,
+                      label="OU₃ (per materiale)")
+    bars_s = axB.bar(xs + width / 2, aic_single, width, color=SLATE,
+                      edgecolor=SLATE, linewidth=0.5, alpha=0.8,
+                      label="OU₁ (felles)")
+    for k, d in enumerate(delta):
+        axB.text(k, max(aic_single[k], aic_multi[k]) + 20,
+                 f"ΔAIC = {d:.0f}", ha="center", fontsize=8,
+                 color=OI["rust"] if d > 10 else SLATE)
+    axB.set_xticks(xs); axB.set_xticklabels([AXIS_LABELS_NN[c] for c in pc_cols],
+                                              fontsize=8.5, rotation=20)
+    axB.set_ylabel("AIC (lågare = betre modell)")
+    axB.set_title("(b) OU₃ vs OU₁ per akse",
+                   loc="left", weight="bold", fontsize=10.2)
+    axB.legend(loc="upper right", fontsize=8.5, frameon=False)
+    axB.grid(axis="y", alpha=0.14, linewidth=0.4)
+
+    # (c) Text summary with parameter estimates
+    axC = fig.add_subplot(gs[1, :])
+    axC.axis("off")
+    lines = ["Materiale-spesifikke OU-parametrar (median på tvers av alle seks aksar)"]
+    lines.append("─" * 95)
+    lines.append(f"{'materiale':12}  {'n par':>6}  {'σ² median':>12}  "
+                 f"{'α median':>10}  {'τ½ median':>10}  {'stasjonær σ²':>14}")
+    lines.append("─" * 95)
+    for mname in ["wood", "metal", "plastic"]:
+        if mname not in fit_results:
+            continue
+        r = fit_results[mname]
+        med_s2 = float(np.median([x["sigma2"] for x in r]))
+        med_a = float(np.median([x["alpha"] for x in r]))
+        med_tau = float(np.log(2) / med_a) if med_a > 0 else np.nan
+        med_stat = float(np.median([x["stat_var"] for x in r]))
+        n_p = r[0]["n"]
+        lines.append(f"{mname:12}  {n_p:>6}  {med_s2:>12.4f}  "
+                     f"{med_a:>10.4f}  {med_tau:>10.0f}  {med_stat:>14.4f}")
+    lines.append("")
+    lines.append("ΔAIC > 10 per akse = sterk støtte for materiale-spesifikke optima.")
+    axC.text(0.01, 0.98, "\n".join(lines), transform=axC.transAxes,
+             fontsize=9, color=SLATE, family="monospace", va="top", ha="left")
+
+    save(fig, "E24_ou_multi_optima")
+
+
+# ═════════════════════════════════════════════════════════════════════
+# FIG E25: Morfologisk modularitet (Goswami 2007)
+# ═════════════════════════════════════════════════════════════════════
+def fig_E25_modularitet(df, pca):
+    """Goswami (2007) modularity analysis. Partition the 6 traits into
+    two a-priori hypothesised modules:
+      SIZE  = {Høgde, Breidde, Djupn}
+      SHAPE = {Sphericity, Fill-ratio, Inertia-ratio}
+    Compute the RV coefficient (Escoufier 1973) between the two modules.
+    RV near 1 = strong integration (one module); RV near 0 = independence.
+
+    Compare RV across material subsets to ask: does the substrate shift
+    the integration structure? A decrease in RV when new substrates enter
+    indicates that a once-integrated trait system has become modular."""
+    pc_cols_size = ["Høgde (cm)", "Breidde (cm)", "Djupn (cm)"]
+    pc_cols_shape = ["Sphericity (mesh)", "Fill-ratio (mesh)", "Inertia-ratio (mesh)"]
+
+    def rv_coef(A, B):
+        """RV coefficient between two data matrices with same rows."""
+        A = A - A.mean(axis=0)
+        B = B - B.mean(axis=0)
+        SAB = A.T @ B
+        SAA = A.T @ A
+        SBB = B.T @ B
+        num = np.trace(SAB @ SAB.T)
+        den = np.sqrt(np.trace(SAA @ SAA)) * np.sqrt(np.trace(SBB @ SBB))
+        return float(num / den) if den > 0 else 0.0
+
+    def rv_with_null(A, B, n_perm=400):
+        rv_obs = rv_coef(A, B)
+        rng = np.random.default_rng(0)
+        null = np.empty(n_perm)
+        for i in range(n_perm):
+            perm = rng.permutation(len(B))
+            null[i] = rv_coef(A, B[perm])
+        p = float((null >= rv_obs).mean())
+        return rv_obs, null.mean(), float(np.quantile(null, 0.95)), p
+
+    # Make sure traits are present
+    use = df[pc_cols_size + pc_cols_shape].dropna()
+    df_use = df.loc[use.index].copy()
+    A_all = use[pc_cols_size].values
+    B_all = use[pc_cols_shape].values
+    rv_all, null_m_all, null_hi_all, p_all = rv_with_null(A_all, B_all)
+
+    # Compare across materials
+    group_results = [("alle", rv_all, null_m_all, null_hi_all, p_all, len(use))]
+    for mname in ["wood", "metal", "plastic"]:
+        mask = df_use["mat_class"].values == mname
+        if mask.sum() < 30:
+            continue
+        A = A_all[mask]; B = B_all[mask]
+        rv, nm, nh, pv = rv_with_null(A, B)
+        group_results.append((mname, rv, nm, nh, pv, int(mask.sum())))
+
+    # Compare across time bands
+    time_bands = [(1600, 1800), (1800, 1900), (1900, 1950), (1950, 2025)]
+    time_rv = []
+    for a, b in time_bands:
+        ym = (df_use["år"] >= a) & (df_use["år"] < b)
+        if ym.sum() < 30:
+            time_rv.append((f"{a}–{b}", np.nan, np.nan, np.nan, np.nan, int(ym.sum())))
+            continue
+        A = A_all[ym.values]; B = B_all[ym.values]
+        rv, nm, nh, pv = rv_with_null(A, B)
+        time_rv.append((f"{a}–{b}", rv, nm, nh, pv, int(ym.sum())))
+
+    # Correlation matrix for visualisation
+    corr = np.zeros((6, 6))
+    cols_all = pc_cols_size + pc_cols_shape
+    for i, ci in enumerate(cols_all):
+        for j, cj in enumerate(cols_all):
+            corr[i, j] = float(df_use[ci].corr(df_use[cj]))
+
+    fig = plt.figure(figsize=(14.5, 8.5))
+    gs = gridspec.GridSpec(2, 3, width_ratios=[1.15, 1.0, 1.15],
+                           height_ratios=[1.15, 1], hspace=0.38, wspace=0.32,
+                           figure=fig)
+
+    # (a) Correlation matrix heatmap
+    axA = fig.add_subplot(gs[0, 0])
+    im = axA.imshow(corr, cmap="RdBu_r", vmin=-1, vmax=1)
+    ticks = ["Høgde", "Breidde", "Djupn", "Sphericity", "Fill-ratio", "Inertia-ratio"]
+    axA.set_xticks(range(6)); axA.set_xticklabels(ticks, fontsize=8, rotation=35,
+                                                   ha="right")
+    axA.set_yticks(range(6)); axA.set_yticklabels(ticks, fontsize=8)
+    # separators between hypothesised modules (size=0..2, shape=3..5)
+    axA.axhline(2.5, color="black", linewidth=1.3)
+    axA.axvline(2.5, color="black", linewidth=1.3)
+    for i in range(6):
+        for j in range(6):
+            axA.text(j, i, f"{corr[i, j]:.2f}", ha="center", va="center",
+                     fontsize=7,
+                     color="white" if abs(corr[i, j]) > 0.45 else SLATE)
+    fig.colorbar(im, ax=axA, shrink=0.75, pad=0.03).set_label("korrelasjon")
+    axA.set_title("(a) trekk-korrelasjon.  Svart stipla = SIZE / SHAPE-modulgrense",
+                   loc="left", fontsize=10, weight="bold")
+
+    # (b) RV per material
+    axB = fig.add_subplot(gs[0, 1])
+    names = [g[0] for g in group_results]
+    rvs = [g[1] for g in group_results]
+    nulls_m = [g[2] for g in group_results]
+    nulls_hi = [g[3] for g in group_results]
+    cols = [OI["grey"], AMBER, OI["blue"], OI["rust"]]
+    cols = cols[:len(names)]
+    xs = np.arange(len(names))
+    axB.bar(xs, rvs, color=cols, alpha=0.85, edgecolor=SLATE, linewidth=0.5,
+             label="observert RV")
+    axB.errorbar(xs, nulls_m, yerr=[np.zeros(len(xs)),
+                                      np.array(nulls_hi) - np.array(nulls_m)],
+                  fmt="none", color=SLATE, capsize=4, elinewidth=1.2,
+                  label="nullmodell 95%")
+    axB.set_xticks(xs); axB.set_xticklabels(names, fontsize=9)
+    axB.set_ylim(0, min(1.0, max(rvs) * 1.25))
+    axB.set_ylabel("RV-koeffisient (0 = modulær, 1 = integrert)")
+    axB.set_title("(b) SIZE × SHAPE integrasjon per materialklasse",
+                   loc="left", fontsize=10, weight="bold")
+    axB.grid(axis="y", alpha=0.14, linewidth=0.4)
+    axB.legend(loc="upper right", fontsize=8, frameon=False)
+    for k, (n, rv, nm, nh, pv, nsamp) in enumerate(group_results):
+        axB.text(k, rv + 0.02, f"p = {pv:.2g}\nn = {nsamp}",
+                 ha="center", fontsize=7.2, color=SLATE)
+
+    # (c) RV over time
+    axC = fig.add_subplot(gs[0, 2])
+    xs = np.arange(len(time_rv))
+    rvs_t = [g[1] for g in time_rv]
+    nh_t = [g[3] for g in time_rv]
+    nm_t = [g[2] for g in time_rv]
+    axC.plot(xs, rvs_t, marker="o", color=AMBER, lw=1.8, markersize=9,
+             label="observert")
+    axC.fill_between(xs, nm_t, nh_t, color=OI["grey"], alpha=0.25,
+                      label="null (median–95%)")
+    axC.set_xticks(xs); axC.set_xticklabels([g[0] for g in time_rv], fontsize=9)
+    axC.set_ylim(0, min(1.0, max(rvs_t) * 1.25))
+    axC.set_ylabel("RV")
+    axC.set_title("(c) integrasjon over tid",
+                   loc="left", fontsize=10, weight="bold")
+    axC.grid(alpha=0.14, linewidth=0.4)
+    axC.legend(loc="upper right", fontsize=8, frameon=False)
+    for k, (n, rv, nm, nh, pv, nsamp) in enumerate(time_rv):
+        if not np.isnan(rv):
+            axC.text(k, rv + 0.015, f"n = {nsamp}", ha="center", fontsize=7.2,
+                     color=SLATE)
+
+    # (d) Summary text
+    axD = fig.add_subplot(gs[1, :])
+    axD.axis("off")
+    txt = [
+        "Tolking av RV-koeffisienten mellom SIZE = (Høgde, Breidde, Djupn) og SHAPE = (Sphericity, Fill-ratio, Inertia-ratio):",
+        "  • RV nær 1  →  sterk integrasjon. Størrelse og form evolverer i lås; éin utviklings-kanal.",
+        "  • RV nær 0  →  modulær. Size og shape er uavhengige; to utviklings-kanalar operer parallelt.",
+        "  • Observert RV signifikant over nullen (p < 0,05) = moduarene er koplet statistisk.",
+    ]
+    axD.text(0.01, 0.95, "\n".join(txt), transform=axD.transAxes,
+             fontsize=9.5, color=SLATE, va="top", ha="left")
+
+    save(fig, "E25_modularitet")
+
+
+# ═════════════════════════════════════════════════════════════════════
+# FIG E26: Range-through survival av formtypar (paleo-Gantt)
+# ═════════════════════════════════════════════════════════════════════
+def fig_E26_range_through(df, pca, n_types=14):
+    """Paleobiology range-through diagram. Cluster all chairs into
+    morphological 'types' using KMeans on the first few PCs; for each
+    type, plot first and last observed year as a Gantt bar. Types that
+    span the whole record are bradytelic; short-lived types are tachytelic.
+
+    Also compute per-type 'extinction' year = last observation, and show
+    the cumulative number of live types per year (biodiversity curve)."""
+    df = df[df["år"].notna()].copy().sort_values("år")
+    pc_cols = ["PC1", "PC2", "PC3", "PC4"]
+    X = df[pc_cols].values
+
+    km = KMeans(n_clusters=n_types, n_init=10, random_state=0).fit(X)
+    df = df.copy()
+    df["type"] = km.labels_
+
+    # per-type range
+    type_stats = []
+    for k in range(n_types):
+        sub = df[df["type"] == k]
+        type_stats.append(dict(
+            k=k,
+            first=int(sub["år"].min()),
+            last=int(sub["år"].max()),
+            n=len(sub),
+            centroid=sub[pc_cols].mean().values))
+    type_stats.sort(key=lambda d: d["first"])
+
+    # colour each type by centroid PC1
+    pc1s = np.array([t["centroid"][0] for t in type_stats])
+    norm = (pc1s - pc1s.min()) / max(pc1s.max() - pc1s.min(), 1e-9)
+    cmap = LinearSegmentedColormap.from_list("pctype", [SLATE, AMBER], N=256)
+
+    # live-type curve
+    years = np.arange(df["år"].min(), df["år"].max() + 1, 1)
+    live = np.zeros_like(years, dtype=int)
+    for t in type_stats:
+        live[(years >= t["first"]) & (years <= t["last"])] += 1
+
+    fig = plt.figure(figsize=(14, 8.5))
+    gs = gridspec.GridSpec(3, 1, height_ratios=[2.2, 1, 1],
+                           hspace=0.28, figure=fig)
+
+    # (a) Gantt
+    axA = fig.add_subplot(gs[0])
+    for i, t in enumerate(type_stats):
+        col = cmap(norm[i])
+        axA.barh(i, t["last"] - t["first"] + 1, left=t["first"],
+                 color=col, edgecolor=SLATE, linewidth=0.3, alpha=0.9)
+        axA.text(t["first"] - 5, i, f"T{t['k']:02d} n={t['n']}",
+                 va="center", ha="right", fontsize=7.5, color=SLATE)
+        axA.text(t["last"] + 3, i,
+                 f"[{t['first']}–{t['last']}, {t['last'] - t['first']}a]",
+                 va="center", ha="left", fontsize=7.5, color=SLATE)
+    axA.set_yticks([])
+    axA.set_xlim(df["år"].min() - 80, df["år"].max() + 40)
+    axA.set_title(f"(a) range-through Gantt av {n_types} morfologiske typar (KMeans på PC1–PC4)",
+                   loc="left", fontsize=10.2, weight="bold")
+    axA.grid(axis="x", alpha=0.14, linewidth=0.4)
+
+    # (b) live-type curve
+    axB = fig.add_subplot(gs[1], sharex=axA)
+    axB.fill_between(years, 0, live, color=AMBER, alpha=0.45,
+                      step="mid")
+    axB.plot(years, live, color=SLATE, lw=1.4)
+    axB.set_ylabel("tal levande typar")
+    axB.set_title("(b) live-type-kurve: biodiversitet gjennom tid",
+                   loc="left", fontsize=10.2, weight="bold")
+    axB.grid(alpha=0.14, linewidth=0.4)
+
+    # (c) origination and extinction rates in 50-year bins
+    axC = fig.add_subplot(gs[2], sharex=axA)
+    bins = np.arange(df["år"].min(), df["år"].max() + 51, 50)
+    orig = np.zeros(len(bins) - 1)
+    ext = np.zeros(len(bins) - 1)
+    for t in type_stats:
+        oi = np.searchsorted(bins, t["first"], side="right") - 1
+        ei = np.searchsorted(bins, t["last"], side="right") - 1
+        if 0 <= oi < len(orig):
+            orig[oi] += 1
+        if 0 <= ei < len(ext):
+            ext[ei] += 1
+    w = bins[1] - bins[0]
+    axC.bar(bins[:-1] - w / 4, orig, w / 2, color=AMBER,
+             edgecolor=SLATE, linewidth=0.4, label="origination")
+    axC.bar(bins[:-1] + w / 4, ext, w / 2, color=SLATE,
+             edgecolor=SLATE, linewidth=0.4, alpha=0.8, label="extinction")
+    axC.set_xlabel("år")
+    axC.set_ylabel("tal typar")
+    axC.set_title("(c) per-intervall origination og extinction",
+                   loc="left", fontsize=10.2, weight="bold")
+    axC.legend(loc="upper left", fontsize=8.5, frameon=False)
+    axC.grid(axis="y", alpha=0.14, linewidth=0.4)
+
+    save(fig, "E26_range_through")
+
+
+# ═════════════════════════════════════════════════════════════════════
 # Main
 # ═════════════════════════════════════════════════════════════════════
 def main():
@@ -2645,70 +3096,66 @@ def main():
     df_yr = df[df["år"].notna()].copy()
     print(f"  (time-aware figures use {len(df_yr)} chairs with year)")
 
-    print("[6/15] E3 landskap over tid...")
-    fig_E3_landskap_tid(df_yr, pca)
-
-    print("[7/15] E4 kanalisering...")
-    fig_E4_kanalisering(df_yr)
-
-    print("[8/15] E5 stase og brot...")
-    fig_E5_stase_brot(df_yr, pca)
-
-    print("[9/15] E6 giga-grid (alle silhuettar)...")
+    # ─── Kjernebunt: kontekstuelle morforom-figurar ───
+    print("[6/20] E6 giga-grid (alle silhuettar)...")
     fig_E6_giga_grid(df_yr, sils, mode="year")
     fig_E6_giga_grid(df, sils, mode="pc1")
     fig_E6_legend()
 
-    print("[10/15] E7 morforom-trajektorie (split wood/metal + OU)...")
-    fig_E7_trajektorie_split(df_yr, pca)
-
-    print("[11/15] E8 silhuett-scatter i PCA (Holotype refinement)...")
+    print("[7/20] E8 silhuett-scatter i PCA...")
     fig_E8_silhouette_scatter(df, pca, sils, n_show=260)
 
-    print("[12/15] E9 substrat-skift over tid...")
-    fig_E9_substrat_skift(df_yr, pca)
-
-    print("[13/18] E10 realiseringsgrad...")
+    print("[8/20] E10 realiseringsgrad...")
     fig_E10_realiseringsgrad(df, pca)
 
-    print("[14/18] E11 stiavhengigheit (H11)...")
+    # ─── Paleobiologi-baserte prediktive testar ───
+    print("[9/20] E11 stiavhengigheit...")
     fig_E11_stiavhengigheit(df_yr, pca)
 
-    print("[15/18] E15 Lande-likning og evolusjonær respons...")
-    fig_E15_lande_prediction(df_yr, pca)
-
-    print("[16/18] E12 kanalisering radar (H12)...")
+    print("[10/20] E12 kanalisering radar...")
     fig_E12_kanalisering_radar(df)
 
-    print("[17/22] E13 punktuert likevekt (H13)...")
+    print("[11/20] E13 punktuert likevekt (nullmodell)...")
     fig_E13_punktuert_likevekt(df_yr, pca)
 
-    print("[18/22] E14 agent-hierarki (H14)...")
-    fig_E14_agent_hierarki(df_yr)
+    print("[12/20] E15 Lande-likning...")
+    fig_E15_lande_prediction(df_yr, pca)
 
-    print("[19/22] E16 morfologisk nyskaping over tid...")
+    print("[13/20] E16 morfologisk nyskaping (Foote 1997)...")
     fig_E16_morfologisk_nyskaping(df_yr, pca, sils)
 
-    print("[20/22] E17 disparity through time (Foote 1993)...")
+    print("[14/20] E17 disparity through time (Foote 1993)...")
     fig_E17_disparity_through_time(df_yr, pca)
 
-    print("[21/22] E18 prediktiv landskaps-drift...")
+    print("[15/20] E18 prediktiv landskaps-drift...")
     fig_E18_prediktiv_landskapsdrift(df_yr, pca)
 
-    print("[22/26] E19 morfologisk karakterforskyving...")
+    print("[16/20] E19 karakterforskyving (nytt prediktivt funn)...")
     fig_E19_karakterforskyving(df_yr, pca)
 
-    print("[23/26] E20 phylomorphospace (Sidlauskas 2008)...")
+    print("[17/20] E20 phylomorphospace (Sidlauskas 2008)...")
     fig_E20_phylomorphospace(df_yr, pca)
 
-    print("[24/26] E21 Gingerich haldane-tempo...")
+    print("[18/20] E21 Gingerich haldane-tempo (1983)...")
     fig_E21_tempo_gingerich(df_yr, pca)
 
-    print("[25/26] E22 makroevolusjonsmodellar (BM/OU/EB)...")
+    print("[19/20] E7 trajektorie splitta på materiale...")
+    fig_E7_trajektorie_split(df_yr, pca)
+
+    print("[20/20] E22 makroevolusjonsmodellar (Harmon 2010)...")
     fig_E22_makroevo_modellar(df, pca)
 
-    print("[26/26] E23 konvergent evolusjon...")
+    print("[21/24] E23 konvergent evolusjon (Stayton 2015)...")
     fig_E23_konvergens(df_yr, pca, sils)
+
+    print("[22/24] E24 OU multi-optima per materiale (Butler & King 2004)...")
+    fig_E24_ou_multi_optima(df_yr, pca)
+
+    print("[23/24] E25 morfologisk modularitet (Goswami 2007)...")
+    fig_E25_modularitet(df, pca)
+
+    print("[24/24] E26 range-through survival av formtypar...")
+    fig_E26_range_through(df_yr, pca)
 
     for t in ("_sil_test.png", "_sil_test2.png", "_fonttest.png"):
         p = os.path.join(OUT, t)
