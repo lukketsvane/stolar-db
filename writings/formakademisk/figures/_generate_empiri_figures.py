@@ -2132,6 +2132,486 @@ def fig_E19_karakterforskyving(df, pca):
 
 
 # ═════════════════════════════════════════════════════════════════════
+# FIG E20: Phylomorphospace (Sidlauskas 2008)
+# ═════════════════════════════════════════════════════════════════════
+def fig_E20_phylomorphospace(df, pca):
+    """Phylomorphospace after Sidlauskas (2008). Stolen from ichthyology:
+    place period-centroid nodes in PC1-PC2; connect them along the
+    chronological 'tree' (here a linear chain by year) with internal
+    branches coloured by the per-branch evolutionary rate (haldane-like).
+
+    A real phylo has branching; artefact history is largely a chain with
+    occasional 'reticulation' (revival). We show the chain plus a second
+    panel with per-branch rate as a function of year."""
+    counts = df["Stilperiode"].value_counts()
+    periods = [p for p in sorted(PERIOD_YEAR.keys(), key=lambda k: PERIOD_YEAR[k])
+               if p in counts.index and counts[p] >= 10]
+    pc_cols = ["PC1", "PC2", "PC3", "PC4", "PC5", "PC6"]
+
+    nodes = []
+    for p in periods:
+        sub = df[df["Stilperiode"] == p][pc_cols]
+        nodes.append(dict(period=p, year=PERIOD_YEAR[p],
+                           centroid=sub.mean().values,
+                           sigma=sub.std().values,
+                           n=len(sub)))
+    nodes.sort(key=lambda r: r["year"])
+
+    # per-branch rate: ||Δcentroid|| / Δyear (in darwins-like units)
+    edges = []
+    for i in range(len(nodes) - 1):
+        a, b = nodes[i], nodes[i + 1]
+        dt = max(b["year"] - a["year"], 1)
+        dv = b["centroid"] - a["centroid"]
+        rate6 = np.linalg.norm(dv) / dt
+        edges.append(dict(a=i, b=i + 1, year=(a["year"] + b["year"]) / 2,
+                          dt=dt, rate=rate6))
+
+    # --- figure ---
+    fig = plt.figure(figsize=(15.5, 7.2))
+    gs = gridspec.GridSpec(1, 3, width_ratios=[2.1, 0.85, 1.45], wspace=0.18,
+                           figure=fig)
+
+    # Panel A: phylomorphospace
+    ax = fig.add_subplot(gs[0])
+    pc1 = df["PC1"].values; pc2 = df["PC2"].values
+    ax.scatter(pc1, pc2, s=4, c=OI["grey"], alpha=0.10,
+               linewidths=0, zorder=1)
+
+    # color branches by rate (log scale)
+    rates = np.array([e["rate"] for e in edges]) + 1e-9
+    lrates = np.log10(rates)
+    vmin, vmax = lrates.min(), lrates.max()
+    branch_cmap = LinearSegmentedColormap.from_list(
+        "rate", [SLATE, "#6B7080", AMBER, OI["rust"]], N=256)
+
+    for e in edges:
+        a, b = nodes[e["a"]], nodes[e["b"]]
+        norm = (np.log10(e["rate"] + 1e-9) - vmin) / max(vmax - vmin, 1e-9)
+        col = branch_cmap(norm)
+        ax.annotate("", xy=(b["centroid"][0], b["centroid"][1]),
+                    xytext=(a["centroid"][0], a["centroid"][1]),
+                    arrowprops=dict(arrowstyle="-", color=col,
+                                    lw=max(0.6, 3 * norm + 0.8),
+                                    alpha=0.95),
+                    zorder=3)
+
+    for i, r in enumerate(nodes):
+        c = PERIOD_COLOR.get(r["period"], OI["grey"])
+        ax.scatter([r["centroid"][0]], [r["centroid"][1]],
+                   s=140, c=[c], edgecolors="white",
+                   linewidths=1.4, zorder=5)
+        ax.text(r["centroid"][0], r["centroid"][1], str(i + 1),
+                ha="center", va="center", fontsize=8.5, color="white",
+                weight="bold", zorder=6)
+
+    xlo, xhi = np.quantile(pc1, [0.02, 0.98])
+    ylo, yhi = np.quantile(pc2, [0.02, 0.98])
+    ax.set_xlim(xlo, xhi); ax.set_ylim(ylo, yhi)
+    ax.set_xlabel(f"PC1 ({pca.explained_variance_ratio_[0]*100:.1f}% varians)")
+    ax.set_ylabel(f"PC2 ({pca.explained_variance_ratio_[1]*100:.1f}% varians)")
+    ax.set_title("(a) phylomorphospace — kjede av periode-sentroidar "
+                 "med greiner farga etter rate",
+                 loc="left", fontsize=10.2, weight="bold")
+    ax.grid(alpha=0.12, linewidth=0.4)
+
+    # Panel B: numbered legend list
+    axL = fig.add_subplot(gs[1]); axL.axis("off")
+    axL.text(0.0, 1.00, "Node-liste", transform=axL.transAxes,
+             fontsize=10, weight="bold", color=SLATE, va="top")
+    for i, n in enumerate(nodes):
+        yp = 0.94 - i * (0.94 / max(len(nodes), 1))
+        c = PERIOD_COLOR.get(n["period"], OI["grey"])
+        axL.scatter([0.02], [yp], s=55, c=[c], transform=axL.transAxes,
+                    edgecolors="white", linewidths=0.8, zorder=3)
+        axL.text(0.02, yp, str(i + 1), transform=axL.transAxes,
+                 fontsize=7, weight="bold", color="white",
+                 ha="center", va="center", zorder=4)
+        axL.text(0.10, yp, f"{n['period']}  ({n['year']})",
+                 transform=axL.transAxes, fontsize=7.6,
+                 color=SLATE, va="center", ha="left")
+
+    # Panel C: per-branch rate over time
+    axB = fig.add_subplot(gs[2])
+    years_mid = [e["year"] for e in edges]
+    axB.bar(years_mid, rates, width=12, color=AMBER,
+            edgecolor=SLATE, linewidth=0.5, alpha=0.85)
+    axB.set_yscale("log")
+    axB.set_xlabel("midt-år for grein")
+    axB.set_ylabel("‖Δsentroide‖₆ / Δår   (log skala)")
+    axB.set_title("(c) evolusjonsrate per grein (alle seks PC)",
+                  loc="left", fontsize=10.2, weight="bold")
+    axB.grid(alpha=0.14, linewidth=0.4, axis="y")
+    # annotate the fastest branch
+    if len(edges):
+        k_max = int(np.argmax(rates))
+        fastest = edges[k_max]
+        a = nodes[fastest["a"]]; b = nodes[fastest["b"]]
+        axB.annotate(f"raskast: {a['period']} → {b['period']}\n"
+                     f"Δt = {int(fastest['dt'])} år",
+                     xy=(fastest["year"], fastest["rate"]),
+                     xytext=(fastest["year"] - 110,
+                              fastest["rate"] * 1.4),
+                     fontsize=8, color=SLATE,
+                     arrowprops=dict(arrowstyle="->", color=SLATE,
+                                     lw=0.8, alpha=0.7))
+
+    save(fig, "E20_phylomorphospace")
+
+
+# ═════════════════════════════════════════════════════════════════════
+# FIG E21: Morfologisk tempo (Gingerich 1983, haldanes/darwins)
+# ═════════════════════════════════════════════════════════════════════
+def fig_E21_tempo_gingerich(df, pca):
+    """Gingerich (1983) haldane rates applied to chair design.
+    Haldane = (z2 - z1) / Δt in standard deviations per generation.
+    We use 'generation' ≈ 25 years (one typical designer career).
+
+    Compare observed rates to:
+      - typical biological macroevolutionary rates (10⁻³ haldanes/gen)
+      - typical evolutionary lineage rates (10⁻² haldanes/gen)
+      - anthropogenic rates under domestication (10⁻¹–10¹ haldanes/gen)
+
+    The scale is log-haldane; the comparison shows chairs evolving in the
+    same rate regime as domesticated animals, not as wild lineages."""
+    df = df[df["år"].notna()].copy()
+    df = df.sort_values("år")
+    pc_cols = ["PC1", "PC2", "PC3", "PC4", "PC5", "PC6"]
+
+    # use 40-year bins for robust centroid estimation
+    bins = np.arange(1500, 2040, 40)
+    centroids = []
+    for i in range(len(bins) - 1):
+        a, b = bins[i], bins[i + 1]
+        sub = df[(df["år"] >= a) & (df["år"] < b)]
+        if len(sub) < 8:
+            continue
+        for c in pc_cols:
+            pass
+        centroids.append(dict(year=(a + b) / 2, bin=(a, b),
+                              mean=sub[pc_cols].mean().values,
+                              std=sub[pc_cols].std().values,
+                              n=len(sub)))
+
+    # haldanes between consecutive bins on each axis
+    gen = 25  # years per generation
+    rows = []
+    for i in range(len(centroids) - 1):
+        a, b = centroids[i], centroids[i + 1]
+        dt_gen = (b["year"] - a["year"]) / gen
+        pooled_sd = (a["std"] + b["std"]) / 2 + 1e-9
+        haldane = (b["mean"] - a["mean"]) / (pooled_sd * dt_gen)
+        rows.append(dict(year=(a["year"] + b["year"]) / 2,
+                         haldane=haldane,
+                         span=(a["year"], b["year"])))
+
+    year_arr = np.array([r["year"] for r in rows])
+    h_arr = np.array([r["haldane"] for r in rows])  # shape (n, 6)
+    h_abs = np.abs(h_arr)
+
+    fig = plt.figure(figsize=(14, 8.5))
+    gs = gridspec.GridSpec(2, 1, height_ratios=[1, 1], hspace=0.35,
+                           figure=fig)
+
+    axA = fig.add_subplot(gs[0])
+    # per-axis lines
+    axis_colors = [AMBER, SLATE, OI["blue"], OI["rust"],
+                   OI["green"], OI["skyblue"]]
+    for i, (c, col) in enumerate(zip(pc_cols, axis_colors)):
+        axA.plot(year_arr, h_abs[:, i], marker="o", markersize=4, linewidth=1.2,
+                 label=f"|h({c})|", color=col, alpha=0.85)
+    # biological benchmarks
+    benchmarks = [
+        (1e-4, "bradytelisk (makroevolusjon i naturen)", OI["grey"]),
+        (1e-2, "mikroevolusjonære linjer", SLATE),
+        (1e-1, "domestiserte arter (sprang)", AMBER),
+        (1e0, "Bergmann-skift under klimaskift", OI["rust"]),
+    ]
+    for val, lbl, col in benchmarks:
+        axA.axhline(val, color=col, linestyle="--", linewidth=0.7, alpha=0.7)
+        axA.text(2020, val * 1.15, lbl, fontsize=7.5, color=col,
+                 ha="right", va="bottom")
+    axA.set_yscale("log")
+    axA.set_ylim(1e-4, 10)
+    axA.set_xlim(year_arr.min() - 10, year_arr.max() + 10)
+    axA.set_xlabel("år")
+    axA.set_ylabel("|haldane| = |Δz| / (σ̄ · Δgen)")
+    axA.set_title("(a) Gingerich haldane-ratar per 40-års intervall "
+                  "(gen = 25 år)", loc="left", fontsize=10.2, weight="bold")
+    axA.grid(alpha=0.14, which="both", linewidth=0.4)
+    axA.legend(loc="upper left", fontsize=7.5, ncol=3, frameon=False)
+
+    axB = fig.add_subplot(gs[1])
+    pooled = h_abs.mean(axis=1)
+    axB.bar(year_arr, pooled, width=30, color=AMBER,
+            edgecolor=SLATE, linewidth=0.4, alpha=0.85)
+    axB.set_yscale("log")
+    axB.set_ylim(1e-3, 10)
+    axB.axhline(1e-2, color=SLATE, linestyle="--", linewidth=0.7,
+                alpha=0.8, label="mikroevolusjon")
+    axB.axhline(1e-1, color=AMBER, linestyle="--", linewidth=0.7,
+                alpha=0.8, label="domestisering")
+    axB.set_xlabel("år")
+    axB.set_ylabel("gjennomsnittleg |haldane| (6 aksar)")
+    axB.set_title("(b) samla haldane-rate per intervall",
+                  loc="left", fontsize=10.2, weight="bold")
+    axB.grid(alpha=0.14, which="both", linewidth=0.4, axis="y")
+    axB.legend(loc="upper left", fontsize=8, frameon=False)
+    axB.set_xlim(year_arr.min() - 10, year_arr.max() + 10)
+
+    save(fig, "E21_tempo_gingerich")
+
+
+# ═════════════════════════════════════════════════════════════════════
+# FIG E22: Makroevolusjonsmodellar (BM vs OU vs EB, Harmon 2010 style)
+# ═════════════════════════════════════════════════════════════════════
+def fig_E22_makroevo_modellar(df, pca):
+    """For each PC axis, fit three classical macroevolutionary models to
+    the observed 'disparity-through-time' curve:
+      BM   — Var(Δ) = σ² Δt                (pure random walk)
+      OU   — Var(Δ) = (σ²/α)(1-e^{-2α Δt}) (stabilising selection)
+      EB   — σ²(t) = σ²₀ exp(r t), r<0      (early-burst niche filling)
+    Compare via AIC; colour-code the winning model per axis.
+
+    This is Harmon et al. (2010)'s exact approach, transposed to chairs."""
+    df_yr = df[df["år"].notna()].copy()
+    pc_cols = ["PC1", "PC2", "PC3", "PC4", "PC5", "PC6"]
+
+    from scipy.optimize import minimize
+
+    # pairs: for each pair of chairs, (Δt, Δx for each axis)
+    # we subsample to keep computation reasonable
+    rng = np.random.default_rng(0)
+    idx = rng.choice(len(df_yr), min(800, len(df_yr)), replace=False)
+    sub = df_yr.iloc[idx].sort_values("år").reset_index(drop=True)
+    yrs = sub["år"].values
+    n = len(sub)
+
+    # build pair arrays
+    pair_dt = []
+    pair_dx = []  # list of 6-vectors
+    # cap at 50k pairs
+    for i in range(n - 1):
+        js = np.arange(i + 1, n)
+        dts = yrs[js] - yrs[i]
+        mask = dts > 0
+        js = js[mask]; dts = dts[mask]
+        if len(js) > 50:
+            keep = rng.choice(len(js), 50, replace=False)
+            js = js[keep]; dts = dts[keep]
+        pair_dt.append(dts)
+        pair_dx.append(sub.iloc[js][pc_cols].values - sub.iloc[i][pc_cols].values)
+    pair_dt = np.concatenate(pair_dt) if pair_dt else np.array([])
+    pair_dx = np.concatenate(pair_dx, axis=0) if pair_dx else np.zeros((0, 6))
+    print(f"  E22: {len(pair_dt)} pair observations")
+
+    def neg_ll_bm(params, dt, dx):
+        sigma2 = np.exp(params[0])
+        var_t = sigma2 * dt
+        return 0.5 * np.sum(np.log(2 * np.pi * var_t) + dx ** 2 / var_t)
+
+    def neg_ll_ou(params, dt, dx):
+        sigma2 = np.exp(params[0])
+        alpha = np.exp(params[1])
+        var_t = (sigma2 / (2 * alpha)) * (1 - np.exp(-2 * alpha * dt))
+        var_t = np.maximum(var_t, 1e-12)
+        return 0.5 * np.sum(np.log(2 * np.pi * var_t) + dx ** 2 / var_t)
+
+    def neg_ll_eb(params, dt, dx):
+        sigma2_0 = np.exp(params[0])
+        r = params[1]  # typically negative for early burst
+        # integrated variance under EB: integral_0^dt sigma^2_0 e^{rs} ds
+        if abs(r) < 1e-8:
+            var_t = sigma2_0 * dt
+        else:
+            var_t = (sigma2_0 / r) * (np.exp(r * dt) - 1)
+            var_t = np.maximum(var_t, 1e-12)
+        return 0.5 * np.sum(np.log(2 * np.pi * var_t) + dx ** 2 / var_t)
+
+    results = []
+    for k, c in enumerate(pc_cols):
+        dx = pair_dx[:, k]
+        # fit BM
+        r_bm = minimize(neg_ll_bm, [0.0], args=(pair_dt, dx),
+                        method="Nelder-Mead")
+        # fit OU
+        r_ou = minimize(neg_ll_ou, [0.0, -2.0], args=(pair_dt, dx),
+                        method="Nelder-Mead")
+        # fit EB
+        r_eb = minimize(neg_ll_eb, [0.0, -0.001], args=(pair_dt, dx),
+                        method="Nelder-Mead")
+        aic_bm = 2 * 1 + 2 * r_bm.fun
+        aic_ou = 2 * 2 + 2 * r_ou.fun
+        aic_eb = 2 * 2 + 2 * r_eb.fun
+        aics = {"BM": aic_bm, "OU": aic_ou, "EB": aic_eb}
+        best = min(aics, key=aics.get)
+        delta_aic = {k: v - min(aics.values()) for k, v in aics.items()}
+        params = {
+            "BM": dict(sigma2=np.exp(r_bm.x[0])),
+            "OU": dict(sigma2=np.exp(r_ou.x[0]), alpha=np.exp(r_ou.x[1])),
+            "EB": dict(sigma2_0=np.exp(r_eb.x[0]), r=r_eb.x[1]),
+        }
+        results.append(dict(axis=c, aics=aics, delta=delta_aic,
+                            best=best, params=params))
+
+    fig = plt.figure(figsize=(14, 9))
+    gs = gridspec.GridSpec(2, 3, hspace=0.40, wspace=0.28, figure=fig)
+
+    model_color = {"BM": SLATE, "OU": AMBER, "EB": OI["rust"]}
+
+    for k, res in enumerate(results):
+        r, c = divmod(k, 3)
+        ax = fig.add_subplot(gs[r, c])
+        dts = np.linspace(1, pair_dt.max(), 80)
+        # BM
+        v_bm = res["params"]["BM"]["sigma2"] * dts
+        # OU
+        s2o = res["params"]["OU"]["sigma2"]; alpha = res["params"]["OU"]["alpha"]
+        v_ou = (s2o / (2 * alpha)) * (1 - np.exp(-2 * alpha * dts))
+        # EB
+        s2e = res["params"]["EB"]["sigma2_0"]; rr = res["params"]["EB"]["r"]
+        if abs(rr) < 1e-8:
+            v_eb = s2e * dts
+        else:
+            v_eb = (s2e / rr) * (np.exp(rr * dts) - 1)
+        # empirical variance per dt bin
+        bins = np.quantile(pair_dt, np.linspace(0, 1, 20))
+        emp_x = []; emp_y = []
+        for i in range(len(bins) - 1):
+            m = (pair_dt >= bins[i]) & (pair_dt < bins[i + 1])
+            if m.sum() < 10: continue
+            emp_x.append((bins[i] + bins[i + 1]) / 2)
+            emp_y.append(pair_dx[m, k].var())
+        ax.scatter(emp_x, emp_y, s=20, c=OI["grey"],
+                   edgecolors="white", linewidths=0.3, zorder=2,
+                   label="empirisk Var(Δ)")
+        ax.plot(dts, v_bm, color=model_color["BM"], lw=1.6, alpha=0.9,
+                 label=f"BM ΔAIC={res['delta']['BM']:.1f}")
+        ax.plot(dts, v_ou, color=model_color["OU"], lw=1.6, alpha=0.9,
+                 label=f"OU ΔAIC={res['delta']['OU']:.1f}")
+        ax.plot(dts, v_eb, color=model_color["EB"], lw=1.6, alpha=0.9,
+                 label=f"EB ΔAIC={res['delta']['EB']:.1f}")
+        win_col = model_color[res["best"]]
+        ax.set_title(f"{AXIS_LABELS_NN.get(res['axis'], res['axis'])}   "
+                     f"beste: {res['best']}",
+                     loc="left", fontsize=9.8, weight="bold", color=win_col)
+        ax.set_xlabel("Δår")
+        ax.set_ylabel("Var(Δtrekk)")
+        ax.grid(alpha=0.12, linewidth=0.4)
+        ax.legend(loc="upper left", fontsize=7.2, frameon=False)
+
+    save(fig, "E22_makroevo_modellar")
+
+
+# ═════════════════════════════════════════════════════════════════════
+# FIG E23: Konvergent evolusjon på tvers av materiale
+# ═════════════════════════════════════════════════════════════════════
+def fig_E23_konvergens(df, pca, sils, n_pairs=8):
+    """Convergent evolution: find chair pairs from different material
+    classes that sit very close in 6D PC-space. These are cases where a
+    new substrate arrived at a pre-existing morphological 'solution'.
+    Compare to a null of same-material pair distances (should be smaller).
+
+    The cross-material pairs identify instances where function dominates
+    over substrate — direct test of the substrate-independence claim."""
+    df = df.copy()
+    df = df[df["mat_class"].isin(["wood", "metal", "plastic"])].reset_index(drop=True)
+    pc_cols = ["PC1", "PC2", "PC3", "PC4", "PC5", "PC6"]
+    X = df[pc_cols].values
+    mat = df["mat_class"].values
+    yrs = df["år"].values
+
+    # compute pairs with constraint: different materials and year diff >= 50
+    n = len(df)
+    # sample to avoid O(n^2) blowup
+    rng = np.random.default_rng(0)
+    idx = rng.choice(n, min(600, n), replace=False)
+    sub_X = X[idx]; sub_mat = mat[idx]; sub_yr = yrs[idx]; sub_oid = df.iloc[idx]["Objekt-ID"].values
+
+    # only keep pairs across different materials and with year separation >= 40
+    # but rank by 6D distance; keep smallest
+    candidates = []
+    for i in range(len(sub_X)):
+        for j in range(i + 1, len(sub_X)):
+            if sub_mat[i] == sub_mat[j]:
+                continue
+            if abs(sub_yr[i] - sub_yr[j]) < 40:
+                continue
+            d = np.linalg.norm(sub_X[i] - sub_X[j])
+            candidates.append((d, i, j))
+    candidates.sort()
+
+    chosen_pairs = []
+    used_oids = set()
+    for d, i, j in candidates:
+        if sub_oid[i] in used_oids or sub_oid[j] in used_oids:
+            continue
+        chosen_pairs.append((i, j, d))
+        used_oids.add(sub_oid[i]); used_oids.add(sub_oid[j])
+        if len(chosen_pairs) >= n_pairs:
+            break
+
+    # null: within-material distance distribution
+    within_dists = []
+    for _ in range(2000):
+        i, j = rng.choice(len(sub_X), 2, replace=False)
+        if sub_mat[i] != sub_mat[j]:
+            continue
+        within_dists.append(np.linalg.norm(sub_X[i] - sub_X[j]))
+    within_dists = np.array(within_dists)
+
+    between_dists = np.array([c[0] for c in candidates])
+
+    # figure: grid of pair silhouettes + null distribution
+    fig = plt.figure(figsize=(14, 9))
+    gs = gridspec.GridSpec(3, len(chosen_pairs) if chosen_pairs else 1,
+                           height_ratios=[1, 1, 1.0],
+                           hspace=0.35, wspace=0.12, figure=fig)
+
+    # top two rows: silhouette pairs, labelled
+    mat_tint = {"wood": AMBER, "metal": OI["blue"], "plastic": OI["rust"]}
+    for col_i, (i, j, d) in enumerate(chosen_pairs):
+        for row_i, who in enumerate([i, j]):
+            ax = fig.add_subplot(gs[row_i, col_i])
+            oid = sub_oid[who]
+            img = sils.get(oid)
+            if img is not None:
+                col = mat_tint.get(sub_mat[who], SLATE)
+                rgba = _period_rgb_silhouette(img, to_rgba(col)[:3])
+                ax.imshow(rgba, interpolation="nearest", aspect="auto")
+            ax.set_xticks([]); ax.set_yticks([])
+            ax.set_title(f"{sub_mat[who]}  {int(sub_yr[who])}",
+                         fontsize=8.2, color=mat_tint.get(sub_mat[who], SLATE),
+                         weight="bold")
+            for s in ["top", "right", "bottom", "left"]:
+                ax.spines[s].set_color(mat_tint.get(sub_mat[who], SLATE))
+                ax.spines[s].set_linewidth(1.2)
+
+    # bottom row: distance distribution
+    axD = fig.add_subplot(gs[2, :])
+    bins = np.linspace(0, max(between_dists.max() if len(between_dists) else 1,
+                              within_dists.max() if len(within_dists) else 1),
+                       40)
+    axD.hist(within_dists, bins=bins, color=SLATE, alpha=0.55,
+             edgecolor="white", linewidth=0.3, density=True,
+             label=f"innan-materiale (n={len(within_dists)})")
+    axD.hist(between_dists, bins=bins, color=AMBER, alpha=0.55,
+             edgecolor="white", linewidth=0.3, density=True,
+             label=f"på tvers av materiale (n={len(between_dists)})")
+    for d in [c[2] for c in chosen_pairs]:
+        axD.axvline(d, color=OI["rust"], linewidth=0.9, alpha=0.85)
+    axD.set_xlabel("6D avstand i PC-rom")
+    axD.set_ylabel("tettleik")
+    axD.set_title("(c) fordeling av parvise avstandar; raude linjer markerer "
+                  "dei valde konvergens-para",
+                  loc="left", fontsize=10, weight="bold")
+    axD.legend(loc="upper right", fontsize=8.5, frameon=False)
+    axD.grid(alpha=0.12, linewidth=0.4)
+
+    save(fig, "E23_konvergens")
+
+
+# ═════════════════════════════════════════════════════════════════════
 # Main
 # ═════════════════════════════════════════════════════════════════════
 def main():
@@ -2215,8 +2695,20 @@ def main():
     print("[21/22] E18 prediktiv landskaps-drift...")
     fig_E18_prediktiv_landskapsdrift(df_yr, pca)
 
-    print("[22/22] E19 morfologisk karakterforskyving...")
+    print("[22/26] E19 morfologisk karakterforskyving...")
     fig_E19_karakterforskyving(df_yr, pca)
+
+    print("[23/26] E20 phylomorphospace (Sidlauskas 2008)...")
+    fig_E20_phylomorphospace(df_yr, pca)
+
+    print("[24/26] E21 Gingerich haldane-tempo...")
+    fig_E21_tempo_gingerich(df_yr, pca)
+
+    print("[25/26] E22 makroevolusjonsmodellar (BM/OU/EB)...")
+    fig_E22_makroevo_modellar(df, pca)
+
+    print("[26/26] E23 konvergent evolusjon...")
+    fig_E23_konvergens(df_yr, pca, sils)
 
     for t in ("_sil_test.png", "_sil_test2.png", "_fonttest.png"):
         p = os.path.join(OUT, t)
