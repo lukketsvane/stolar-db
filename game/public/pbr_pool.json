@@ -1,0 +1,172 @@
+[
+  {
+    "id": "basic_01",
+    "namn": "Stol 01",
+    "year": 1720,
+    "mat": "tre",
+    "stil": "Barokk",
+    "nat": "Frankrike",
+    "glbPath": "/pbr/basic_01.glb",
+    "glbBytes": 37127332
+  },
+  {
+    "id": "basic_02",
+    "namn": "Stol 02",
+    "year": 1780,
+    "mat": "tre",
+    "stil": "Nyklassisisme",
+    "nat": "England",
+    "glbPath": "/pbr/basic_02.glb",
+    "glbBytes": 30031208
+  },
+  {
+    "id": "basic_03",
+    "namn": "Stol 03",
+    "year": 1830,
+    "mat": "tre",
+    "stil": "Empire",
+    "nat": "Frankrike",
+    "glbPath": "/pbr/basic_03.glb",
+    "glbBytes": 24258292
+  },
+  {
+    "id": "basic_04",
+    "namn": "Stol 04",
+    "year": 1870,
+    "mat": "tre",
+    "stil": "Historisme",
+    "nat": "Tyskland",
+    "glbPath": "/pbr/basic_04.glb",
+    "glbBytes": 30052552
+  },
+  {
+    "id": "basic_05",
+    "namn": "Stol 05",
+    "year": 1905,
+    "mat": "tre",
+    "stil": "Historisme",
+    "nat": "Sverige",
+    "glbPath": "/pbr/basic_05.glb",
+    "glbBytes": 23921956
+  },
+  {
+    "id": "basic_06",
+    "namn": "Stol 06",
+    "year": 1935,
+    "mat": "metall",
+    "stil": "Modernisme",
+    "nat": "Tyskland",
+    "glbPath": "/pbr/basic_06.glb",
+    "glbBytes": 27716944
+  },
+  {
+    "id": "basic_07",
+    "namn": "Stol 07",
+    "year": 1955,
+    "mat": "tre",
+    "stil": "Modernisme",
+    "nat": "Danmark",
+    "glbPath": "/pbr/basic_07.glb",
+    "glbBytes": 32528176
+  },
+  {
+    "id": "basic_08",
+    "namn": "Stol 08",
+    "year": 1965,
+    "mat": "tre",
+    "stil": "Modernisme",
+    "nat": "Italia",
+    "glbPath": "/pbr/basic_08.glb",
+    "glbBytes": 28260320
+  },
+  {
+    "id": "basic_09",
+    "namn": "Stol 09",
+    "year": 1985,
+    "mat": "metall",
+    "stil": "Postmodernisme",
+    "nat": "Italia",
+    "glbPath": "/pbr/basic_09.glb",
+    "glbBytes": 24342376
+  },
+  {
+    "id": "basic_10",
+    "namn": "Stol 10",
+    "year": 2000,
+    "mat": "plast",
+    "stil": "Postmodernisme",
+    "nat": "Sverige",
+    "glbPath": "/pbr/basic_10.glb",
+    "glbBytes": 27465096
+  },
+  {
+    "id": "basic_11",
+    "namn": "Stol 11",
+    "year": 2018,
+    "mat": "plast",
+    "stil": "Samtidsdesign",
+    "nat": "Noreg",
+    "glbPath": "/pbr/basic_11.glb",
+    "glbBytes": 36319724
+  },
+  {
+    "id": "heltre",
+    "namn": "Heltre",
+    "year": 1960,
+    "mat": "tre",
+    "stil": "Modernisme",
+    "nat": "Noreg",
+    "glbPath": "/pbr/heltre.glb",
+    "glbBytes": 18964740
+  },
+  {
+    "id": "lekker",
+    "namn": "Lekker",
+    "year": 1955,
+    "mat": "tre",
+    "stil": "Modernisme",
+    "nat": "Sverige",
+    "glbPath": "/pbr/lekker.glb",
+    "glbBytes": 28540348
+  },
+  {
+    "id": "opsvik",
+    "namn": "Variable Balans",
+    "year": 1979,
+    "mat": "tre",
+    "stil": "Modernisme",
+    "nat": "Noreg",
+    "glbPath": "/pbr/opsvik.glb",
+    "glbBytes": 26314268
+  },
+  {
+    "id": "Red_and_blue",
+    "namn": "Red and Blue",
+    "year": 1918,
+    "mat": "tre",
+    "stil": "Modernisme",
+    "nat": "Nederland",
+    "glbPath": "/pbr/Red_and_blue.glb",
+    "glbBytes": 34237480
+  },
+  {
+    "id": "terje_ekstrom_1977",
+    "namn": "Ekstrem 1977",
+    "year": 1977,
+    "mat": "tekstil",
+    "stil": "Modernisme",
+    "nat": "Noreg",
+    "glbPath": "/pbr/terje_ekstrom_1977.glb",
+    "glbBytes": 10383920
+  },
+  {
+    "id": "terje_ekstrom_1989",
+    "namn": "Ekstrem 1989",
+    "year": 1989,
+    "mat": "tekstil",
+    "stil": "Postmodernisme",
+    "nat": "Noreg",
+    "glbPath": "/pbr/terje_ekstrom_1989.glb",
+    "glbBytes": 22327544
+  }
+]
