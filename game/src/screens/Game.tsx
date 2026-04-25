@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { World } from '../3d/World';
 import { Hud } from './Hud';
@@ -10,22 +10,15 @@ interface Props {
   net: NetApi;
 }
 
-interface PickupFeedback {
-  matched: boolean;
-  reason: string;
-  chairId: string;
-  glbPath: string;
-  ts: number;
-}
-
 interface PoolEntry { id: string; glbPath: string }
 
 export function Game({ net }: Props) {
   const lastSent = useRef(0);
   const myXZ = useRef({ x: 0, z: 0 });
   const [, force] = useState(0);
-  const [stack, setStack] = useState<StackedChair[]>([]);
-  const lastSeenScore = useRef(0);
+  const [trippedAt, setTrippedAt] = useState(0);
+  const me = net.players.find((p) => p.id === net.myId);
+  const stack = useMemo<StackedChair[]>(() => me?.stack ?? [], [me?.stack]);
 
   // ── preload all chairs ────────────────────────────────────
   const [loaded, setLoaded] = useState(false);
@@ -35,50 +28,43 @@ export function Game({ net }: Props) {
   useEffect(() => {
     let cancelled = false;
     (async () => {
-      const res = await fetch('/pbr_pool.json');
-      const pool = (await res.json()) as PoolEntry[];
-      if (cancelled) return;
-      setTotal(pool.length);
-      let done = 0;
-      await Promise.all(pool.map(async (p) => {
-        try {
-          await fetch(p.glbPath, { cache: 'force-cache' });
-          useGLTF.preload(p.glbPath);
-        } catch {/* ignore */}
-        done++;
-        if (!cancelled) setProgress(done);
-      }));
-      if (!cancelled) setTimeout(() => { if (!cancelled) setLoaded(true); }, 600);
+      try {
+        const res = await fetch('/pbr_pool.json');
+        if (!res.ok) throw new Error('failed to load pbr_pool');
+        const pool = (await res.json()) as PoolEntry[];
+        if (cancelled || !Array.isArray(pool)) return;
+        setTotal(pool.length);
+        let done = 0;
+        // Sequential loading to prevent memory spikes
+        for (const p of pool) {
+          if (cancelled) break;
+          try {
+            await fetch(p.glbPath, { cache: 'force-cache' });
+            await useGLTF.preload(p.glbPath);
+          } catch (e) {
+            console.warn(`[game] failed to preload ${p.id}:`, e);
+          }
+          done++;
+          setProgress(done);
+        }
+        if (!cancelled) setTimeout(() => { if (!cancelled) setLoaded(true); }, 600);
+
+      } catch (e) {
+        console.error('[game] preload error:', e);
+        if (!cancelled) setLoaded(true); // Proceed anyway to avoid permanent hang
+      }
     })();
     return () => { cancelled = true; };
   }, []);
 
-  // ── pickup feedback / local stack ─────────────────────────
   useEffect(() => {
-    function onPickupResult(e: Event) {
-      const d = (e as CustomEvent).detail as PickupFeedback;
-      setStack((prev) => [...prev, { chairId: d.chairId, glbPath: d.glbPath }]);
+    function onTrip(e: Event) {
+      const d = (e as CustomEvent).detail as { victimId?: string; ts?: number };
+      if (d?.victimId === net.myId) setTrippedAt(d.ts ?? Date.now());
     }
-    window.addEventListener('stolspel:pickup-result', onPickupResult as EventListener);
-    return () => window.removeEventListener('stolspel:pickup-result', onPickupResult as EventListener);
-  }, []);
-
-  useEffect(() => {
-    const me = net.players.find((p) => p.id === net.myId);
-    if (!me) return;
-    if (me.score < lastSeenScore.current) {
-      const drop = lastSeenScore.current - me.score;
-      setStack((prev) => prev.slice(0, Math.max(0, prev.length - drop)));
-    }
-    lastSeenScore.current = me.score;
-  }, [net.players, net.myId]);
-
-  useEffect(() => {
-    if (net.phase.kind === 'lobby' || net.phase.kind === 'countdown') {
-      setStack([]);
-      lastSeenScore.current = 0;
-    }
-  }, [net.phase.kind]);
+    window.addEventListener('stablar:trip', onTrip as EventListener);
+    return () => window.removeEventListener('stablar:trip', onTrip as EventListener);
+  }, [net.myId]);
 
   return (
     <div className="relative w-screen h-screen bg-bg overflow-hidden">
@@ -92,14 +78,14 @@ export function Game({ net }: Props) {
         onTransform={(x, y, z, yaw) => {
           myXZ.current = { x, z };
           const now = performance.now();
-          if (now - lastSent.current > 50) {
+          if (now - lastSent.current > 33) {
             lastSent.current = now;
             net.sendInput(x, y, z, yaw);
             force((n) => (n + 1) | 0);
           }
         }}
         onPickup={net.pickup}
-        onBump={(intensity) => net.bump('', intensity)}
+        onBump={(otherId, intensity) => net.bump(otherId, intensity)}
       />
       <Hud
         phase={net.phase}
@@ -108,18 +94,47 @@ export function Game({ net }: Props) {
         onReady={net.ready}
       />
       <TouchControls phase={net.phase} />
+      <TripFlash trippedAt={trippedAt} />
       {/* Preload fade overlay — fades out once chairs are loaded */}
       <div
         className="absolute inset-0 z-50 bg-bg flex items-center justify-center pointer-events-none transition-opacity duration-1000"
         style={{ opacity: loaded ? 0 : 1 }}
       >
         <div className="text-center">
-          <div className="font-serif text-5xl text-paper mb-2">Stolspel</div>
+          <div className="font-serif text-5xl text-paper mb-2">Stablar</div>
           <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-inkSoft">
-            lastar stolar &nbsp;·&nbsp; {progress} / {total || '…'}
+            lastar og lagrar stolar &nbsp;·&nbsp; {progress} / {total || '…'}
+          </div>
+          <div className="mt-6 font-mono text-[8px] uppercase tracking-widest text-inkSoft/40">
+             stolar blir lagra lokalt for ein smidigare opplevelse
           </div>
         </div>
       </div>
+    </div>
+  );
+}
+
+function TripFlash({ trippedAt }: { trippedAt: number }) {
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    if (!trippedAt) return;
+    setVisible(true);
+    const t = setTimeout(() => setVisible(false), 420);
+    return () => clearTimeout(t);
+  }, [trippedAt]);
+  return (
+    <div
+      className="absolute inset-0 z-30 pointer-events-none transition-opacity duration-300"
+      style={{
+        opacity: visible ? 1 : 0,
+        background: 'radial-gradient(circle at center, rgba(239,63,122,0.0) 30%, rgba(239,63,122,0.24) 100%)',
+      }}
+    >
+      {visible && (
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 font-serif text-5xl text-rust select-none animate-bounce">
+          fall!
+        </div>
+      )}
     </div>
   );
 }

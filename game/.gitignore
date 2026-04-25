@@ -1,5 +1,9 @@
 dist/
 .codex-logs/
 *.tsbuildinfo
+.env
+.env*.local
 
 .vercel
+
+.vite/

@@ -16,13 +16,18 @@ const HALF_Z = STABLE_ARENA.halfZ;
 const WALL_H = STABLE_ARENA.wallHeight;
 
 export function StableArena({ data, myId, myX, myZ, onPickup }: Props) {
+  if (!data || !data.pickups) {
+    console.warn('[stablearena] missing arena data');
+    return null;
+  }
+
   return (
     <group>
       {/* arena floor */}
       <RigidBody type="fixed" colliders="cuboid">
         <mesh position={[0, -0.05, 0]} receiveShadow>
           <boxGeometry args={[HALF_X * 2, 0.1, HALF_Z * 2]} />
-          <meshStandardMaterial color="#F9FAFD" roughness={0.88} />
+          <meshStandardMaterial color="#FFFFFF" roughness={0.88} />
         </mesh>
       </RigidBody>
 
@@ -140,7 +145,8 @@ function PickupGate({ item, myX, myZ, onTake }: GateProps) {
   if (item.takenBy) return null;
   const dx = myX - item.x;
   const dz = myZ - item.z;
-  const near = dx * dx + dz * dz < 1.6 * 1.6;
+  const available = !item.availableAt || Date.now() >= item.availableAt;
+  const near = available && dx * dx + dz * dz < 1.6 * 1.6;
 
   return <Pickup item={item} near={near} onTake={onTake} />;
 }

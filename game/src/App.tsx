@@ -1,13 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useNet } from './net/useNet';
-import { PreGameLobby } from './screens/PreGameLobby';
 import { Game } from './screens/Game';
 import { loadChairs } from './data/chairs';
-import type { ChairKind } from '../shared/protocol';
 
 export function App() {
   const net = useNet();
-  const [joined, setJoined] = useState(false);
   const [chairsReady, setChairsReady] = useState(false);
   const [err, setErr] = useState<string | null>(null);
 
@@ -30,29 +27,24 @@ export function App() {
 
   if (err) return <div className="p-10 font-mono text-rust">FEIL: {err}</div>;
 
-  if (!net.connected) {
+  if (!chairsReady) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="font-mono text-[11px] uppercase tracking-[0.2em] text-paper/50 animate-pulse">
-          koblar til serveren …
+      <div className="min-h-screen flex items-center justify-center bg-white">
+        <div className="font-mono text-[11px] uppercase tracking-[0.2em] text-inkSoft animate-pulse">
+          lastar stolar ...
         </div>
       </div>
     );
   }
 
-  if (!joined || !net.myId) {
+  if (!net.connected) {
     return (
-      <PreGameLobby
-        onJoin={(name, kind, color) => {
-          net.hello(name, kind as ChairKind, color);
-          setJoined(true);
-        }}
-      />
+      <div className="min-h-screen flex items-center justify-center bg-white">
+        <div className="font-mono text-[11px] uppercase tracking-[0.2em] text-paper/50 animate-pulse">
+          koblar til realtime ...
+        </div>
+      </div>
     );
-  }
-
-  if (!chairsReady) {
-    return <div className="p-10 font-mono text-paper/50">lastar stolar …</div>;
   }
 
   return <Game net={net} />;

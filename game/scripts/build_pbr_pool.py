@@ -1,76 +1,123 @@
-"""Build pbr_pool.json from STOLAR/pbr_textured/ + manual metadata.
-
-Each entry has:
-  id, namn, year, mat, stil, nat, glbPath
-where `glbPath` is the URL-path the client uses to fetch the GLB.
-"""
+"""Build pbr_pool.json from game/public/pbr_textured/ + auto-metadata."""
 from __future__ import annotations
 from pathlib import Path
 import json
+import re
 
 REPO = Path(__file__).resolve().parents[2]
-PBR_DIR = REPO / "STOLAR" / "pbr_textured"
+PBR_DIR = REPO / "game" / "public" / "pbr_textured"
 OUT = REPO / "game" / "public" / "pbr_pool.json"
 
-# Manual metadata for the curated PBR chairs. Year/mat/stil/nat decide what
-# targets they match against.
-META = {
-    "Red_and_blue": {
-        "namn": "Red and Blue", "year": 1918, "mat": "tre",
-        "stil": "Modernisme", "nat": "Nederland",
-    },
-    "heltre": {
-        "namn": "Heltre", "year": 1960, "mat": "tre",
-        "stil": "Modernisme", "nat": "Noreg",
-    },
-    "lekker": {
-        "namn": "Lekker", "year": 1955, "mat": "tre",
-        "stil": "Modernisme", "nat": "Sverige",
-    },
-    "opsvik": {
-        "namn": "Variable Balans", "year": 1979, "mat": "tre",
-        "stil": "Modernisme", "nat": "Noreg",
-    },
-    "terje_ekstrom_1977": {
-        "namn": "Ekstrem 1977", "year": 1977, "mat": "tekstil",
-        "stil": "Modernisme", "nat": "Noreg",
-    },
-    "terje_ekstrom_1989": {
-        "namn": "Ekstrem 1989", "year": 1989, "mat": "tekstil",
-        "stil": "Postmodernisme", "nat": "Noreg",
-    },
-    # basic_NN are generic chair scans — spread them across eras/nats so
-    # targets work. Order matters: 01→11 = 1700→2020 in even steps.
-    "basic_01": {"namn": "Stol 01", "year": 1720, "mat": "tre",     "stil": "Barokk",         "nat": "Frankrike"},
-    "basic_02": {"namn": "Stol 02", "year": 1780, "mat": "tre",     "stil": "Nyklassisisme",  "nat": "England"},
-    "basic_03": {"namn": "Stol 03", "year": 1830, "mat": "tre",     "stil": "Empire",         "nat": "Frankrike"},
-    "basic_04": {"namn": "Stol 04", "year": 1870, "mat": "tre",     "stil": "Historisme",     "nat": "Tyskland"},
-    "basic_05": {"namn": "Stol 05", "year": 1905, "mat": "tre",     "stil": "Historisme",     "nat": "Sverige"},
-    "basic_06": {"namn": "Stol 06", "year": 1935, "mat": "metall",  "stil": "Modernisme",     "nat": "Tyskland"},
-    "basic_07": {"namn": "Stol 07", "year": 1955, "mat": "tre",     "stil": "Modernisme",     "nat": "Danmark"},
-    "basic_08": {"namn": "Stol 08", "year": 1965, "mat": "tre",     "stil": "Modernisme",     "nat": "Italia"},
-    "basic_09": {"namn": "Stol 09", "year": 1985, "mat": "metall",  "stil": "Postmodernisme", "nat": "Italia"},
-    "basic_10": {"namn": "Stol 10", "year": 2000, "mat": "plast",   "stil": "Postmodernisme", "nat": "Sverige"},
-    "basic_11": {"namn": "Stol 11", "year": 2018, "mat": "plast",   "stil": "Samtidsdesign",  "nat": "Noreg"},
+STIL_OPTIONS = ['Barokk', 'Rokokko', 'Nyklassisisme', 'Empire', 'Modernisme', 'Postmodernisme', 'Historisme', 'Samtidsdesign']
+NAT_OPTIONS = ['Noreg', 'Sverige', 'Danmark', 'Tyskland', 'England', 'Frankrike', 'Italia', 'Nederland']
+
+NN_WORDS = {
+    "antique": "Antikk",
+    "baroque": "Barokk",
+    "blue": "Blå",
+    "chair": "stol",
+    "chest": "Kiste",
+    "curved": "Bogen",
+    "ergonomic": "Ergonomisk",
+    "fabric": "Tekstil",
+    "geometric": "Geometrisk",
+    "green": "Grøn",
+    "high": "Høg",
+    "lounge": "Lenestol",
+    "metal": "Metall",
+    "model": "",
+    "modern": "Moderne",
+    "office": "Kontor",
+    "orange": "Oransje",
+    "ornate": "Utskoren",
+    "painted": "Måla",
+    "pink": "Rosa",
+    "plastic": "Plast",
+    "red": "Raud",
+    "rocking": "Gyngestol",
+    "rope": "Tau",
+    "simple": "Enkel",
+    "slatted": "Spilekledd",
+    "spiral": "Spiral",
+    "stool": "Krakk",
+    "throne": "Trone",
+    "v1": "I", "v2": "II", "v3": "III", "v4": "IV", "v5": "V",
+    "woven": "Fletta",
+    "wooden": "Tre",
+    "chain": "Kjeda",
+    "3d": "",
 }
 
+def nn_name(stem: str) -> str:
+    cleaned = stem.replace("+chair+3d+model", "").replace("+3d+model", "")
+    parts = re.split(r"[+_\s]+", cleaned)
+    out = []
+    for p in parts:
+        key = p.lower()
+        if not key:
+            continue
+        if key in NN_WORDS:
+            w = NN_WORDS[key]
+            if w:
+                out.append(w)
+        else:
+            out.append(p.capitalize())
+    if not out:
+        return stem
+    name = " ".join(out)
+    # Numeric-only or single-token cryptic IDs become "Stol N"
+    if re.fullmatch(r"\d+", name) or re.fullmatch(r"[Cc]\d+", name):
+        return f"Stol {name.upper()}"
+    return name
+
+MAX_CHAIRS = 17  # cap to avoid WebGL context loss on heavy scenes
+MAX_BYTES_PER_CHAIR = 8 * 1024 * 1024  # skip files larger than 8 MB to keep load light
 
 def main() -> None:
     rows = []
-    for f in sorted(PBR_DIR.glob("*.glb")):
+    all_files = sorted(list(PBR_DIR.glob("*.glb")))
+    eligible = [f for f in all_files if f.stat().st_size <= MAX_BYTES_PER_CHAIR]
+    files = sorted(eligible, key=lambda p: p.stat().st_size)[:MAX_CHAIRS]
+    files.sort()
+    for i, f in enumerate(files):
         stem = f.stem
-        meta = META.get(stem)
-        if not meta:
-            print(f"  {stem}: no metadata defined; skipping (add to META in build_pbr_pool.py)")
-            continue
+
+        year = 1700 + (i * 10)
+        mat = "tre"
+        stil = STIL_OPTIONS[i % len(STIL_OPTIONS)]
+        nat = NAT_OPTIONS[i % len(NAT_OPTIONS)]
+        namn = nn_name(stem)
+
+        if "metal" in stem or "steel" in stem or "krom" in stem:
+            mat = "metall"
+        elif "plastic" in stem or "pink" in stem or "orange" in stem:
+            mat = "plast"
+        elif "textile" in stem or "leather" in stem or "painted" in stem or "fabric" in stem:
+            mat = "tekstil"
+
+        if "modern" in stem or "ergonomic" in stem or "office" in stem:
+            stil = "Modernisme"
+            year = max(year, 1950)
+        elif "chest" in stem:
+            stil = "Historisme"
+            year = 1880
+        elif "baroque" in stem or "antique" in stem or "ornate" in stem or "throne" in stem:
+            stil = "Barokk"
+            year = min(year, 1750)
+        elif "rocking" in stem or "rope" in stem or "woven" in stem:
+            stil = "Historisme"
+        elif "geometric" in stem or "spiral" in stem:
+            stil = "Postmodernisme"
+            year = max(year, 1980)
+
         rows.append({
             "id": stem,
-            "namn": meta["namn"],
-            "year": meta["year"],
-            "mat": meta["mat"],
-            "stil": meta["stil"],
-            "nat": meta["nat"],
-            "glbPath": f"/pbr/{f.name}",
+            "namn": namn,
+            "year": year,
+            "mat": mat,
+            "stil": stil,
+            "nat": nat,
+            "glbPath": f"/pbr_textured/{f.name}",
             "glbBytes": f.stat().st_size,
         })
 
@@ -78,8 +125,6 @@ def main() -> None:
     OUT.write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding="utf-8")
     total_mb = sum(r["glbBytes"] for r in rows) / (1024 * 1024)
     print(f"wrote {OUT} ({len(rows)} chairs, {total_mb:.1f} MB total payload)")
-    for r in rows:
-        print(f"  {r['id']}: {r['namn']} ({r['year']}, {r['stil']}, {r['nat']})")
 
 
 if __name__ == "__main__":

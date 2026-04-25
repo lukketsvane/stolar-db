@@ -3,14 +3,24 @@
 @tailwind utilities;
 
 @layer base {
-  html, body, #root { height: 100%; }
+  html, body, #root { 
+    height: 100%; 
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: fixed;
+    touch-action: none;
+    -webkit-user-select: none;
+    user-select: none;
+    /* Prevent iOS overscroll */
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: touch;
+  }
   body {
     font-family: 'EB Garamond', Georgia, serif;
     -webkit-font-smoothing: antialiased;
-    background:
-      radial-gradient(circle at 20% 10%, rgba(124, 164, 245, 0.18), transparent 28rem),
-      radial-gradient(circle at 80% 0%, rgba(255, 194, 88, 0.18), transparent 24rem),
-      #fbf8f1;
+    background: #ffffff;
     color: #101828;
     overscroll-behavior: none;
   }
@@ -22,7 +32,6 @@
     background: rgba(255, 255, 255, 0.84);
     border-color: #d8dee8;
     color: #27364f;
-    box-shadow: 0 10px 30px rgba(39, 54, 79, 0.08);
   }
   .btn:hover {
     background: #eef5ff;
@@ -53,9 +62,24 @@
     @apply border rounded-sm;
     background: rgba(255, 255, 255, 0.86);
     border-color: rgba(16, 24, 40, 0.14);
-    box-shadow: 0 24px 80px rgba(31, 45, 74, 0.12);
+  }
+  .card-hard {
+    @apply border-2 rounded-sm;
+    background: rgba(255, 255, 255, 0.94);
+  }
+  .btn-hard {
+  }
+  .btn-hard:active {
+    transform: translate(1px, 1px);
   }
   .chair-img {
     background: radial-gradient(ellipse at center, rgba(117, 167, 246, 0.16), rgba(255,255,255,0) 70%);
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }

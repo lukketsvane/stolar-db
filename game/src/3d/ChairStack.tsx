@@ -26,9 +26,10 @@ export function ChairStack({ chairs, baseTop }: Props) {
     const g = ref.current;
     if (!g) return;
     const t = state.clock.elapsedTime;
-    const wobble = Math.min(0.15, chairs.length * 0.018);
-    g.rotation.x = Math.sin(t * 1.3) * wobble * 0.6;
-    g.rotation.z = Math.cos(t * 1.7) * wobble;
+    const danger = chairs.length > 4 ? (chairs.length - 4) * 0.05 : 0;
+    const wobble = Math.min(0.34, chairs.length * 0.018 + danger);
+    g.rotation.x = Math.sin(t * 1.3) * wobble * 0.6 + Math.sin(t * 4.1) * danger * 0.3;
+    g.rotation.z = Math.cos(t * 1.7) * wobble + Math.cos(t * 5.3) * danger * 0.4;
   });
 
   if (!chairs.length) return null;
