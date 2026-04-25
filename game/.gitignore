@@ -1,0 +1,5 @@
+dist/
+.codex-logs/
+*.tsbuildinfo
+
+.vercel

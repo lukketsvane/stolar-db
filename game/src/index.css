@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root { height: 100%; }
+  body {
+    font-family: 'EB Garamond', Georgia, serif;
+    -webkit-font-smoothing: antialiased;
+    background:
+      radial-gradient(circle at 20% 10%, rgba(124, 164, 245, 0.18), transparent 28rem),
+      radial-gradient(circle at 80% 0%, rgba(255, 194, 88, 0.18), transparent 24rem),
+      #fbf8f1;
+    color: #101828;
+    overscroll-behavior: none;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-5 py-2.5 rounded-sm font-mono text-sm tracking-wide uppercase border transition-colors cursor-pointer select-none;
+    background: rgba(255, 255, 255, 0.84);
+    border-color: #d8dee8;
+    color: #27364f;
+    box-shadow: 0 10px 30px rgba(39, 54, 79, 0.08);
+  }
+  .btn:hover {
+    background: #eef5ff;
+    border-color: #75a7f6;
+    color: #1f5fbf;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, #75a7f6, #6e94df);
+    border-color: #75a7f6;
+    color: #ffffff;
+  }
+  .btn-primary:hover {
+    background: linear-gradient(135deg, #5f95ed, #547fd3);
+    border-color: #5f95ed;
+    color: #ffffff;
+  }
+  .btn-ghost {
+    background: rgba(255, 255, 255, 0.68);
+    border-color: #d8dee8;
+    color: #596579;
+  }
+  .btn-ghost:hover {
+    background: #ffffff;
+    border-color: #75a7f6;
+    color: #1f5fbf;
+  }
+  .card {
+    @apply border rounded-sm;
+    background: rgba(255, 255, 255, 0.86);
+    border-color: rgba(16, 24, 40, 0.14);
+    box-shadow: 0 24px 80px rgba(31, 45, 74, 0.12);
+  }
+  .chair-img {
+    background: radial-gradient(ellipse at center, rgba(117, 167, 246, 0.16), rgba(255,255,255,0) 70%);
+  }
+}
