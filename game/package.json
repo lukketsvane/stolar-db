@@ -1,5 +1,5 @@
 {
-  "name": "stolspel",
+  "name": "stablar",
   "private": true,
   "version": "0.1.0",
   "type": "module",
@@ -15,12 +15,19 @@
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.6.0",
     "@react-three/rapier": "^2.2.0",
+    "@supabase/supabase-js": "^2.104.1",
     "@types/ws": "^8.18.1",
     "concurrently": "^9.2.1",
+    "peerjs": "^1.5.5",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "three": "^0.184.0",
     "tsx": "^4.21.0",
+    "workbox-cacheable-response": "^7.4.0",
+    "workbox-expiration": "^7.4.0",
+    "workbox-routing": "^7.4.0",
+    "workbox-strategies": "^7.4.0",
+    "workbox-window": "^7.4.0",
     "ws": "^8.20.0"
   },
   "devDependencies": {

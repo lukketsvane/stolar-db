@@ -10,6 +10,7 @@ const GLB_DIR = path.resolve(__dirname, '..', 'STOLAR', 'glb');
 const PBR_DIR = path.resolve(__dirname, '..', 'STOLAR', 'pbr_textured');
 
 export default defineConfig({
+  envPrefix: ['VITE_', 'NEXT_PUBLIC_'],
   plugins: [
     react(),
     {

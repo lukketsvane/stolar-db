@@ -67,11 +67,11 @@ export function useKeys() {
     };
     window.addEventListener('keydown', down);
     window.addEventListener('keyup', up);
-    window.addEventListener('stolspel:touch-input', mobile as EventListener);
+    window.addEventListener('stablar:touch-input', mobile as EventListener);
     return () => {
       window.removeEventListener('keydown', down);
       window.removeEventListener('keyup', up);
-      window.removeEventListener('stolspel:touch-input', mobile as EventListener);
+      window.removeEventListener('stablar:touch-input', mobile as EventListener);
     };
   }, []);
 

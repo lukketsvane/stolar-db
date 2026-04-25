@@ -1,4 +1,4 @@
-// Stolspel multiplayer WebSocket server.
+// Stablar multiplayer WebSocket server.
 // Mechanic: each player gets a personal target rule. They run around picking
 // up chair items that match. Mismatched picks reduce the stack. Final stack
 // height when time runs out = score.
@@ -162,6 +162,7 @@ function startArena(arenaIdx: number) {
   for (const c of conns.values()) {
     targets[c.player.id] = makeTarget(rng, takenStils, takenNats);
     c.player.score = 0;
+    c.player.stack = [];
   }
 
   // 17 unique chairs in pool. We render each ONCE — every dynamic rigid
@@ -272,10 +273,9 @@ function handleMsg(c: Conn, raw: ClientMsg) {
       item.takenBy = c.player.id;
       const target = phase.data.targets[c.player.id];
       const ok = target ? matches(target, item) : false;
-      // Stack always grows on a successful pickup. Score only increments on
-      // a match — a wrong chair adds wasted weight without reward.
       if (ok) {
         c.player.score += 1;
+        c.player.stack.push({ chairId: item.chairId, glbPath: item.glbPath });
         send(c.ws, { t: 'pickup-result', pid: item.pid, matched: true, chairId: item.chairId, glbPath: item.glbPath, reason: 'match' });
       } else {
         send(c.ws, {
@@ -286,18 +286,60 @@ function handleMsg(c: Conn, raw: ClientMsg) {
       break;
     }
     case 'bump': {
-      // intensity = collision relative speed in m/s. Walls and other players
-      // both count. Drop K chairs based on intensity + current stack height
-      // (taller stack falls more easily).
       if (Date.now() - c.lastBumpAt < 600) break;
       c.lastBumpAt = Date.now();
-      if (c.player.score <= 0) break;
-      const stack = c.player.score;
-      // Each m/s above threshold knocks roughly one chair, capped by stack/3+1.
-      const k = Math.min(stack, Math.max(1, Math.floor(raw.intensity / 4)));
-      const cap = Math.max(1, Math.floor(stack / 3) + 1);
-      const drop = Math.min(k, cap);
-      c.player.score = Math.max(0, c.player.score - drop);
+
+      const otherConn = raw.otherId ? conns.get(raw.otherId) : null;
+      const isPlayerHit = !!otherConn;
+      const victims: Array<{ conn: Conn; aggressor: Conn | null }> = [];
+      if (c.player.score > 0) victims.push({ conn: c, aggressor: otherConn ?? null });
+      if (isPlayerHit && otherConn && otherConn.player.score > 0) {
+        victims.push({ conn: otherConn, aggressor: c });
+      }
+
+      for (const v of victims) {
+        const stackSize = v.conn.player.score;
+        if (stackSize <= 0) continue;
+        const dropMultiplier = isPlayerHit ? (stackSize > 4 ? 1.8 : 1.2) : 0.7;
+        const k = Math.min(stackSize, Math.max(1, Math.floor((raw.intensity * dropMultiplier) / 2.2)));
+        const cap = Math.max(1, Math.floor(stackSize / 1.5) + 1);
+        const drop = Math.min(k, cap);
+        if (drop <= 0) continue;
+
+        const dropped = v.conn.player.stack.slice(-drop);
+        v.conn.player.score = Math.max(0, v.conn.player.score - drop);
+        v.conn.player.stack = v.conn.player.stack.slice(0, v.conn.player.score);
+
+        if (phase.kind === 'arena') {
+          for (const item of dropped) {
+            const angle = Math.random() * Math.PI * 2;
+            const r = 1.2 + Math.random() * 1.4;
+            const px = clamp(v.conn.player.x + Math.cos(angle) * r, -ARENA_HALF_X + 1, ARENA_HALF_X - 1);
+            const pz = clamp(v.conn.player.z + Math.sin(angle) * r, -ARENA_HALF_Z + 1, ARENA_HALF_Z - 1);
+            const chair = CHAIRS.find((row) => row.id === item.chairId);
+            phase.data.pickups.push({
+              pid: `d${Date.now().toString(36)}${Math.random().toString(36).slice(2, 5)}`,
+              chairId: item.chairId,
+              glbPath: item.glbPath,
+              year: chair?.year ?? 1900,
+              mat: chair?.mat ?? 'tre',
+              stil: chair?.stil ?? 'Modernisme',
+              nat: chair?.nat ?? null,
+              x: px,
+              z: pz,
+            });
+          }
+        }
+
+        broadcast({
+          t: 'trip',
+          victimId: v.conn.player.id,
+          victimName: v.conn.player.name,
+          byId: v.aggressor?.player.id ?? null,
+          byName: v.aggressor?.player.name ?? null,
+          dropped: drop,
+        });
+      }
       break;
     }
   }
@@ -324,6 +366,7 @@ function newPlayer(): PlayerState {
     z: (Math.random() - 0.5) * 4,
     yaw: 0,
     score: 0,
+    stack: [],
     ready: false,
     alive: true,
   };
@@ -342,7 +385,7 @@ function respawnAll() {
 }
 
 const wss = new WebSocketServer({ port: PORT });
-console.log(`[stolspel] ws server on :${PORT}, ${CHAIRS.length} chairs in pool`);
+console.log(`[stablar] ws server on :${PORT}, ${CHAIRS.length} chairs in pool`);
 
 wss.on('connection', (ws) => {
   const player = newPlayer();

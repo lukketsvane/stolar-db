@@ -1,0 +1,17 @@
+{
+  "name": "STABLAR",
+  "short_name": "STABLAR",
+  "description": "Eit formspel om stolar",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FBF8F1",
+  "theme_color": "#FBF8F1",
+  "icons": [
+    {
+      "src": "https://ldrsfpwckooegzmlpijz.supabase.co/storage/v1/object/public/assets/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

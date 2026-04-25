@@ -29,9 +29,12 @@ export function GlbChair({
 
   const cloned = useMemo(() => {
     const root = gltf.scene.clone(true);
-    // No shadow-casting on chair meshes; their meshes are heavy and the scene
-    // renders dozens at once. Floor still casts ambient occlusion via bake.
-    root.traverse((o: any) => { if (o.isMesh) { o.castShadow = false; o.receiveShadow = false; } });
+    root.traverse((o: any) => {
+      if (o.isMesh) {
+        o.castShadow = true;
+        o.receiveShadow = true;
+      }
+    });
 
     // Determine final scale.
     let s = scale;

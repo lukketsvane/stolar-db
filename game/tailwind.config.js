@@ -12,7 +12,7 @@ export default {
         teal: '#24A6B8',
         gold: '#F5BC42',
         highlight: '#FFF1C7',
-        bg: '#FBF8F1',
+        bg: '#FFFFFF',
       },
       fontFamily: {
         serif: ['"EB Garamond"', 'Georgia', 'serif'],

@@ -9,7 +9,8 @@ export interface PlayerState {
   color: string;
   x: number; y: number; z: number;
   yaw: number;
-  score: number;     // chair stack height
+  score: number;     // total score
+  stack: { chairId: string; glbPath: string }[]; // actual chairs in stack
   ready: boolean;
   alive: boolean;
 }
@@ -41,6 +42,9 @@ export interface PickupItem {
   x: number;
   z: number;
   takenBy?: string;  // player id
+  droppedAt?: number;
+  availableAt?: number;
+  dropYaw?: number;
 }
 
 export interface StableData {
@@ -71,6 +75,7 @@ export type ServerMsg =
   | { t: 'state'; players: PlayerState[]; phase: Phase; ts: number }
   | { t: 'phase'; phase: Phase }
   | { t: 'pickup-result'; pid: string; matched: boolean; chairId: string; glbPath: string; reason: string }
+  | { t: 'trip'; victimId: string; victimName: string; byId: string | null; byName: string | null; dropped: number }
   | { t: 'chat'; from: string; text: string };
 
 export const SERVER_HZ = 20;  // server broadcasts state at 20 Hz

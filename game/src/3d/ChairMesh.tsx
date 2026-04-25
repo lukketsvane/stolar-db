@@ -76,10 +76,21 @@ export const ChairMesh = forwardRef<THREE.Group, Props>(function ChairMesh(
   );
 
   const RoundBack = (
-    <mesh position={[0, seatH + (totalH - seatH) / 2, -D / 2 + 0.04]} castShadow>
-      <torusGeometry args={[(totalH - seatH) / 2 - 0.02, 0.025, 8, 24, Math.PI]} />
-      <meshStandardMaterial color={color} roughness={0.6} />
-    </mesh>
+    <group>
+      <mesh position={[0, seatH + (totalH - seatH) / 2 + 0.02, -D / 2 + 0.04]} castShadow>
+        <torusGeometry args={[(totalH - seatH) / 2 - 0.04, 0.025, 8, 24, Math.PI]} />
+        {woodMat}
+      </mesh>
+      {/* vertical supports for the curve */}
+      <mesh position={[-W / 2 + 0.08, seatH + (totalH - seatH) / 4, -D / 2 + 0.04]} castShadow>
+        <cylinderGeometry args={[0.02, 0.02, (totalH - seatH) / 2, 8]} />
+        {woodMat}
+      </mesh>
+      <mesh position={[W / 2 - 0.08, seatH + (totalH - seatH) / 4, -D / 2 + 0.04]} castShadow>
+        <cylinderGeometry args={[0.02, 0.02, (totalH - seatH) / 2, 8]} />
+        {woodMat}
+      </mesh>
+    </group>
   );
 
   const ArmRest = (
