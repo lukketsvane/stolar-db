@@ -73,6 +73,25 @@ Tersklane er framlegg med margin til opplæringstala. Dei må fastsetjast av for
 - Éinfaktormodell med BIC er ikkje køyrd; stiginga i P3 og kryssvalideringa i P4 står i staden.
 - Den uavhengige kjelda 6.6721 krev for å seie *kvifor* setehøgda er halden, manglar framleis.
 
-## 7. Køyre på nytt
+## 7. Resultat av den forsegla prøva (Rijksmuseum, 12.11.2026)
+
+Føreseiingane vart forsegla i commit `0ab99d0` kl. 11.33, før noko mål frå Rijksmuseum var henta. Av 667 postar hadde 253 gyldige mål og truverdig setehøgd.
+
+| | Føreseiing | Utfall | Held |
+|---|---|---|---|
+| P1a | Setehøgda har lågast robust spreiing | sete 0,091, djupn 0,155, breidd 0,165, rygg 0,228 | ja |
+| P1b | Setehøgd under 0,10 | 0,091 | ja, knapt |
+| P1c | Rygg over 0,20 | 0,228 | ja, knapt |
+| P2a | 50-årsbolk forklarar under 0,20 av setehøgda | 0,09 | ja |
+| P2b | 50-årsbolk forklarar over 0,40 av ryggen | 0,21 | **nei** |
+| P3 | Stiging under 0,30, øvre grense under 0,50 | 0,20 [0,11–0,29] | ja |
+| P4a | Fast verdi slår fast del av totalhøgda | 3,6 mot 6,0 cm | ja |
+| P4b | Potenslova slår fast verdi med høgst 0,3 cm | 0,06 cm | ja |
+
+Grunnmodellen med éin storleiksfaktor vann ikkje. Sju av åtte føreseiingar heldt. P2b slo feil: ryggen er mykje mindre tidsbunden i Rijksmuseum enn i opplæringsdataa (0,21 mot 0,58 og 0,60).
+
+Avvik 1: prøveskriptet krasja på datofeltet før noko resultat var rekna ut, og vart retta i commit `c0939f4`. Ingen tersklar, reglar eller estimatorar vart endra.
+
+## 8. Køyre på nytt
 
 `python analyse/03_va_dimensjonar.py`, så `04_reinsa_tabell.py`, `05_prove_c.py analyse/data/stolar_reinsa.csv NM` (eller `VA`) og `06_spreiing_per_museum.py`. Utskrift ligg i `*_resultat*.txt`. `02_*` er fotomålinga som ikkje heldt.

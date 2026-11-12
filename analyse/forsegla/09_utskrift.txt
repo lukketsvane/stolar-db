@@ -1,0 +1,9 @@
+flyt: {'postar': 667, 'mål i anna eining': 20, 'gyldige mål': 508, 'utan truverdig setehøgd': 255, 'utan gyldige mål': 138, 'utelukka på tittel': 21} | til prøving: 253
+n: 253
+median_sete: 49.0
+spreiing: {'sete': 0.09077142857142857, 'breidd': 0.16473333333333334, 'djupn': 0.15531999999999999, 'rygg': 0.22809230769230768, 'totalhøgd': 0.09077142857142857}
+tidsbolk_del: {'sete': 0.09381912243070514, 'rygg': 0.20743594739003746}
+stiging: [0.20315084034837433, 0.11322136263827026, 0.28890846529351233]
+snittfeil_cm: {'fast verdi': 3.649209486166008, 'fast del av H': 5.980749089080307, 'potenslov': 3.586941309976623}
+dom: {'P1a': True, 'P1b': True, 'P1c': True, 'P2a': True, 'P2b': False, 'P3': True, 'P4a': True, 'P4b': True}
+grunnmodell_vinn: False
