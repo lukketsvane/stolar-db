@@ -1,0 +1,5 @@
+MET: feil HTTPError: HTTP Error 410: Gone
+AIC: 133165 treff; første 100: stolar 77, nemner «seat» i måla: 0
+  nøklar i dimensions_detail: [('depth', 80), ('diameter', 80), ('width', 80), ('clarification', 80), ('height', 80)]
+CMA: 187 treff; første 187: stolar 94, nemner «seat» i måla: 1
+  nøklar i dimensions: [('overall', 60), ('image', 16), ('paper', 9), ('sheet', 5), ('secondary support', 3), ('matted', 2), ('unframed', 2), ('painting only', 2)]
