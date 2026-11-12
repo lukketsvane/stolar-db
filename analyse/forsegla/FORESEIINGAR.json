@@ -1,6 +1,6 @@
 {
-  "godkjend": false,
-  "merknad": "Tersklane er framlegg frå analysen 12.11.2026. Forfattaren set godkjend til true når dei er fastsette. Commit og push av denne fila er tidsstempelet. Innhaustinga (08) nektar å køyre før det.",
+  "godkjend": true,
+  "merknad": "Tersklane kom som framlegg frå analysen 12.11.2026 og vart godkjende av forfattaren same dag, før innhausting. Commit og push av denne fila er tidsstempelet. Innhaustinga (08) nektar å køyre før det.",
   "prove": "Rijksmuseum, søk type=stoel i data.rijksmuseum.nl, om lag 667 postar. Ingen mål er sette før forsegling; sonden (07) talde berre merkelappar.",
   "populasjon": {
     "maal_cm": {"H": [50, 200], "B": [25, 150], "D": [25, 150]},
