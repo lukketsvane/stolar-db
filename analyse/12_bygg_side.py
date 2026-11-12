@@ -1,4 +1,4 @@
-"""Byggjer figurar/stolen.html frå figurar/mal.html og analyse/data/tre_museum.csv.
+"""Byggjer figurar/stolen.html frå figurar/side.html og analyse/data/tre_museum.csv.
 Køyr:  python analyse/12_bygg_side.py
 """
 import collections, csv, json, os, re, sys
@@ -37,14 +37,14 @@ def materiale(t):
     return ""
 
 
-g = collections.defaultdict(lambda: {"sete": [], "rygg": []})
+g = collections.defaultdict(lambda: {"sete": [], "rygg": [], "breidd": []})
 for r in T:
     if r["museum"] in ("NM", "VA") and r["sete"] and r["aar"] and float(r["aar"]) >= 1900 and r["id"] in ST:
         m = materiale(ST[r["id"]]["Materialar"])
         if m:
-            g[m]["sete"].append(f(r, "sete")); g[m]["rygg"].append(f(r, "H") - f(r, "sete"))
+            g[m]["sete"].append(f(r, "sete")); g[m]["rygg"].append(f(r, "H") - f(r, "sete")); g[m]["breidd"].append(f(r, "B"))
 kv = lambda x: [round(float(np.quantile(x, q)), 1) for q in (0.25, 0.5, 0.75)] + [len(x)]
-mat = [{"namn": k, "sete": kv(g[k]["sete"]), "rygg": kv(g[k]["rygg"])} for k in ("tre", "metall", "plast") if k in g]
+mat = [{"namn": k, "sete": kv(g[k]["sete"]), "rygg": kv(g[k]["rygg"]), "breidd": round(float(np.median(g[k]["breidd"])), 1)} for k in ("tre", "metall", "plast") if k in g]
 
 skala = []
 for namn, kode in M.items():
@@ -55,7 +55,7 @@ for namn, kode in M.items():
                   "del": round(float(np.median(S / H)), 4), "n": int(len(S))})
 
 data = {"stolar": stolar, "bolkar": bolkar, "materiale": mat, "skala": skala}
-mal = open(os.path.join(A, "figurar", "mal.html"), encoding="utf-8").read()
+mal = open(os.path.join(A, "figurar", "side.html"), encoding="utf-8").read()
 ut = mal.replace('"__DATA__"', json.dumps(data, ensure_ascii=False, separators=(",", ":")))
 open(os.path.join(A, "figurar", "stolen.html"), "w", encoding="utf-8").write(ut)
 print("stolar:", len(stolar), "| bolkar:", {k: len(v) for k, v in bolkar.items()}, "| materiale:", mat, "| skala:", skala, "| byte:", len(ut.encode("utf-8")))
