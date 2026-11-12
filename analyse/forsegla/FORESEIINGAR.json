@@ -1,0 +1,34 @@
+{
+  "godkjend": false,
+  "merknad": "Tersklane er framlegg frå analysen 12.11.2026. Forfattaren set godkjend til true når dei er fastsette. Commit og push av denne fila er tidsstempelet. Innhaustinga (08) nektar å køyre før det.",
+  "prove": "Rijksmuseum, søk type=stoel i data.rijksmuseum.nl, om lag 667 postar. Ingen mål er sette før forsegling; sonden (07) talde berre merkelappar.",
+  "populasjon": {
+    "maal_cm": {"H": [50, 200], "B": [25, 150], "D": [25, 150]},
+    "sete_cm": [30, 65],
+    "sete_lagare_enn_H": true,
+    "utelukk_tittel_regex": "kinder|poppen|miniatuur|model|kruk|tabouret|\\bbank\\b",
+    "minste_n": 100,
+    "under_minste_n": "prøva er ikkje avgjerande og blir rapportert slik"
+  },
+  "estimatorar": {
+    "robust_spreiing": "1.4826 * MAD / median",
+    "tidsbolk_del": "epsilon-kvadrat på log-mål over 50-årsbolkar med minst 10 stolar",
+    "stiging": "Theil-Sen på log-log, 95 % bootstrap (1000 trekk, frø 20261112)",
+    "kryssvalidering": "5 fald, snitt absolutt feil i cm, frø 20261112"
+  },
+  "foreseiingar": {
+    "P1a": "robust spreiing for setehøgd er lågare enn for breidd, djupn og rygg",
+    "P1b": {"robust_spreiing_sete_under": 0.10},
+    "P1c": {"robust_spreiing_rygg_over": 0.20},
+    "P2a": {"tidsbolk_del_sete_under": 0.20},
+    "P2b": {"tidsbolk_del_rygg_over": 0.40},
+    "P3": {"stiging_sete_mot_H_under": 0.30, "ovre_grense_under": 0.50},
+    "P4a": "fast verdi har lågare feil enn fast del av totalhøgda",
+    "P4b": {"potenslov_slaar_fast_verdi_med_hogst_cm": 0.30}
+  },
+  "grunnmodell_vinn_dersom": "intervallet for stiginga i P3 inneheld 1, eller fast del av totalhøgda har like låg eller lågare feil enn fast verdi",
+  "opplaeringstal": {
+    "Nasjonalmuseet": {"n": 225, "spreiing_sete": 0.047, "spreiing_rygg": 0.277, "tidsbolk_sete": 0.06, "tidsbolk_rygg": 0.58, "stiging": 0.11, "feil_fast_verdi": 3.2, "feil_fast_del": 6.4, "feil_potenslov": 3.3},
+    "V&A": {"n": 285, "spreiing_sete": 0.078, "spreiing_rygg": 0.415, "tidsbolk_sete": 0.04, "tidsbolk_rygg": 0.60, "stiging": 0.13, "feil_fast_verdi": 3.4, "feil_fast_del": 7.2, "feil_potenslov": 3.3}
+  }
+}
