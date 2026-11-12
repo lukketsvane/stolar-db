@@ -54,7 +54,9 @@ for namn, kode in M.items():
     skala.append({"m": kode, "b": round(b, 3), "a": round(float(np.median(np.log(S) - b * np.log(H))), 4),
                   "del": round(float(np.median(S / H)), 4), "n": int(len(S))})
 
-data = {"stolar": stolar, "bolkar": bolkar, "materiale": mat, "skala": skala}
+drift = [{"m": M[r["museum"]], "a": r["akse"], "v": float(r["driftindeks"]), "lo": float(r["lo"]), "hi": float(r["hi"]), "n": int(r["n"])}
+         for r in csv.DictReader(open(os.path.join(A, "data", "driftindeks.csv"), encoding="utf-8-sig"))]
+data = {"stolar": stolar, "bolkar": bolkar, "materiale": mat, "skala": skala, "drift": drift}
 mal = open(os.path.join(A, "figurar", "side.html"), encoding="utf-8").read()
 ut = mal.replace('"__DATA__"', json.dumps(data, ensure_ascii=False, separators=(",", ":")))
 open(os.path.join(A, "figurar", "stolen.html"), "w", encoding="utf-8").write(ut)
