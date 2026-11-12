@@ -92,11 +92,12 @@ footer{font-size:15px;color:var(--ink2);border-top:1.3px solid var(--ink);paddin
 
 <section>
   <div class="merke">Utforskande</div>
-  <h2>Setet blir drege attende, resten driv</h2>
-  <p>Prøva som skil ein termostat frå ei vandring: mål kor langt medianen har flytta seg etter 25, 50, 75, 100 og 125 år. Driv aksen fritt, veks flyttinga med tida og følgjer diagonalen. Blir han dregen attende, ligg lina flatt. Setehøgda er den einaste aksen som ligg flatt.</p>
+  <h2>Høgda over setet driv. Setet, djupna og breidda står.</h2>
+  <p>Ta to stolar frå same museum og sjå kor ulike dei er. Står aksen stille, er to stolar med hundre og femti år mellom seg like ulike som to frå same tiår. Driv han, veks skilnaden med tida. Ryggen og totalhøgda driv i alle tre musea. Setehøgda, djupna og breidda gjer det lite eller ikkje.</p>
   <figure>
     <div id="drift"></div>
-    <figcaption>Varians i endringa av 25-årsmedianen over eit tidsrom, delt på variansen over 25 år. Dei tre musea samla, 17–19 bolkar. Lengre tidsrom enn 125 år er utelatne fordi det er for få bolkar. Mønsteret er funne etter at dataa var opna og må stadfestast på nye data.</figcaption>
+    <div class="fot">● Nasjonalmuseet · ■ V&amp;A · ▲ Rijksmuseum</div>
+    <figcaption>Driftindeks: semivarians for par av stolar med 100–175 år mellom seg, delt på semivarians for par med under 25 år mellom seg. 1× tyder ingen drift. Strek: 95 % bootstrap over stolar. Same stolar for alle aksar, dei med setehøgd. Ein første versjon av prøva, med musea slått saman i tidsbolkar, viste setehøgda som den einaste aksen utan drift. Det heldt ikkje då musea vart rekna kvar for seg.</figcaption>
   </figure>
 </section>
 
@@ -138,6 +139,7 @@ footer{font-size:15px;color:var(--ink2);border-top:1.3px solid var(--ink);paddin
     <li><strong>Ryggen som tidsmerke.</strong> I Rijksmuseum forklarar tida 21 % av ryggen, mot 58–60 % i opplæringsdataa. At ryggen ber stilen, kan ikkje hevdast generelt.</li>
     <li><strong>Setehøgd i bandet 42–46 cm.</strong> Berre 34–47 % ligg der. Musea måler ulikt, og nivået skil seg med fleire centimeter.</li>
     <li><strong>Setehøgda følgjer kroppshøgda.</strong> Ho fell med om lag 1 cm per hundreår medan folk vart høgare.</li>
+    <li><strong>Setehøgda som den einaste aksen utan drift.</strong> Rekna museum for museum står djupn og breidd like stille. I V&amp;A og Rijksmuseum driv setehøgda litt, med indeks 1,4–1,5.</li>
     <li><strong>Fleire skilde målpunkt.</strong> Fordelinga har éin topp, ikkje fleire.</li>
     <li><strong>Avkopling i nyare designstolar.</strong> Spreiinga aukar ikkje etter 1970, men det er få stolar med mål.</li>
     <li><strong>Setehøgd målt frå foto.</strong> Snittfeil 7,3 cm, mot 3,2 cm for ein fast verdi.</li>
@@ -235,20 +237,17 @@ function skala(){
 }
 
 /* 4 Drift */
-const AKS=[['sete','setehøgd','pe',2.6,''],['rygg','rygg','ru',1.8,''],['breidd','breidd','ko',1.4,''],['djupn','djupn','ko',1.4,'2 4']];
 function drift(){
-  const host=$('#drift'),W=bredde(host),H=Math.round(Math.max(260,Math.min(340,W*.5))),l=34,r=104,t=14,b=34,K=5,YM=5.6,x=k=>l+(W-l-r)*(k-1)/(K-1),y=v=>t+(H-t-b)*(1-v/YM);
-  const vr=a=>{const m=a.reduce((p,q)=>p+q,0)/a.length;return a.reduce((p,q)=>p+(q-m)*(q-m),0)/a.length};
-  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Flytting i 25-årsmedianen etter 25 til 125 år, målt mot flyttinga etter 25 år. Setehøgda ligg flatt rundt 1, medan rygg, breidd og djupn stig mot 3 til 5.">`;
-  for(let v=1;v<=5;v++)s+=`<text class="g" x="${l-8}" y="${y(v)+5}" text-anchor="end">${v}×</text>`;
-  s+=akseX(l,W-r,H-b,[1,2,3,4,5].map(k=>[x(k),k*25+' år']));
-  s+=`<line class="ref" x1="${x(1)}" y1="${y(1)}" x2="${x(5)}" y2="${y(5)}"/><text class="i" x="${x(3.6)}" y="${y(3.6)-28}" text-anchor="end">fri drift</text><line class="ref" x1="${x(1)}" y1="${y(1)}" x2="${x(5)}" y2="${y(1)}"/><text class="i" x="${x(4.4)}" y="${y(1)+22}" text-anchor="middle">dregen attende</text>`;
-  const ender=[];
-  AKS.forEach(a=>{const m=D.bolkar[a[0]].map(p=>Math.log(p[3])),df=k=>m.slice(k).map((v,i)=>v-m[i]),v1=vr(df(1)),pts=[];for(let k=1;k<=K;k++)pts.push([k,vr(df(k))/v1]);
-    s+=`<path class="lin ${a[2]}" stroke-width="${a[3]}" ${a[4]?'stroke-dasharray="'+a[4]+'"':''} d="M${pts.map(p=>x(p[0]).toFixed(1)+' '+y(Math.min(p[1],YM)).toFixed(1)).join('L')}"/>`+pts.map(p=>`<circle class="f${a[2]}" stroke="var(--paper)" stroke-width="2" cx="${x(p[0])}" cy="${y(Math.min(p[1],YM))}" r="${a[0]==='sete'?5:4}" data-t="${a[1]}, etter ${p[0]*25} år<br>${nf(p[1])} gonger flyttinga etter 25 år"/>`).join('');
-    ender.push({n:a[1],v:pts[K-1][1],y:y(Math.min(pts[K-1][1],YM))})});
-  ender.sort((p,q)=>p.y-q.y);for(let i=1;i<ender.length;i++)if(ender[i].y-ender[i-1].y<18)ender[i].y=ender[i-1].y+18;
-  ender.forEach(e=>{s+=`<text x="${x(K)+12}" y="${e.y+5}">${e.n} ${nf(e.v)}×</text>`});
+  const host=$('#drift'),W=bredde(host),smal=W<560,AX=['setehøgd','djupn','breidd','totalhøgd','rygg'],l=smal?4:124,r=22,rad=smal?64:48,t=34,H=t+rad*AX.length+36;
+  const lg=Math.log,x=v=>l+(W-l-r)*(lg(Math.min(Math.max(v,.6),8))-lg(.6))/(lg(8)-lg(.6));
+  const FORM=[(cx,cy)=>`<circle cx="${cx}" cy="${cy}" r="5.5"`,(cx,cy)=>`<rect x="${cx-5}" y="${cy-5}" width="10" height="10"`,(cx,cy)=>`<path d="M${cx} ${cy-6.5}L${cx+6} ${cy+4.5}L${cx-6} ${cy+4.5}Z"`];
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Driftindeks per akse og museum. Rygg og totalhøgd ligg mellom 1,9 og 4,1 i alle tre museum. Setehøgd, djupn og breidd ligg mellom 0,8 og 1,6.">`;
+  s+=`<line class="ref" x1="${x(1)}" x2="${x(1)}" y1="${t-12}" y2="${H-36}"/><text class="i" x="${x(1)}" y="${t-18}" text-anchor="middle">ingen drift</text>`;
+  AX.forEach((a,i)=>{const cy=t+rad*i+(smal?36:22),kl=a==='setehøgd'?'fpe':(a==='rygg'||a==='totalhøgd')?'fru':'fko';
+    s+=`<text x="${smal?l:l-18}" y="${smal?cy-24:cy+5}" text-anchor="${smal?'start':'end'}">${a}</text>`;
+    [0,1,2].forEach(m=>{const d=D.drift.find(q=>q.m===m&&q.a===a);if(!d)return;const yy=cy+(m-1)*10;
+      s+=`<line class="akse" style="stroke-width:1" x1="${x(d.lo)}" x2="${x(d.hi)}" y1="${yy}" y2="${yy}"/>`+FORM[m](x(d.v),yy)+` class="${kl}" stroke="var(--paper)" stroke-width="1.5" data-t="${a}, ${MUS[m]}<br>driftindeks ${nf(d.v,2)}<br>95 % intervall ${nf(d.lo,2)}–${nf(d.hi,2)}<br>n = ${d.n}"/>`})});
+  s+=akseX(l,W-r,H-34,[.6,1,2,3,4,6,8].map(v=>[x(v),nf(v,v<1?1:0)+'×']));
   host.innerHTML=s+'</svg>';
 }
 
