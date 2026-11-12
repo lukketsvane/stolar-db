@@ -1,0 +1,38 @@
+nullverdiar (0.0) per museum  H/B/D: {'NM': [0, 0, 0], 'VA': [239, 272, 330]}
+H>200: 8  B>150: 44  D>150: 8
+
+REINSA (vaksenstol, H 50-200, B/D 25-150): n= 1236 Counter({'VA': 842, 'NM': 394})
+-- begge
+   Djupn (cm)     {'n': 1236, 'med': 52.0, 'sd': 12.9, 'cv': 0.236, 'rcv': 0.171, 'sdlog': 0.216}  stil-eps2 (k,N): (0.058, 21, 1170)
+   Breidde (cm)   {'n': 1236, 'med': 53.0, 'sd': 14.3, 'cv': 0.258, 'rcv': 0.168, 'sdlog': 0.223}  stil-eps2 (k,N): (0.047, 21, 1170)
+   Høgde (cm)     {'n': 1236, 'med': 92.0, 'sd': 19.1, 'cv': 0.206, 'rcv': 0.161, 'sdlog': 0.205}  stil-eps2 (k,N): (0.23, 21, 1170)
+-- NM
+   Djupn (cm)     {'n': 394, 'med': 51.0, 'sd': 12.7, 'cv': 0.24, 'rcv': 0.145, 'sdlog': 0.205}  stil-eps2 (k,N): (0.19, 14, 341)
+   Breidde (cm)   {'n': 394, 'med': 49.5, 'sd': 10.9, 'cv': 0.21, 'rcv': 0.105, 'sdlog': 0.172}  stil-eps2 (k,N): (0.152, 14, 341)
+   Høgde (cm)     {'n': 394, 'med': 92.0, 'sd': 17.2, 'cv': 0.183, 'rcv': 0.161, 'sdlog': 0.172}  stil-eps2 (k,N): (0.441, 14, 341)
+-- VA
+   Djupn (cm)     {'n': 842, 'med': 53.0, 'sd': 12.9, 'cv': 0.234, 'rcv': 0.196, 'sdlog': 0.22}  stil-eps2 (k,N): (0.042, 14, 804)
+   Breidde (cm)   {'n': 842, 'med': 54.6, 'sd': 15.4, 'cv': 0.268, 'rcv': 0.176, 'sdlog': 0.239}  stil-eps2 (k,N): (0.038, 14, 804)
+   Høgde (cm)     {'n': 842, 'med': 91.5, 'sd': 19.8, 'cv': 0.216, 'rcv': 0.154, 'sdlog': 0.218}  stil-eps2 (k,N): (0.188, 14, 804)
+
+SETEHØGD brukande (ikkje lik H, < H, reinsa): n= 245 Counter({'NM': 242, 'VA': 3})
+   sete         {'n': 245, 'med': 47.0, 'sd': 10.8, 'cv': 0.236, 'rcv': 0.063, 'sdlog': 0.44}  stil-eps2 (k,N): (0.083, 7, 175)
+   rygg=H-sete  {'n': 245, 'med': 46.0, 'sd': 16.2, 'cv': 0.324, 'rcv': 0.284, 'sdlog': 0.32}  stil-eps2 (k,N): (0.364, 7, 175)
+   djupn        {'n': 245, 'med': 51.0, 'sd': 7.9, 'cv': 0.154, 'rcv': 0.116, 'sdlog': 0.148}  stil-eps2 (k,N): (-0.002, 7, 175)
+   breidd       {'n': 245, 'med': 48.0, 'sd': 9.0, 'cv': 0.178, 'rcv': 0.093, 'sdlog': 0.138}  stil-eps2 (k,N): (0.185, 7, 175)
+   total H      {'n': 245, 'med': 93.5, 'sd': 15.4, 'cv': 0.161, 'rcv': 0.159, 'sdlog': 0.156}  stil-eps2 (k,N): (0.641, 7, 175)
+   sete kvantilar 1/5/25/50/75/95/99: [5.5, 32.0, 44.5, 47.0, 48.3, 58.2, 75.8]
+   del i [42,46]: 0.322  del i [40,50]: 0.747
+   eksess-kurtose sete: 7.26 (Laplace 3, normal 0)
+   lineær trend sete (cm/100 år): -1.73  etter 1850 n= 64 median 46.0  før 1850 median 47.5
+   1500-1700: n=30 sete med 50.2 sd 10.0 | rygg med 53.0 sd 16.7
+   1700-1800: n=90 sete med 47.0 sd 11.3 | rygg med 55.1 sd 14.4
+   1800-1900: n=92 sete med 47.0 sd 10.7 | rygg med 40.0 sd 12.6
+   1900-2030: n=31 sete med 45.0 sd 8.0 | rygg med 35.5 sd 11.4
+   var(log sete)/var(log rygg) = 1.893  95% bootstrap: [0.974, 2.909]
+   korr log(sete,rygg,djupn,breidd):
+ [[ 1.   -0.38 -0.01  0.03]
+ [-0.38  1.    0.07  0.16]
+ [-0.01  0.07  1.    0.49]
+ [ 0.03  0.16  0.49  1.  ]]
+   PC1-del av varians: 0.648  ladningar (sete,rygg,djupn,breidd): [-0.91  0.42  0.01  0.01]

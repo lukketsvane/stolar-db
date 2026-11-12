@@ -1,0 +1,22 @@
+-- NM: n mål ok 394, med setehøgd ok 225
+   sete       n= 225 median  47.0  robust spreiing 0.047  SD   5.0  stildel 0.13 (7 stilar)
+   rygg       n= 225 median  45.5  robust spreiing 0.277  SD  14.9  stildel 0.55 (7 stilar)
+   djupn      n= 394 median  51.0  robust spreiing 0.145  SD  12.7  stildel 0.19 (14 stilar)
+   breidd     n= 394 median  49.5  robust spreiing 0.105  SD  10.9  stildel 0.15 (14 stilar)
+   totalhøgd  n= 394 median  92.0  robust spreiing 0.161  SD  17.2  stildel 0.44 (14 stilar)
+      1500-1700: n= 27 median sete 49.0
+      1700-1800: n= 84 median sete 47.0
+      1800-1900: n= 86 median sete 47.0
+      1900-2030: n= 26 median sete 45.3
+      del i 42-46 cm: 0.34
+-- VA: n mål ok 1204, med setehøgd ok 285
+   sete       n= 285 median  43.8  robust spreiing 0.078  SD   4.7  stildel 0.08 (9 stilar)
+   rygg       n= 285 median  53.2  robust spreiing 0.415  SD  18.5  stildel 0.60 (9 stilar)
+   djupn      n=1204 median  54.7  robust spreiing 0.199  SD  12.9  stildel 0.05 (17 stilar)
+   breidd     n=1204 median  55.5  robust spreiing 0.192  SD  15.3  stildel 0.04 (17 stilar)
+   totalhøgd  n=1204 median  94.0  robust spreiing 0.173  SD  19.1  stildel 0.42 (17 stilar)
+      1500-1700: n= 60 median sete 46.5
+      1700-1800: n= 79 median sete 43.0
+      1800-1900: n= 27 median sete 45.0
+      1900-2030: n=117 median sete 43.5
+      del i 42-46 cm: 0.47

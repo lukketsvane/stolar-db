@@ -1,0 +1,34 @@
+=================== NM
+delutval: NM
+n = 225   museum: {'NM': 225, 'VA': 0}
+
+Allometrisk stiging b (Theil-Sen, 95 % bootstrap) | OLS
+  setehøgd       mot totalhøgd : b = +0.11 [+0.05, +0.18] | +0.20
+  setehøgd       mot sqrt(B*D) : b = +0.00 [-0.08, +0.11] | +0.03
+  djupn          mot totalhøgd : b = +0.10 [+0.00, +0.22] | +0.12
+  breidd         mot totalhøgd : b = +0.20 [+0.10, +0.28] | +0.19
+  rygg (H-sete)  mot sqrt(B*D) : b = +0.56 [+0.14, +1.09] | +0.45
+  totalhøgd      mot sqrt(B*D) : b = +0.35 [+0.11, +0.62] | +0.27
+
+Kryssvalidert feil for setehøgd (5 fald, snitt absolutt feil i cm)
+  konstant           3.15
+  fast del av H      6.43
+  potenslov i H      3.28
+  konstant per stil  3.31
+=================== VA
+delutval: VA
+n = 285   museum: {'NM': 0, 'VA': 285}
+
+Allometrisk stiging b (Theil-Sen, 95 % bootstrap) | OLS
+  setehøgd       mot totalhøgd : b = +0.13 [+0.08, +0.19] | +0.17
+  setehøgd       mot sqrt(B*D) : b = -0.13 [-0.20, -0.05] | -0.10
+  djupn          mot totalhøgd : b = +0.15 [+0.00, +0.28] | +0.09
+  breidd         mot totalhøgd : b = +0.00 [-0.10, +0.15] | -0.06
+  rygg (H-sete)  mot sqrt(B*D) : b = +0.25 [+0.02, +0.50] | +0.07
+  totalhøgd      mot sqrt(B*D) : b = +0.09 [-0.05, +0.23] | +0.01
+
+Kryssvalidert feil for setehøgd (5 fald, snitt absolutt feil i cm)
+  konstant           3.41
+  fast del av H      7.20
+  potenslov i H      3.32
+  konstant per stil  3.40

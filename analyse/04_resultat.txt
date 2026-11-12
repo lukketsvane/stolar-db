@@ -1,0 +1,4 @@
+rader: 2048   V&A-postar frå API: 1618
+  NM: totalt 426 | vaksenstol 424 | + mål ok 394 | + sete ok 225 | setehøgd oppgjeven 246
+  VA: totalt 1622 | vaksenstol 1507 | + mål ok 1204 | + sete ok 285 | setehøgd oppgjeven 364
+skrive: C:\Users\Iver\Documents\github\stolar-db\analyse\data\stolar_reinsa.csv

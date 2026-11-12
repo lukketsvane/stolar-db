@@ -1,0 +1,15 @@
+n = 228   museum: {'NM': 225, 'VA': 3}
+
+Allometrisk stiging b (Theil-Sen, 95 % bootstrap) | OLS
+  setehøgd       mot totalhøgd : b = +0.11 [+0.06, +0.18] | +0.20
+  setehøgd       mot sqrt(B*D) : b = +0.00 [-0.06, +0.13] | +0.04
+  djupn          mot totalhøgd : b = +0.10 [+0.00, +0.21] | +0.12
+  breidd         mot totalhøgd : b = +0.20 [+0.11, +0.28] | +0.20
+  rygg (H-sete)  mot sqrt(B*D) : b = +0.54 [+0.14, +1.10] | +0.45
+  totalhøgd      mot sqrt(B*D) : b = +0.35 [+0.13, +0.63] | +0.27
+
+Kryssvalidert feil for setehøgd (5 fald, snitt absolutt feil i cm)
+  konstant           3.16
+  fast del av H      6.34
+  potenslov i H      3.29
+  konstant per stil  3.24
