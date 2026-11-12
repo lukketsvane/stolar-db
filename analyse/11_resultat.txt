@@ -1,0 +1,30 @@
+== H1 SAME MÅL, ANDRE MIDDEL: materiale (Nasjonalmuseet + V&A)
+  alle år    setehøgd   del forklart av materiale  0.04 | metall: 43.5 (n=47)  plast: 43.0 (n=40)  tre: 46.0 (n=414)
+  alle år    rygg       del forklart av materiale  0.20 | metall: 34.9 (n=47)  plast: 33.7 (n=40)  tre: 52.5 (n=414)
+  alle år    totalhøgd  del forklart av materiale  0.13 | metall: 79.0 (n=166)  plast: 78.8 (n=141)  tre: 95.5 (n=1245)
+  alle år    breidd     del forklart av materiale  0.02 | metall: 55.0 (n=166)  plast: 58.0 (n=141)  tre: 53.5 (n=1245)
+  etter 1900 setehøgd   del forklart av materiale  0.01 | metall: 43.5 (n=41)  plast: 43.0 (n=40)  tre: 45.0 (n=59)
+  etter 1900 rygg       del forklart av materiale  0.08 | metall: 34.9 (n=41)  plast: 33.7 (n=40)  tre: 40.5 (n=59)
+  etter 1900 totalhøgd  del forklart av materiale  0.03 | metall: 77.6 (n=138)  plast: 78.7 (n=140)  tre: 83.8 (n=257)
+  etter 1900 breidd     del forklart av materiale  0.03 | metall: 55.3 (n=138)  plast: 58.2 (n=140)  tre: 52.5 (n=257)
+
+== H2 DEN REGULERTE STORLEIKEN: setehøgd, setedjupn, setebreidd
+  RM: n=225 korrelasjon høgd-djupn -0.36, stiging -0.24 | SD(log): høgd 0.096, djupn 0.146, tettaste kombinasjon 0.086 (vekter høgd -0.94, djupn -0.34)
+  VA: for få (28)
+
+== H3 GJENOPPRETTANDE KRAFT: 25-årsmedianar, alle tre museum samla
+  setehøgd   bolkar 17 | SD mellom bolkar 0.046 mot innan 0.100 (forhold 0.46) | autokorr +0.38 | varians(4 steg)/varians(1 steg) 1.2  (1 = vender attende, 4 = driv)
+  rygg       bolkar 17 | SD mellom bolkar 0.225 mot innan 0.222 (forhold 1.01) | autokorr +0.79 | varians(4 steg)/varians(1 steg) 3.4  (1 = vender attende, 4 = driv)
+  breidd     bolkar 19 | SD mellom bolkar 0.073 mot innan 0.205 (forhold 0.36) | autokorr +0.58 | varians(4 steg)/varians(1 steg) 3.8  (1 = vender attende, 4 = driv)
+  djupn      bolkar 19 | SD mellom bolkar 0.068 mot innan 0.194 (forhold 0.35) | autokorr +0.68 | varians(4 steg)/varians(1 steg) 4.4  (1 = vender attende, 4 = driv)
+  totalhøgd  bolkar 19 | SD mellom bolkar 0.137 mot innan 0.149 (forhold 0.92) | autokorr +0.84 | varians(4 steg)/varians(1 steg) 2.4  (1 = vender attende, 4 = driv)
+
+== H4 SKILDE MÅLPUNKT: oppgjeven setehøgd utan 30-65-regelen, 2,5 cm-klassar (alle tre museum)
+  n = 780
+  12.5:2 22.5:2 25:3 27.5:2 30:8 32.5:9 35:16 37.5:21 40:91 42.5:133 45:197 47.5:123 50:98 52.5:34 55:18 57.5:2 60:6 62.5:2 65:6 67.5:3 70:1 80:2 85:1
+
+== H5 AVKOPLING: spreiing i setehøgd etter tid (oppgjeven setehøgd 10-100 cm, lågare enn H)
+  NM: 1500-1800: n=115 median 47.5 robust 0.047 SD 7.4 | 1800-1900: n=87 median 47.0 robust 0.032 SD 6.0 | 1900-1970: n=18 median 45.4 robust 0.073 SD 4.0 | 1970-2030: n=10 median 45.1 robust 0.038 SD 13.3
+  VA: 1500-1800: n=139 median 44.0 robust 0.084 SD 4.7 | 1800-1900: n=27 median 45.0 robust 0.099 SD 5.6 | 1900-1970: n=101 median 43.4 robust 0.082 SD 5.8 | 1970-2030: n=22 median 44.9 robust 0.083 SD 5.6
+  RM: 1500-1800: n=208 median 49.0 robust 0.091 SD 5.5 | 1800-1900: n=34 median 47.0 robust 0.032 SD 6.3 | 1900-1970: n=11 median 50.0 robust 0.000 SD 3.0
+  per stil (n>=12), sortert etter SD: Nyrokokko 2.6 (n=12) | Rokokko 2.8 (n=65) | Jugend/Art Nouveau 4.1 (n=13) | Nyklassisisme 5.1 (n=39) | Postmodernisme 5.3 (n=24) | Modernisme / Midtjahrhundre 5.6 (n=51) | Empire 5.8 (n=39) | Renessanse 6.1 (n=12) | Historisme 6.9 (n=48) | Barokk 7.2 (n=102) | Art Deco / Tidleg modernisme 7.5 (n=13) | Régence 9.9 (n=12)
