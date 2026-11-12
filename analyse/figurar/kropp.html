@@ -1,0 +1,226 @@
+<style>
+/* Følgjer traktat.iverfinne.no: Literata, IBM Plex Mono 10px, svart/kvit med éin grå. Figurane er strekteikningar utan farge. */
+:root{color-scheme:light;--bg:#fff;--fg:#0c0c0c;--dim:#777;--line:#dedede;--hair:#ededed;--serif:"Literata",Charter,Georgia,serif;--mono:"IBM Plex Mono",ui-monospace,monospace}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#080808;--fg:#f4f4f4;--dim:#9a9a9a;--line:#393939;--hair:#1c1c1c}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#080808;--fg:#f4f4f4;--dim:#9a9a9a;--line:#393939;--hair:#1c1c1c}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--serif);font-size:15px;line-height:1.52;font-weight:400;-webkit-font-smoothing:antialiased}
+.page{width:min(100%,800px);padding:0 21px 80px;margin:0 auto}
+nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:calc(env(safe-area-inset-top,0px) + 12px) 0 8px;font:10px var(--mono);letter-spacing:.02em;color:var(--dim)}
+.links{display:flex;align-items:center;gap:19px}
+nav a{color:inherit;text-decoration:none;min-height:28px;display:inline-flex;align-items:center;white-space:nowrap}
+a:hover,a:focus-visible{color:var(--fg)}
+.resources{position:relative}
+.resources summary{display:inline-flex;align-items:center;min-height:28px;cursor:pointer;list-style:none;white-space:nowrap}
+.resources summary::-webkit-details-marker{display:none}
+.resources summary::after{content:"▾";margin-left:.3em}
+.resources[open] summary{color:var(--fg)}
+.resources[open] summary::before{content:"";position:fixed;inset:0;z-index:19}
+.resources-list{position:absolute;top:100%;left:-10px;z-index:20;display:flex;flex-direction:column;padding:2px 10px;background:var(--bg);border:1px solid var(--line);white-space:nowrap}
+h1{font-weight:400;font-size:2.2rem;line-height:1.15;letter-spacing:-.02em;margin:3.1rem 0 2.2rem}
+section{margin:2.4rem 0 3rem}
+section h2{font-weight:400;font-size:1.11rem;line-height:1.4;border-top:1px solid var(--line);padding-top:.8rem;margin:0 0 .7rem}
+section p{margin:0 0 1rem;max-width:62ch}
+figure{margin:0;min-width:0}
+figcaption{font:10px/1.6 var(--mono);color:var(--dim);margin-top:.6rem;max-width:74ch}
+svg{display:block;width:100%;height:auto;overflow:visible}
+svg text{font:10px var(--mono);fill:var(--dim)}svg text.f{fill:var(--fg)}
+.akse{stroke:var(--fg);stroke-width:1;fill:none}
+.ref{stroke:var(--dim);stroke-width:1;stroke-dasharray:4 3;fill:none}
+.lin{fill:none;stroke:var(--fg);stroke-linejoin:round;stroke-linecap:round}
+.skive{fill:var(--hair);stroke:var(--fg);stroke-width:.7;stroke-linejoin:round}.skive:hover{fill:var(--line)}
+.dot{fill:var(--fg);fill-opacity:.34;stroke:transparent;stroke-width:9}
+.ffg{fill:var(--fg)}
+.val{display:flex;flex-wrap:wrap;gap:0 16px;font:10px var(--mono);margin-bottom:.4rem}
+.val button{font:inherit;letter-spacing:.02em;background:none;border:0;padding:8px 0;color:var(--dim);cursor:pointer}
+.val button[aria-pressed="true"]{color:var(--fg);text-decoration:underline;text-underline-offset:4px}
+button:focus-visible,summary:focus-visible{outline:1px solid var(--dim);outline-offset:3px}
+.tre{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.tre .sub{font:10px var(--mono);color:var(--dim)}
+.tabell{overflow-x:auto;margin-top:.5rem}
+table{border-collapse:collapse;width:100%;font:10px/1.6 var(--mono)}
+th,td{text-align:left;padding:5px 12px 5px 0;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:400;color:var(--dim)}td.t,th.t{text-align:right;white-space:nowrap}
+details{font:10px/1.6 var(--mono);color:var(--dim);margin-top:.6rem}summary{cursor:pointer}
+ul{margin:0;padding-left:1.1rem;max-width:62ch}li{margin:0 0 .35rem}
+footer{border-top:1px solid var(--line);padding-top:.7rem;font:10px/1.6 var(--mono);color:var(--dim);margin-top:3rem}
+footer a{color:inherit}
+#tip{position:fixed;z-index:30;pointer-events:none;background:var(--fg);color:var(--bg);font:10px/1.5 var(--mono);padding:6px 8px;max-width:240px}
+</style>
+
+<div class="page">
+<!--NAV--><nav aria-label="Dokument og lesemåte">
+  <span class="links"><a href="/kortversjon/">tl;dr</a></span>
+  <a href="/">heile teksten</a>
+</nav><!--/NAV-->
+
+<h1>stol-db</h1>
+
+<section>
+  <h2>Medianstol per 25 år</h2>
+  <figure>
+    <div class="val" id="vel-museum" role="group" aria-label="Museum"></div>
+    <div id="akso"></div>
+    <figcaption id="akso-fot"></figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>Setehøgd mot totalhøgd</h2>
+  <p>Setehøgda følgjer ikkje storleiken på stolen. Stiginga er 0,11–0,20; full skalering ville gjeve 1.</p>
+  <figure>
+    <div class="tre" id="skala"></div>
+    <figcaption>éin prikk per stol · heil line: tilpassa · stipla: full skalering · cm</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>Drift per akse</h2>
+  <p>Rygg og totalhøgd driv i alle tre musea. Setehøgd, djupn og breidd gjer det lite.</p>
+  <figure>
+    <div id="drift"></div>
+    <figcaption>semivarians for par med 100–175 år mellom seg, delt på par med under 25 år · 95 % bootstrap · ● Nasjonalmuseet ■ V&amp;A ▲ Rijksmuseum · utforskande</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>Materiale etter 1900</h2>
+  <p>Materialet forklarar 1 % av setehøgda og 8 % av ryggen.</p>
+  <figure>
+    <div id="materiale"></div>
+    <figcaption>medianstol framanfrå · sidestrekar: midtre halvdel · Nasjonalmuseet og V&amp;A · cm · utforskande</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>Forsegla prøve, Rijksmuseum</h2>
+  <p>Åtte føreseiingar vart låste før måla var henta. Sju heldt, éi slo feil.</p>
+  <figure>
+    <div id="prove"></div>
+    <figcaption>fylt: Rijksmuseum · ringar: opplæring · grått felt: føreseiinga · kryss: slo feil · commit 0ab99d0, 12.11.2026</figcaption>
+    <details><summary>alle åtte</summary><div class="tabell"><table>
+    <thead><tr><th>føreseiing</th><th class="t">grense</th><th class="t">opplæring</th><th class="t">Rijksmuseum</th><th>utfall</th></tr></thead>
+    <tbody>
+    <tr><td>setehøgda har lågast spreiing</td><td class="t">lågast</td><td class="t">ja / ja</td><td class="t">0,091 mot 0,155–0,228</td><td>heldt</td></tr>
+    <tr><td>spreiing i setehøgd</td><td class="t">&lt; 0,10</td><td class="t">0,047 / 0,078</td><td class="t">0,091</td><td>heldt</td></tr>
+    <tr><td>spreiing i rygg</td><td class="t">&gt; 0,20</td><td class="t">0,277 / 0,415</td><td class="t">0,228</td><td>heldt</td></tr>
+    <tr><td>tida forklarar setehøgda</td><td class="t">&lt; 0,20</td><td class="t">0,06 / 0,04</td><td class="t">0,09</td><td>heldt</td></tr>
+    <tr><td>tida forklarar ryggen</td><td class="t">&gt; 0,40</td><td class="t">0,58 / 0,60</td><td class="t">0,21</td><td>slo feil</td></tr>
+    <tr><td>stiging mot totalhøgd</td><td class="t">&lt; 0,30</td><td class="t">0,11 / 0,13</td><td class="t">0,20</td><td>heldt</td></tr>
+    <tr><td>fast verdi mot fast del av høgda</td><td class="t">lågare feil</td><td class="t">3,2 mot 6,4 cm</td><td class="t">3,6 mot 6,0 cm</td><td>heldt</td></tr>
+    <tr><td>potenslov mot fast verdi</td><td class="t">≤ 0,3 cm</td><td class="t">−0,1 / 0,1 cm</td><td class="t">0,06 cm</td><td>heldt</td></tr>
+    </tbody></table></div></details>
+  </figure>
+</section>
+
+<section>
+  <h2>Slo feil</h2>
+  <ul>
+    <li>Tida forklarar 21 % av ryggen i Rijksmuseum. Føresagt: over 40 %.</li>
+    <li>Setehøgd i bandet 42–46 cm: 34–47 % av stolane.</li>
+    <li>Setehøgda følgjer ikkje kroppshøgda. Ho fell om lag 1 cm per hundreår.</li>
+    <li>Setehøgda er ikkje den einaste aksen utan drift.</li>
+    <li>Fleire skilde målpunkt: fordelinga har éin topp.</li>
+    <li>Setehøgd målt frå foto: snittfeil 7,3 cm.</li>
+  </ul>
+</section>
+
+<footer>763 stolar med katalogført setehøgd: Nasjonalmuseet 225, V&amp;A 285, Rijksmuseum 253 · spreiing = 1,4826 × MAD / median · data og kode: <a href="https://github.com/lukketsvane/stolar-db">github.com/lukketsvane/stolar-db</a></footer>
+</div>
+<div id="tip" hidden></div>
+
+<script>
+const D="__DATA__";
+const MUS=['Nasjonalmuseet','V&A','Rijksmuseum'];
+const $=s=>document.querySelector(s);
+const nf=(v,d=1)=>Number(v).toFixed(d).replace('.',',').replace('-','−');
+const kv=(a,p)=>{const s=[...a].sort((x,y)=>x-y);const i=(s.length-1)*p,l=Math.floor(i);return s[l]+(s[Math.min(l+1,s.length-1)]-s[l])*(i-l)};
+const bredde=h=>Math.max(280,h.clientWidth);
+const akseX=(x1,x2,y,ts)=>`<line class="akse" x1="${x1}" x2="${x2}" y1="${y}" y2="${y}"/>`+ts.map(([x,t])=>`<line class="akse" x1="${x}" x2="${x}" y1="${y}" y2="${y+4}"/><text x="${x}" y="${y+16}" text-anchor="middle">${t}</text>`).join('');
+const tip=$('#tip');
+function visTip(html,x,y){tip.innerHTML=html;tip.hidden=false;const r=tip.getBoundingClientRect();tip.style.left=Math.max(8,Math.min(x+14,innerWidth-r.width-8))+'px';tip.style.top=Math.max(8,y-r.height-12)+'px'}
+document.addEventListener('pointerover',e=>{const t=e.target.closest&&e.target.closest('[data-t]');if(t)visTip(t.dataset.t,e.clientX,e.clientY)});
+document.addEventListener('pointerout',e=>{if(e.target.closest&&e.target.closest('[data-t]'))tip.hidden=true});
+
+let mus=-1;
+(function(){const host=$('#vel-museum');[[-1,'alle'],[0,MUS[0]],[1,MUS[1]],[2,MUS[2]]].forEach(([v,t])=>{const b=document.createElement('button');b.type='button';b.textContent=t;b.id='m'+v;b.setAttribute('aria-pressed',String(v===mus));b.onclick=()=>{mus=v;[...host.children].forEach(c=>c.setAttribute('aria-pressed',String(c===b)));akso()};host.appendChild(b)})})();
+
+function akso(){
+  const host=$('#akso'),W=bredde(host),bk={};
+  D.stolar.forEach(r=>{if((mus<0||r[0]===mus)&&r[1]!==null&&r[1]>=1500){const k=Math.floor(r[1]/25)*25;(bk[k]=bk[k]||[]).push(r)}});
+  const B=Object.keys(bk).map(Number).sort((a,b)=>a-b).filter(k=>bk[k].length>=5).map(k=>({k,n:bk[k].length,s:kv(bk[k].map(r=>r[5]),.5),H:kv(bk[k].map(r=>r[2]),.5),d:kv(bk[k].map(r=>r[4]),.5)}));
+  const N=B.length;if(!N){host.innerHTML='';return}
+  const k=Math.max(1.05,Math.min(2.3,W/380)),t=4,dM=Math.max(...B.map(b=>b.d)),HM=Math.max(...B.map(b=>b.H)),l=24,r=52,dx=(W-l-r-dM*k)/Math.max(N-1,1),dy=dx*.3,H=Math.round(HM*k+dy*(N-1)+46),y0=H-26;
+  const P=(i,x,z)=>(l+i*dx+x*k).toFixed(1)+' '+(y0-i*dy-z*k).toFixed(1),Q=(i,x,z)=>[l+i*dx+x*k,y0-i*dy-z*k];
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Medianstolen per 25 år sett frå sida, frå 1500-talet til i dag. Setehøgda held seg nær ${nf(kv(B.map(b=>b.s),.5),0)} cm, totalhøgda varierer mellom ${nf(Math.min(...B.map(b=>b.H)),0)} og ${nf(HM,0)} cm.">`;
+  for(let i=N-1;i>=0;i--){const b=B[i];s+=`<path class="skive" data-t="${b.k}–${b.k+24} · n = ${b.n}<br>sete ${nf(b.s)} · total ${nf(b.H)} · djupn ${nf(b.d)}" d="M${P(i,0,0)}L${P(i,t,0)}L${P(i,t,b.s-t)}L${P(i,b.d-t,b.s-t)}L${P(i,b.d-t,0)}L${P(i,b.d,0)}L${P(i,b.d,b.s)}L${P(i,t,b.s)}L${P(i,t,b.H)}L${P(i,0,b.H)}Z"/>`}
+  s+=`<path class="lin" stroke-width="1.1" d="M${B.map((b,i)=>P(i,0,b.H)).join('L')}"/><path class="lin" stroke-width="2.2" d="M${B.map((b,i)=>P(i,b.d,b.s)).join('L')}"/>`;
+  B.forEach((b,i)=>{if(b.k%100===0){const q=Q(i,b.d,0);s+=`<text x="${q[0]+4}" y="${q[1]+12}">${b.k}</text>`}});
+  const e=B[N-1],qa=Q(N-1,0,e.H),qb=Q(N-1,e.d,e.s),f=B[0],fa=Q(0,0,f.H),fb=Q(0,0,f.s);
+  s+=`<text class="f" x="${qa[0]+8}" y="${qa[1]+3}">rygg ${nf(e.H,0)}</text><text class="f" x="${qb[0]+8}" y="${qb[1]+3}">sete ${nf(e.s,0)}</text><text x="${fa[0]-5}" y="${fa[1]+3}" text-anchor="end">${nf(f.H,0)}</text><text x="${fb[0]-5}" y="${fb[1]+3}" text-anchor="end">${nf(f.s,0)}</text>`;
+  host.innerHTML=s+'</svg>';
+  $('#akso-fot').textContent=`n = ${B.reduce((p,b)=>p+b.n,0)} · ${N} skiver sett frå sida · tjukk line: sete · tynn line: ryggtopp · cm`;
+}
+
+function skala(){
+  const host=$('#skala');host.innerHTML='';
+  D.skala.forEach(q=>{
+    const W=300,H=220,l=22,r=4,t=6,b=24,x=v=>l+(W-l-r)*(v-60)/110,y=v=>t+(H-t-b)*(1-(v-28)/40);
+    let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${MUS[q.m]}: setehøgd mot totalhøgd for ${q.n} stolar. Stiging ${nf(q.b,2)}.">`;
+    for(let v=30;v<=60;v+=10)s+=`<text x="${l-5}" y="${y(v)+3}" text-anchor="end">${v}</text>`;
+    s+=akseX(l,W-r,H-b,[80,120,160].map(v=>[x(v),v]));
+    D.stolar.forEach(d=>{if(d[0]===q.m)s+=`<circle class="dot" cx="${x(Math.min(d[2],170)).toFixed(1)}" cy="${y(d[5]).toFixed(1)}" r="1.7" data-t="total ${nf(d[2])} · sete ${nf(d[5])}${d[1]?' · '+d[1]:''}"/>`});
+    const h1=Math.max(60,28/q.del),h2=Math.min(170,68/q.del);s+=`<line class="ref" x1="${x(h1)}" y1="${y(q.del*h1)}" x2="${x(h2)}" y2="${y(q.del*h2)}"/>`;
+    let p='';for(let v=60;v<=170;v+=5)p+=(p?'L':'M')+x(v).toFixed(1)+' '+y(Math.exp(q.a)*Math.pow(v,q.b)).toFixed(1);
+    s+=`<path class="lin" stroke-width="1.8" d="${p}"/></svg>`;
+    const d=document.createElement('div');d.innerHTML=`<div class="sub">${MUS[q.m]} · n = ${q.n} · stiging ${nf(q.b,2)}</div>${s}`;host.appendChild(d);
+  });
+}
+
+function drift(){
+  const host=$('#drift'),W=bredde(host),AX=['setehøgd','djupn','breidd','totalhøgd','rygg'],l=66,r=14,rad=38,t=20,H=t+rad*AX.length+24;
+  const lg=Math.log,x=v=>l+(W-l-r)*(lg(Math.min(Math.max(v,.6),8))-lg(.6))/(lg(8)-lg(.6));
+  const FORM=[(cx,cy)=>`<circle cx="${cx}" cy="${cy}" r="4"`,(cx,cy)=>`<rect x="${cx-3.6}" y="${cy-3.6}" width="7.2" height="7.2"`,(cx,cy)=>`<path d="M${cx} ${cy-4.8}L${cx+4.6} ${cy+3.4}L${cx-4.6} ${cy+3.4}Z"`];
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Driftindeks per akse og museum. Rygg og totalhøgd ligg mellom 1,9 og 4,1 i alle tre museum. Setehøgd, djupn og breidd ligg mellom 0,8 og 1,6.">`;
+  s+=`<line class="ref" x1="${x(1)}" x2="${x(1)}" y1="${t-8}" y2="${H-24}"/><text x="${x(1)}" y="${t-12}" text-anchor="middle">ingen drift</text>`;
+  AX.forEach((a,i)=>{const cy=t+rad*i+18;s+=`<text class="f" x="${l-12}" y="${cy+3}" text-anchor="end">${a}</text>`;
+    [0,1,2].forEach(m=>{const d=D.drift.find(q=>q.m===m&&q.a===a);if(!d)return;const yy=cy+(m-1)*9;
+      s+=`<line class="akse" x1="${x(d.lo)}" x2="${x(d.hi)}" y1="${yy}" y2="${yy}"/>`+FORM[m](x(d.v),yy)+` class="ffg" stroke="var(--bg)" stroke-width="1.2" data-t="${a} · ${MUS[m]}<br>${nf(d.v,2)}× (${nf(d.lo,2)}–${nf(d.hi,2)}) · n = ${d.n}"/>`})});
+  s+=akseX(l,W-r,H-22,[.6,1,2,3,4,6,8].map(v=>[x(v),nf(v,v<1?1:0)+'×']));
+  host.innerHTML=s+'</svg>';
+}
+
+function materiale(){
+  const M=D.materiale,host=$('#materiale'),W=bredde(host),l=22,kol=(W-l)/M.length,k=Math.min(2.2,(kol-44)/60),topp=Math.max(...M.map(m=>m.sete[1]+m.rygg[2])),H=Math.round(topp*k+52),y0=H-38,tk=Math.max(3,3*k);
+  const felles=M.map(m=>m.sete[1]).sort((p,q)=>p-q)[Math.floor(M.length/2)];
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Medianstolen for tre, metall og plast framanfrå i målestokk. Setehøgda er nesten lik, ryggen er lågare for metall og plast.">`;
+  s+=`<line class="akse" x1="${l}" x2="${W}" y1="${y0}" y2="${y0}"/><line class="ref" x1="${l}" x2="${W}" y1="${y0-felles*k}" y2="${y0-felles*k}"/><text x="${l-5}" y="${y0-felles*k+3}" text-anchor="end">${nf(felles,0)}</text><text x="${l-5}" y="${y0+3}" text-anchor="end">0</text>`;
+  M.forEach((m,i)=>{const cx=l+kol*(i+.5),hb=m.breidd/2*k,ys=y0-m.sete[1]*k,yt=ys-m.rygg[1]*k,wx=cx+hb+10,vx=cx-hb-10;
+    s+=`<g data-t="${m.namn} · n = ${m.sete[3]}<br>sete ${nf(m.sete[1])} (${nf(m.sete[0])}–${nf(m.sete[2])})<br>rygg ${nf(m.rygg[1])} (${nf(m.rygg[0])}–${nf(m.rygg[2])})<br>breidd ${nf(m.breidd)}">
+      <rect class="skive" x="${cx-hb}" y="${yt}" width="${2*hb}" height="${ys-yt}"/>
+      <rect class="skive" x="${cx-hb}" y="${ys}" width="${tk}" height="${y0-ys}"/><rect class="skive" x="${cx+hb-tk}" y="${ys}" width="${tk}" height="${y0-ys}"/>
+      <rect class="skive" x="${cx-hb-3}" y="${ys}" width="${2*hb+6}" height="${tk}"/>
+      <line class="akse" x1="${cx-hb-3}" x2="${cx+hb+3}" y1="${ys}" y2="${ys}" style="stroke-width:2.2"/>
+      <line class="akse" x1="${wx}" x2="${wx}" y1="${ys-m.rygg[0]*k}" y2="${ys-m.rygg[2]*k}"/><line class="akse" x1="${vx}" x2="${vx}" y1="${y0-m.sete[0]*k}" y2="${y0-m.sete[2]*k}"/></g>
+      <text class="f" x="${cx}" y="${y0+15}" text-anchor="middle">${m.namn}</text>
+      <text x="${cx}" y="${y0+29}" text-anchor="middle">sete ${nf(m.sete[1])} · rygg ${nf(m.rygg[1])} · n = ${m.sete[3]}</text>`});
+  host.innerHTML=s+'</svg>';
+}
+
+const PR=[['spreiing i setehøgd',.10,'<',[.047,.078],.091,1],['spreiing i rygg',.20,'>',[.277,.415],.228,1],['tida forklarar setehøgda',.20,'<',[.06,.04],.09,1],['tida forklarar ryggen',.40,'>',[.58,.60],.21,0],['stiging mot totalhøgd',.30,'<',[.11,.13],.20,1]];
+function prove(){
+  const host=$('#prove'),W=bredde(host),smal=W<520,l=smal?2:156,r=10,rad=smal?46:32,t=4,H=t+rad*PR.length+24,x=v=>l+(W-l-r)*v/.7;
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Fem av dei åtte forsegla føreseiingane med grense, opplæringstal og utfall i Rijksmuseum. Fire heldt, éi slo feil.">`;
+  PR.forEach((p,i)=>{const cy=t+rad*i+(smal?28:14),a=p[2]==='<'?[0,p[1]]:[p[1],.7],cx=x(p[4]);
+    s+=`<rect x="${x(a[0])}" y="${cy-7}" width="${x(a[1])-x(a[0])}" height="14" fill="var(--hair)"/><line class="akse" x1="${x(p[1])}" x2="${x(p[1])}" y1="${cy-10}" y2="${cy+10}"/>`
+      +p[3].map(v=>`<circle cx="${x(v)}" cy="${cy}" r="3.4" fill="var(--bg)" stroke="var(--dim)" data-t="opplæring ${nf(v,3)}"/>`).join('')
+      +(p[5]?`<circle class="ffg" stroke="var(--bg)" stroke-width="1.5" cx="${cx}" cy="${cy}" r="5.2" data-t="Rijksmuseum ${nf(p[4],3)} · grense ${p[2]} ${nf(p[1],2)}"/>`:`<path class="akse" style="stroke-width:2" d="M${cx-5} ${cy-5}L${cx+5} ${cy+5}M${cx-5} ${cy+5}L${cx+5} ${cy-5}"/><circle cx="${cx}" cy="${cy}" r="9" fill="transparent" data-t="Rijksmuseum ${nf(p[4],3)} · grense ${p[2]} ${nf(p[1],2)}"/>`)
+      +`<text class="f" x="${smal?l:l-10}" y="${smal?cy-14:cy+3}" text-anchor="${smal?'start':'end'}">${p[0]}</text>`});
+  s+=akseX(l,W-r,H-22,[0,.1,.2,.3,.4,.5,.6,.7].map(v=>[x(v),nf(v,1)]));
+  host.innerHTML=s+'</svg>';
+}
+
+function alt(){akso();skala();drift();materiale();prove()}
+alt();
+let tm;addEventListener('resize',()=>{clearTimeout(tm);tm=setTimeout(()=>{akso();drift();materiale();prove()},150)});
+</script>

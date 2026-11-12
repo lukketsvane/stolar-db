@@ -1,4 +1,4 @@
-"""Byggjer figurar/stolen.html frå figurar/side.html og analyse/data/tre_museum.csv.
+"""Byggjer figurar/stol-db.html (til traktat.iverfinne.no) og figurar/stolen.html frå figurar/kropp.html.
 Køyr:  python analyse/12_bygg_side.py
 """
 import collections, csv, json, os, re, sys
@@ -57,7 +57,26 @@ for namn, kode in M.items():
 drift = [{"m": M[r["museum"]], "a": r["akse"], "v": float(r["driftindeks"]), "lo": float(r["lo"]), "hi": float(r["hi"]), "n": int(r["n"])}
          for r in csv.DictReader(open(os.path.join(A, "data", "driftindeks.csv"), encoding="utf-8-sig"))]
 data = {"stolar": stolar, "bolkar": bolkar, "materiale": mat, "skala": skala, "drift": drift}
-mal = open(os.path.join(A, "figurar", "side.html"), encoding="utf-8").read()
-ut = mal.replace('"__DATA__"', json.dumps(data, ensure_ascii=False, separators=(",", ":")))
-open(os.path.join(A, "figurar", "stolen.html"), "w", encoding="utf-8").write(ut)
-print("stolar:", len(stolar), "| bolkar:", {k: len(v) for k, v in bolkar.items()}, "| materiale:", mat, "| skala:", skala, "| byte:", len(ut.encode("utf-8")))
+kropp = open(os.path.join(A, "figurar", "kropp.html"), encoding="utf-8").read().replace('"__DATA__"', json.dumps(data, ensure_ascii=False, separators=(",", ":")))
+FONT = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300..400;1,7..72,300..400&family=IBM+Plex+Mono:wght@400;500&display=swap">'
+HOVUD = """<!doctype html>
+<html lang="nn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme:light)">
+<meta name="theme-color" content="#080808" media="(prefers-color-scheme:dark)">
+<meta name="formlaere-source" content="@@SOURCE_HASH@@">
+<title>formlære · stol-db</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+""" + FONT + """
+</head>
+<body>
+"""
+# 1) Sida til traktat.iverfinne.no (mal for traktat/scripts/build.py i FORML-RE)
+open(os.path.join(A, "figurar", "stol-db.html"), "w", encoding="utf-8").write(HOVUD + kropp + "</body>" + chr(10) + "</html>" + chr(10))
+# 2) Same innhald utan meny, til førehandsvising
+utan_meny = re.sub(r"<!--NAV-->.*?<!--/NAV-->", "", kropp, flags=re.S)
+open(os.path.join(A, "figurar", "stolen.html"), "w", encoding="utf-8").write("<title>Kva stolen held fast</title>" + chr(10) + FONT + chr(10) + utan_meny)
+print("stolar:", len(stolar), "| skrive: stol-db.html og stolen.html")
