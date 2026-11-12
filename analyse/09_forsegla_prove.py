@@ -48,8 +48,16 @@ def tittel(rec):
     return " ".join((n.get("content") or "") for n in rec.get("identified_by", []) if n.get("type") == "Name")
 
 
+AVVIK = [
+    "Avvik 1 (12.11.2026, etter forsegling, før noko resultat var rekna ut): aar() krasja fordi "
+    "produced_by eller timespan er ei liste i nokre postar. Retta til å bruke første element. "
+    "Ingen tersklar, populasjonsreglar eller estimatorar er endra.",
+]
+forste = lambda x: (x[0] if x else {}) if isinstance(x, list) else (x or {})
+
+
 def aar(rec):
-    t = ((rec.get("produced_by") or {}).get("timespan") or {}).get("begin_of_the_begin") or ""
+    t = forste(forste(rec.get("produced_by")).get("timespan")).get("begin_of_the_begin") or ""
     m = re.match(r"-?\d{4}", t)
     return int(m.group(0)) if m else None
 
@@ -96,7 +104,7 @@ for linje in open(os.path.join(MAPPE, "rijks_raa.jsonl"), encoding="utf-8"):
 
 n = len(rader)
 print("flyt:", dict(tel), "| til prøving:", n)
-res = {"flyt": dict(tel), "n": n, "avvik": []}
+res = {"flyt": dict(tel), "n": n, "avvik": AVVIK}
 if n < POP["minste_n"]:
     res["dom"] = "ikkje avgjerande: for få stolar"
 else:
