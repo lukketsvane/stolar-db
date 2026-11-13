@@ -1,0 +1,39 @@
+{
+ "prove": "Den sjuande forsegla prøva: den som bryt med fortida, fell i ein gammal dal",
+ "skrive": "2026-11-13",
+ "kjelde": "Levin-lesing av formlære (arbeidsflyt wf_afdaa391-7ac, hypotese 11, grep 8). Formlære, kortversjonen: Definisjon 4 (dei busette regionane er heile formhistoria, og det nærliggande moglege grensar mot henne), seksjon 3 etter Definisjon 6 (landskapet har minne gjennom verktøy, vane og forventing), Følgje 2 (ein del av landskapet ber grammatikken og substratet, og kroppen og treet er dei same no som i 1750), Teorem 1 (utan anna minne fyller fordelinga den låge regionen). Ei lesing, ikkje sitat.",
+ "hypotese": "Ein stol som slepp taket i den nære fortida si, fell ikkje ut i tomrommet, men ned i ein eldre dal. Dei mest nyskapande stolane etter 1900, målte mot den nære fortida i sitt eige materiale, ligg nærare stolar frå før 1840 enn eit like langt steg i tilfeldig retning frå den same fortida ville ført dei.",
+ "maal": {
+  "utval": "Last() frå 26_to_alder.py (same kvalitetsregel), trekk som i 30_nye_former.py: radtrekk for rad 2 til 125, standardisert, PCA med 15 komponentar tilpassa på alle stolar med år.",
+  "materiale": "felles.materialklasse(Materialar, Teknikk) frå STOLAR.csv: LINE og LINE+SHEET blir LINE, SHEET, WOOD. ANNA er ute.",
+  "maal_stolar": "Midtår ikkje brukt; aar_fraa frå 1900 til 2020. Ute før opning: stil Historisme, Nyrokokko, Nybarokk, Dragestil, Postmodernisme, Memphis / Postmodernisme, og namn som inneheld kopi, reproduksjon, replica, copy of eller rekonstruksjon.",
+  "naer_fortid": "For stol i: dei 60 nyaste stolane i same materialklasse som er minst 5 og høgst 80 år eldre, utan same stamme og utan same museum, H og B. Færre enn 30: stolen fell ut.",
+  "djup_fortid": "Alle stolar med aar_fraa til og med 1840.",
+  "nyheit": "n_i = avstanden til den næraste stolen i den nære fortida (q_i). o_i = avstanden til den næraste stolen i den djupe fortida.",
+  "nye": "Dei 20 % av målstolane med størst n_i. Resten: vanlege.",
+  "nullmodell": "For kvar ny stol: 200 steg frå q_i med lengd n_i i tilfeldig retning, der retninga er trekt frå normalfordelinga med variansane til dei 15 komponentane i heile utvalet og så normert. o_null = avstanden frå steget til den næraste stolen i den djupe fortida. Frø 20261113."
+ },
+ "foreseiingar": {
+  "A1_under_nullmedianen": "Delen av dei nye stolane der o_i ligg under medianen av sin eigen nullfordeling, er 0,60 eller meir, og nedre grense i 95 % bootstrap-intervallet er over 0,50.",
+  "A2_naerare_enn_tilfeldig": "R = median(o_i) delt på medianen av nullmedianane er 0,95 eller lægre, og øvre grense i 95 % bootstrap-intervallet er under 1,00."
+ },
+ "sekundaert_utan_dom": [
+  "Same tal i tre åleine og i metall og plast åleine.",
+  "R mot dei vanlege stolane: median o_i for dei nye delt på median o for dei vanlege frå same tiår.",
+  "Fordelinga av året til tvillingen frå før 1840."
+ ],
+ "grunnmodell": "Tilfeldig vandring: den som går langt frå naboane sine, går like ofte bort frå det gamle som mot det. Då ligg o_i rundt nullmedianen (delen nær 0,5 og R nær 1).",
+ "port": "Minst 50 nye og 200 vanlege. Elles er prøva ugyldig.",
+ "n_boot": 2000,
+ "froe": 20261113,
+ "skjevheit_kjend_foer_opning": [
+  "Retningane i nullmodellen følgjer variansen i heile utvalet, der tida er ein av dei største aksane. Eit steg langs tidsaksen går like ofte fram som attende, så nullmodellen er symmetrisk i tid.",
+  "Dei nye stolane etter 1900 er ofte loungestolar og skalstolar (prøve 6). Låge, breie former kan liggje nær låge, breie stolar frå før 1840 (bergère, fauteuil) av di dei deler kroppsstilling, ikkje historie. Prøva skil ikkje dei to forklaringane."
+ ],
+ "kjende_avvik_foer_opning": [
+  "Talet på målstolar vart sett før forsegling, utan avstandar: 209 med start i 1940 og 305 med start i 1900. Startåret vart flytt frå 1940 til 1900 for å nå porten.",
+  "Prøve 6 viste at dei mest nyskapande stolane etter 1900 har lågare sete og større spreiing i setet. Avstanden til stolar før 1840 er ikkje rekna for nokon stol.",
+  "Tersklane er ikkje gjennomgåtte av forfattaren."
+ ],
+ "tersklar_gjennomgaatt_av_forfattaren": false
+}
