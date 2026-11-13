@@ -1,0 +1,35 @@
+{
+ "prove": "Den åttande forsegla prøva: perioden slår stoffet (føreseiing 11 i formlære)",
+ "skrive": "2026-11-13",
+ "kjelde": "Formlære, kortversjonen: føreseiing 11 («Stilkategoriar som er fastsette utan å sjå på formmåla, føreseier nye former betre enn materialet, med like mange parametrar»), Definisjon 6 (stilarten er svermen rundt eit felles tyngdepunkt i landskapet) og Følgje 2 (stoffet ligg i den delen grammatikken og substratet ber, perioden i den delen agentane ber gjennom vurderinga). Levin-lesing (arbeidsflyt wf_afdaa391-7ac, hypotese 2, grep 2): stoffet er genomet til stolen, og målforma ligg ikkje der, men i svermen av samtidige stolar. Ei lesing, ikkje sitat.",
+ "hypotese": "Forma til ein stol etter 1915 er lagra i perioden og ikkje i stoffet. Tre periodegrupper fastsette utan formmål føreseier silhuetten til ein stol dei ikkje har sett, betre enn tre stoffklassar gjer. Ein stålstol frå 1965 liknar meir på ein trestol frå 1965 enn på ein stålstol frå 1932.",
+ "maal": {
+  "utval": "Last() frå 26_to_alder.py (same kvalitetsregel). aar_fraa frå 1915 til 2020, type Stol, Spisestol, Armstol eller Klappstol, struktur_type ikkje pidestall, gyngande eller frittberande, materialklasse LINE (med LINE+SHEET), SHEET eller WOOD. Éin per modell: same stamme, eller same museum, H og B, tel éin gong (lægst id).",
+  "periodar": {"P1": ["Art Deco / Tidleg modernisme", "Funksjonalisme", "Nordisk funksjonalisme", "Bauhaus"],
+               "P2": ["Modernisme / Midtjahrhundre", "Midtjahrhundre modernisme", "Modernisme", "Skandinavisk modernisme", "Etterkrigsmodernisme", "Pop / Plastisk modernisme"],
+               "P3": ["Postmodernisme", "Memphis / Postmodernisme", "Samtidsdesign"]},
+  "aarsbolkar": {"Y1": [1915, 1944], "Y2": [1945, 1974], "Y3": [1975, 2020]},
+  "trekk": "Utstrekninga per cm frå 2 til 124 cm over golvet, framanfrå og frå sida (radtrekk kanal 1 og 3), ikkje mengda materiale. Standardisert per trekk over utvalet.",
+  "modellar": "S: kvar stol blir føresagd med middelet av dei andre stolane i same periodegruppe og museum. M: same med materialklassen og museum. Begge har tre nivå per museum. Ein stol som ikkje har minst 5 andre i gruppa si under begge modellane, fell ut.",
+  "feil": "Kvadrert avstand mellom stolen og føresegna. Q = middelfeil S delt på middelfeil M. Skilnad per stol: feil M minus feil S."
+ },
+ "foreseiingar": {
+  "P1_stilmerka": "Med periodegruppene etter stil: Q er 0,95 eller lægre, og nedre grense i 95 % bootstrap-intervallet for middelskilnaden (M minus S) er over 0.",
+  "P2_aarsbolkane": "Det same med årsbolkane i staden for stilmerka.",
+  "P3_rutenettet": "I rutenettet av cellemiddel (periode etter stil gonger materiale, museuma saman, celler med minst 8 stolar) er middelavstanden mellom celler med same periode og ulikt stoff mindre enn middelavstanden mellom celler med same stoff og ulik periode."
+ },
+ "grunnmodell": "Stoffet som genom: kvar stoffklasse har si eiga form (stålrøyr, kryssfiner, plast, tre), slik læra om sanning til materialet seier. Då slår M S, eller dei står likt (P1 og P2 slo feil).",
+ "port": "Minst 150 stolar med feil under begge modellane, for kvar av dei to grupperingane. Elles er den delen ugyldig.",
+ "n_boot": 2000,
+ "froe": 20261113,
+ "skjevheit_kjend_foer_opning": [
+  "Stilmerka kan vere sette av nokon som såg på stolen og ber då formkunnskap inn i S. P2 med reine årsbolkar fjernar det.",
+  "Tynne metallrøyr blir borte eller tjukkare i 3D-modellen. Det gjer metallstolane likare kvarandre og hjelper M, så det verkar mot hypotesen.",
+  "Kravet om fire bein i utkastet kunne ikkje brukast: tal_bein manglar for dei fleste stolane. Typefilteret og struktur_type tek bort det meste av svingfot, gyngestol og frittberande."
+ ],
+ "kjende_avvik_foer_opning": [
+  "Talet på stolar per periode, materiale og museum vart sett før forsegling (383 med stilmerke, 389 med årsbolk, før samanslåing). Ingen form er rekna.",
+  "Tersklane er ikkje gjennomgåtte av forfattaren."
+ ],
+ "tersklar_gjennomgaatt_av_forfattaren": false
+}
