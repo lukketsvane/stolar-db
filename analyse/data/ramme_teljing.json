@@ -1,0 +1,31 @@
+{
+ "objekt": 2048,
+ "ut_ikkje_vaksenstol": 117,
+ "ut_utan_katalogmaal_eller_silhuett": 344,
+ "ut_uviss_orientering": 135,
+ "ut_skalasjekk": 35,
+ "ut_utan_aar": 7,
+ "i_ramma": 1410,
+ "suitar": 1190,
+ "per_museum": {
+  "VA": 1042,
+  "NM": 368
+ },
+ "per_hundreaar": {
+  "1500": 24,
+  "1600": 141,
+  "1700": 427,
+  "1800": 330,
+  "1900": 447,
+  "2000": 41
+ },
+ "per_materiale": {
+  "ANNA": 16,
+  "LINE": 88,
+  "LINE+SHEET": 90,
+  "SHEET": 122,
+  "WOOD": 1094
+ },
+ "med_katalogsete": 466,
+ "med_mesh_sete": 1403
+}
