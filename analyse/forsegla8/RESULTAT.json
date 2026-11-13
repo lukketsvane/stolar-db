@@ -1,0 +1,44 @@
+{
+ "tid": "2026-11-13T17:08:05+01:00",
+ "forsegla_commit": "dedb5898175e9acdd0e4877874d4591b3a611e7a",
+ "n_utval": 318,
+ "resultat": {
+  "P1_stilmerka": {
+   "n": 313,
+   "Q": 0.9945235848426819,
+   "skilnad": 1.3802696466445923,
+   "ki95": [
+    -1.2893213033676147,
+    4.095792770385742
+   ],
+   "dom": "SLO FEIL"
+  },
+  "P2_aarsbolkane": {
+   "n": 313,
+   "Q": 0.9961349368095398,
+   "skilnad": 0.9739030599594116,
+   "ki95": [
+    -1.4747071266174316,
+    3.52061128616333
+   ],
+   "dom": "SLO FEIL"
+  },
+  "P3_rutenettet": {
+   "same_periode_ulikt_stoff": 4.308109945721096,
+   "same_stoff_ulik_periode": 4.389272265964085,
+   "celler": {
+    "P3_WOOD": 33,
+    "P3_SHEET": 32,
+    "P3_LINE": 44,
+    "P2_LINE": 55,
+    "P2_WOOD": 30,
+    "P1_WOOD": 40,
+    "P1_SHEET": 19,
+    "P1_LINE": 26,
+    "P2_SHEET": 34
+   },
+   "dom": "HELDT"
+  }
+ },
+ "avvik": []
+}
