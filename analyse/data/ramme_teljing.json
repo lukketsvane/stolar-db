@@ -3,29 +3,30 @@
  "ut_ikkje_vaksenstol": 117,
  "ut_utan_katalogmaal_eller_silhuett": 344,
  "ut_uviss_orientering": 135,
+ "ut_kopiert_maalpost": 33,
  "ut_skalasjekk": 35,
  "ut_utan_aar": 7,
- "i_ramma": 1410,
- "suitar": 1190,
+ "i_ramma": 1377,
+ "suitar": 1179,
  "per_museum": {
-  "VA": 1042,
+  "VA": 1009,
   "NM": 368
  },
  "per_hundreaar": {
-  "1500": 24,
-  "1600": 141,
-  "1700": 427,
-  "1800": 330,
-  "1900": 447,
-  "2000": 41
+  "1500": 22,
+  "1600": 133,
+  "1700": 421,
+  "1800": 328,
+  "1900": 435,
+  "2000": 38
  },
  "per_materiale": {
-  "ANNA": 16,
-  "LINE": 88,
-  "LINE+SHEET": 90,
-  "SHEET": 122,
-  "WOOD": 1094
+  "ANNA": 15,
+  "LINE": 83,
+  "LINE+SHEET": 87,
+  "SHEET": 117,
+  "WOOD": 1075
  },
- "med_katalogsete": 466,
- "med_mesh_sete": 1403
+ "med_katalogsete": 459,
+ "med_mesh_sete": 1370
 }
