@@ -30,3 +30,5 @@ research/temp/
 .env
 *_local.env
 *env.local
+# Met sin opne katalog (341 MB), henta av analyse/22_met_prove.py --haust
+analyse/forsegla3/MetObjects.csv

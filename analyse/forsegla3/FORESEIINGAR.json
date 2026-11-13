@@ -1,0 +1,150 @@
+{
+ "id": "prove3_met",
+ "skriven": "2026-11-13T12:56:24+01:00",
+ "tersklar_gjennomgaatt_av_forfattaren": false,
+ "merknad": "Tredje forsegla prøve: tre funn frå den andre prøva (V&A og Nasjonalmuseet) etterprøvde i eit museum som ikkje har vore opna. Tersklane er dei same som i den andre prøva, ord for ord; berre instrumentet er bytt der Met ikkje har 3D-modellar. Rijksmuseum vart opna i den første prøva og er difor ikkje brukt.",
+ "kjelde": {
+  "museum": "The Metropolitan Museum of Art, New York",
+  "fil": "MetObjects.csv i github.com/metmuseum/openaccess",
+  "commit": "d31d26fa333e1dd1b00cfbc04b162aa764e52ce8",
+  "commit_dato": "2026-11-09",
+  "url": "https://media.githubusercontent.com/media/metmuseum/openaccess/d31d26fa333e1dd1b00cfbc04b162aa764e52ce8/MetObjects.csv",
+  "storleik_bytes_oppgjeven": 340954031,
+  "kolonnar": [
+   "Object ID",
+   "Object Number",
+   "Department",
+   "Object Name",
+   "Title",
+   "Culture",
+   "Object Begin Date",
+   "Dimensions"
+  ]
+ },
+ "n_boot": 2000,
+ "froe": 20261113,
+ "dimensjonsregel": "Dimensions blir delt på semikolon og linjeskift. Kvar del får ein merkelapp (teksten før første tal) og første cm-verdi (i parentes eller fri). Totalhøgd: første del utan seat, arm, back og liknande i merkelappen som anten er tom eller byrjar med overall, H. eller height; finst ein del merkt open (klappkrakk), gjeld han. Setehøgd: første del med seat og H-merke. Armhøgd: første del med arm eller arms og H-merke. Reglane står i 22_met_prove.py (maal) og er prøvde berre på oppdikta døme.",
+ "M1_krakk": {
+  "etterproving_av": "N4 (t5_krakk.py), HELDT på 79 krakkar i V&A og Nasjonalmuseet: median 45,0 cm, spreiing 0,099",
+  "proposisjonar": [
+   "5.15",
+   "1.0211",
+   "6.672"
+  ],
+  "paastand": "Ein krakk har ingen rygg, så totalhøgda er setehøgda. Er setehøgda halden mot kroppen, ligg krakkar laga for å sitje med føtene i golvet der stolsete ligg, og like tett: medianen innanfor kvartilbreidda for stolsete i V&A (41,0 til 46,0 cm), og robust spreiing nærare spreiinga i setehøgd enn i totalhøgd.",
+  "utval": {
+   "objektnamn": "\\bstools?\\b|\\btabourets?\\b",
+   "avdelingar_primaer": [
+    "The American Wing",
+    "European Sculpture and Decorative Arts",
+    "Modern and Contemporary Art"
+   ],
+   "avdelingar_grunngjeving": "Avdelingane der vestlege møblar ligg, slik V&A og Nasjonalmuseet sine møblar i hovudsak er vestlege. Valt utan å sjå eit einaste mål. Krakkar frå andre avdelingar (Afrika, Asia, Egypt og andre) blir rapporterte per avdeling utan dom.",
+   "namnetermar": [
+    [
+     "fotskammel",
+     "foot[\\s-]?stools?|foot[\\s-]?rests?|\\bhassocks?\\b|\\bfot(skamm?el|krakk|benk|kvilar|hvilar)\\w*"
+    ],
+    [
+     "knelekrakk",
+     "\\bkneel\\w*|prie[\\s-]?dieu|\\bknele\\w*|\\bbede(skamm?el|stol|pult)\\w*"
+    ],
+    [
+     "trapp",
+     "\\bsteps?\\b|step[\\s-]?stools?|step[\\s-]?ladders?|\\bladders?\\b|\\b(gardin|bibliotek)?trapp(a|e\\w*)?\\b|\\bstiger?\\b"
+    ],
+    [
+     "barn",
+     "\\bchild(ren)?('s|s')?\\b|\\bnursery\\b|\\bbab(y|ies)\\b|\\binfants?\\b|\\bbarne(krakk|stol|m(ø|o)bel)\\w*"
+    ],
+    [
+     "barn_namngjeven",
+     "\\bstool thing\\b"
+    ],
+    [
+     "bar_hog",
+     "\\bbar[\\s-]?stools?|\\bhigh[\\s-]?stools?|\\btall[\\s-]stools?|\\bcounter[\\s-]?stools?|\\bdraughts?man\\w*|\\bdrafting\\b|\\bbar(krakk|stol)\\w*|\\bh(ø|o)ge? krakk|\\bh(ø|o)y krakk"
+    ],
+    [
+     "bord_stativ",
+     "\\btables?\\b|\\bstands?\\b|\\bpedestals?\\b|\\bbord\\b|\\bbordkrakk\\w*|\\bpidestall\\w*|\\bstativ\\w*"
+    ],
+    [
+     "miniatyr_dokke",
+     "\\bminiatures?\\b|\\bdolls?('s|')?\\b|\\btoys?\\b|\\bmaquettes?\\b|\\bscale model\\b|\\bminiatyr\\w*|\\bdokke(stove|hus|m(ø|o)bel|krakk|stol)\\w*|\\bdukke(stue|hus|m(ø|o)bel|krakk|stol)\\w*|\\bleiket(ø|o)y\\w*|\\bleket(ø|o)y\\w*"
+    ]
+   ],
+   "namneregel_tekst": "Title utan parentesar + Object Name, små bokstavar; same termar som N4",
+   "hogd": "totalhøgd; finst berre setehøgd, blir ho brukt (som N4). Ingen grense på høgda."
+  },
+  "tersklar": {
+   "P1": [
+    41.0,
+    46.0
+   ],
+   "P2": 0.1257,
+   "P3": 0.1735,
+   "n_min": 40,
+   "klyngjer_min": 30
+  },
+  "tersklar_kjelde": "P1 til P3 er dei frosne tala frå N4: kvartilane for setehøgd på 285 V&A-stolar, midtpunktet mellom spreiinga i setehøgd (0,0779) og totalhøgd (0,1735), og spreiinga i totalhøgd. Portane er nye: N4 fann at 40 uavhengige sett gjev styrke 0,95; 30 klyngjer er nedre grense fordi Met sine sett blir kjende att på inventarnummeret, ikkje på same modell.",
+  "grunnmodell": "Krakken er eit møbel som andre: høgda varierer som totalhøgda på stolar (median om lag 94 cm, spreiing 0,17 eller meir), eller krakkar står på eit anna nivå enn stolsete. Då slår P1, P2 eller P3 feil.",
+  "tel_imot": "median utanfor 41,0 til 46,0 cm, spreiing 0,1257 eller meir, eller øvre grense 0,1735 eller meir"
+ },
+ "M2_armlene": {
+  "etterproving_av": "N2 (t3_olboge.py), HELDT på 247 armstolar: armlenet 22,0 cm over setet, helling 0,089 [0,041 til 0,136]",
+  "proposisjonar": [
+   "6.6721",
+   "1.324",
+   "3.11"
+  ],
+  "paastand": "Armlenet ligg i olbogehøgd over setet, 20 til 25 cm (Pheasant 1996, 4.3.7), og følgjer ikkje storleiken på stolen: høgare rygg gjev ikkje høgare armlene.",
+  "instrument": "Katalogmål i staden for 3D-modell: A = armhøgd minus setehøgd, begge frå Met. I N2 var A toppen av armen i sideprofilen minus setehøgda frå modellen. Om Met måler armhøgda til toppen av armlenet, er det same storleik.",
+  "utval": {
+   "objektnamn": "arm\\s*chair|armchair|fauteuil|berg[eè]re|elbow chair|easy chair|wing chair",
+   "avdelingar_primaer": [
+    "The American Wing",
+    "European Sculpture and Decorative Arts",
+    "Modern and Contemporary Art"
+   ],
+   "krav": "totalhøgd, setehøgd og armhøgd; 30 <= sete <= 65; sete < H; sete < arm <= H; 8 <= A <= 45 (same vindauge som N2)"
+  },
+  "tersklar": {
+   "median_A": [
+    20.0,
+    25.0
+   ],
+   "helling_ovre": 0.2,
+   "A_vindauge": [
+    8.0,
+    45.0
+   ],
+   "n_min": 40,
+   "rygg_iqr_min": 10.0
+  },
+  "statistikk": "median av A; Theil-Sen-helling av A på rygghøgda H minus sete, øvre ende av 95 % klyngebootstrap (97,5-persentilen) må liggje under 0,20",
+  "treveg_koeffisientar": {
+   "kropp": 23.25,
+   "bord": 67.5,
+   "storleik": 0.6236
+  },
+  "treveg_merknad": "frosne frå DEV i N2 (kropp med katalogsete); snittfeil blir rapporterte utan dom",
+  "grunnmodell": "Armlenet følgjer storleiken (fast del av høgda, helling om lag 0,36 eller meir) eller står fast over golvet (bordhøgd). Den første slår ut i hellinga, den andre i medianen når setet varierer.",
+  "tel_imot": "median utanfor 20 til 25 cm, eller øvre grense for hellinga 0,20 eller meir"
+ },
+ "M3_kant_1712": {
+  "etterproving_av": "N3 (t4_gradient.py): UGYLDIG etter port P3, men kanten ved 1712 stod over nivået til ei planta øy på 50 år",
+  "proposisjonar": [
+   "3.302",
+   "3.3"
+  ],
+  "paastand": "Teorien (3.302) seier at stilskifte er gradientar. Kanten ved 1712 i V&A er då eit trekk ved samlinga, ikkje ved stolane: i Met skal 1712 ikkje vere ein kant etter OEY-regelen i N3 (nedre grense over 0 og punktestimat minst splice(50)).",
+  "grunnmodell": "Handbøkene: kanten ved 1712 (Queen Anne, Régence) kjem att i eitt anna museum.",
+  "status": "Utsett. Regelen krev framsilhuettar frå 3D-modellar. Met-stolane har ingen, og å lage dei lokalt tek timar på eit GTX 1070. Føreseiinga er forsegla no og blir køyrd med t4-koden når modellane finst."
+ },
+ "kjende_avvik_foer_opning": [
+  "Ein blind sonde mot Met (21_sonde_met.py) fekk ingen teljingar: søket v1 er lagt ned, og botvernet stengde det nye søket undervegs. Portane er difor absolutte tal, ikkje rekna frå venta utval, og formatet på merkelappane er ukjent.",
+  "Ved ein kontroll av API-a til Art Institute of Chicago og Cleveland Museum of Art vart høgda på fem krakkar skriven ut (AIC 218594, 159842, 120148; CMA 164629, 110790; alle frå afrikanske avdelingar). Dei er ikkje i Met og ikkje i utvalet.",
+  "Forfattaren har ikkje gått gjennom tersklane. Dei er kopierte frå den andre prøva, der heller ikkje forfattaren gjekk gjennom dei."
+ ]
+}
