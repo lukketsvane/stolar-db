@@ -1,0 +1,48 @@
+{
+ "tid": "2026-11-13T15:44:51+01:00",
+ "forsegla_commit": "b86246af43d52d6d86313acf2a8316867dd256e4",
+ "n": {
+  "maal": 482,
+  "nye": 97,
+  "resten": 385
+ },
+ "gyldig": true,
+ "grense": 12.070615768432617,
+ "resultat": {
+  "N1_setet_held": {
+   "forhold": 1.7916666666666667,
+   "ki95": [
+    1.2235772357723578,
+    2.307317073170732
+   ],
+   "dom": "SLO FEIL"
+  },
+  "N2_hoegda_slepp": {
+   "forhold": 1.0322580645161288,
+   "ki95": [
+    0.7398882866377737,
+    1.771279433719348
+   ],
+   "dom": "SLO FEIL"
+  },
+  "N3_setet_held_fastare": {
+   "forhold": 1.7916666666666667,
+   "dom": "SLO FEIL"
+  }
+ },
+ "spreiing": {
+  "nye_sete": 0.25,
+  "resten_sete": 0.13953488372093023,
+  "nye_H": 0.19999999999999996,
+  "resten_H": 0.19375
+ },
+ "median": {
+  "nye_sete": 40.0,
+  "resten_sete": 43.0,
+  "nye_H": 79.0,
+  "resten_H": 80.0
+ },
+ "avvik": [
+  "Etter opninga: nyheita er målt på heile stolen, setesona med. Ein stol med uvanleg setehøgd blir difor ny av di setet er uvanleg. Det gjer N1 strengare enn hypotesen krev. Utfallet står."
+ ]
+}
