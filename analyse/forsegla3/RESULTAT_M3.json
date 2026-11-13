@@ -1,0 +1,9 @@
+{
+ "tid": "2026-11-13T13:10:45+01:00",
+ "dom": "UTSETT",
+ "kort": "for få Met-foto i profil (12 av 60)",
+ "grunn": "Prøva på 2D-sidesilhuettar frå katalogfoto krev minst 150 kryssande par ved 1712 (porten i N3). Om alle 143 smalt daterte trestolar i vindauget 1662 til 1762 hadde profilfoto, ville det gje 1 820 kryssande par (tidsgap til og med 50 år, ulike sett). Den blinde sonden (25_sonde_profilfoto.py) fann foto i profil for 12 av 60 tilfeldige stolar, 20 % (Wilson 95 %: 12 til 32 %). Par skalerer med delen i andre: venta om lag 72 kryssande par (25 til 183). Porten vil difor med stor sannsyn falle.",
+ "ikkje_gjort": "Ingen silhuett er lagra, ingen avstand er rekna, og ingen utfallsverdi for kanten er sett.",
+ "kva_som_trengst": "Fleire stolar i profil: 3D-modellar av Met-stolane (som i prøve 2), eller eit museum der møblar er fotograferte frå sida som fast praksis.",
+ "foreseiinga_star": "M3 i FORESEIINGAR.json står uendra og kan køyrast når instrumentet finst."
+}

@@ -1,0 +1,18 @@
+{
+ "tid": "2026-11-13T13:10:21+0100",
+ "kandidatar": 470,
+ "teljingar": {
+  "objekt": 60,
+  "med_bilete": 60,
+  "bilete": 138,
+  "bilete_lese": 138,
+  "med_profil": 12,
+  "profil_foer_1712": 1,
+  "profil_fraa_1712": 11,
+  "foer_1712": 4,
+  "fraa_1712": 56,
+  "del_med_profil": 0.2,
+  "bilete_per_objekt_median": 2.0
+ },
+ "merknad": "Berre teljingar. Ingen silhuett lagra, ingen avstand rekna."
+}
