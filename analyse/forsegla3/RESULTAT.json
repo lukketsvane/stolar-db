@@ -1,0 +1,153 @@
+{
+ "opna": "2026-11-13T12:57:20+01:00",
+ "forsegla_commit": "f36e69248cad6412bfd66d915919951f0efa0ed8",
+ "kjelde_sha256": "b872cf45d404819094b8b8d8552e7b1953d095babe68db13ddb339166ae7a195",
+ "avvik": [
+  "Ein blind sonde mot Met (21_sonde_met.py) fekk ingen teljingar: søket v1 er lagt ned, og botvernet stengde det nye søket undervegs. Portane er difor absolutte tal, ikkje rekna frå venta utval, og formatet på merkelappane er ukjent.",
+  "Ved ein kontroll av API-a til Art Institute of Chicago og Cleveland Museum of Art vart høgda på fem krakkar skriven ut (AIC 218594, 159842, 120148; CMA 164629, 110790; alle frå afrikanske avdelingar). Dei er ikkje i Met og ikkje i utvalet.",
+  "Forfattaren har ikkje gått gjennom tersklane. Dei er kopierte frå den andre prøva, der heller ikkje forfattaren gjekk gjennom dei."
+ ],
+ "M1_krakk": {
+  "flyt": {
+   "inn": 135,
+   "andre_avdelingar": 65,
+   "namneregel": 3,
+   "utan_hogd": 2,
+   "primaer": 65
+  },
+  "port": [
+   {
+    "namn": "n",
+    "verdi": 65,
+    "terskel": 40,
+    "ok": true
+   },
+   {
+    "namn": "klyngjer",
+    "verdi": 47,
+    "terskel": 30,
+    "ok": true
+   }
+  ],
+  "primaer": [
+   {
+    "namn": "P1 median i kvartilbreidda for stolsete",
+    "verdi": 45.1,
+    "ki95": [
+     42.0,
+     51.1
+    ],
+    "terskel": [
+     41.0,
+     46.0
+    ],
+    "held": true
+   },
+   {
+    "namn": "P2 robust spreiing under midtpunktet",
+    "verdi": 0.2104,
+    "ki95": [
+     0.1149,
+     0.2694
+    ],
+    "terskel": 0.1257,
+    "held": false
+   },
+   {
+    "namn": "P3 øvre grense under spreiinga i totalhøgd",
+    "verdi": 0.2694,
+    "terskel": 0.1735,
+    "held": false
+   }
+  ],
+  "dom": "SLO FEIL",
+  "sekundaer": {
+   "S6_del_i_36_til_51_8": 0.6,
+   "SD_over_snitt": 0.2659,
+   "per_periode": {
+    "foer_1700": {
+     "n": 12,
+     "median": 52.7,
+     "spreiing": 0.0985
+    },
+    "1700_1899": {
+     "n": 33,
+     "median": 46.4,
+     "spreiing": 0.246
+    },
+    "fraa_1900": {
+     "n": 20,
+     "median": 42.0,
+     "spreiing": 0.1006
+    }
+   },
+   "per_avdeling_alle": {
+    "Arts of Africa, Oceania, and the Americas": {
+     "n": 35,
+     "median": 40.6,
+     "spreiing": 0.3067,
+     "del_i_41_46": 0.171
+    },
+    "Egyptian Art": {
+     "n": 5,
+     "median": 32.5,
+     "spreiing": 0.3193,
+     "del_i_41_46": 0.0
+    },
+    "European Sculpture and Decorative Arts": {
+     "n": 22,
+     "median": 46.4,
+     "spreiing": 0.163,
+     "del_i_41_46": 0.364
+    },
+    "Modern and Contemporary Art": {
+     "n": 19,
+     "median": 42.0,
+     "spreiing": 0.0918,
+     "del_i_41_46": 0.474
+    },
+    "Robert Lehman Collection": {
+     "n": 7,
+     "median": 53.0,
+     "spreiing": 0.0336,
+     "del_i_41_46": 0.0
+    },
+    "The American Wing": {
+     "n": 24,
+     "median": 53.8,
+     "spreiing": 0.3403,
+     "del_i_41_46": 0.167
+    }
+   }
+  }
+ },
+ "M2_armlene": {
+  "flyt": {
+   "inn": 523,
+   "andre_avdelingar": 42,
+   "utan_alle_tre_maal": 481,
+   "urimelege_maal": 0,
+   "A_utanfor_vindauget": 0,
+   "analysert": 0
+  },
+  "port": [
+   {
+    "namn": "n",
+    "verdi": 0,
+    "terskel": 40,
+    "ok": false
+   },
+   {
+    "namn": "rygg_iqr_cm",
+    "verdi": 0.0,
+    "terskel": 10.0,
+    "ok": false
+   }
+  ],
+  "dom": "UGYLDIG"
+ },
+ "M3_kant_1712": {
+  "dom": "UTSETT",
+  "grunn": "Utsett. Regelen krev framsilhuettar frå 3D-modellar. Met-stolane har ingen, og å lage dei lokalt tek timar på eit GTX 1070. Føreseiinga er forsegla no og blir køyrd med t4-koden når modellane finst."
+ }
+}

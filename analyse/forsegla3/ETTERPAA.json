@@ -1,0 +1,325 @@
+{
+ "armstolar_maal_HSA": [
+  [
+   "H--",
+   455
+  ],
+  [
+   "---",
+   15
+  ],
+  [
+   "-S-",
+   8
+  ],
+  [
+   "HS-",
+   3
+  ]
+ ],
+ "armstolar_merkelappar_topp30": [
+  [
+   "",
+   281
+  ],
+  [
+   "overall:",
+   134
+  ],
+  [
+   "h.",
+   24
+  ],
+  [
+   "overall (each):",
+   9
+  ],
+  [
+   "overall (confirmed):",
+   6
+  ],
+  [
+   "each:",
+   6
+  ],
+  [
+   "confirmed:",
+   6
+  ],
+  [
+   "(",
+   4
+  ],
+  [
+   "height of seat:",
+   4
+  ],
+  [
+   "overall (.",
+   2
+  ],
+  [
+   "each",
+   2
+  ],
+  [
+   "overall (",
+   2
+  ],
+  [
+   "height:",
+   2
+  ],
+  [
+   "seat h.",
+   2
+  ],
+  [
+   "width of seat:",
+   2
+  ],
+  [
+   "height of upholstered seat:",
+   2
+  ],
+  [
+   "approx.",
+   1
+  ],
+  [
+   "seat height:",
+   1
+  ],
+  [
+   "front-to-back:",
+   1
+  ],
+  [
+   "crest rail to floor:",
+   1
+  ],
+  [
+   "seat front s/s:",
+   1
+  ],
+  [
+   "inside stiles:",
+   1
+  ],
+  [
+   "outside stiles:",
+   1
+  ],
+  [
+   "each,",
+   1
+  ],
+  [
+   "other (seat):",
+   1
+  ],
+  [
+   "height (seat height):",
+   1
+  ],
+  [
+   "chair \"a\":",
+   1
+  ],
+  [
+   "ottoman \"b\":",
+   1
+  ],
+  [
+   "seat height, confirmed:",
+   1
+  ]
+ ],
+ "armstolar_med_arm_i_teksten_dome": [],
+ "krakk_n": 66,
+ "krakk_median": 45.4,
+ "krakk_objektnamn": [
+  [
+   "Stool",
+   37
+  ],
+  [
+   "Joint stool",
+   7
+  ],
+  [
+   "Folding stool",
+   6
+  ],
+  [
+   "Curule stool",
+   4
+  ],
+  [
+   "Window Stool",
+   3
+  ],
+  [
+   "Tabouret",
+   2
+  ],
+  [
+   "Piano stool",
+   1
+  ],
+  [
+   "Window stool",
+   1
+  ],
+  [
+   "Foot stools",
+   1
+  ],
+  [
+   "Stools",
+   1
+  ],
+  [
+   "Harpsicord stool",
+   1
+  ],
+  [
+   "Stool frame",
+   1
+  ],
+  [
+   "Piano Stool",
+   1
+  ]
+ ],
+ "krakk_lengst_fraa_medianen": [
+  {
+   "avd": "European Sculpture and Decorative Arts",
+   "namn": "Stool",
+   "tittel": "Folding stool",
+   "aar": "1800",
+   "h": 91.4,
+   "dims": "Overall: 36 × 38 × 18 in. (91.4 × 96.5 × 45.7 cm)"
+  },
+  {
+   "avd": "The American Wing",
+   "namn": "Window stool",
+   "tittel": "Window stool",
+   "aar": "1805",
+   "h": 82.6,
+   "dims": "32 1/2 x 42 x 15 1/8 in. (82.6 x 106.7 x 38.4 cm)"
+  },
+  {
+   "avd": "The American Wing",
+   "namn": "Window Stool",
+   "tittel": "Window Stool",
+   "aar": "1805",
+   "h": 82.6,
+   "dims": "32 1/2 x 41 3/4 x 15 1/4 in. (82.6 x 106 x 38.7 cm)"
+  },
+  {
+   "avd": "The American Wing",
+   "namn": "Window Stool",
+   "tittel": "Window Stool",
+   "aar": "1810",
+   "h": 77.5,
+   "dims": "30 1/2 x 37 1/4 x 15 in. (77.5 x 94.6 x 38.1 cm)"
+  },
+  {
+   "avd": "The American Wing",
+   "namn": "Window Stool",
+   "tittel": "Window Stool",
+   "aar": "1810",
+   "h": 77.5,
+   "dims": "30 1/2 x 37 1/4 x 15 in. (77.5 x 94.6 x 38.1 cm)"
+  },
+  {
+   "avd": "The American Wing",
+   "namn": "Foot stools",
+   "tittel": "Pair of foot stools",
+   "aar": "1825",
+   "h": 77.2,
+   "dims": "30 3/8 x 35 1/2 in. (77.2 x 90.2 cm)"
+  },
+  {
+   "avd": "European Sculpture and Decorative Arts",
+   "namn": "Stool",
+   "tittel": "Stool",
+   "aar": "1700",
+   "h": 74.9,
+   "dims": "29 1/2 × 19 in. (74.9 × 48.3 cm)"
+  },
+  {
+   "avd": "Modern and Contemporary Art",
+   "namn": "Stool",
+   "tittel": "Sella Stool, Model 20",
+   "aar": "1957",
+   "h": 73.0,
+   "dims": "28 3/4 × 13 × 11 in., 27.8 lb. (73 × 33 × 28 cm, 12.6 kg)"
+  },
+  {
+   "avd": "The American Wing",
+   "namn": "Stool",
+   "tittel": "Stool",
+   "aar": "1800",
+   "h": 21.6,
+   "dims": "8 1/2 x 12 1/4 x 11 1/2 in. (21.6 x 31.1 x 29.2 cm)"
+  },
+  {
+   "avd": "The American Wing",
+   "namn": "Tabouret",
+   "tittel": "Tabouret",
+   "aar": "1905",
+   "h": 30.5,
+   "dims": "12 × 10 × 10 in. (30.5 × 25.4 × 25.4 cm)"
+  },
+  {
+   "avd": "The American Wing",
+   "namn": "Joint stool",
+   "tittel": "Joint Stool",
+   "aar": "1700",
+   "h": 59.7,
+   "dims": "23 1/2 x 18 x 11 in. (59.7 x 45.7 x 27.9 cm)"
+  },
+  {
+   "avd": "Modern and Contemporary Art",
+   "namn": "Stool",
+   "tittel": "\"Retombante\" Stool",
+   "aar": "1916",
+   "h": 58.4,
+   "dims": "H. 23, W. 26 1/2, D. 19 in. (58.4 x 67.3 x 48.3 cm)\r\nWeight: 19 lbs (8.6 kg)"
+  },
+  {
+   "avd": "The American Wing",
+   "namn": "Joint stool",
+   "tittel": "Joint Stool",
+   "aar": "1725",
+   "h": 57.5,
+   "dims": "22 5/8 x 17 3/4 x 11 3/4 in. (57.5 x 45.1 x 29.8 cm)"
+  },
+  {
+   "avd": "The American Wing",
+   "namn": "Joint stool",
+   "tittel": "Joint stool",
+   "aar": "1700",
+   "h": 57.2,
+   "dims": "22 1/2 x 20 1/2 x 14 in. (57.2 x 52.1 x 35.6 cm)"
+  },
+  {
+   "avd": "European Sculpture and Decorative Arts",
+   "namn": "Stool",
+   "tittel": "Stool",
+   "aar": "1625",
+   "h": 57.2,
+   "dims": "22 1/2 × 19 × 11 in. (57.2 × 48.3 × 27.9 cm)"
+  },
+  {
+   "avd": "Modern and Contemporary Art",
+   "namn": "Stool",
+   "tittel": "Stool",
+   "aar": "1925",
+   "h": 33.7,
+   "dims": "13 1/4 × 29 × 10 in., 15 lb. (33.7 × 73.7 × 25.4 cm, 6.8 kg)"
+  }
+ ]
+}
