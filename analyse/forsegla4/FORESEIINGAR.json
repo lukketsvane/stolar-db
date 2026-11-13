@@ -1,0 +1,36 @@
+{
+ "prove": "Den fjerde forsegla prøva: to alder i éin stol",
+ "skrive": "2026-11-13",
+ "grep": "Levin, grep 2 og 3: mønsterminnet ligg i mediet mellom delane, og minnet kan skrivast om. Ei lesing, ikkje sitat.",
+ "hypotese": "Overdelen og understellet hugsar gjennom ulike kanalar. Overdelen hugsar gjennom arkivet (stikk, mønsterbøker, museum) og kan hoppe hundrevis av år attende. Understellet hugsar gjennom verkstaden og ligg nær si eiga tid. Ein stol som tek opp att ein eldre stil, er difor ein kimær i tid: overdelen er eldre enn understellet.",
+ "maal": {
+  "utval": "Same filter som 17_figurar_profil.py (vaksenstol, flagg, skala), alle stolar med år i mesh_silhuettar.npz.",
+  "soner": {"understell": [2, 36], "overdel": [62, 125]},
+  "trekk": "radtrekk frå 19_saumar.py: per cm over golvet mengd materiale og utstrekning, framanfrå og frå sida.",
+  "rom": "Per sone: standardisert med middel og sd i bakgrunnen, PCA tilpassa på bakgrunnen, inntil 10 komponentar eller 90 % av variansen, euklidsk avstand.",
+  "alder": "Alderen til ei sone er medianåret til dei 7 næraste stolane i bakgrunnen i den sona. Stolen sjølv og stolar frå same gjenstand (stamme, H og B som i 19_saumar.py) er utelatne.",
+  "delta": "Delta = alderen til overdelen minus alderen til understellet, i år. Negativ delta: overdelen er eldre."
+ },
+ "grupper": {
+  "attopptaking": "År 1830 til 1914 og stil Historisme, Nyrokokko, Nybarokk eller Dragestil, eller ein stil som tok slutt før 1830: Renessanse, Barokk, Régence, Rokokko, Chippendale, Chippendale / Rokokko, Queen Anne, Louis XVI, Nyklassisisme, Hepplewhite, Sheraton, Klassisisme, Middelalder. Empire, Regency og Biedermeier tok slutt rundt 1830 til 1840 og er rekna som samtidige.",
+  "viktoriansk": "År 1830 til 1914 og stil Viktorianisme.",
+  "samtidige": "År 1830 til 1914 og ikkje i nokon av dei to gruppene over.",
+  "bakgrunn": "Alle stolar med år som ikkje er i gruppa attopptaking eller viktoriansk."
+ },
+ "foreseiingar": {
+  "T1_overdelen_er_eldre": "Attopptaking: median delta er -20 år eller lægre, og øvre grense i 95 % bootstrap-intervallet er under 0.",
+  "T2_ikkje_tida": "Median delta i attopptaking minus median delta i samtidige er -20 år eller lægre, og øvre grense i 95 % bootstrap-intervallet (begge gruppene trekte på nytt) er under 0.",
+  "T3_viktoriansk": "Viktoriansk: median delta er under 0, og øvre grense i 95 % bootstrap-intervallet er under 0."
+ },
+ "grunnmodell": "Eitt minne: ei attopptaking flyttar overdel og understell like langt. Då ligg differansen i T2 rundt 0, og T2 slo feil.",
+ "port": "Minst 60 stolar i attopptaking og 40 i samtidige med alder for begge sonene. Elles er T1 og T2 ugyldige. T3 krev 40.",
+ "n_boot": 2000,
+ "froe": 20261113,
+ "skjevheit_kjend_foer_opning": "Ein svak dater blir trekt mot den tette delen av bakgrunnen (1700 til 1800). Understellet daterer svakare enn overdelen (19_saumar.py, opplæringshalvparten: 74 mot 56 år), så understellet til ein stol frå 1880 blir trekt attende av støy åleine. Det gjer delta meir positiv og verkar mot T1. T2 jamfører med samtidige for å ta bort resten.",
+ "kjende_avvik_foer_opning": [
+  "Alle stolane er opne sidan den andre prøva. Delta er ikkje rekna for nokon stol før denne fila vart pusha.",
+  "Teljinga av stilar mellom 1830 og 1914 vart sett før gruppene vart skrivne (Historisme 135, Viktorianisme 85, Jugend 70, Nyrokokko 12, andre under 10).",
+  "Tersklane er ikkje gjennomgåtte av forfattaren."
+ ],
+ "tersklar_gjennomgaatt_av_forfattaren": false
+}
