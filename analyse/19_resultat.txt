@@ -1,0 +1,32 @@
+Opplæringshalvparten: 228 stolar med år og brukande silhuett. Utforskande, ikkje forsegla.
+
+== 1. Kor mykje av éi sone føreseier ei anna (kryssvalidert forklart varians)
+  over alle år
+     understell -> setesone   0.43
+     understell -> overdel    0.10
+     setesone   -> understell 0.43
+     setesone   -> overdel    0.06
+     overdel    -> understell 0.09
+     overdel    -> setesone   0.28
+  innan 50-årsbolk og museum
+     understell -> setesone   0.40
+     understell -> overdel    0.02
+     setesone   -> understell 0.43
+     setesone   -> overdel    0.06
+     overdel    -> understell 0.02
+     overdel    -> setesone   0.22
+
+== 2. Kor godt daterer kvar sone stolen (kryssvalidert, median absolutt feil i år)
+     gissing (medianåret)   90 år
+     understell             74 år
+     setesone               100 år
+     overdel                56 år
+     heile stolen           58 år
+
+== 3. Kimærar: ligg dei innanfor det busette formrommet?
+     verkelege stolar: median avstand til næraste andre stol 1.56, 95-persentil 5.40 (n=217)
+     kimærar, same tid (høgst 30 år mellom halvdelane)   median 1.91 | innanfor 95-persentilen: 97 % (n=600)
+     kimærar, ulik tid (minst 150 år mellom)             median 2.15 | innanfor 95-persentilen: 95 % (n=600)
+
+== 4. Dateringsfeil for eit 12 cm band, etter høgd over golvet (median absolutt feil i år)
+     8:82  14:83  20:78  26:72  32:79  38:97  44:98  50:99  56:102  62:94  68:90  74:76  80:70  86:65  92:65  98:69  104:69  110:77  116:80
