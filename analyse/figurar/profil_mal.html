@@ -212,6 +212,18 @@ nav a:hover,nav a:focus-visible{color:var(--fg)}
 </figure>
 </section>
 
+<section id="sek-nye" hidden>
+<h2>Dei nyaste stolane flyttar setet.</h2>
+<p>Føreseiinga var at stolar som er nye i forma, skulle halde setet og sleppe høgda. Det var omvendt: setehøgda spreier seg <span id="n-s"></span> mot <span id="n-sr"></span> hos dei andre, totalhøgda <span id="n-h"></span> mot <span id="n-hr"></span>.</p>
+<figure>
+<div class="merke" style="margin:0 0 .6rem" id="n-n"></div>
+<div class="rekkje" id="nye-a"></div>
+<div class="merke" style="margin:1.6rem 0 .6rem" id="n-n2"></div>
+<div class="rekkje" id="nye-b"></div>
+<figcaption>nyheit: avstanden til den likaste stolen som er minst 10 år eldre, heile stolen med setet · stipla: median setehøgd hos dei andre, <span id="n-sm"></span> cm · <span id="n-dom"></span></figcaption>
+</figure>
+</section>
+
 <section id="sek-liste" hidden>
 <h2><span id="l-p"></span> prøver, <span id="l-n"></span> føreseiingar, skrivne ned før stolane vart opna.</h2>
 <p><span id="l-h"></span> heldt, <span id="l-f"></span> slo feil, <span id="l-u"></span> vart <span id="l-uo">ugyldig</span><span id="l-t"></span>.</p>
@@ -500,6 +512,17 @@ if (HE) {
   $('held').innerHTML = HE.celler.map((c, i) => '<div><canvas id="c-held' + i + '" role="img" aria-label="' + c.namn + ', ' + c.per + ': stolane oppå kvarandre frå sida, med setehøgd og totalhøgd som strekar."></canvas>' +
     '<div class="merke">' + c.namn + ' · ' + c.per + '<span>' + c.n + ' stolar · spreiing sete ' + k2(c.sp[0]) + ', høgd ' + k2(c.sp[1]) + '</span></div></div>').join('');
   $('h-dom').textContent = 'forsegla prøve 5: føreseiinga om setet ' + (HE.dom[0] === 'HELDT' ? 'heldt' : 'slo feil') + ', den om høgda ' + (HE.dom[1] === 'HELDT' ? 'heldt' : 'slo feil');
+}
+// Den sjette prøva: dei nyaste formene mot like mange av dei andre
+if (D.nye) {
+  const N = D.nye, k2 = v => v.toFixed(2).replace('.', ','), sl = 150 - N.sm;
+  const rute = i => { const s = D.sil[i];
+    const inn = '<svg viewBox="0 0 80 150" aria-hidden="true"><line class="sl" x1="0" x2="80" y1="' + sl + '" y2="' + sl + '"/><path d="' + s[1] + '"/><line class="gl" x1="0" x2="80" y1="149.6" y2="149.6"/></svg><span>' + s[0] + '</span>';
+    const t = ((s[3] ? s[3] + ', ' : '') + s[0]).replace(/"/g, '&quot;');
+    return s[2] ? '<a class="st" href="' + s[2] + '" target="_blank" rel="noopener" title="' + t + '">' + inn + '</a>' : '<div class="st" title="' + t + '">' + inn + '</div>'; };
+  $('sek-nye').hidden = false; $('nye-a').innerHTML = N.a.map(rute).join(''); $('nye-b').innerHTML = N.b.map(rute).join('');
+  $('n-s').textContent = k2(N.sp.nye_sete); $('n-sr').textContent = k2(N.sp.resten_sete); $('n-h').textContent = k2(N.sp.nye_H); $('n-hr').textContent = k2(N.sp.resten_H);
+  $('n-n').textContent = 'Dei ' + N.a.length + ' nyaste formene etter 1900'; $('n-n2').textContent = N.b.length + ' av dei andre, trekte tilfeldig'; $('n-sm').textContent = Math.round(N.sm); $('n-dom').textContent = 'forsegla prøve 6, ' + DOM(N.dom);
 }
 function heldfig(){
   if (!HE) return;
