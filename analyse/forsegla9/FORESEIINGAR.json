@@ -1,0 +1,40 @@
+{
+ "prove": "Den niande forsegla prøva: liknar dei nyskapande stolane fortida eller framtida? Heile samlinga.",
+ "skrive": "2026-11-13",
+ "kjelde": "Formlære, kortversjonen: Definisjon 4 (dei busette regionane er heile formhistoria), seksjon 3 etter Definisjon 6 (landskapet har minne), Postulat 1 (det moglege er gjeve, ikkje laga). Levin, grep 8: nye former utan historie er ikkje tilfeldige. Ei lesing, ikkje sitat. Prøva er ei utviding av prøve 7 til alle hundreåra, med ein strengare kontroll.",
+ "hypotese": "Ein stol som bryt med den nære fortida si, finn ei form som alt har vore, ikkje ei som skal kome. Dei mest nyskapande stolane i kvart halve hundreår liknar difor meir på stolar som er eldre enn dei, enn på stolar som er yngre, når ein tek omsyn til kor mange stolar som finst på kvar side.",
+ "maal": {
+  "utval": "Alle stolane frå last() i 26_to_alder.py (same kvalitetsregel), trekk som i 30_nye_former.py: radtrekk for rad 2 til 125, standardisert, PCA med 15 komponentar tilpassa på alle.",
+  "maal_stolar": "Alle stolar med minst 30 stolar som er 25 år eldre eller meir, minst 30 som er 25 år yngre eller meir, og minst 30 som er 5 til 80 år eldre. Ute som mål (men med i samlinga): stil Historisme, Nyrokokko, Nybarokk, Dragestil, Postmodernisme, Memphis / Postmodernisme, og namn som inneheld kopi, reproduksjon, replica, copy of eller rekonstruksjon.",
+  "nyheit": "Avstanden til den næraste av dei 60 nyaste stolane som er 5 til 80 år eldre (utan same stamme og utan same museum, H og B).",
+  "nye": "Dei 20 % med størst nyheit innan kvar 50-årsbolk (aar_fraa // 50). Resten: vanlege.",
+  "naboar": "For kvar målstol: dei 7 næraste stolane blant alle som er minst 25 år eldre eller minst 25 år yngre (utan same stamme og utan same museum, H og B).",
+  "overskot": "e_i = delen av dei 7 naboane som er eldre, minus delen av den same samlinga (alle minst 25 år unna) som er eldre. e over 0: stolen liknar fortida meir enn talet på stolar tilseier. e under 0: han liknar framtida meir."
+ },
+ "foreseiingar": {
+  "D1_fortida": "Dei nye: middelet av e er over 0, og nedre grense i 95 % bootstrap-intervallet er over 0.",
+  "D2_begge_tider": "Dei nye før 1850 og dei nye frå 1850: middelet av e er over 0 i begge."
+ },
+ "sekundaert_utan_dom": [
+  "Middelet av e for dei vanlege stolane.",
+  "Middelet av e per kvintil av nyheit (dose og respons).",
+  "Delen av naboane som er meir enn 100 år eldre, mot delen i samlinga."
+ ],
+ "grunnmodellar": [
+  "Føre si tid: dei nyskapande stolane liknar det som kjem etter dei (e under 0). Det er biletet faget har av avantgarden.",
+  "Ingen retning: e rundt 0."
+ ],
+ "port": "Minst 150 nye stolar. Elles er prøva ugyldig.",
+ "n_boot": 2000,
+ "froe": 20261113,
+ "skjevheit_kjend_foer_opning": [
+  "Seinare utgåver og etterlikningar av ein nyskapande stol ligg i samlinga som yngre naboar. Det dreg e ned og verkar mot hypotesen.",
+  "Kontrollen i prøve 7 (tilfeldige steg) kan gje utslag berre fordi verkelege stolar ligg nær andre verkelege stolar. Denne prøva bruker i staden talet på stolar på kvar side som kontroll, og er symmetrisk i tid."
+ ],
+ "kjende_avvik_foer_opning": [
+  "Talet på målstolar vart sett før forsegling: 1 068 av 1 410, fordelt på 50-årsbolkar frå 1600 til 1950. Ingen naboar er rekna.",
+  "Prøve 7 er open: 67 % av dei 61 mest nyskapande etter 1900 låg nærare ein stol frå før 1840 enn tilfeldige steg.",
+  "Tersklane er ikkje gjennomgåtte av forfattaren."
+ ],
+ "tersklar_gjennomgaatt_av_forfattaren": false
+}
