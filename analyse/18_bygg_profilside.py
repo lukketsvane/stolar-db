@@ -387,7 +387,7 @@ if UTVAL == "alle" and os.path.exists(p6f) and os.path.exists(p6r):
 # 10 den sjuande prøva: dei mest nyskapande stolane etter 1900 og tvillingane deira frå før 1840
 p7f, p7r, p7v = (os.path.join(HER, *f) for f in (("forsegla7", "FIGURDATA.json"), ("forsegla7", "RESULTAT.json"), ("data", "atavisme_vend.json")))
 D["atav"] = None
-if UTVAL == "alle" and os.path.exists(p7f) and os.path.exists(p7r):
+if UTVAL == "alle" and os.path.exists(p7f) and os.path.exists(p7r) and not os.path.exists(os.path.join(HER, "forsegla9", "RESULTAT.json")):
     idx = {s["id"]: i for i, s in enumerate(MED_AAR)}
     vend7 = json.load(open(p7v, encoding="utf-8")) if os.path.exists(p7v) else {}
     nye7 = sorted([s for s in json.load(open(p7f, encoding="utf-8"))["stolar"] if s["ny"]], key=lambda s: (s["aar"], s["id"]))
@@ -413,6 +413,20 @@ if UTVAL == "alle" and os.path.exists(p8f) and os.path.exists(p8r):
             ss = [{"id": s["id"]} for s in F8 if s["mat"] == mat and s["per"] == per and s["id"] in SENT8]
             celler8.append({**figur(ss, SENT8, nivaa=(0.5,)), "namn": mnamn, "per": pnamn})
     D["tidstoff"] = {"celler": celler8, "q": [R8["P1_stilmerka"]["Q"], R8["P2_aarsbolkane"]["Q"]]}
+
+# 12 den niande prøva: dei mest nyskapande stolane i heile samlinga og dei sju likaste stolane før og etter
+p9f, p9r = (os.path.join(HER, "forsegla9", f) for f in ("FIGURDATA.json", "RESULTAT.json"))
+D["framtid"] = None
+if UTVAL == "alle" and os.path.exists(p9f) and os.path.exists(p9r):
+    F9 = json.load(open(p9f, encoding="utf-8"))["stolar"]
+    R9 = json.load(open(p9r, encoding="utf-8"))
+    nye9 = [s for s in F9 if s["kvintil"] == 5]
+    def del9(lo, hi):
+        g = [s for s in nye9 if lo <= s["aar"] < hi]
+        a = float(np.mean([np.mean([nb[1] < s["aar"] for nb in s["naboar"]]) for s in g]))
+        return {"n": len(g), "naboar": round(a, 2), "samling": round(a - float(np.mean([s["e"] for s in g])), 2)}
+    D["framtid"] = {"par": [[s["aar"]] + [nb[1] for nb in s["naboar"]] for s in nye9], "n": R9["n"],
+                    "moderne": del9(1900, 1950), "foer": del9(1600, 1850)}
 
 MAL = open(os.path.join(HER, "figurar", "profil_mal.html"), encoding="utf-8").read()
 ut = MAL.replace('"__DATA__"', json.dumps(D, ensure_ascii=False, separators=(",", ":")))

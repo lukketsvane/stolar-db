@@ -245,6 +245,15 @@ nav a:hover,nav a:focus-visible{color:var(--fg)}
 </figure>
 </section>
 
+<section id="sek-framtid" hidden>
+<h2>Det nye liknar det som kjem.</h2>
+<p>Dei mest nyskapande stolane frå 1900 til 1950 liknar meir på stolar som kom etter dei enn på stolar som fanst frå før: <span id="fr-a"></span> av dei likaste er eldre, mot <span id="fr-p"></span> av stolane i samlinga. Før 1850 har nyskapinga inga retning i tid.</p>
+<figure>
+<canvas id="c-framtid" role="img" aria-label="Kvar av dei mest nyskapande stolane er bunden med bogar til dei sju likaste stolane: eldre over tidslina, yngre under. Frå 1900 til 1950 går dei fleste bogane framover i tid."></canvas>
+<figcaption><span id="fr-n"></span> stolar: dei 20 % mest nyskapande i kvart halve hundreår, av <span id="fr-m"></span> · kvar boge går til ein av dei sju likaste stolane som er minst 25 år eldre (over lina) eller yngre (under) · heile samlinga, <span id="fr-s"></span> stolar</figcaption>
+</figure>
+</section>
+
 <section id="sek-liste" hidden>
 <h2><span id="l-p"></span> prøver, <span id="l-n"></span> føreseiingar, skrivne ned før stolane vart opna.</h2>
 <p><span id="l-h"></span> heldt, <span id="l-f"></span> slo feil, <span id="l-u"></span> vart <span id="l-uo">ugyldig</span><span id="l-t"></span>.</p>
@@ -565,6 +574,27 @@ if (TS) {
     '<div class="merke">' + c.namn + '<span>' + c.per + ' · ' + c.n + '</span></div></div>').join('');
 }
 function tsfig(){ if (TS) TS.celler.forEach((c, i) => stabel($('c-ts' + i), c.px || (c.px = b64(c.b)), c.w, c.h, {k: c.k})); }
+// Den niande prøva: bogar frå kvar nyskapande stol til dei sju likaste, eldre over og yngre under
+const FR = D.framtid;
+if (FR) { const pc = v => Math.round(100 * v) + ' %', tal9 = v => v.toLocaleString('nb-NO');
+  $('sek-framtid').hidden = false; $('fr-a').textContent = pc(FR.moderne.naboar); $('fr-p').textContent = pc(FR.moderne.samling);
+  $('fr-n').textContent = FR.n.nye; $('fr-m').textContent = tal9(FR.n.maal); $('fr-s').textContent = tal9(FR.n.samling); }
+function framtidfig(){
+  if (!FR) return;
+  plott($('c-framtid'), 0.78, (g, W, H) => {
+    const T0 = 1540, T1 = 2030, s = W / (T1 - T0), y0 = H / 2, X = t => (t - T0) * s;
+    g.lineCap = 'round'; g.strokeStyle = FG; g.globalAlpha = .11; g.lineWidth = .55;
+    for (const p of FR.par) for (let k = 1; k < p.length; k++) { const r = Math.abs(p[k] - p[0]) / 2 * s, opp = p[k] < p[0];
+      g.beginPath(); g.arc(X((p[k] + p[0]) / 2), y0, r, opp ? Math.PI : 0, opp ? 2 * Math.PI : Math.PI); g.stroke(); }
+    g.globalAlpha = 1; g.lineWidth = 1; line(g, 0, y0, W, y0);
+    g.textAlign = 'center'; g.textBaseline = 'top';
+    for (let t = 1550; t < T1; t += 50) { line(g, X(t), y0 - 3, X(t), y0 + 3);
+      if (W > 560 || t % 100 === 0) { const w = g.measureText(t).width; g.fillStyle = getComputedStyle(root).getPropertyValue('--bg').trim() || '#fff';
+        g.fillRect(X(t) - w / 2 - 2, y0 + 5, w + 4, 12); g.fillStyle = DIM; g.fillText(t, X(t), y0 + 6); } }
+    g.textAlign = 'left'; g.fillStyle = FG; g.font = '15px ' + getComputedStyle(document.body).fontFamily;
+    g.textBaseline = 'top'; g.fillText('eldre stolar', 0, 2); g.textBaseline = 'bottom'; g.fillText('yngre stolar', 0, H - 2);
+  });
+}
 function heldfig(){
   if (!HE) return;
   HE.celler.forEach((c, i) => {
@@ -584,7 +614,7 @@ function alt(){
   tid();
   fig($('c-golv'), D.golv, {}); fig($('c-prop'), D.prop, {});
   D.mat.forEach((m, i) => { fig($('c-ms' + i), m.side, {sete: true}); fig($('c-mf' + i), m.front, {sete: true}); });
-  armfig(); krakkfig(); gradfig(); alderfig(); heldfig(); tsfig();
+  armfig(); krakkfig(); gradfig(); alderfig(); heldfig(); tsfig(); framtidfig();
 }
 alt();
 let vent = 0;
