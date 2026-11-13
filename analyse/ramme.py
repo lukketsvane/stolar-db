@@ -65,6 +65,18 @@ def bygg():
     side = dict(zip(z["ids"], z["side"]))
     front = dict(zip(z["ids"], z["front"]))
     tel = {"objekt": len(rein)}
+    # Kopierte målpostar (MAALKOPIREGEL i forsegla2/felles.py): V&A gjev same målpost til urelaterte stolar. Då er H
+    # ikkje høgda til stolen, og sidan modellen er skalert til H, er alle centimeter falske. Heile gruppa går ut.
+    grupper = {}
+    for r in rein:
+        if r["vaksenstol"] == "1" and r["maal_ok"] == "1":
+            grupper.setdefault((r["museum"], r["H"], r["B"], r["D"]), []).append(r)
+    kopi = set()
+    for g in grupper.values():
+        aar_g = [float(r["aar_fraa"]) for r in g if r["aar_fraa"] and float(r["aar_fraa"]) >= 1000]
+        namn_g = {re.sub(r"\s*\(.*?\)\s*", " ", ST.get(r["id"], {}).get("Namn", "") or "").strip().lower() for r in g}
+        if len(g) >= 2 and ((aar_g and max(aar_g) - min(aar_g) > 25) or len(namn_g) >= 3):
+            kopi |= {r["id"] for r in g}
     rad = []
     for r in sorted(rein, key=lambda r: r["id"]):
         i, m = r["id"], maal.get(r["id"])
@@ -87,13 +99,16 @@ def bygg():
         if not r["aar_fraa"] or float(r["aar_fraa"]) < 1000:
             tel["ut_utan_aar"] = tel.get("ut_utan_aar", 0) + 1
             continue
+        if i in kopi:
+            tel["ut_kopiert_maalpost"] = tel.get("ut_kopiert_maalpost", 0) + 1
+            continue
         s = ST.get(i, {})
         rad.append({"id": i, "museum": r["museum"], "type": r["type"], "stil": (r["stil"] or "").strip(),
-                    "aar": int(float(r["aar_fraa"])), "aar_til": int(float(r["aar_til"])) if r["aar_til"] else int(float(r["aar_fraa"])),
+                    "aar": int(float(r["aar_fraa"])), "aar_til": max(int(float(r["aar_til"])) if r["aar_til"] else 0, int(float(r["aar_fraa"]))),
                     "H": H, "B": B, "D": D, "sete_kat": _tal(r["sete"]) if r["sete_ok"] == "1" else np.nan,
                     "sete_mesh": _tal(m.get("sete_cm")), "mat": felles.materialklasse(s.get("Materialar", ""), s.get("Teknikk", "")),
                     "produsent": (s.get("Produsent") or "").strip(), "namn": (s.get("Namn") or "").strip(),
-                    "armlene": int(r["type"] == "Armstol"), "side": side[i], "front": front[i],
+                    "armlene": int(r["type"] == "Armstol"), "rygg_usikker": int("rygg_usikker" in (m.get("flagg") or "")), "side": side[i], "front": front[i],
                     "trekk": radtrekk(s_img, f_img)})
     n = len(rad)
     tel["i_ramma"] = n
@@ -126,7 +141,7 @@ def bygg():
     np.savez_compressed(P_NPZ, id=felt("id"), museum=felt("museum"), type=felt("type"), stil=felt("stil"), aar=felt("aar", int),
                         aar_til=felt("aar_til", int), H=felt("H", float), B=felt("B", float), D=felt("D", float),
                         sete_kat=felt("sete_kat", float), sete_mesh=felt("sete_mesh", float), mat=felt("mat"), produsent=felt("produsent"),
-                        namn=felt("namn"), armlene=felt("armlene", int), suite=suite, side=np.stack([r["side"] for r in rad]),
+                        namn=felt("namn"), armlene=felt("armlene", int), rygg_usikker=felt("rygg_usikker", int), suite=suite, side=np.stack([r["side"] for r in rad]),
                         front=np.stack([r["front"] for r in rad]), trekk=np.stack([r["trekk"] for r in rad]).astype(np.float32))
     json.dump(tel, open(P_TEL, "w", encoding="utf-8", newline="\n"), ensure_ascii=False, indent=1)
     return tel

@@ -1,4 +1,4 @@
-"""felles_p.py - felles verktøy for dei parallelle prøvene. Alle prøver bruker HEILE ramma (1 410 stolar).
+"""felles_p.py - felles verktøy for dei parallelle prøvene. Alle prøver bruker HEILE ramma (1 377 stolar: V&A 1 009, Nasjonalmuseet 368; 33 stolar med kopiert målpost er tekne ut).
 
 Bruk frå analyse/parallell/<id>/prove.py:
     import os, sys
@@ -7,7 +7,7 @@ Bruk frå analyse/parallell/<id>/prove.py:
     D = fp.last()
 
 D er ein dict:
-  D["n"]                     talet på stolar (1 410)
+  D["n"]                     talet på stolar (1 377)
   D["id"], D["museum"] ("VA"/"NM"), D["type"], D["stil"], D["aar"], D["aar_til"], D["H"], D["B"], D["D"] (katalog, cm),
   D["sete_kat"] (katalogsete, nan der det manglar), D["mat"] (WOOD, LINE, LINE+SHEET, SHEET, ANNA), D["produsent"], D["namn"],
   D["armlene"] (1 for type Armstol), D["suite"] (same modell eller same mål: hald saman i bootstrap og kryssvalidering),
