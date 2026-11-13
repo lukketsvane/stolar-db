@@ -384,7 +384,19 @@ if UTVAL == "alle" and os.path.exists(p6f) and os.path.exists(p6r):
     D["nye"] = {"a": [idx[s["id"]] for s in nye6 if s["id"] in idx], "b": [idx[s["id"]] for s in andre6 if s["id"] in idx],
                 "sm": R6["median"]["resten_sete"], "sp": R6["spreiing"], "dom": R6["resultat"]["N1_setet_held"]["dom"]}
 
-MAL =open(os.path.join(HER, "figurar", "profil_mal.html"), encoding="utf-8").read()
+# 10 den sjuande prøva: dei mest nyskapande stolane etter 1900 og tvillingane deira frå før 1840
+p7f, p7r, p7v = (os.path.join(HER, *f) for f in (("forsegla7", "FIGURDATA.json"), ("forsegla7", "RESULTAT.json"), ("data", "atavisme_vend.json")))
+D["atav"] = None
+if UTVAL == "alle" and os.path.exists(p7f) and os.path.exists(p7r):
+    idx = {s["id"]: i for i, s in enumerate(MED_AAR)}
+    vend7 = json.load(open(p7v, encoding="utf-8")) if os.path.exists(p7v) else {}
+    nye7 = sorted([s for s in json.load(open(p7f, encoding="utf-8"))["stolar"] if s["ny"]], key=lambda s: (s["aar"], s["id"]))
+    R7 = json.load(open(p7r, encoding="utf-8"))
+    D["atav"] = {"par": [[idx[s["id"]], idx[s["tvilling"]], int(vend7.get(s["id"], False))] for s in nye7 if s["id"] in idx and s["tvilling"] in idx],
+                 "a1": R7["resultat"]["A1_under_nullmedianen"]["del"], "a2": R7["resultat"]["A2_naerare_enn_tilfeldig"]["R"],
+                 "tv": R7["sekundaert"]["tvillingaar"]}
+
+MAL = open(os.path.join(HER, "figurar", "profil_mal.html"), encoding="utf-8").read()
 ut = MAL.replace('"__DATA__"', json.dumps(D, ensure_ascii=False, separators=(",", ":")))
 p = os.path.join(HER, "figurar", "profil.html")
 open(p, "w", encoding="utf-8", newline="\n").write(ut)

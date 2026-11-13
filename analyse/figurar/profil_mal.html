@@ -70,6 +70,9 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:1px solid var(-
 .tvilling .hovud{grid-row:1/span 2;align-self:center;padding-right:8px}
 .tvilling .hovud span{color:var(--fg)}
 .st path.gr{fill:var(--line)}
+.st path.tv{fill:none;stroke:var(--fg);stroke-width:.9;stroke-linejoin:round}
+.rekkje.tvil{grid-template-columns:repeat(auto-fill,minmax(64px,1fr))}
+@media(min-width:980px){.rekkje.tvil{grid-template-columns:repeat(auto-fill,minmax(76px,1fr))}}
 .par{display:grid;gap:26px}
 .par>div{min-width:0}
 .medkurve{display:grid;grid-template-columns:100fr 40fr;align-items:stretch}
@@ -221,6 +224,15 @@ nav a:hover,nav a:focus-visible{color:var(--fg)}
 <div class="merke" style="margin:1.6rem 0 .6rem" id="n-n2"></div>
 <div class="rekkje" id="nye-b"></div>
 <figcaption>nyheit: avstanden til den likaste stolen som er minst 10 år eldre, heile stolen med setet · stipla: median setehøgd hos dei andre, <span id="n-sm"></span> cm<span id="n-dom" hidden></span></figcaption>
+</figure>
+</section>
+
+<section id="sek-atav" hidden>
+<h2>Den som bryt med fortida, fell i ein gammal dal.</h2>
+<p>Dei mest nyskapande stolane etter 1900 ligg nærare stolar frå før 1840 enn eit like langt steg i tilfeldig retning frå den nære fortida ville ført dei. Tvillingane er i median frå <span id="at-tv"></span>.</p>
+<figure>
+<div class="rekkje tvil" id="atav"></div>
+<figcaption>svart: dei <span id="at-n"></span> mest nyskapande stolane etter 1900, målte mot dei 60 nyaste i same materiale · strek: den likaste stolen frå før 1840 · år for stolen og tvillingen · <span id="at-a1"></span> ligg nærare enn medianen for 200 tilfeldige steg av same lengd, og avstanden er <span id="at-a2"></span> kortare · prøva skil ikkje historie frå kroppsstilling</figcaption>
 </figure>
 </section>
 
@@ -523,6 +535,17 @@ if (D.nye) {
   $('sek-nye').hidden = false; $('nye-a').innerHTML = N.a.map(rute).join(''); $('nye-b').innerHTML = N.b.map(rute).join('');
   $('n-s').textContent = k2(N.sp.nye_sete); $('n-sr').textContent = k2(N.sp.resten_sete); $('n-h').textContent = k2(N.sp.nye_H); $('n-hr').textContent = k2(N.sp.resten_H);
   $('n-n').textContent = 'Dei ' + N.a.length + ' nyaste formene etter 1900'; $('n-n2').textContent = N.b.length + ' av dei andre, trekte tilfeldig'; $('n-sm').textContent = Math.round(N.sm); $('n-dom').textContent = 'forsegla prøve 6, ' + DOM(N.dom);
+}
+// Den sjuande prøva: kvar ny stol fylt, tvillingen frå før 1840 som strek
+if (D.atav) {
+  const A7 = D.atav, pc = v => Math.round(100 * v) + ' %';
+  $('atav').innerHTML = A7.par.map(p => { const s = D.sil[p[0]], t = D.sil[p[1]];
+    const tv = p[2] ? '<g transform="translate(80 0) scale(-1 1)"><path class="tv" d="' + t[1] + '"/></g>' : '<path class="tv" d="' + t[1] + '"/>';
+    const tt = ((s[3] ? s[3] + ', ' : '') + s[0] + ' · ' + (t[3] ? t[3] + ', ' : '') + t[0]).replace(/"/g, '&quot;');
+    return '<div class="st" title="' + tt + '"><svg viewBox="0 0 80 150" aria-hidden="true"><path d="' + s[1] + '"/>' + tv +
+      '<line class="gl" x1="0" x2="80" y1="149.6" y2="149.6"/></svg><span>' + s[0] + ' · ' + t[0] + '</span></div>'; }).join('');
+  $('sek-atav').hidden = false; $('at-n').textContent = A7.par.length; $('at-tv').textContent = Math.round(A7.tv.median);
+  $('at-a1').textContent = pc(A7.a1); $('at-a2').textContent = pc(1 - A7.a2);
 }
 function heldfig(){
   if (!HE) return;
