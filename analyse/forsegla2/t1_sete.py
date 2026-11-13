@@ -65,10 +65,8 @@ E1: THE COMPRESSION CORRECTION (decision)
   corrected ratio is 0.53 when every chair has the same true seat height, 0.73 at a true ratio of 0.45 (the
   value of the V&A catalogue on DEV; HELDT in 83 % of runs) and 0.84 at a true ratio of 0.60 (HELDT in 18 %).
   The test therefore holds for true ratios up to about 0.45, not up to 0.80. The correction is valid only
-  while the slope on the held-out chairs is not much below the DEV slope: with the DEV noise a size-factor
-  population stays above 0.80 down to a slope of about 0.55. The r2 floor of G0 is what guards this (with
-  unchanged noise an r2 of 0.20 corresponds to a slope of about 0.61); the held-out slope is printed in G0
-  and the ratio under K = 1 / (held-out slope) is a secondary line.
+  while the slope on the held-out chairs is not much below the DEV slope; the held-out slope is printed in
+  G0 and the ratio under K = 1 / (held-out slope) is a secondary line.
   Not applied, shown as secondary lines: K = 1.25 (the reviewer's pooled spread ratio 3.71 / 2.97) and K = 1.
 
 E3: THE ARTEFACT REFERENCE (decision that departs from the instruction, flagged)
@@ -279,7 +277,7 @@ SPEC_E1 = {
          "dev_verdi": 0.580},
         {"namn": "E1b upper 95 % bound of the corrected ratio",
          "statistikk": "97.5th percentile of the cluster bootstrap of E1a", "terskel": E1_OVRE, "retning": "<",
-         "regel_for_terskel": "the base-model value itself", "dev_verdi": 0.910},
+         "regel_for_terskel": "the base-model value itself", "dev_verdi": 0.909},
     ],
     "konjunksjon": "HELDT only if E1a and E1b both hold",
     "sekundaer": ["uncorrected ratio, and ratio under K = 1.25 and under K recomputed on held-out V&A calibration chairs",
@@ -298,7 +296,7 @@ SPEC_E1 = {
     ],
     "grunnmodell": "One common size factor: every chair is a scaled copy, seat height is a fixed share of the size. "
                    "It predicts a true ratio of 1; the corrected statistic is then 1.00 without instrument noise and "
-                   "about 1.3 with the DEV noise (synthetic control), so E1a fails.",
+                   "about 1.2 with the DEV noise (synthetic control), so E1a fails.",
     "tel_imot": "corrected ratio >= 0.80, or its upper 95 % bound >= 1. A failure here together with the pass on "
                 "catalogued chairs in the first test would mean that the earlier result depended on which chairs "
                 "cataloguers chose to measure, or that the mesh instrument is too noisy to show it.",
@@ -342,7 +340,7 @@ SPEC_E3 = {
     ],
     "grunnmodell": "Three can win. (1) One size factor: seat rises with footprint, coefficient positive. (2) Independent hold: "
                    "no true coupling; the statistic then sits at the artefact (about -0.17) and its upper bound stays above the "
-                   "reference in 98 % of the synthetic runs. (3) Two type valleys: a coupling between types and none inside 'Stol'; "
+                   "reference in about 97 % of samples. (3) Two type valleys: a coupling between types and none inside 'Stol'; "
                    "E3b then fails.",
     "tel_imot": "upper bound at or above -0.17 (the coupling is not distinguishable from what the instrument makes), or "
                 "the 'Stol' estimate above -0.14.",
