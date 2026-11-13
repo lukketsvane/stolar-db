@@ -185,6 +185,81 @@ for namn, gr in (("tre, før 1900", [s for s in MED_AAR if s["aar"] < 1900 and k
                 "side": figur(gr, SIDE), "front": figur(gr, FRONT)})
 D["mat"] = mat
 
+# 6 den andre prøva, modulane t1 til t5: berre det som alt er rekna og lagra då modulane vart opna
+pf = os.path.join(HER, "forsegla2", "FIGURDATA.json")
+D["p2"] = None
+if UTVAL == "alle" and os.path.exists(pf) and os.path.exists(pr):
+    FD = json.load(open(pf, encoding="utf-8"))
+    RS = json.load(open(pr, encoding="utf-8")).get("modular", {})
+    p2 = {}
+
+    def prim(res, namn):
+        return next((p for p in res.get("primaer", []) if p.get("namn", "").startswith(namn)), {})
+
+    fa, ra = FD.get("t3_olboge"), RS.get("t3_olboge", {})
+    if fa and fa.get("punkt"):                                   # armlenet: sideriss med setet på same line
+        M = np.zeros((Y1, X1 - X0), np.float32)
+        A = np.asarray(fa["side_sete_paa_rad_60"], np.float32) / 100.0      # 135 x 100, kolonnar 30 til 129
+        M[:A.shape[0]] = A
+        pkt = [[round(p[3] - p[4], 1), round(p[6] - p[4], 1)] for p in fa["punkt"]]
+        p2["arm"] = {"kart": {**kode(M, False), "k": konturar(M, (0.1, 0.25, 0.5, 0.75))}, "n": fa["n"], "band": fa["band"],
+                     "pkt": pkt, "mrygg": round(float(np.median([p[0] for p in pkt])), 1),
+                     "median": prim(ra, "median_A").get("verdi"), "helling": prim(ra, "helling").get("verdi"),
+                     "mae": fa["mae"], "dom": ra.get("dom")}
+    fk, rk = FD.get("t5_krakk"), RS.get("t5_krakk", {})
+    if fk and fk.get("krakk_punkt"):                             # krakken: høgd mot år, med stolseta bak
+        p2["krakk"] = {"pkt": [[p["aar"], p["H"], int(p["status"] == "primaer")] for p in fk["krakk_punkt"] if p["aar"]],
+                       "stol": [[a, v] for a, v in fk["stolsete_punkt_aar_cm"] if a], "band": fk["tersklar"]["P1"],
+                       "n": rk.get("n"), "median": prim(rk, "P1").get("verdi"), "spreiing": prim(rk, "P2").get("verdi"),
+                       "sete": [fk["stolsete_band"]["median"], fk["tersklar"]["sete_spreiing"]],
+                       "H": [94.0, fk["tersklar"]["H_spreiing"]], "dom": rk.get("dom")}
+    fg, rg = FD.get("t4_gradient"), RS.get("t4_gradient", {})
+    if fg:                                                       # gradient eller øy: snittstolar og kant per grenseår
+        L = fg["linjer"][fg["primaerlinje"]]
+        ruter = []
+        for b in fg["snittsilhuettar_front"]["VA_alle_dateringar"]:
+            if b["n"]:
+                m = np.array([[int(c) for c in rad] for rad in b["rader"]], np.float32)     # 75 x 60, rad 0 = golv, 2 cm
+                ruter.append({"aar": b["fraa"], "n": b["n"], **kode(np.where(m > 0, m / 10 + 0.05, 0)[:, 10:50], False)})
+        sp = L["spleis"].get("50", {})
+        gr = [[g["b"], g["S"], g["ki95"][0], g["ki95"][1], int(g["brukt"])] for g in L["grenser"] if g["S"] is not None]
+        oey = [g[0] for g in gr if g[4] and sp.get("verdi") is not None and g[2] > 0 and g[1] >= sp["verdi"]]
+        p2["grad"] = {"ruter": ruter, "grenser": gr, "spleis": [sp.get("verdi")] + list(sp.get("ki95", [None, None])),
+                      "n": L["n"], "brukt": sum(g[4] for g in gr), "oey": oey, "dom": rg.get("dom")}
+    fm, rm = FD.get("t2_materiale"), RS.get("t2_materiale", {})
+    du = (fm or {}).get("del_utanfor", {}).get("verdi")
+    if du:                                                       # materialet: del med ny fot og ny rygg, framanfrå
+        p2["mat"] = {k: [round(100 * du[k + "_front_fot"]), round(100 * du[k + "_front_rygg"])] for k in ("LINE", "SHEET", "WOOD")}
+
+    # Lista over alle føreseiingane i den andre prøva, slik dei fall ut. Tap står som tap.
+    kom = lambda x, d=2: ("%.*f" % (d, x)).replace(".", ",")
+    liste = []
+    t6 = RS.get("t6_saumar", {})
+    if "primaer" in t6:
+        a, b, c = t6["primaer"]
+        liste += [[a["dom"], "understellet føreseier setesona, ikkje overdelen",
+                   "%d %% mot %d %%" % (round(100 * a["verdi"]["understell->setesone"]), round(100 * a["verdi"]["understell->overdel"]))],
+                  [b["dom"], "setesona daterer ikkje stolen", "%s mot kravet 0,90" % kom(b["verdi"]["setesone/gissing"], 3)],
+                  [c["dom"], "ein stol sett saman av to ligg blant dei verkelege", "%d %%" % round(100 * c["verdi"]["innanfor"])]]
+    if ra.get("dom"):
+        liste.append([ra["dom"], "armlenet ligg 20 til 25 cm over setet", "%s cm" % kom(prim(ra, "median_A")["verdi"], 1)])
+    if rk.get("dom"):
+        liste.append([rk["dom"], "krakken står der stolsetet står", "%s cm" % kom(prim(rk, "P1")["verdi"], 1)])
+    if rg.get("dom"):
+        liste.append([rg["dom"], "stilskifta er gradientar", "kant ved %s" % " og ".join(str(v) for v in p2["grad"]["oey"]) if p2.get("grad", {}).get("oey") else ""])
+    f1, r1 = FD.get("t1_sete"), RS.get("t1_sete", {})
+    if isinstance(r1.get("dom"), dict):
+        e1 = prim(r1, "E1a")
+        liste += [[r1["dom"]["E1"], "setehøgda varierer minst, òg der ingen målte", "%s mot kravet 0,80" % kom(e1["verdi"])],
+                  [r1["dom"]["E3"], "breiare stol, lågare sete", "kan ikkje skiljast frå instrumentet"]]
+    if isinstance(rm.get("dom"), dict):
+        pa = prim(rm, "a_kryssing")
+        liste += [[rm["dom"]["N1"], "kvart materiale opnar si sone", "p = %s mot kravet 0,01" % kom(pa["perm_p"], 3)],
+                  [rm["dom"]["E2"], "materialet bind strukturen, ikkje setet", "intervallet rekk null"]]
+    rekkjefolgje = {"HELDT": 0, "SLO FEIL": 1, "UGYLDIG": 2}
+    p2["liste"] = sorted(liste, key=lambda x: rekkjefolgje.get(x[0], 3))
+    D["p2"] = p2 or None
+
 MAL = open(os.path.join(HER, "figurar", "profil_mal.html"), encoding="utf-8").read()
 ut = MAL.replace('"__DATA__"', json.dumps(D, ensure_ascii=False, separators=(",", ":")))
 p = os.path.join(HER, "figurar", "profil.html")
