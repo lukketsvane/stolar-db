@@ -115,7 +115,7 @@ for y in (0, 45, 90, 135):
     ax.plot([31, 33], [y, y], color=FG, lw=0.6)
     mono(ax, 29.5, y, "%d" % y, ha="right", va="center")
 mono(ax, 29.5, 143, "cm", ha="right", va="center")
-fig.text(0.10, 0.925, "%d stolar oppå kvarandre" % N, fontsize=25, family=SERIF)
+fig.text(0.10, 0.925, "%s stolar oppå kvarandre" % "{:,}".format(N).replace(",", " "), fontsize=25, family=SERIF)
 fig.text(0.10, 0.888, "Kvar stol står på same golv, i same målestokk, med ryggen til venstre.", fontsize=11.5, family=SERIF, color=FG)
 fig.text(0.10, 0.065, "gråtone: del av stolane som dekkjer punktet · liner: 10, 25, 50 og 75 %", family=MONO, fontsize=7.2, color=DIM)
 fig.text(0.10, 0.045, KJELDE, family=MONO, fontsize=7.2, color=DIM)

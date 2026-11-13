@@ -1,0 +1,227 @@
+{
+ "avvik": [],
+ "instrumentprove_TEST": "== DEV: 255 stolar, 243 med estimat, 12 utan (4.7 %)\n  alle n=243 | 3D-modell: snittfeil 3.40 cm, medianfeil 2.00, skeivskap -0.55, R2 -0.01, innanfor 2 cm 57 %, r 0.50\n       fast verdi (45.5 cm): snittfeil 3.71, R2 -0.00 | fast del av H (0.490): snittfeil 6.74, R2 -1.52\n  NM   n=104 | 3D-modell: snittfeil 3.22 cm, medianfeil 1.75, skeivskap -1.41, R2 -0.10, innanfor 2 cm 66 %, r 0.32\n       fast verdi (45.5 cm): snittfeil 3.62, R2 -0.16 | fast del av H (0.490): snittfeil 5.69, R2 -0.92\n  VA   n=139 | 3D-modell: snittfeil 3.54 cm, medianfeil 2.00, skeivskap +0.10, R2 -0.21, innanfor 2 cm 50 %, r 0.56\n       fast verdi (45.5 cm): snittfeil 3.77, R2 -0.13 | fast del av H (0.490): snittfeil 7.53, R2 -2.72\n  utan flagg n=191 | 3D-modell: snittfeil 3.04 cm, medianfeil 2.00, skeivskap -0.49, R2 +0.13, innanfor 2 cm 60 %, r 0.52\n       fast verdi (45.5 cm): snittfeil 3.48, R2 -0.00 | fast del av H (0.490): snittfeil 6.46, R2 -1.58\n== TEST: 255 stolar, 248 med estimat, 7 utan (2.7 %)\n  alle n=248 | 3D-modell: snittfeil 3.11 cm, medianfeil 2.00, skeivskap -0.61, R2 +0.01, innanfor 2 cm 59 %, r 0.49\n       fast verdi (45.5 cm): snittfeil 3.54, R2 -0.01 | fast del av H (0.490): snittfeil 7.53, R2 -2.60\n  NM   n=114 | 3D-modell: snittfeil 2.96 cm, medianfeil 2.00, skeivskap -1.17, R2 +0.00, innanfor 2 cm 63 %, r 0.34\n       fast verdi (45.5 cm): snittfeil 3.39, R2 -0.08 | fast del av H (0.490): snittfeil 7.00, R2 -2.13\n  VA   n=134 | 3D-modell: snittfeil 3.24 cm, medianfeil 2.00, skeivskap -0.13, R2 -0.21, innanfor 2 cm 55 %, r 0.54\n       fast verdi (45.5 cm): snittfeil 3.66, R2 -0.18 | fast del av H (0.490): snittfeil 7.98, R2 -3.88\n  utan flagg n=203 | 3D-modell: snittfeil 2.51 cm, medianfeil 2.00, skeivskap -0.59, R2 +0.32, innanfor 2 cm 63 %, r 0.62\n       fast verdi (45.5 cm): snittfeil 3.25, R2 -0.00 | fast del av H (0.490): snittfeil 7.44, R2 -3.11\n  DOM: 3D-målinga slår den faste verdien på TEST (3.11 mot 3.54 cm).\n",
+ "modular": {
+  "t6_saumar": {
+   "id": "S",
+   "n": 1008,
+   "fraafall": {
+    "utan år": 7,
+    "utan silhuett": 6,
+    "kvalitet": 237
+   },
+   "port": [
+    {
+     "namn": "nok stolar",
+     "verdi": [
+      1008,
+      400,
+      371
+     ],
+     "ok": true
+    },
+    {
+     "namn": "instrumentet ser samanheng der han finst",
+     "verdi": 0.488,
+     "ok": true
+    }
+   ],
+   "primaer": [
+    {
+     "namn": "S1 to former",
+     "verdi": {
+      "understell->overdel": 0.115,
+      "understell->setesone": 0.488,
+      "skilnad": 0.373
+     },
+     "ki95_nedre_skilnad": 0.311,
+     "terskel": "a <= 0.15, b - a >= 0.15, nedre grense > 0",
+     "held": true,
+     "dom": "HELDT"
+    },
+    {
+     "namn": "S2 setet har ingen alder",
+     "verdi": {
+      "setesone/gissing": 0.898,
+      "overdel/gissing": 0.578
+     },
+     "terskel": "setesone >= 0.90, overdel <= 0.80",
+     "held": false,
+     "dom": "SLO FEIL"
+    },
+    {
+     "namn": "S3 kimærar",
+     "verdi": {
+      "n": 600,
+      "median": 2.0158039785390764,
+      "innanfor": 0.9366666666666666
+     },
+     "terskel": ">= 0.85",
+     "held": true,
+     "dom": "HELDT"
+    }
+   ],
+   "sekundaer": {
+    "over alle år (a, b, overdel->understell)": [
+     0.168,
+     0.507,
+     0.211
+    ],
+    "overdel->understell": 0.196,
+    "dateringsfeil_aar": {
+     "understell": 70.0,
+     "setesone": 81.7,
+     "overdel": 52.6,
+     "heile": 53.9,
+     "gissing": 91.0
+    },
+    "tidskurve": [
+     [
+      8,
+      77.6
+     ],
+     [
+      12,
+      80.3
+     ],
+     [
+      16,
+      80.6
+     ],
+     [
+      20,
+      74.4
+     ],
+     [
+      24,
+      72.4
+     ],
+     [
+      28,
+      75.3
+     ],
+     [
+      32,
+      77.2
+     ],
+     [
+      36,
+      79.5
+     ],
+     [
+      40,
+      82.2
+     ],
+     [
+      44,
+      83.4
+     ],
+     [
+      48,
+      89.2
+     ],
+     [
+      52,
+      89.5
+     ],
+     [
+      56,
+      86.2
+     ],
+     [
+      60,
+      85.6
+     ],
+     [
+      64,
+      85.0
+     ],
+     [
+      68,
+      80.3
+     ],
+     [
+      72,
+      66.0
+     ],
+     [
+      76,
+      60.9
+     ],
+     [
+      80,
+      58.4
+     ],
+     [
+      84,
+      57.7
+     ],
+     [
+      88,
+      59.0
+     ],
+     [
+      92,
+      63.2
+     ],
+     [
+      96,
+      70.5
+     ],
+     [
+      100,
+      79.5
+     ],
+     [
+      104,
+      83.9
+     ],
+     [
+      108,
+      85.9
+     ],
+     [
+      112,
+      86.4
+     ],
+     [
+      116,
+      86.5
+     ],
+     [
+      120,
+      87.1
+     ]
+    ],
+    "kimaerar": {
+     "n_stolar": 933,
+     "ekte_median": 1.3777069421904338,
+     "ekte_q95": 3.7583384565350753,
+     "ulik_tid": {
+      "n": 600,
+      "median": 2.0158039785390764,
+      "innanfor": 0.9366666666666666
+     },
+     "same_tid": {
+      "n": 600,
+      "median": 1.686725426425102,
+      "innanfor": 0.9466666666666667
+     }
+    },
+    "per_museum": {
+     "NM": 195,
+     "VA": 813
+    }
+   },
+   "dom": "S1 HELDT | S2 SLO FEIL | S3 HELDT",
+   "utval": "held"
+  }
+ },
+ "opningar": [
+  {
+   "modul": "t6_saumar",
+   "tid": "2026-11-13T10:16:13+01:00",
+   "forsegla_commit": "ebde1f90c57dab156e848b43c61f16968b03c323"
+  }
+ ]
+}
