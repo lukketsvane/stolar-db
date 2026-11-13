@@ -1,0 +1,271 @@
+<title>Stolen i profil</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Literata:opsz,wght@7..72,400&display=swap">
+<style>
+/* Layout: éi smal spalte som på traktat.iverfinne.no. Kvar seksjon er éi setning, éin figur og éi line i mono.
+   Figurane er teikna frå dei verkelege profilane, i svart på kvitt, alle i same målestokk. */
+:root{--bg:#fff;--fg:#0c0c0c;--dim:#777;--line:#dedede;--hair:#ededed;
+  --serif:"Literata",Charter,Georgia,serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#080808;--fg:#f4f4f4;--dim:#9a9a9a;--line:#393939;--hair:#1c1c1c;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#080808;--fg:#f4f4f4;--dim:#9a9a9a;--line:#393939;--hair:#1c1c1c;color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--serif);font-size:15px;line-height:1.52;-webkit-font-smoothing:antialiased}
+.page{width:min(100%,800px);margin:0 auto;padding-block:0 80px;
+  padding-left:max(21px,env(safe-area-inset-left,0px));padding-right:max(21px,env(safe-area-inset-right,0px))}
+h1{font-weight:400;font-size:2.2rem;line-height:1.15;letter-spacing:-.02em;margin:3.1rem 0 2.2rem;text-wrap:balance}
+section{margin:2.4rem 0 3.2rem}
+h2{font-weight:400;font-size:1.11rem;line-height:1.4;border-top:1px solid var(--line);padding-top:.8rem;margin:0 0 .9rem;text-wrap:balance}
+section p{margin:0 0 1rem;max-width:62ch}
+figure{margin:0;min-width:0}
+figcaption,.sub,.fot{font:10px/1.6 var(--mono);color:var(--dim);letter-spacing:.02em}
+figcaption{margin-top:.7rem;max-width:74ch}
+canvas{display:block;width:100%;height:auto}
+.smal{max-width:520px}
+.to{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.tre{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.to>div,.tre>div{min-width:0}
+.merke{font:10px/1.5 var(--mono);color:var(--fg);margin-top:.45rem;letter-spacing:.02em}
+.merke span{display:block;color:var(--dim)}
+.tidhovud{display:flex;align-items:baseline;gap:14px;margin-bottom:.2rem}
+.aar{font-size:2.2rem;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.styr{display:flex;align-items:center;gap:16px;margin-top:.8rem}
+input[type=range]{-webkit-appearance:none;appearance:none;flex:1;min-width:0;height:28px;background:transparent;margin:0;cursor:pointer}
+input[type=range]::-webkit-slider-runnable-track{height:1px;background:var(--fg)}
+input[type=range]::-moz-range-track{height:1px;background:var(--fg)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:15px;height:15px;border-radius:50%;background:var(--fg);margin-top:-7px;border:0}
+input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;background:var(--fg);border:0}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:1px solid var(--dim);outline-offset:3px}
+.rekkje{display:grid;grid-template-columns:repeat(auto-fill,minmax(47px,1fr));gap:10px 0}
+.st{display:block;color:var(--fg);text-decoration:none;min-width:0}
+.st svg{display:block;width:100%;height:auto;overflow:hidden}
+.st path{fill:currentColor;fill-rule:evenodd}
+.st .sl{stroke:var(--dim);stroke-width:.8;stroke-dasharray:4 3}
+.st .gl{stroke:var(--fg);stroke-width:.8}
+.st span{display:block;text-align:center;font:9px/1.5 var(--mono);color:var(--dim)}
+.st:hover path{fill:var(--dim)}
+.fot{border-top:1px solid var(--line);padding-top:.8rem;margin-top:3rem;max-width:74ch}
+#kim{display:block;width:100%;max-width:360px;height:auto;margin:0 auto;overflow:hidden}
+#kim path{fill:var(--fg);fill-rule:evenodd}
+#kim line{stroke:var(--fg);stroke-width:.8}
+.styr .sub{min-width:124px;color:var(--fg)}
+[hidden]{display:none!important}
+.par{display:grid;gap:26px}
+.par>div{min-width:0}
+.medkurve{display:grid;grid-template-columns:100fr 40fr;align-items:stretch}
+#tidskurve{display:block;width:100%;height:100%;overflow:visible}
+#tidskurve polyline{fill:none;stroke:var(--fg);stroke-width:1.1;vector-effect:non-scaling-stroke;stroke-linejoin:round}
+#tidskurve line{stroke:var(--dim);stroke-width:.7;vector-effect:non-scaling-stroke;stroke-dasharray:4 3}
+nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:calc(env(safe-area-inset-top,0px) + 12px) 0 8px;font:10px var(--mono);letter-spacing:.02em;color:var(--dim)}
+.links{display:flex;align-items:center;gap:19px}
+nav a{color:inherit;text-decoration:none;min-height:28px;display:inline-flex;align-items:center;white-space:nowrap}
+nav a:hover,nav a:focus-visible{color:var(--fg)}
+.resources{position:relative}
+.resources summary{display:inline-flex;align-items:center;min-height:28px;cursor:pointer;list-style:none;white-space:nowrap}
+.resources summary::-webkit-details-marker{display:none}
+.resources summary::after{content:"▾";margin-left:.3em}
+.resources[open] summary{color:var(--fg)}
+.resources[open] summary::before{content:"";position:fixed;inset:0;z-index:19}
+.resources-list{position:absolute;top:100%;left:-10px;z-index:20;display:flex;flex-direction:column;padding:2px 10px;background:var(--bg);border:1px solid var(--line);white-space:nowrap}
+.fot a{color:inherit}
+@media(min-width:700px){.par{grid-template-columns:1fr 1fr}}
+/* Skrivebord: setninga til venstre, figuren til høgre. Rekkja med alle stolane går i full breidd. */
+@media(min-width:980px){
+  .page{width:min(100%,1180px)}
+  h1{font-size:3.4rem;margin:4.2rem 0 3.2rem}
+  section{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);column-gap:64px;align-items:start;margin:0 0 4.6rem;border-top:1px solid var(--line);padding-top:1.1rem}
+  section>h2{grid-column:1;border-top:0;padding-top:0;font-size:1.75rem;line-height:1.2;letter-spacing:-.012em;margin:0 0 1rem}
+  section>p{grid-column:1;font-size:1.04rem}
+  section>figure{grid-column:2;grid-row:1/span 5}
+  section.brei{display:block}
+  section.brei>h2{margin-bottom:1.6rem}
+  .smal{max-width:none}
+  .rekkje{grid-template-columns:repeat(auto-fill,minmax(58px,1fr));gap:14px 0}
+  #kim{max-width:440px}
+}
+</style>
+
+<div class="page">
+<h1>Stolen i profil</h1>
+
+<section>
+<h2><span data-n></span> stolar oppå kvarandre</h2>
+<p data-saum hidden>Understellet føreseier <span id="s-uo"></span> % av overdelen. Overdelen daterer stolen like godt som heile stolen. Setesona daterer han ikkje.</p>
+<figure>
+<div class="par">
+<div class="medkurve"><canvas id="c-kart" role="img" aria-label="Alle stolane frå sida, lagde oppå kvarandre. Setet står som eit mørkt band kring 45 cm; ryggen løyser seg opp oppover."></canvas><svg id="tidskurve" viewBox="0 0 40 146" preserveAspectRatio="none" role="img" aria-label="Kor godt kvar høgd daterer stolen: best i ryggen, ikkje i setesona."></svg></div>
+<div class="medkurve"><canvas id="c-kartf" role="img" aria-label="Dei same stolane framanfrå."></canvas><span></span></div>
+</div>
+<figcaption>frå sida og framanfrå, i same målestokk · gråtone: del av stolane som dekkjer punktet<span data-saum hidden> · kurva: kor godt kvar høgd daterer stolen · understell ±<span id="s-du"></span> år, setesone ±<span id="s-ds"></span>, overdel ±<span id="s-do"></span>, gissing ±<span id="s-dg"></span><span id="s-prove"></span></span></figcaption>
+</figure>
+</section>
+
+<section>
+<h2>Fire hundre år</h2>
+<figure class="smal">
+<div class="tidhovud"><output class="aar" id="aar" for="glidar">1750</output><span class="sub" id="taln"></span></div>
+<canvas id="c-tid" role="img" aria-label="Stolane laga nær det valde året, lagde oppå kvarandre."></canvas>
+<div class="styr"><input type="range" id="glidar" min="1600" max="2000" step="1" value="1750" aria-label="År"></div>
+<figcaption>stolar laga nær det valde året · stipla line: <span data-sete></span> cm</figcaption>
+</figure>
+</section>
+
+<section class="brei">
+<h2>Setet står. Ryggen vandrar.</h2>
+<figure>
+<div class="rekkje" id="rekkje"></div>
+<figcaption><span id="nsil"></span> stolar etter år</figcaption>
+</figure>
+</section>
+
+<section id="sek-kim" hidden>
+<h2>Set saman ein stol som aldri er laga.</h2>
+<figure class="smal">
+<svg id="kim" viewBox="-20 0 120 150" role="img" aria-label="Kimære: understell frå éin stol, overdel frå ein annan."></svg>
+<div class="styr"><span class="sub" id="k-ol"></span><input type="range" id="k-o" min="0" value="0" aria-label="Overdel"></div>
+<div class="styr"><span class="sub" id="k-ul"></span><input type="range" id="k-u" min="0" value="0" aria-label="Understell"></div>
+<figcaption><span id="k-n"></span> kombinasjonar, <span id="k-m"></span> finst · <span id="k-p"></span> % ligg blant dei verkelege, også med 150 år mellom halvdelane</figcaption>
+</figure>
+</section>
+
+<section>
+<h2>Stolen er ordna i centimeter, ikkje i proporsjonar.</h2>
+<figure>
+<div class="to">
+<div><canvas id="c-golv" role="img" aria-label="Stolane målte frå golvet: setet er eit skarpt band."></canvas><div class="merke">målt frå golvet</div></div>
+<div><canvas id="c-prop" role="img" aria-label="Stolane skalerte til same høgd: setet løyser seg opp."></canvas><div class="merke">skalert til same høgd</div></div>
+</div>
+<figcaption>spreiing i setehøgda: <span id="sp1"></span> % i cm, <span id="sp2"></span> % som del av høgda</figcaption>
+</figure>
+</section>
+
+<section>
+<h2>Nytt materiale, same sete.</h2>
+<p>Under setet løyser stolen seg opp. Totalhøgda fell om lag 20 cm, setet 3.</p>
+<figure>
+<div class="tre" id="mat"></div>
+<figcaption>øvst frå sida, nedst framanfrå · høgd og sete: medianar frå katalogen</figcaption>
+</figure>
+</section>
+
+<p class="fot"><span data-n></span> av <span id="totalt"></span> stolar frå Nasjonalmuseet og V&amp;A · éin 3D-modell per stol, laga frå eitt foto · <a href="https://traktat.iverfinne.no/stol-db/">stol-db</a> · github.com/lukketsvane/stolar-db</p>
+</div>
+
+<script type="application/json" id="data">"__DATA__"</script>
+<script>
+(function(){
+const D = JSON.parse(document.getElementById('data').textContent);
+const root = document.documentElement, $ = id => document.getElementById(id);
+const nb = v => String(v).replace('.', ',');
+let INK = [12,12,12], FG = '#0c0c0c', DIM = '#777';
+function fargar(){
+  const cs = getComputedStyle(root);
+  FG = cs.getPropertyValue('--fg').trim() || FG; DIM = cs.getPropertyValue('--dim').trim() || DIM;
+  const m = FG.match(/^#([0-9a-f]{6})$/i);
+  if (m) { const v = parseInt(m[1], 16); INK = [v >> 16, (v >> 8) & 255, v & 255]; }
+}
+function b64(s){ const b = atob(s), a = new Uint8Array(b.length); for (let i = 0; i < b.length; i++) a[i] = b.charCodeAt(i); return a; }
+const cmW = D.x1 - D.x0, cmH = D.y1;
+const oc = document.createElement('canvas');
+
+// Teiknar éin stabel: gråtone = del av stolane som dekkjer punktet, så liner oppå.
+function stabel(cv, px, w, h, o){
+  const W = cv.clientWidth; if (!W) return;
+  const H = Math.round(W * cmH / cmW), dpr = Math.min(window.devicePixelRatio || 1, 3);
+  cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+  const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.clearRect(0, 0, W, H);
+  oc.width = w; oc.height = h;
+  const og = oc.getContext('2d'), im = og.createImageData(w, h), d = im.data;
+  for (let i = 0; i < w * h; i++) { d[4*i] = INK[0]; d[4*i+1] = INK[1]; d[4*i+2] = INK[2]; d[4*i+3] = Math.round(255 * Math.pow(px[i] / 255, 0.8)); }
+  og.putImageData(im, 0, 0);
+  g.imageSmoothingEnabled = true; g.imageSmoothingQuality = 'high';
+  g.drawImage(oc, 0, 0, W, H);
+  const X = cm => cm / cmW * W, Y = cm => H - cm / cmH * H;
+  if (o.k) { g.strokeStyle = FG; g.lineJoin = 'round';
+    for (const c of o.k) { g.lineWidth = c[0] === 0.5 ? 1.1 : 0.55; g.beginPath();
+      for (let i = 1; i < c.length; i += 2) { const x = X(c[i]), y = Y(c[i+1]); if (i === 1) g.moveTo(x, y); else g.lineTo(x, y); }
+      g.stroke(); } }
+  g.strokeStyle = FG; g.lineWidth = 1; g.beginPath(); g.moveTo(0, H - .5); g.lineTo(W, H - .5); g.stroke();
+  if (o.sete) { g.strokeStyle = DIM; g.lineWidth = .7; g.setLineDash([4, 3]); g.beginPath(); g.moveTo(0, Y(D.sete)); g.lineTo(W, Y(D.sete)); g.stroke(); g.setLineDash([]); }
+  if (o.merke) { g.fillStyle = DIM; g.font = '10px "IBM Plex Mono", ui-monospace, monospace'; g.textBaseline = 'middle';
+    for (const t of [45, 90, 135]) { g.fillText(t + ' cm', 0, Y(t)); g.strokeStyle = DIM; g.lineWidth = .7; g.beginPath(); g.moveTo(40, Y(t)); g.lineTo(48, Y(t)); g.stroke(); } }
+  if (o.soner) { g.font = '10px "IBM Plex Mono", ui-monospace, monospace'; g.textBaseline = 'middle'; g.textAlign = 'right';
+    for (const s of o.soner) { g.strokeStyle = DIM; g.lineWidth = .7; g.setLineDash([4, 3]);
+      if (s[1] < 120) { g.beginPath(); g.moveTo(0, Y(s[1])); g.lineTo(W, Y(s[1])); g.stroke(); }
+      g.setLineDash([]); g.fillStyle = FG; g.fillText(s[2], W, Y((s[0] + s[1]) / 2)); }
+    g.textAlign = 'left'; }
+}
+
+// Kimærar: understell og sete frå éin stol, alt over setet frå ein annan
+const KS = D.sil.map((s, i) => ({i: i, aar: s[0], d: s[1], sete: s[4], xa: s[5], da: s[6]})).filter(s => s.sete);
+const ko = $('k-o'), ku = $('k-u');
+function kim(){
+  const A = KS[+ku.value], B = KS[+ko.value], f = A.da / Math.max(B.da, 1), ya = 150 - A.sete, yb = 150 - B.sete;
+  $('kim').innerHTML = '<defs><clipPath id="ka"><rect x="-60" y="' + ya + '" width="240" height="' + (150 - ya) + '"/></clipPath>' +
+    '<clipPath id="kb"><rect x="-400" y="-60" width="900" height="' + (yb + 60) + '"/></clipPath></defs>' +
+    '<g clip-path="url(#ka)"><path d="' + A.d + '"/></g>' +
+    '<g transform="matrix(' + f + ',0,0,1,' + (A.xa - f * B.xa) + ',' + (ya - yb) + ')"><g clip-path="url(#kb)"><path d="' + B.d + '"/></g></g>' +
+    '<line x1="-20" x2="100" y1="149.6" y2="149.6"/>';
+  $('k-ol').textContent = 'overdel ' + B.aar;
+  $('k-ul').textContent = 'understell ' + A.aar + (A.i === B.i ? ' · finst' : '');
+}
+if (D.saum && KS.length > 10) {
+  $('sek-kim').hidden = false; document.querySelectorAll('[data-saum]').forEach(e => e.hidden = false);
+  $('s-uo').textContent = D.saum.uo; $('s-do').textContent = D.saum.dat.overdel; $('s-du').textContent = D.saum.dat.understell;
+  $('s-ds').textContent = D.saum.dat.setesone; $('s-dg').textContent = D.saum.dat.gissing;
+  if (D.saum.prove) $('s-prove').textContent = ' · ' + D.saum.prove;
+  const tk = D.saum.tidskurve, gi = D.saum.dat.gissing, best = tk.reduce((a, b) => b[1] < a[1] ? b : a);
+  $('tidskurve').innerHTML = '<line x1="3" x2="3" y1="0" y2="146"/><polyline points="' +
+    tk.map(p => (3 + 34 * Math.max(gi - p[1], 0) / (gi - best[1])).toFixed(1) + ',' + (146 - p[0])).join(' ') + '"/>';
+  ko.max = ku.max = KS.length - 1; ku.value = Math.round(KS.length * 0.12); ko.value = Math.round(KS.length * 0.86);
+  $('k-n').textContent = (KS.length * KS.length).toLocaleString('nb-NO').replace(/,/g, ' '); $('k-m').textContent = KS.length; $('k-p').textContent = D.saum.kim;
+  ko.addEventListener('input', kim); ku.addEventListener('input', kim); kim();
+}
+const fig = (cv, f, o) => stabel(cv, f.px || (f.px = b64(f.b)), f.w, f.h, Object.assign({k: f.k}, o));
+
+// Tidsglidaren: rammer for kvart tiande år, jamna ut mellom dei.
+const T = D.tid, ramer = T.ramer.map(b64), glidar = $('glidar'), tmp = new Float32Array(T.w * T.h);
+function tid(){
+  const y = +glidar.value, f = (y - T.aar[0]) / 10, k = Math.min(Math.floor(f), T.aar.length - 2), t = f - k, a = ramer[k], b = ramer[k+1];
+  for (let i = 0; i < tmp.length; i++) tmp[i] = a[i] * (1 - t) + b[i] * t;
+  stabel($('c-tid'), tmp, T.w, T.h, {sete: true});
+  $('aar').textContent = y;
+  $('taln').textContent = 'om lag ' + Math.round(T.n[k] * (1 - t) + T.n[k+1] * t) + ' stolar';
+}
+glidar.addEventListener('input', tid);
+
+// Alle stolane som omriss
+const SL = 150 - D.sete;
+$('rekkje').innerHTML = D.sil.map(s => {
+  const inn = '<svg viewBox="0 0 80 150" aria-hidden="true"><line class="sl" x1="0" x2="80" y1="' + SL + '" y2="' + SL + '"/><path d="' + s[1] + '"/><line class="gl" x1="0" x2="80" y1="149.6" y2="149.6"/></svg><span>' + s[0] + '</span>';
+  const tittel = (s[3] ? s[3] + ', ' : '') + s[0];
+  return s[2] ? '<a class="st" href="' + s[2] + '" target="_blank" rel="noopener" title="' + tittel.replace(/"/g, '&quot;') + '">' + inn + '</a>'
+              : '<div class="st" title="' + tittel.replace(/"/g, '&quot;') + '">' + inn + '</div>';
+}).join('');
+
+// Materialskiftet
+$('mat').innerHTML = D.mat.map((m, i) => '<div><canvas id="c-ms' + i + '" role="img" aria-label="' + m.namn + ', frå sida"></canvas><canvas id="c-mf' + i + '" role="img" aria-label="' + m.namn + ', framanfrå" style="margin-top:14px"></canvas>' +
+  '<div class="merke">' + m.namn + ' · ' + m.n + '<span>høgd ' + m.H + ' cm' + (m.sete ? ' · sete ' + m.sete + ' cm' : '') + '</span></div></div>').join('');
+
+document.querySelectorAll('[data-n]').forEach(e => e.textContent = D.n);
+document.querySelectorAll('[data-sete]').forEach(e => e.textContent = Math.round(D.sete));
+$('totalt').textContent = D.totalt.toLocaleString('nb-NO').replace(/,/g, ' ');
+$('nsil').textContent = D.sil.length;
+$('sp1').textContent = nb(D.spreiing[0]); $('sp2').textContent = nb(D.spreiing[1]);
+
+function alt(){
+  fargar();
+  fig($('c-kart'), D.kart, {merke: true, soner: D.saum ? [[0, 37, 'understell'], [37, 60, 'setesone'], [60, 125, 'overdel']] : null}); fig($('c-kartf'), D.kartf, {});
+  tid();
+  fig($('c-golv'), D.golv, {}); fig($('c-prop'), D.prop, {});
+  D.mat.forEach((m, i) => { fig($('c-ms' + i), m.side, {sete: true}); fig($('c-mf' + i), m.front, {sete: true}); });
+}
+alt();
+let vent = 0;
+const seinare = () => { clearTimeout(vent); vent = setTimeout(alt, 80); };
+window.addEventListener('resize', seinare);
+if (window.matchMedia) window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', alt);
+new MutationObserver(alt).observe(root, {attributes: true, attributeFilter: ['data-theme']});
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(alt);
+})();
+</script>

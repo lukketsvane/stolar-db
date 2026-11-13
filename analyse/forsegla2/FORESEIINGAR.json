@@ -1,0 +1,348 @@
+{
+ "tersklar_gjennomgaatt_av_forfattaren": false,
+ "skriven": "2026-11-13T02:22:15+01:00",
+ "merknad": "Tersklane er sette av analysen frå opplæringshalvparten (250 stolar) 13.11.2026, før noko frå dei tilbakehaldne stolane var sett. Forfattaren har ikkje gått gjennom dei. Commit og push av denne fila er tidsstempelet. Første forsegling gjeld modul t6 og instrumentprøva. Modulane t1 til t5 låg under uavhengig kontroll då dei vart tekne med; dei er lagde inn slik dei stod, og blir forsegla på nytt før dei blir opna dersom kontrollen endrar dei. Kvar slik endring er synleg i git.",
+ "utval": "Vaksenstolar frå Nasjonalmuseet og V&A med gyldige katalogmål og 3D-modell. Opplæringshalvparten er dei 255 stolane i analyse/data/dev_ids.txt. Dei tilbakehaldne er alle andre, utan stolar som høyrer til same sett som ein opplæringsstol: om lag 1 258 stolar.",
+ "blindskap": "Måla og silhuettane frå dei tilbakehaldne stolane vart hausta 12.11.2026 med fastlåst skript og ikkje opna. Lastaren analyse/forsegla2/felles.py nektar å lese dei før forseglinga. Figurane på sida «Stolen i profil» er til og med denne committen teikna berre frå opplæringshalvparten. Etter første forsegling blir figurane teikna frå alle stolane. Modulane t1 til t5 blir ikkje køyrde på dei tilbakehaldne stolane før dei ligg i ein commit i endeleg form, og ingen terskel i dei blir endra av nokon som har sett figurane.",
+ "foreseiingar": {
+  "S1": "To former møtest i setet. Innan same periode og museum føreseier understellet (2 til 36 cm) høgst 15 % av overdelen (62 til 125 cm), og minst 15 prosentpoeng meir av setesona (38 til 58 cm) enn av overdelen.",
+  "S2": "Setet har ingen alder. Setesona daterer stolen høgst ti prosent betre enn å gisse medianåret. Overdelen daterer han minst tjue prosent betre.",
+  "S3": "Kimærar. Set ein overdelen frå éin stol på understellet og setet frå ein annan, med minst 150 år mellom, ligg minst 85 % av dei like nær ein verkeleg stol som 95 % av dei verkelege stolane ligg kvarandre.",
+  "t1 til t5": "Setehøgda på stolar musea aldri målte, materialskiftet etter 1925, armlenet mot olbogehøgda, gradient mot øy, og krakken. Tersklar, portar og grunnmodellar står i modulspesifikasjonane under."
+ },
+ "tapsliste": [
+  "Setehøgd i bandet 42 til 46 cm (tapt 12.11.2026).",
+  "Setehøgda følgjer kroppshøgda etter 1850 (tapt 12.11.2026).",
+  "P2b i Rijksmuseum-prøva: tida forklarer over 40 % av ryggen (tapt 12.11.2026).",
+  "Fleire skilde målpunkt i setehøgda (tapt 12.11.2026).",
+  "Den tettaste kombinasjonen av setehøgd, setedjupn og helling er tettare enn setehøgda åleine (tapt på opplæringsdata 12.11.2026).",
+  "Tommestokken til makaren kan lesast ut av katalogmåla (tapt 13.11.2026: måla ber tommestokken til den som målte).",
+  "Dei mest nyskapande stolane sit som alle andre også etter 1900 (tapt på opplæringsdata 13.11.2026)."
+ ],
+ "modular": {
+  "t1_sete": {
+   "sjekksum": "eb2a8856f1fd6cadbe49a08ad8434b008240cd4d74c49c85578fc9581ccf829e",
+   "status": "spesifikasjonen står i modulfila (SPEC); opplæringstal ikkje rekna her enno",
+   "spec": null,
+   "opplaeringstal_DEV": null
+  },
+  "t2_materiale": {
+   "sjekksum": "c76fe7dba434bc146449d80a16639cd18c39adb5d694e67bf1ebe9903e936112",
+   "status": "spesifikasjonen står i modulfila (SPEC); opplæringstal ikkje rekna her enno",
+   "spec": null,
+   "opplaeringstal_DEV": null
+  },
+  "t3_olboge": {
+   "sjekksum": "eb9ce61690a0948ba7561cf24a866cc94f530da292c391a9977c4f1d9fc7e0bd",
+   "status": "spesifikasjonen står i modulfila (SPEC); opplæringstal ikkje rekna her enno",
+   "spec": null,
+   "opplaeringstal_DEV": null
+  },
+  "t4_gradient": {
+   "sjekksum": "9e3ba8c5480e9fc07fc5a321a5776aa82f68236d9b2b8a55ac53d22f98d13627",
+   "status": "spesifikasjonen står i modulfila (SPEC); opplæringstal ikkje rekna her enno",
+   "spec": null,
+   "opplaeringstal_DEV": null
+  },
+  "t5_krakk": {
+   "sjekksum": "71f0f7909c91e9a497058a31f9c6585225ece3699bb62f003007c2f509e4d35b",
+   "status": "spesifikasjonen står i modulfila (SPEC); opplæringstal ikkje rekna her enno",
+   "spec": null,
+   "opplaeringstal_DEV": null
+  },
+  "t6_saumar": {
+   "sjekksum": "d052f7bdc1132fdd49e9029d6981efdbba2d76a65bfeeaf5b252ab7286ece01f",
+   "status": "klar",
+   "spec": {
+    "id": "S",
+    "tittel": "To former møtest i setet",
+    "slag": "ny",
+    "proposisjonar": [
+     "5.701",
+     "6.672",
+     "2.122",
+     "1.6101",
+     "1.2011"
+    ],
+    "paastand": "Understell og overdel er to skilde blokker i kovariansen. Setesona er lik over alle stolar og ber difor ingen tid. Fordi setet er halde, kan halvdelane byttast på tvers av hundreår.",
+    "utval": "Tilbakehaldne vaksenstolar med år, silhuett og godkjend kvalitet (felles.kvalitet). Trekk per cm over golvet: mengd materiale og utstrekning, framanfrå og frå sida. Soner: understell 2 til 36 cm, setesone 38 til 58, overdel 62 til 125.",
+    "primaer": [
+     {
+      "namn": "S1 to former",
+      "statistikk": "kryssvalidert forklart varians (5 fald, fald etter suite), innan 50-årsbolk og museum: understell -> overdel (a) og understell -> setesone (b)",
+      "terskel": "a <= 0.15 og b - a >= 0.15, med nedre 95 %-grense for b - a over 0",
+      "regel_for_terskel": "a: om lag to gonger DEV-verdien (0.07); b - a: om lag halve DEV-skilnaden (0.32)",
+      "dev_verdi": "sjå opplaeringstal"
+     },
+     {
+      "namn": "S2 setet har ingen alder",
+      "statistikk": "kryssvalidert median absolutt dateringsfeil per sone, delt på feilen ved å gisse medianåret",
+      "terskel": "setesone >= 0.90 og overdel <= 0.80",
+      "regel_for_terskel": "setesona skal ikkje slå gissing med meir enn ti prosent; overdelen skal slå gissing med minst tjue (DEV: om lag 1.1 og 0.6)",
+      "dev_verdi": "sjå opplaeringstal"
+     },
+     {
+      "namn": "S3 kimærar",
+      "statistikk": "del av 600 kimærar med minst 150 år mellom halvdelane som ligg innanfor 95-persentilen av avstanden frå ein verkeleg stol til næraste andre verkelege stol (15 hovudkomponentar, suitefeller haldne utanfor)",
+      "terskel": ">= 0.85",
+      "regel_for_terskel": "DEV-verdien minus ti prosentpoeng",
+      "dev_verdi": "sjå opplaeringstal"
+     }
+    ],
+    "sekundaer": [
+     "same tal over alle år utan periodejustering",
+     "overdel -> understell",
+     "dateringsfeil for understellet og for heile stolen",
+     "dateringsfeil for eit 12 cm band etter høgd over golvet",
+     "kimærar med høgst 30 år mellom halvdelane",
+     "per museum"
+    ],
+    "port": [
+     {
+      "namn": "instrumentet ser samanheng der han finst",
+      "terskel": "understell -> setesone >= 0.15",
+      "ugyldig_dersom": "under terskelen: S1 er UGYLDIG"
+     },
+     {
+      "namn": "nok stolar",
+      "terskel": "minst 300 stolar og minst 100 før 1800 og 100 frå 1900",
+      "ugyldig_dersom": "færre: S1, S2 og S3 er UGYLDIGE"
+     }
+    ],
+    "grunnmodell": "Stil som heilskap: understellet føreseier overdelen om lag like godt som setesona (b - a nær 0), alle soner daterer stolen like godt, og kimærar på tvers av 150 år fell utanfor dei verkelege stolane.",
+    "tel_imot": "a over 0.15, b - a under 0.15, setesona daterer stolen, overdelen gjer det ikkje, eller under 85 % av kimærane ligg blant dei verkelege."
+   },
+   "opplaeringstal_DEV": {
+    "id": "S",
+    "n": 211,
+    "fraafall": {
+     "utan år": 1,
+     "utan silhuett": 5,
+     "kvalitet": 38
+    },
+    "port": [
+     {
+      "namn": "nok stolar",
+      "verdi": [
+       211,
+       111,
+       54
+      ],
+      "ok": false
+     },
+     {
+      "namn": "instrumentet ser samanheng der han finst",
+      "verdi": 0.387,
+      "ok": true
+     }
+    ],
+    "primaer": [
+     {
+      "namn": "S1 to former",
+      "verdi": {
+       "understell->overdel": 0.069,
+       "understell->setesone": 0.387,
+       "skilnad": 0.318
+      },
+      "ki95_nedre_skilnad": 0.176,
+      "terskel": "a <= 0.15, b - a >= 0.15, nedre grense > 0",
+      "held": true,
+      "dom": "UGYLDIG"
+     },
+     {
+      "namn": "S2 setet har ingen alder",
+      "verdi": {
+       "setesone/gissing": 1.033,
+       "overdel/gissing": 0.496
+      },
+      "terskel": "setesone >= 0.90, overdel <= 0.80",
+      "held": true,
+      "dom": "UGYLDIG"
+     },
+     {
+      "namn": "S3 kimærar",
+      "verdi": {
+       "n": 600,
+       "median": 2.3136846575580723,
+       "innanfor": 0.9516666666666667
+      },
+      "terskel": ">= 0.85",
+      "held": true,
+      "dom": "UGYLDIG"
+     }
+    ],
+    "sekundaer": {
+     "over alle år (a, b, overdel->understell)": [
+      0.187,
+      0.42,
+      0.079
+     ],
+     "overdel->understell": 0.045,
+     "dateringsfeil_aar": {
+      "understell": 75.6,
+      "setesone": 92.9,
+      "overdel": 44.6,
+      "heile": 55.5,
+      "gissing": 90.0
+     },
+     "tidskurve": [
+      [
+       8,
+       78.5
+      ],
+      [
+       12,
+       83.4
+      ],
+      [
+       16,
+       80.1
+      ],
+      [
+       20,
+       79.7
+      ],
+      [
+       24,
+       68.3
+      ],
+      [
+       28,
+       78.3
+      ],
+      [
+       32,
+       76.2
+      ],
+      [
+       36,
+       87.6
+      ],
+      [
+       40,
+       93.1
+      ],
+      [
+       44,
+       93.6
+      ],
+      [
+       48,
+       98.8
+      ],
+      [
+       52,
+       98.0
+      ],
+      [
+       56,
+       101.2
+      ],
+      [
+       60,
+       94.1
+      ],
+      [
+       64,
+       89.1
+      ],
+      [
+       68,
+       91.0
+      ],
+      [
+       72,
+       84.0
+      ],
+      [
+       76,
+       72.2
+      ],
+      [
+       80,
+       72.0
+      ],
+      [
+       84,
+       62.1
+      ],
+      [
+       88,
+       65.9
+      ],
+      [
+       92,
+       63.4
+      ],
+      [
+       96,
+       68.2
+      ],
+      [
+       100,
+       64.6
+      ],
+      [
+       104,
+       67.5
+      ],
+      [
+       108,
+       72.5
+      ],
+      [
+       112,
+       82.5
+      ],
+      [
+       116,
+       78.2
+      ],
+      [
+       120,
+       80.6
+      ]
+     ],
+     "kimaerar": {
+      "n_stolar": 201,
+      "ekte_median": 1.617392883563584,
+      "ekte_q95": 4.75165524404961,
+      "ulik_tid": {
+       "n": 600,
+       "median": 2.3136846575580723,
+       "innanfor": 0.9516666666666667
+      },
+      "same_tid": {
+       "n": 600,
+       "median": 1.8963492958514032,
+       "innanfor": 0.955
+      }
+     },
+     "per_museum": {
+      "NM": 97,
+      "VA": 114
+     }
+    },
+    "dom": "S1 UGYLDIG | S2 UGYLDIG | S3 UGYLDIG",
+    "utval": "dev"
+   }
+  }
+ },
+ "sjekksummar_felles": {
+  "analyse/14_mesh_maal.py": "4e74e6fd3b782952757b4e15843a1719d37c2b40e350a3b38e4b831f4c9ddf39",
+  "analyse/15_mesh_test.py": "7cf17ffa90a7124aec8e31c21667dc9b40b52ed66855fb4c547cb3c63bac4f4a",
+  "analyse/16_forsegla_prove2.py": "a9ba1b2e3e15f5f42b37c0549aca0769f094a4b4f61358bd8c91adeed5f6ee0a",
+  "analyse/forsegla2/felles.py": "b2405a84fa183618d4bdef174d90bf8a134fae0407a2a65e20e908cf4f23540e"
+ },
+ "sjekksummar_data": {
+  "analyse/data/stolar_reinsa.csv": "863ac150ee5d5f4e1857e5dcecfda1ccaff9d67af68d5358d5c1b6b7b1480bb9",
+  "analyse/data/dev_ids.txt": "0f7f1e6290ec514a8867a1cd03bb2474ce993e44cfafa0e80684610ab7df426f",
+  "analyse/data/dev_mesh_maal.csv": "997565131be97622b31a3b357b50a561e394942fd3e980d84cc926396f124bfa",
+  "analyse/data/dev_silhuettar.npz": "94a49de1c13fd88dd13fd97c6e2af338a594673c5f68939a5ab88120360a8511",
+  "analyse/data/mesh_maal.csv": "c5ee59b205629042794a59a50530ebc35a55c2dd0ee1269d078f478f67f819d0",
+  "analyse/data/mesh_silhuettar.npz": "fd14f9c0f3b2c52691a1f6dc6b6133f56853aa5ce1d6c500e9efa92b50f9fa8d",
+  "analyse/14_validering.csv": "ddfd03a1833cbbd27f8f140ec22540380848b5029ad3c2804cbcf7defed3a9d0",
+  "analyse/data/va_dimensjonar_raa.jsonl": "a5e103d89738e10df5e1e1e39d912bcca2a516a8a4fbd08f2a4ed4c4c1e11935",
+  "STOLAR/STOLAR.csv": "90b1400cb0b532e7386858eb17dc7debafa651dbe104db3035884ae3966399fe"
+ }
+}

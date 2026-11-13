@@ -1,0 +1,21 @@
+{
+  "tersklar_gjennomgaatt_av_forfattaren": false,
+  "merknad": "Tersklane er sette av analysen frå opplæringshalvparten (250 stolar) 13.11.2026, før noko frå dei tilbakehaldne stolane var sett. Forfattaren har ikkje gått gjennom dei. Commit og push av denne fila er tidsstempelet. Første forsegling gjeld modul t6 og instrumentprøva. Modulane t1 til t5 låg under uavhengig kontroll då dei vart tekne med; dei er lagde inn slik dei stod, og blir forsegla på nytt før dei blir opna dersom kontrollen endrar dei. Kvar slik endring er synleg i git.",
+  "utval": "Vaksenstolar frå Nasjonalmuseet og V&A med gyldige katalogmål og 3D-modell. Opplæringshalvparten er dei 255 stolane i analyse/data/dev_ids.txt. Dei tilbakehaldne er alle andre, utan stolar som høyrer til same sett som ein opplæringsstol: om lag 1 258 stolar.",
+  "blindskap": "Måla og silhuettane frå dei tilbakehaldne stolane vart hausta 12.11.2026 med fastlåst skript og ikkje opna. Lastaren analyse/forsegla2/felles.py nektar å lese dei før forseglinga. Figurane på sida «Stolen i profil» er til og med denne committen teikna berre frå opplæringshalvparten. Etter første forsegling blir figurane teikna frå alle stolane. Modulane t1 til t5 blir ikkje køyrde på dei tilbakehaldne stolane før dei ligg i ein commit i endeleg form, og ingen terskel i dei blir endra av nokon som har sett figurane.",
+  "foreseiingar": {
+    "S1": "To former møtest i setet. Innan same periode og museum føreseier understellet (2 til 36 cm) høgst 15 % av overdelen (62 til 125 cm), og minst 15 prosentpoeng meir av setesona (38 til 58 cm) enn av overdelen.",
+    "S2": "Setet har ingen alder. Setesona daterer stolen høgst ti prosent betre enn å gisse medianåret. Overdelen daterer han minst tjue prosent betre.",
+    "S3": "Kimærar. Set ein overdelen frå éin stol på understellet og setet frå ein annan, med minst 150 år mellom, ligg minst 85 % av dei like nær ein verkeleg stol som 95 % av dei verkelege stolane ligg kvarandre.",
+    "t1 til t5": "Setehøgda på stolar musea aldri målte, materialskiftet etter 1925, armlenet mot olbogehøgda, gradient mot øy, og krakken. Tersklar, portar og grunnmodellar står i modulspesifikasjonane under."
+  },
+  "tapsliste": [
+    "Setehøgd i bandet 42 til 46 cm (tapt 12.11.2026).",
+    "Setehøgda følgjer kroppshøgda etter 1850 (tapt 12.11.2026).",
+    "P2b i Rijksmuseum-prøva: tida forklarer over 40 % av ryggen (tapt 12.11.2026).",
+    "Fleire skilde målpunkt i setehøgda (tapt 12.11.2026).",
+    "Den tettaste kombinasjonen av setehøgd, setedjupn og helling er tettare enn setehøgda åleine (tapt på opplæringsdata 12.11.2026).",
+    "Tommestokken til makaren kan lesast ut av katalogmåla (tapt 13.11.2026: måla ber tommestokken til den som målte).",
+    "Dei mest nyskapande stolane sit som alle andre også etter 1900 (tapt på opplæringsdata 13.11.2026)."
+  ]
+}
