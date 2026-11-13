@@ -300,12 +300,36 @@ if UTVAL == "alle" and os.path.exists(pf) and os.path.exists(pr):
         prover.append({"namn": "Prøve 3", "kvar": "The Met", "instrument": "katalogmål", "forsegla": "f36e692",
                        "domar": [x[0] for x in l3]})
         liste = liste + l3
+    p4r = os.path.join(HER, "forsegla4", "RESULTAT.json")
+    if os.path.exists(p4r):                                      # den fjerde prøva: overdel mot understell
+        R4 = json.load(open(p4r, encoding="utf-8"))["resultat"]
+        t1, t2, t3 = R4["T1_overdelen_er_eldre"], R4["T2_ikkje_tida"], R4["T3_viktoriansk"]
+        l4 = tagg([[t1["dom"], "ein stol som tek opp att ein eldre stil, har eldre overdel enn understell", "skilnad %d år" % round(t1["median"])],
+                   [t2["dom"], "skilnaden kjem av attopptakinga, ikkje av tida", "%d år mot samtidige" % round(t2["differanse"])],
+                   [t3["dom"], "viktorianske stolar har eldre overdel enn understell", "skilnad %d år" % round(t3["median"])]], "V&A og NM")
+        prover.append({"namn": "Prøve 4", "kvar": "Overdel mot understell", "instrument": "3D-modellar, V&A og NM", "forsegla": "975c13c",
+                       "domar": [x[0] for x in l4]})
+        liste = liste + l4
     rekkjefolgje = {"HELDT": 0, "SLO FEIL": 1, "UGYLDIG": 2, "UTSETT": 3}
     p2["liste"] = sorted(liste, key=lambda x: rekkjefolgje.get(x[0], 4))
     p2["prover"] = [{**p, "tal": {d: p["domar"].count(d) for d in ("HELDT", "SLO FEIL", "UGYLDIG", "UTSETT")}} for p in prover]
     D["p2"] = p2 or None
 
-MAL = open(os.path.join(HER, "figurar", "profil_mal.html"), encoding="utf-8").read()
+# 7 den fjerde prøva: kvar stol med alderen til overdelen og understellet, og dei sju likaste av kvar
+p4f, p4r = (os.path.join(HER, "forsegla4", f) for f in ("FIGURDATA.json", "RESULTAT.json"))
+D["alder"] = None
+if UTVAL == "alle" and os.path.exists(p4f) and os.path.exists(p4r):
+    idx = {s["id"]: i for i, s in enumerate(MED_AAR)}
+    GK = {"attopptaking": 1, "viktoriansk": 2}
+    rad = [[idx[s["id"]], round(s["overdel"]), round(s["understell"]), GK.get(s["gruppe"], 0),
+            [idx[j] for j in s["nabo_overdel"] if j in idx], [idx[j] for j in s["nabo_understell"] if j in idx]]
+           for s in json.load(open(p4f, encoding="utf-8"))["stolar"] if s["id"] in idx]
+    kand = [r for r in rad if r[3] == 1 and abs(r[1] - r[2]) <= 10]   # førehandsval: attopptakinga som går lengst attende i begge delane
+    val = max(kand, key=lambda r: min(MED_AAR[r[0]]["aar"] - r[1], MED_AAR[r[0]]["aar"] - r[2]))[0] if kand else rad[0][0]
+    R4 = json.load(open(p4r, encoding="utf-8"))["resultat"]
+    D["alder"] = {"rad": rad, "val": val, "t1": R4["T1_overdelen_er_eldre"], "t2": R4["T2_ikkje_tida"], "t3": R4["T3_viktoriansk"]}
+
+MAL =open(os.path.join(HER, "figurar", "profil_mal.html"), encoding="utf-8").read()
 ut = MAL.replace('"__DATA__"', json.dumps(D, ensure_ascii=False, separators=(",", ":")))
 p = os.path.join(HER, "figurar", "profil.html")
 open(p, "w", encoding="utf-8", newline="\n").write(ut)
