@@ -310,6 +310,16 @@ if UTVAL == "alle" and os.path.exists(pf) and os.path.exists(pr):
         prover.append({"namn": "Prøve 4", "kvar": "Overdel mot understell", "instrument": "3D-modellar, V&A og NM", "forsegla": "975c13c",
                        "domar": [x[0] for x in l4]})
         liste = liste + l4
+    p5r = os.path.join(HER, "forsegla5", "RESULTAT.json")
+    if os.path.exists(p5r):                                      # den femte prøva: setet etter materialskiftet
+        R5 = json.load(open(p5r, encoding="utf-8"))["resultat"]
+        a, b, c = R5["R1_setet_samlar_seg"], R5["R2_ikkje_tida"], R5["R3_ryggen_samlar_seg_ikkje"]
+        l5 = tagg([[a["dom"], "setet i nye material spreier seg først og samlar seg så", "forhold %s mot kravet 1,30" % kom(a["forhold"])],
+                   [b["dom"], "det er materialet som samlar setet, ikkje tida", "%s mot kravet 1,25" % kom(b["forhold"])],
+                   [c["dom"], "setet samlar seg meir enn høgda", "differanse %s" % kom(c["differanse"])]], "V&A og NM")
+        prover.append({"namn": "Prøve 5", "kvar": "Setet etter materialskiftet", "instrument": "3D-modellar, V&A og NM", "forsegla": "eafe7d5",
+                       "domar": [x[0] for x in l5]})
+        liste = liste + l5
     rekkjefolgje = {"HELDT": 0, "SLO FEIL": 1, "UGYLDIG": 2, "UTSETT": 3}
     p2["liste"] = sorted(liste, key=lambda x: rekkjefolgje.get(x[0], 4))
     p2["prover"] = [{**p, "tal": {d: p["domar"].count(d) for d in ("HELDT", "SLO FEIL", "UGYLDIG", "UTSETT")}} for p in prover]
@@ -328,6 +338,26 @@ if UTVAL == "alle" and os.path.exists(p4f) and os.path.exists(p4r):
     val = max(kand, key=lambda r: min(MED_AAR[r[0]]["aar"] - r[1], MED_AAR[r[0]]["aar"] - r[2]))[0] if kand else rad[0][0]
     R4 = json.load(open(p4r, encoding="utf-8"))["resultat"]
     D["alder"] = {"rad": rad, "val": val, "t1": R4["T1_overdelen_er_eldre"], "t2": R4["T2_ikkje_tida"], "t3": R4["T3_viktoriansk"]}
+
+# 8 den femte prøva: fire stablar (tre og nye material, tidleg og seint) med setehøgd og totalhøgd for kvar stol
+p5f, p5r = (os.path.join(HER, "forsegla5", f) for f in ("FIGURDATA.json", "RESULTAT.json"))
+D["held"] = None
+if UTVAL == "alle" and os.path.exists(p5f) and os.path.exists(p5r):
+    F5 = json.load(open(p5f, encoding="utf-8"))["stolar"]
+    R5 = json.load(open(p5r, encoding="utf-8"))
+    SENT = {}
+    for s in F5:
+        if s["id"] in SIDE:
+            k = np.where(SIDE[s["id"]].any(0))[0]
+            SENT[s["id"]] = np.roll(SIDE[s["id"]], 80 - (k[0] + k[-1] + 1) // 2, axis=1) if len(k) else SIDE[s["id"]]
+    celler = []
+    for mat, mnamn in (("tre", "Tre"), ("nye", "Røyr, kryssfiner og plast")):
+        for per, pnamn in (("tidleg", "1920 til 1949"), ("seint", "1965 til 1999")):
+            ss = [s for s in F5 if s["mat"] == mat and s["per"] == per and s["id"] in SENT]
+            celler.append({**figur(ss, SENT, nivaa=(0.5,)), "namn": mnamn, "per": pnamn,
+                           "t": [[round(s["sete"]), round(s["H"])] for s in ss],
+                           "sp": [round(R5["spreiing"]["%s_%s_sete" % (mat, per)], 2), round(R5["spreiing"]["%s_%s_H" % (mat, per)], 2)]})
+    D["held"] = {"celler": celler, "dom": [R5["resultat"]["R1_setet_samlar_seg"]["dom"], R5["resultat"]["R3_ryggen_samlar_seg_ikkje"]["dom"]]}
 
 MAL =open(os.path.join(HER, "figurar", "profil_mal.html"), encoding="utf-8").read()
 ut = MAL.replace('"__DATA__"', json.dumps(D, ensure_ascii=False, separators=(",", ":")))

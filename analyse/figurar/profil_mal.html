@@ -203,6 +203,15 @@ nav a:hover,nav a:focus-visible{color:var(--fg)}
 </figure>
 </section>
 
+<section id="sek-held" hidden>
+<h2>Høgda spreier seg, setet gjer det ikkje.</h2>
+<p>Føreseiinga var at setet i røyr, kryssfiner og plast skulle spreie seg i den første generasjonen og så samle seg. Det spreidde seg like mykje då som seinare. Det som spreier seg med tida, er høgda, i tre som i nye material.</p>
+<figure>
+<div class="to" id="held"></div>
+<figcaption>alle stolane i kvar rute oppå kvarandre frå sida, éin per modell · strekane til høgre: setehøgda og totalhøgda til kvar stol · spreiing: kvartilavstand delt på median · <span id="h-dom"></span></figcaption>
+</figure>
+</section>
+
 <section id="sek-liste" hidden>
 <h2><span id="l-p"></span> prøver, <span id="l-n"></span> føreseiingar, skrivne ned før stolane vart opna.</h2>
 <p><span id="l-h"></span> heldt, <span id="l-f"></span> slo feil, <span id="l-u"></span> vart <span id="l-uo">ugyldig</span><span id="l-t"></span>.</p>
@@ -483,13 +492,35 @@ if (AL) {
   tvilling();
 }
 
+// Den femte prøva: fire stablar med setehøgd og totalhøgd som strekar
+const HE = D.held;
+if (HE) {
+  $('sek-held').hidden = false;
+  const k2 = v => v.toFixed(2).replace('.', ',');
+  $('held').innerHTML = HE.celler.map((c, i) => '<div><canvas id="c-held' + i + '" role="img" aria-label="' + c.namn + ', ' + c.per + ': stolane oppå kvarandre frå sida, med setehøgd og totalhøgd som strekar."></canvas>' +
+    '<div class="merke">' + c.namn + ' · ' + c.per + '<span>' + c.n + ' stolar · spreiing sete ' + k2(c.sp[0]) + ', høgd ' + k2(c.sp[1]) + '</span></div></div>').join('');
+  $('h-dom').textContent = 'forsegla prøve 5: føreseiinga om setet ' + (HE.dom[0] === 'HELDT' ? 'heldt' : 'slo feil') + ', den om høgda ' + (HE.dom[1] === 'HELDT' ? 'heldt' : 'slo feil');
+}
+function heldfig(){
+  if (!HE) return;
+  HE.celler.forEach((c, i) => {
+    const cv = $('c-held' + i);
+    stabel(cv, c.px || (c.px = b64(c.b)), c.w, c.h, {k: c.k});
+    const W = cv.clientWidth, H = Math.round(W * D.y1 / (D.x1 - D.x0)), g = cv.getContext('2d');
+    const X = cm => (cm - D.x0) / (D.x1 - D.x0) * W, Y = cm => H - cm / D.y1 * H;
+    g.strokeStyle = FG; g.lineWidth = .6; g.globalAlpha = .4;
+    for (const t of c.t) { line(g, X(111), Y(t[0]), X(117), Y(t[0])); if (t[1] < D.y1) line(g, X(121), Y(t[1]), X(127), Y(t[1])); }
+    g.globalAlpha = 1;
+  });
+}
+
 function alt(){
   fargar();
   fig($('c-kart'), D.kart, {merke: true, soner: D.saum ? [[0, 37, 'understell'], [37, 60, 'setesone'], [60, 125, 'overdel']] : null}); fig($('c-kartf'), D.kartf, {});
   tid();
   fig($('c-golv'), D.golv, {}); fig($('c-prop'), D.prop, {});
   D.mat.forEach((m, i) => { fig($('c-ms' + i), m.side, {sete: true}); fig($('c-mf' + i), m.front, {sete: true}); });
-  armfig(); krakkfig(); gradfig(); alderfig();
+  armfig(); krakkfig(); gradfig(); alderfig(); heldfig();
 }
 alt();
 let vent = 0;
