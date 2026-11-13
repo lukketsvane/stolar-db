@@ -1,0 +1,34 @@
+[
+ {
+  "commit": "ebde1f90c57dab156e848b43c61f16968b03c323",
+  "forsegla_lokalt": "2026-11-13T02:23:20+01:00",
+  "paa_fjerngreiner": [
+   "origin/levin-hypotesar"
+  ],
+  "modular": {
+   "t1_sete": "b4d125487469e4c45baebbd6dee147978c783431ef90c3750996641588288cda",
+   "t2_materiale": "c76fe7dba434bc146449d80a16639cd18c39adb5d694e67bf1ebe9903e936112",
+   "t3_olboge": "eb9ce61690a0948ba7561cf24a866cc94f530da292c391a9977c4f1d9fc7e0bd",
+   "t4_gradient": "9e3ba8c5480e9fc07fc5a321a5776aa82f68236d9b2b8a55ac53d22f98d13627",
+   "t5_krakk": "71f0f7909c91e9a497058a31f9c6585225ece3699bb62f003007c2f509e4d35b",
+   "t6_saumar": "d052f7bdc1132fdd49e9029d6981efdbba2d76a65bfeeaf5b252ab7286ece01f"
+  },
+  "felles": {
+   "analyse/14_mesh_maal.py": "4e74e6fd3b782952757b4e15843a1719d37c2b40e350a3b38e4b831f4c9ddf39",
+   "analyse/15_mesh_test.py": "7cf17ffa90a7124aec8e31c21667dc9b40b52ed66855fb4c547cb3c63bac4f4a",
+   "analyse/16_forsegla_prove2.py": "a9ba1b2e3e15f5f42b37c0549aca0769f094a4b4f61358bd8c91adeed5f6ee0a",
+   "analyse/forsegla2/felles.py": "b2405a84fa183618d4bdef174d90bf8a134fae0407a2a65e20e908cf4f23540e"
+  },
+  "data": {
+   "analyse/data/stolar_reinsa.csv": "863ac150ee5d5f4e1857e5dcecfda1ccaff9d67af68d5358d5c1b6b7b1480bb9",
+   "analyse/data/dev_ids.txt": "0f7f1e6290ec514a8867a1cd03bb2474ce993e44cfafa0e80684610ab7df426f",
+   "analyse/data/dev_mesh_maal.csv": "997565131be97622b31a3b357b50a561e394942fd3e980d84cc926396f124bfa",
+   "analyse/data/dev_silhuettar.npz": "94a49de1c13fd88dd13fd97c6e2af338a594673c5f68939a5ab88120360a8511",
+   "analyse/data/mesh_maal.csv": "c5ee59b205629042794a59a50530ebc35a55c2dd0ee1269d078f478f67f819d0",
+   "analyse/data/mesh_silhuettar.npz": "fd14f9c0f3b2c52691a1f6dc6b6133f56853aa5ce1d6c500e9efa92b50f9fa8d",
+   "analyse/14_validering.csv": "ddfd03a1833cbbd27f8f140ec22540380848b5029ad3c2804cbcf7defed3a9d0",
+   "analyse/data/va_dimensjonar_raa.jsonl": "a5e103d89738e10df5e1e1e39d912bcca2a516a8a4fbd08f2a4ed4c4c1e11935",
+   "STOLAR/STOLAR.csv": "90b1400cb0b532e7386858eb17dc7debafa651dbe104db3035884ae3966399fe"
+  }
+ }
+]

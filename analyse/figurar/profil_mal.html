@@ -90,7 +90,7 @@ nav a:hover,nav a:focus-visible{color:var(--fg)}
 
 <section>
 <h2><span data-n></span> stolar oppå kvarandre</h2>
-<p data-saum hidden>Understellet føreseier <span id="s-uo"></span> % av overdelen. Overdelen daterer stolen like godt som heile stolen. Setesona daterer han ikkje.</p>
+<p data-saum hidden>Understellet føreseier <span id="s-uo"></span> % av overdelen og <span id="s-us"></span> % av setesona. Overdelen daterer stolen like godt som heile stolen. Setesona daterer han knapt.</p>
 <figure>
 <div class="par">
 <div class="medkurve"><canvas id="c-kart" role="img" aria-label="Alle stolane frå sida, lagde oppå kvarandre. Setet står som eit mørkt band kring 45 cm; ryggen løyser seg opp oppover."></canvas><svg id="tidskurve" viewBox="0 0 40 146" preserveAspectRatio="none" role="img" aria-label="Kor godt kvar høgd daterer stolen: best i ryggen, ikkje i setesona."></svg></div>
@@ -107,14 +107,6 @@ nav a:hover,nav a:focus-visible{color:var(--fg)}
 <canvas id="c-tid" role="img" aria-label="Stolane laga nær det valde året, lagde oppå kvarandre."></canvas>
 <div class="styr"><input type="range" id="glidar" min="1600" max="2000" step="1" value="1750" aria-label="År"></div>
 <figcaption>stolar laga nær det valde året · stipla line: <span data-sete></span> cm</figcaption>
-</figure>
-</section>
-
-<section class="brei">
-<h2>Setet står. Ryggen vandrar.</h2>
-<figure>
-<div class="rekkje" id="rekkje"></div>
-<figcaption><span id="nsil"></span> stolar etter år</figcaption>
 </figure>
 </section>
 
@@ -145,6 +137,14 @@ nav a:hover,nav a:focus-visible{color:var(--fg)}
 <figure>
 <div class="tre" id="mat"></div>
 <figcaption>øvst frå sida, nedst framanfrå · høgd og sete: medianar frå katalogen</figcaption>
+</figure>
+</section>
+
+<section class="brei">
+<h2>Setet står. Ryggen vandrar.</h2>
+<figure>
+<div class="rekkje" id="rekkje"></div>
+<figcaption><span id="nsil"></span> stolar etter år</figcaption>
 </figure>
 </section>
 
@@ -211,14 +211,14 @@ function kim(){
 }
 if (D.saum && KS.length > 10) {
   $('sek-kim').hidden = false; document.querySelectorAll('[data-saum]').forEach(e => e.hidden = false);
-  $('s-uo').textContent = D.saum.uo; $('s-do').textContent = D.saum.dat.overdel; $('s-du').textContent = D.saum.dat.understell;
+  $('s-uo').textContent = D.saum.uo; $('s-us').textContent = D.saum.us; $('s-do').textContent = D.saum.dat.overdel; $('s-du').textContent = D.saum.dat.understell;
   $('s-ds').textContent = D.saum.dat.setesone; $('s-dg').textContent = D.saum.dat.gissing;
   if (D.saum.prove) $('s-prove').textContent = ' · ' + D.saum.prove;
   const tk = D.saum.tidskurve, gi = D.saum.dat.gissing, best = tk.reduce((a, b) => b[1] < a[1] ? b : a);
   $('tidskurve').innerHTML = '<line x1="3" x2="3" y1="0" y2="146"/><polyline points="' +
     tk.map(p => (3 + 34 * Math.max(gi - p[1], 0) / (gi - best[1])).toFixed(1) + ',' + (146 - p[0])).join(' ') + '"/>';
   ko.max = ku.max = KS.length - 1; ku.value = Math.round(KS.length * 0.12); ko.value = Math.round(KS.length * 0.86);
-  $('k-n').textContent = (KS.length * KS.length).toLocaleString('nb-NO').replace(/,/g, ' '); $('k-m').textContent = KS.length; $('k-p').textContent = D.saum.kim;
+  $('k-n').textContent = (KS.length * KS.length).toLocaleString('nb-NO').replace(/,/g, ' '); $('k-m').textContent = KS.length.toLocaleString('nb-NO'); $('k-p').textContent = D.saum.kim;
   ko.addEventListener('input', kim); ku.addEventListener('input', kim); kim();
 }
 const fig = (cv, f, o) => stabel(cv, f.px || (f.px = b64(f.b)), f.w, f.h, Object.assign({k: f.k}, o));
@@ -247,10 +247,11 @@ $('rekkje').innerHTML = D.sil.map(s => {
 $('mat').innerHTML = D.mat.map((m, i) => '<div><canvas id="c-ms' + i + '" role="img" aria-label="' + m.namn + ', frå sida"></canvas><canvas id="c-mf' + i + '" role="img" aria-label="' + m.namn + ', framanfrå" style="margin-top:14px"></canvas>' +
   '<div class="merke">' + m.namn + ' · ' + m.n + '<span>høgd ' + m.H + ' cm' + (m.sete ? ' · sete ' + m.sete + ' cm' : '') + '</span></div></div>').join('');
 
-document.querySelectorAll('[data-n]').forEach(e => e.textContent = D.n);
+const tal = n => n.toLocaleString('nb-NO');
+document.querySelectorAll('[data-n]').forEach(e => e.textContent = tal(D.n));
 document.querySelectorAll('[data-sete]').forEach(e => e.textContent = Math.round(D.sete));
 $('totalt').textContent = D.totalt.toLocaleString('nb-NO').replace(/,/g, ' ');
-$('nsil').textContent = D.sil.length;
+$('nsil').textContent = tal(D.sil.length);
 $('sp1').textContent = nb(D.spreiing[0]); $('sp2').textContent = nb(D.spreiing[1]);
 
 function alt(){

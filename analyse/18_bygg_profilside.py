@@ -140,8 +140,8 @@ if UTVAL == "alle" and os.path.exists(pr):
                      "us": round(100 * t6["primaer"][0]["verdi"]["understell->setesone"]),
                      "dat": {k: round(v) for k, v in dat.items()}, "kim": round(100 * t6["primaer"][2]["verdi"]["innanfor"]),
                      "tidskurve": t6["sekundaer"]["tidskurve"],
-                     "prove": "prøvd på %s nye stolar: %d av %d føreseiingar heldt" % (
-                         "{:,}".format(t6["n"]).replace(",", " "), sum(d == "HELDT" for d in domar), len(domar))}
+                     "prove": "%d av %d føreseiingar heldt på %s stolar som ikkje var opna då dei vart skrivne ned" % (
+                         sum(d == "HELDT" for d in domar), len(domar), "{:,}".format(t6["n"]).replace(",", " "))}
 
 # 4 centimeter mot proporsjon
 Hmed = float(np.median([s["H"] for s in STOLAR]))

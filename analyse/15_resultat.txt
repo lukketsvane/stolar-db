@@ -1,0 +1,19 @@
+== DEV: 255 stolar, 243 med estimat, 12 utan (4.7 %)
+  alle n=243 | 3D-modell: snittfeil 3.40 cm, medianfeil 2.00, skeivskap -0.55, R2 -0.01, innanfor 2 cm 57 %, r 0.50
+       fast verdi (45.5 cm): snittfeil 3.71, R2 -0.00 | fast del av H (0.490): snittfeil 6.74, R2 -1.52
+  NM   n=104 | 3D-modell: snittfeil 3.22 cm, medianfeil 1.75, skeivskap -1.41, R2 -0.10, innanfor 2 cm 66 %, r 0.32
+       fast verdi (45.5 cm): snittfeil 3.62, R2 -0.16 | fast del av H (0.490): snittfeil 5.69, R2 -0.92
+  VA   n=139 | 3D-modell: snittfeil 3.54 cm, medianfeil 2.00, skeivskap +0.10, R2 -0.21, innanfor 2 cm 50 %, r 0.56
+       fast verdi (45.5 cm): snittfeil 3.77, R2 -0.13 | fast del av H (0.490): snittfeil 7.53, R2 -2.72
+  utan flagg n=191 | 3D-modell: snittfeil 3.04 cm, medianfeil 2.00, skeivskap -0.49, R2 +0.13, innanfor 2 cm 60 %, r 0.52
+       fast verdi (45.5 cm): snittfeil 3.48, R2 -0.00 | fast del av H (0.490): snittfeil 6.46, R2 -1.58
+== TEST: 255 stolar, 248 med estimat, 7 utan (2.7 %)
+  alle n=248 | 3D-modell: snittfeil 3.11 cm, medianfeil 2.00, skeivskap -0.61, R2 +0.01, innanfor 2 cm 59 %, r 0.49
+       fast verdi (45.5 cm): snittfeil 3.54, R2 -0.01 | fast del av H (0.490): snittfeil 7.53, R2 -2.60
+  NM   n=114 | 3D-modell: snittfeil 2.96 cm, medianfeil 2.00, skeivskap -1.17, R2 +0.00, innanfor 2 cm 63 %, r 0.34
+       fast verdi (45.5 cm): snittfeil 3.39, R2 -0.08 | fast del av H (0.490): snittfeil 7.00, R2 -2.13
+  VA   n=134 | 3D-modell: snittfeil 3.24 cm, medianfeil 2.00, skeivskap -0.13, R2 -0.21, innanfor 2 cm 55 %, r 0.54
+       fast verdi (45.5 cm): snittfeil 3.66, R2 -0.18 | fast del av H (0.490): snittfeil 7.98, R2 -3.88
+  utan flagg n=203 | 3D-modell: snittfeil 2.51 cm, medianfeil 2.00, skeivskap -0.59, R2 +0.32, innanfor 2 cm 63 %, r 0.62
+       fast verdi (45.5 cm): snittfeil 3.25, R2 -0.00 | fast del av H (0.490): snittfeil 7.44, R2 -3.11
+  DOM: 3D-målinga slår den faste verdien på TEST (3.11 mot 3.54 cm).
