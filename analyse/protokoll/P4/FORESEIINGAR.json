@@ -1,0 +1,86 @@
+{
+ "prove": "P4",
+ "skrive": "2026-11-13",
+ "kjelde": "Kortversjonen, seksjon 3, avsnittet etter Definisjon 6 (kvar realisert form endrar tyngda i B_t, så realiseringa endrar Lambda(x, t) lokalt; landskapet har minne). Definisjon 4 (det busette og det nærliggande moglege). Postulat 1 (det moglege er gjeve, ikkje laga). Grep 8. Prøva byggjer på prøve 9 og rettar nyheitsmålet der.",
+ "hypotese": "Ein stol som står åleine blant dei samtidige, ligg nærare generasjonen etter seg enn generasjonen før seg, meir di meir åleine han står, og svermen veks mot den sida der han stod, raskare etter at han kom enn før.",
+ "maal": "Hovudtal 1 (theta): stigninga av pilen a mot einsemdsrangen q, med faste effektar for museum gonger 50-årsbolk, på målstolane i hovudkøyringa. Hovudtal 2 (DD): veksten mot den einslege frå Før til Etter, i tyngdepunkt-projeksjonen med eigen skala. Hovudtal 3 (DD minus DD_før). Alle tre rekna samla og kvar for seg i VA og NM.",
+ "utval": {
+  "ramme": "1 377 stolar (VA 1 009, NM 368). Målstolar i hovudkøyringa: 715 i VA og 160 i NM. Med alle tre mengdene: 698 i VA og 106 i NM.",
+  "utanfor_ramma": "135 med uviss orientering (VA 117, NM 18) og 35 på skalasjekken (alle i VA). Mest i VA etter 1925 og i tidlege bolkar rundt 1650 til 1850.",
+  "retta_sluttaar": "510 i VA og 1 i NM fekk retta sluttår (aar_til er minst aar)."
+ },
+ "foreseiingar": {
+  "retning_theta": "Theta over null i samla og i VA, med det dømande intervallet over null. Same forteikn under dei tre dateringane (startår, sluttår, midtår) og i katalogrommet i VA.",
+  "storleik_theta": "Terskel 0,097 i samla og 0,092 i VA (verknaden av eit forsprang på 15 år, som blir funne i 100 % av plantingane med rett forteikn). Theta over placebo 1b sin 97,5-prosentil: samla over 0,0174, VA over -0,0049, NM over 0,2151.",
+  "retning_dd": "DD over null i samla og i VA, med det dømande intervallet over null.",
+  "storleik_dd": "Terskel 0,125 i samla og 0,129 i VA (verknaden av eit forsprang på 30 år, oppløysinga for DD). Blir frose frå plantinga.",
+  "dd_minus_ddfoer": "Ikkje dømbar i dette oppsettet. Plantinga finn ikkje forsprang for DD minus DD_før (lesande er false i samla og VA). Står som ein tal utan dom.",
+  "epoke_1850": "Theta før og etter 1850 kvar for seg, og skilnaden mellom dei, med intervall. Etter 1850 er theta lesande (88 % gjenfunne ved 15 år). DD etter 1850 er ikkje lesande (26 % ved 30 år, 59 % ved 45 år), så DD etter 1850 og DD minus DD_før etter 1850 står utan dom.",
+  "katalog_va": "Same prøve i katalogrommet i VA er lesande (30-års planting gjenfunne i 100 % av plantingane). Same forteikn på theta som i 3D-rommet skal krevjast i opninga.",
+  "nm": "Nasjonalmuseet har svak lesing. Theta i NM har rett forteikn i 93 % av plantingane ved 30 år, og talet er bindande berre på forteiknet. Forsprang i NM blir ikkje funne (22 % ved 30 år). DD i NM er ikkje bindande (29 % rett forteikn)."
+ },
+ "tersklar_frosne": {
+  "dato": "2026-11-13",
+  "kjelde": "KONTROLL.json (frose-blokka), køyrt to gonger med same resultat",
+  "theta_terskel": {"samla": 0.097051, "VA": 0.092413},
+  "dd_terskel": {"samla": 0.1249, "VA": 0.129266},
+  "placebo_1b_p97_5": {"theta_samla": 0.017423, "theta_VA": -0.004931, "theta_NM": 0.215057, "dd_samla": 0.006123, "dd_VA": 0.004838},
+  "opploysing_aar": {"theta": 15, "dd": 30, "dd_minus_ddfoer": null},
+  "epoke_wood_opploysing_aar": {"foer1850": {"theta": 30, "dd": 30}, "fraa1850": {"theta": null, "dd": null}},
+  "spegla_planting_held": true,
+  "portar": {
+   "theta_samla": ["placebo_0", "felle_a", "felle_c"],
+   "theta_VA": ["placebo_0", "felle_a", "felle_c"],
+   "dd_samla": ["placebo_0", "felle_a", "felle_b", "felle_c"],
+   "dd_VA": ["placebo_0", "felle_b", "felle_c"]
+  },
+  "rundt_null_regel": "|middel| høgst 0,25 standardavvik av fordelinga",
+  "foer1850_regel": "90 %-intervallet ligg innanfor pluss og minus terskelen for theta (for DD og DD minus DD_før: terskelen for DD)",
+  "foer1850_minst_dokumenterte": 60,
+  "dokumenterte_foer1850_WOOD": 68
+ },
+ "grunnmodellar": [
+  "Trekk: ramme.pca_rom på trekk (kanalane 0 til 3, cm 2 til 125), k = 15, innan museum.",
+  "Einsemd e_i = middel av ln d_sam mot dei ti næraste samtidige. Pil a_i = middel av (ln d_før minus ln d_etter) mot dei ti næraste i kvar side. Rang q_i innan museum gonger bolk.",
+  "Theta: vekting med faste effektar for museum gonger bolk. DD med eigen skala (median og medianavvik innan mengda), terskel r/2. Katalogrom med ln H, ln B og ln D, standardisert innan museum.",
+  "Bootstrap og jackknife over suitar og 25-årsbolkar, med ramme.suiteboot. Placebo med perm_innan innan museum (eller museum gonger type).",
+  "Steg 3 eksakt forventning mot 200 trekk: korrelasjon 0,974 for a og 0,999 for e, middelskilnad under 0,001. Trekk i kontrollen er 200 (placebo), 100 (planting og fellene), 300 (suiteboot i felle a) og 1000 (suiteboot ved opning)."
+ ],
+ "kontrollar": {
+  "placebo_0": "Theta, DD og DD minus DD_før rundt null i alle delar (200 trekk). Theta samla middel 0,0009, sd 0,027.",
+  "placebo_1b": "Theta samla middel -0,035 (ikkje rundt null, venta). 97,5-prosentilen er 0,0174. Dei verkelege tala skal ligge over denne grensa for å stå.",
+  "placebo_2": "Einsemda permutert innan museum gonger bolk: theta rundt null (samla 95 %-intervall -0,054 til 0,051). Middel av a uroert.",
+  "placebo_3": "Tida snudd: theta og DD summerer til null, kodekontroll held.",
+  "felle_a": "Reversibel prosess med dei verkelege årstala: dekning 100 % for theta, DD og DD minus DD_før (krav 90 av 100). Held.",
+  "felle_b": "Rein utviding: DD og DD minus DD_før rundt null (held). Theta samla og i VA er ikkje rundt null (samla middel 0,018, sd 0,027), men theta er ikkje gate i felle b etter protokollen, og theta er gate i felle a og c, som held.",
+  "felle_c": "Målefeil på to standardavvik hos 5 % av stolane: alle tre tala rundt null. Held.",
+  "planting_theta": "Forsprang 15, 30 og 45 år trekt frå aar og til: theta gjenfunne i 100 % av plantingane i samla og i VA, med rett forteikn i 100 %. Theta fraa 1850 gjenfunne i 85 % ved 15 år (lesande).",
+  "planting_dd": "DD gjenfunne i 73 % ved 15 år og i 98 % ved 30 år (samla og VA). DD før 1850 i 91 % ved 30 år. DD etter 1850 i 26 % ved 30 år og 59 % ved 45 år (ikkje lesande).",
+  "planting_spegla": "Spegla forsprang på +30 år gjev motsett forteikn og om lag same storleik: theta -0,157 mot 0,149, DD -0,115 mot 0,125, DD minus DD_før -0,134 mot 0,138. Held.",
+  "planting_NM_aaleine": "Theta i NM gjenfunne i 36 % (15 år), 22 % (30 år) og 11 % (45 år). Forsprang i NM åleine med 5 suitar per bolk: 20 % gjenfunne. Ikkje lesande som styrke, men rett forteikn i 93 % ved 30 år.",
+  "planting_katalog_VA": "30-års planting i katalogrommet i VA gjenfunne i 100 % av plantingane.",
+  "omvend_kontroll": "Attopptaking og kopiar som målstolar (241 stolar, 203 suitar): theta under null i treffa. Held.",
+  "klar_skildring": "Theta er lesande i VA og samla (15 år, 100 % gjenfunne, rett forteikn). Placebo 0 og fellene a og c held for theta. Hovudtal 1 kan dømast i VA."
+ },
+ "avvik_fraa_protokollen": [
+  "F5c: tersklane er frosne frå kontrollane og er ikkje lagde fram for Iver før forsegling, etter bodskap frå Iver om at arbeidet går utan stopp. Feltet tersklar_gjennomgaatt_av_forfattaren er false.",
+  "F6: augnemålet (60 foto) er ikkje gjort. Det står som veikskap, ikkje som tal.",
+  "Kontrollen er køyrd to gonger med identisk KONTROLL.json. Prove.py vart endra etter første køyring, men andre køyring gav same tal, så frosne tersklar er rekna på gjeldande kode.",
+  "Rijksmuseum-køyringa (rijks_meta i prove.py) er ikkje kontrollert mot planting i KONTROLL.json og står som retning utan dom."
+ ],
+ "skjevheit_kjend_foer_opning": [
+  "Musea samlar i ettertid, og utvalet kan vere skeivt mot einslege stolar som fekk følgje. Dette er ikkje rett i desse dataa og står som atterhald i resultatet.",
+  "Smalt daterte målstolar er fleire etter 1850 i VA enn i NM (NM har to målstolar i 1850-bolken), så styrka er ulik i dei to epokane.",
+  "Dei to epokane er ikkje lik store: 68 WOOD-stolar før 1850 har dokumentert datering (krav 60), og det er rett over minstekravet.",
+  "Datering etter form kan gjere at før-1850-stolane blir einslege på kunstig vis."
+ ],
+ "kjende_avvik_foer_opning": [
+  "DD etter 1850 og DD minus DD_før er ikkje lesande i planting, så desse står utan dom.",
+  "NM er ikkje lesande for styrke (theta gjenfunne i 22 % ved 30 år). Berre forteiknet i NM er bindande for theta.",
+  "Dei uavhengige einingane er nærare 25 tidsbolkar enn 900 stolar, så styrka er grov.",
+  "3D-prioren er lært på moderne stolar, og dårleg rekonstruerte stolar kan bli einslege. Katalogversjonen og kryssmålinga er vernet mot dette."
+ ],
+ "klar": true,
+ "klar_grunn": "Hovudtal 1 (theta) kan dømast i V&A. Planting finn 15 års forsprang i 100 % av plantingane med rett forteikn, placebo 0 og fellene a og c held for theta, og katalogversjonen i VA er lesande. Dei andre talene står delvis utan dom etter kontrollane.",
+ "tersklar_gjennomgaatt_av_forfattaren": false
+}
