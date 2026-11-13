@@ -396,6 +396,24 @@ if UTVAL == "alle" and os.path.exists(p7f) and os.path.exists(p7r):
                  "a1": R7["resultat"]["A1_under_nullmedianen"]["del"], "a2": R7["resultat"]["A2_naerare_enn_tilfeldig"]["R"],
                  "tv": R7["sekundaert"]["tvillingaar"]}
 
+# 11 den åttande prøva: snittstolen for kvar periode og kvart stoff etter 1915 (føreseiing 11 i formlære)
+p8f, p8r = (os.path.join(HER, "forsegla8", f) for f in ("FIGURDATA.json", "RESULTAT.json"))
+D["tidstoff"] = None
+if UTVAL == "alle" and os.path.exists(p8f) and os.path.exists(p8r):
+    F8 = json.load(open(p8f, encoding="utf-8"))["stolar"]
+    R8 = json.load(open(p8r, encoding="utf-8"))["resultat"]
+    SENT8 = {}
+    for s in F8:
+        if s["id"] in SIDE:
+            k = np.where(SIDE[s["id"]].any(0))[0]
+            SENT8[s["id"]] = np.roll(SIDE[s["id"]], 80 - (k[0] + k[-1] + 1) // 2, axis=1) if len(k) else SIDE[s["id"]]
+    celler8 = []
+    for mat, mnamn in (("WOOD", "Tre"), ("LINE", "Metall"), ("SHEET", "Plast og kryssfiner")):
+        for per, pnamn in (("P1", "funksjonalisme"), ("P2", "modernisme"), ("P3", "postmodernisme")):
+            ss = [{"id": s["id"]} for s in F8 if s["mat"] == mat and s["per"] == per and s["id"] in SENT8]
+            celler8.append({**figur(ss, SENT8, nivaa=(0.5,)), "namn": mnamn, "per": pnamn})
+    D["tidstoff"] = {"celler": celler8, "q": [R8["P1_stilmerka"]["Q"], R8["P2_aarsbolkane"]["Q"]]}
+
 MAL = open(os.path.join(HER, "figurar", "profil_mal.html"), encoding="utf-8").read()
 ut = MAL.replace('"__DATA__"', json.dumps(D, ensure_ascii=False, separators=(",", ":")))
 p = os.path.join(HER, "figurar", "profil.html")
