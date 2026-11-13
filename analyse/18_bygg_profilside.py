@@ -320,6 +320,17 @@ if UTVAL == "alle" and os.path.exists(pf) and os.path.exists(pr):
         prover.append({"namn": "Prøve 5", "kvar": "Setet etter materialskiftet", "instrument": "3D-modellar, V&A og NM", "forsegla": "eafe7d5",
                        "domar": [x[0] for x in l5]})
         liste = liste + l5
+    p6r = os.path.join(HER, "forsegla6", "RESULTAT.json")
+    if os.path.exists(p6r):                                      # den sjette prøva: nye former
+        R6 = json.load(open(p6r, encoding="utf-8"))
+        a, b, c = (R6["resultat"][k] for k in ("N1_setet_held", "N2_hoegda_slepp", "N3_setet_held_fastare"))
+        sp6 = R6["spreiing"]
+        l6 = tagg([[a["dom"], "dei nyaste formene held setet", "spreiing %s mot %s" % (kom(sp6["nye_sete"]), kom(sp6["resten_sete"]))],
+                   [b["dom"], "dei nyaste formene slepp høgda", "spreiing %s mot %s" % (kom(sp6["nye_H"]), kom(sp6["resten_H"]))],
+                   [c["dom"], "dei nyaste formene held setet fastare enn dei andre", "forhold %s" % kom(c["forhold"])]], "V&A og NM")
+        prover.append({"namn": "Prøve 6", "kvar": "Nye former", "instrument": "3D-modellar, V&A og NM", "forsegla": "b86246a",
+                       "domar": [x[0] for x in l6]})
+        liste = liste + l6
     rekkjefolgje = {"HELDT": 0, "SLO FEIL": 1, "UGYLDIG": 2, "UTSETT": 3}
     p2["liste"] = sorted(liste, key=lambda x: rekkjefolgje.get(x[0], 4))
     p2["prover"] = [{**p, "tal": {d: p["domar"].count(d) for d in ("HELDT", "SLO FEIL", "UGYLDIG", "UTSETT")}} for p in prover]
@@ -358,6 +369,20 @@ if UTVAL == "alle" and os.path.exists(p5f) and os.path.exists(p5r):
                            "t": [[round(s["sete"]), round(s["H"])] for s in ss],
                            "sp": [round(R5["spreiing"]["%s_%s_sete" % (mat, per)], 2), round(R5["spreiing"]["%s_%s_H" % (mat, per)], 2)]})
     D["held"] = {"celler": celler, "dom": [R5["resultat"]["R1_setet_samlar_seg"]["dom"], R5["resultat"]["R3_ryggen_samlar_seg_ikkje"]["dom"]]}
+
+# 9 den sjette prøva: dei nyaste formene etter 1900 og like mange av dei andre (same trekning som 31_figur_nye_former.py)
+p6f, p6r = (os.path.join(HER, "forsegla6", f) for f in ("FIGURDATA.json", "RESULTAT.json"))
+D["nye"] = None
+if UTVAL == "alle" and os.path.exists(p6f) and os.path.exists(p6r):
+    idx = {s["id"]: i for i, s in enumerate(MED_AAR)}
+    F6 = json.load(open(p6f, encoding="utf-8"))["stolar"]
+    R6 = json.load(open(p6r, encoding="utf-8"))
+    nye6 = sorted([s for s in F6 if s["ny"]], key=lambda s: (s["aar"], s["id"]))
+    andre6 = [s for s in F6 if not s["ny"]]
+    rng6 = np.random.default_rng(20261113)
+    andre6 = sorted([andre6[i] for i in rng6.choice(len(andre6), len(nye6), replace=False)], key=lambda s: (s["aar"], s["id"]))
+    D["nye"] = {"a": [idx[s["id"]] for s in nye6 if s["id"] in idx], "b": [idx[s["id"]] for s in andre6 if s["id"] in idx],
+                "sm": R6["median"]["resten_sete"], "sp": R6["spreiing"], "dom": R6["resultat"]["N1_setet_held"]["dom"]}
 
 MAL =open(os.path.join(HER, "figurar", "profil_mal.html"), encoding="utf-8").read()
 ut = MAL.replace('"__DATA__"', json.dumps(D, ensure_ascii=False, separators=(",", ":")))
