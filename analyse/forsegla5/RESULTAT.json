@@ -1,0 +1,64 @@
+{
+ "tid": "2026-11-13T15:38:30+01:00",
+ "forsegla_commit": "eafe7d571741e1174190b4eef8741b38dd09d442",
+ "n": {
+  "nye_tidleg": 59,
+  "nye_seint": 85,
+  "tre_tidleg": 44,
+  "tre_seint": 32
+ },
+ "gyldig": true,
+ "resultat": {
+  "R1_setet_samlar_seg": {
+   "forhold": 1.1156462585034013,
+   "ki95": [
+    0.7407291666666667,
+    1.6686046511627908
+   ],
+   "dom": "SLO FEIL"
+  },
+  "R2_ikkje_tida": {
+   "forhold": 0.6770818672296505,
+   "ki95": [
+    0.276922510713082,
+    2.0839313727417474
+   ],
+   "dom": "SLO FEIL"
+  },
+  "R3_ryggen_samlar_seg_ikkje": {
+   "differanse": 0.6971568531718904,
+   "ki95": [
+    0.13536289292103243,
+    1.2082351659439292
+   ],
+   "dom": "HELDT"
+  }
+ },
+ "forhold": {
+  "nye_sete": 1.1156462585034013,
+  "nye_H": 0.4184894053315109,
+  "tre_sete": 1.6477272727272725,
+  "tre_H": 0.5976769669077366
+ },
+ "spreiing": {
+  "nye_tidleg_sete": 0.19047619047619047,
+  "nye_tidleg_H": 0.10259740259740267,
+  "nye_seint_sete": 0.17073170731707318,
+  "nye_seint_H": 0.24516129032258063,
+  "tre_tidleg_sete": 0.16477272727272727,
+  "tre_tidleg_H": 0.15030864197530877,
+  "tre_seint_sete": 0.1,
+  "tre_seint_H": 0.25148809523809523
+ },
+ "median": {
+  "nye_tidleg_sete": 42.0,
+  "nye_tidleg_H": 77.0,
+  "nye_seint_sete": 41.0,
+  "nye_seint_H": 77.5,
+  "tre_tidleg_sete": 44.0,
+  "tre_tidleg_H": 81.0,
+  "tre_seint_sete": 45.0,
+  "tre_seint_H": 84.0
+ },
+ "avvik": []
+}
