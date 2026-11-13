@@ -1,0 +1,33 @@
+{
+ "prove": "Den femte forsegla prøva: setet regenererer etter eit materialskifte",
+ "skrive": "2026-11-13",
+ "grep": "Levin, grep 1 og 3: same mål med andre middel, og det som fell attende, var mote. Ei lesing, ikkje sitat.",
+ "hypotese": "Eit nytt materiale er eit inngrep i stolen. Setet har eit settpunkt og finn attende til det: i den første generasjonen med røyr, kryssfiner og plast spreier setehøgda seg, og så samlar ho seg att. Ryggen har ikkje noko settpunkt og samlar seg ikkje på same måten.",
+ "maal": {
+  "utval": "Vaksne stolar i stolar_reinsa.csv med år og setehøgd frå 3D-modellen (sete_cm i mesh_maal.csv), utan flagga opp_ikkje_y, opp_ned? og silhuett_klipt.",
+  "materiale": "felles.materialklasse(Materialar, Teknikk) frå STOLAR.csv. Nye material: LINE, LINE+SHEET og SHEET. Tre: WOOD.",
+  "periodar": {"tidleg": [1920, 1949], "seint": [1965, 1999]},
+  "eitt_eksemplar": "Éin stol per modell: stolar med same museum, H, B og D, eller same stamme (id utan endebokstav og -nummer), tel éin gong (den med lægst id).",
+  "spreiing": "Spreiing = (kvartil 3 minus kvartil 1) delt på medianen. Setet: sete_cm. Ryggen: totalhøgda H.",
+  "forhold": "Forhold = spreiing tidleg delt på spreiing seint."
+ },
+ "foreseiingar": {
+  "R1_setet_samlar_seg": "Nye material: forholdet for setet er 1,3 eller meir, og nedre grense i 95 % bootstrap-intervallet er over 1.",
+  "R2_ikkje_tida": "Forholdet for setet i nye material delt på forholdet for setet i tre er 1,25 eller meir, og nedre grense i 95 % bootstrap-intervallet er over 1.",
+  "R3_ryggen_samlar_seg_ikkje": "Nye material: forholdet for setet minus forholdet for totalhøgda er over 0, og nedre grense i 95 % bootstrap-intervallet er over 0."
+ },
+ "grunnmodellar": [
+  "Settpunktet held med ein gong: setet i nye material er like samla i den første generasjonen som seinare (R1 slo feil).",
+  "Standardisering: alt i stolen samlar seg like mykje med tida, i tre som i nye material (R2 og R3 slo feil)."
+ ],
+ "port": "Minst 25 stolar i kvar av dei fire cellene (nye material og tre, tidleg og seint) etter eitt eksemplar per modell. Elles er prøva ugyldig.",
+ "n_boot": 2000,
+ "froe": 20261113,
+ "skjevheit_kjend_foer_opning": "3D-modellane måler setet i skalstolar om lag 3 cm lågt (prøve 2, avvik i t2). Skeivheita er lik i båe periodane og flyttar medianen meir enn spreiinga. Totalhøgda er frå katalogen.",
+ "kjende_avvik_foer_opning": [
+  "Teljinga av stolar per materiale og 20-årsbolk med og utan setehøgd vart sett før denne fila vart skriven. Ingen setehøgder eller spreiingar vart rekna eller sett.",
+  "Sida syner alt at setet i nye material ligg om lag 3 cm lægre og totalhøgda om lag 20 cm lægre enn i tre (prøve 2). Spreiing per periode er ikkje rekna.",
+  "Tersklane er ikkje gjennomgåtte av forfattaren."
+ ],
+ "tersklar_gjennomgaatt_av_forfattaren": false
+}
