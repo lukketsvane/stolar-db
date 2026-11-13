@@ -1,0 +1,40 @@
+{
+ "prove": "Den tiande forsegla prøva: kor fast held kroppen kvar akse i kontaktflata? 3D-mål, heile ramma.",
+ "skrive": "2026-11-13",
+ "kjelde": "Formlære, kortversjonen: Følgje 3 (spreiinga langs ein akse er den inverse av vekt gonger krumming), Teorem 3 (målvekt: vekta på ein akse er summen over agentane som har aksen i målet sitt), Definisjon 8 og 9 (agent med målregion, politikk og toleranse; samla hald), Definisjon 11 (omsorg: målregionen og toleransen er den andre sine). Levin, grep 1 (settpunktet er det systemet finn attende til), grep 6 (fleire trykk på ein akse gjev mindre spreiing) og grep 7 (kontinuum, ikkje kategori). Ei lesing, ikkje sitat.",
+ "hypotese": "Kroppen held ei flate, ikkje berre ei høgd. Kvar akse i kontaktflata (setehøgda, rommet frå setekanten til ryggen, setebreidda) står fastare enn heile stolen i same retning, og følgjer tida mindre. Det som varierer i kontaktflata, er stillinga til den som sit, ikkje storleiken på kroppen: lågare sete går saman med djupare sete og meir halling på ryggen.",
+ "maal": {
+  "utval": "Heile ramma (ramme.py): 1 410 stolar i 1 190 suitar. Kvar del blir rekna samla og i V&A (1 042) og Nasjonalmuseet (368) kvar for seg. Domen kviler på dei to musea kvar for seg.",
+  "aksar": "Frå 38_ramme3d.py: sete_h, rom_djupn (frå framkanten av setet til ryggflata 20 cm over setet), sete_breidd, sete_djupn, rygg_halling, djupn3d, breidd3d. H er katalogmålet.",
+  "maalefeil": "Variansen innan ekte sett (same id-stamme, 44 sett, 143 stolar) blir trekt frå variansen til kvar akse. Setta blir trekte på nytt i kvar bootstrap.",
+  "A_spreiing": "Sann relativ spreiing = rota av (varians minus feilvarians) delt på medianen. Forhold = kroppsakse delt på heile stolen i same retning: sete_h mot H, rom_djupn mot djupn3d, sete_breidd mot breidd3d. Bootstrap over suitar, 1 000 trekk.",
+  "B_tid": "Delen av variansen mellom 50-årsbolkar (justert for talet på bolkar), delt på pålitelegheita til aksen. Skilnad = heile stolen minus kroppsaksen, same tre par.",
+  "C_stilling": "Spearman-samanheng mellom sete_h, sete_djupn og rygg_halling, med bootstrap over suitar."
+ },
+ "foreseiingar": {
+  "A": "For kvart av dei tre para og i begge musea: forholdet er under 1, og øvre grense i 95 %-intervallet er under 1.",
+  "B": "For kvart av dei tre para og i begge musea: skilnaden er over 0, og nedre grense i 95 %-intervallet er over 0.",
+  "C": "I begge musea: setehøgd og setedjupn heng negativt saman, setehøgd og rygghalling negativt, setedjupn og rygghalling positivt, alle med 95 %-intervall som ikkje rekk null."
+ },
+ "sekundaert_utan_dom": [
+  "Armhøgda over setet mot rygghøgda over setet, armopninga mot totalbreidda, setedjupna mot totaldjupna (armlena har for få sett til å få målefeilen kontrollert).",
+  "Sann spreiing og median for kvar akse, per museum."
+ ],
+ "grunnmodellar": [
+  "Ergonomien: berre setehøgda er bunden. Breidd og djupn har berre grenser, så setebreidda og rommet spreier seg som stolen elles (A slo feil for breidd og djupn).",
+  "Stilhistoria: alle mål følgjer tida like mykje (B slo feil).",
+  "Storleik: stolar er laga til større og mindre kroppar, så høgare sete går saman med djupare sete (C slo feil med positivt forteikn)."
+ ],
+ "kontrollar_koeyrde_foer_forsegling": "39_kontaktflata.py --kontroll: feilkorreksjonen finn att den sanne spreiinga under kjend støy; permuterte bolkar innan museum gjev skilnad rundt null (95 %-band 0,005); ein planta tidstrend og ein planta samanheng blir funne. Kontrollane skriv ikkje ut verkelege utfall.",
+ "skjevheit_kjend_foer_opning": [
+  "3D-modellen er skalert til katalog-H. Ein feil i H skalerer alle lengder likt og gjev ein falsk positiv samanheng mellom lengdene. Det verkar mot C.",
+  "Setta som gjev målefeilen, ligg mest i Nasjonalmuseet. Er feilen større i V&A, blir den sanne spreiinga der litt for stor for alle aksane.",
+  "Setebreidda og totalbreidda er nesten same mål på stolar utan armlene. Det verkar mot A for breidda."
+ ],
+ "kjende_avvik_foer_opning": [
+  "Sett før forsegling: median og kvartilar for kvar 3D-akse over heile ramma, pålitelegheita frå setta, og samsvaret med katalogen. Ikkje sett: nokon akse per museum, mot tid eller mot ein annan akse.",
+  "Frå katalogmåla i Rijksmuseum er det kjent at setehøgda spreier seg minst (0,09 mot 0,16 til 0,23) og følgjer tida lite (9 % mot 21 % for ryggen).",
+  "Tersklane er ikkje gjennomgåtte av forfattaren."
+ ],
+ "tersklar_gjennomgaatt_av_forfattaren": false
+}
