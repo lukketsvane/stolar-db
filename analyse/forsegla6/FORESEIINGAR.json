@@ -1,0 +1,28 @@
+{
+ "prove": "Den sjette forsegla prøva: nye former held setet",
+ "skrive": "2026-11-13",
+ "grep": "Levin, grep 8: nye former utan historie er ikkje tilfeldige. Ei lesing, ikkje sitat.",
+ "hypotese": "Når ein stol er fri frå historia, vel han ikkje tilfeldig. Dei nyaste formene i hundreåret held setet like fast som dei vanlege, og nyskapinga går inn i høgda og resten av kroppen. Det nærliggande moglege ligg langs aksane som ikkje er haldne.",
+ "maal": {
+  "utval": "Same filter som 17_figurar_profil.py og 26_to_alder.py. Mål: stolar med år 1900 eller seinare og setehøgd frå 3D-modellen (sete_cm). Bakgrunn: alle stolar med år.",
+  "trekk": "radtrekk frå 19_saumar.py for rad 2 til 125 (heile stolen), standardisert over bakgrunnen, PCA tilpassa på bakgrunnen, 15 komponentar.",
+  "nyheit": "Nyheita til ein stol er avstanden til den næraste stolen i bakgrunnen som er minst 10 år eldre. Stolar frå same modell (same stamme, eller same museum, H og B) er utelatne.",
+  "nye": "Dei 20 % av måla med størst nyheit. Resten: dei andre 80 %.",
+  "spreiing": "Kvartilavstand delt på median. Setet: sete_cm. Høgda: H frå katalogen."
+ },
+ "foreseiingar": {
+  "N1_setet_held": "Spreiinga i setehøgd hos dei nye delt på spreiinga hos resten er 1,25 eller lægre, og øvre grense i 95 % bootstrap-intervallet er under 1,6.",
+  "N2_hoegda_slepp": "Spreiinga i totalhøgd hos dei nye delt på spreiinga hos resten er 1,5 eller meir, og nedre grense i 95 % bootstrap-intervallet er over 1.",
+  "N3_setet_held_fastare": "Forholdet i N1 er under 1 (punktestimatet)."
+ },
+ "grunnmodell": "Nyheit i alt: dei nyaste formene spreier seg like mykje i setet som i høgda (N1 slo feil).",
+ "port": "Minst 60 stolar i gruppa nye og 200 i resten. Elles er prøva ugyldig.",
+ "n_boot": 2000,
+ "froe": 20261113,
+ "skjevheit_kjend_foer_opning": "3D-modellane måler setet i skalstolar om lag 3 cm lågt (prøve 2). Er dei nye oftare skalstolar, blandar gruppa to nivå og får større spreiing i setet. Det verkar mot N1 og N3.",
+ "kjende_avvik_foer_opning": [
+  "Prøve 5 viste at setehøgda i stolar frå 1920 til 1999 har spreiing 0,10 til 0,19 og totalhøgda 0,10 til 0,25. Nyheit er ikkje rekna for nokon stol.",
+  "Tersklane er ikkje gjennomgåtte av forfattaren."
+ ],
+ "tersklar_gjennomgaatt_av_forfattaren": false
+}
