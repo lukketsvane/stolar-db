@@ -36,6 +36,10 @@ canvas{display:block;width:100%;height:auto}
 .liste .kva{color:var(--fg);font:15px/1.4 var(--serif);letter-spacing:0}
 .liste .kva i{display:block;font:10px/1.6 var(--mono);font-style:normal;color:var(--dim);letter-spacing:.02em}
 .liste .tap .dom,.liste .tap .kva{color:var(--dim)}
+.prover{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px 22px;margin:0 0 1.6rem}
+.prover div{border-top:1px solid var(--fg);padding-top:.5rem;font:10px/1.6 var(--mono);color:var(--dim);letter-spacing:.02em}
+.prover b{display:block;font:400 15px/1.4 var(--serif);color:var(--fg);letter-spacing:0}
+.prover em{font-style:normal;color:var(--fg)}
 .merke{font:10px/1.5 var(--mono);color:var(--fg);margin-top:.45rem;letter-spacing:.02em}
 .merke span{display:block;color:var(--dim)}
 .tidhovud{display:flex;align-items:baseline;gap:14px;margin-bottom:.2rem}
@@ -183,11 +187,12 @@ nav a:hover,nav a:focus-visible{color:var(--fg)}
 </section>
 
 <section id="sek-liste" hidden>
-<h2><span id="l-n"></span> føreseiingar, skrivne ned før stolane vart opna.</h2>
-<p><span id="l-h"></span> heldt, <span id="l-f"></span> slo feil, <span id="l-u"></span> vart ugyldig.</p>
+<h2><span id="l-p"></span> prøver, <span id="l-n"></span> føreseiingar, skrivne ned før stolane vart opna.</h2>
+<p><span id="l-h"></span> heldt, <span id="l-f"></span> slo feil, <span id="l-u"></span> vart <span id="l-uo">ugyldig</span><span id="l-t"></span>.</p>
 <figure>
+<div class="prover" id="prover"></div>
 <div class="liste" id="liste"></div>
-<figcaption>utleidde frå proposisjonar i traktaten · tersklane låg ute før dei tilbakehaldne stolane vart opna · kvar prøve er køyrd éin gong</figcaption>
+<figcaption>utleidde frå proposisjonar i traktaten · tersklane låg pusha på GitHub før dataa vart opna · kvar prøve er køyrd éin gong · prøve 3 brukar tersklane frå prøve 2 på eit museum som ikkje var opna</figcaption>
 </figure>
 </section>
 
@@ -335,9 +340,15 @@ if (P2.grad) { const G = P2.grad, o = G.oey.length; $('sek-grad').hidden = false
   $('g-ruter').innerHTML = G.ruter.map((r, i) => '<div><canvas id="c-g' + i + '" role="img" aria-label="Snittstolen frå ' + r.aar + '"></canvas><span>' + r.aar + '</span></div>').join('');
   $('g-n').textContent = G.n; $('g-dom').textContent = DOM(G.dom); }
 if (P2.liste && P2.liste.length) { const L = P2.liste, tel = d => L.filter(x => x[0] === d).length, ord = n => n === 1 ? 'éi' : ORD[n].toLowerCase();
-  const merke = {'HELDT': 'heldt', 'SLO FEIL': 'slo feil', 'UGYLDIG': 'ugyldig'};
-  $('sek-liste').hidden = false; $('l-n').textContent = ORD[L.length] || L.length;
-  $('l-h').textContent = tel('HELDT') === 1 ? 'Éi' : ORD[tel('HELDT')]; $('l-f').textContent = ord(tel('SLO FEIL')); $('l-u').textContent = ord(tel('UGYLDIG'));
+  const merke = {'HELDT': 'heldt', 'SLO FEIL': 'slo feil', 'UGYLDIG': 'ugyldig', 'UTSETT': 'utsett'};
+  const ordn = n => n <= 14 ? (n === 1 ? 'éi' : ORD[n].toLowerCase()) : String(n);
+  $('sek-liste').hidden = false; $('l-n').textContent = ordn(L.length); $('l-p').textContent = ORD[(P2.prover || []).length] || '';
+  $('l-h').textContent = (h => h === 1 ? 'Éi' : h <= 14 ? ORD[h] : String(h))(tel('HELDT')); $('l-f').textContent = ordn(tel('SLO FEIL')); $('l-u').textContent = ordn(tel('UGYLDIG'));
+  $('l-uo').textContent = tel('UGYLDIG') === 1 ? 'ugyldig' : 'ugyldige';
+  $('l-t').textContent = tel('UTSETT') ? ', ' + ordn(tel('UTSETT')) + ' er utsett' : '';
+  $('prover').innerHTML = (P2.prover || []).map(p => '<div><b>' + p.kvar + '</b>' + p.namn.toLowerCase() + ' · ' + p.instrument + ' · forsegla i ' + p.forsegla +
+    '<br><em>' + p.tal['HELDT'] + ' heldt</em> · ' + p.tal['SLO FEIL'] + ' slo feil' + (p.tal['UGYLDIG'] ? ' · ' + p.tal['UGYLDIG'] + ' ugyldig' : '') +
+    (p.tal['UTSETT'] ? ' · ' + p.tal['UTSETT'] + ' utsett' : '') + '</div>').join('');
   $('liste').innerHTML = L.map(x => '<div class="' + (x[0] === 'HELDT' ? '' : 'tap') + '"><span class="dom">' + (merke[x[0]] || x[0].toLowerCase()) +
     '</span><span class="kva">' + x[1] + (x[2] ? '<i>' + x[2] + '</i>' : '') + '</span></div>').join(''); }
 if (P2.mat) { const m = P2.mat; $('m-p2').hidden = false;

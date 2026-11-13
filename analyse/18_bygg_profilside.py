@@ -256,19 +256,53 @@ if UTVAL == "alle" and os.path.exists(pf) and os.path.exists(pr):
         pa = prim(rm, "a_kryssing")
         liste += [[rm["dom"]["N1"], "kvart materiale opnar si sone", "p = %s mot kravet 0,01" % kom(pa["perm_p"], 3)],
                   [rm["dom"]["E2"], "materialet bind strukturen, ikkje setet", "intervallet rekk null"]]
+    tagg = lambda xs, t: [[x[0], x[1], t + (" · " + x[2] if x[2] else "")] for x in xs]
+    liste = tagg(liste, "V&A og NM")
+    prover = [{"namn": "Prøve 2", "kvar": "V&A og Nasjonalmuseet", "instrument": "3D-modellar frå eitt foto",
+               "forsegla": "ebde1f9", "domar": [x[0] for x in liste]}]
+
+    p1r = os.path.join(HER, "forsegla", "RESULTAT.json")         # den første prøva: setehøgda i Rijksmuseum
+    if os.path.exists(p1r):
+        R1 = json.load(open(p1r, encoding="utf-8"))
+        dm, sp, sn = R1["dom"], R1["spreiing"], R1["snittfeil_cm"]
+        dom = lambda k: "HELDT" if dm[k] else "SLO FEIL"
+        l1 = [[dom("P1a"), "setehøgda varierer minst av måla", "sete %s, breidd %s, djupn %s, rygg %s" % (
+                  kom(sp["sete"], 3), kom(sp["breidd"], 3), kom(sp["djupn"], 3), kom(sp["rygg"], 3))],
+              [dom("P1b"), "spreiinga i setehøgd er under 0,10", kom(sp["sete"], 3)],
+              [dom("P1c"), "spreiinga i rygghøgd er over 0,20", kom(sp["rygg"], 3)],
+              [dom("P2a"), "tidsbolken forklarer under 20 % av setehøgda", "%d %%" % round(100 * R1["tidsbolk_del"]["sete"])],
+              [dom("P2b"), "tidsbolken forklarer over 40 % av rygghøgda", "%d %%" % round(100 * R1["tidsbolk_del"]["rygg"])],
+              [dom("P3"), "setet stig mindre enn 0,3 cm per cm totalhøgd", "%s [%s til %s]" % tuple(kom(v, 2) for v in R1["stiging"])],
+              [dom("P4a"), "fast setehøgd treffer betre enn fast del av høgda", "%s mot %s cm" % (kom(sn["fast verdi"]), kom(sn["fast del av H"]))],
+              [dom("P4b"), "ei potenslov slår fast setehøgd med høgst 0,3 cm", "%s mot %s cm" % (kom(sn["potenslov"]), kom(sn["fast verdi"]))]]
+        l1 = tagg(l1, "Rijksmuseum")
+        prover.insert(0, {"namn": "Prøve 1", "kvar": "Rijksmuseum", "instrument": "katalogmål, %d stolar" % R1["n"], "forsegla": "0ab99d0",
+                          "domar": [x[0] for x in l1]})
+        liste = l1 + liste
+
     p3r = os.path.join(HER, "forsegla3", "RESULTAT.json")
     if os.path.exists(p3r):                                      # den tredje prøva: same føreseiingar i The Met
         R3 = json.load(open(p3r, encoding="utf-8"))
-        m1, m2 = R3.get("M1_krakk", {}), R3.get("M2_armlene", {})
+        m1, m2, m3 = R3.get("M1_krakk", {}), R3.get("M2_armlene", {}), R3.get("M3_kant_1712", {})
+        l3 = []
         if m1.get("dom"):
             p_ = {x["namn"][:2]: x for x in m1.get("primaer", [])}
-            liste.append([m1["dom"], "krakken står der stolsetet står, òg i The Met",
-                          "spreiing %s mot kravet 0,126" % kom(p_["P2"]["verdi"], 3) if "P2" in p_ else ""])
+            l3.append([m1["dom"], "krakken står der stolsetet står",
+                       "spreiing %s mot kravet 0,126" % kom(p_["P2"]["verdi"], 3) if "P2" in p_ else ""])
         if m2.get("dom"):
-            liste.append([m2["dom"], "armlenet ligg i olbogehøgd, òg i The Met", "Met katalogfører ikkje armhøgd"
-                          if m2.get("flyt", {}).get("analysert") == 0 else ""])
-    rekkjefolgje = {"HELDT": 0, "SLO FEIL": 1, "UGYLDIG": 2}
-    p2["liste"] = sorted(liste, key=lambda x: rekkjefolgje.get(x[0], 3))
+            l3.append([m2["dom"], "armlenet ligg i olbogehøgd", "Met katalogfører ikkje armhøgd"
+                       if m2.get("flyt", {}).get("analysert") == 0 else ""])
+        p3b = os.path.join(HER, "forsegla3", "RESULTAT_M3.json")
+        m3 = json.load(open(p3b, encoding="utf-8")) if os.path.exists(p3b) else m3
+        if m3.get("dom"):
+            l3.append([m3["dom"], "1712 er ikkje ein kant", m3.get("kort", "krev sidesilhuettar")])
+        l3 = tagg(l3, "The Met")
+        prover.append({"namn": "Prøve 3", "kvar": "The Met", "instrument": "katalogmål", "forsegla": "f36e692",
+                       "domar": [x[0] for x in l3]})
+        liste = liste + l3
+    rekkjefolgje = {"HELDT": 0, "SLO FEIL": 1, "UGYLDIG": 2, "UTSETT": 3}
+    p2["liste"] = sorted(liste, key=lambda x: rekkjefolgje.get(x[0], 4))
+    p2["prover"] = [{**p, "tal": {d: p["domar"].count(d) for d in ("HELDT", "SLO FEIL", "UGYLDIG", "UTSETT")}} for p in prover]
     D["p2"] = p2 or None
 
 MAL = open(os.path.join(HER, "figurar", "profil_mal.html"), encoding="utf-8").read()
