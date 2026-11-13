@@ -321,7 +321,7 @@ function gradfig(){
   });
 }
 
-const ORD = ['Ingen', 'Éin', 'To', 'Tre', 'Fire', 'Fem', 'Seks', 'Sju', 'Åtte', 'Ni', 'Ti'];
+const ORD = ['Ingen', 'Éin', 'To', 'Tre', 'Fire', 'Fem', 'Seks', 'Sju', 'Åtte', 'Ni', 'Ti', 'Elleve', 'Tolv', 'Tretten', 'Fjorten'];
 const DOM = d => d === 'HELDT' ? 'føreseiinga heldt' : d === 'SLO FEIL' ? 'føreseiinga slo feil' : d === 'UGYLDIG' ? 'prøva vart ugyldig etter eigen port' : 'uavgjort';
 if (P2.arm) { const a = P2.arm; $('sek-arm').hidden = false; $('a-med').textContent = nb(Math.round(a.median)); $('a-n').textContent = a.n;
   $('a-k').textContent = nb(a.mae.kropp.toFixed(1)); $('a-b').textContent = nb(a.mae.bord.toFixed(1)); $('a-s').textContent = nb(a.mae.storleik.toFixed(1)); $('a-dom').textContent = DOM(a.dom); }

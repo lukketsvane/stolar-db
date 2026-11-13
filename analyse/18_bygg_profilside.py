@@ -256,6 +256,17 @@ if UTVAL == "alle" and os.path.exists(pf) and os.path.exists(pr):
         pa = prim(rm, "a_kryssing")
         liste += [[rm["dom"]["N1"], "kvart materiale opnar si sone", "p = %s mot kravet 0,01" % kom(pa["perm_p"], 3)],
                   [rm["dom"]["E2"], "materialet bind strukturen, ikkje setet", "intervallet rekk null"]]
+    p3r = os.path.join(HER, "forsegla3", "RESULTAT.json")
+    if os.path.exists(p3r):                                      # den tredje prøva: same føreseiingar i The Met
+        R3 = json.load(open(p3r, encoding="utf-8"))
+        m1, m2 = R3.get("M1_krakk", {}), R3.get("M2_armlene", {})
+        if m1.get("dom"):
+            p_ = {x["namn"][:2]: x for x in m1.get("primaer", [])}
+            liste.append([m1["dom"], "krakken står der stolsetet står, òg i The Met",
+                          "spreiing %s mot kravet 0,126" % kom(p_["P2"]["verdi"], 3) if "P2" in p_ else ""])
+        if m2.get("dom"):
+            liste.append([m2["dom"], "armlenet ligg i olbogehøgd, òg i The Met", "Met katalogfører ikkje armhøgd"
+                          if m2.get("flyt", {}).get("analysert") == 0 else ""])
     rekkjefolgje = {"HELDT": 0, "SLO FEIL": 1, "UGYLDIG": 2}
     p2["liste"] = sorted(liste, key=lambda x: rekkjefolgje.get(x[0], 3))
     D["p2"] = p2 or None
