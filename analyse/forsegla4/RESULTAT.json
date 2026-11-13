@@ -1,0 +1,48 @@
+{
+ "tid": "2026-11-13T15:27:44+01:00",
+ "forsegla_commit": "975c13cf32e581f2acdffd67a4577f3d56a04b6b",
+ "n_stolar": 1410,
+ "n_bakgrunn": 1188,
+ "komponentar": {
+  "understell": 10,
+  "overdel": 10
+ },
+ "resultat": {
+  "T1_overdelen_er_eldre": {
+   "median": 1.0,
+   "ki95": [
+    -12.074999999999996,
+    10.0
+   ],
+   "n": 141,
+   "dom": "SLO FEIL"
+  },
+  "T2_ikkje_tida": {
+   "differanse": 26.0,
+   "ki95": [
+    7.0,
+    69.0
+   ],
+   "median_samtidige": -25.0,
+   "n": [
+    141,
+    77
+   ],
+   "dom": "SLO FEIL"
+  },
+  "T3_viktoriansk": {
+   "median": -10.0,
+   "ki95": [
+    -21.0,
+    16.0
+   ],
+   "n": 81,
+   "dom": "SLO FEIL"
+  }
+ },
+ "median_absolutt_feil_bakgrunn": {
+  "understell": 25.0,
+  "overdel": 24.0
+ },
+ "avvik": []
+}
