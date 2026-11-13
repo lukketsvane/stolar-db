@@ -236,6 +236,15 @@ nav a:hover,nav a:focus-visible{color:var(--fg)}
 </figure>
 </section>
 
+<section id="sek-tidstoff" hidden>
+<h2>Tida og stoffet veg like mykje.</h2>
+<p>Ein stol etter 1915 kan føreseiast like godt frå perioden han er laga i som frå stoffet han er laga av. Feilen med perioden er <span id="ts-q1"></span> av feilen med stoffet etter stil, <span id="ts-q2"></span> etter årsbolk.</p>
+<figure>
+<div class="tre" id="tidstoff"></div>
+<figcaption>snittstolen frå sida for kvar periode og kvart stoff, éin per modell · linja: der halvparten av stolane har materiale · føresegn: middelet av dei andre stolane i same periode og museum mot same stoff og museum · formlære, føreseiing 11</figcaption>
+</figure>
+</section>
+
 <section id="sek-liste" hidden>
 <h2><span id="l-p"></span> prøver, <span id="l-n"></span> føreseiingar, skrivne ned før stolane vart opna.</h2>
 <p><span id="l-h"></span> heldt, <span id="l-f"></span> slo feil, <span id="l-u"></span> vart <span id="l-uo">ugyldig</span><span id="l-t"></span>.</p>
@@ -547,6 +556,15 @@ if (D.atav) {
   $('sek-atav').hidden = false; $('at-n').textContent = A7.par.length; $('at-tv').textContent = Math.round(A7.tv.median);
   $('at-a1').textContent = pc(A7.a1); $('at-a2').textContent = pc(1 - A7.a2);
 }
+// Den åttande prøva: ni snittstolar, periode mot stoff
+const TS = D.tidstoff;
+if (TS) {
+  const k2 = v => v.toFixed(2).replace('.', ',');
+  $('sek-tidstoff').hidden = false; $('ts-q1').textContent = k2(TS.q[0]); $('ts-q2').textContent = k2(TS.q[1]);
+  $('tidstoff').innerHTML = TS.celler.map((c, i) => '<div><canvas id="c-ts' + i + '" role="img" aria-label="' + c.namn + ', ' + c.per + ': snittstolen frå sida."></canvas>' +
+    '<div class="merke">' + c.namn + '<span>' + c.per + ' · ' + c.n + '</span></div></div>').join('');
+}
+function tsfig(){ if (TS) TS.celler.forEach((c, i) => stabel($('c-ts' + i), c.px || (c.px = b64(c.b)), c.w, c.h, {k: c.k})); }
 function heldfig(){
   if (!HE) return;
   HE.celler.forEach((c, i) => {
@@ -566,7 +584,7 @@ function alt(){
   tid();
   fig($('c-golv'), D.golv, {}); fig($('c-prop'), D.prop, {});
   D.mat.forEach((m, i) => { fig($('c-ms' + i), m.side, {sete: true}); fig($('c-mf' + i), m.front, {sete: true}); });
-  armfig(); krakkfig(); gradfig(); alderfig(); heldfig();
+  armfig(); krakkfig(); gradfig(); alderfig(); heldfig(); tsfig();
 }
 alt();
 let vent = 0;
