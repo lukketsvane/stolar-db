@@ -1,0 +1,143 @@
+{
+ "prove": "p02_soem_i_ryggen",
+ "skrive": "2026-11-13",
+ "kjelde": "Grep 5 (sjølvet sluttar der stresset sluttar å bli delt) prøvd mot grep 7 (kontinuum, ikkje kategori). Definisjon 7 (hinne og sjølv): hinna er eit skilje mellom indre og ytre. Postulat 4 (individuasjon): den som sit, når stolen berre gjennom kontaktflata. Postulat 3 og Følgje 3 (Var om lag 1/(β W Λ'')): over den høgda der ryggen ikkje lenger kviler mot stolen, fell kroppsleddet ut av summen, W fell, og aksen blir open for det trykket som står att, tida. Ei hinne er eit skilje og ikkje ein gradient, så overgangen skal vere eit steg, og han skal liggje der kroppen sluttar, målt frå setet.",
+ "hypotese": "Ryggen er to sonar med ein usynleg søm. Under sømmen svarar ryggen kroppen og har nesten ingen alder. Over sømmen svarar han tida. Sømmen ligg i fast høgd over setet, om lag ved nedre kanten av skulderbladet (35 til 47,5 cm), same kor høg ryggen er og same kva stoff, og han fell ikkje saman med nokon fuge eller ornamentgrense.",
+ "maal": {
+  "instrument": "Vokslar (fp.voksel, 60 x 64 x 64 ruter på 2,5 cm). Setehøgda sete_h er 3D-målet (pålitelegheit 0,967 i hovudutvalet). Ryggtoppen er det øvste fylte laget i bakre halvdel av midtbandet |y| ≤ 7,5 cm (pålitelegheit 0,995).",
+  "trekk": "Tre trekk er definerte per lag: d (djupn frå setekanten til første fylte rute bak i midtbandet), c (delen fylte ruter i |y| ≤ 15 cm sett framfrå) og w (breidda av det fylte sett framfrå). Regelen er fastsett før opning: eit trekk blir brukt berre om fp.paalit er minst 0,7 i alle 18 punkt under alle fire forankringane, rekna éin gong på hovudutvalet med dei målte ankera og utan merke. Då er samansetjinga av tau den same i kvart punkt, i kvart delutval og i kvart bootstrap-trekk. Berre w held (min 0,857). c fell (min 0,383, under 0,7 i 4 av 72 punkt) og d fell (0,23 til 0,31 i alle punkt). Estimanden er difor rekna på ryggbreidda w åleine.",
+  "estimand": "Sann tidsdel tau_j per punkt j over setet (u = 2,5 j cm, j = 5 til 22, 12,5 til 55 cm, 18 punkt). w er residualisert på mat x type innan museum. tau_j = eta2(resid w, bolk) x Var/(Var minus feilvar). eta2 er same formel som fp.eta2, men utan klipping til 0. Feilvariansen er fp.feilvarians på residuala i hovudutvalet (15 ekte sett, alle i NM), rekna éin gong per anker og punkt og halden fast i VA, NM, bootstrap, nullar og plantar. Korreksjonsfaktoren er avgrensa til 1/0,7.",
+  "utval": "Hovudutval: alle stolar med rygg minst 57,5 cm over setet, same stolar i alle lag: 362 av 1 377 (VA 264, NM 98, 325 suitar). Glidande tillegg på heile ramma: 1 370 stolar, der kvart punkt berre tek med stolar der ryggen når laget.",
+  "stegmodell": "tau(u) = a + b u + Δ 1[u ≥ u*], u* søkt i gitteret frå 15 til 52,5 cm. d = RSS utan steg minus RSS med steg. G_sete = d_sete / TSS_sete (som i oppdraget).",
+  "forankringar": "sete (z minus sete_h), golv (z, 57,5 til 100 cm over golvet), topp (ryggtopp minus z), del ((z minus sete_h)/(ryggtopp minus sete_h), 1/19 til 18/19). Same 362 stolar, same trekk og same tau-eining under alle fire.",
+  "samanlikning_av_forankringar": "G_a = d_a / TSS_sete for alle fire anker (same nemnar). G_sete er då uendra, og dei fire steggevinstane står på same skala. diff = G_sete minus største G av golv, topp og del.",
+  "hovudestimand": "diff og u* med 95 % intervall frå fp.suiteboot (500 trekk), samla, VA og NM kvar for seg. Nullfordeling for G_sete frå 200 permutasjonar av sete_h mellom suitar innan bolk x mat.",
+  "tillegg": "Ikkje avgjerande: glidande versjon på heile ramma; utan armstolar; katalogsete som anker (158 stolar); steg i middelbreidda ved sømmen (struktur, ikkje tid); år trekt i [aar, aar_til]."
+ },
+ "foreseiingar": [
+  {
+   "id": "f1",
+   "tekst": "Seteankeret gjev større steggevinst enn golv, topp og del.",
+   "terskel": "diff > 0 i punktestimatet i samla, i VA og i NM, og diff > 0 i minst 95 % av 500 suiteboot-trekk i samla.",
+   "dom": "SLO FEIL om diff ≤ 0 i samla, VA eller NM. HELDT om alle krava held. Elles UGYLDIG."
+  },
+  {
+   "id": "f2",
+   "tekst": "u* for setesteget ligg mellom 35 og 47,5 cm over setet.",
+   "terskel": "u* i [35; 47,5] i punktestimatet i samla, i VA og i NM, og 95 % intervallet for u* i samla ligg heilt innanfor bandet.",
+   "dom": "SLO FEIL om u* ligg utanfor bandet i samla, VA eller NM. HELDT om alle krava held. Elles UGYLDIG."
+  },
+  {
+   "id": "f3",
+   "tekst": "Steget Δ er minst 0,10, og tau under sømmen er under 0,10.",
+   "terskel": "Δ ≥ 0,10 og snittet av tau i punkta under u* < 0,10 i samla, i VA og i NM, og nedre grense i 95 % intervallet for Δ i samla ≥ 0,10.",
+   "dom": "SLO FEIL om Δ < 0,10 eller tau under sømmen ≥ 0,10 i samla, VA eller NM. HELDT om alle krava held. Elles UGYLDIG."
+  },
+  {
+   "id": "f4",
+   "tekst": "G_sete ligg over nullfordelinga.",
+   "terskel": "G_sete i samla over 97,5-persentilen i nullen (200 permutasjonar), og G_sete i VA og i NM over medianen i nullen for kvart museum.",
+   "dom": "HELDT om alle krava held, elles SLO FEIL."
+  },
+  {
+   "id": "f5",
+   "tekst": "u* for WOOD og for andre stoff skil seg med høgst 5 cm.",
+   "terskel": "|u*_WOOD minus u*_andre| ≤ 5 cm i VA og i NM. Krev minst 50 stolar i kvar stoffgruppe i kvart museum.",
+   "dom": "UGYLDIG om ei stoffgruppe har under 50 stolar i VA eller NM. Elles HELDT eller SLO FEIL."
+  }
+ ],
+ "domsreglar": "95 %-kravet gjeld samla. VA og NM må kvar for seg ha same forteikn og passere same terskel i punktestimatet. Hypotesen tapar om det ikkje finst steggevinst over nullen (f4), om ei anna forankring vinn (f1), eller om u* ligg utanfor bandet (f2). Berre HELDT, SLO FEIL eller UGYLDIG.",
+ "grunnmodellar": [
+  "Ankra diffusjon: det lineære leddet b u i stegmodellen. Ein jamn auke i tidsdelen oppover gjev ingen steggevinst.",
+  "Nullmodell for steget: sete_h (suitemedian) permutert mellom suitar innan bolk x mat, 200 gonger, og heile rekninga køyrd på nytt. Kvar stol får eit anker med same fordeling, men utan sin eigen kropp.",
+  "Golv som forankring: steget ligg i fast høgd over golvet.",
+  "Topp som forankring: steget ligg i fast avstand under ryggtoppen.",
+  "Del som forankring: steget ligg i ein fast del av ryggen, så det flyttar seg med ryggen."
+ ],
+ "kontrollar": {
+  "berre_kontrolltal": true,
+  "koeyring": "Endeleg --kontroll etter granskinga, frø 20261113, 1 min 55 s.",
+  "paalit": {
+   "sete_h": 0.967,
+   "ryggtopp": 0.995,
+   "ekte_sett_i_hovudutvalet": 15,
+   "w": "min 0,857 og median 0,955 til 0,969 over dei fire ankera; ingen punkt under 0,7. Brukt.",
+   "c": "min 0,383; 2 punkt under 0,7 under seteankeret, 1 under topp og 1 under del. Ikkje brukt.",
+   "d": "0,23 til 0,31 i alle 72 punkt. Ikkje brukt.",
+   "w_per_museum": "Med den faste feilen er pålitelegheita for w 0,861 til 0,99 i VA, men 0,566 til 0,95 i NM, under 0,7 i 23 av 72 punkt, mellom anna 35 til 45 cm over setet under seteankeret. Korreksjonen er avgrensa til 1/0,7."
+  },
+  "sjekkar": "feil_rask er lik fp.feilvarians, og eta2 utan klipping er lik fp.eta2 når han er klipt (begge sanne).",
+  "nullen": "Delen suitar som kan flyttast (stratum bolk x mat med minst to suitar): VA 0,976, NM 0,886.",
+  "placebo": {
+   "oppsett": "Bolkmerke permuterte mellom suitar innan museum (same gruppestorleikar), 100 trekk; 60 av dei med eiga nullfordeling (100 permutasjonar).",
+   "tau_middel_abs": 0.0119,
+   "tau_middel": 0.0025,
+   "andel_G_over_q95": 0.033,
+   "andel_G_over_q975": 0.033,
+   "vinnarar_av_100": {"sete": 13, "golv": 39, "topp": 10, "del": 38},
+   "andel_diff_over_0": 0.13,
+   "krav": "tau_middel_abs ≤ 0,03, andel over q95 ≤ 0,15, andel over q97,5 ≤ 0,075, andel diff > 0 ≤ 0,35",
+   "vurdering": "held"
+  },
+  "krympe_placebo": {
+   "oppsett": "Krav 2: setemålet er eit 3D-mål. Stolar i hovudutvalet med katalogsete (158). Kopi av katalogsete trekt mot medianen med faktor 0,75 og lagt på målefeilen 1,4 cm; kopien erstattar setemålet i estimanden.",
+   "a_permuterte_merke_100_trekk": {"andel_G_over_q95": 0.07, "andel_G_over_q975": 0.03, "krav": "andel over q97,5 ≤ 0,075"},
+   "b_golvsanning_200_trekk": {"oppsett": "Steg planta 85 cm over golvet. Kor ofte seteankeret slår golvankeret.", "med_kopi": 0.08, "med_3d_sete_same_stolar": 0.095, "auke_fraa_krymping": -0.015, "krav": "auke ≤ 0,05"},
+   "b_golvsanning_G_sete_over_q975_20_trekk": 0.0,
+   "vurdering": "held"
+  },
+  "planta_effekt": {
+   "oppsett": "Steg i w planta i halvparten av suitane, dose lineær i eit permutert bolkmerke (same gruppestorleikar som i røynda), A kalibrert over 20 merketrekk så middel tau over dei planta punkta stig med 0,10. 200 trekk per plantetype. Kravet gjeld samla.",
+   "sete_42_5_cm_over_setet": {"A_cm": 35.37, "samla_sete_vinn_og_u_innan_2_5_cm": 0.95, "VA": 0.87, "NM": 0.71, "krav": 0.9, "vurdering": "held"},
+   "golv_85_cm": {"A_cm": 36.52, "samla_golv_vinn": 0.98, "VA": 0.91, "NM": 0.84, "krav": 0.9, "vurdering": "held"},
+   "del_0_6_av_ryggen": {"A_cm": 32.33, "samla_del_vinn": 0.93, "VA": 0.875, "NM": 0.765, "krav": 0.9, "vurdering": "held"}
+  },
+  "kraft_opplysing": {
+   "f4_q975_sete_planta_20_trekk": 0.7,
+   "f4_q975_golv_planta_20_trekk": 0.0,
+   "domsregel_f1_med_suiteboot": "HELDT i 4 av 8 trekk med planta seteeffekt på 0,10, i 0 av 8 utan planting.",
+   "domsregel_f2_med_suiteboot": "HELDT i 8 av 8 trekk med planta seteeffekt på 0,10, i 0 av 8 utan planting."
+  },
+  "konklusjon": "Pålitelegheit, placebo, krympe-placebo og planta effekt held. Klar til forsegling når forfattaren har gått gjennom tersklane."
+ },
+ "skjevheit_kjend_foer_opning": [
+  "Samlinga i felles_p.py tel 1 377 stolar (VA 1 009, NM 368), ikkje 1 410 som oppdraget oppgjev. Dei 33 stolane med kopiert målpost er tekne ut i felles_p.py.",
+  "Hovudutvalet er stolar med rygg minst 57,5 cm over setet (362 av 1 377). Høge ryggar er oftare gamle, og bolkfordelinga i NM er skeiv (nokre bolkar har ein eller to stolar). Residuala er tekne på mat x type innan museum.",
+  "w er heile breidda sett framfrå over heile djupna, så armlene (om lag 20 til 25 cm over setet) og vengjer er med. Eit seteforankra steg ved armlenet ville gje u* utanfor bandet, men det kunne gje seteankeret som vinnar (f1) og G_sete over nullen (f4) av andre grunnar enn ein søm. Difor krev hypotesen f1, f2 og f4 saman. Tillegget utan armstolar viser kor mykje armlena ber.",
+  "Setehøgda og ryggen kjem frå same generative 3D-modell (eitt foto). Byggjer generatoren ryggen ut frå setet, kan seteforankra struktur vere laga av instrumentet. Tillegget med katalogsete som anker prøver dette på 158 stolar, men er ikkje avgjerande.",
+  "Ein feil i katalog-H skalerer alle lengder likt. Han smører ut sete- og golvankeret like mykje og lèt del-ankeret vere urørt, så han verkar mot hypotesen.",
+  "Krymping av w mot gjennomsnittsstolen endrar ikkje tau, som er ein brøk av variansen, så lenge krympinga råkar tid og rest likt.",
+  "Den faste målefeilen kjem frå 15 ekte sett i NM (VA har ingen). I NM er pålitelegheita for w under 0,7 i 23 av 72 punkt, mellom anna i bandet; korreksjonen er avgrensa til 1/0,7, så tau i NM blir litt for låg der. Det verkar mot hypotesen.",
+  "Bootstrap med dobla suitar blæs opp eta2 i kvart punkt. Bandet rundt tau i figuren er difor flytt med skeivskapen. Δ, u* og diff er skilnader og viste ikkje slik skeivskap i diagnosen med planta steg."
+ ],
+ "kjende_avvik_foer_opning": [
+  "Estimanden er rekna på ryggbreidda w åleine, sidan c og d ikkje held pålitelegheitskravet i alle punkt. Plantinga ligg difor i w og ikkje i c som oppdraget sa.",
+  "Samanlikninga av forankringane brukar same nemnar (TSS for setekurva) i staden for TSS for kvar kurve. Med eigen TSS fekk ei flat støykurve like stor G som eit tydeleg steg, og seteplanten vann berre i 0,66 til 0,84 av trekka.",
+  "f4 krev 97,5-persentilen i nullen i staden for 95. Krympe-kopien gav G over q95 i om lag 8 til 10 % av placebotrekka i diagnosen (540 trekk), mot 5 til 6 % for 3D-setet; over q97,5 var han om lag 3 %. Dette er rettinga for krympinga som krav 2 ber om.",
+  "Tersklane for f1 til f4 er samordna av granskaren: 95 %-krav på samla, same forteikn og same terskel i punktestimatet i VA og NM kvar for seg (slik oppdraget seier for f1). Byggjaren kravde 95 % og intervall i alle tre.",
+  "500 bootstrap-trekk (ikkje 2 000) og 200 permutasjonar (ikkje 1 000), etter grensa for køyretid.",
+  "f5 kan ikkje prøvast: hovudutvalet har berre 14 (VA) og 11 (NM) stolar av anna stoff enn tre, og f5 blir UGYLDIG etter regelen. Påstanden «same kva stoff» er då ikkje prøvd.",
+  "Påstanden at sømmen ikkje fell saman med fuge eller ornamentgrense har inga avgjerande prøve. Tillegget struktur_ved_soemmen viser berre om middelbreidda har eit steg same stad.",
+  "Krafta er avgrensa: med ein sann søm på 0,10 vinn seteankeret i 0,95 av trekka samla, men berre 0,87 i VA og 0,71 i NM, og domsregelen for f1 heldt i 4 av 8 planta trekk. Ein sann søm av den storleiken gjev difor ofte UGYLDIG eller SLO FEIL, særleg i NM.",
+  "Planta-kontrollen ligg nær kravet. Han er køyrd fire gonger under bygging og gransking med ulike utgåver: byggjaren (eigen TSS, c, jamstore merke) sete 0,68, golv 0,875, del 0,465; granskaren med same nemnar sete 0,955, golv 0,965, del 0,93 og så sete 0,93, golv 0,975, del 0,89 (A kalibrert over berre 6 trekk); endeleg utgåve (A over 20 trekk) sete 0,95, golv 0,98, del 0,93. Snittet er om lag 0,94 for sete, 0,92 for del og 0,97 for golv.",
+  "Ingen verkelege utfall er rekna. --opne er berre prøvd som tørrkøyring med bolk og år permuterte mellom suitar, utanfor mappa."
+ ],
+ "gransking": {
+  "dato": "2026-11-14",
+  "funn_og_rettingar": [
+   "Pålitelegheita vart rekna på nytt i kvart utval. VA har ingen ekte sett, så alle trekk (òg d med 0,3) gjekk inn i VA, men ikkje i NM, og samansetjinga av tau skifta mellom punkt og mellom bootstrap-trekk. Eit skifte i samansetjinga er sjølv eit steg. Retta med éin fast regel (sjå maal.trekk).",
+   "Feilvariansen vart rekna på nytt i kvart utval: null i VA, og senka av dobla suitar i bootstrap. Retta: fast per anker og punkt.",
+   "G med eigen TSS gjorde forankringane ujamførbare. Retta: same nemnar.",
+   "Plantane brukte jamstore merke 0 til 8 og planta i c, medan tau var snittet av c og w der c av og til fall ut. Retta: permuterte bolkmerke med same gruppestorleikar, planting i w, kalibrering over 20 trekk.",
+   "Setekant-kravet i hovudutvalet kasta 59 stolar etter brøkdelen av sete_h/2,5 (avrundinga av setelaget). Kravet trengst berre for d, som er ute. Retta: hovudutvalet er alle 362 stolar med rygg minst 57,5 cm over setet.",
+   "I nullen vart setekanten slått opp i laget til det permuterte setet, så stolar fall ut av nullkurvene og ikkje av den observerte. Retta: w treng ikkje setekant.",
+   "f5 kunne bli HELDT utan data (all() over ei tom liste). Retta: UGYLDIG under 50 stolar per stoffgruppe.",
+   "Det glidande tillegget tok med lag over ryggtoppen, der w er 0. Det gjev eit tidssteg der dei låge (nyare) ryggane sluttar. Retta: berre stolar som når laget.",
+   "FORESEIINGAR sa 1 000 permutasjonar og 95 % i alle tre gruppene; koden hadde 200 og kravde alle tre. Teksten og koden er no like.",
+   "Krympe-placeboen hadde 20 trekk og kunne ikkje skilje 5 frå 15 %. Retta: 100 trekk med eigen null, og ein variant med golvsanning.",
+   "Nullmodellen gjev ikkje utslag av seg sjølv: med permuterte merke går G_sete over q95 i 3 % av trekka, og i diagnosen over 240 trekk med 200 permutasjonar var talet 6 % for 3D-setet.",
+   "--kontroll les ingen verkelege utfall: merka er permuterte eller syntetiske, og BOLK blir berre brukt som stratum i nullen. Pålitelegheit og teljingar er rekna på dei verkelege måla."
+  ]
+ },
+ "tersklar_gjennomgaatt_av_forfattaren": false
+}

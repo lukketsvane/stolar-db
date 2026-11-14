@@ -1,0 +1,72 @@
+{
+ "prove": "p06_flytting_som_varians_i_andre",
+ "skrive": "2026-11-13",
+ "kjelde": "Teorem 2 (Kovarians) og Følgje 3 i kortversjonen av formlæra. For ein koordinat under kvadratiske trykk med presisjonar P_j er ei flytting Delta g i målet til trykket s det same som eit lineært ledd med vekt P_s Delta g; Teorem 2 med f = x gjev Delta E[x] = Var(x) P_s Delta g, og Følgje 3 gjev Var(x) = 1/sum P_j. For fleire koordinatar gjev det same teoremet Delta mu = Sigma beta, der Sigma er kovariansen innan perioden og beta er skiftet i trykkgradienten (same form som Lande-likninga). Langs ein prinsipal akse i med sann varians lambda_i er flyttinga lambda_i beta_i. Er skiftet like stort langs alle aksane, går kvadrert flytting som lambda_i i andre potens (b = 2), og ei retning med dobbelt så stort standardavvik flyttar seg fire gonger så langt. Ved nøytral kopiering av heile stolar går middelet som tilfeldig vandring med stegkovarians proporsjonal med Sigma, og kvadrert flytting går som lambda_i i første potens (b = 1). Levin-grepa: grep 6 (fleire trykk på ein akse gjev mindre spreiing, og det same trykket flyttar mindre der) og grep 3 (det som flyttar seg mest, var minst halde). Føreseiing 4 i læra krev at eksponenten er oppgjeven før prøva.",
+ "hypotese": "Gjennom hundreåra har høgdeprofilen til stolane flytt seg mest langs dei retningane der han spreier seg mest innanfor eitt hundreår, og kvadrert flytting veks som variansen i andre potens (b = 2): ei retning med dobbelt så stort standardavvik har flytt seg fire gonger så langt, ikkje to. Nøytral kopiering gjev b = 1. Varians og flytting er rekna etter fråtrekk av målefeil.",
+ "maal": "Koordinatar: log av høgda der den kumulative overflatedelen i D['lag'] når q (q = 0,10, 0,15, ..., 0,90; 17 stykke), log sete_h (3D) og log H (katalog). Port: fp.paalit minst 0,7 per koordinat. Modellhøgdene er skalerte til katalog-H, så dei 18 modellkoordinatane blir skrivne som log(h/H); log H står som han er. Bolkar: hundreår (1500-talet til 1900-talet, år etter 1999 i 1900-talet); hundreår med færre enn 20 stolar i museet fell ut. Målefeil: feilmatrisa E er samla kovarians innan dei 44 ekte setta. Sigma = kovarians innan hundreår minus E. Aksar: eigenvektorane til Sigma; K er talet på leiande aksar med pålitelegheit minst 0,7 og positiv lambda (i dag 11 i VA og 9 i NM, fastsett av same regel i --opne). D_i: stolane delte i halvdelar A og B etter suite (200 delingar); for kvart par nabohundreår skilnaden i middel langs aksen, Delta_A og Delta_B; D_i er vekta middel av Delta_A Delta_B med harmonisk middel av tala som vekt (forventingsrett for kvadrert flytting same kor få stolar hundreåret har). b frå D_i = c lambda_i^b, minste kvadrat på råskala for D_i/lambda_i = c lambda_i^(b-1) over dei K aksane, så negative D_i blir verande; b søkt i [-2, 6]. Flyttenivå: phi = sum D_i / sum lambda_i. KI: fp.suiteboot over suitar (500 trekk), år trekt jamt i [aar, aar_til] i kvart trekk, ekte sett trekte på nytt for E, og aksane rekna på nytt i kvart trekk. Rekna på heile ramma, i VA og NM kvar for seg, og i WOOD åleine.",
+ "foreseiingar": [
+  {
+   "namn": "b i VA",
+   "tersklar": "b mellom 1,5 og 2,5, og 95 %-KI for b dekkjer ikkje 1. Gjeld berre når målt phi i VA er minst porten i KONTROLL.json (0,243); elles er domen UGYLDIG (metoden er for svak ved så lita flytting).",
+   "dom": "HELDT dersom kravet gjeld, SLO FEIL dersom ikkje, UGYLDIG dersom kontrollane fall eller phi er under porten."
+  },
+  {
+   "namn": "b i NM",
+   "tersklar": "b mellom 1,5 og 2,5, og 95 %-KI for b dekkjer ikkje 1. Gjeld berre når målt phi i NM er minst porten i KONTROLL.json (0,972); elles er domen UGYLDIG (metoden er for svak ved så lita flytting).",
+   "dom": "HELDT dersom kravet gjeld, SLO FEIL dersom ikkje, UGYLDIG dersom kontrollane fall eller phi er under porten."
+  },
+  {
+   "namn": "samla dom",
+   "tersklar": "HELDT berre når både VA og NM held. Hypotesen fell (SLO FEIL) når eitt gyldig museum har KI for b som dekkjer 1, b under 1,5 eller b over 2,5. Over 2,5 flyttar stilskiftet seg meir langs dei mest spreidde aksane enn Teorem 2 med likt skift gjev, til dømes når berre éin akse har flytt seg. Elles UGYLDIG.",
+   "dom": "HELDT, SLO FEIL eller UGYLDIG"
+  }
+ ],
+ "domen_kviler_paa": "VA og NM kvar for seg. Heile ramma (samla) og WOOD åleine er rapporterte som informasjon. Flyttinga langs den andre aksen (D_2, med einsidig nedre grense) er rapportert, ikkje krav.",
+ "grunnmodellar": [
+  "Nøytral vandring (Lande): middelet går som tilfeldig vandring med steg N(0, k Sigma) per hundreår (b = 1).",
+  "Éin felles faktor: berre den første aksen flyttar seg (b langt over 2,5, eller udefinert).",
+  "Likt skift i trykka (Teorem 2): steg c Sigma beta med like store beta_i langs aksane (b = 2).",
+  "Full sporing: når det skiftande trykket sjølv set spreiinga, følgjer middelet målet heilt, og flyttinga er uavhengig av variansen (b nær 0).",
+  "Flytting i éi tilfeldig retning i koordinatrommet (b nær 0)."
+ ],
+ "kontrollar": [
+  "Port: fp.paalit per koordinat 0,935 til 0,990 på rå log-skala og 0,869 til 0,991 som log(h/H); alle 19 er med. Pålitelegheit langs aksane avgjer K (VA 11, NM 9).",
+  "Falsk tid (placebo): kvart hundreår delt tilfeldig i to pseudobolkar, flytting rekna mellom dei. 95 %-KI for sum D / sum lambda, middel D/lambda, stigninga av D mot lambda og D_2 dekkjer 0 i VA og NM (held).",
+  "Simuleringane byggjer på verkelege restar rundt 50-årsmidla (dei verkelege bolkmidla er tekne bort), med dateringane bytte mellom suitar av same storleik. Planta middel går samanhengande gjennom tida, lineært mellom hundreårsmidtane, og planta flytting er sett til phi = 0,3, 1 og 3 per hundreår. Kvar realisering får sin eigen bootstrap.",
+  "Nøytral vandring (b = 1): samla KI for b dekkjer 1 og ikkje 2, og høgst 10 % av realiseringane får domen HELDT. VA: b median 0,99, 1,10 og 1,14; del HELDT 0. NM: b median 0,92, 1,04 og 1,17; del HELDT høgst 0,08.",
+  "Planta drift (b = 2): samla KI dekkjer 2 og ikkje 1, og minst 80 % av realiseringane får domen HELDT. VA: b median 1,96, 2,01 og 2,05; del HELDT 1,00 på alle nivå. NM: b median 2,13, 2,03 og 2,06; del HELDT 0,56 ved 0,3 (fell) og 0,94 ved 1 og 3.",
+  "Felles faktor (berre første aksen flyttar seg): høgst 10 % HELDT. VA 0,06, 0 og 0; NM 0, 0 og 0,06.",
+  "Krympe-placebo (KRAV 2): dei 18 3D-koordinatane trekte mot medianen med faktor 0,75 og 3D-målefeilen lagd på att, under nøytral vandring: samla KI dekkjer 1 og ikkje 2, og ingen realiseringar får HELDT (held i VA på alle nivå og i NM ved 1 og 3). Under drift gjev krympinga b 1,98 i VA og 2,13 i NM: krympinga lagar ikkje b = 2 og tek han ikkje bort.",
+  "Skaleringsfeil i katalog-H med Var(u) på øvre grensa (VA 0,0058, NM 0,0029) lagd på log H under drift: b 2,12 i VA og 2,42 i NM mot 2,01 og 2,03 utan. Rapportert, ikkje krav.",
+  "phi_min er det lågaste planta nivået der alle krava held i museet og held på alle høgare nivå: VA 0,3, NM 1. Porten for målt phi i --opne er median målt phi for drift ved phi_min: VA 0,243, NM 0,972.",
+  "KONTROLL.json har klar = true."
+ ],
+ "skjevheit_kjend_foer_opning": [
+  "Målt phi er lågare enn planta phi, fordi hundreårsmidla jamnar ut ein samanhengande bane: om lag 0,7 til 1,1 gong for drift og 0,5 til 0,65 for vandring. Porten står difor på målt skala.",
+  "Under nøytral vandring med stor flytting kryp b litt over 1 (1,10 til 1,17 ved phi 1 og 3).",
+  "Rørsle innanfor hundreåret blåser opp variansen langs aksar som flyttar seg. Dette er med i simuleringane, sidan det planta middelet går samanhengande.",
+  "Ein skaleringsfeil i katalog-H som setta ikkje fangar, gjer b brattare (opp til 0,4 i NM ved øvre grensa). Øvre grensa er truleg for høg: setta gjev 0,0003 for log H, medan Cov(log(breidd3d/B), log(djupn3d/D)) òg inneheld feil i forholdet mellom høgd og fotavtrykk i 3D-modellen, som ikkje rører høgdene.",
+  "Aksane er estimerte frå same data som flyttinga. Placeboen viser inga skeivheit i D, og dei planta køyringane går gjennom same rekning.",
+  "NM har få stolar og fire gyldige hundreår (tre par). Metoden skil 2 frå 1 der berre ved stor flytting (målt phi minst 0,97). Er flyttinga mindre, blir NM UGYLDIG, og prøva kan då ikkje få domen HELDT.",
+  "Alle 44 ekte sett ligg i NM. Feilmatrisa derifrå blir brukt i VA òg, sidan instrumentet er det same.",
+  "1500-talet fell ut i begge museum (VA 19, NM 2 stolar).",
+  "Stoffet skiftar etter 1900. WOOD åleine er rapportert.",
+  "I kontrollen er KI per realisering normaltilnærma med robust skala (1,4826 MAD) frå 20 trekk; i --opne er KI persentilar frå 500 trekk."
+ ],
+ "kjende_avvik_foer_opning": [
+  "Endra av granskaren før forsegling, utan at nokon har sett utfallet; --opne er ikkje køyrt. Den førre utgåva fall i kontrollen: nullfordelinga for b spreidde seg frå om lag 0,5 til 4.",
+  "Hundreår, ikkje 50 år. Påstanden gjeld hundreår, og med 50-årsbolkar var signalet per par for lite: med hundreår blir flyttinga per par fire gonger større under drift, medan støyen fell.",
+  "Prinsipale aksar i staden for dei 19 koordinatane kvar for seg. Dei 17 kvantilane er rekna frå same profil (lærdom 10) og heng sterkt saman, så tilpassinga hadde få frie punkt. Langs aksane er spreiinga ukorrelert innan hundreåret, og lambda spenner over to og ein halv tiarpotens. Same grunnlag som Lande (1976) og Ackermann og Cheverud (2004). Påstanden gjeld difor retningar i høgdeprofilen, ikkje einskilde delar.",
+  "Dei 18 modellkoordinatane er log(h/H). Skaleringsfeilen u fell då bort frå dei (lærdom 9). Den førre fråtrekkinga av Var(u) frå modellhøgdene var dobbeltelling, sidan setta fangar u der H er målt kvar for seg, og ho bygde på eit tal som òg inneheld 3D-feil i forholdet høgd mot fotavtrykk.",
+  "Målefeilen: den førre koden rekna feilvariansen innan museet. VA har ingen ekte sett, så målefeilen vart 0 i VA (lærdom 8 broten). No blir feilmatrisa frå alle 44 sett brukt i begge museum.",
+  "Den førre nullmodellen for vandring tok uavhengige steg per koordinat. Nøytral kopiering av heile stolar gjev steg med kovarians proporsjonal med Sigma; det er brukt no.",
+  "Den førre simuleringa analyserte restar i dei same bolkane som dei var sentrerte i. Bolkmidla vart då nøyaktig null, halvdelane A og B negativt korrelerte, og D skeiv nedover. Dateringane blir no bytte mellom suitar av same storleik.",
+  "Tilpassinga er minste kvadrat på råskala for D_i/lambda_i, ikkje for D_i, sidan den største aksen elles styrer åleine.",
+  "Skalaen til planta effekt er fastsette nivå (phi 0,3, 1 og 3), ikkje lik observert flytting, som ville krevje estimanden på dei verkelege merka. Porten i --opne krev i staden at målt phi er minst det nivået der metoden skil 2 frå 1.",
+  "Felles-nullen frå oppgåva (W og D begge proporsjonale med lambda_q i andre potens) gjev b = 1 i koordinatane. Langs aksane er analogen at berre første aksen flyttar seg; han er kontrollert som falsk positiv.",
+  "Ein ekstra krav om at D_2 skal vere over 0 vart prøvd og teke bort før forsegling: han tok for mykje kraft (særleg i NM), og felles-kontrollen held utan han. D_2 er rapportert.",
+  "Ramma: 1 370 av dei 1 377 i felles_p (7 manglar sete_h eller lag). Talet 1 410 i oppgåva er før 33 stolar med kopiert målpost vart tekne ut.",
+  "Bootstrap: 500 i --opne. Kontrollen bruker 20 trekk per realisering, 2 til 16 realiseringar per scenario og nivå, og 100 trekk for placeboen, for å halde køyringa under 5 minutt (2 min 22 s)."
+ ],
+ "tersklar_gjennomgaatt_av_forfattaren": false
+}
