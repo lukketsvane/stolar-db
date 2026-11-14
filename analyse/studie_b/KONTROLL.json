@@ -1,0 +1,422 @@
+{
+ "teljing": {
+  "VA|logH": {
+   "n_bolkar": 9,
+   "n_per_bolk": [
+    20,
+    24,
+    78,
+    110,
+    194,
+    78,
+    139,
+    172,
+    194
+   ]
+  },
+  "VA|logB": {
+   "n_bolkar": 9,
+   "n_per_bolk": [
+    20,
+    24,
+    78,
+    110,
+    194,
+    78,
+    139,
+    172,
+    194
+   ]
+  },
+  "VA|logD": {
+   "n_bolkar": 9,
+   "n_per_bolk": [
+    20,
+    24,
+    78,
+    110,
+    194,
+    78,
+    139,
+    172,
+    194
+   ]
+  },
+  "VA|logSH_kat": {
+   "n_bolkar": 8,
+   "n_per_bolk": [
+    8,
+    40,
+    40,
+    31,
+    15,
+    8,
+    35,
+    61
+   ]
+  },
+  "VA|logSH_3d": {
+   "n_bolkar": 9,
+   "n_per_bolk": [
+    20,
+    24,
+    78,
+    109,
+    194,
+    78,
+    139,
+    171,
+    191
+   ]
+  },
+  "NM|logH": {
+   "n_bolkar": 8,
+   "n_per_bolk": [
+    12,
+    19,
+    65,
+    52,
+    66,
+    45,
+    24,
+    83
+   ]
+  },
+  "NM|logB": {
+   "n_bolkar": 8,
+   "n_per_bolk": [
+    12,
+    19,
+    65,
+    52,
+    66,
+    45,
+    24,
+    83
+   ]
+  },
+  "NM|logD": {
+   "n_bolkar": 8,
+   "n_per_bolk": [
+    12,
+    19,
+    65,
+    52,
+    66,
+    45,
+    24,
+    83
+   ]
+  },
+  "NM|logSH_kat": {
+   "n_bolkar": 8,
+   "n_per_bolk": [
+    9,
+    16,
+    50,
+    34,
+    51,
+    32,
+    14,
+    10
+   ]
+  },
+  "NM|logSH_3d": {
+   "n_bolkar": 8,
+   "n_per_bolk": [
+    12,
+    19,
+    65,
+    52,
+    66,
+    45,
+    24,
+    81
+   ]
+  }
+ },
+ "placebo_permuterte_aar": {
+  "VA|logH": {
+   "gyldig": 1.0,
+   "median_vekt": {
+    "stase": 0.46364116248677945,
+    "urw": 0.3548058394476966,
+    "grw": 0.04663187478049928,
+    "ou": 0.043656605274912524
+   },
+   "hoegste_modell": "stase",
+   "del_stase_over_halv": 0.4666666666666667,
+   "median_halveringstid_aar": 6.155905277536159,
+   "ki95_halveringstid": [
+    1.7254883033765065,
+    312.77681086678945
+   ],
+   "median_sd_mellom": 0.013032994759343303,
+   "ki95_sd_mellom": [
+    2.0998615558268003e-10,
+    0.04045417856125347
+   ],
+   "median_sd_innan": 0.18155427314756645,
+   "n_bolkar": 9
+  },
+  "VA|logB": {
+   "gyldig": 1.0,
+   "median_vekt": {
+    "stase": 0.5948553770605716,
+    "urw": 0.2801865747088347,
+    "grw": 0.04082702198302654,
+    "ou": 0.05483713007202755
+   },
+   "hoegste_modell": "stase",
+   "del_stase_over_halv": 0.7,
+   "median_halveringstid_aar": 3.1940934035759954,
+   "ki95_halveringstid": [
+    1.7254883033765065,
+    1045.6974129533332
+   ],
+   "median_sd_mellom": 0.016577924566564383,
+   "ki95_sd_mellom": [
+    5.924037191325221e-10,
+    0.02934877798939156
+   ],
+   "median_sd_innan": 0.19898201529104165,
+   "n_bolkar": 9
+  },
+  "VA|logD": {
+   "gyldig": 1.0,
+   "median_vekt": {
+    "stase": 0.5426478861913281,
+    "urw": 0.34283262381191315,
+    "grw": 0.04205312126987616,
+    "ou": 0.05155113349396975
+   },
+   "hoegste_modell": "stase",
+   "del_stase_over_halv": 0.5666666666666667,
+   "median_halveringstid_aar": 6.582984875000115,
+   "ki95_halveringstid": [
+    1.7254883033765065,
+    310.76633784437604
+   ],
+   "median_sd_mellom": 0.014920591229757101,
+   "ki95_sd_mellom": [
+    3.0883956362358337e-10,
+    0.037394281772655594
+   ],
+   "median_sd_innan": 0.20631902809912767,
+   "n_bolkar": 9
+  },
+  "VA|logSH_kat": {
+   "gyldig": 1.0,
+   "median_vekt": {
+    "stase": 0.54179529931208,
+    "urw": 0.38446198257850117,
+    "grw": 0.0172073043521994,
+    "ou": 0.019061167571365334
+   },
+   "hoegste_modell": "stase",
+   "del_stase_over_halv": 0.6,
+   "median_halveringstid_aar": 11.527771325356484,
+   "ki95_halveringstid": [
+    1.7254883033765065,
+    1120.8449306470245
+   ],
+   "median_sd_mellom": 0.018287095224284493,
+   "ki95_sd_mellom": [
+    2.8722226924692463e-10,
+    0.03399268901088319
+   ],
+   "median_sd_innan": 0.1074636782716882,
+   "n_bolkar": 7
+  },
+  "NM|logH": {
+   "gyldig": 1.0,
+   "median_vekt": {
+    "stase": 0.48558212069795004,
+    "urw": 0.3743154542405741,
+    "grw": 0.037551581628104194,
+    "ou": 0.02875554160278054
+   },
+   "hoegste_modell": "stase",
+   "del_stase_over_halv": 0.43333333333333335,
+   "median_halveringstid_aar": 8.706692747608596,
+   "ki95_halveringstid": [
+    1.7254883033765065,
+    1892.2276879631409
+   ],
+   "median_sd_mellom": 0.019227301558172136,
+   "ki95_sd_mellom": [
+    4.03678754578179e-10,
+    0.0456909992252227
+   ],
+   "median_sd_innan": 0.40500119628855663,
+   "n_bolkar": 8
+  },
+  "NM|logB": {
+   "gyldig": 1.0,
+   "median_vekt": {
+    "stase": 0.4831817968105218,
+    "urw": 0.43718764129321463,
+    "grw": 0.033999434993468906,
+    "ou": 0.02887161815889369
+   },
+   "hoegste_modell": "stase",
+   "del_stase_over_halv": 0.45,
+   "median_halveringstid_aar": 12.166049981631058,
+   "ki95_halveringstid": [
+    1.7254883033765065,
+    1892.2276879631409
+   ],
+   "median_sd_mellom": 0.01282766260007985,
+   "ki95_sd_mellom": [
+    2.3711886204439776e-10,
+    0.03992200478835489
+   ],
+   "median_sd_innan": 0.38578410873977365,
+   "n_bolkar": 8
+  },
+  "NM|logD": {
+   "gyldig": 1.0,
+   "median_vekt": {
+    "stase": 0.48070511066649546,
+    "urw": 0.4147868552314926,
+    "grw": 0.03730597713687707,
+    "ou": 0.030180723993963453
+   },
+   "hoegste_modell": "stase",
+   "del_stase_over_halv": 0.43333333333333335,
+   "median_halveringstid_aar": 17.633736669750068,
+   "ki95_halveringstid": [
+    1.7254883033765065,
+    1892.2276879631409
+   ],
+   "median_sd_mellom": 0.01742322527639071,
+   "ki95_sd_mellom": [
+    3.3453503245454277e-10,
+    0.049481375341573514
+   ],
+   "median_sd_innan": 0.37145860818222665,
+   "n_bolkar": 8
+  },
+  "NM|logSH_kat": {
+   "gyldig": 0.9666666666666667,
+   "median_vekt": {
+    "stase": 0.5470246201748655,
+    "urw": 0.3789516018430838,
+    "grw": 0.016704746171704046,
+    "ou": 0.02073803503497902
+   },
+   "hoegste_modell": "stase",
+   "del_stase_over_halv": 0.6896551724137931,
+   "median_halveringstid_aar": 9.764850450809881,
+   "ki95_halveringstid": [
+    1.7254883033765065,
+    1892.2276879631409
+   ],
+   "median_sd_mellom": 0.015106780748774789,
+   "ki95_sd_mellom": [
+    1.5388141071254924e-10,
+    0.03489133387433549
+   ],
+   "median_sd_innan": 0.291520143808072,
+   "n_bolkar": 7
+  }
+ },
+ "planta_trend": {
+  "VA|logSH_kat": {
+   "gyldig": 0.9833333333333333,
+   "median_vekt": {
+    "stase": 0.49080365030425416,
+    "urw": 0.4787771926993935,
+    "grw": 0.014877001553014572,
+    "ou": 0.016901378676939333
+   },
+   "hoegste_modell": "stase",
+   "del_stase_over_halv": 0.4745762711864407,
+   "median_halveringstid_aar": 24.157110896488014,
+   "ki95_halveringstid": [
+    1.7254883033765065,
+    52.20585349421149
+   ],
+   "median_sd_mellom": 0.036827428080100644,
+   "ki95_sd_mellom": [
+    0.01621684859959609,
+    0.06213406369356987
+   ],
+   "median_sd_innan": 0.10571514379529146,
+   "n_bolkar": 7
+  },
+  "NM|logSH_kat": {
+   "gyldig": 0.9833333333333333,
+   "median_vekt": {
+    "stase": 0.5839430181622998,
+    "urw": 0.35261673574259744,
+    "grw": 0.015856819449105483,
+    "ou": 0.02434721357239638
+   },
+   "hoegste_modell": "stase",
+   "del_stase_over_halv": 0.6271186440677966,
+   "median_halveringstid_aar": 9.674031756499188,
+   "ki95_halveringstid": [
+    1.7254883033765065,
+    44.12751941766093
+   ],
+   "median_sd_mellom": 0.018543944127667036,
+   "ki95_sd_mellom": [
+    3.6513510236081486e-10,
+    0.04057566148818072
+   ],
+   "median_sd_innan": 0.24342613135674704,
+   "n_bolkar": 7
+  }
+ },
+ "planta_stase_trendfjerna": {
+  "VA|logSH_kat": {
+   "gyldig": 1.0,
+   "median_vekt": {
+    "stase": 0.6058780313278798,
+    "urw": 0.3708722556498851,
+    "grw": 0.009891502281706776,
+    "ou": 0.016261364485201754
+   },
+   "hoegste_modell": "stase",
+   "del_stase_over_halv": 0.6833333333333333,
+   "median_halveringstid_aar": 4.708096330059625,
+   "ki95_halveringstid": [
+    1.7254883033765065,
+    43.05214733621072
+   ],
+   "median_sd_mellom": 0.033250694434160136,
+   "ki95_sd_mellom": [
+    8.623638292651619e-10,
+    0.06365938959899049
+   ],
+   "median_sd_innan": 0.10564163265345249,
+   "n_bolkar": 7
+  },
+  "NM|logSH_kat": {
+   "gyldig": 1.0,
+   "median_vekt": {
+    "stase": 0.3462166187034328,
+    "urw": 0.4329548662794408,
+    "grw": 0.05911293792589896,
+    "ou": 0.01755869442327479
+   },
+   "hoegste_modell": "urw",
+   "del_stase_over_halv": 0.35,
+   "median_halveringstid_aar": 29.682479143218362,
+   "ki95_halveringstid": [
+    1.7254883033765065,
+    129.69614766793944
+   ],
+   "median_sd_mellom": 0.02751828406754985,
+   "ki95_sd_mellom": [
+    0.009497709670990648,
+    0.04818021097516793
+   ],
+   "median_sd_innan": 0.2750079566186078,
+   "n_bolkar": 8
+  }
+ },
+ "n_repetisjonar": 60,
+ "sekund": 152
+}
