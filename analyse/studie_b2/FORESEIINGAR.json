@@ -1,0 +1,32 @@
+{
+ "prove": "Studie B2: flyttar nivået til setehøgda seg mindre mellom tidsbolkar enn nivået til totalhøgda? Katalogmål, heile ramma.",
+ "skrive": "2026-11-14",
+ "kjelde": "Formlære, kortversjonen: Følgje 3 (spreiinga langs ein akse er den inverse av vekt gonger krumming; aksar med stor samla vekt står tett) og avsnittet etter Postulat 3 (bratte dalveggar kanaliserer og frys dimensjonane). Kanalisering som tidsstruktur: ein kanalisert akse flyttar seg lite over tid. Opplegget følgjer fase 2-planen (evolusjonsmodus per akse), men som varianskomponent mellom 50-årsbolkar fordi AICc-modellval mellom stase og tilfeldig vandring ikkje hadde styrke (sjå Studie B, ikkje opna). Ei lesing, ikkje sitat.",
+ "hypotese": "Setehøgda er ei kanalisert akse: nivået hennar flyttar seg mindre mellom 50-årsbolkar enn nivået til totalhøgda. Skilnaden er ikkje ein effekt av at katalogsetet er målt dårlegare enn H, for målestøy aukar berre variansen innan bolkar.",
+ "maal": {
+  "utval": "Heile ramma (ramme.py): 1 377 stolar i 1 190 suitar. V&A (1 009) og Nasjonalmuseet (368) kvar for seg.",
+  "aksar": "log H, log B, log D, log sete_kat (katalogmål). Kvar akse er først justert for typen (stol, armstol, anna) innan museum.",
+  "estimand": "omega = varianskomponenten mellom 50-årsbolkar (ANOVA-estimat, minst 8 stolar per bolk, minst 6 bolkar, avkorta ved 0). Skilnad = omega for log H minus omega for log sete_kat, rekna parvis i kvar av 1 000 repetisjonar der kvar stol får eit år trekt jamt frå [aar, aar_til] og suitane blir trekte på nytt.",
+  "sekundaert_utan_dom": "omega for log B og log D, og SD mellom og innan bolkar for alle aksane."
+ },
+ "tersklar": {"min_rep": 150, "gyldige_museum": ["VA"]},
+ "foreseiingar": {
+  "B1_setet_flyttar_seg_mindre_enn_hoegda": "Nedre 95 %-grense for (omega H minus omega sete) er over 0 i V&A. Nasjonalmuseet blir ført utan dom (UGYLDIG), fordi den planta effekten ikkje vart funnen der."
+ },
+ "grunnmodellar": [
+  "Alle akser flyttar seg like mykje med tida: skilnaden er null (B1 slo feil).",
+  "Setet flyttar seg meir enn høgda (skilnaden er negativ)."
+ ],
+ "kontrollar_koeyrde_foer_forsegling": "prove.py --kontroll (200 repetisjonar). Placebo (år permuterte innan museum og type): skilnaden i omega er null med intervall som dekkjer null i begge musea (V&A: minus 0,00006, 95 % frå minus 0,00128 til 0,00069). Lik planta trend på H og sete (0,0003 per år, permuterte år): skilnad null (V&A minus 0,00010). Planta trend på H (0,0005 per år) og ein mindre på setet (0,0001 per år), på dei verkelege åra: V&A skilnad 0,0028 med intervall frå 0,0009 til 0,0047, altså funnen. Nasjonalmuseet: skilnad 0,0073 med intervall frå minus 0,0056 til 0,0262, altså ikkje funnen; museet har for lite styrke, og domen der er UGYLDIG.",
+ "skjevheit_kjend_foer_opning": [
+  "Katalogsetet har konvensjonar (underkant eller overkant av flata) som V&A og Nasjonalmuseet kan ha brukt ulikt over tid. Ei endring i konvensjon over tid gjev ein falsk tidstrend i setet og verkar mot B1.",
+  "Dateringsintervallet er breitt for mange stolar. Trekk av året jamt i intervallet gjev omega ein nedre grense, men like mykje for alle aksane.",
+  "Bolkane inneheld stolar av ulik type. Typen er trekt ut innan museum, men typeblandinga kan endre seg innan eit museum over tid."
+ ],
+ "kjende_avvik_foer_opning": [
+  "Før forsegling er det sett: tal på stolar per bolk og akse (tel, ikkje utfall), og kontrolltala over. Ikkje sett: omega for nokon akse på dei verkelege dataa.",
+  "Funn frå før: setehøgda har lågare spreiing enn totalhøgda (katalogsete 0,114 mot 0,181 i CV), og tida forklarer 12 % av setehøgda mot 37 % av totalhøgda i 3D-måla (prøve 10). B2 prøver tidsdelen på katalogmål med eit estimat som ikkje blir påverka av målestøy.",
+  "Tersklane er ikkje gjennomgåtte av forfattaren."
+ ],
+ "tersklar_gjennomgaatt_av_forfattaren": false
+}
