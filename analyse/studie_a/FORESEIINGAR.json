@@ -1,0 +1,42 @@
+{
+ "prove": "Studie A: kva forklarer forma på katalogmåla, og er stil eit aggregat? Heile ramma, katalogmål.",
+ "skrive": "2026-11-14",
+ "kjelde": "Formlære, kortversjonen: Definisjon 6 (stilen samlar spor av mange samtidige trykk i éin etikett; som samlevariabel er han eit symptom på trykka) og føreseiing 11 (stilkategoriar fastsette utan å sjå på formmåla føreseier nye former betre enn materialet). Dei to kan lesast mot kvarandre. Opplegget følgjer fase 2-planen (ekstern litteraturgjennomgang, 14.11.2026): hierarkisk variansdekomponering med lekkasjekontroll og eit naturleg eksperiment med revivalstil. Ei lesing, ikkje sitat.",
+ "hypotese": "Stil er ein samlevariabel: etter at tid, materiale, museum, type, region og teknikk er med, har stilmerka ingen eigen forklaring ut over det året åleine gjev. Samstundes forklarer stil meir av forma enn materialet gjer (føreseiing 11). Ein stol i ein revivalstil (nyrokokko) ligg ikkje nærare forbiletet (rokokko) enn dei samtidige stolane gjer.",
+ "maal": {
+  "utval": "Heile ramma (ramme.py): 1 377 stolar i 1 190 suitar. Samla og i V&A (1 009) og Nasjonalmuseet (368) kvar for seg.",
+  "form": "log H, log B, log D frå katalogen, standardiserte. Direkte målingar, ikkje 3D. Sekundært og utan dom: dei ti første hovudkomponentane av 3D-silhuettane (generative; krymping ukjend, sjå data/studie0a.json).",
+  "blokkar": "tid (kubisk spline i midtåret med knutar 1650, 1750, 1850 og 1925; 7 df), materiale (WOOD som referanse; 4 df), museum (1 df), type (stol, armstol, anna; 2 df), region (nasjonalitet frå STOLAR.csv; 9 df), teknikk (dei åtte vanlegaste orda og manglande opplysning; 9 df), stil (kuratorstil; 23 df) og pseudostil (stilen året åleine gjev: modus blant dei fem næraste i midtår, same suite ute; 16 df).",
+  "unikt_bidrag": "Auke i justert R2 (Peres-Neto) når blokka kjem med sist i modellen med alle dei andre. Intervall: bootstrap over suitar, 300 trekk.",
+  "revival": "Nyrokokko (12 stolar) som revival, Rokokko som forbilde, og samtidige stolar 1830 til 1900 utan nyrokokko, rokokko og barokk som samanlikning. Statistikk: median avstand til forbildet (rokokkosentroiden innan type, i standardisert log H, B, D) for revivalstolane minus same for dei samtidige. Permutasjonsnull innan type, 4 999 trekk."
+ },
+ "tersklar": {
+  "unik_stil_minus_pseudo_maks": 0.02,
+  "revival_p_min": 0.05,
+  "revival_styrke_min": 0.8
+ },
+ "foreseiingar": {
+  "A1_stil_er_aggregat": "Øvre 95 %-grense for (unikt bidrag frå stil minus unikt bidrag frå pseudostil) er under 0,02, både samla og i V&A.",
+  "A2_stil_slaar_materiale": "Nedre 95 %-grense for (unikt bidrag frå stil minus unikt bidrag frå materiale) er over 0, i både V&A og Nasjonalmuseet.",
+  "A3_revival_ikkje_naerare_forbildet": "Permutasjonsp for at revivalstolane ligg nærare forbildet enn dei samtidige gjer, er 0,05 eller høgare. Ligg han under 0,05, har revivalstolane minne frå forbildet, og A3 slo feil."
+ },
+ "grunnmodellar": [
+  "Stilen er sett av kuratorar som såg forma: då har stil eigen forklaring over pseudostilen (A1 slo feil).",
+  "Materialet gjev forma: unikt bidrag frå materiale er minst like stort som frå stil (A2 slo feil).",
+  "Stilen hugsar: revivalstolane liknar forbiletet (A3 slo feil)."
+ ],
+ "kontrollar_koeyrde_foer_forsegling": "prove.py --kontroll. Placebo (stilmerka permuterte innan museum, type og 50-årsbolk, 40 trekk): unikt bidrag frå stil 0,010 (SD 0,003, øvre 95 % 0,015). Golvet er over null fordi stilmerka bergar tidsstruktur som splinen ikkje tek, og er grunnen til at A1 blir målt mot pseudostilen og ikkje mot null. Planta stileffekt (SD 0,25 på log B per stilnivå): unikt bidrag 0,038, altså 0,028 over golvet. Planta materialeffekt (SD 0,25 på log D): unikt bidrag frå materiale 0,014 og frå stil 0,027, så eit materialsignal lek delvis inn i stil. Planta revivaleffekt (halvvegs mot forbildet): funnen i 100 av 100 simuleringar (p under 0,05). Terskelen på 0,02 ligg mellom golvet og den planta effekten.",
+ "kontroll_revival_styrke": 1.0,
+ "skjevheit_kjend_foer_opning": [
+  "Stilmerka er delvis sette frå dateringa: året åleine gjev stilen i 69 % av tilfella (tilfeldig gjetting 14 %), og pseudostilen er lik stilen for 73 % av stolane. Det unike bidraget frå stil over pseudostil er difor ein nedre grense for kva kuratoren las ut av forma.",
+  "Form frå berre tre katalogmål er grov. Eit lite unikt bidrag kan vere ein konsekvens av at ei tredimensjonal form er skjult i tre tal.",
+  "Materialet lek delvis inn i stil (planta materialeffekt gav 0,027 til stil). A2 kan difor overvurdere stil.",
+  "Nyrokokko har berre 12 stolar. A3 har styrke i simuleringa, men eit negativt funn om revival seier lite om andre revivalstilar."
+ ],
+ "kjende_avvik_foer_opning": [
+  "Før forsegling er det sett: tal på stolar og frihetsgrader per blokk, pseudostilens samsvar med stilen, og kontrolltala over. Ikkje sett: unikt bidrag frå nokon faktor på dei verkelege dataa, og ingen avstand frå revivalstolane til rokokkosentroiden.",
+  "Prøve 8 (føreseiing 11 på 3D-silhuettar) fann at periode og stoff føreseier forma like godt (feilforhold 0,99). Studie A prøver same føreseiing på katalogmål.",
+  "Tersklane er ikkje gjennomgåtte av forfattaren."
+ ],
+ "tersklar_gjennomgaatt_av_forfattaren": false
+}

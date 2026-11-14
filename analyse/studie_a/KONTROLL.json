@@ -1,0 +1,38 @@
+{
+ "n": 1377,
+ "df_blokker": {
+  "tid": 7,
+  "materiale": 4,
+  "museum": 1,
+  "type": 2,
+  "region": 9,
+  "teknikk": 9,
+  "stil": 23,
+  "pseudostil": 16
+ },
+ "stil_leking": {
+  "del_stolar_med_stil": 1.0,
+  "pseudostil_lik_stil": 0.7327523602033406
+ },
+ "placebo_stil": {
+  "middel": 0.01034709658390932,
+  "sd": 0.0032184501668558424,
+  "ovre95": 0.015141504971559683
+ },
+ "planta_stil": {
+  "unik_stil": 0.037997366752413164
+ },
+ "planta_materiale": {
+  "unik_materiale": 0.014327031211732066,
+  "unik_stil": 0.02665548120187544
+ },
+ "planta_revival": {
+  "del_funne": 1.0,
+  "n_sim": 100
+ },
+ "revival_n": {
+  "n_revival": 12,
+  "n_samtidige": 212
+ },
+ "sekund": 19
+}
