@@ -1,0 +1,3 @@
+dist/
+.codex-logs/
+*.tsbuildinfo

@@ -1,0 +1,27 @@
+ID-prefiks: [('O', 1622), ('OK', 353), ('NMK', 72), ('NAMF', 1)]
+lenkje-domene: [('collections.vam.ac.uk', 1622), ('www.nasjonalmuseet.no', 426)]
+museum: Counter({'VA': 1622, 'NM': 426})
+Nemning topp 25: [('Stol', 1444), ('Armstol', 449), ('Krakk', 86), ('Barnestol', 21), ('Spisestol', 18), ('Benkestol', 9), ('Klappstol', 7), ('Loungestol', 6), ('Gyngestol', 6), ('Stol utan rygg', 1), ('Kontorstol', 1)]
+Materialar topp 12: [('Eik', 83), ('Nøttetre', 66), ('Mahogni, Tekstil', 58), ('Tre', 54), ('Mahogni', 51), ('Nøttetre, Rotting', 43), ('Lær, Mahogni', 27), ('Bøk', 25), ('Bøk, Rotting', 23), ('Nøttetre, Tekstil', 23), ('Bøk, Fløyel, Furu, Hestetagl, Nøttetre, Silke', 23), ('Eik, Lær', 22)]
+
+== setehøgd n= 300  museum: Counter({'NM': 294, 'VA': 6})  ID-prefiks: [('OK', 279), ('NMK', 15), ('O', 6)]
+setehøgd == totalhøgd: 51
+setehøgd kvantilar 0/5/25/50/75/95/100: [3.5, 32.0, 45.0, 47.0, 52.0, 94.2, 130.7]
+setehøgd <25 eller >60: 64
+Nemning i setehøgd-utvalet: [('Stol', 286), ('Armstol', 10), ('Krakk', 3), ('Spisestol', 1)]
+år i setehøgd-utvalet: min/median/max 1280.0 1800.0 2013.0  per hundreår: [(1200, 1), (1300, 1), (1400, 2), (1500, 2), (1600, 32), (1700, 102), (1800, 101), (1900, 53), (2000, 6)]
+stil i setehøgd-utvalet: [('Barokk', 60), ('Historisme', 38), ('Empire', 36), ('Postmodernisme', 20), ('Rokokko', 19), ('Régence', 13), ('Hepplewhite', 13), ('Nyrokokko', 12), ('Funksjonalisme', 11), ('Renessanse', 9), ('Nyklassisisme', 9), ('Jugend', 8), ('Modernisme / Midtjahrhundre', 7), ('Chippendale', 7), ('Louis XVI', 6), ('Regency', 6)]
+Høgde (cm) n 2041 kvantilar 0/1/5/50/95/99/100: [0.0, 0.0, 0.0, 81.5, 122.0, 142.0, 1140.0]
+Breidde (cm) n 2033 kvantilar 0/1/5/50/95/99/100: [0.0, 0.0, 0.0, 51.0, 89.0, 188.5, 880.0]
+Djupn (cm) n 2018 kvantilar 0/1/5/50/95/99/100: [0.0, 0.0, 0.0, 50.0, 80.0, 103.0, 825.0]
+Stilperiode alle: [('Nyklassisisme', 291), ('Barokk', 229), ('Rokokko', 206), ('Postmodernisme', 180), ('Historisme', 180), ('Modernisme / Midtjahrhundre', 147), ('Empire', 130), ('Viktorianisme', 107), ('Art Deco / Tidleg modernisme', 103), ('Jugend/Art Nouveau', 79), ('Samtidsdesign', 66), ('Renessanse', 55), ('Funksjonalisme', 33), ('Midtjahrhundre modernisme', 21), ('Modernisme', 20), ('Bauhaus', 20), ('Nordisk funksjonalisme', 18), ('Régence', 17), ('Hepplewhite', 15), ('Skandinavisk modernisme', 14)]
+døme på rader med setehøgd:
+   NMK.2005.0638 | Stol | Bøk, Kryssfiner, Lær | H 108.0 B 73.0 D 127.0 sete 108.0 | 1983
+   NMK.2005.0645 | Stol | Bøk, Metall | H 89.5 B 44.5 D 60.0 sete 89.5 | 2000
+   NMK.2005.0646 | Stol | Ask, Kryssfiner, Polyamid | H 120.0 B 81.0 D 80.0 sete 120.0 | 1999
+   NMK.2006.0076 | Stol | Metall | H 73.0 B 85.0 D 72.0 sete 73.0 | 1952
+   NMK.2008.0006 | Stol | Plast, Stål | H 83.0 B 39.0 D 59.0 sete 83.0 | 1998
+   NMK.2008.0110 | Stol | Kryssfiner, Plast, Stål | H 83.0 B 47.0 D 45.0 sete 83.0 | 1955
+   OK-10700 | Stol | Bjørk, Furu | H 94.7 B 92.6 D 71.0 sete 55.5 | Antagelig 1280-1350
+   OK-10862A | Stol | Bøk, Lær, Messing | H 115.0 B 50.0 D 50.0 sete 65.0 | 1725
+   OK-10862B | Stol | Bøk, Lær, Messing | H 115.0 B 50.0 D 50.0 sete 65.0 | 1725
